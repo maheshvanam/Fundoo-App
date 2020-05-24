@@ -9,12 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var signInButton: UIButton!
     
     @IBOutlet weak var logoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        signInButton.layer.cornerRadius = 8.0
         let text = "Fundoo"
         logoLabel.attributedText = self.getAttributedLogo(logoText : text)
     }
@@ -34,5 +36,6 @@ class ViewController: UIViewController {
         }
         return attributedLogo
     }
+
 }
 
