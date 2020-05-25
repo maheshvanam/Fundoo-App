@@ -40,16 +40,15 @@ class SignupViewController: UIViewController {
         guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "ViewController") as? ViewController else {
             return
         }
+        self.dismiss(animated: false, completion: nil)
         navigationController?.pushViewController(destinationViewController, animated: false)
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
-        
-        firstNameField.clearShadowColor()
-        lastNameField.clearShadowColor()
-        emailField.clearShadowColor()
-        passwordField.clearShadowColor()
-        confirmField.clearShadowColor()
+        let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
+        for field in textFields {
+            field?.clearShadowColor()
+        }
         
         setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )
         
@@ -89,16 +88,23 @@ class SignupViewController: UIViewController {
         
         let coreDataService = CoreDataService()
         coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
-        firstNameField.text=""
-        lastNameField.text=""
-        emailField.text=""
-        passwordField.text=""
+        showAlert()
+        
+        for field in textFields {
+            field?.text=""
+        }
     }
     
     func setLabelColor(color: UIColor ,_ labels: UILabel...) {
         for label in labels {
             label.textColor = color
         }
+    }
+    
+    func showAlert(){
+        let alert = UIAlertController(title: "", message: "Successfully Registered.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
@@ -116,5 +122,4 @@ extension UITextField {
     func clearShadowColor() {
         self.layer.shadowColor = UIColor.clear.cgColor
     }
-    
 }
