@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var signInButton: UIButton!
     
     @IBOutlet weak var logoLabel: UILabel!
@@ -23,6 +24,15 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    @IBAction func onCreateAcoountTapped(_ sender: Any) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+             guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "SignupViewController") as? SignupViewController else {
+                 return
+             }
+             navigationController?.pushViewController(destinationViewController, animated: false)
+         
     }
     
     func getAttributedLogo(logoText : String ) -> NSAttributedString {

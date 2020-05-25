@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Validation {
+class TextFildsValidator {
     
     public func validateName(name: String) ->Bool {
         let nameRegix = "^\\w{3,12}"
@@ -22,7 +22,7 @@ class Validation {
     }
     
     public func validatePassword(password: String) -> Bool {
-       let passRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+       let passRegEx = "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.*[@#$%^&*]).{8,}"
        let validatePassord = NSPredicate(format:"SELF MATCHES %@", passRegEx)
        return validatePassord.evaluate(with: password)
     }
