@@ -11,6 +11,8 @@ import UIKit
 
 class SignupViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var signUpView: UIView!
     @IBOutlet weak var confirmField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -18,30 +20,47 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var logoLabel: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
-    
     @IBOutlet weak var firstNameErrorLabel: UILabel!
     @IBOutlet weak var lastNameErrorLabel: UILabel!
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
     
+    var isExpand: Bool = true
+    
     override func viewDidLoad() {
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height)
         signUpButton.layer.cornerRadius = 8.0
-    let viewController = ViewController()
+        let viewController = LoginViewController()
         logoLabel.attributedText = viewController.getAttributedLogo(logoText: "Fundoo")
+        NotificationCenter.default.addObserver(self, selector: #selector(keboardAppear), name: UIResponder.keyboardWillShowNotification
+            , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keboardDisappear), name: UIResponder.keyboardWillHideNotification
+        , object: nil)
+        
+        let viewGesture = UITapGestureRecognizer(target: self, action:  #selector (closeKeyboard))
+        self.signUpView.addGestureRecognizer(viewGesture)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    @objc func closeKeyboard() {
+        self.signUpView.endEditing(true)
     }
+    
+    @objc func keboardAppear() {
+        if isExpand {
+            self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height + 150)
+            isExpand = false
+        }
+    }
+    
+    @objc func keboardDisappear() {
+       self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height - 150)
+        isExpand=true
+    }
+    
     
     @IBAction func onSiginInInsteadTapped(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "ViewController") as? ViewController else {
-            return
-        }
-        self.dismiss(animated: false, completion: nil)
-        navigationController?.pushViewController(destinationViewController, animated: false)
+        self.navigationController?.popViewController(animated: false)
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
@@ -92,6 +111,15 @@ class SignupViewController: UIViewController {
         
         for field in textFields {
             field?.text=""
+        }
+    }
+    
+    func validateTextFields() {
+        if firstNameField.text!.count > 0 && lastNameField.text!.count > 0 {
+            signUpButton.isEnabled = true
+        }
+        else {
+            signUpButton.isEnabled = false
         }
     }
     

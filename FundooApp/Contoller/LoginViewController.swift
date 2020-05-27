@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
@@ -57,13 +57,10 @@ class ViewController: UIViewController {
     
     @IBAction func onCreateAcoountTapped(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-             guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "SignupViewController") as? SignupViewController else {
+        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "SignupViewController") as? SignupViewController else {
                  return
-             }
-        
-        self.dismiss(animated: false, completion: nil)
-
-             navigationController?.pushViewController(destinationViewController, animated: false)
+            }
+        navigationController?.pushViewController(destinationViewController, animated: false)
     }
     
     func getAttributedLogo(logoText : String ) -> NSAttributedString {

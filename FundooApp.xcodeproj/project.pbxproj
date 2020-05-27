@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D298247A519D00C4F93A /* AppDelegate.swift */; };
 		8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29A247A519D00C4F93A /* SceneDelegate.swift */; };
-		8419D29D247A519D00C4F93A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29C247A519D00C4F93A /* ViewController.swift */; };
+		8419D29D247A519D00C4F93A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29C247A519D00C4F93A /* LoginViewController.swift */; };
 		8419D2A0247A519D00C4F93A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8419D29E247A519D00C4F93A /* Main.storyboard */; };
 		8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8419D2A1247A519D00C4F93A /* FundooApp.xcdatamodeld */; };
 		8419D2A5247A519E00C4F93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8419D2A4247A519E00C4F93A /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 		8419D295247A519D00C4F93A /* FundooApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundooApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8419D298247A519D00C4F93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8419D29A247A519D00C4F93A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8419D29C247A519D00C4F93A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8419D29C247A519D00C4F93A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8419D29F247A519D00C4F93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8419D2A2247A519D00C4F93A /* FundooApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FundooApp.xcdatamodel; sourceTree = "<group>"; };
 		8419D2A4247A519E00C4F93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */,
-				8419D29C247A519D00C4F93A /* ViewController.swift */,
+				8419D29C247A519D00C4F93A /* LoginViewController.swift */,
 				84E26B48247C4F8C000D8BE5 /* UserHomeController.swift */,
 			);
 			path = Contoller;
@@ -255,7 +255,7 @@
 			files = (
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
 				84E26B49247C4F8C000D8BE5 /* UserHomeController.swift in Sources */,
-				8419D29D247A519D00C4F93A /* ViewController.swift in Sources */,
+				8419D29D247A519D00C4F93A /* LoginViewController.swift in Sources */,
 				846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,

@@ -40,7 +40,7 @@ class CoreDataService {
                 }
             }
             else{
-                return("invalidEmail",false)
+                return ("invalidEmail",false)
             }
         }
         catch{
