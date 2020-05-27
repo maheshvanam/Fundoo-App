@@ -58,7 +58,6 @@ class SignupViewController: UIViewController {
         isExpand=true
     }
     
-    
     @IBAction func onSiginInInsteadTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: false)
     }
@@ -66,7 +65,7 @@ class SignupViewController: UIViewController {
     @IBAction func onSignUpTapped(_ sender: Any) {
         let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
         for field in textFields {
-            field?.clearShadowColor()
+            field?.clearBackgroundColor()
         }
         
         setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )
@@ -112,38 +111,38 @@ class SignupViewController: UIViewController {
     func validateFields(firstName: String, lastName: String, email: String, password: String, confirmPassword: String)-> Bool {
         
         let fieldValidator = TextFildsValidator()
-        
+       
         if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) {
             setLabelColor(color: UIColor.red, firstNameErrorLabel)
-            firstNameField.setShadowColor(color: UIColor.red.cgColor)
+            firstNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid first name")
             return false
         }
     
         if !fieldValidator.validateName(name: lastName) {
             setLabelColor(color: UIColor.red, lastNameErrorLabel)
-            lastNameField.setShadowColor(color: UIColor.red.cgColor)
+            lastNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid last name")
             return false
         }
     
         if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) {
             setLabelColor(color: UIColor.red, emailErrorLabel)
-            emailField.setShadowColor(color: UIColor.red.cgColor)
+            emailField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid email")
             return false
         }
         
         if !fieldValidator.validatePassword(password: password) {
             setLabelColor(color: UIColor.red, passwordErrorLabel)
-            passwordField.setShadowColor(color: UIColor.red.cgColor)
+            passwordField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid password")
             return false
         }
         
         if password != confirmPassword {
             setLabelColor(color: UIColor.red, confirmPasswordErrorLabel)
-            confirmField.setShadowColor(color: UIColor.red.cgColor)
+            confirmField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid confirm password")
             return false
         }
