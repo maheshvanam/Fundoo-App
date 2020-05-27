@@ -75,14 +75,16 @@ class SignupViewController: UIViewController {
             return
         }
         
-        validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
+        let validFields = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
         
-        let coreDataService = CoreDataService()
-        coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
-        showAlert()
-        
-        for field in textFields {
-            field?.text=""
+        if validFields {
+            let coreDataService = CoreDataService()
+            coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
+            showAlert()
+            
+            for field in textFields {
+                field?.text=""
+            }
         }
     }
     
@@ -107,39 +109,40 @@ class SignupViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func validateFields(firstName: String, lastName: String, email: String, password: String, confirmPassword: String) {
+    func validateFields(firstName: String, lastName: String, email: String, password: String, confirmPassword: String)-> Bool {
         
         let fieldValidator = TextFildsValidator()
         
         if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) {
             setLabelColor(color: UIColor.red, firstNameErrorLabel)
             firstNameField.setShadowColor(color: UIColor.red.cgColor)
-            return
+            return false
         }
     
         if !fieldValidator.validateName(name: lastName) {
             setLabelColor(color: UIColor.red, lastNameErrorLabel)
             lastNameField.setShadowColor(color: UIColor.red.cgColor)
-            return
+            return false
         }
     
         if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) {
             setLabelColor(color: UIColor.red, emailErrorLabel)
             emailField.setShadowColor(color: UIColor.red.cgColor)
-            return
+            return false
         }
         
         if !fieldValidator.validatePassword(password: password) {
             setLabelColor(color: UIColor.red, passwordErrorLabel)
             passwordField.setShadowColor(color: UIColor.red.cgColor)
-            return
+            return false
         }
         
         if password != confirmPassword {
             setLabelColor(color: UIColor.red, confirmPasswordErrorLabel)
             confirmField.setShadowColor(color: UIColor.red.cgColor)
-            return
+            return false
         }
+        return true
     }
     
 }
