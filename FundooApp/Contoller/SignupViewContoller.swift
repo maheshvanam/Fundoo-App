@@ -99,7 +99,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
     func validateFields(firstName: String, lastName: String, email:
         String, password: String, confirmPassword: String)-> Bool {
         
-        let fieldValidator = TextFildsValidator()
+        let fieldValidator = TextFieldValidator()
        
         if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) && firstName.count != 0 {
             setLabelColor(color: UIColor.red, firstNameErrorLabel)

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class TextFildsValidator {
+class TextFieldValidator {
     
     public func validateName(name: String) ->Bool {
         let nameRegix = "^\\w{3,12}"
