@@ -25,29 +25,22 @@ class CoreDataService {
         appDelegate.saveContext()
     }
     
-    func checkValidUserOrNot(email: String,password: String)-> (String, Bool) {
+    func checkValidUserOrNot(email: String,password: String) throws -> Result {
         let predicate = NSPredicate(format: "email = %@", email)
         fetchRequest.predicate = predicate
-        do{
             let result = try context.fetch(fetchRequest) as NSArray
             if result.count > 0 {
                 let userEntity = result.firstObject as! User
                 if(userEntity.email == email && userEntity.password == password) {
-                    return ("Success",true)
+                    return Result.SUCCESS
                 }
                 else {
-                    return ("Unsuccess",false)
+                    return Result.INVALID_PASSWORD
                 }
             }
             else{
-                return ("invalidEmail",false)
+                return Result.INVALID_EMAIL
             }
-        }
-        catch{
-            let fetchError =  error as NSError
-            print("error", fetchError.localizedDescription)
-        }
-        return ("Unsucess",false)
     }
     
 }

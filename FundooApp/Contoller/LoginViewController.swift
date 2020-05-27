@@ -39,21 +39,25 @@ class LoginViewController: UIViewController {
         guard let email = emailField.text ,let password = passwordField.text else {
             return
         }
-        
-        let authenticationResult = coreDataService.checkValidUserOrNot(email: email, password: password)
-        
-        if  authenticationResult.1 {
-            emailField.text=""
-            passwordField.text=""
-            openUserHome()
+        do{
+            let authenticationResult = try coreDataService.checkValidUserOrNot(email: email, password: password)
+            
+            if  authenticationResult == Result.SUCCESS {
+                emailField.text=""
+                passwordField.text=""
+                openUserHome()
+            }
+            else if  authenticationResult == Result.INVALID_EMAIL {
+                showAlert(title: "Error", message: "Invalid email")
+                emailErrorLabel.textColor = UIColor.red
+            }
+            else{
+                showAlert(title: "Error", message: "invalid password")
+                passwordErrorLabel.textColor = UIColor.red
+            }
         }
-        else if  authenticationResult.0 == "invalidEmail"{
-            showAlert(title: "Error", message: "Invalid email")
-            emailErrorLabel.textColor = UIColor.red
-        }
-        else{
-            showAlert(title: "Error", message: "invalid password")
-            passwordErrorLabel.textColor = UIColor.red
+        catch{
+            showAlert(title: "Fetch Error", message: "Fetching data is failed...")
         }
     }
     
