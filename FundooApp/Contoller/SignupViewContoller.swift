@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var signUpView: UIView!
@@ -26,20 +26,62 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var passwordErrorLabel: UILabel!
     @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
     
-    var isExpand: Bool = true
+    var isExpand = true, fieldsAreValid = false
+    var firstName = "", lastName = "",email = "", password = "", confirmPassword = ""
     
     override func viewDidLoad() {
-        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height)
+        
+        let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
+        for field in textFields {
+            field?.delegate = self
+        }
+        
         signUpButton.layer.cornerRadius = 8.0
+        
         let viewController = LoginViewController()
+        
         logoLabel.attributedText = viewController.getAttributedLogo(logoText: "Fundoo")
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keboardAppear), name: UIResponder.keyboardWillShowNotification
             , object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keboardDisappear), name: UIResponder.keyboardWillHideNotification
         , object: nil)
         
         let viewGesture = UITapGestureRecognizer(target: self, action:  #selector (closeKeyboard))
         self.signUpView.addGestureRecognizer(viewGesture)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
+
+        for field in textFields {
+            field?.clearBackgroundColor()
+        }
+        
+        setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )
+        
+        guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
+            signUpButton.isEnabled = false
+            return
+        }
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.password = password
+        self.confirmPassword = confirmPassword
+        
+        fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
+        
+        if fieldsAreValid {
+            signUpButton.isEnabled = true
+        }
+        else
+        {
+            signUpButton.isEnabled = false
+        }
+        
     }
     
     @objc func closeKeyboard() {
@@ -63,36 +105,13 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
-        let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
-        for field in textFields {
-            field?.clearBackgroundColor()
-        }
         
-        setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )
+        showAlert(title: "tapped", message: "")
         
-        guard let firstName = firstNameField.text ,let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
-            return
-        }
-        
-        let validFields = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
-        
-        if validFields {
+        if fieldsAreValid {
             let coreDataService = CoreDataService()
             coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
             showAlert(title: "", message: "Successfully Registered.")
-            
-            for field in textFields {
-                field?.text=""
-            }
-        }
-    }
-    
-    func validateTextFields() {
-        if firstNameField.text!.count > 0 && lastNameField.text!.count > 0 {
-            signUpButton.isEnabled = true
-        }
-        else {
-            signUpButton.isEnabled = false
         }
     }
     
@@ -103,44 +122,46 @@ class SignupViewController: UIViewController {
     }
     
     func showAlert(title: String, message: String) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
-    func validateFields(firstName: String, lastName: String, email: String, password: String, confirmPassword: String)-> Bool {
+    func validateFields(firstName: String, lastName: String, email:
+        String, password: String, confirmPassword: String)-> Bool {
         
         let fieldValidator = TextFildsValidator()
        
-        if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) {
+        if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) && firstName.count != 0 {
             setLabelColor(color: UIColor.red, firstNameErrorLabel)
             firstNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid first name")
             return false
         }
     
-        if !fieldValidator.validateName(name: lastName) {
+        if !fieldValidator.validateName(name: lastName) && lastName.count != 0 {
             setLabelColor(color: UIColor.red, lastNameErrorLabel)
             lastNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid last name")
             return false
         }
     
-        if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) {
+        if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) && email.count != 0 {
             setLabelColor(color: UIColor.red, emailErrorLabel)
             emailField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid email")
             return false
         }
         
-        if !fieldValidator.validatePassword(password: password) {
+        if !fieldValidator.validatePassword(password: password) && password.count != 0 {
             setLabelColor(color: UIColor.red, passwordErrorLabel)
             passwordField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid password")
             return false
         }
         
-        if password != confirmPassword {
+        if password != confirmPassword && confirmPassword.count != 0 {
             setLabelColor(color: UIColor.red, confirmPasswordErrorLabel)
             confirmField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid confirm password")
