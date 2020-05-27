@@ -80,7 +80,7 @@ class SignupViewController: UIViewController {
         if validFields {
             let coreDataService = CoreDataService()
             coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
-            showAlert()
+            showAlert(title: "", message: "Successfully Registered.")
             
             for field in textFields {
                 field?.text=""
@@ -103,8 +103,8 @@ class SignupViewController: UIViewController {
         }
     }
     
-    func showAlert() {
-        let alert = UIAlertController(title: "", message: "Successfully Registered.", preferredStyle: UIAlertController.Style.alert)
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -116,30 +116,35 @@ class SignupViewController: UIViewController {
         if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) {
             setLabelColor(color: UIColor.red, firstNameErrorLabel)
             firstNameField.setShadowColor(color: UIColor.red.cgColor)
+            showAlert(title: "Error", message: "Enter valid first name")
             return false
         }
     
         if !fieldValidator.validateName(name: lastName) {
             setLabelColor(color: UIColor.red, lastNameErrorLabel)
             lastNameField.setShadowColor(color: UIColor.red.cgColor)
+            showAlert(title: "Error", message: "Enter valid last name")
             return false
         }
     
         if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) {
             setLabelColor(color: UIColor.red, emailErrorLabel)
             emailField.setShadowColor(color: UIColor.red.cgColor)
+            showAlert(title: "Error", message: "Enter valid email")
             return false
         }
         
         if !fieldValidator.validatePassword(password: password) {
             setLabelColor(color: UIColor.red, passwordErrorLabel)
             passwordField.setShadowColor(color: UIColor.red.cgColor)
+            showAlert(title: "Error", message: "Enter valid password")
             return false
         }
         
         if password != confirmPassword {
             setLabelColor(color: UIColor.red, confirmPasswordErrorLabel)
             confirmField.setShadowColor(color: UIColor.red.cgColor)
+            showAlert(title: "Error", message: "Enter valid confirm password")
             return false
         }
         return true
