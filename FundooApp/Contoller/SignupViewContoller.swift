@@ -53,40 +53,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
         self.signUpView.addGestureRecognizer(viewGesture)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        var fieldsAreEmpty = true
-        
-        let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
-
-        for field in textFields {
-            field?.clearBackgroundColor()
-        }
-        
-        setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )
-        
-        guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
-            signUpButton.isEnabled = false
-            return
-        }
-        
-        self.firstName = firstName
-        self.lastName = lastName
-        self.email = email
-        self.password = password
-        self.confirmPassword = confirmPassword
-        
-        fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
-        fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
-        if fieldsAreValid && !fieldsAreEmpty{
-            signUpButton.isEnabled = true
-        }
-        else
-        {
-            signUpButton.isEnabled = false
-        }
-        
-    }
-    
     @objc func closeKeyboard() {
         self.signUpView.endEditing(true)
     }
@@ -113,6 +79,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
             let coreDataService = CoreDataService()
             coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
             showAlert(title: "", message: "Successfully Registered.")
+            clearAllFields()
         }
     }
     
@@ -166,6 +133,42 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
         }
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        var fieldsAreEmpty = true
+        
+        let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
+
+        for field in textFields {
+            field?.clearBackgroundColor()
+        }
+        
+        setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )
+        
+        guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
+            signUpButton.isEnabled = false
+            return
+        }
+        
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.password = password
+        self.confirmPassword = confirmPassword
+        
+        fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
+        fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
+        if fieldsAreValid && !fieldsAreEmpty{
+            signUpButton.isEnabled = true
+        }
+        else
+        {
+            signUpButton.isEnabled = false
+        }
+        
+    }
+    
     func checkFieldsAreEmptyOrNot(fields: [UITextField?])-> Bool {
         for field in fields {
             if field?.text!.count == 0 {
@@ -173,5 +176,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
             }
         }
         return false
+    }
+    
+    func clearAllFields() {
+        firstNameField.text = ""
+        lastNameField.text = ""
+        emailField.text = ""
+        passwordField.text = ""
+        confirmField.text = ""
     }
 }
