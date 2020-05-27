@@ -71,39 +71,11 @@ class SignupViewController: UIViewController {
         
         setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )
         
-        let fieldValidator = TextFildsValidator()
-        
         guard let firstName = firstNameField.text ,let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
             return
         }
         
-        if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) {
-            setLabelColor(color: UIColor.red, firstNameErrorLabel)
-            firstNameField.setShadowColor(color: UIColor.red.cgColor)
-            return
-        }
-        
-        if !fieldValidator.validateName(name: lastName) {
-            setLabelColor(color: UIColor.red, lastNameErrorLabel)
-            lastNameField.setShadowColor(color: UIColor.red.cgColor)
-            return
-        }
-        
-        if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) {
-            setLabelColor(color: UIColor.red, emailErrorLabel)
-            emailField.setShadowColor(color: UIColor.red.cgColor)
-            return
-        }
-        if !fieldValidator.validatePassword(password: password) {
-            setLabelColor(color: UIColor.red, passwordErrorLabel)
-            passwordField.setShadowColor(color: UIColor.red.cgColor)
-            return
-        }
-        if password != confirmPassword {
-            setLabelColor(color: UIColor.red, confirmPasswordErrorLabel)
-            confirmField.setShadowColor(color: UIColor.red.cgColor)
-            return
-        }
+        validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
         
         let coreDataService = CoreDataService()
         coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
@@ -129,9 +101,45 @@ class SignupViewController: UIViewController {
         }
     }
     
-    func showAlert(){
+    func showAlert() {
         let alert = UIAlertController(title: "", message: "Successfully Registered.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func validateFields(firstName: String, lastName: String, email: String, password: String, confirmPassword: String) {
+        
+        let fieldValidator = TextFildsValidator()
+        
+        if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) {
+            setLabelColor(color: UIColor.red, firstNameErrorLabel)
+            firstNameField.setShadowColor(color: UIColor.red.cgColor)
+            return
+        }
+    
+        if !fieldValidator.validateName(name: lastName) {
+            setLabelColor(color: UIColor.red, lastNameErrorLabel)
+            lastNameField.setShadowColor(color: UIColor.red.cgColor)
+            return
+        }
+    
+        if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) {
+            setLabelColor(color: UIColor.red, emailErrorLabel)
+            emailField.setShadowColor(color: UIColor.red.cgColor)
+            return
+        }
+        
+        if !fieldValidator.validatePassword(password: password) {
+            setLabelColor(color: UIColor.red, passwordErrorLabel)
+            passwordField.setShadowColor(color: UIColor.red.cgColor)
+            return
+        }
+        
+        if password != confirmPassword {
+            setLabelColor(color: UIColor.red, confirmPasswordErrorLabel)
+            confirmField.setShadowColor(color: UIColor.red.cgColor)
+            return
+        }
+    }
+    
 }
