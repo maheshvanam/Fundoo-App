@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func onCreateAcoountTapped(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "SignupViewController") as? SignupViewController else {
+        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "SignupViewController") as? SignUpViewController else {
                  return
             }
         navigationController?.pushViewController(destinationViewController, animated: false)

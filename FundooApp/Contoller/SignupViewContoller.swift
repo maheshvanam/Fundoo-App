@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SignupViewController: UIViewController, UITextFieldDelegate{
+class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var signUpView: UIView!
@@ -39,7 +39,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
         
         signUpButton.layer.cornerRadius = 8.0
         
-        let viewController = LoginViewController()
+        let viewController = SignInViewController()
         
         logoLabel.attributedText = viewController.getAttributedLogo(logoText: "Fundoo")
         
