@@ -134,20 +134,4 @@ class SignupViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-}
-
-extension UITextField {
-    
-    func setShadowColor(color: CGColor) {
-        self.borderStyle = .roundedRect
-        self.layer.shadowColor = color
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 0.0
-    }
-    
-    func clearShadowColor() {
-        self.layer.shadowColor = UIColor.clear.cgColor
-    }
 }
