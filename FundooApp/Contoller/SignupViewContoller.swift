@@ -32,6 +32,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         
         let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
+        
         for field in textFields {
             field?.delegate = self
         }
@@ -53,6 +54,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        var fieldsAreEmpty = true
         
         let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
 
@@ -66,6 +68,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
             signUpButton.isEnabled = false
             return
         }
+        
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
@@ -73,8 +76,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
         self.confirmPassword = confirmPassword
         
         fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
-        
-        if fieldsAreValid {
+        fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
+        if fieldsAreValid && !fieldsAreEmpty{
             signUpButton.isEnabled = true
         }
         else
@@ -105,8 +108,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
-        
-        showAlert(title: "tapped", message: "")
         
         if fieldsAreValid {
             let coreDataService = CoreDataService()
@@ -139,28 +140,24 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
             showAlert(title: "Error", message: "Enter valid first name")
             return false
         }
-    
         if !fieldValidator.validateName(name: lastName) && lastName.count != 0 {
             setLabelColor(color: UIColor.red, lastNameErrorLabel)
             lastNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid last name")
             return false
         }
-    
         if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) && email.count != 0 {
             setLabelColor(color: UIColor.red, emailErrorLabel)
             emailField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid email")
             return false
         }
-        
         if !fieldValidator.validatePassword(password: password) && password.count != 0 {
             setLabelColor(color: UIColor.red, passwordErrorLabel)
             passwordField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid password")
             return false
         }
-        
         if password != confirmPassword && confirmPassword.count != 0 {
             setLabelColor(color: UIColor.red, confirmPasswordErrorLabel)
             confirmField.setBackgroundColour(color: UIColor.red.cgColor)
@@ -169,5 +166,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
         }
         return true
     }
-    
+    func checkFieldsAreEmptyOrNot(fields: [UITextField?])-> Bool {
+        for field in fields {
+            if field?.text!.count == 0 {
+                return true
+            }
+        }
+        return false
+    }
 }
