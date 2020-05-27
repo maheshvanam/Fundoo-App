@@ -39,6 +39,12 @@ class SignInViewController: UIViewController {
         guard let email = emailField.text ,let password = passwordField.text else {
             return
         }
+        
+        if email.count == 0 && password.count == 0 {
+            showAlert(title: "Error", message: "Please fill the all fields")
+            return
+        }
+        
         do{
             let authenticationResult = try coreDataService.checkValidUserOrNot(email: email, password: password)
             
