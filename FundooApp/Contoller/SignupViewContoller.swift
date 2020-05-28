@@ -26,8 +26,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordErrorLabel: UILabel!
     @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
     
-    var isExpand = true, fieldsAreValid = false
-    var firstName = "", lastName = "",email = "", password = "", confirmPassword = ""
+    var isExpand = true
     
     override func viewDidLoad() {
         
@@ -74,7 +73,12 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
+        guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
+            signUpButton.isEnabled = false
+            return
+        }
         
+        let fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
         if fieldsAreValid {
             let coreDataService = CoreDataService()
             coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
@@ -101,25 +105,25 @@ class SignUpViewController: UIViewController {
             showAlert(title: "Error", message: "Enter valid first name")
             return false
         }
-        if !fieldValidator.validateName(name: lastName) && lastName.count != 0 {
+        if !fieldValidator.validateName(name: lastName) && !lastName.isEmpty {
             lastNameErrorLabel.text = "*Enter valid last name"
             lastNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid last name")
             return false
         }
-        if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) && email.count != 0 {
+        if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) && !email.isEmpty {
             emailErrorLabel.text = "*Enter valid email"
             emailField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid email")
             return false
         }
-        if !fieldValidator.validatePassword(password: password) && password.count != 0 {
+        if !fieldValidator.validatePassword(password: password) && !password.isEmpty {
             passwordErrorLabel.text = "*Enter valid password"
             passwordField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid password")
             return false
         }
-        if password != confirmPassword && confirmPassword.count != 0 {
+        if password != confirmPassword && !confirmPassword.isEmpty {
             confirmPasswordErrorLabel.text = "*Those passwords didn't match. Try again"
             confirmField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid confirm password")
