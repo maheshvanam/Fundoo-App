@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SignUpViewController: UIViewController, UITextFieldDelegate{
+class SignUpViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var signUpView: UIView!
