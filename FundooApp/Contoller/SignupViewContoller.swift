@@ -27,14 +27,15 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
     
     var isExpand = true
-    
+    var errorLabels : [UILabel] = []
+    var textFields : [UITextField] = []
     override func viewDidLoad() {
-        
-        let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
+        initializeArrays()
         
         for field in textFields {
-            field?.delegate = self
+            field.delegate = self
         }
+        
         signUpButton.layer.backgroundColor = UIColor.gray.cgColor
         signUpButton.layer.cornerRadius = 8.0
         
@@ -135,25 +136,7 @@ class SignUpViewController: UIViewController {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
-/*
-        for field in textFields {
-            field?.clearBackgroundColor()
-        }
-        
-        setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )*/
-        
-        /*guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
-            signUpButton.isEnabled = false
-            return
-        }
-        
-        self.firstName = firstName
-        self.lastName = lastName
-        self.email = email
-        self.password = password
-        self.confirmPassword = confirmPassword
-        
-        fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)*/
+
         let fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
         if !fieldsAreEmpty{
             signUpButton.isEnabled = true
@@ -182,5 +165,11 @@ class SignUpViewController: UIViewController {
         emailField.text = ""
         passwordField.text = ""
         confirmField.text = ""
+    }
+    
+    func initializeArrays(){
+        errorLabels = [firstNameErrorLabel, lastNameErrorLabel, emailErrorLabel, passwordErrorLabel, confirmPasswordErrorLabel]
+        
+        textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
     }
 }
