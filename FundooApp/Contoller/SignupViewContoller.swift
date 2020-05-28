@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
         for field in textFields {
             field?.delegate = self
         }
-        
+        signUpButton.layer.backgroundColor = UIColor.gray.cgColor
         signUpButton.layer.cornerRadius = 8.0
         
         let viewController = SignInViewController()
@@ -135,17 +135,15 @@ class SignUpViewController: UIViewController {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        var fieldsAreEmpty = true
-        
         let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
-
+/*
         for field in textFields {
             field?.clearBackgroundColor()
         }
         
-        setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )
+        setLabelColor(color: UIColor.white,firstNameErrorLabel ,lastNameErrorLabel ,emailErrorLabel ,passwordErrorLabel ,confirmPasswordErrorLabel )*/
         
-        guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
+        /*guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
             signUpButton.isEnabled = false
             return
         }
@@ -156,13 +154,15 @@ class SignUpViewController: UIViewController {
         self.password = password
         self.confirmPassword = confirmPassword
         
-        fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
-        fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
-        if fieldsAreValid && !fieldsAreEmpty{
+        fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)*/
+        let fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
+        if !fieldsAreEmpty{
             signUpButton.isEnabled = true
+            signUpButton.layer.backgroundColor = UIColor.blue.cgColor
         }
         else
         {
+            signUpButton.layer.backgroundColor = UIColor.gray.cgColor
             signUpButton.isEnabled = false
         }
         
