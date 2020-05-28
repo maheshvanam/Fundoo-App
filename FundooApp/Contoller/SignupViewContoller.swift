@@ -31,11 +31,9 @@ class SignUpViewController: UIViewController {
     var textFields : [UITextField] = []
     override func viewDidLoad() {
         initializeArrays()
-        
         for field in textFields {
             field.delegate = self
         }
-        
         signUpButton.layer.backgroundColor = UIColor.gray.cgColor
         signUpButton.layer.cornerRadius = 8.0
         
@@ -74,6 +72,8 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
+        
+        clearErrorLabels()
         guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
             signUpButton.isEnabled = false
             return
@@ -84,7 +84,7 @@ class SignUpViewController: UIViewController {
             let coreDataService = CoreDataService()
             coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
             showAlert(title: "", message: "Successfully Registered.")
-            clearAllFields()
+            clearTextFields()
         }
     }
     
@@ -159,12 +159,16 @@ class SignUpViewController: UIViewController {
         return false
     }
     
-    func clearAllFields() {
-        firstNameField.text = ""
-        lastNameField.text = ""
-        emailField.text = ""
-        passwordField.text = ""
-        confirmField.text = ""
+    func clearTextFields() {
+        for textField in textFields {
+            textField.text = ""
+        }
+    }
+    
+    func clearErrorLabels(){
+        for label in errorLabels {
+            label.text = ""
+        }
     }
     
     func initializeArrays(){
