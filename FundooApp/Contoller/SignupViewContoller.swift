@@ -13,18 +13,21 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var signUpView: UIView!
+    
     @IBOutlet weak var confirmField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
+    
     @IBOutlet weak var logoLabel: UILabel!
-    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var firstNameErrorLabel: UILabel!
     @IBOutlet weak var lastNameErrorLabel: UILabel!
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
+    
+    @IBOutlet weak var signUpButton: UIButton!
     
     var isExpand = true
     var errorLabels : [UILabel] = []
@@ -32,13 +35,13 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         initializeArrays()
-        for field in textFields {
-            field.delegate = self
-        }
         signUpButton.layer.cornerRadius = 8.0
         signUpButton.isEnabled = false
         addGuestures()
         logoLabel.attributedText = Helper.getAttributedLogo()
+        for field in textFields {
+            field.delegate = self
+        }
     }
     
     @objc func closeKeyboard() {
@@ -126,9 +129,6 @@ class SignUpViewController: UIViewController {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        let textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
-
         let fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
         if !fieldsAreEmpty{
             signUpButton.isEnabled = true
@@ -156,25 +156,25 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func clearTextFieldsBackgroundColor(){
+    func clearTextFieldsBackgroundColor() {
         for textField in textFields {
             textField.clearBackgroundColor()
         }
     }
     
-    func clearErrorLabels(){
+    func clearErrorLabels() {
         for label in errorLabels {
             label.text = ""
         }
     }
     
-    func initializeArrays(){
+    func initializeArrays() {
         errorLabels = [firstNameErrorLabel, lastNameErrorLabel, emailErrorLabel, passwordErrorLabel, confirmPasswordErrorLabel]
         
         textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
     }
     
-    func addGuestures(){
+    func addGuestures() {
         NotificationCenter.default.addObserver(self, selector: #selector(keboardAppear), name: UIResponder.keyboardWillShowNotification
             , object: nil)
         
