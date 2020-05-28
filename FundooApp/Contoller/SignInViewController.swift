@@ -8,9 +8,12 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController ,SignInDelegate{
+   
     
     var signInPresenter: SignInPresenter?
+    
+    
     
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
@@ -23,7 +26,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        signInPresenter = SignInPresenter()
+        signInPresenter = SignInPresenter(delegate: self)
         signInButton.layer.cornerRadius = 8.0
         let text = "Fundoo"
         logoLabel.attributedText = self.getAttributedLogo(logoText : text)
@@ -34,43 +37,10 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onSignInTapped(_ sender: Any) {
-        
-        self.signInPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
-        
-        let coreDataService = CoreDataService()
-        
         emailErrorLabel.textColor = UIColor.white
         passwordErrorLabel.textColor = UIColor.white
         
-        guard let email = emailField.text ,let password = passwordField.text else {
-            return
-        }
-        
-        if email.count == 0 && password.count == 0 {
-            showAlert(title: "Error", message: "Please fill the all fields")
-            return
-        }
-        
-        do{
-            let authenticationResult = try coreDataService.checkValidUserOrNot(email: email, password: password)
-            
-            if  authenticationResult == Result.SUCCESS {
-                emailField.text=""
-                passwordField.text=""
-                openUserHome()
-            }
-            else if  authenticationResult == Result.INVALID_EMAIL {
-                showAlert(title: "Error", message: "Invalid email")
-                emailErrorLabel.textColor = UIColor.red
-            }
-            else{
-                showAlert(title: "Error", message: "invalid password")
-                passwordErrorLabel.textColor = UIColor.red
-            }
-        }
-        catch{
-            showAlert(title: "Fetch Error", message: "Fetching data is failed...")
-        }
+        self.signInPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
     }
     
     @IBAction func onCreateAcoountTapped(_ sender: Any) {
