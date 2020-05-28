@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 class SignInPresenter {
     
     var signDelegate : SignInDelegate
@@ -16,7 +17,11 @@ class SignInPresenter {
     }
     
     func signInWithEmailAndPassword(email: String,password: String) {
+        
         let coreDataService = CoreDataService()
+        self.signDelegate.emailErrorLabel.textColor = UIColor.white
+        self.signDelegate.passwordErrorLabel.textColor = UIColor.white
+
         if email.isEmpty && password.isEmpty {
             self.signDelegate.showAlert(title: "Error", message: "Please fill the all fields")
             return
@@ -42,14 +47,4 @@ class SignInPresenter {
             self.signDelegate.showAlert(title: "Fetch Error", message: "Fetching data is failed...")
         }
     }
-}
-
-protocol SignInDelegate {
-    var emailField: UITextField! { get set }
-    var passwordField: UITextField! { get set }
-    var emailErrorLabel: UILabel! { get set }
-    var passwordErrorLabel: UILabel! { get set }
-    
-    func openUserHome()
-    func showAlert(title: String, message: String)
 }

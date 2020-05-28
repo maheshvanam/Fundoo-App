@@ -37,9 +37,6 @@ class SignInViewController: UIViewController ,SignInDelegate{
     }
     
     @IBAction func onSignInTapped(_ sender: Any) {
-        emailErrorLabel.textColor = UIColor.white
-        passwordErrorLabel.textColor = UIColor.white
-        
         self.signInPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
     }
     
