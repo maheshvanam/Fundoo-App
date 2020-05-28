@@ -42,15 +42,7 @@ class SignUpViewController: UIViewController {
         let viewController = SignInViewController()
         
         logoLabel.attributedText = viewController.getAttributedLogo(logoText: "Fundoo")
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keboardAppear), name: UIResponder.keyboardWillShowNotification
-            , object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keboardDisappear), name: UIResponder.keyboardWillHideNotification
-        , object: nil)
-        
-        let viewGesture = UITapGestureRecognizer(target: self, action:  #selector (closeKeyboard))
-        self.signUpView.addGestureRecognizer(viewGesture)
+        addGuestures()
     }
     
     @objc func closeKeyboard() {
@@ -184,5 +176,16 @@ class SignUpViewController: UIViewController {
         errorLabels = [firstNameErrorLabel, lastNameErrorLabel, emailErrorLabel, passwordErrorLabel, confirmPasswordErrorLabel]
         
         textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
+    }
+    
+    func addGuestures(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keboardAppear), name: UIResponder.keyboardWillShowNotification
+            , object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keboardDisappear), name: UIResponder.keyboardWillHideNotification
+        , object: nil)
+        
+        let viewGesture = UITapGestureRecognizer(target: self, action:  #selector (closeKeyboard))
+        self.signUpView.addGestureRecognizer(viewGesture)
     }
 }
