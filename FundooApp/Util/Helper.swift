@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class Helper {
     
-    func getAttributedLogo() -> NSAttributedString {
+    static func getAttributedLogo() -> NSAttributedString {
         var colorsArray : [UIColor] = [ UIColor.blue , UIColor.red , UIColor.yellow ,
                                         UIColor.blue , UIColor.green , UIColor.red ]
         colorsArray.append(UIColor.blue)

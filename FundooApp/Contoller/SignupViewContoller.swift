@@ -38,7 +38,7 @@ class SignUpViewController: UIViewController {
         signUpButton.layer.cornerRadius = 8.0
         signUpButton.isEnabled = false
         addGuestures()
-        logoLabel.attributedText = Helper().getAttributedLogo()
+        logoLabel.attributedText = Helper.getAttributedLogo()
     }
     
     @objc func closeKeyboard() {

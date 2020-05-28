@@ -28,8 +28,7 @@ class SignInViewController: UIViewController ,SignInDelegate{
         // Do any additional setup after loading the view.
         signInPresenter = SignInPresenter(delegate: self)
         signInButton.layer.cornerRadius = 8.0
-        let helper = Helper()
-        logoLabel.attributedText = helper.getAttributedLogo()
+        logoLabel.attributedText = Helper.getAttributedLogo()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
