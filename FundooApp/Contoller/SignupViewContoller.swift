@@ -74,6 +74,8 @@ class SignUpViewController: UIViewController {
     @IBAction func onSignUpTapped(_ sender: Any) {
         
         clearErrorLabels()
+        clearTextFieldsBackgroundColor()
+        
         guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
             signUpButton.isEnabled = false
             return
@@ -162,6 +164,12 @@ class SignUpViewController: UIViewController {
     func clearTextFields() {
         for textField in textFields {
             textField.text = ""
+        }
+    }
+    
+    func clearTextFieldsBackgroundColor(){
+        for textField in textFields {
+            textField.clearBackgroundColor()
         }
     }
     
