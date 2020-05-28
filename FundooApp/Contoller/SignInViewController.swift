@@ -10,6 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
+    var signInPresenter: SignInPresenter?
+    
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     
@@ -21,6 +23,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        signInPresenter = SignInPresenter()
         signInButton.layer.cornerRadius = 8.0
         let text = "Fundoo"
         logoLabel.attributedText = self.getAttributedLogo(logoText : text)
@@ -31,6 +34,9 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onSignInTapped(_ sender: Any) {
+        
+        self.signInPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
+        
         let coreDataService = CoreDataService()
         
         emailErrorLabel.textColor = UIColor.white
@@ -97,10 +103,8 @@ class SignInViewController: UIViewController {
     }
     
     func showAlert(title: String, message: String) {
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }
-
