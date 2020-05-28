@@ -17,6 +17,7 @@
 		8419D2B3247A519E00C4F93A /* FundooAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D2B2247A519E00C4F93A /* FundooAppTests.swift */; };
 		8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */; };
 		841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */; };
+		841BBAE7248042360080C591 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE6248042360080C591 /* Helper.swift */; };
 		846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */; };
 		846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */; };
 		846DAAC9247BACCE004F3DA0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC8247BACCE004F3DA0 /* CoreDataService.swift */; };
@@ -53,6 +54,7 @@
 		8419D2B4247A519E00C4F93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewContoller.swift; sourceTree = "<group>"; };
 		841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		841BBAE6248042360080C591 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		846DAAC8247BACCE004F3DA0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */,
 				84B49C56247EE94400D3C940 /* Result.swift */,
 				841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */,
+				841BBAE6248042360080C591 /* Helper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
 				84E26B49247C4F8C000D8BE5 /* UserHomeController.swift in Sources */,
+				841BBAE7248042360080C591 /* Helper.swift in Sources */,
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */,
 				84C119C6247FA7B3006421AE /* SignInDelegate.swift in Sources */,

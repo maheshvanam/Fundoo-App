@@ -35,14 +35,12 @@ class SignUpViewController: UIViewController {
         for field in textFields {
             field.delegate = self
         }
-        
         signUpButton.layer.cornerRadius = 8.0
         signUpButton.isEnabled = false
-        
-        let viewController = SignInViewController()
-        
-        logoLabel.attributedText = viewController.getAttributedLogo(logoText: "Fundoo")
         addGuestures()
+        let viewController = SignInViewController()
+        logoLabel.attributedText = viewController.getAttributedLogo(logoText: "Fundoo")
+        
     }
     
     @objc func closeKeyboard() {
