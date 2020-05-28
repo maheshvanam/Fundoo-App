@@ -29,13 +29,15 @@ class SignUpViewController: UIViewController {
     var isExpand = true
     var errorLabels : [UILabel] = []
     var textFields : [UITextField] = []
+    
     override func viewDidLoad() {
         initializeArrays()
         for field in textFields {
             field.delegate = self
         }
-        signUpButton.layer.backgroundColor = UIColor.gray.cgColor
+        
         signUpButton.layer.cornerRadius = 8.0
+        signUpButton.isEnabled = false
         
         let viewController = SignInViewController()
         
@@ -102,31 +104,31 @@ class SignUpViewController: UIViewController {
         
         let fieldValidator = TextFieldValidator()
        
-        if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) && !firstName.isEmpty {
+        if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) {
             firstNameErrorLabel.text = "*Enter valid first name"
             firstNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid first name")
             return false
         }
-        if !fieldValidator.validateName(name: lastName) && !lastName.isEmpty {
+        if !fieldValidator.validateName(name: lastName) {
             lastNameErrorLabel.text = "*Enter valid last name"
             lastNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid last name")
             return false
         }
-        if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) && !email.isEmpty {
+        if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) {
             emailErrorLabel.text = "*Enter valid email"
             emailField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid email")
             return false
         }
-        if !fieldValidator.validatePassword(password: password) && !password.isEmpty {
+        if !fieldValidator.validatePassword(password: password) {
             passwordErrorLabel.text = "*Enter valid password"
             passwordField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid password")
             return false
         }
-        if password != confirmPassword && !confirmPassword.isEmpty {
+        if password != confirmPassword {
             confirmPasswordErrorLabel.text = "*Those passwords didn't match. Try again"
             confirmField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid confirm password")
@@ -149,7 +151,6 @@ class SignUpViewController: UIViewController {
             signUpButton.layer.backgroundColor = UIColor.gray.cgColor
             signUpButton.isEnabled = false
         }
-        
     }
     
     func checkFieldsAreEmptyOrNot(fields: [UITextField?])-> Bool {
