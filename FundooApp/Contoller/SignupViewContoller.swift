@@ -83,11 +83,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func setLabelColor(color: UIColor ,_ labels: UILabel...) {
-        for label in labels {
-            label.textColor = color
-        }
-    }
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -100,32 +95,32 @@ class SignUpViewController: UIViewController {
         
         let fieldValidator = TextFieldValidator()
        
-        if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) && firstName.count != 0 {
-            setLabelColor(color: UIColor.red, firstNameErrorLabel)
+        if !fieldValidator.validateName(name: firstName.trimmingCharacters(in: .whitespaces)) && !firstName.isEmpty {
+            firstNameErrorLabel.text = "*Enter valid first name"
             firstNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid first name")
             return false
         }
         if !fieldValidator.validateName(name: lastName) && lastName.count != 0 {
-            setLabelColor(color: UIColor.red, lastNameErrorLabel)
+            lastNameErrorLabel.text = "*Enter valid last name"
             lastNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid last name")
             return false
         }
         if !fieldValidator.validateEmailId(emailID: email.trimmingCharacters(in: .whitespaces)) && email.count != 0 {
-            setLabelColor(color: UIColor.red, emailErrorLabel)
+            emailErrorLabel.text = "*Enter valid email"
             emailField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid email")
             return false
         }
         if !fieldValidator.validatePassword(password: password) && password.count != 0 {
-            setLabelColor(color: UIColor.red, passwordErrorLabel)
+            passwordErrorLabel.text = "*Enter valid password"
             passwordField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid password")
             return false
         }
         if password != confirmPassword && confirmPassword.count != 0 {
-            setLabelColor(color: UIColor.red, confirmPasswordErrorLabel)
+            confirmPasswordErrorLabel.text = "*Those passwords didn't match. Try again"
             confirmField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid confirm password")
             return false
