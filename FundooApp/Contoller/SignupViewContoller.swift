@@ -47,13 +47,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @objc func keboardAppear() {
-        if isExpand {
-            self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height + 150)
-            isExpand = false
-        }
-    }
-    
     @objc func keboardDisappear() {
        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height - 150)
         isExpand=true

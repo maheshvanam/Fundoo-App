@@ -19,5 +19,4 @@ protocol SignUpViewPresenterDelegate {
     func clearErrorLabels()
     func initializeArrays()
     func addGuestures()
-    @objc func closeKeyboard()
 }
