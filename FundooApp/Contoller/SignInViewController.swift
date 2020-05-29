@@ -11,7 +11,7 @@ import UIKit
 class SignInViewController: UIViewController ,SignInDelegate{
    
     
-    var signInViewPresenter: SignInPresenterService?
+    var signInViewPresenter: SignInViewPresenterService?
     
     
     
@@ -26,7 +26,7 @@ class SignInViewController: UIViewController ,SignInDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        signInViewPresenter = SignInPresenter(delegate: self)
+        signInViewPresenter = SignInViewPresenter(delegate: self)
         signInButton.layer.cornerRadius = 8.0
         logoLabel.attributedText = Helper.getAttributedLogo()
     }

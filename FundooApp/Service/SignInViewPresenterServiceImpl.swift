@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-class SignInPresenterServiceImpl: SignInPresenterService {
+class SignInViewPresenterServiceImpl: SignInViewPresenterService {
+    
     var signDelegate : SignInDelegate
        init(delegate: SignInDelegate) {
            self.signDelegate = delegate
        }
+    
     func signInWithEmailAndPassword(email: String,password: String) {
         
         let coreDataService = CoreDataService()

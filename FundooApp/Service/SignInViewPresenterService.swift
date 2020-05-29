@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SignInPresenterService {
+protocol SignInViewPresenterService {
     func signInWithEmailAndPassword(email: String,password: String)
 }
