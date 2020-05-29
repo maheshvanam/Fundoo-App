@@ -15,6 +15,9 @@ class CoreDataServiceImpl {
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     private let fetchRequest = NSFetchRequest<User>(entityName: "User")
+}
+
+extension CoreDataServiceImpl : CoreDataService {
     
     func saveUser(firstName: String,lastName: String,email: String,password: String) {
         let  user = User(context: context)
@@ -42,5 +45,4 @@ class CoreDataServiceImpl {
                 return Result.INVALID_EMAIL
             }
     }
-    
 }
