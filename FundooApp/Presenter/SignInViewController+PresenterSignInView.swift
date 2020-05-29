@@ -38,5 +38,12 @@ extension SignInViewController: PresenterSignInViewDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func navigateToSignUpView() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "SignupViewController") as? SignUpViewController else {
+                 return
+            }
+        navigationController?.pushViewController(destinationViewController, animated: false)
+    }
     
 }

@@ -14,4 +14,5 @@ protocol PresenterSignInViewDelegate {
     func updateEmailLabel()
     func navigateToUserHomeView()
     func showAlert(title: String, message: String)
+    func navigateToSignUpView()
 }

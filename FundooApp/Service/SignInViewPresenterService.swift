@@ -10,4 +10,5 @@ import Foundation
 
 protocol SignInViewPresenterService {
     func signInWithEmailAndPassword(email: String,password: String)
+    func onCreateAcoountTapped()
 }

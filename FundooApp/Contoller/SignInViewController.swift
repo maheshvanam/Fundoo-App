@@ -37,11 +37,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onCreateAcoountTapped(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "SignupViewController") as? SignUpViewController else {
-                 return
-            }
-        navigationController?.pushViewController(destinationViewController, animated: false)
+        self.signInViewPresenter?.onCreateAcoountTapped()
     }
     
 }

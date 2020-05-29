@@ -44,5 +44,9 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             self.signViewDelegate.showAlert(title: "Fetch Error", message: "Fetching data is failed...")
         }
     }
+    
+    func onCreateAcoountTapped()  {
+        self.signViewDelegate.navigateToSignUpView()
+    }
 
 }
