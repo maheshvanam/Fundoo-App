@@ -98,12 +98,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func clearErrorLabels() {
-        for label in errorLabels {
-            label.text = ""
-        }
-    }
-    
     func initializeArrays() {
         errorLabels = [firstNameErrorLabel, lastNameErrorLabel, emailErrorLabel, passwordErrorLabel, confirmPasswordErrorLabel]
         

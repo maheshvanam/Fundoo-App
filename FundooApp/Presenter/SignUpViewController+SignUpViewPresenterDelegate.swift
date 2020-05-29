@@ -74,4 +74,10 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
             textField.clearBackgroundColor()
         }
     }
+    
+    func clearErrorLabels() {
+        for label in errorLabels {
+            label.text = ""
+        }
+    }
 }
