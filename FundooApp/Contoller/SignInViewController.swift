@@ -8,12 +8,9 @@
 
 import UIKit
 
-class SignInViewController: UIViewController ,SignInDelegate{
-   
+class SignInViewController: UIViewController, PresenterSignInView{
     
     var signInViewPresenter: SignInViewPresenterService?
-    
-    
     
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
@@ -47,20 +44,4 @@ class SignInViewController: UIViewController ,SignInDelegate{
         navigationController?.pushViewController(destinationViewController, animated: false)
     }
     
-    
-    
-    func openUserHome() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "UserHomeController") as? UserHomeController else {
-                 return
-             }
-        self.dismiss(animated: false, completion: nil)
-             navigationController?.pushViewController(destinationViewController, animated: false)
-    }
-    
-    func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
 }

@@ -11,40 +11,37 @@ import UIKit
 
 class SignInViewPresenterServiceImpl: SignInViewPresenterService {
     
-    var signDelegate : SignInDelegate
-       init(delegate: SignInDelegate) {
-           self.signDelegate = delegate
+    var signViewDelegate : PresenterSignInView
+       init(delegate: PresenterSignInView) {
+           self.signViewDelegate = delegate
        }
     
     func signInWithEmailAndPassword(email: String,password: String) {
         
         let coreDataService = CoreDataService()
-        self.signDelegate.emailErrorLabel.text = ""
-        self.signDelegate.passwordErrorLabel.text = ""
-
+        self.signViewDelegate.clearLabels()
         if email.isEmpty && password.isEmpty {
-            self.signDelegate.showAlert(title: "Error", message: "Please fill the all fields")
+            self.signViewDelegate.showAlert(title: "Error", message: "Please fill the all fields")
             return
         }
         do{
             let authenticationResult = try coreDataService.checkValidUserOrNot(email: email, password: password)
             
             if  authenticationResult == Result.SUCCESS {
-                self.signDelegate.emailField.text=""
-                self.signDelegate.passwordField.text=""
-                self.signDelegate.openUserHome()
+                self.signViewDelegate.clearLabels()
+                self.signViewDelegate.navigateToUserHomeView()
             }
             else if  authenticationResult == Result.INVALID_EMAIL {
-                self.signDelegate.showAlert(title: "Error", message: "Invalid email")
-                self.signDelegate.emailErrorLabel.text = "*Couldn't find your Fundoo Account."
+                self.signViewDelegate.showAlert(title: "Error", message: "Invalid email")
+                self.signViewDelegate.updateEmailLabel()
             }
             else{
-                self.signDelegate.showAlert(title: "Error", message: "invalid password")
-                self.signDelegate.passwordErrorLabel.text = "*Wrong password. Try again or click Forgot password to reset it."
+                self.signViewDelegate.showAlert(title: "Error", message: "invalid password")
+                self.signViewDelegate.updatePasswordLabel()
             }
         }
         catch{
-            self.signDelegate.showAlert(title: "Fetch Error", message: "Fetching data is failed...")
+            self.signViewDelegate.showAlert(title: "Fetch Error", message: "Fetching data is failed...")
         }
     }
 
