@@ -17,13 +17,11 @@ class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
     func onSignUpTapped() {
         self.signUpViewDelegate.clearErrorLabels()
         self.signUpViewDelegate.clearTextFieldsBackgroundColor()
-        
-        
-        
-        let fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
+        var user = self.signUpViewDelegate.getUser()
+        let fieldsAreValid = validateFields(user:user)
         if fieldsAreValid {
             let coreDataService = CoreDataServiceImpl()
-            coreDataService.insertUser(firstName: firstName,lastName: lastName,email: email,password: password)
+            coreDataService.insertUser(firstName: usefirstName,lastName: lastName,email: email,password: password)
             showAlert(title: "", message: "Successfully Registered.")
             clearTextFields()
         }
