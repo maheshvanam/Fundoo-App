@@ -23,4 +23,11 @@ class FundooAppTests: XCTestCase {
         XCTAssertEqual(Result.INVALID_PASSWORD, result)
     }
     
+    func testCoreDataService_whenGivenAValidDetails_ShouldReturn_Success() throws {
+        let dataService = CoreDataServiceImpl()
+        let result = try dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
+        XCTAssertEqual(Result.SUCCESS, result)
+    }
+    
+    
 }
