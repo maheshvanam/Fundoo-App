@@ -98,12 +98,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func clearTextFields() {
-        for textField in textFields {
-            textField.text = ""
-        }
-    }
-    
     func clearTextFieldsBackgroundColor() {
         for textField in textFields {
             textField.clearBackgroundColor()

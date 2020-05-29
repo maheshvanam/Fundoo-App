@@ -62,4 +62,10 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         }
         return false
     }
+    
+    func clearTextFields() {
+        for textField in textFields {
+            textField.text = ""
+        }
+    }
 }
