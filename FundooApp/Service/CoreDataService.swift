@@ -9,7 +9,7 @@
 import Foundation
 protocol CoreDataService {
     
-    func saveUser(firstName: String,lastName: String,email: String,password: String)
+    func insertUser(firstName: String,lastName: String,email: String,password: String)
     
     func checkValidUserOrNot(email: String,password: String) throws -> Result
 }

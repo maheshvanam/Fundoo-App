@@ -135,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */,
+				84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */,
 				84B49C56247EE94400D3C940 /* Result.swift */,
 				841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */,
 				841BBAE6248042360080C591 /* Helper.swift */,
@@ -183,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */,
-				84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */,
 				84A3C9DA2480E3B1003393EC /* CoreDataService.swift */,
 			);
 			path = Service;

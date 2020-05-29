@@ -77,7 +77,7 @@ class SignUpViewController: UIViewController {
         let fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
         if fieldsAreValid {
             let coreDataService = CoreDataServiceImpl()
-            coreDataService.saveUser(firstName: firstName,lastName: lastName,email: email,password: password)
+            coreDataService.insertUser(firstName: firstName,lastName: lastName,email: email,password: password)
             showAlert(title: "", message: "Successfully Registered.")
             clearTextFields()
         }

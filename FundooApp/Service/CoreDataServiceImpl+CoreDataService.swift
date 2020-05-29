@@ -1,22 +1,16 @@
 //
-//  PersistenceService.swift
+//  CoreDataServiceImpl+CoreDataService.swift
 //  FundooApp
 //
-//  Created by admin on 25/05/20.
+//  Created by admin on 29/05/20.
 //  Copyright © 2020 admin. All rights reserved.
 //
 
 import Foundation
-import UIKit
-import CoreData
 
-class CoreDataServiceImpl : CoreDataService {
+extension CoreDataServiceImpl : CoreDataService {
     
-    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
-    private let fetchRequest = NSFetchRequest<User>(entityName: "User")
-    
-    func insertUser(firstName: String,lastName: String,email: String,password: String) {
+    func saveUser(firstName: String,lastName: String,email: String,password: String) {
         let  user = User(context: context)
         user.firstName=firstName
         user.lastName=lastName
