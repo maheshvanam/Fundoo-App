@@ -86,4 +86,15 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         
         textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
     }
+    
+    func addGuestures() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keboardAppear), name: UIResponder.keyboardWillShowNotification
+            , object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keboardDisappear), name: UIResponder.keyboardWillHideNotification
+        , object: nil)
+        
+        let viewGesture = UITapGestureRecognizer(target: self, action:  #selector (closeKeyboard))
+        self.signUpView.addGestureRecognizer(viewGesture)
+    }
 }
