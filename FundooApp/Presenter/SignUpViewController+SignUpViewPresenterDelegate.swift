@@ -80,4 +80,10 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
             label.text = ""
         }
     }
+    
+    func initializeArrays() {
+        errorLabels = [firstNameErrorLabel, lastNameErrorLabel, emailErrorLabel, passwordErrorLabel, confirmPasswordErrorLabel]
+        
+        textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
+    }
 }

@@ -98,12 +98,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func initializeArrays() {
-        errorLabels = [firstNameErrorLabel, lastNameErrorLabel, emailErrorLabel, passwordErrorLabel, confirmPasswordErrorLabel]
-        
-        textFields = [ firstNameField, lastNameField, emailField, passwordField, confirmField ]
-    }
-    
     func addGuestures() {
         NotificationCenter.default.addObserver(self, selector: #selector(keboardAppear), name: UIResponder.keyboardWillShowNotification
             , object: nil)
