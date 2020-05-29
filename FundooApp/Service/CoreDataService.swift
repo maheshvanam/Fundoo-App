@@ -7,9 +7,6 @@
 //
 
 import Foundation
-protocol CoreDataService {
+class CoreDataService: CoreDataServiceImpl {
     
-    func insertUser(firstName: String,lastName: String,email: String,password: String)
-    
-    func checkValidUserOrNot(email: String,password: String) throws -> Result
 }

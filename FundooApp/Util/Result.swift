@@ -10,6 +10,5 @@ import Foundation
 enum Result{
     case INVALID_EMAIL
     case INVALID_PASSWORD
-    case FAILED
     case SUCCESS
 }

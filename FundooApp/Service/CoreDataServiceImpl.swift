@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class CoreDataServiceImpl : CoreDataService {
+class CoreDataServiceImpl : DataService {
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
