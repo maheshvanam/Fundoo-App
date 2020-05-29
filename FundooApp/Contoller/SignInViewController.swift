@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController, PresenterSignInViewDelegate{
+class SignInViewController: UIViewController {
     
     var signInViewPresenter: SignInViewPresenterService?
     

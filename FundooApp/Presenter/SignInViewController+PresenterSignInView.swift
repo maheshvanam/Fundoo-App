@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-extension SignInViewController {
+extension SignInViewController: PresenterSignInViewDelegate {
+    
     func clearLabels() {
         self.emailField.text=""
         self.passwordField.text=""
