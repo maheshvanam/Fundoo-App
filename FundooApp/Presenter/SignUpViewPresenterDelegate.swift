@@ -16,7 +16,6 @@ protocol SignUpViewPresenterDelegate {
     func clearTextFields()
     func clearTextFieldsBackgroundColor()
     func clearErrorLabels()
-    func initializeArrays()
-    func addGuestures()
     func getUser ()->RegistrationUser
+    func navigateToLoginView()
 }

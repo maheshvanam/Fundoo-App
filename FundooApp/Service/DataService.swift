@@ -9,7 +9,7 @@
 import Foundation
 protocol DataService {
     
-    func insertUser(firstName: String,lastName: String,email: String,password: String)
+    func insertUser(registartionUser: RegistrationUser)
     
     func checkValidUserOrNot(email: String,password: String) throws -> Result
 }

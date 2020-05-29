@@ -12,16 +12,17 @@ import CoreData
 
 class CoreDataServiceImpl : DataService {
     
+    
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     private let fetchRequest = NSFetchRequest<User>(entityName: "User")
     
-    func insertUser(firstName: String,lastName: String,email: String,password: String) {
+    func insertUser(registartionUser: RegistrationUser) {
         let  user = User(context: context)
-        user.firstName=firstName
-        user.lastName=lastName
-        user.email=email
-        user.password=password
+        user.firstName=registartionUser.firstName
+        user.lastName=registartionUser.lastName
+        user.email=registartionUser.email
+        user.password=registartionUser.password
         appDelegate.saveContext()
     }
     

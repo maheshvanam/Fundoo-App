@@ -21,31 +21,31 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         
         let fieldValidator = TextFieldValidator()
        
-        if !fieldValidator.validateName(name: user.firstName.trimmingCharacters(in: .whitespaces)) {
+        if !fieldValidator.validateName(name: user.firstName!.trimmingCharacters(in: .whitespaces)) {
             firstNameErrorLabel.text = "*Enter valid first name"
             firstNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid first name")
             return false
         }
-        if !fieldValidator.validateName(name: user.lastName) {
+        if !fieldValidator.validateName(name: user.lastName!) {
             lastNameErrorLabel.text = "*Enter valid last name"
             lastNameField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid last name")
             return false
         }
-        if !fieldValidator.validateEmailId(emailID: user.email.trimmingCharacters(in: .whitespaces)) {
+        if !fieldValidator.validateEmailId(emailID: user.email!.trimmingCharacters(in: .whitespaces)) {
             emailErrorLabel.text = "*Enter valid email"
             emailField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid email")
             return false
         }
-        if !fieldValidator.validatePassword(password: user.password) {
+        if !fieldValidator.validatePassword(password: user.password!) {
             passwordErrorLabel.text = "*Enter valid password"
             passwordField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid password")
             return false
         }
-        if password != user.confirmPassword {
+        if user.password! != user.confirmPassword! {
             confirmPasswordErrorLabel.text = "*Those passwords didn't match. Try again"
             confirmField.setBackgroundColour(color: UIColor.red.cgColor)
             showAlert(title: "Error", message: "Enter valid confirm password")
@@ -98,6 +98,19 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         self.signUpView.addGestureRecognizer(viewGesture)
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
+        if !fieldsAreEmpty{
+            signUpButton.isEnabled = true
+            signUpButton.layer.backgroundColor = UIColor.blue.cgColor
+        }
+        else
+        {
+            signUpButton.layer.backgroundColor = UIColor.gray.cgColor
+            signUpButton.isEnabled = false
+        }
+    }
+    
     @objc func closeKeyboard() {
         self.signUpView.endEditing(true)
     }
@@ -122,5 +135,9 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         }
         user = RegistrationUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
         return user!
+    }
+    
+    func navigateToLoginView(){
+        self.navigationController?.popViewController(animated: false)
     }
 }

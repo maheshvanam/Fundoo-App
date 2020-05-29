@@ -48,26 +48,10 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func onSiginInInsteadTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
+        self.signUpViewPresenter?.onSiginInInsteadTapped()
     }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
-        
-        
-    }
-    
-    
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let fieldsAreEmpty = checkFieldsAreEmptyOrNot(fields: textFields)
-        if !fieldsAreEmpty{
-            signUpButton.isEnabled = true
-            signUpButton.layer.backgroundColor = UIColor.blue.cgColor
-        }
-        else
-        {
-            signUpButton.layer.backgroundColor = UIColor.gray.cgColor
-            signUpButton.isEnabled = false
-        }
+        self.signUpViewPresenter?.onSignUpTapped()
     }
 }
