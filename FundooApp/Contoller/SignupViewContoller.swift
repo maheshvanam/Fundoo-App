@@ -47,11 +47,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @objc func keboardDisappear() {
-       self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height - 150)
-        isExpand=true
-    }
-    
     @IBAction func onSiginInInsteadTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: false)
     }
