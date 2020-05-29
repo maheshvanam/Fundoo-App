@@ -68,4 +68,10 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
             textField.text = ""
         }
     }
+    
+    func clearTextFieldsBackgroundColor() {
+        for textField in textFields {
+            textField.clearBackgroundColor()
+        }
+    }
 }
