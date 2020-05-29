@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PresenterSignInView {
+protocol PresenterSignInViewDelegate {
     func clearLabels()
     func updatePasswordLabel()
     func updateEmailLabel()

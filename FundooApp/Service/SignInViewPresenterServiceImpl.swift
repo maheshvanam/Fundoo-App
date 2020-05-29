@@ -11,8 +11,8 @@ import UIKit
 
 class SignInViewPresenterServiceImpl: SignInViewPresenterService {
     
-    var signViewDelegate : PresenterSignInView
-       init(delegate: PresenterSignInView) {
+    var signViewDelegate : PresenterSignInViewDelegate
+       init(delegate: PresenterSignInViewDelegate) {
            self.signViewDelegate = delegate
        }
     
