@@ -1,5 +1,5 @@
 //
-//  PresenterView.swift
+//  PresenterSignInViewDelegate.swift
 //  FundooApp
 //
 //  Created by admin on 29/05/20.
@@ -9,6 +9,7 @@
 import Foundation
 
 protocol PresenterSignInViewDelegate {
+    
     func clearLabels()
     func clearFields()
     func updatePasswordLabel()

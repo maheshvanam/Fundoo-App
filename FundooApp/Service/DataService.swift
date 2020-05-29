@@ -12,4 +12,5 @@ protocol DataService {
     func insertUser(registartionUser: RegistrationUser)
     
     func checkValidUserOrNot(email: String,password: String) throws -> Result
+    func deleteUser(email: String)
 }

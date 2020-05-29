@@ -12,7 +12,6 @@ import CoreData
 
 class CoreDataServiceImpl : DataService {
     
-    
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     private let fetchRequest = NSFetchRequest<User>(entityName: "User")
@@ -42,5 +41,18 @@ class CoreDataServiceImpl : DataService {
             else{
                 return Result.INVALID_EMAIL
             }
+    }
+    
+    func deleteUser(email: String) {
+        let predicate = NSPredicate(format: "email = %@", email)
+        fetchRequest.predicate = predicate
+        do{
+            let result = try context.fetch(fetchRequest) as NSArray
+            let userEntity = result.firstObject as! User
+            context.delete(userEntity)
+        }
+        catch{
+                
+        }
     }
 }

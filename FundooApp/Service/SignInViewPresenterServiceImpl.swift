@@ -1,5 +1,5 @@
 //
-//  SignInPresenterServiceImpl.swift
+//  SignInViewPresenterServiceImpl.swift
 //  FundooApp
 //
 //  Created by admin on 29/05/20.
@@ -12,9 +12,10 @@ import UIKit
 class SignInViewPresenterServiceImpl: SignInViewPresenterService {
     
     var signInViewDelegate : PresenterSignInViewDelegate
-       init(delegate: PresenterSignInViewDelegate) {
-           self.signInViewDelegate = delegate
-       }
+    init(delegate: PresenterSignInViewDelegate) {
+        self.signInViewDelegate = delegate
+    }
+
     
     func signInWithEmailAndPassword(email: String,password: String) {
         
