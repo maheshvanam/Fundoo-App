@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-protocol SignupViewPresenterDelegate {
+
+protocol SignUpViewPresenterDelegate {
     func showAlert(title: String, message: String)
     func validateFields(firstName: String, lastName: String, email:
     String, password: String, confirmPassword: String)-> Bool
@@ -18,5 +19,4 @@ protocol SignupViewPresenterDelegate {
     func clearErrorLabels()
     func initializeArrays()
     func addGuestures()
-    
 }

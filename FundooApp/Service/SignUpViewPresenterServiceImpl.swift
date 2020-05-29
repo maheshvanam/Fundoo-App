@@ -8,8 +8,8 @@
 
 import Foundation
 class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
-    var signUpViewDelegate : SignupViewPresenterDelegate
-    init(delegate: SignupViewPresenterDelegate) {
+    var signUpViewDelegate : SignUpViewPresenterDelegate
+    init(delegate: SignUpViewPresenterDelegate) {
         self.signUpViewDelegate = delegate
     }
 }

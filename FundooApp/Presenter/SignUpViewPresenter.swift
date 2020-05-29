@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class SignUpViewPresenter {
+class SignUpViewPresenter: SignUpViewPresenterServiceImpl {
     
 }
 
