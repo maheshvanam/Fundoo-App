@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SignUpViewPresenterService {
-    
+    func onSignUpTapped()
 }

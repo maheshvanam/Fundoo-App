@@ -53,21 +53,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func onSignUpTapped(_ sender: Any) {
         
-        clearErrorLabels()
-        clearTextFieldsBackgroundColor()
         
-        guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
-            signUpButton.isEnabled = false
-            return
-        }
-        
-        let fieldsAreValid = validateFields(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
-        if fieldsAreValid {
-            let coreDataService = CoreDataServiceImpl()
-            coreDataService.insertUser(firstName: firstName,lastName: lastName,email: email,password: password)
-            showAlert(title: "", message: "Successfully Registered.")
-            clearTextFields()
-        }
     }
     
     

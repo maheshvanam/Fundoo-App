@@ -19,4 +19,5 @@ protocol SignUpViewPresenterDelegate {
     func clearErrorLabels()
     func initializeArrays()
     func addGuestures()
+    func getUser ()->User
 }

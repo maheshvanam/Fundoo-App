@@ -114,4 +114,12 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height - 150)
         isExpand=true
     }
+    
+    func getUser ()->User {
+        guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
+            signUpButton.isEnabled = false
+            return
+        }
+        var user = User()
+    }
 }

@@ -23,6 +23,7 @@
 		8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */; };
 		84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84289818248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift */; };
 		8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981A248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift */; };
+		8428981D248173D6009AA1D9 /* RegistrationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981C248173D6009AA1D9 /* RegistrationUser.swift */; };
 		844B0E1F24810591009560AD /* PresenterSignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E1E24810591009560AD /* PresenterSignInViewDelegate.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
 		846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */; };
@@ -71,6 +72,7 @@
 		8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterService.swift; sourceTree = "<group>"; };
 		84289818248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterServiceImpl.swift; sourceTree = "<group>"; };
 		8428981A248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+SignUpViewPresenterDelegate.swift"; sourceTree = "<group>"; };
+		8428981C248173D6009AA1D9 /* RegistrationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUser.swift; sourceTree = "<group>"; };
 		844B0E1E24810591009560AD /* PresenterSignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterSignInViewDelegate.swift; sourceTree = "<group>"; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
 		846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */,
 				846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */,
+				8428981C248173D6009AA1D9 /* RegistrationUser.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				844B0E1F24810591009560AD /* PresenterSignInViewDelegate.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
+				8428981D248173D6009AA1D9 /* RegistrationUser.swift in Sources */,
 				8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */,
 				84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */,
 				844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */,
