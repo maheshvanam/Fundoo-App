@@ -19,8 +19,8 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
     func signInWithEmailAndPassword(email: String,password: String) {
         
         let coreDataService = CoreDataService()
-        self.signDelegate.emailErrorLabel.textColor = UIColor.white
-        self.signDelegate.passwordErrorLabel.textColor = UIColor.white
+        self.signDelegate.emailErrorLabel.text = ""
+        self.signDelegate.passwordErrorLabel.text = ""
 
         if email.isEmpty && password.isEmpty {
             self.signDelegate.showAlert(title: "Error", message: "Please fill the all fields")
@@ -36,11 +36,11 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             }
             else if  authenticationResult == Result.INVALID_EMAIL {
                 self.signDelegate.showAlert(title: "Error", message: "Invalid email")
-                self.signDelegate.emailErrorLabel.textColor = UIColor.red
+                self.signDelegate.emailErrorLabel.text = "*Couldn't find your Fundoo Account."
             }
             else{
                 self.signDelegate.showAlert(title: "Error", message: "invalid password")
-                self.signDelegate.passwordErrorLabel.textColor = UIColor.red
+                self.signDelegate.passwordErrorLabel.text = "*Wrong password. Try again or click Forgot password to reset it."
             }
         }
         catch{
