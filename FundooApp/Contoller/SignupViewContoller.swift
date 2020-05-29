@@ -32,8 +32,11 @@ class SignUpViewController: UIViewController {
     var isExpand = true
     var errorLabels : [UILabel] = []
     var textFields : [UITextField] = []
+    var signUpViewPresenter: SignUpViewPresenterService?
+    
     
     override func viewDidLoad() {
+        signUpViewPresenter = SignUpViewPresenter(delegate: self)
         initializeArrays()
         signUpButton.layer.cornerRadius = 8.0
         signUpButton.isEnabled = false
@@ -42,10 +45,6 @@ class SignUpViewController: UIViewController {
         for field in textFields {
             field.delegate = self
         }
-    }
-    
-    @objc func closeKeyboard() {
-        self.signUpView.endEditing(true)
     }
     
     @objc func keboardAppear() {

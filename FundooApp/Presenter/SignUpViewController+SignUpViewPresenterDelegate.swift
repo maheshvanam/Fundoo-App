@@ -16,6 +16,7 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
     func validateFields(firstName: String, lastName: String, email:
         String, password: String, confirmPassword: String)-> Bool {
         
@@ -96,5 +97,9 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         
         let viewGesture = UITapGestureRecognizer(target: self, action:  #selector (closeKeyboard))
         self.signUpView.addGestureRecognizer(viewGesture)
+    }
+    
+    @objc func closeKeyboard() {
+        self.signUpView.endEditing(true)
     }
 }
