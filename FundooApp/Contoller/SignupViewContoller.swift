@@ -98,15 +98,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func checkFieldsAreEmptyOrNot(fields: [UITextField?])-> Bool {
-        for field in fields {
-            if field?.text!.count == 0 {
-                return true
-            }
-        }
-        return false
-    }
-    
     func clearTextFields() {
         for textField in textFields {
             textField.text = ""
