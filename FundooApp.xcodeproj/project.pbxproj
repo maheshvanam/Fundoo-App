@@ -20,7 +20,8 @@
 		841BBAE7248042360080C591 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE6248042360080C591 /* Helper.swift */; };
 		846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */; };
 		846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */; };
-		846DAAC9247BACCE004F3DA0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC8247BACCE004F3DA0 /* CoreDataService.swift */; };
+		846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */; };
+		84A3C9DB2480E3B1003393EC /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DA2480E3B1003393EC /* CoreDataService.swift */; };
 		84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */; };
 		84B49C57247EE94400D3C940 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C56247EE94400D3C940 /* Result.swift */; };
 		84C119C4247F9FD6006421AE /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C119C3247F9FD6006421AE /* SignInPresenter.swift */; };
@@ -57,7 +58,8 @@
 		841BBAE6248042360080C591 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		846DAAC8247BACCE004F3DA0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceImpl.swift; sourceTree = "<group>"; };
+		84A3C9DA2480E3B1003393EC /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+BackgroundColor.swift"; sourceTree = "<group>"; };
 		84B49C56247EE94400D3C940 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		84C119C3247F9FD6006421AE /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
@@ -180,8 +182,9 @@
 		84E26B47247C240C000D8BE5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				846DAAC8247BACCE004F3DA0 /* CoreDataService.swift */,
+				846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */,
 				84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */,
+				84A3C9DA2480E3B1003393EC /* CoreDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A3C9DB2480E3B1003393EC /* CoreDataService.swift in Sources */,
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
 				84E26B49247C4F8C000D8BE5 /* UserHomeController.swift in Sources */,
@@ -301,7 +305,7 @@
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
 				84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */,
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
-				846DAAC9247BACCE004F3DA0 /* CoreDataService.swift in Sources */,
+				846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */,
 				846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

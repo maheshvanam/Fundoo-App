@@ -18,7 +18,7 @@ class SignInPresenter {
     
     func signInWithEmailAndPassword(email: String,password: String) {
         
-        let coreDataService = CoreDataService()
+        let coreDataService = CoreDataServiceImpl()
         self.signDelegate.emailErrorLabel.textColor = UIColor.white
         self.signDelegate.passwordErrorLabel.textColor = UIColor.white
 
