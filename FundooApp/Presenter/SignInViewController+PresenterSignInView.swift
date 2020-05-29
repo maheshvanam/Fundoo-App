@@ -11,12 +11,16 @@ import UIKit
 extension SignInViewController: PresenterSignInViewDelegate {
     
     func clearLabels() {
-        self.emailField.text=""
-        self.passwordField.text=""
+        self.emailErrorLabel.text = ""
+        self.passwordErrorLabel.text = ""
+    }
+    func clearFields(){
+        self.emailField.text = ""
+        self.passwordField.text = ""
     }
     
     func updatePasswordLabel() {
-          self.emailErrorLabel.text = "*Enter valid password."
+          self.passwordErrorLabel.text = "*Enter valid password."
     }
     
     func updateEmailLabel() {

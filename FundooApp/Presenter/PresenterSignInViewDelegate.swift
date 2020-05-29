@@ -10,6 +10,7 @@ import Foundation
 
 protocol PresenterSignInViewDelegate {
     func clearLabels()
+    func clearFields()
     func updatePasswordLabel()
     func updateEmailLabel()
     func navigateToUserHomeView()
