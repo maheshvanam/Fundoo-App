@@ -11,7 +11,7 @@ import UIKit
 class SignInViewController: UIViewController ,SignInDelegate{
    
     
-    var signInPresenter: SignInPresenter?
+    var signInViewPresenter: SignInPresenterService?
     
     
     
@@ -26,7 +26,7 @@ class SignInViewController: UIViewController ,SignInDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        signInPresenter = SignInPresenter(delegate: self)
+        signInViewPresenter = SignInPresenter(delegate: self)
         signInButton.layer.cornerRadius = 8.0
         logoLabel.attributedText = Helper.getAttributedLogo()
     }
@@ -36,7 +36,7 @@ class SignInViewController: UIViewController ,SignInDelegate{
     }
     
     @IBAction func onSignInTapped(_ sender: Any) {
-        self.signInPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
+        self.signInViewPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
     }
     
     @IBAction func onCreateAcoountTapped(_ sender: Any) {
