@@ -7,6 +7,16 @@
 //
 
 import Foundation
+import UIKit
 protocol SignupViewPresenterDelegate {
+    func showAlert(title: String, message: String)
+    func validateFields(firstName: String, lastName: String, email:
+    String, password: String, confirmPassword: String)-> Bool
+    func checkFieldsAreEmptyOrNot(fields: [UITextField?])-> Bool
+    func clearTextFields()
+    func clearTextFieldsBackgroundColor()
+    func clearErrorLabels()
+    func initializeArrays()
+    func addGuestures()
     
 }
