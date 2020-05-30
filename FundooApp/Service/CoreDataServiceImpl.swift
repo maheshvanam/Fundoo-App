@@ -16,7 +16,7 @@ class CoreDataServiceImpl : DataService {
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     private let fetchRequest = NSFetchRequest<User>(entityName: "User")
     
-    func insertUser(registartionUser: RegistrationUser) {
+    func insertUser(registartionUser: SignUpUser) {
         let  user = User(context: context)
         user.firstName=registartionUser.firstName
         user.lastName=registartionUser.lastName
@@ -52,7 +52,6 @@ class CoreDataServiceImpl : DataService {
             context.delete(userEntity)
         }
         catch{
-                
         }
     }
 }

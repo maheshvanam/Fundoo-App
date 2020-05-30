@@ -11,11 +11,11 @@ import UIKit
 
 protocol SignUpViewPresenterDelegate {
     func showAlert(title: String, message: String)
-    func validateFields(user: RegistrationUser)-> Bool
+    func validateFields(user: SignUpUser)-> Bool
     func checkFieldsAreEmptyOrNot(fields: [UITextField?])-> Bool
     func clearTextFields()
     func clearTextFieldsBackgroundColor()
     func clearErrorLabels()
-    func getUser ()->RegistrationUser
+    func getUser ()->SignUpUser
     func navigateToLoginView()
 }

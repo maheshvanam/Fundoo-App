@@ -23,7 +23,7 @@
 		8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */; };
 		84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84289818248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift */; };
 		8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981A248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift */; };
-		8428981D248173D6009AA1D9 /* RegistrationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981C248173D6009AA1D9 /* RegistrationUser.swift */; };
+		8428981D248173D6009AA1D9 /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981C248173D6009AA1D9 /* SignUpUser.swift */; };
 		84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84289820248188BB009AA1D9 /* SignInViewPresenterServiceImpl.swift */; };
 		842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842898242481893D009AA1D9 /* PresenterSignInViewDelegate.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
@@ -72,7 +72,7 @@
 		8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterService.swift; sourceTree = "<group>"; };
 		84289818248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterServiceImpl.swift; sourceTree = "<group>"; };
 		8428981A248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+SignUpViewPresenterDelegate.swift"; sourceTree = "<group>"; };
-		8428981C248173D6009AA1D9 /* RegistrationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUser.swift; sourceTree = "<group>"; };
+		8428981C248173D6009AA1D9 /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
 		84289820248188BB009AA1D9 /* SignInViewPresenterServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenterServiceImpl.swift; sourceTree = "<group>"; };
 		842898242481893D009AA1D9 /* PresenterSignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterSignInViewDelegate.swift; sourceTree = "<group>"; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
@@ -129,12 +129,12 @@
 		8419D297247A519D00C4F93A /* FundooApp */ = {
 			isa = PBXGroup;
 			children = (
+				84634EBA248268990098D004 /* Home */,
+				84634EB62482659F0098D004 /* Login */,
+				84634EB2248264470098D004 /* Registration */,
 				84B49C53247EBE1800D3C940 /* Util */,
-				84C119C2247F9F64006421AE /* Presenter */,
 				84E26B47247C240C000D8BE5 /* Service */,
-				84E26B45247C23E2000D8BE5 /* Modal */,
 				84E26B44247C23D1000D8BE5 /* View */,
-				84E26B46247C23EF000D8BE5 /* Contoller */,
 				8419D298247A519D00C4F93A /* AppDelegate.swift */,
 				8419D29A247A519D00C4F93A /* SceneDelegate.swift */,
 				8419D2A4247A519E00C4F93A /* Assets.xcassets */,
@@ -154,29 +154,109 @@
 			path = FundooAppTests;
 			sourceTree = "<group>";
 		};
-		84B49C53247EBE1800D3C940 /* Util */ = {
+		84634EB2248264470098D004 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */,
-				84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */,
-				84B49C56247EE94400D3C940 /* Result.swift */,
-				841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */,
-				841BBAE6248042360080C591 /* Helper.swift */,
+				84634EB52482653D0098D004 /* Modal */,
+				84634EB4248264FF0098D004 /* View */,
+				84634EB32482647A0098D004 /* Presenter */,
 			);
-			path = Util;
+			path = Registration;
 			sourceTree = "<group>";
 		};
-		84C119C2247F9F64006421AE /* Presenter */ = {
+		84634EB32482647A0098D004 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */,
+				8428981224816447009AA1D9 /* SignUpViewPresenter.swift */,
+				8428981A248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift */,
+				84289814248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift */,
+				84289818248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84634EB4248264FF0098D004 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84634EB52482653D0098D004 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				8428981C248173D6009AA1D9 /* SignUpUser.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		84634EB62482659F0098D004 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				84634EB9248265C60098D004 /* Presenter */,
+				84634EB8248265BC0098D004 /* View */,
+				84634EB7248265AE0098D004 /* Modal */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		84634EB7248265AE0098D004 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */,
+				846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		84634EB8248265BC0098D004 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8419D29C247A519D00C4F93A /* SignInViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84634EB9248265C60098D004 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84A3C9E22480F19B003393EC /* SignInViewPresenterService.swift */,
 				84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */,
 				844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */,
-				8428981224816447009AA1D9 /* SignUpViewPresenter.swift */,
-				84289814248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift */,
-				8428981A248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift */,
+				84289820248188BB009AA1D9 /* SignInViewPresenterServiceImpl.swift */,
 				842898242481893D009AA1D9 /* PresenterSignInViewDelegate.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84634EBA248268990098D004 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84634EBB248268BB0098D004 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84634EBB248268BB0098D004 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84E26B48247C4F8C000D8BE5 /* UserHomeController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B49C53247EBE1800D3C940 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */,
+				84B49C56247EE94400D3C940 /* Result.swift */,
+				841BBAE6248042360080C591 /* Helper.swift */,
+				84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */,
+				841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		84E26B44247C23D1000D8BE5 /* View */ = {
@@ -188,36 +268,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		84E26B45247C23E2000D8BE5 /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-				846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */,
-				846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */,
-				8428981C248173D6009AA1D9 /* RegistrationUser.swift */,
-			);
-			path = Modal;
-			sourceTree = "<group>";
-		};
-		84E26B46247C23EF000D8BE5 /* Contoller */ = {
-			isa = PBXGroup;
-			children = (
-				8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */,
-				8419D29C247A519D00C4F93A /* SignInViewController.swift */,
-				84E26B48247C4F8C000D8BE5 /* UserHomeController.swift */,
-			);
-			path = Contoller;
-			sourceTree = "<group>";
-		};
 		84E26B47247C240C000D8BE5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				84A3C9E22480F19B003393EC /* SignInViewPresenterService.swift */,
-				84289820248188BB009AA1D9 /* SignInViewPresenterServiceImpl.swift */,
 				84A3C9DA2480E3B1003393EC /* DataService.swift */,
 				846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */,
 				84A3C9E02480F04C003393EC /* CoreDataService.swift */,
-				8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */,
-				84289818248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -334,7 +390,7 @@
 				846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
-				8428981D248173D6009AA1D9 /* RegistrationUser.swift in Sources */,
+				8428981D248173D6009AA1D9 /* SignUpUser.swift in Sources */,
 				8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */,
 				84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */,
 				844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */,
