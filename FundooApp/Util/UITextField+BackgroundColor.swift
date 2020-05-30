@@ -11,7 +11,7 @@ import UIKit
 
 extension UITextField {
     
-    func setBackgroundColour(color: CGColor) {
+    func setBackgroundColour() {
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
         self.layer.borderColor = UIColor.red.cgColor

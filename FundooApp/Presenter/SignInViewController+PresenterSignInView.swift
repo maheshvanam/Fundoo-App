@@ -8,22 +8,31 @@
 
 import Foundation
 import UIKit
+
 extension SignInViewController: PresenterSignInViewDelegate {
     
     func clearLabels() {
         self.emailErrorLabel.text = ""
         self.passwordErrorLabel.text = ""
+        self.emailField.clearBackgroundColor()
+        self.passwordField.clearBackgroundColor()
     }
+    
     func clearFields(){
         self.emailField.text = ""
         self.passwordField.text = ""
+        self.emailField.clearBackgroundColor()
+        self.passwordField.clearBackgroundColor()
+        
     }
     
     func updatePasswordLabel() {
-          self.passwordErrorLabel.text = "*Enter valid password."
+        self.passwordField.setBackgroundColour()
+        self.passwordErrorLabel.text = "*Enter valid password."
     }
     
     func updateEmailLabel() {
+        self.emailField.setBackgroundColour()
         self.emailErrorLabel.text = "*Couldn't find your Fundoo Account."
     }
     

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 class Helper {
     
     static func getAttributedLogo() -> NSAttributedString {
@@ -21,5 +22,4 @@ class Helper {
         }
         return attributedLogo
     }
-    
 }

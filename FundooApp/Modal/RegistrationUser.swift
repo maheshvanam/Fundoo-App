@@ -9,6 +9,7 @@
 import Foundation
 
 class RegistrationUser {
+    
     var firstName: String?
     var lastName: String?
     var email: String?

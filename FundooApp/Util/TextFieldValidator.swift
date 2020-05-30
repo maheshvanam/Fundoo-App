@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class TextFieldValidator {
     
     public func validateName(name: String) ->Bool {
@@ -26,5 +27,4 @@ class TextFieldValidator {
        let validatePassord = NSPredicate(format:"SELF MATCHES %@", passRegEx)
        return validatePassord.evaluate(with: password)
     }
-    
 }

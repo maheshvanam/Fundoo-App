@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
     
     var signUpViewDelegate : SignUpViewPresenterDelegate

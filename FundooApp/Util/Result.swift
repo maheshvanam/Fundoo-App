@@ -7,7 +7,8 @@
 //
 
 import Foundation
-enum Result{
+
+enum Result {
     case INVALID_EMAIL
     case INVALID_PASSWORD
     case SUCCESS
