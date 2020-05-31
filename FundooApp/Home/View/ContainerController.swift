@@ -11,6 +11,8 @@ import UIKit
 
 class ContainerController: UIViewController {
     
+    var menuController: UIViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHomeController()
@@ -22,5 +24,13 @@ class ContainerController: UIViewController {
         view.addSubview(controller.view)
         addChild(controller)
         controller.didMove(toParent: self)
+    }
+    
+    func configureMenuController() {
+        if menuController == nil {
+            view.insertSubview(menuController.view, at: 0)
+            addChild(menuController)
+            menuController.didMove(toParent: self)
+        }
     }
 }
