@@ -30,6 +30,7 @@
 		843591302484295C00E58862 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435912F2484295C00E58862 /* MenuController.swift */; };
 		8435913224842A4C00E58862 /* HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435913124842A4C00E58862 /* HomeControllerDelegate.swift */; };
 		8435913424842FC000E58862 /* ContainerController+HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435913324842FC000E58862 /* ContainerController+HomeControllerDelegate.swift */; };
+		843591372484325600E58862 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843591362484325600E58862 /* MenuOptionCell.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
 		846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */; };
 		846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */; };
@@ -83,6 +84,7 @@
 		8435912F2484295C00E58862 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		8435913124842A4C00E58862 /* HomeControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerDelegate.swift; sourceTree = "<group>"; };
 		8435913324842FC000E58862 /* ContainerController+HomeControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContainerController+HomeControllerDelegate.swift"; sourceTree = "<group>"; };
+		843591362484325600E58862 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuOptionCell.swift; path = FundooApp/Home/View/MenuOptionCell.swift; sourceTree = SOURCE_ROOT; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
 		846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 				8419D2B4247A519E00C4F93A /* Info.plist */,
 			);
 			path = FundooAppTests;
+			sourceTree = "<group>";
+		};
+		843591352484321E00E58862 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				843591362484325600E58862 /* MenuOptionCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		84634EB2248264470098D004 /* Registration */ = {
@@ -242,12 +252,13 @@
 		84634EBA248268990098D004 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				84634EBB248268BB0098D004 /* View */,
+				843591352484321E00E58862 /* View */,
+				84634EBB248268BB0098D004 /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		84634EBB248268BB0098D004 /* View */ = {
+		84634EBB248268BB0098D004 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				84E26B48247C4F8C000D8BE5 /* HomeController.swift */,
@@ -256,7 +267,7 @@
 				8435913124842A4C00E58862 /* HomeControllerDelegate.swift */,
 				8435913324842FC000E58862 /* ContainerController+HomeControllerDelegate.swift */,
 			);
-			path = View;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		84B49C53247EBE1800D3C940 /* Util */ = {
@@ -398,6 +409,7 @@
 				84E26B49247C4F8C000D8BE5 /* HomeController.swift in Sources */,
 				843591302484295C00E58862 /* MenuController.swift in Sources */,
 				841BBAE7248042360080C591 /* Helper.swift in Sources */,
+				843591372484325600E58862 /* MenuOptionCell.swift in Sources */,
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
 				846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */,
