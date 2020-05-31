@@ -12,6 +12,11 @@ class UserHomeController : UIViewController{
     
     override func viewDidLoad() {
         title = "Notes"
-        self.navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(onSearchButtonTapped))
+    }
+    
+    @objc func onSearchButtonTapped(){
+        
     }
 }
