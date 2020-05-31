@@ -31,6 +31,7 @@
 		8435913224842A4C00E58862 /* HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435913124842A4C00E58862 /* HomeControllerDelegate.swift */; };
 		8435913424842FC000E58862 /* ContainerController+HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435913324842FC000E58862 /* ContainerController+HomeControllerDelegate.swift */; };
 		843591372484325600E58862 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843591362484325600E58862 /* MenuOptionCell.swift */; };
+		8435913A2484494B00E58862 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843591392484494B00E58862 /* MenuOption.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
 		846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */; };
 		846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */; };
@@ -85,6 +86,7 @@
 		8435913124842A4C00E58862 /* HomeControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerDelegate.swift; sourceTree = "<group>"; };
 		8435913324842FC000E58862 /* ContainerController+HomeControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContainerController+HomeControllerDelegate.swift"; sourceTree = "<group>"; };
 		843591362484325600E58862 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuOptionCell.swift; path = FundooApp/Home/View/MenuOptionCell.swift; sourceTree = SOURCE_ROOT; };
+		843591392484494B00E58862 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
 		846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		843591382484491E00E58862 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				843591392484494B00E58862 /* MenuOption.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		84634EB2248264470098D004 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +262,7 @@
 		84634EBA248268990098D004 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				843591382484491E00E58862 /* Modal */,
 				843591352484321E00E58862 /* View */,
 				84634EBB248268BB0098D004 /* Controller */,
 			);
@@ -409,6 +420,7 @@
 				84E26B49247C4F8C000D8BE5 /* HomeController.swift in Sources */,
 				843591302484295C00E58862 /* MenuController.swift in Sources */,
 				841BBAE7248042360080C591 /* Helper.swift in Sources */,
+				8435913A2484494B00E58862 /* MenuOption.swift in Sources */,
 				843591372484325600E58862 /* MenuOptionCell.swift in Sources */,
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
