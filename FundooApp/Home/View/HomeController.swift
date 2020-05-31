@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UserHomeController : UIViewController{
+class HomeController : UIViewController{
     
     override func viewDidLoad() {
         configureNavigationBar()

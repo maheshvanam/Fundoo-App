@@ -10,6 +10,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
+    var window: UIWindow?
     var signInViewPresenter: SignInViewPresenterService?
     
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -34,11 +35,15 @@ class SignInViewController: UIViewController {
     
     @IBAction func onSignInTapped(_ sender: Any) {
         //self.signInViewPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = ContainerController()
+        /*
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "UserHomeController") as? UserHomeController else {
+        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "HomeController") as? HomeController else {
                  return
             }
-        navigationController?.pushViewController(destinationViewController, animated: false)
+        navigationController?.pushViewController(destinationViewController, animated: false)*/
 
     }
     

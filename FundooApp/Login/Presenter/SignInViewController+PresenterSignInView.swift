@@ -38,7 +38,7 @@ extension SignInViewController: PresenterSignInViewDelegate {
     
     func navigateToUserHomeView() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "UserHomeController") as? UserHomeController else {
+        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "HomeController") as? HomeController else {
                 return
             }
         self.dismiss(animated: false, completion: nil)
