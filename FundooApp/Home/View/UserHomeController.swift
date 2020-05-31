@@ -11,5 +11,6 @@ import UIKit
 class UserHomeController : UIViewController{
     
     override func viewDidLoad() {
+        title = "Notes"
     }
 }
