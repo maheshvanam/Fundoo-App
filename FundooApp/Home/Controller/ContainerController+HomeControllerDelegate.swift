@@ -17,6 +17,6 @@ extension ContainerController: HomeControllerDelegate {
         }
         
         isExpanded = !isExpanded
-        showMenuController(shouldExpand: isExpanded)
+        animatePanel(shouldExpand: isExpanded, menuOption: menuOption)
     }
 }
