@@ -12,6 +12,7 @@ import UIKit
 class ContainerController: UIViewController {
     
     var menuController: UIViewController!
+    var centerController: UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,10 @@ class ContainerController: UIViewController {
     func configureHomeController() {
         let homeController = HomeController()
         homeController.delegate = self
-        let controller = UINavigationController(rootViewController: homeController)
-        view.addSubview(controller.view)
-        addChild(controller)
-        controller.didMove(toParent: self)
+        centerController = UINavigationController(rootViewController: homeController)
+        view.addSubview(centerController.view)
+        addChild(centerController)
+        centerController.didMove(toParent: self)
     }
     
     func configureMenuController() {
@@ -35,6 +36,19 @@ class ContainerController: UIViewController {
             menuController.didMove(toParent: self)
         }
     }
+    
+    func showMenuController(shouldExpand: Bool){
+        if shouldExpand {
+            UIView.animate(withDuration: 0.3, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                self.view.frame.origin.x = self.view.frame.width - 80
+                }, completion: nil)
+        }else {
+            UIView.animate(withDuration: 0.3, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            self.view.frame.origin.x = 0
+            }, completion: nil)
+        }
+    }
+
 }
 extension ContainerController: HomeControllerDelegate {
     func handleMenuToggle() {
