@@ -34,7 +34,7 @@ enum MenuOption: Int,CustomStringConvertible {
         
         switch self {
         case .Notes: return UIImage(named: "notes") ?? UIImage()
-        case .Reminders: return UIImage(named: "reminder") ?? UIImage()
+        case .Reminders: return UIImage(named: "reminders") ?? UIImage()
         case .CreateNewLabel: return UIImage(named: "new_label") ?? UIImage()
         case .Archive: return UIImage(named: "archive") ?? UIImage()
         case .Trash: return UIImage(named: "trash") ?? UIImage()

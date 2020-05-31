@@ -13,14 +13,13 @@ class MenuOptionCell: UITableViewCell {
     let iconImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.backgroundColor = .blue
         iv.clipsToBounds = true
         return iv
     }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         label.text = "Simple Text"
         return label

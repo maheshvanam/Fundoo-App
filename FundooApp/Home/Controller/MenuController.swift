@@ -28,7 +28,9 @@ class MenuController: UIViewController {
         
         tableView.register(MenuOptionCell.self,forCellReuseIdentifier: reuseIdentifier)
         view.addSubview(tableView)
-        tableView.backgroundColor = .black
+        
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -48,6 +50,7 @@ extension MenuController: UITableViewDelegate,UITableViewDataSource {
         let menuOption = MenuOption(rawValue: indexPath.row)
         cell.descriptionLabel.text = menuOption?.description
         cell.iconImageView.image = menuOption?.image
+        cell.backgroundColor = .white
         return cell
     }
     
