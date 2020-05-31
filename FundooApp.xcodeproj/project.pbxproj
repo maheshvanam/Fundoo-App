@@ -28,6 +28,7 @@
 		842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842898242481893D009AA1D9 /* PresenterSignInViewDelegate.swift */; };
 		8435912E2484107200E58862 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435912D2484107200E58862 /* ContainerController.swift */; };
 		843591302484295C00E58862 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435912F2484295C00E58862 /* MenuController.swift */; };
+		8435913224842A4C00E58862 /* HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435913124842A4C00E58862 /* HomeControllerDelegate.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
 		846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */; };
 		846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */; };
@@ -79,6 +80,7 @@
 		842898242481893D009AA1D9 /* PresenterSignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterSignInViewDelegate.swift; sourceTree = "<group>"; };
 		8435912D2484107200E58862 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		8435912F2484295C00E58862 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		8435913124842A4C00E58862 /* HomeControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerDelegate.swift; sourceTree = "<group>"; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
 		846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				84E26B48247C4F8C000D8BE5 /* HomeController.swift */,
 				8435912D2484107200E58862 /* ContainerController.swift */,
 				8435912F2484295C00E58862 /* MenuController.swift */,
+				8435913124842A4C00E58862 /* HomeControllerDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */,
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
 				846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */,
+				8435913224842A4C00E58862 /* HomeControllerDelegate.swift in Sources */,
 				84A3C9E12480F04C003393EC /* CoreDataService.swift in Sources */,
 				846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */,
 			);
