@@ -28,6 +28,10 @@ class ContainerController: UIViewController {
         return .slide
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return isExpanded
+    }
+    
     func configureHomeController() {
         let homeController = HomeController()
         homeController.delegate = self
@@ -59,8 +63,8 @@ class ContainerController: UIViewController {
                 guard let menuOption = menuOption else { return }
                 self.didSelectMenuOption(menuOption: menuOption)
             }
-            
         }
+        animateStatusBar()
     }
     
     func didSelectMenuOption(menuOption: MenuOption) {
@@ -78,6 +82,12 @@ class ContainerController: UIViewController {
         case .LogOut:
             print("LogOut")
         }
+    }
+    
+    func animateStatusBar(){
+        UIView.animate(withDuration: 0.5, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }, completion: nil)
     }
 
 }
