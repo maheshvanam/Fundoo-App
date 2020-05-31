@@ -12,6 +12,7 @@ class UserHomeController : UIViewController{
     
     override func viewDidLoad() {
         title = "Notes"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationItem.setHidesBackButton(true, animated: false)
