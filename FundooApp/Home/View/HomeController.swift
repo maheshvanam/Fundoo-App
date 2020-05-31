@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class HomeController : UIViewController{
-    var window: UIWindow?
+    
+    var delegate: HomeControllerDelegate?
+    
     override func viewDidLoad() {
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        window?.rootViewController = ContainerController()
+        super.viewDidLoad()
         view.backgroundColor = .white
         configureNavigationBar()
     }
@@ -33,6 +33,7 @@ class HomeController : UIViewController{
     }
     
     @objc func onMenuButtonTapped(){
+        delegate?.handleMenuToggle()
     }
 }
 
