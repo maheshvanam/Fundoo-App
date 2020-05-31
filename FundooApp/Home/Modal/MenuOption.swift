@@ -19,6 +19,7 @@ enum MenuOption: Int,CustomStringConvertible {
     case LogOut
     
     var description: String {
+        
         switch self {
         case .Notes: return "Notes"
         case .Reminders: return "Reminder"
@@ -26,9 +27,11 @@ enum MenuOption: Int,CustomStringConvertible {
         case .Archive: return "Archive"
         case .Trash: return "Trash"
         case .LogOut: return "Log Out"
+        }
     }
     
     var image: UIImage {
+        
         switch self {
         case .Notes: return UIImage(named: "notes") ?? UIImage()
         case .Reminders: return UIImage(named: "reminder") ?? UIImage()
@@ -36,5 +39,6 @@ enum MenuOption: Int,CustomStringConvertible {
         case .Archive: return UIImage(named: "archive") ?? UIImage()
         case .Trash: return UIImage(named: "trash") ?? UIImage()
         case .LogOut: return UIImage(named: "logout") ?? UIImage()
+        }
     }
 }
