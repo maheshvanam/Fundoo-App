@@ -20,6 +20,14 @@ class ContainerController: UIViewController {
         configureHomeController()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    
     func configureHomeController() {
         let homeController = HomeController()
         homeController.delegate = self
