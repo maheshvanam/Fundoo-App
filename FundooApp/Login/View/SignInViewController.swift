@@ -33,11 +33,17 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onSignInTapped(_ sender: Any) {
-        self.signInViewPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
+        //self.signInViewPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "UserHomeController") as? UserHomeController else {
+                 return
+            }
+        navigationController?.pushViewController(destinationViewController, animated: false)
+
     }
     
     @IBAction func onCreateAcoountTapped(_ sender: Any) {
         self.signInViewPresenter?.onCreateAcoountTapped()
-    }
+        }
     
 }
