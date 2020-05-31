@@ -12,8 +12,8 @@ class UserHomeController : UIViewController{
     
     override func viewDidLoad() {
         title = "Notes"
-        
         navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.tintColor = UIColor.white
         navigationItem.setHidesBackButton(true, animated: false)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(onSearchButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "menu").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(onSearchButtonTapped))
