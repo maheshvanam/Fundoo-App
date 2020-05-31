@@ -35,9 +35,9 @@ class SignInViewController: UIViewController {
     
     @IBAction func onSignInTapped(_ sender: Any) {
         //self.signInViewPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        window?.rootViewController = ContainerController()
+        //navigationController?.pushViewController(ContainerController(), animated: false)
+        //performSegue(withIdentifier: "HomeController", sender: self)
+        show(ContainerController(), sender: self)
         /*
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "HomeController") as? HomeController else {

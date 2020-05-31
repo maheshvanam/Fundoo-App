@@ -12,5 +12,15 @@ import UIKit
 class ContainerController: UIViewController {
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        configureHomeController()
+    }
+    
+    func configureHomeController() {
+        let homeController = HomeController()
+        let controller = UINavigationController(rootViewController: homeController)
+        view.addSubview(controller.view)
+        addChild(controller)
+        controller.didMove(toParent: self)
     }
 }

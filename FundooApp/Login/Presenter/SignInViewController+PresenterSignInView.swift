@@ -57,6 +57,6 @@ extension SignInViewController: PresenterSignInViewDelegate {
                  return
             }
         navigationController?.pushViewController(destinationViewController, animated: false)
-    }
+        }
     
 }

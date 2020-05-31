@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 
 class HomeController : UIViewController{
-    
+    var window: UIWindow?
     override func viewDidLoad() {
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = ContainerController()
+        view.backgroundColor = .white
         configureNavigationBar()
     }
     
