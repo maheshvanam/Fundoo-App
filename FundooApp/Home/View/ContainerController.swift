@@ -7,4 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
+class ContainerController: UIViewController {
+    
+    override func viewDidLoad() {
+    }
+}
