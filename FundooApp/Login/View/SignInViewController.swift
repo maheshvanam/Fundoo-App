@@ -10,7 +10,6 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
-    var window: UIWindow?
     var signInViewPresenter: SignInViewPresenterService?
     
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -20,7 +19,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var logoLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

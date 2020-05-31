@@ -32,7 +32,7 @@ class ContainerController: UIViewController {
     func configureMenuController() {
         if menuController == nil {
             menuController = MenuController()
-            view.insertSubview(menuController.view, at: 0)
+            self.view.insertSubview(menuController.view, at: 0)
             addChild(menuController)
             menuController.didMove(toParent: self)
         }
@@ -41,11 +41,11 @@ class ContainerController: UIViewController {
     func showMenuController(shouldExpand: Bool){
         if shouldExpand {
             UIView.animate(withDuration: 0.3, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.view.frame.origin.x = self.view.frame.width - 80
+                self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 80
                 }, completion: nil)
         }else {
             UIView.animate(withDuration: 0.3, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            self.view.frame.origin.x = 0
+                self.centerController.view.frame.origin.x = 0
             }, completion: nil)
         }
     }
