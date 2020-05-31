@@ -29,6 +29,7 @@
 		8435912E2484107200E58862 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435912D2484107200E58862 /* ContainerController.swift */; };
 		843591302484295C00E58862 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435912F2484295C00E58862 /* MenuController.swift */; };
 		8435913224842A4C00E58862 /* HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435913124842A4C00E58862 /* HomeControllerDelegate.swift */; };
+		8435913424842FC000E58862 /* ContainerController+HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435913324842FC000E58862 /* ContainerController+HomeControllerDelegate.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
 		846DAAC4247BA77E004F3DA0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */; };
 		846DAAC5247BA77E004F3DA0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */; };
@@ -81,6 +82,7 @@
 		8435912D2484107200E58862 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		8435912F2484295C00E58862 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		8435913124842A4C00E58862 /* HomeControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerDelegate.swift; sourceTree = "<group>"; };
+		8435913324842FC000E58862 /* ContainerController+HomeControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContainerController+HomeControllerDelegate.swift"; sourceTree = "<group>"; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
 		846DAAC2247BA77E004F3DA0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		846DAAC3247BA77E004F3DA0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				8435912D2484107200E58862 /* ContainerController.swift */,
 				8435912F2484295C00E58862 /* MenuController.swift */,
 				8435913124842A4C00E58862 /* HomeControllerDelegate.swift */,
+				8435913324842FC000E58862 /* ContainerController+HomeControllerDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */,
 				844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
+				8435913424842FC000E58862 /* ContainerController+HomeControllerDelegate.swift in Sources */,
 				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,

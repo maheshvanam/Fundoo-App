@@ -51,13 +51,4 @@ class ContainerController: UIViewController {
     }
 
 }
-extension ContainerController: HomeControllerDelegate {
-    func handleMenuToggle() {
-        if !isExpanded {
-            configureMenuController()
-        }
-        
-        isExpanded = !isExpanded
-        showMenuController(shouldExpand: isExpanded)
-    }
-}
+
