@@ -53,8 +53,6 @@ class ContainerController: UIViewController {
                 self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 80
                 }, completion: nil)
         }else {
-            UIView.animate(withDuration: 0.5, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {}, completion: nil)
-            
             UIView.animate(withDuration: 0.5, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 self.centerController.view.frame.origin.x = 0
             }){(_ ) in
