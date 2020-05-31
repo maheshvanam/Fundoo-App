@@ -14,6 +14,7 @@ private let reuseIdentifier = "MenuOptionCell"
 class MenuController: UIViewController {
     
     var tableView: UITableView!
+    var delegate: HomeControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,4 +51,8 @@ extension MenuController: UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let menuOption = MenuOption(rawValue: indexPath.row)
+        delegate?.handleMenuToggle(forMenuOprion: menuOption)
+    }
 }

@@ -33,7 +33,7 @@ class HomeController : UIViewController{
     }
     
     @objc func onMenuButtonTapped(){
-        delegate?.handleMenuToggle()
+        delegate?.handleMenuToggle(forMenuOprion: nil)
     }
 }
 

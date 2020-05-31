@@ -9,7 +9,9 @@
 import Foundation
 
 extension ContainerController: HomeControllerDelegate {
-    func handleMenuToggle() {
+    
+    func handleMenuToggle(forMenuOprion menuOption: MenuOption?) {
+       
         if !isExpanded {
             configureMenuController()
         }
