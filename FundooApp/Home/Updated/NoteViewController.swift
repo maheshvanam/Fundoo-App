@@ -9,9 +9,11 @@
 import UIKit
 
 class NoteViewController: UIViewController {
-
+    
+    @IBOutlet var table: UITableView!
+    @IBOutlet var label: UILabel!
+    
     override func viewDidLoad() {
-        
         navigationController?.navigationBar.tintColor = .lightGray
         super.viewDidLoad()
     }
