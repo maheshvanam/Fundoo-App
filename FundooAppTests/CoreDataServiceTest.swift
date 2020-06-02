@@ -14,7 +14,7 @@ class CoreDataServiceTest: XCTestCase {
     
     override func setUpWithError() throws {
          //Put setup code here. This method is called before the invocation of each test method in the class.
-        let user = RegistrationUser(firstName: "fun", lastName: "doo", email: "fundoo@gmail.com", password: "Fundoo@123", confirmPassword: "Fundoo@123")
+        let user = SignUpUser(firstName: "fun", lastName: "doo", email: "fundoo@gmail.com", password: "Fundoo@123", confirmPassword: "Fundoo@123")
         dataService.insertUser(registartionUser: user)
     }
     
@@ -39,5 +39,4 @@ class CoreDataServiceTest: XCTestCase {
         let result = try dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
         XCTAssertEqual(Result.SUCCESS, result)
     }
-
 }

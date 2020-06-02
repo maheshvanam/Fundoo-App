@@ -32,16 +32,17 @@ class MenuController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     }
 }
-extension MenuController: UITableViewDelegate,UITableViewDataSource {
+
+extension MenuController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return MenuOption.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

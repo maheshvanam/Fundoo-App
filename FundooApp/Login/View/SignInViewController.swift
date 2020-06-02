@@ -10,7 +10,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
-    var signInViewPresenter: SignInViewPresenterService?
+    private var signInViewPresenter: SignInViewPresenterService?
     
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
@@ -19,10 +19,13 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var logoLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
+             show(ContainerController(), sender: self)
+        }
         signInViewPresenter = SignInViewPresenter(delegate: self)
         signInButton.layer.cornerRadius = 8.0
         logoLabel.attributedText = Helper.getAttributedLogo()
@@ -33,21 +36,10 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onSignInTapped(_ sender: Any) {
-        //self.signInViewPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
-        //navigationController?.pushViewController(ContainerController(), animated: false)
-        //performSegue(withIdentifier: "HomeController", sender: self)
-        show(ContainerController(), sender: self)
-        /*
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let destinationViewController = mainStoryboard.instantiateViewController(identifier: "HomeController") as? HomeController else {
-                 return
-            }
-        navigationController?.pushViewController(destinationViewController, animated: false)*/
-
+        self.signInViewPresenter?.signInWithEmailAndPassword(email: emailField.text!, password: passwordField.text!)
     }
     
     @IBAction func onCreateAcoountTapped(_ sender: Any) {
         self.signInViewPresenter?.onCreateAcoountTapped()
-        }
-    
+    }
 }

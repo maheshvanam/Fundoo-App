@@ -13,10 +13,12 @@ class ContainerController: UIViewController {
     
     var menuController: MenuController!
     var centerController: UIViewController!
+    var notesController: NotesViewController!
     var isExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         configureHomeController()
     }
     
@@ -51,6 +53,9 @@ class ContainerController: UIViewController {
         }
     }
     
+    func configureNoteController(){
+             }
+    
     func animatePanel(shouldExpand: Bool,menuOption: MenuOption?){
         if shouldExpand {
             UIView.animate(withDuration: 0.5, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
@@ -68,23 +73,14 @@ class ContainerController: UIViewController {
     }
     
     func didSelectMenuOption(menuOption: MenuOption) {
-        switch menuOption {
-        case .Notes:
-            print("Notes")
-        case .Reminders:
-            print("Reminders")
-        case .CreateNewLabel:
-            print("CreateNewLabel")
-        case .Archive:
-            print("Archive")
-        case .Trash:
-            print("Trash")
-        case .LogOut:
-            print("LogOut")
+        if menuOption.description == MenuOption.LogOut.description {
+            UserDefaults.standard.set(false, forKey: "IS_LOGGED_IN")
+            self.navigationController?.popToRootViewController(animated: false)
         }
+        print(menuOption.description)
     }
     
-    func animateStatusBar(){
+    func animateStatusBar() {
         UIView.animate(withDuration: 0.5, delay: 0,usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             self.setNeedsStatusBarAppearanceUpdate()
         }, completion: nil)

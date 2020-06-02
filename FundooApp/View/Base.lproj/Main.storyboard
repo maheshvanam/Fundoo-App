@@ -335,7 +335,6 @@
         <!--Container Controller-->
         <scene sceneID="MqJ-rd-PvA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XW9-nq-c8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="UserHomeController" id="572-Jm-9cn" customClass="ContainerController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="333-0c-Vr2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -344,13 +343,28 @@
                         <viewLayoutGuide key="safeArea" id="NBd-se-l51"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XW9-nq-c8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441" y="139"/>
+            <point key="canvasLocation" x="2432" y="126"/>
+        </scene>
+        <!--Notes View Controller-->
+        <scene sceneID="92v-6Y-iBz">
+            <objects>
+                <viewController storyboardIdentifier="NotesViewController" id="ngN-QZ-u4j" customClass="NotesViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b4V-GU-c6V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="qOQ-O4-dlk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IxA-tA-sSS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3147" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MYL-oq-a3n">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fCa-qB-4hQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cAg-z5-XYr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QRy-w8-5IY">
@@ -362,6 +376,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ee5-OY-XcS"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCa-qB-4hQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
         </scene>
