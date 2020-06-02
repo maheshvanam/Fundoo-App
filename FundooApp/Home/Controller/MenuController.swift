@@ -22,7 +22,7 @@ class MenuController: UIViewController {
     }
     
     func configureTableView(){
-        tableView = UITableView()
+        tableView = UITableView(frame: .zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         
