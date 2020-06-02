@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  NoteViewController.swift
 //  FundooApp
 //
 //  Created by admin on 02/06/20.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class NoteViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         navigationController?.navigationBar.tintColor = .lightGray
+        super.viewDidLoad()
     }
 }

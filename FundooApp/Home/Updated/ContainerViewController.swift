@@ -12,11 +12,14 @@ class ContainerViewController: UIViewController {
 
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var container: UIView!
+    
     var isMenuOpen = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("TOGGLE_MENU"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("TOGGLE_MENU"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToNotes), name: NSNotification.Name("NOTES"), object: nil)
     }
     
     @IBAction func onMenuTapped(_ sender: Any) {
@@ -33,4 +36,17 @@ class ContainerViewController: UIViewController {
             isMenuOpen = true
         }
     }
+    
+   @objc func navigateToNotes(){
+        guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "NoteViewController") as? NoteViewController else {
+          return
+        }
+        addChild(childVC)
+        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        childVC.view.frame = container.bounds
+        container.addSubview(childVC.view)
+        childVC.didMove(toParent: self)
+      }
 }
+
+

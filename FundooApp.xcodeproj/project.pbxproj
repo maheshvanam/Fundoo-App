@@ -19,6 +19,8 @@
 		8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */; };
 		841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */; };
 		841BBAE7248042360080C591 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE6248042360080C591 /* Helper.swift */; };
+		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
+		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
 		8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981224816447009AA1D9 /* SignUpViewPresenter.swift */; };
 		84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84289814248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift */; };
 		8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */; };
@@ -77,6 +79,8 @@
 		8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewContoller.swift; sourceTree = "<group>"; };
 		841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		841BBAE6248042360080C591 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		8428981224816447009AA1D9 /* SignUpViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenter.swift; sourceTree = "<group>"; };
 		84289814248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterDelegate.swift; sourceTree = "<group>"; };
 		8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterService.swift; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 			children = (
 				84D0C7CF248655CA002AB435 /* ContainerViewController.swift */,
 				84D0C7D124865732002AB435 /* MainViewController.swift */,
+				84224C322486B5ED0041EBDC /* SideMenuViewController.swift */,
+				84224C342486BAA60041EBDC /* NoteViewController.swift */,
 			);
 			path = Updated;
 			sourceTree = "<group>";
@@ -446,6 +452,7 @@
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				8435912E2484107200E58862 /* ContainerController.swift in Sources */,
 				84D0C7D224865732002AB435 /* MainViewController.swift in Sources */,
+				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
 				8428981D248173D6009AA1D9 /* SignUpUser.swift in Sources */,
 				8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */,
@@ -458,6 +465,7 @@
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
 				84A3C9E32480F19B003393EC /* SignInViewPresenterService.swift in Sources */,
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
+				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
 				8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */,
 				84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */,
 				8411698924857DB400613C12 /* NotesViewController.swift in Sources */,
