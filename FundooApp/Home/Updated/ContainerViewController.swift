@@ -11,22 +11,26 @@ import UIKit
 class ContainerViewController: UIViewController {
 
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
     var isMenuOpen = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
          NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("TOGGLE_MENU"), object: nil)
+    }
+    
+    @IBAction func onMenuTapped(_ sender: Any) {
+        toggleSideMenu()
     }
     
     @objc func toggleSideMenu(){
         if isMenuOpen {
             leadingConstraint.constant = -250
-            isMenuOpen = true
+            isMenuOpen = false
         }
         else {
             leadingConstraint.constant = 0
-            isMenuOpen = false
+            isMenuOpen = true
         }
     }
 }

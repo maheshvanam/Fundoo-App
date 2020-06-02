@@ -347,7 +347,7 @@
             </objects>
             <point key="canvasLocation" x="2432" y="126"/>
         </scene>
-        <!--Container View Controller-->
+        <!--Notes-->
         <scene sceneID="XjP-eF-pEG">
             <objects>
                 <viewController storyboardIdentifier="ContainerViewController" id="MDx-9F-lUx" customClass="ContainerViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -356,7 +356,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0u-Im-6bj">
-                                <rect key="frame" x="-250" y="44" width="250" height="818"/>
+                                <rect key="frame" x="-250" y="88" width="250" height="774"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Yrb-6r-opD"/>
                                 </constraints>
@@ -365,7 +365,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-zb-aaR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <connections>
                                     <segue destination="0Dt-J2-uFy" kind="embed" id="m23-TS-4Iv"/>
                                 </connections>
@@ -375,25 +375,35 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="TQp-zb-aaR" secondAttribute="trailing" id="3E8-f2-dZc"/>
                             <constraint firstItem="P0u-Im-6bj" firstAttribute="leading" secondItem="EJB-xX-3tr" secondAttribute="leading" constant="-250" id="498-kM-rVg"/>
-                            <constraint firstItem="TQp-zb-aaR" firstAttribute="top" secondItem="EJB-xX-3tr" secondAttribute="top" id="5SM-CT-HaG"/>
                             <constraint firstItem="TQp-zb-aaR" firstAttribute="bottom" secondItem="EJB-xX-3tr" secondAttribute="bottom" id="7hj-A7-kcj"/>
                             <constraint firstItem="TQp-zb-aaR" firstAttribute="leading" secondItem="P0u-Im-6bj" secondAttribute="trailing" id="ITN-oz-aNW"/>
+                            <constraint firstItem="TQp-zb-aaR" firstAttribute="top" secondItem="EJB-xX-3tr" secondAttribute="top" id="VI8-5d-gOT"/>
                             <constraint firstItem="P0u-Im-6bj" firstAttribute="bottom" secondItem="EJB-xX-3tr" secondAttribute="bottom" id="e7c-4J-TPw"/>
                             <constraint firstItem="P0u-Im-6bj" firstAttribute="top" secondItem="EJB-xX-3tr" secondAttribute="top" id="x9b-Hy-8Za"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EJB-xX-3tr"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Notes" id="9JB-AE-QEo">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="Ozf-DD-YDr">
+                            <connections>
+                                <action selector="onMenuTapped:" destination="MDx-9F-lUx" id="wSH-nb-gsl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="leadingConstraint" destination="498-kM-rVg" id="vLy-5V-4KE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afK-4L-rhc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3552" y="126"/>
+            <point key="canvasLocation" x="4460.8695652173919" y="125.89285714285714"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="AZy-s4-gJe">
             <objects>
                 <tableViewController id="d5n-u3-jIe" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="QAJ-3V-cJ9">
-                        <rect key="frame" x="0.0" y="0.0" width="250" height="818"/>
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="774"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -653,9 +663,10 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="0Dt-J2-uFy" customClass="MainViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wNN-pM-c92">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kLl-Er-asF"/>
                     </view>
                     <navigationItem key="navigationItem" id="02i-y2-eTb">
                         <barButtonItem key="leftBarButtonItem" title="menu" image="menu" id="t0X-DF-wbp">
@@ -667,7 +678,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqN-Xy-oLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3783" y="826"/>
+            <point key="canvasLocation" x="4770" y="812"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4O4-Rk-IWK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PhN-oj-fiG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jY1-MF-a2d">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MDx-9F-lUx" kind="relationship" relationship="rootViewController" id="DdG-4g-O5T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eM4-c6-Cx1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3550.7246376811595" y="125.89285714285714"/>
         </scene>
     </scenes>
     <resources>
