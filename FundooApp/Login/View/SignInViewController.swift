@@ -22,8 +22,10 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
-             show(ContainerController(), sender: self)
+            let desitinationVC =   navigationController?.storyboard?.instantiateViewController(withIdentifier: "ContainerViewController") as! ContainerViewController
+            navigationController?.pushViewController(desitinationVC, animated: false)
         }
         signInViewPresenter = SignInViewPresenter(delegate: self)
         signInButton.layer.cornerRadius = 8.0
