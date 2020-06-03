@@ -12,13 +12,13 @@ class SideMenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: Notification.Name("TOGGLE_MENU"), object: nil)
         switch indexPath.row {
-        case 1:
+        case 0:
             NotificationCenter.default.post(name: Notification.Name("NOTES"), object: nil)
-        case 6:
+        case 5:
             UserDefaults.standard.set(false, forKey: "IS_LOGGED_IN")
             self.navigationController?.popToRootViewController(animated: false)
         default:
-            NotificationCenter.default.post(name: Notification.Name("HOME"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name("NOTES"), object: nil)
         }
     }
 }

@@ -19,12 +19,22 @@ class AddNoteViewController: UIViewController {
         super.viewDidLoad()
         titleField.becomeFirstResponder()
         titleField.layer.backgroundColor = UIColor.blue.cgColor
+        //navigationController?.navigationBar.isHidden = true
+        // NotificationCenter.default.post(name: Notification.Name("Save"), object: nil)
     }
+    
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         if let title = titleField.text, !title.isEmpty ,!noteField.text.isEmpty {
             let coreData = CoreDataService()
             coreData.insertNote(title: title, note: noteField.text)
         }
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       // navigationController?.navigationBar.isHidden = true
     }
 }
