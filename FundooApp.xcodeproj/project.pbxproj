@@ -21,7 +21,6 @@
 		841BBAE7248042360080C591 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE6248042360080C591 /* Helper.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
 		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
-		84224C372486DB2A0041EBDC /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C362486DB2A0041EBDC /* TabViewController.swift */; };
 		8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981224816447009AA1D9 /* SignUpViewPresenter.swift */; };
 		84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84289814248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift */; };
 		8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */; };
@@ -84,7 +83,6 @@
 		841BBAE6248042360080C591 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
-		84224C362486DB2A0041EBDC /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		8428981224816447009AA1D9 /* SignUpViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenter.swift; sourceTree = "<group>"; };
 		84289814248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterDelegate.swift; sourceTree = "<group>"; };
 		8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterService.swift; sourceTree = "<group>"; };
@@ -318,7 +316,6 @@
 				84D0C7D124865732002AB435 /* MainViewController.swift */,
 				84224C322486B5ED0041EBDC /* SideMenuViewController.swift */,
 				84224C342486BAA60041EBDC /* NoteViewController.swift */,
-				84224C362486DB2A0041EBDC /* TabViewController.swift */,
 				84435F3524876D3B0066586E /* AddNoteViewController.swift */,
 				84435F3924877FC00066586E /* NoteViewController+Extension.swift */,
 			);
@@ -477,7 +474,6 @@
 				84435F3624876D3B0066586E /* AddNoteViewController.swift in Sources */,
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
-				84224C372486DB2A0041EBDC /* TabViewController.swift in Sources */,
 				8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */,
 				84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */,
 				8411698924857DB400613C12 /* NotesViewController.swift in Sources */,
