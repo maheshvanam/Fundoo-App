@@ -18,6 +18,7 @@ class AddNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleField.becomeFirstResponder()
+        titleField.layer.backgroundColor = UIColor.blue.cgColor
     }
     
     override func viewWillDisappear(_ animated: Bool) {

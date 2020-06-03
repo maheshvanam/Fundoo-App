@@ -366,9 +366,6 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-zb-aaR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <connections>
-                                    <segue destination="0Dt-J2-uFy" kind="embed" id="m23-TS-4Iv"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -394,7 +391,7 @@
                     <connections>
                         <outlet property="container" destination="TQp-zb-aaR" id="nRw-R6-IuQ"/>
                         <outlet property="leadingConstraint" destination="498-kM-rVg" id="vLy-5V-4KE"/>
-                        <segue destination="6JG-3C-ySV" kind="show" identifier="notes" id="mTE-bV-peZ"/>
+                        <segue destination="6JG-3C-ySV" kind="show" identifier="notes" id="Lkg-vu-3mo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afK-4L-rhc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -689,7 +686,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqG-gr-Esn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5486" y="780"/>
+            <point key="canvasLocation" x="3359" y="801"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MYL-oq-a3n">
@@ -714,7 +711,7 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="0Dt-J2-uFy" customClass="MainViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wNN-pM-c92">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kLl-Er-asF"/>
@@ -729,7 +726,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqN-Xy-oLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6377" y="780"/>
+            <point key="canvasLocation" x="5159" y="126"/>
         </scene>
         <!--Notes-->
         <scene sceneID="dtO-1l-sgH">
@@ -796,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQG-DX-ZW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4461" y="1021"/>
+            <point key="canvasLocation" x="5252" y="1100"/>
         </scene>
         <!--Add Notes-->
         <scene sceneID="hJS-aS-2ex">
@@ -807,14 +804,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2m-nL-JRf">
-                                <rect key="frame" x="16" y="60" width="382" height="34"/>
+                                <rect key="frame" x="16" y="60" width="382" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="b2t-1D-hUS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tgF-xY-EyX">
-                                <rect key="frame" x="16" y="102" width="382" height="690"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tgF-xY-EyX">
+                                <rect key="frame" x="16" y="118" width="382" height="679"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -822,9 +822,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="x2m-nL-JRf" firstAttribute="top" secondItem="4Cf-fQ-jQH" secondAttribute="top" constant="16" id="5PN-3j-peV"/>
-                            <constraint firstItem="x2m-nL-JRf" firstAttribute="leading" secondItem="4Cf-fQ-jQH" secondAttribute="leading" constant="16" id="9OF-6M-L71"/>
-                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="trailing" secondItem="x2m-nL-JRf" secondAttribute="trailing" constant="16" id="oM1-8k-Z8n"/>
+                            <constraint firstItem="x2m-nL-JRf" firstAttribute="top" secondItem="4Cf-fQ-jQH" secondAttribute="top" constant="16" id="9vS-Vq-dgw"/>
+                            <constraint firstItem="x2m-nL-JRf" firstAttribute="leading" secondItem="4Cf-fQ-jQH" secondAttribute="leading" constant="16" id="GnD-7b-2eh"/>
+                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="bottom" secondItem="tgF-xY-EyX" secondAttribute="bottom" constant="16" id="Puc-Dy-VjL"/>
+                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="trailing" secondItem="x2m-nL-JRf" secondAttribute="trailing" constant="16" id="Z3x-7B-iku"/>
+                            <constraint firstItem="tgF-xY-EyX" firstAttribute="leading" secondItem="4Cf-fQ-jQH" secondAttribute="leading" constant="16" id="kRD-I2-XjL"/>
+                            <constraint firstItem="tgF-xY-EyX" firstAttribute="top" secondItem="x2m-nL-JRf" secondAttribute="bottom" constant="8" id="lMb-7p-7QT"/>
+                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="trailing" secondItem="tgF-xY-EyX" secondAttribute="trailing" constant="16" id="qMX-TN-sLd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Cf-fQ-jQH"/>
                     </view>
@@ -836,12 +840,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFs-QR-vOZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3676.811594202899" y="1720.9821428571429"/>
+            <point key="canvasLocation" x="4428.985507246377" y="1820.7589285714284"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="NQs-T2-vUW">
             <objects>
-                <tabBarController storyboardIdentifier="TabViewController" modalPresentationStyle="fullScreen" id="6JG-3C-ySV" customClass="TabViewController" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="6JG-3C-ySV" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bp0-7i-uPG"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wjA-XZ-ZWP">
@@ -856,7 +860,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxe-Zn-GO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3678" y="1021"/>
+            <point key="canvasLocation" x="4429" y="1100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4O4-Rk-IWK">
