@@ -801,18 +801,42 @@
         <!--Add Notes-->
         <scene sceneID="hJS-aS-2ex">
             <objects>
-                <viewController id="nGj-qQ-VlS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNoteViewController" id="nGj-qQ-VlS" customClass="AddNoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ssi-S8-AWR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2m-nL-JRf">
+                                <rect key="frame" x="16" y="60" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tgF-xY-EyX">
+                                <rect key="frame" x="16" y="102" width="382" height="690"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="x2m-nL-JRf" firstAttribute="top" secondItem="4Cf-fQ-jQH" secondAttribute="top" constant="16" id="5PN-3j-peV"/>
+                            <constraint firstItem="x2m-nL-JRf" firstAttribute="leading" secondItem="4Cf-fQ-jQH" secondAttribute="leading" constant="16" id="9OF-6M-L71"/>
+                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="trailing" secondItem="x2m-nL-JRf" secondAttribute="trailing" constant="16" id="oM1-8k-Z8n"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Cf-fQ-jQH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Notes" id="FtY-8V-BZm"/>
+                    <connections>
+                        <outlet property="noteField" destination="tgF-xY-EyX" id="jq5-KF-qHK"/>
+                        <outlet property="titleField" destination="x2m-nL-JRf" id="3ga-oS-ym0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFs-QR-vOZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3677" y="1721"/>
+            <point key="canvasLocation" x="3676.811594202899" y="1720.9821428571429"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="NQs-T2-vUW">

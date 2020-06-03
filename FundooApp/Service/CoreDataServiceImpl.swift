@@ -12,6 +12,9 @@ import CoreData
 
 class CoreDataServiceImpl : DataService {
     
+    
+    
+    
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     private let fetchRequest = NSFetchRequest<User>(entityName: "User")
@@ -53,5 +56,12 @@ class CoreDataServiceImpl : DataService {
         }
         catch{
         }
+    }
+    
+    func insertNote(title: String ,note: String) {
+        let  newNote = Note(context: context)
+        newNote.title = title
+        newNote.note = note
+        appDelegate.saveContext()
     }
 }
