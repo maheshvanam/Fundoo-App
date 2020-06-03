@@ -24,7 +24,6 @@ class AddNoteViewController: UIViewController {
         if let title = titleField.text, !title.isEmpty ,!noteField.text.isEmpty {
             let coreData = CoreDataService()
             coreData.insertNote(title: title, note: noteField.text)
-            //completion?(text, noteField.text)
         }
     }
 }
