@@ -38,7 +38,8 @@ extension SignInViewController: PresenterSignInViewDelegate {
     
     func navigateToUserHomeView() {
         UserDefaults.standard.set(true, forKey: "IS_LOGGED_IN")
-        show(ContainerController(), sender: self)
+        let desitinationVC =   navigationController?.storyboard?.instantiateViewController(withIdentifier: "ContainerViewController") as! ContainerViewController
+        navigationController?.pushViewController(desitinationVC, animated: false)
     }
     
     func showAlert(title: String, message: String) {
@@ -54,5 +55,4 @@ extension SignInViewController: PresenterSignInViewDelegate {
             }
         navigationController?.pushViewController(destinationViewController, animated: false)
         }
-    
 }
