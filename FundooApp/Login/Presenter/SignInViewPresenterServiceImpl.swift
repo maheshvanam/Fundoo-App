@@ -29,6 +29,7 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             let authenticationResult = try coreDataService.checkValidUserOrNot(email: email, password: password)
             
             if  authenticationResult == Result.SUCCESS {
+                UserDefaults.standard.set(email, forKey: "EMAIL")
                 self.signInViewDelegate.clearFields()
                 self.signInViewDelegate.clearLabels()
                 self.signInViewDelegate.navigateToUserHomeView()

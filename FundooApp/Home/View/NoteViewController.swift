@@ -23,13 +23,13 @@ class NoteViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         loadData()
+        
         NotificationCenter.default.post(name: Notification.Name("SET_MENU"), object: nil)
     }
     func loadData(){
         models = []
         let coreData = CoreDataService()
-        let notes = coreData.getAllNotes()
-        if(notes.count > 0){
+        if let notes = coreData.getAllNotes() {
             self.label.isHidden = true
             self.table.isHidden = false
             let allNotes = notes as! [Note]

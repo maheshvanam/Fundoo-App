@@ -56,19 +56,39 @@ class CoreDataServiceImpl : DataService {
     }
     
     func insertNote(title: String ,note: String) {
+        let email = UserDefaults.standard.string(forKey: "EMAIL")
         let  newNote = Note(context: context)
         newNote.title = title
         newNote.note = note
+        newNote.owner = getUser(email: email!)
         appDelegate.saveContext()
     }
     
-    func getAllNotes() -> NSArray {
+    func getAllNotes() -> NSArray? {
         let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
+        let email = UserDefaults.standard.string(forKey: "EMAIL")
+        let user = getUser(email: email!)
+        fetchRequest.predicate = NSPredicate(format: "owner = %@", user)
         var result: NSArray?
         do{
             result = try context.fetch(fetchRequest) as NSArray
         }
         catch{}
-        return result!
+        return result
+    }
+    
+    func getUser(email: String) ->  User {
+        var user:User!
+        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
+        do{
+            let result = try context.fetch(fetchRequest) as NSArray
+            if result.count > 0 {
+                user = (result.firstObject as! User)
+            }
+        }
+        catch{
+            
+        }
+        return user
     }
 }
