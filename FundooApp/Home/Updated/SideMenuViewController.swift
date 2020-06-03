@@ -14,6 +14,9 @@ class SideMenuViewController: UITableViewController {
         switch indexPath.row {
         case 1:
             NotificationCenter.default.post(name: Notification.Name("NOTES"), object: nil)
+        case 6:
+            UserDefaults.standard.set(false, forKey: "IS_LOGGED_IN")
+            self.navigationController?.popToRootViewController(animated: false)
         default:
             NotificationCenter.default.post(name: Notification.Name("HOME"), object: nil)
         }
