@@ -12,9 +12,6 @@ import CoreData
 
 class CoreDataServiceImpl : DataService {
     
-    
-    
-    
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     private let fetchRequest = NSFetchRequest<User>(entityName: "User")
@@ -64,4 +61,15 @@ class CoreDataServiceImpl : DataService {
         newNote.note = note
         appDelegate.saveContext()
     }
+    
+    func getAllNotes() -> NSArray {
+        let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
+        var result: NSArray?
+        do{
+            result = try context.fetch(fetchRequest) as NSArray
+        }
+        catch{}
+        return result!
+    }
+    
 }

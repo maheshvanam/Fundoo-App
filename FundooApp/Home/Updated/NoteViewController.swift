@@ -20,18 +20,18 @@ class NoteViewController: UIViewController {
         title = "Notes"
         table.delegate = self
         table.dataSource = self
-        
-        guard let addNoteVC = storyboard?.instantiateViewController(identifier: "AddNoteViewController") as? AddNoteViewController else{
-                    return
-                }
+        let coreData = CoreDataService()
+        let notes = coreData.getAllNotes()
+        if(notes.count > 0){
+            self.label.isHidden = true
+            self.table.isHidden = false
+            for note in notes {
+                let noteEntity = note as! Note
+                self.models.append((title: noteEntity.title! , note: noteEntity.note!))
+                self.table.reloadData()
                 
-                addNoteVC.title = "New Note"
-               addNoteVC.completion = {
-                   noteTitle,note in self.models.append((title: noteTitle,note: note))
-                   self.label.isHidden = true
-                   self.table.isHidden = false
-                   self.table.reloadData()
-               }
+            }
+        }
     }
     
     @IBAction func didTapNewNotes(){
