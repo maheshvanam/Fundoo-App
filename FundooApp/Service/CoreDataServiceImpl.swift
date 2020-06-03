@@ -71,5 +71,4 @@ class CoreDataServiceImpl : DataService {
         catch{}
         return result!
     }
-    
 }
