@@ -25,28 +25,12 @@ class NoteViewController: UIViewController {
         if(notes.count > 0){
             self.label.isHidden = true
             self.table.isHidden = false
-            for note in notes {
-                let noteEntity = note as! Note
-                self.models.append((title: noteEntity.title! , note: noteEntity.note!))
+            let allNotes = notes as! [Note]
+            for note in allNotes {
+                self.models.append((title: note.title! , note: note.note!))
                 self.table.reloadData()
-                
             }
         }
-    }
-    
-    @IBAction func didTapNewNotes(){
-         guard let addNoteVC = storyboard?.instantiateViewController(identifier: "AddNoteViewController") as? AddNoteViewController else{
-             return
-         }
-         
-         addNoteVC.title = "New Note"
-        addNoteVC.completion = {
-            noteTitle,note in self.models.append((title: noteTitle,note: note))
-            self.label.isHidden = true
-            self.table.isHidden = false
-            self.table.reloadData()
-        }
-         navigationController?.pushViewController(addNoteVC,animated: false )
     }
 }
 
@@ -65,7 +49,6 @@ extension NoteViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
 
 }
