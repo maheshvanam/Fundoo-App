@@ -17,6 +17,7 @@ class AddNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleField.placeholder = "Title"
         titleField.becomeFirstResponder()
         titleField.layer.backgroundColor = UIColor.blue.cgColor
         //navigationController?.navigationBar.isHidden = true
