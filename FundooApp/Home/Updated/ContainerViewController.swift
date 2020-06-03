@@ -18,6 +18,7 @@ class ContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = .lightGray
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("TOGGLE_MENU"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToNotes), name: NSNotification.Name("NOTES"), object: nil)
     }
@@ -28,7 +29,7 @@ class ContainerViewController: UIViewController {
     
     @objc func toggleSideMenu(){
         if isMenuOpen {
-            leadingConstraint.constant = -250
+            self.leadingConstraint.constant = -250
             isMenuOpen = false
         }
         else {
