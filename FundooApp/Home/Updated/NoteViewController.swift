@@ -20,6 +20,10 @@ class NoteViewController: UIViewController {
         title = "Notes"
         table.delegate = self
         table.dataSource = self
+        loadData()
+    }
+    
+    func loadData(){
         let coreData = CoreDataService()
         let notes = coreData.getAllNotes()
         if(notes.count > 0){

@@ -367,7 +367,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-zb-aaR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <connections>
-                                    <segue destination="6JG-3C-ySV" kind="embed" id="CCf-5z-YTm"/>
+                                    <segue destination="0Dt-J2-uFy" kind="embed" id="jjs-Ds-3aG"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -394,6 +394,7 @@
                     <connections>
                         <outlet property="container" destination="TQp-zb-aaR" id="nRw-R6-IuQ"/>
                         <outlet property="leadingConstraint" destination="498-kM-rVg" id="vLy-5V-4KE"/>
+                        <segue destination="6JG-3C-ySV" kind="show" identifier="notes" id="W8g-Qn-4OG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afK-4L-rhc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -688,7 +689,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqG-gr-Esn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3359" y="801"/>
+            <point key="canvasLocation" x="5377" y="106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MYL-oq-a3n">
@@ -713,7 +714,7 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="0Dt-J2-uFy" customClass="MainViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wNN-pM-c92">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kLl-Er-asF"/>
@@ -728,24 +729,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqN-Xy-oLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6228" y="126"/>
+            <point key="canvasLocation" x="6088" y="126"/>
         </scene>
         <!--Notes-->
         <scene sceneID="dtO-1l-sgH">
             <objects>
                 <viewController storyboardIdentifier="NoteViewController" modalPresentationStyle="fullScreen" id="GGz-HJ-OnA" customClass="NoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Np4-QL-CFv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No notes yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCt-V8-Crr">
-                                <rect key="frame" x="158.5" y="376.5" width="97" height="21"/>
+                                <rect key="frame" x="158.5" y="437.5" width="97" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="It8-LB-zBA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="681"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="XZt-uV-lgL" detailTextLabel="TPB-5S-PnU" style="IBUITableViewCellStyleSubtitle" id="beR-jf-eFm">
@@ -795,14 +796,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQG-DX-ZW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5252" y="1100"/>
+            <point key="canvasLocation" x="5257" y="858"/>
         </scene>
-        <!--Add Notes-->
+        <!--Title-->
         <scene sceneID="hJS-aS-2ex">
             <objects>
                 <viewController storyboardIdentifier="AddNoteViewController" id="nGj-qQ-VlS" customClass="AddNoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ssi-S8-AWR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2m-nL-JRf">
@@ -815,7 +816,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tgF-xY-EyX">
-                                <rect key="frame" x="16" y="71" width="382" height="591"/>
+                                <rect key="frame" x="16" y="270" width="382" height="679"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -826,15 +827,16 @@
                         <constraints>
                             <constraint firstItem="x2m-nL-JRf" firstAttribute="top" secondItem="4Cf-fQ-jQH" secondAttribute="top" constant="16" id="9vS-Vq-dgw"/>
                             <constraint firstItem="x2m-nL-JRf" firstAttribute="leading" secondItem="4Cf-fQ-jQH" secondAttribute="leading" constant="16" id="GnD-7b-2eh"/>
-                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="bottom" secondItem="tgF-xY-EyX" secondAttribute="bottom" constant="16" id="Puc-Dy-VjL"/>
+                            <constraint firstItem="tgF-xY-EyX" firstAttribute="top" secondItem="x2m-nL-JRf" secondAttribute="bottom" constant="8" id="OBw-rm-H6o"/>
                             <constraint firstItem="4Cf-fQ-jQH" firstAttribute="trailing" secondItem="x2m-nL-JRf" secondAttribute="trailing" constant="16" id="Z3x-7B-iku"/>
-                            <constraint firstItem="tgF-xY-EyX" firstAttribute="leading" secondItem="4Cf-fQ-jQH" secondAttribute="leading" constant="16" id="kRD-I2-XjL"/>
-                            <constraint firstItem="tgF-xY-EyX" firstAttribute="top" secondItem="x2m-nL-JRf" secondAttribute="bottom" constant="8" id="lMb-7p-7QT"/>
-                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="trailing" secondItem="tgF-xY-EyX" secondAttribute="trailing" constant="16" id="qMX-TN-sLd"/>
+                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="bottom" secondItem="tgF-xY-EyX" secondAttribute="bottom" constant="16" id="jB5-3G-8U9"/>
+                            <constraint firstItem="4Cf-fQ-jQH" firstAttribute="trailing" secondItem="tgF-xY-EyX" secondAttribute="trailing" constant="16" id="rIf-FI-l9p"/>
+                            <constraint firstItem="tgF-xY-EyX" firstAttribute="leading" secondItem="4Cf-fQ-jQH" secondAttribute="leading" constant="16" id="wdM-m4-6PM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Cf-fQ-jQH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Notes" id="FtY-8V-BZm"/>
+                    <navigationItem key="navigationItem" title="Title" id="8Pa-KG-VQS"/>
                     <connections>
                         <outlet property="noteField" destination="tgF-xY-EyX" id="jq5-KF-qHK"/>
                         <outlet property="titleField" destination="x2m-nL-JRf" id="3ga-oS-ym0"/>
@@ -842,7 +844,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFs-QR-vOZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4428.985507246377" y="1820.7589285714284"/>
+            <point key="canvasLocation" x="3659" y="858"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NQs-T2-vUW">
@@ -862,7 +864,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxe-Zn-GO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4501" y="970"/>
+            <point key="canvasLocation" x="4461" y="859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4O4-Rk-IWK">

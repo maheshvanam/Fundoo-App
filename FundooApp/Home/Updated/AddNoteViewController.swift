@@ -19,8 +19,6 @@ class AddNoteViewController: UIViewController {
         super.viewDidLoad()
         titleField.becomeFirstResponder()
         titleField.layer.backgroundColor = UIColor.blue.cgColor
-        //navigationController?.navigationBar.isHidden = true
-        NotificationCenter.default.post(name: Notification.Name("HIDE_NAV_BAR"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
