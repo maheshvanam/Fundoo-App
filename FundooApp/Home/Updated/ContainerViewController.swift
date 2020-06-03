@@ -40,15 +40,14 @@ class ContainerViewController: UIViewController {
     
    @objc func navigateToNotes(){
     performSegue(withIdentifier: "notes", sender: nil)
-//
-//        guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "TabViewController") as? TabViewController else {
-//          return
-//        }
-//        addChild(childVC)
-//        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        childVC.view.frame = container.bounds
-//        container.addSubview(childVC.view)
-//        childVC.didMove(toParent: self)
+/*        guard let childVC =           self.storyboard?.instantiateViewController(withIdentifier: "TabViewController") as? TabViewController else {
+          return
+        }
+        addChild(childVC)
+        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        childVC.view.frame = container.bounds
+        container.addSubview(childVC.view)
+        childVC.didMove(toParent: self) */
       }
 }
 
