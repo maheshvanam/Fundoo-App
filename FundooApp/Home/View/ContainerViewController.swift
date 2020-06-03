@@ -20,25 +20,30 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = .lightGray
-
-        
-         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("HIDE_NAV_BAR"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("TOGGLE_MENU"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToNotes), name: NSNotification.Name("NOTES"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(saveChange), name: NSNotification.Name("Save"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setBackButton), name: NSNotification.Name("SET_BACK_BUTTON"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNavBar), name: NSNotification.Name("SET_MENU"), object: nil)
     }
     
     @IBAction func onMenuTapped(_ sender: Any) {
         toggleSideMenu()
     }
     
-    @objc func saveChange() {
-        let button1 = UIBarButtonItem(image: UIImage(named: "notes"), style: .plain, target: self, action: #selector(resetNav))
-        navigationItem.setLeftBarButton(button1,animated: false)
+    @objc func setBackButton() {
+        let backButton = UIBarButtonItem(image:UIImage(named: "back"), style: .plain, target: self, action: #selector(setMenuButton))
+        navigationItem.setLeftBarButton(backButton,animated: false)
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+    }
+    @objc func updateNavBar(){
+        let menuButton = UIBarButtonItem(image:UIImage(named: "menu"), style: .plain, target: self, action: #selector(toggleSideMenu))
+        navigationItem.setLeftBarButton(menuButton,animated: false)
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
     }
     
-    @objc func resetNav(){
-        navigationItem.setLeftBarButton(menuItem, animated: false)
+    @objc func setMenuButton(){
+        updateNavBar()
+        NotificationCenter.default.post(name: Notification.Name("UPDATE_NAV"), object: nil)
     }
     
     @objc func toggleSideMenu(){
@@ -51,18 +56,6 @@ class ContainerViewController: UIViewController {
             isMenuOpen = true
         }
     }
-    
-   @objc func navigateToNotes(){
-    //performSegue(withIdentifier: "notes", sender: nil)
-/*        guard let childVC =           self.storyboard?.instantiateViewController(withIdentifier: "TabViewController") as? TabViewController else {
-          return
-        }
-        addChild(childVC)
-        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        childVC.view.frame = container.bounds
-        container.addSubview(childVC.view)
-        childVC.didMove(toParent: self) */
-      }
 }
 
 

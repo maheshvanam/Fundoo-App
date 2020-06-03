@@ -13,29 +13,28 @@ class AddNoteViewController: UIViewController {
     @IBOutlet var titleField: UITextField!
     @IBOutlet var noteField: UITextView!
     
-    var completion: ((String,String)-> Void)?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleField.placeholder = "Title"
         titleField.becomeFirstResponder()
-        titleField.layer.backgroundColor = UIColor.blue.cgColor
-        //navigationController?.navigationBar.isHidden = true
-        // NotificationCenter.default.post(name: Notification.Name("Save"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onBackPressed), name: NSNotification.Name("UPDATE_NAV"), object: nil)
     }
     
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
+    @objc func onBackPressed() {
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(saveNote), userInfo: nil, repeats: false)
+     }
+
+    @objc func saveNote(){
         if let title = titleField.text, !title.isEmpty ,!noteField.text.isEmpty {
             let coreData = CoreDataService()
             coreData.insertNote(title: title, note: noteField.text)
         }
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-    }
+        titleField.text = ""
+        noteField.text = ""
+        tabBarController!.selectedIndex = 0
+     }
+    
     override func viewWillAppear(_ animated: Bool) {
-       // navigationController?.navigationBar.isHidden = true
+        NotificationCenter.default.post(name: Notification.Name("SET_BACK_BUTTON"), object: nil)
     }
 }

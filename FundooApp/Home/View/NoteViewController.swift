@@ -20,10 +20,13 @@ class NoteViewController: UIViewController {
         title = "Notes"
         table.delegate = self
         table.dataSource = self
-        loadData()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+        NotificationCenter.default.post(name: Notification.Name("SET_MENU"), object: nil)
+    }
     func loadData(){
+        models = []
         let coreData = CoreDataService()
         let notes = coreData.getAllNotes()
         if(notes.count > 0){
