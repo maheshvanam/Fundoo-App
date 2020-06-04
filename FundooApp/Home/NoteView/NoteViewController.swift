@@ -13,30 +13,19 @@ class NoteViewController: UIViewController {
     @IBOutlet var table: UITableView!
     @IBOutlet var label: UILabel!
     
+    var notePresenter: NoteDelegate?
     var models = [Note]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        notePresenter = NotePresenter(delegate: self)
         title = "Notes"
         table.delegate = self
         table.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        loadData()
-        
+        self.notePresenter!.updateTableData()
         NotificationCenter.default.post(name: Notification.Name(Constants.SET_MENU), object: nil)
-    }
-    
-    func loadData() {
-        models = []
-        let coreData = CoreDataService()
-        if let notes = coreData.getAllNotes() {
-            self.label.isHidden = true
-            self.table.isHidden = false
-            let allNotes = notes as! [Note]
-            models = allNotes
-            self.table.reloadData()
-        }
     }
 }
