@@ -12,14 +12,17 @@ class ContainerViewController: UIViewController {
 
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var profileItem: UIBarButtonItem!
     @IBOutlet weak var menuItem: UIBarButtonItem!
     @IBOutlet weak var container: UIView!
     
     var isMenuOpen = false
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = .lightGray
+        super.viewDidLoad()
+        let email = UserDefaults.standard.string(forKey: "EMAIL")
+        profileItem.title = " \(email!.first ?? "M")"
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("TOGGLE_MENU"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setBackButton), name: NSNotification.Name("SET_BACK_BUTTON"), object: nil)
         

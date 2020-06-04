@@ -375,11 +375,15 @@
                                 <action selector="onMenuTapped:" destination="MDx-9F-lUx" id="wSH-nb-gsl"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="profile" id="l4K-iM-8cK">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="container" destination="TQp-zb-aaR" id="nRw-R6-IuQ"/>
                         <outlet property="leadingConstraint" destination="498-kM-rVg" id="vLy-5V-4KE"/>
                         <outlet property="menuItem" destination="Ozf-DD-YDr" id="fzk-KK-HJs"/>
+                        <outlet property="profileItem" destination="l4K-iM-8cK" id="09U-9u-bDo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afK-4L-rhc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -594,6 +598,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QRy-w8-5IY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
