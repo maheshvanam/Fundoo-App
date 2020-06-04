@@ -15,7 +15,7 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var profileItem: UIBarButtonItem!
     @IBOutlet weak var menuItem: UIBarButtonItem!
     @IBOutlet weak var container: UIView!
-    
+
     var isMenuOpen = false
     
     override func viewDidLoad() {
@@ -26,6 +26,18 @@ class ContainerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(setBackButton), name: NSNotification.Name(Constants.SET_BACK_BUTTON), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateNavBar), name: NSNotification.Name(Constants.SET_MENU), object: nil)
+    }
+    
+    @IBAction func onProfileClick(_ sender: Any) {
+        print("sfsfs")
+          guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {
+            return
+          }
+          addChild(childVC)
+          childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+          childVC.view.frame = container.bounds
+          container.addSubview(childVC.view)
+          childVC.didMove(toParent: self)
     }
     
     func configureProfileNavItem(){
@@ -64,6 +76,7 @@ class ContainerViewController: UIViewController {
             isMenuOpen = true
         }
     }
+    
 }
 
 

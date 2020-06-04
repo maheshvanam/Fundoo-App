@@ -13,7 +13,7 @@ class NoteViewController: UIViewController {
     @IBOutlet var table: UITableView!
     @IBOutlet var label: UILabel!
     
-    var models: [(title: String, note: String)] = []
+    var models = [Note]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +35,8 @@ class NoteViewController: UIViewController {
             self.label.isHidden = true
             self.table.isHidden = false
             let allNotes = notes as! [Note]
-            for note in allNotes {
-                self.models.append((title: note.title! , note: note.note!))
-                self.table.reloadData()
-            }
+            models = allNotes
+            self.table.reloadData()
         }
     }
     

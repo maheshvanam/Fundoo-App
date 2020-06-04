@@ -375,8 +375,11 @@
                                 <action selector="onMenuTapped:" destination="MDx-9F-lUx" id="wSH-nb-gsl"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="profile" id="l4K-iM-8cK">
+                        <barButtonItem key="rightBarButtonItem" title="profile" image="profile_item" id="l4K-iM-8cK">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onProfileClick:" destination="MDx-9F-lUx" id="E6U-6d-bYE"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -611,14 +614,36 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="H2R-3B-6z3">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="0Dt-J2-uFy" customClass="MainViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="0Dt-J2-uFy" customClass="ProfileViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wNN-pM-c92">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile" translatesAutoresizingMaskIntoConstraints="NO" id="atl-1W-Xo0">
+                                <rect key="frame" x="87" y="167" width="240" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PII-pg-zET">
+                                <rect key="frame" x="0.0" y="391" width="414" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="fZl-iX-erT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PII-pg-zET" firstAttribute="top" secondItem="atl-1W-Xo0" secondAttribute="bottom" constant="24" id="EpK-JW-F7G"/>
+                            <constraint firstItem="kLl-Er-asF" firstAttribute="trailing" secondItem="atl-1W-Xo0" secondAttribute="trailing" constant="87" id="bQt-it-RmI"/>
+                            <constraint firstItem="atl-1W-Xo0" firstAttribute="top" secondItem="kLl-Er-asF" secondAttribute="top" constant="123" id="hWs-Vl-dOP"/>
+                            <constraint firstItem="PII-pg-zET" firstAttribute="leading" secondItem="kLl-Er-asF" secondAttribute="leading" id="pxO-CW-TlZ"/>
+                            <constraint firstItem="atl-1W-Xo0" firstAttribute="leading" secondItem="kLl-Er-asF" secondAttribute="leading" constant="87" id="qbK-5k-qB9"/>
+                            <constraint firstItem="kLl-Er-asF" firstAttribute="trailing" secondItem="PII-pg-zET" secondAttribute="trailing" id="zqL-PH-1T2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kLl-Er-asF"/>
                     </view>
                     <navigationItem key="navigationItem" id="02i-y2-eTb">
@@ -628,10 +653,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileLabel" destination="PII-pg-zET" id="2IV-bK-8vr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqN-Xy-oLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3203" y="981"/>
+            <point key="canvasLocation" x="3202.898550724638" y="980.35714285714278"/>
         </scene>
         <!--Notes-->
         <scene sceneID="dtO-1l-sgH">
@@ -791,11 +819,13 @@
     </scenes>
     <resources>
         <image name="archive" width="18" height="18"/>
+        <image name="ic_profile" width="200" height="200"/>
         <image name="logout" width="18" height="18"/>
         <image name="menu" width="18" height="18"/>
         <image name="new_label" width="18" height="18"/>
         <image name="notes" width="18" height="18"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="profile_item" width="64" height="64"/>
         <image name="reminders" width="18" height="18"/>
         <image name="trash" width="18" height="18"/>
     </resources>

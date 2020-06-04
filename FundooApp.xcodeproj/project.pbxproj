@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		840752512488F05A0075EF51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752502488F05A0075EF51 /* Constants.swift */; };
+		840752532489173E0075EF51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752522489173E0075EF51 /* ProfileViewController.swift */; };
 		8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D298247A519D00C4F93A /* AppDelegate.swift */; };
 		8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29A247A519D00C4F93A /* SceneDelegate.swift */; };
 		8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29C247A519D00C4F93A /* SignInViewController.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		840752502488F05A0075EF51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		840752522489173E0075EF51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8419D295247A519D00C4F93A /* FundooApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundooApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8419D298247A519D00C4F93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8419D29A247A519D00C4F93A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				84224C342486BAA60041EBDC /* NoteViewController.swift */,
 				84435F3524876D3B0066586E /* AddNoteViewController.swift */,
 				84435F3924877FC00066586E /* NoteViewController+Extension.swift */,
+				840752522489173E0075EF51 /* ProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
 				8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */,
 				8425CEEE24883D9D004133C1 /* Note.swift in Sources */,
+				840752532489173E0075EF51 /* ProfileViewController.swift in Sources */,
 				846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */,
 				84A3C9E12480F04C003393EC /* CoreDataService.swift in Sources */,
 			);

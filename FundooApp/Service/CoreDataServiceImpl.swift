@@ -92,4 +92,19 @@ class CoreDataServiceImpl : DataService {
         catch{}
         return result
     }
+    
+    func deleteNote(title: String) {
+        let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
+        fetchRequest.predicate = NSPredicate(format: "title = %@", title)
+        do{
+            let result = try context.fetch(fetchRequest) as NSArray
+            let noteEntity = result.firstObject as! Note
+            context.delete(noteEntity)
+            try context.save()
+        }
+        catch{
+        }
+    }
+    
+    
 }

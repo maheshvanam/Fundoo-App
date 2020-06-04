@@ -39,4 +39,14 @@ class CoreDataServiceTest: XCTestCase {
         let result = try dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
         XCTAssertEqual(Result.SUCCESS, result)
     }
+    
+    func test_ableToStoreNote() {
+//        let notes = dataService.getAllNotes()
+//        XCTAssertEqual(notes!.count,2 )
+//        dataService.insertNote(title: "Dummy", note: "test")
+//        let updatedNotes = dataService.getAllNotes()
+//        XCTAssertEqual(updatedNotes!.count,3)
+        dataService.deleteNote(title: "Dummy")
+    }
+    
 }
