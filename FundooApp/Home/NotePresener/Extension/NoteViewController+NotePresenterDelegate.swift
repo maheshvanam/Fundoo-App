@@ -15,7 +15,7 @@ extension NoteViewController: NotePresenterDelegate {
         self.table.isHidden = false
     }
     
-    func setTableData(data: [Note]) {
+    func setTableData(data: [NoteModel]) {
         self.models = []
         self.models = data
         self.table.reloadData()

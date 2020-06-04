@@ -16,16 +16,16 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var menuItem: UIBarButtonItem!
     @IBOutlet weak var container: UIView!
 
+    @IBOutlet weak var toolbar: UIToolbar!
     var isMenuOpen = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = .lightGray
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
         configureProfileNavItem()
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToNotes), name: Notification.Name(Constants.NAVIGATE_TO_HOME), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setBackButton), name: NSNotification.Name(Constants.SET_BACK_BUTTON), object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateNavBar), name: NSNotification.Name(Constants.SET_MENU), object: nil)
     }
     
@@ -39,12 +39,12 @@ class ContainerViewController: UIViewController {
           container.addSubview(childVC.view)
           childVC.didMove(toParent: self)
     }
-    
+
     func configureProfileNavItem(){
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         profileItem.title = " \(email!.first?.uppercased() ?? "M")"
     }
-    
+
     @IBAction func onMenuTapped(_ sender: Any) {
         toggleSideMenu()
     }

@@ -17,7 +17,7 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func validateFields(user: SignUpUser)-> Bool {
+    func validateFields(user: UserModel)-> Bool {
         
         let fieldValidator = TextFieldValidator()
        
@@ -127,13 +127,13 @@ extension SignUpViewController: SignUpViewPresenterDelegate {
         isExpand=true
     }
     
-    func getUser ()->SignUpUser {
-        var user: SignUpUser?
+    func getUser ()->UserModel {
+        var user: UserModel?
         guard let firstName = firstNameField.text , let lastName = lastNameField.text ,let email = emailField.text ,let password = passwordField.text ,let confirmPassword = confirmField.text else {
             signUpButton.isEnabled = false
             return user!
         }
-        user = SignUpUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
+        user = UserModel(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
         return user!
     }
     

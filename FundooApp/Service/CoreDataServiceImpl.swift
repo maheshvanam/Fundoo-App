@@ -16,7 +16,7 @@ class CoreDataServiceImpl : DataService {
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     private let fetchRequest = NSFetchRequest<User>(entityName: "User")
     
-    func insertUser(registartionUser: SignUpUser) {
+    func insertUser(registartionUser: UserModel) {
         let  user = User(context: context)
         user.firstName=registartionUser.firstName
         user.lastName=registartionUser.lastName

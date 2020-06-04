@@ -350,20 +350,27 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-zb-aaR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <connections>
                                     <segue destination="6JG-3C-ySV" kind="embed" identifier="notes" id="DFs-2K-BKH"/>
                                 </connections>
                             </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-8D-NZe">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="TQp-zb-aaR" secondAttribute="trailing" id="3E8-f2-dZc"/>
                             <constraint firstItem="P0u-Im-6bj" firstAttribute="leading" secondItem="EJB-xX-3tr" secondAttribute="leading" constant="-250" id="498-kM-rVg"/>
-                            <constraint firstItem="TQp-zb-aaR" firstAttribute="bottom" secondItem="EJB-xX-3tr" secondAttribute="bottom" id="7hj-A7-kcj"/>
-                            <constraint firstItem="TQp-zb-aaR" firstAttribute="leading" secondItem="P0u-Im-6bj" secondAttribute="trailing" id="ITN-oz-aNW"/>
-                            <constraint firstItem="TQp-zb-aaR" firstAttribute="top" secondItem="EJB-xX-3tr" secondAttribute="top" id="VI8-5d-gOT"/>
+                            <constraint firstItem="TQp-zb-aaR" firstAttribute="leading" secondItem="P0u-Im-6bj" secondAttribute="trailing" id="EyB-6N-EKb"/>
+                            <constraint firstItem="e7j-8D-NZe" firstAttribute="top" secondItem="TQp-zb-aaR" secondAttribute="bottom" id="OxC-fP-Y1W"/>
+                            <constraint firstItem="TQp-zb-aaR" firstAttribute="top" secondItem="EJB-xX-3tr" secondAttribute="top" id="RWY-oP-4nc"/>
+                            <constraint firstItem="e7j-8D-NZe" firstAttribute="leading" secondItem="P0u-Im-6bj" secondAttribute="trailing" id="Ycx-GK-6h7"/>
+                            <constraint firstItem="e7j-8D-NZe" firstAttribute="trailing" secondItem="EJB-xX-3tr" secondAttribute="trailing" id="aFN-Xw-fZp"/>
                             <constraint firstItem="P0u-Im-6bj" firstAttribute="bottom" secondItem="EJB-xX-3tr" secondAttribute="bottom" id="e7c-4J-TPw"/>
+                            <constraint firstItem="e7j-8D-NZe" firstAttribute="bottom" secondItem="EJB-xX-3tr" secondAttribute="bottom" id="eAb-ji-ZK3"/>
+                            <constraint firstItem="TQp-zb-aaR" firstAttribute="trailing" secondItem="EJB-xX-3tr" secondAttribute="trailing" id="gMn-BT-gtL"/>
                             <constraint firstItem="P0u-Im-6bj" firstAttribute="top" secondItem="EJB-xX-3tr" secondAttribute="top" id="x9b-Hy-8Za"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EJB-xX-3tr"/>
@@ -387,11 +394,12 @@
                         <outlet property="leadingConstraint" destination="498-kM-rVg" id="vLy-5V-4KE"/>
                         <outlet property="menuItem" destination="Ozf-DD-YDr" id="fzk-KK-HJs"/>
                         <outlet property="profileItem" destination="l4K-iM-8cK" id="09U-9u-bDo"/>
+                        <outlet property="toolbar" destination="e7j-8D-NZe" id="y5S-sw-4aG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afK-4L-rhc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="858"/>
+            <point key="canvasLocation" x="1000.0000000000001" y="857.8125"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="AZy-s4-gJe">
@@ -400,9 +408,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="49" sectionFooterHeight="28" id="QAJ-3V-cJ9">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="774"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection id="iKF-MK-T9j">
                                 <cells>
@@ -433,7 +440,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="ZAj-Bk-3hk" secondAttribute="bottom" id="jKs-cf-gZL"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.93953961129999997" green="0.70867711310000003" blue="0.19307544830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="h3r-K2-BjW">
                                         <rect key="frame" x="0.0" y="88" width="250" height="60"/>
@@ -462,7 +469,7 @@
                                                 <constraint firstItem="Mka-61-E6E" firstAttribute="leading" secondItem="7p2-EP-ndl" secondAttribute="trailing" constant="16" id="xuB-9Y-Jz9"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.93953961129999997" green="0.70867711310000003" blue="0.19307544830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="IFF-uk-EMR">
                                         <rect key="frame" x="0.0" y="148" width="250" height="60"/>
@@ -491,7 +498,7 @@
                                                 <constraint firstItem="V2F-ri-AMt" firstAttribute="top" secondItem="QP1-Jv-ePl" secondAttribute="top" id="qPt-w4-0UN"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.93953961129999997" green="0.70867711310000003" blue="0.19307544830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="dCy-El-8IO">
                                         <rect key="frame" x="0.0" y="208" width="250" height="60"/>
@@ -520,7 +527,7 @@
                                                 <constraint firstItem="8bI-ee-pUl" firstAttribute="leading" secondItem="OIK-R9-MzO" secondAttribute="leading" constant="16" id="wmE-fc-qdo"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.93953961129999997" green="0.70867711310000003" blue="0.19307544830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="PfV-4d-bA8">
                                         <rect key="frame" x="0.0" y="268" width="250" height="60"/>
@@ -549,7 +556,7 @@
                                                 <constraint firstItem="wTp-mW-adh" firstAttribute="leading" secondItem="Qkh-1i-Wah" secondAttribute="trailing" constant="16" id="xta-WQ-aW8"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.93953961129999997" green="0.70867711310000003" blue="0.19307544830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="F9k-dX-Wx6">
                                         <rect key="frame" x="0.0" y="328" width="250" height="60"/>
@@ -578,7 +585,7 @@
                                                 <constraint firstItem="WdX-ri-aoo" firstAttribute="top" secondItem="nZD-wS-ZfE" secondAttribute="topMargin" id="oTD-R5-g4e"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.93953961129999997" green="0.70867711310000003" blue="0.19307544830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -666,17 +673,17 @@
             <objects>
                 <viewController storyboardIdentifier="NoteViewController" modalPresentationStyle="fullScreen" id="GGz-HJ-OnA" customClass="NoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Np4-QL-CFv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No notes yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCt-V8-Crr">
-                                <rect key="frame" x="158.5" y="376.5" width="97" height="21"/>
+                                <rect key="frame" x="158.5" y="352" width="97" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="It8-LB-zBA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="681"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="632"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="XZt-uV-lgL" detailTextLabel="TPB-5S-PnU" style="IBUITableViewCellStyleSubtitle" id="beR-jf-eFm">
@@ -733,7 +740,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddNoteViewController" modalPresentationStyle="overFullScreen" id="nGj-qQ-VlS" customClass="AddNoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ssi-S8-AWR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2m-nL-JRf">
@@ -746,7 +753,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tgF-xY-EyX">
-                                <rect key="frame" x="16" y="118" width="382" height="591"/>
+                                <rect key="frame" x="16" y="118" width="382" height="542"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -8,7 +8,7 @@
 
 import Foundation
 protocol DataService {
-    func insertUser(registartionUser: SignUpUser)
+    func insertUser(registartionUser: UserModel)
     func insertNote(title: String ,note: String)
     func getAllNotes() -> NSArray?
     func checkValidUserOrNot(email: String,password: String) throws -> Result

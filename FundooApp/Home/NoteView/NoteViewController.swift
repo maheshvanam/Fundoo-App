@@ -14,7 +14,7 @@ class NoteViewController: UIViewController {
     @IBOutlet var label: UILabel!
     
     var notePresenter: NoteDelegate?
-    var models = [Note]()
+    var models = [NoteModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
