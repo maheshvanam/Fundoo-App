@@ -15,15 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        checkLoginState()
+        return true
+    }
+    
+    func checkLoginState() {
         window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard.init(name: "Main", bundle:nil )
-        if UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
+        if UserDefaults.standard.bool(forKey: Constants.IS_LOGGED_IN_KEY) {
             let desitinationVC =   storyboard.instantiateViewController(withIdentifier: "ContainerViewController") as! ContainerViewController
             let navigationController = UINavigationController.init(rootViewController: desitinationVC)
             self.window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }
-        return true
     }
 
     // MARK: UISceneSession Lifecycle

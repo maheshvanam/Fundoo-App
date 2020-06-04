@@ -22,13 +22,10 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.standard.bool(forKey: Constants.IS_LOGGED_IN_KEY) {
-            let desitinationVC =   navigationController?.storyboard?.instantiateViewController(withIdentifier: "ContainerViewController") as! ContainerViewController
-            navigationController?.pushViewController(desitinationVC, animated: false)
-        }
         signInViewPresenter = SignInViewPresenter(delegate: self)
         signInButton.layer.cornerRadius = 8.0
         logoLabel.attributedText = Helper.getAttributedLogo()
+        checkLoginState()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -41,5 +38,12 @@ class SignInViewController: UIViewController {
     
     @IBAction func onCreateAcoountTapped(_ sender: Any) {
         self.signInViewPresenter?.onCreateAcoountTapped()
+    }
+    
+    func checkLoginState(){
+        if UserDefaults.standard.bool(forKey: Constants.IS_LOGGED_IN_KEY) {
+            let desitinationVC =   navigationController?.storyboard?.instantiateViewController(withIdentifier: "ContainerViewController") as! ContainerViewController
+            navigationController?.pushViewController(desitinationVC, animated: false)
+        }
     }
 }
