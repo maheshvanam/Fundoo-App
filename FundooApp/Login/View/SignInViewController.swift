@@ -22,7 +22,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
+        if UserDefaults.standard.bool(forKey: Constants.IS_LOGGED_IN_KEY) {
             let desitinationVC =   navigationController?.storyboard?.instantiateViewController(withIdentifier: "ContainerViewController") as! ContainerViewController
             navigationController?.pushViewController(desitinationVC, animated: false)
         }

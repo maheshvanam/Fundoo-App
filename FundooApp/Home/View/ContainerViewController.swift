@@ -22,14 +22,14 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = .lightGray
         configureProfileNavItem()
-        NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("TOGGLE_MENU"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setBackButton), name: NSNotification.Name("SET_BACK_BUTTON"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setBackButton), name: NSNotification.Name(Constants.SET_BACK_BUTTON), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateNavBar), name: NSNotification.Name("SET_MENU"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNavBar), name: NSNotification.Name(Constants.SET_MENU), object: nil)
     }
     
     func configureProfileNavItem(){
-        let email = UserDefaults.standard.string(forKey: "EMAIL")
+        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         profileItem.title = " \(email!.first?.uppercased() ?? "M")"
     }
     
@@ -42,18 +42,19 @@ class ContainerViewController: UIViewController {
         navigationItem.setLeftBarButton(backButton,animated: false)
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
     }
-    @objc func updateNavBar(){
+    
+    @objc func updateNavBar() {
         let menuButton = UIBarButtonItem(image:UIImage(named: "menu"), style: .plain, target: self, action: #selector(toggleSideMenu))
         navigationItem.setLeftBarButton(menuButton,animated: false)
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
     }
     
-    @objc func setMenuButton(){
+    @objc func setMenuButton() {
         updateNavBar()
-        NotificationCenter.default.post(name: Notification.Name("UPDATE_NAV"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(Constants.UPDATE_NAV), object: nil)
     }
     
-    @objc func toggleSideMenu(){
+    @objc func toggleSideMenu() {
         if isMenuOpen {
             self.leadingConstraint.constant = -250
             isMenuOpen = false

@@ -17,14 +17,14 @@ class AddNoteViewController: UIViewController {
         super.viewDidLoad()
         titleField.placeholder = "Title"
         titleField.becomeFirstResponder()
-        NotificationCenter.default.addObserver(self, selector: #selector(onBackPressed), name: NSNotification.Name("UPDATE_NAV"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onBackPressed), name: NSNotification.Name(Constants.UPDATE_NAV), object: nil)
     }
     
     @objc func onBackPressed() {
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(saveNote), userInfo: nil, repeats: false)
      }
 
-    @objc func saveNote(){
+    @objc func saveNote() {
         if let title = titleField.text, !title.isEmpty ,!noteField.text.isEmpty {
             let coreData = CoreDataService()
             coreData.insertNote(title: title, note: noteField.text)
@@ -35,6 +35,6 @@ class AddNoteViewController: UIViewController {
      }
     
     override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.post(name: Notification.Name("SET_BACK_BUTTON"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(Constants.SET_BACK_BUTTON), object: nil)
     }
 }

@@ -42,6 +42,22 @@ class CoreDataServiceImpl : DataService {
                 return Result.INVALID_EMAIL
             }
     }
+
+    func getUser(email: String) ->  User {
+        var user:User!
+        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
+        do{
+            let result = try context.fetch(fetchRequest) as NSArray
+            if result.count > 0 {
+                user = (result.firstObject as! User)
+            }
+        }
+        catch{
+            
+        }
+        return user
+    }
+
     
     func deleteUser(email: String) {
         let predicate = NSPredicate(format: "email = %@", email)
@@ -56,7 +72,7 @@ class CoreDataServiceImpl : DataService {
     }
     
     func insertNote(title: String ,note: String) {
-        let email = UserDefaults.standard.string(forKey: "EMAIL")
+        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         let  newNote = Note(context: context)
         newNote.title = title
         newNote.note = note
@@ -66,7 +82,7 @@ class CoreDataServiceImpl : DataService {
     
     func getAllNotes() -> NSArray? {
         let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
-        let email = UserDefaults.standard.string(forKey: "EMAIL")
+        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         let user = getUser(email: email!)
         fetchRequest.predicate = NSPredicate(format: "owner = %@", user)
         var result: NSArray?
@@ -75,20 +91,5 @@ class CoreDataServiceImpl : DataService {
         }
         catch{}
         return result
-    }
-    
-    func getUser(email: String) ->  User {
-        var user:User!
-        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
-        do{
-            let result = try context.fetch(fetchRequest) as NSArray
-            if result.count > 0 {
-                user = (result.firstObject as! User)
-            }
-        }
-        catch{
-            
-        }
-        return user
     }
 }

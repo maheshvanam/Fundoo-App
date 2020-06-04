@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard.init(name: "Main", bundle:nil )
         if UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
@@ -23,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationController = UINavigationController.init(rootViewController: desitinationVC)
             self.window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
-            }
+        }
         return true
     }
 

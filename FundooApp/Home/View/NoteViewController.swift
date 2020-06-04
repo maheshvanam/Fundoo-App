@@ -21,12 +21,14 @@ class NoteViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         loadData()
         
-        NotificationCenter.default.post(name: Notification.Name("SET_MENU"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(Constants.SET_MENU), object: nil)
     }
-    func loadData(){
+    
+    func loadData() {
         models = []
         let coreData = CoreDataService()
         if let notes = coreData.getAllNotes() {
@@ -39,4 +41,5 @@ class NoteViewController: UIViewController {
             }
         }
     }
+    
 }
