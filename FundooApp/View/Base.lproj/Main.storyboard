@@ -779,7 +779,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="NQs-T2-vUW">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="6JG-3C-ySV" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabController" modalPresentationStyle="fullScreen" id="6JG-3C-ySV" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bp0-7i-uPG"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="wjA-XZ-ZWP">

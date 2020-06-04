@@ -39,5 +39,4 @@ class NoteViewController: UIViewController {
             self.table.reloadData()
         }
     }
-    
 }

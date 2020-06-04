@@ -15,4 +15,7 @@ class Constants {
     static let SET_MENU = "SET_MENU"
     static let EMAIL_KEY = "EMAIL"
     static let IS_LOGGED_IN_KEY = "IS_LOGGED_IN"
+    static let NAVIGATE_TO_HOME = "HOME"
+    static let SIGN_OUT = 5
+    static let HOME = 0
 }

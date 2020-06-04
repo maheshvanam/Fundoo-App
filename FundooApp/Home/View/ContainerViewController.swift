@@ -22,6 +22,7 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = .lightGray
         configureProfileNavItem()
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToNotes), name: Notification.Name(Constants.NAVIGATE_TO_HOME), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setBackButton), name: NSNotification.Name(Constants.SET_BACK_BUTTON), object: nil)
         
@@ -29,7 +30,6 @@ class ContainerViewController: UIViewController {
     }
     
     @IBAction func onProfileClick(_ sender: Any) {
-        print("sfsfs")
           guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {
             return
           }
@@ -77,6 +77,16 @@ class ContainerViewController: UIViewController {
         }
     }
     
+    @objc func navigateToNotes(){
+        guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "TabController") as? UITabBarController  else {
+          return
+        }
+        addChild(childVC)
+        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        childVC.view.frame = container.bounds
+        container.addSubview(childVC.view)
+        childVC.didMove(toParent: self)
+    }
 }
 
 
