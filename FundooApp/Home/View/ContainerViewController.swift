@@ -19,14 +19,18 @@ class ContainerViewController: UIViewController {
     var isMenuOpen = false
     
     override func viewDidLoad() {
-        navigationController?.navigationBar.barTintColor = .lightGray
         super.viewDidLoad()
-        let email = UserDefaults.standard.string(forKey: "EMAIL")
-        profileItem.title = " \(email!.first ?? "M")"
+        navigationController?.navigationBar.barTintColor = .lightGray
+        configureProfileNavItem()
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name("TOGGLE_MENU"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setBackButton), name: NSNotification.Name("SET_BACK_BUTTON"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateNavBar), name: NSNotification.Name("SET_MENU"), object: nil)
+    }
+    
+    func configureProfileNavItem(){
+        let email = UserDefaults.standard.string(forKey: "EMAIL")
+        profileItem.title = " \(email!.first?.uppercased() ?? "M")"
     }
     
     @IBAction func onMenuTapped(_ sender: Any) {
