@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		840752512488F05A0075EF51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752502488F05A0075EF51 /* Constants.swift */; };
 		840752532489173E0075EF51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752522489173E0075EF51 /* ProfileViewController.swift */; };
+		84075257248926400075EF51 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84075256248926400075EF51 /* ProfilePresenter.swift */; };
+		8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84075259248926E10075EF51 /* ProfilePresenterDelegate.swift */; };
+		8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407525B248927440075EF51 /* ProfilePresenterImpl.swift */; };
+		84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126EC424894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift */; };
+		84126EC724894CDF00F0FFBB /* ProfileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126EC624894CDF00F0FFBB /* ProfileDelegate.swift */; };
 		8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D298247A519D00C4F93A /* AppDelegate.swift */; };
 		8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29A247A519D00C4F93A /* SceneDelegate.swift */; };
 		8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29C247A519D00C4F93A /* SignInViewController.swift */; };
@@ -63,6 +68,11 @@
 /* Begin PBXFileReference section */
 		840752502488F05A0075EF51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		840752522489173E0075EF51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84075256248926400075EF51 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		84075259248926E10075EF51 /* ProfilePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterDelegate.swift; sourceTree = "<group>"; };
+		8407525B248927440075EF51 /* ProfilePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterImpl.swift; sourceTree = "<group>"; };
+		84126EC424894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ProfilePresenterDelegate.swift"; sourceTree = "<group>"; };
+		84126EC624894CDF00F0FFBB /* ProfileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDelegate.swift; sourceTree = "<group>"; };
 		8419D295247A519D00C4F93A /* FundooApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundooApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8419D298247A519D00C4F93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8419D29A247A519D00C4F93A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +136,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840752582489266C0075EF51 /* ProfilePresenter */ = {
+			isa = PBXGroup;
+			children = (
+				84126EC9248950A800F0FFBB /* Extension */,
+				84126EC82489506F00F0FFBB /* delegate */,
+				84075256248926400075EF51 /* ProfilePresenter.swift */,
+				8407525B248927440075EF51 /* ProfilePresenterImpl.swift */,
+			);
+			path = ProfilePresenter;
+			sourceTree = "<group>";
+		};
+		84126EC82489506F00F0FFBB /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				84126EC624894CDF00F0FFBB /* ProfileDelegate.swift */,
+				84075259248926E10075EF51 /* ProfilePresenterDelegate.swift */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		84126EC9248950A800F0FFBB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84126EC424894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		84126ECA2489513E00F0FFBB /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				840752522489173E0075EF51 /* ProfileViewController.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		8419D28C247A519D00C4F93A = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +227,6 @@
 				84224C342486BAA60041EBDC /* NoteViewController.swift */,
 				84435F3524876D3B0066586E /* AddNoteViewController.swift */,
 				84435F3924877FC00066586E /* NoteViewController+Extension.swift */,
-				840752522489173E0075EF51 /* ProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +320,8 @@
 		84634EBA248268990098D004 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				84126ECA2489513E00F0FFBB /* ProfileView */,
+				840752582489266C0075EF51 /* ProfilePresenter */,
 				843591382484491E00E58862 /* Modal */,
 				843591352484321E00E58862 /* View */,
 			);
@@ -429,22 +476,27 @@
 				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
 				8428981D248173D6009AA1D9 /* SignUpUser.swift in Sources */,
+				84075257248926400075EF51 /* ProfilePresenter.swift in Sources */,
 				8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */,
 				84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */,
 				844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
 				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
+				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
 				8425CEEF24883D9D004133C1 /* Note+CoreDataProperties.swift in Sources */,
+				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
 				84A3C9E32480F19B003393EC /* SignInViewPresenterService.swift in Sources */,
 				8425CEF024883D9D004133C1 /* User+CoreDataClass.swift in Sources */,
 				84435F3624876D3B0066586E /* AddNoteViewController.swift in Sources */,
+				84126EC724894CDF00F0FFBB /* ProfileDelegate.swift in Sources */,
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
 				8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */,
 				84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */,
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
+				8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */,
 				8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */,
 				8425CEEE24883D9D004133C1 /* Note.swift in Sources */,
 				840752532489173E0075EF51 /* ProfileViewController.swift in Sources */,
