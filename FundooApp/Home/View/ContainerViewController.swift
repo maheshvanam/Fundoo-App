@@ -15,8 +15,6 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var profileItem: UIBarButtonItem!
     @IBOutlet weak var menuItem: UIBarButtonItem!
     @IBOutlet weak var container: UIView!
-
-    @IBOutlet weak var toolbar: UIToolbar!
     var isMenuOpen = false
     
     override func viewDidLoad() {
@@ -25,6 +23,10 @@ class ContainerViewController: UIViewController {
         configureProfileNavItem()
         //configureToolBar()
         addNotificationCenterObservers()
+    }
+    
+    @IBAction func onTakeANoteTapped(_ sender: Any) {
+        switchToAddNote()
     }
     
     @IBAction func onProfileClick(_ sender: Any) {
@@ -97,11 +99,7 @@ class ContainerViewController: UIViewController {
         guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController  else {
           return
         }
-        addChild(childVC)
-        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        childVC.view.frame = container.bounds
-        container.addSubview(childVC.view)
-        childVC.didMove(toParent: self)
+        navigationController?.pushViewController(childVC, animated: false)
     }
 }
 
