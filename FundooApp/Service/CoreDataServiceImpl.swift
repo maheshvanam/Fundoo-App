@@ -58,7 +58,7 @@ class CoreDataServiceImpl : DataService {
                 user = (result.firstObject as! User)
             }
             else{
-                throw FundooError.userNotFound
+                throw CoreDataError.UserNotFound
             }
         }
         catch{
@@ -91,7 +91,7 @@ class CoreDataServiceImpl : DataService {
         do{
             newNote.owner = try getUser(email: email!)
         }
-        catch FundooError.userNotFound{
+        catch CoreDataError.UserNotFound{
             fatalError("User not Found")
         }
         catch{

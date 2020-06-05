@@ -27,20 +27,11 @@ class ContainerViewController: UIViewController {
         switchToAddNote()
     }
     
-    @IBAction func onProfileClick(_ sender: Any) {
-          guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {
-            return
-          }
-          addChild(childVC)
-          childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-          childVC.view.frame = container.bounds
-          container.addSubview(childVC.view)
-          childVC.didMove(toParent: self)
-    }
     
     func addNotificationCenterObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(switchToNotes), name: Notification.Name(Constants.NAVIGATE_TO_NOTE), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(switchToReminders), name: Notification.Name(Constants.NAVIGATE_TO_REMINDER), object: nil)
        }
 
     @IBAction func onMenuTapped(_ sender: Any) {
@@ -71,6 +62,15 @@ class ContainerViewController: UIViewController {
     
     @objc func switchToAddNote() {
         guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController  else {
+          return
+        }
+        navigationController?.pushViewController(childVC, animated: false)
+    }
+    
+    @objc func switchToReminders() {
+        let board = UIStoryboard(name: "Home", bundle: nil)
+        guard let childVC =
+            board.instantiateViewController(withIdentifier: "ReminderViewController") as? ReminderViewController  else {
           return
         }
         navigationController?.pushViewController(childVC, animated: false)

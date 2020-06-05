@@ -15,16 +15,27 @@ class SideMenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NotificationCenter.default.post(name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
+        postNotification(key: Constants.TOGGLE_MENU)
         switch indexPath.row {
+        
         case Constants.HOME:
-            NotificationCenter.default.post(name: Notification.Name(Constants.NAVIGATE_TO_NOTE), object: nil)
+            postNotification(key: Constants.NAVIGATE_TO_NOTE)
+        
+        case Constants.REMINDER:
+            postNotification(key: Constants.NAVIGATE_TO_REMINDER)
+        
         case Constants.SIGN_OUT:
             UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
             UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
             self.navigationController?.popToRootViewController(animated: false)
+        
         default:
-            NotificationCenter.default.post(name: Notification.Name(Constants.NAVIGATE_TO_NOTE), object: nil)
+            postNotification(key: Constants.NAVIGATE_TO_REMINDER)
         }
     }
+    
+    func postNotification(key: String){
+        NotificationCenter.default.post(name: Notification.Name(key), object: nil)
+    }
+    
 }

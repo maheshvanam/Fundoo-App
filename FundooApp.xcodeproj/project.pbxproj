@@ -46,6 +46,13 @@
 		8428981D248173D6009AA1D9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981C248173D6009AA1D9 /* UserModel.swift */; };
 		84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84289820248188BB009AA1D9 /* SignInViewPresenterServiceImpl.swift */; };
 		842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842898242481893D009AA1D9 /* PresenterSignInViewDelegate.swift */; };
+		8428FE85248A593800E9BA44 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428FE84248A593800E9BA44 /* Home.storyboard */; };
+		8428FE8C248A611800E9BA44 /* AddNoteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428FE8B248A611800E9BA44 /* AddNoteDelegate.swift */; };
+		8428FE8E248A615B00E9BA44 /* AddNotePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428FE8D248A615B00E9BA44 /* AddNotePresenterDelegate.swift */; };
+		8428FE90248A618A00E9BA44 /* AddNoteView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428FE8F248A618A00E9BA44 /* AddNoteView+Delegate.swift */; };
+		8428FE92248A61F500E9BA44 /* AddNotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428FE91248A61F500E9BA44 /* AddNotePresenter.swift */; };
+		8428FE94248A625000E9BA44 /* AddNotePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428FE93248A625000E9BA44 /* AddNotePresenterImpl.swift */; };
+		842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2486248AA9B400489314 /* ReminderViewController.swift */; };
 		84435F3624876D3B0066586E /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84435F3524876D3B0066586E /* AddNoteViewController.swift */; };
 		84435F3A24877FC00066586E /* NoteViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84435F3924877FC00066586E /* NoteViewController+Extension.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
@@ -116,6 +123,13 @@
 		8428981C248173D6009AA1D9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		84289820248188BB009AA1D9 /* SignInViewPresenterServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenterServiceImpl.swift; sourceTree = "<group>"; };
 		842898242481893D009AA1D9 /* PresenterSignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterSignInViewDelegate.swift; sourceTree = "<group>"; };
+		8428FE84248A593800E9BA44 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		8428FE8B248A611800E9BA44 /* AddNoteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteDelegate.swift; sourceTree = "<group>"; };
+		8428FE8D248A615B00E9BA44 /* AddNotePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotePresenterDelegate.swift; sourceTree = "<group>"; };
+		8428FE8F248A618A00E9BA44 /* AddNoteView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddNoteView+Delegate.swift"; sourceTree = "<group>"; };
+		8428FE91248A61F500E9BA44 /* AddNotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotePresenter.swift; sourceTree = "<group>"; };
+		8428FE93248A625000E9BA44 /* AddNotePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotePresenterImpl.swift; sourceTree = "<group>"; };
+		842C2486248AA9B400489314 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		84435F3524876D3B0066586E /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		84435F3924877FC00066586E /* NoteViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewController+Extension.swift"; sourceTree = "<group>"; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
@@ -194,7 +208,7 @@
 			path = NoteView;
 			sourceTree = "<group>";
 		};
-		84126ECC2489529B00F0FFBB /* NotePresener */ = {
+		84126ECC2489529B00F0FFBB /* NotePresenter */ = {
 			isa = PBXGroup;
 			children = (
 				84126ED42489551B00F0FFBB /* Extension */,
@@ -202,7 +216,7 @@
 				84126ED02489535100F0FFBB /* NotePresenter.swift */,
 				84126ED2248953C000F0FFBB /* NotePresenterImpl.swift */,
 			);
-			path = NotePresener;
+			path = NotePresenter;
 			sourceTree = "<group>";
 		};
 		84126ECD248952AF00F0FFBB /* Delegate */ = {
@@ -259,7 +273,7 @@
 				84634EB2248264470098D004 /* Registration */,
 				84B49C53247EBE1800D3C940 /* Util */,
 				84E26B47247C240C000D8BE5 /* Service */,
-				84E26B44247C23D1000D8BE5 /* View */,
+				84E26B44247C23D1000D8BE5 /* Sotoryboard */,
 				8419D298247A519D00C4F93A /* AppDelegate.swift */,
 				8419D29A247A519D00C4F93A /* SceneDelegate.swift */,
 				8419D2A4247A519E00C4F93A /* Assets.xcassets */,
@@ -280,14 +294,50 @@
 			path = FundooAppTests;
 			sourceTree = "<group>";
 		};
-		843591352484321E00E58862 /* View */ = {
+		8428FE86248A5DF700E9BA44 /* AddNoteView */ = {
+			isa = PBXGroup;
+			children = (
+				84435F3524876D3B0066586E /* AddNoteViewController.swift */,
+			);
+			path = AddNoteView;
+			sourceTree = "<group>";
+		};
+		8428FE88248A5EEB00E9BA44 /* AddNotePresenter */ = {
+			isa = PBXGroup;
+			children = (
+				8428FE8A248A5F3900E9BA44 /* Delegate */,
+				8428FE89248A5F3000E9BA44 /* Extension */,
+				8428FE91248A61F500E9BA44 /* AddNotePresenter.swift */,
+				8428FE93248A625000E9BA44 /* AddNotePresenterImpl.swift */,
+			);
+			path = AddNotePresenter;
+			sourceTree = "<group>";
+		};
+		8428FE89248A5F3000E9BA44 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8428FE8F248A618A00E9BA44 /* AddNoteView+Delegate.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8428FE8A248A5F3900E9BA44 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8428FE8B248A611800E9BA44 /* AddNoteDelegate.swift */,
+				8428FE8D248A615B00E9BA44 /* AddNotePresenterDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		843591352484321E00E58862 /* ContainerView */ = {
 			isa = PBXGroup;
 			children = (
 				84D0C7CF248655CA002AB435 /* ContainerViewController.swift */,
 				84224C322486B5ED0041EBDC /* SideMenuViewController.swift */,
-				84435F3524876D3B0066586E /* AddNoteViewController.swift */,
+				842C2486248AA9B400489314 /* ReminderViewController.swift */,
 			);
-			path = View;
+			path = ContainerView;
 			sourceTree = "<group>";
 		};
 		843591382484491E00E58862 /* Modal */ = {
@@ -379,11 +429,13 @@
 			isa = PBXGroup;
 			children = (
 				84126ECB2489521500F0FFBB /* NoteView */,
-				84126ECC2489529B00F0FFBB /* NotePresener */,
+				84126ECC2489529B00F0FFBB /* NotePresenter */,
+				8428FE86248A5DF700E9BA44 /* AddNoteView */,
+				8428FE88248A5EEB00E9BA44 /* AddNotePresenter */,
 				84126ECA2489513E00F0FFBB /* ProfileView */,
 				840752582489266C0075EF51 /* ProfilePresenter */,
 				843591382484491E00E58862 /* Modal */,
-				843591352484321E00E58862 /* View */,
+				843591352484321E00E58862 /* ContainerView */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -402,13 +454,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		84E26B44247C23D1000D8BE5 /* View */ = {
+		84E26B44247C23D1000D8BE5 /* Sotoryboard */ = {
 			isa = PBXGroup;
 			children = (
 				8419D29E247A519D00C4F93A /* Main.storyboard */,
 				8419D2A6247A519E00C4F93A /* LaunchScreen.storyboard */,
+				8428FE84248A593800E9BA44 /* Home.storyboard */,
 			);
-			path = View;
+			path = Sotoryboard;
 			sourceTree = "<group>";
 		};
 		84E26B47247C240C000D8BE5 /* Service */ = {
@@ -503,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8419D2A8247A519E00C4F93A /* LaunchScreen.storyboard in Resources */,
+				8428FE85248A593800E9BA44 /* Home.storyboard in Resources */,
 				8419D2A5247A519E00C4F93A /* Assets.xcassets in Resources */,
 				8425CEE724880309004133C1 /* Assets.xcassets in Resources */,
 				8419D2A0247A519D00C4F93A /* Main.storyboard in Resources */,
@@ -537,11 +591,14 @@
 				84126ED3248953C000F0FFBB /* NotePresenterImpl.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
+				8428FE8E248A615B00E9BA44 /* AddNotePresenterDelegate.swift in Sources */,
+				8428FE90248A618A00E9BA44 /* AddNoteView+Delegate.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
 				8428981D248173D6009AA1D9 /* UserModel.swift in Sources */,
 				84075257248926400075EF51 /* ProfilePresenter.swift in Sources */,
 				8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */,
 				84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */,
+				8428FE92248A61F500E9BA44 /* AddNotePresenter.swift in Sources */,
 				844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
 				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
@@ -554,6 +611,7 @@
 				84126ED82489558900F0FFBB /* NotePresenterDelegate.swift in Sources */,
 				8425CEF024883D9D004133C1 /* User+CoreDataClass.swift in Sources */,
 				84126ECF248952CB00F0FFBB /* NoteDelegate.swift in Sources */,
+				8428FE94248A625000E9BA44 /* AddNotePresenterImpl.swift in Sources */,
 				84435F3624876D3B0066586E /* AddNoteViewController.swift in Sources */,
 				84126EC724894CDF00F0FFBB /* ProfileDelegate.swift in Sources */,
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
@@ -565,7 +623,9 @@
 				8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */,
 				84C4B58E248A0CB100AC9CB4 /* FundooException.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
+				8428FE8C248A611800E9BA44 /* AddNoteDelegate.swift in Sources */,
 				8425CEEE24883D9D004133C1 /* Note.swift in Sources */,
+				842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */,
 				840752532489173E0075EF51 /* ProfileViewController.swift in Sources */,
 				846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */,
 				84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */,

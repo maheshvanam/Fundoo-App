@@ -11,6 +11,6 @@ import Foundation
 extension ProfileViewController: ProfilePresenterDelegate {
     
     func updateLabel(user: User) {
-        self.profileLabel.text = "\(user.firstName ?? "") \(user.lastName ?? "")"
+        //self.profileLabel.text = "\(user.firstName ?? "") \(user.lastName ?? "")"
     }
 }

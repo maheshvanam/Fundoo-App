@@ -1,5 +1,5 @@
 //
-//  FundooException.swift
+//  AddNotePresenterDelegate.swift
 //  FundooApp
 //
 //  Created by admin on 05/06/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum CoreDataError: Error {
-    case UserNotFound
+protocol AddNotePresenterDelegate {
+    
 }

@@ -1,5 +1,5 @@
 //
-//  FundooException.swift
+//  AboutViewController.swift
 //  FundooApp
 //
 //  Created by admin on 05/06/20.
@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-enum CoreDataError: Error {
-    case UserNotFound
+class ReminderViewController: UIViewController {
+    
 }

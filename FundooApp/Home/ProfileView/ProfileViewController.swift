@@ -9,13 +9,19 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
-    @IBOutlet var profileLabel: UILabel!
+    
     var profilePresenter: ProfileDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.profilePresenter = ProfilePresenter(delegate: self)
         self.profilePresenter?.fetchUserData()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(onViewTouched))
+        self.view.addGestureRecognizer(gesture)
     }
+    
+    @objc func onViewTouched(){
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

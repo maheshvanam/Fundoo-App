@@ -12,9 +12,11 @@ class AddNoteViewController: UIViewController {
     
     @IBOutlet var titleField: UITextField!
     @IBOutlet var noteField: UITextView!
+    var addNotePresenter: AddNoteDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addNotePresenter = AddNotePresenter(delegate: self)
         title = Constants.ADD_NOTE
         titleField.becomeFirstResponder()
         noteField.layer.borderWidth = 1
@@ -23,8 +25,7 @@ class AddNoteViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         if let title = titleField.text, !title.isEmpty ,!noteField.text.isEmpty {
-            let coreData = CoreDataService()
-            coreData.insertNote(title: title, note: noteField.text)
+            self.addNotePresenter!.insertNote(title: title, note: noteField.text)
         }
         titleField.text = ""
         noteField.text = ""

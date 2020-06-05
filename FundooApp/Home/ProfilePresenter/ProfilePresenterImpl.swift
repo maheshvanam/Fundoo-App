@@ -22,7 +22,7 @@ class ProfilePresenterImpl: ProfileDelegate {
             let user = try data.getUser(email: email!)
             self.profileView.updateLabel(user: user)
         }
-        catch FundooError.userNotFound {
+        catch CoreDataError.UserNotFound {
             print("user not found")
         }
         catch{
