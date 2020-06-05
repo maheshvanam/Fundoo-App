@@ -11,7 +11,8 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     var profilePresenter: ProfileDelegate?
-    
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.profilePresenter = ProfilePresenter(delegate: self)

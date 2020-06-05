@@ -698,6 +698,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailLabel" destination="uBb-xB-6Ti" id="d6t-tK-sDK"/>
+                        <outlet property="nameLabel" destination="iBT-qu-CPi" id="5YS-d4-hdG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqN-Xy-oLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
