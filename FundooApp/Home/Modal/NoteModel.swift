@@ -9,13 +9,12 @@
 import Foundation
 
 class NoteModel {
+    
     var title:String?
     var note:String?
-    var user: UserModel?
        
     init(noteModel: Note) {
        self.title = noteModel.title
        self.note = noteModel.note
-       self.user = UserModel(userModel: noteModel.owner!)
     }
 }
