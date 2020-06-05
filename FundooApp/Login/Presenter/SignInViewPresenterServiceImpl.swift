@@ -25,26 +25,21 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             self.signInViewDelegate.showAlert(title: "Error", message: "Please fill the all fields")
             return
         }
-        do{
-            let authenticationResult = try coreDataService.checkValidUserOrNot(email: email, password: password)
+        let authenticationResult = coreDataService.checkValidUserOrNot(email: email, password: password)
             
-            if  authenticationResult == Result.SUCCESS {
-                UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
-                self.signInViewDelegate.clearFields()
-                self.signInViewDelegate.clearLabels()
-                self.signInViewDelegate.navigateToUserHomeView()
-            }
-            else if  authenticationResult == Result.INVALID_EMAIL {
-                self.signInViewDelegate.showAlert(title: "Error", message: "Invalid email")
-                self.signInViewDelegate.updateEmailLabel()
-            }
-            else{
-                self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
-                self.signInViewDelegate.updatePasswordLabel()
-            }
+        if  authenticationResult == Result.SUCCESS {
+            UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
+            self.signInViewDelegate.clearFields()
+            self.signInViewDelegate.clearLabels()
+            self.signInViewDelegate.navigateToUserHomeView()
         }
-        catch{
-            self.signInViewDelegate.showAlert(title: "Fetch Error", message: "Fetching data is failed...")
+        else if  authenticationResult == Result.INVALID_EMAIL {
+        self.signInViewDelegate.showAlert(title: "Error", message: "Invalid email")
+            self.signInViewDelegate.updateEmailLabel()
+        }
+        else{
+            self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
+            self.signInViewDelegate.updatePasswordLabel()
         }
     }
     

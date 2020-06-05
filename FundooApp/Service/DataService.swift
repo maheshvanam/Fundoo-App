@@ -11,7 +11,7 @@ protocol DataService {
     func insertUser(registartionUser: UserModel)
     func insertNote(title: String ,note: String)
     func getAllNotes() -> NSArray?
-    func checkValidUserOrNot(email: String,password: String) throws -> Result
+    func checkValidUserOrNot(email: String,password: String) -> Result
     func deleteUser(email: String)
     func deleteNote(title: String)
 }

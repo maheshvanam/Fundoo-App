@@ -25,9 +25,10 @@ class CoreDataServiceImpl : DataService {
         appDelegate.saveContext()
     }
     
-    func checkValidUserOrNot(email: String,password: String) throws -> Result {
+    func checkValidUserOrNot(email: String,password: String)  -> Result {
         let predicate = NSPredicate(format: "email = %@", email)
         fetchRequest.predicate = predicate
+        do {
             let result = try context.fetch(fetchRequest) as NSArray
             if result.count > 0 {
                 let userEntity = result.firstObject as! User
@@ -41,9 +42,14 @@ class CoreDataServiceImpl : DataService {
             else{
                 return Result.INVALID_EMAIL
             }
+        }
+        catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
     }
 
-    func getUser(email: String) ->  User {
+    func getUser(email: String) throws ->  User {
         var user:User!
         fetchRequest.predicate = NSPredicate(format: "email = %@", email)
         do{
@@ -51,9 +57,13 @@ class CoreDataServiceImpl : DataService {
             if result.count > 0 {
                 user = (result.firstObject as! User)
             }
+            else{
+                throw FundooError.userNotFound
+            }
         }
         catch{
-            
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
         return user
     }
@@ -68,6 +78,8 @@ class CoreDataServiceImpl : DataService {
             context.delete(userEntity)
         }
         catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
     
@@ -76,20 +88,33 @@ class CoreDataServiceImpl : DataService {
         let  newNote = Note(context: context)
         newNote.title = title
         newNote.note = note
-        newNote.owner = getUser(email: email!)
+        do{
+            newNote.owner = try getUser(email: email!)
+        }
+        catch FundooError.userNotFound{
+            fatalError("User not Found")
+        }
+        catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        
         appDelegate.saveContext()
     }
     
     func getAllNotes() -> NSArray? {
         let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        let user = getUser(email: email!)
-        fetchRequest.predicate = NSPredicate(format: "owner = %@", user)
         var result: NSArray?
         do{
+            let user = try getUser(email: email!)
+            fetchRequest.predicate = NSPredicate(format: "owner = %@", user)
             result = try context.fetch(fetchRequest) as NSArray
         }
-        catch{}
+        catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
         return result
     }
     
@@ -103,6 +128,8 @@ class CoreDataServiceImpl : DataService {
             try context.save()
         }
         catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
     

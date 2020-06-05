@@ -9,5 +9,5 @@
 import Foundation
 
 protocol  ProfileDelegate {
-    func fetchUserData()
+    func fetchUserData() 
 }

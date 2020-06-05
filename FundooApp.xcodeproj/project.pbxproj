@@ -57,6 +57,7 @@
 		84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */; };
 		84B49C57247EE94400D3C940 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C56247EE94400D3C940 /* Result.swift */; };
 		84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */; };
+		84C4B58E248A0CB100AC9CB4 /* FundooException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4B58D248A0CB100AC9CB4 /* FundooException.swift */; };
 		84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C7CF248655CA002AB435 /* ContainerViewController.swift */; };
 		84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+BackgroundColor.swift"; sourceTree = "<group>"; };
 		84B49C56247EE94400D3C940 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenter.swift; sourceTree = "<group>"; };
+		84C4B58D248A0CB100AC9CB4 /* FundooException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundooException.swift; sourceTree = "<group>"; };
 		84D0C7CF248655CA002AB435 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -395,6 +397,7 @@
 				84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */,
 				841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */,
 				840752502488F05A0075EF51 /* Constants.swift */,
+				84C4B58D248A0CB100AC9CB4 /* FundooException.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
 				8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */,
 				8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */,
+				84C4B58E248A0CB100AC9CB4 /* FundooException.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
 				8425CEEE24883D9D004133C1 /* Note.swift in Sources */,
 				840752532489173E0075EF51 /* ProfileViewController.swift in Sources */,

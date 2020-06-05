@@ -18,7 +18,15 @@ class ProfilePresenterImpl: ProfileDelegate {
     func fetchUserData() {
         let data = CoreDataService()
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        let user = data.getUser(email: email!)
-        self.profileView.updateLabel(user: user)
+        do {
+            let user = try data.getUser(email: email!)
+            self.profileView.updateLabel(user: user)
+        }
+        catch FundooError.userNotFound {
+            print("user not found")
+        }
+        catch{
+            print("user not found")
+        }
     }
 }
