@@ -15,6 +15,7 @@ class AddNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = Constants.ADD_NOTE
         titleField.becomeFirstResponder()
         noteField.layer.borderWidth = 1
         noteField.layer.borderColor = #colorLiteral(red: 0.9175666571, green: 0.9176985621, blue: 0.9175377488, alpha: 1)
