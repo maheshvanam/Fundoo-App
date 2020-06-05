@@ -20,7 +20,6 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
-        configureProfileNavItem()
         addNotificationCenterObservers()
     }
     
@@ -44,11 +43,6 @@ class ContainerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
        }
 
-    func configureProfileNavItem(){
-        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        profileItem.title = " \(email!.first?.uppercased() ?? "M")"
-    }
-    
     @IBAction func onMenuTapped(_ sender: Any) {
         toggleSideMenu()
     }
