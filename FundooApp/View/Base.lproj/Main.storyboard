@@ -357,7 +357,11 @@
                             </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-8D-NZe">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <items/>
+                                <items>
+                                    <barButtonItem title="Take a note..." id="1hN-c8-FVV">
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
