@@ -11,13 +11,11 @@ import Foundation
 extension NoteViewController: NotePresenterDelegate {
     
     func updateView(){
-        self.label.isHidden = true
-        self.table.isHidden = false
     }
     
     func setTableData(data: [NoteModel]) {
         self.models = []
         self.models = data
-        self.table.reloadData()
+    //    self.table.reloadData()
     }
 }
