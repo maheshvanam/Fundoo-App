@@ -16,6 +16,5 @@ extension NoteViewController: NotePresenterDelegate {
     func setTableData(data: [NoteModel]) {
         self.models = []
         self.models = data
-    //    self.table.reloadData()
     }
 }

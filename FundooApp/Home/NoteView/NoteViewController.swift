@@ -21,6 +21,5 @@ class NoteViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.notePresenter!.updateTableData()
-      //  NotificationCenter.default.post(name: Notification.Name(Constants.SET_MENU), object: nil)
     }
 }

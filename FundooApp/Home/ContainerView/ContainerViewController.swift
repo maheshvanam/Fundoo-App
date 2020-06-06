@@ -21,6 +21,7 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
         addNotificationCenterObservers()
+        profileItem.backgroundImage(for: .application, style: .plain, barMetrics:  .compact)
     }
     
     @IBAction func onTakeANoteTapped(_ sender: Any) {
@@ -61,7 +62,9 @@ class ContainerViewController: UIViewController {
     }
     
     @objc func switchToAddNote() {
-        guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController  else {
+        let board = UIStoryboard(name: "Home", bundle: nil)
+        
+        guard let childVC = board.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController  else {
           return
         }
         navigationController?.pushViewController(childVC, animated: false)
