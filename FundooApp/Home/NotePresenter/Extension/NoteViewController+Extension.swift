@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension NoteViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
+extension NoteViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
@@ -23,22 +23,15 @@ extension NoteViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         cell.noteLabel?.text = models[indexPath.row].note
         return cell
     }
+}
+
+extension NoteViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        let numberOfColumns:CGFloat = 2
+        let width = collectionView.frame.size.width
+        let xInsets: CGFloat = 10
+        let yInsets: CGFloat = 10
+        
+        return CGSize(width: (width / numberOfColumns ) - (xInsets+yInsets), height: (width / numberOfColumns ) - (xInsets+yInsets))
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-                return CGSize(width: view.frame.width, height: 50)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 22
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
-    }
-    
 }
