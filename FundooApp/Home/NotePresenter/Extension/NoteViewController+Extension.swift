@@ -29,8 +29,8 @@ extension NoteViewController: UICollectionViewDelegateFlowLayout {
         let numberOfColumns:CGFloat = 2
         let width = collectionView.frame.size.width
         let xInsets: CGFloat = 10
-        let yInsets: CGFloat = 10
+        let cellSpacing: CGFloat = 5
         
-        return CGSize(width: (width / numberOfColumns ) - (xInsets+yInsets), height: (width / numberOfColumns ) - (xInsets+yInsets))
+        return CGSize(width: (width / numberOfColumns ) - (xInsets + cellSpacing), height: (width / numberOfColumns ) - (xInsets + cellSpacing))
     }
 }

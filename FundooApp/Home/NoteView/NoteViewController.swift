@@ -11,6 +11,7 @@ import UIKit
 class NoteViewController: UIViewController {
 
     var notePresenter: NoteDelegate?
+    @IBOutlet var collectionView: UICollectionView!
     var models = [NoteModel]()
     
     override func viewDidLoad() {
