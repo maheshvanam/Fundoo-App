@@ -772,12 +772,20 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="274" height="376"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="noteLabel" destination="eR8-xU-QDg" id="Aof-3m-YfR"/>
                                             <outlet property="titleLabel" destination="nxx-j0-rdo" id="OZY-o9-ofd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="GGz-HJ-OnA" id="ATC-K0-8pM"/>
                                     <outlet property="delegate" destination="GGz-HJ-OnA" id="rU2-uQ-mSq"/>
