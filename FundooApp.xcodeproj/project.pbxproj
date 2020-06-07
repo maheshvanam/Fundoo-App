@@ -53,6 +53,7 @@
 		8428FE92248A61F500E9BA44 /* AddNotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428FE91248A61F500E9BA44 /* AddNotePresenter.swift */; };
 		8428FE94248A625000E9BA44 /* AddNotePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428FE93248A625000E9BA44 /* AddNotePresenterImpl.swift */; };
 		842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2486248AA9B400489314 /* ReminderViewController.swift */; };
+		843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBAE248D768D00155FC4 /* MosiacLayout.swift */; };
 		84423A52248B86A100D212DC /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84423A51248B86A100D212DC /* NoteCell.swift */; };
 		84435F3624876D3B0066586E /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84435F3524876D3B0066586E /* AddNoteViewController.swift */; };
 		84435F3A24877FC00066586E /* NoteViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84435F3924877FC00066586E /* NoteViewController+Extension.swift */; };
@@ -131,6 +132,7 @@
 		8428FE91248A61F500E9BA44 /* AddNotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotePresenter.swift; sourceTree = "<group>"; };
 		8428FE93248A625000E9BA44 /* AddNotePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotePresenterImpl.swift; sourceTree = "<group>"; };
 		842C2486248AA9B400489314 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		843BBBAE248D768D00155FC4 /* MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosiacLayout.swift; sourceTree = "<group>"; };
 		84423A51248B86A100D212DC /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		84435F3524876D3B0066586E /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		84435F3924877FC00066586E /* NoteViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				84224C342486BAA60041EBDC /* NoteViewController.swift */,
 				84423A51248B86A100D212DC /* NoteCell.swift */,
+				843BBBAE248D768D00155FC4 /* MosiacLayout.swift */,
 			);
 			path = NoteView;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				840752532489173E0075EF51 /* ProfileViewController.swift in Sources */,
 				846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */,
 				84423A52248B86A100D212DC /* NoteCell.swift in Sources */,
+				843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */,
 				84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */,
 				84A3C9E12480F04C003393EC /* CoreDataService.swift in Sources */,
 			);
