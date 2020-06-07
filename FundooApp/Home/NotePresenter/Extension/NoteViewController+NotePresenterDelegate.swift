@@ -11,6 +11,7 @@ import Foundation
 extension NoteViewController: NotePresenterDelegate {
     
     func updateView(){
+        collectionView.reloadData()
     }
     
     func setTableData(data: [NoteModel]) {

@@ -729,7 +729,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="274" height="376"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-gg-dks">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-gg-dks">
                                                     <rect key="frame" x="0.0" y="0.0" width="274" height="376"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-j0-rdo">
@@ -739,7 +739,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR8-xU-QDg">
-                                                            <rect key="frame" x="0.0" y="41.5" width="274" height="334.5"/>
+                                                            <rect key="frame" x="0.0" y="28.5" width="274" height="347.5"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -747,14 +747,13 @@
                                                         </textView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="eR8-xU-QDg" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="79H-cU-uCC"/>
-                                                        <constraint firstAttribute="trailing" secondItem="nxx-j0-rdo" secondAttribute="trailing" id="Br1-Vn-9S3"/>
-                                                        <constraint firstAttribute="width" constant="190" id="WD4-n6-vsK"/>
-                                                        <constraint firstAttribute="bottom" secondItem="eR8-xU-QDg" secondAttribute="bottom" id="Zcu-hm-gHz"/>
-                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="bpe-qw-fzZ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="eR8-xU-QDg" secondAttribute="trailing" id="oLl-08-zd8"/>
-                                                        <constraint firstItem="eR8-xU-QDg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nxx-j0-rdo" secondAttribute="bottom" constant="8" id="yk7-HG-93V"/>
-                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="top" secondItem="Tbk-gg-dks" secondAttribute="top" id="zZv-DB-M8X"/>
+                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="top" secondItem="Tbk-gg-dks" secondAttribute="top" id="KQX-ja-OeM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="eR8-xU-QDg" secondAttribute="bottom" id="bfk-bc-tA3"/>
+                                                        <constraint firstItem="eR8-xU-QDg" firstAttribute="top" secondItem="nxx-j0-rdo" secondAttribute="bottom" constant="8" id="f5V-l0-wgc"/>
+                                                        <constraint firstItem="eR8-xU-QDg" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="iFZ-YB-Yde"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nxx-j0-rdo" secondAttribute="trailing" id="j5r-XU-3r1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="eR8-xU-QDg" secondAttribute="trailing" id="jIc-mc-1cx"/>
+                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="kmc-33-FGn"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -775,7 +774,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="noteLabel" destination="eR8-xU-QDg" id="Aof-3m-YfR"/>
+                                            <outlet property="discriptionLabel" destination="eR8-xU-QDg" id="Aof-3m-YfR"/>
                                             <outlet property="titleLabel" destination="nxx-j0-rdo" id="OZY-o9-ofd"/>
                                         </connections>
                                     </collectionViewCell>
@@ -786,7 +785,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sIm-uX-8Fu" firstAttribute="top" secondItem="vSP-rS-NEE" secondAttribute="top" id="4Hs-vg-Idg"/>
                             <constraint firstItem="sIm-uX-8Fu" firstAttribute="bottom" secondItem="vSP-rS-NEE" secondAttribute="bottom" id="Nj0-L7-R7g"/>

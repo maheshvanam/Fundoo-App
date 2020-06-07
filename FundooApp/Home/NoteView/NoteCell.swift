@@ -12,6 +12,6 @@ import UIKit
 class NoteCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var noteLabel: UITextView!
+    @IBOutlet weak var discriptionLabel: UITextView!
     
 }

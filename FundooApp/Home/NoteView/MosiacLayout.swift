@@ -7,14 +7,7 @@
 //
 
 import Foundation
-
-
 import UIKit
-
-protocol MosaicLayoutDelegate: class
-{
-    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath:IndexPath, with width: CGFloat) -> CGFloat
-}
 
 class MosaicLayout: UICollectionViewLayout
 {
@@ -72,7 +65,7 @@ class MosaicLayout: UICollectionViewLayout
             }
         }
     }
-    
+
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
     }
@@ -86,30 +79,7 @@ class MosaicLayout: UICollectionViewLayout
                 layoutAttributes.append(attributes)
             }
         }
-        
         return layoutAttributes
     }
 }
-// UICollectionViewFlowLayout
-// abstract
 
-class MosaicLayoutAttributes: UICollectionViewLayoutAttributes
-{
-    var contentHeight: CGFloat = 0.0
-    
-    override func copy(with zone: NSZone? = nil) -> Any {
-        let copy = super.copy(with: zone) as! MosaicLayoutAttributes
-        copy.contentHeight = contentHeight
-        return copy
-    }
-    
-    override func isEqual(_ object: Any?) -> Bool {
-        if let attributes = object as? MosaicLayoutAttributes {
-            if attributes.contentHeight == contentHeight {
-                return super.isEqual(object)
-            }
-        }
-        
-        return false
-    }
-}
