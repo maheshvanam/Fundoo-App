@@ -18,8 +18,8 @@ extension NoteViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NoteCell
         cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.titleLabel?.text = models[indexPath.row].title
-        cell.noteLabel?.text = models[indexPath.row].note
+        cell.titleLabel?.text = models[indexPath.item].title
+        cell.noteLabel?.text = models[indexPath.item].note
         return cell
     }
 }
@@ -30,7 +30,8 @@ extension NoteViewController: UICollectionViewDelegateFlowLayout {
         let width = collectionView.frame.size.width
         let xInsets: CGFloat = 10
         let cellSpacing: CGFloat = 5
-        
-        return CGSize(width: (width / numberOfColumns ) - (xInsets + cellSpacing), height: (width / numberOfColumns ) - (xInsets + cellSpacing))
+        let height: CGFloat = 250
+        return CGSize(width: (width / numberOfColumns ) -
+            (xInsets + cellSpacing), height: height)
     }
 }

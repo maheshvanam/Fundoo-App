@@ -16,6 +16,7 @@ class NoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.clipsToBounds = false
         notePresenter = NotePresenter(delegate: self)
         title = "Notes"
     }
