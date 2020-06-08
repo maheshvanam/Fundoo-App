@@ -12,6 +12,9 @@ class AddNoteViewController: UIViewController {
     
     @IBOutlet var titleField: UITextField!
     @IBOutlet var noteField: UITextView!
+    
+    @IBOutlet weak var heightAnchor: NSLayoutConstraint!
+    
     var addNotePresenter: AddNoteDelegate?
     
     override func viewDidLoad() {
@@ -23,11 +26,19 @@ class AddNoteViewController: UIViewController {
         noteField.layer.borderColor = #colorLiteral(red: 0.9175666571, green: 0.9176985621, blue: 0.9175377488, alpha: 1)
     }
     
+    @IBAction func onTapGesture(_ sender: Any) {
+        self.heightAnchor.constant = 0
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         if let title = titleField.text, !title.isEmpty ,!noteField.text.isEmpty {
             self.addNotePresenter!.insertNote(title: title, note: noteField.text)
         }
         titleField.text = ""
         noteField.text = ""
+    }
+    
+    @IBAction func onSwipeUp(_ sender: Any) {
+       self.heightAnchor.constant = 200
     }
 }

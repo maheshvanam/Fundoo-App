@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension NoteViewController: UICollectionViewDataSource {
+extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
@@ -22,10 +22,13 @@ extension NoteViewController: UICollectionViewDataSource {
         cell.discriptionLabel?.text = models[indexPath.item].note
         return cell
     }
-}
-
-extension NoteViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-    }
+         let board = UIStoryboard(name: "Home", bundle: nil)
+
+             guard let childVC = board.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController  else {
+               return
+             }
+             navigationController?.pushViewController(childVC, animated: false)
+      }
 }
