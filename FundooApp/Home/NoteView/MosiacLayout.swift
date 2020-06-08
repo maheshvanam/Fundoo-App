@@ -12,8 +12,7 @@ import UIKit
 class MosaicLayout: UICollectionViewLayout
 {
     var delegate: MosaicLayoutDelegate?
-    
-    var numberOfColumns: CGFloat = 2
+    var numberOfColumns: CGFloat = 1
     var cellPadding: CGFloat = 5.0
     
     private var contentHeight: CGFloat = 0.0
@@ -24,9 +23,18 @@ class MosaicLayout: UICollectionViewLayout
     
     private var attributesCache = [MosaicLayoutAttributes]()
     
+    func reloadData(){
+        attributesCache = [MosaicLayoutAttributes]()
+    }
+    
+    func setColumns(columns: CGFloat){
+        numberOfColumns = columns
+    }
+    
     override func prepare()
     {
         if attributesCache.isEmpty {
+            
             let columnWidth = contentWidth / numberOfColumns
             var xOffsets = [CGFloat]()
             for column in 0 ..< Int(numberOfColumns) {
@@ -38,22 +46,14 @@ class MosaicLayout: UICollectionViewLayout
             
             for item in 0 ..< collectionView!.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
-                
-                // calculate the frame
                 let width = columnWidth - cellPadding * 2
-                
                 let captionHeight: CGFloat = (delegate?.collectionView(collectionView: collectionView!, heightForCaptionAt: indexPath, with: width))!
-                
                 let height: CGFloat = 60 + captionHeight + cellPadding
                 let frame = CGRect(x: xOffsets[column], y: yOffsets[column], width: columnWidth, height: height)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
-                
-                // create layout attributes
                 let attributes = MosaicLayoutAttributes(forCellWith: indexPath)
                 attributes.frame = insetFrame
                 attributesCache.append(attributes)
-                
-                // update column, yOffset
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffsets[column] = yOffsets[column] + height
                 

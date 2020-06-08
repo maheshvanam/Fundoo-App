@@ -24,8 +24,8 @@ class NotePresenterImpl: NoteDelegate {
             for note in allNotes{
                 data.append(NoteModel(noteModel: note))
             }
-            self.noteView.updateView()
             self.noteView.setTableData(data:data)
+            self.noteView.updateView()
         }
     }
 }

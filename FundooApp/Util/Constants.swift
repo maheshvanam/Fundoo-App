@@ -17,6 +17,7 @@ class Constants {
     static let IS_LOGGED_IN_KEY = "IS_LOGGED_IN"
     static let NAVIGATE_TO_NOTE = "HOME"
     static let NAVIGATE_TO_REMINDER = "REMINDER"
+    static let TOGGLE_GRID = "TOGGLE_GRID"
     static let REMINDER = 1
     static let ADD_NOTE = "Add Note"
     static let SIGN_OUT = 5

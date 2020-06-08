@@ -9,12 +9,12 @@
 import UIKit
 
 class ContainerViewController: UIViewController {
-
-    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileItem: UIBarButtonItem!
     @IBOutlet weak var menuItem: UIBarButtonItem!
     @IBOutlet weak var container: UIView!
+    
     var isMenuOpen = false
     
     override func viewDidLoad() {
@@ -22,6 +22,11 @@ class ContainerViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
         addNotificationCenterObservers()
         profileItem.backgroundImage(for: .application, style: .plain, barMetrics:  .compact)
+    }
+    
+    
+    @IBAction func onGridViewTapped(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
     }
     
     @IBAction func onTakeANoteTapped(_ sender: Any) {
@@ -49,6 +54,8 @@ class ContainerViewController: UIViewController {
             isMenuOpen = true
         }
     }
+    
+    
     
     @objc func switchToNotes(){
         guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "NoteViewController") as? NoteViewController  else {

@@ -22,5 +22,10 @@ extension NoteViewController: UICollectionViewDataSource {
         cell.discriptionLabel?.text = models[indexPath.item].note
         return cell
     }
-    
+}
+
+extension NoteViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+    }
 }

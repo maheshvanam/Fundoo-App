@@ -11,6 +11,7 @@ import Foundation
 extension NoteViewController: NotePresenterDelegate {
     
     func updateView(){
+        layout.reloadData()
         collectionView.reloadData()
     }
     
