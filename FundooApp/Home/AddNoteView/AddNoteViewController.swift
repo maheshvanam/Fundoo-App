@@ -30,6 +30,10 @@ class AddNoteViewController: UIViewController {
         self.heightAnchor.constant = 0
     }
     
+    @IBAction func onSwipeUp(_ sender: Any) {
+       self.heightAnchor.constant = 200
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         if let title = titleField.text, !title.isEmpty ,!noteField.text.isEmpty {
             self.addNotePresenter!.insertNote(title: title, note: noteField.text)
@@ -37,8 +41,5 @@ class AddNoteViewController: UIViewController {
         titleField.text = ""
         noteField.text = ""
     }
-    
-    @IBAction func onSwipeUp(_ sender: Any) {
-       self.heightAnchor.constant = 200
-    }
+
 }
