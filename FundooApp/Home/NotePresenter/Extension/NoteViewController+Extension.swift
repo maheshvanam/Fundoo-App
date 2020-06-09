@@ -25,9 +25,9 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let board = UIStoryboard(name: "Home", bundle: nil)
-             guard let childVC = board.instantiateViewController(withIdentifier: "EditNoteVC") as? EditNoteVC  else {
+             guard let childVC = board.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController  else {
                return
              }
-             navigationController?.pushViewController(childVC, animated: false)
+        navigationController?.pushViewController(childVC, animated: false)
       }
 }

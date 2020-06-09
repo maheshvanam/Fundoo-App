@@ -741,27 +741,28 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="274" height="376"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-j0-rdo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="274" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="274" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="jxL-cq-H9h"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR8-xU-QDg">
-                                                            <rect key="frame" x="0.0" y="28.5" width="274" height="347.5"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGv-HI-sgx">
+                                                            <rect key="frame" x="0.0" y="48" width="274" height="328"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        </textView>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="top" secondItem="Tbk-gg-dks" secondAttribute="top" id="KQX-ja-OeM"/>
-                                                        <constraint firstAttribute="bottom" secondItem="eR8-xU-QDg" secondAttribute="bottom" id="bfk-bc-tA3"/>
-                                                        <constraint firstItem="eR8-xU-QDg" firstAttribute="top" secondItem="nxx-j0-rdo" secondAttribute="bottom" constant="8" id="f5V-l0-wgc"/>
-                                                        <constraint firstItem="eR8-xU-QDg" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="iFZ-YB-Yde"/>
-                                                        <constraint firstAttribute="trailing" secondItem="nxx-j0-rdo" secondAttribute="trailing" id="j5r-XU-3r1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="eR8-xU-QDg" secondAttribute="trailing" id="jIc-mc-1cx"/>
-                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="kmc-33-FGn"/>
+                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="top" secondItem="Tbk-gg-dks" secondAttribute="top" id="14e-eA-Xrz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nxx-j0-rdo" secondAttribute="trailing" id="53S-M6-8Cx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bGv-HI-sgx" secondAttribute="trailing" id="HZG-AJ-IUx"/>
+                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="d8U-S3-Kp0"/>
+                                                        <constraint firstItem="bGv-HI-sgx" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="krN-hV-1B1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bGv-HI-sgx" secondAttribute="bottom" id="vXA-uJ-ZVL"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -782,7 +783,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="discriptionLabel" destination="eR8-xU-QDg" id="Aof-3m-YfR"/>
+                                            <outlet property="discriptionLabel" destination="bGv-HI-sgx" id="nLQ-kC-gHE"/>
                                             <outlet property="titleLabel" destination="nxx-j0-rdo" id="OZY-o9-ofd"/>
                                         </connections>
                                     </collectionViewCell>

@@ -28,7 +28,7 @@ class AddNoteViewController: UIViewController {
     @IBAction func onTapGesture(_ sender: Any) {
         self.heightAnchor.constant = 0
     }
-    
+
     @IBAction func onSwipeUp(_ sender: Any) {
        self.heightAnchor.constant = 200
     }

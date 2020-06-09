@@ -58,16 +58,13 @@
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-hi-aTU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-hi-aTU">
                                 <rect key="frame" x="16" y="118" width="382" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mKb-O3-21j" appends="YES" id="4fd-zE-YgA"/>
-                                </connections>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdt-HJ-tjc">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
@@ -77,9 +74,6 @@
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </barButtonItem>
                                 </items>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="nWd-T4-mTI" appends="YES" id="RiK-dO-G5y"/>
-                                </connections>
                             </toolbar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apJ-N7-26g">
                                 <rect key="frame" x="0.0" y="813" width="414" height="0.0"/>
@@ -119,16 +113,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0MP-P7-q7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="nWd-T4-mTI">
-                    <connections>
-                        <action selector="onSwipeUp:" destination="roB-ZR-0k7" id="Iy5-j6-jfg"/>
-                    </connections>
-                </panGestureRecognizer>
-                <tapGestureRecognizer cancelsTouchesInView="NO" id="mKb-O3-21j">
-                    <connections>
-                        <action selector="onTapGesture:" destination="roB-ZR-0k7" id="jpf-5g-I3c"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2084" y="1711"/>
         </scene>
@@ -171,9 +155,6 @@
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="bOR-J5-YHB" appends="YES" id="PbC-AS-fRd"/>
-                                </connections>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVN-PW-TEP">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
@@ -225,11 +206,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T35-GB-aSz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer cancelsTouchesInView="NO" id="bOR-J5-YHB">
-                    <connections>
-                        <action selector="onViewTapped:" destination="toQ-0B-uDp" id="LvX-2S-LWo"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <panGestureRecognizer cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="Ndg-ac-E19">
                     <connections>
                         <action selector="onSlideUp:" destination="toQ-0B-uDp" id="xWt-0x-J6Z"/>
