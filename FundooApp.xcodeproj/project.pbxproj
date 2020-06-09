@@ -32,11 +32,11 @@
 		841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */; };
 		841BBAE7248042360080C591 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE6248042360080C591 /* Helper.swift */; };
 		841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CEB9D248F705A004E76D4 /* CoreDataError.swift */; };
+		841CEBA2248F725F004E76D4 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CEBA0248F725F004E76D4 /* Note+CoreDataProperties.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
 		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
 		8425CEE724880309004133C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8425CEE624880309004133C1 /* Assets.xcassets */; };
 		8425CEEE24883D9D004133C1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEA24883D9D004133C1 /* Note.swift */; };
-		8425CEEF24883D9D004133C1 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEB24883D9D004133C1 /* Note+CoreDataProperties.swift */; };
 		8425CEF024883D9D004133C1 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEC24883D9D004133C1 /* User+CoreDataClass.swift */; };
 		8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEED24883D9D004133C1 /* User+CoreDataProperties.swift */; };
 		8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981224816447009AA1D9 /* SignUpViewPresenter.swift */; };
@@ -114,11 +114,11 @@
 		841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		841BBAE6248042360080C591 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		841CEB9D248F705A004E76D4 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		841CEBA0248F725F004E76D4 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		8425CEE624880309004133C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/AppIcons (1)/Assets.xcassets"; sourceTree = "<group>"; };
 		8425CEEA24883D9D004133C1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		8425CEEB24883D9D004133C1 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8425CEEC24883D9D004133C1 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8425CEED24883D9D004133C1 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8428981224816447009AA1D9 /* SignUpViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenter.swift; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 		84126ED924897E7B00F0FFBB /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				8425CEEB24883D9D004133C1 /* Note+CoreDataProperties.swift */,
+				841CEBA0248F725F004E76D4 /* Note+CoreDataProperties.swift */,
 				8425CEEA24883D9D004133C1 /* Note.swift */,
 			);
 			path = DataModel;
@@ -620,8 +620,8 @@
 				844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
 				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
+				841CEBA2248F725F004E76D4 /* Note+CoreDataProperties.swift in Sources */,
 				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
-				8425CEEF24883D9D004133C1 /* Note+CoreDataProperties.swift in Sources */,
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
