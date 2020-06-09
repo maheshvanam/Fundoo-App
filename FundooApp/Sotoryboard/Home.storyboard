@@ -139,7 +139,7 @@
                     <view key="view" contentMode="scaleToFill" id="Tf1-mO-Y7q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jy0-3i-kY6"/>
                     </view>
                 </viewController>
@@ -218,10 +218,23 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="8TV-nK-ozW"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="discriptionField" destination="J9l-ng-sZi" id="ab8-1D-9Dy"/>
+                        <outlet property="heightAnchor" destination="PwZ-r5-5kg" id="pvz-Hx-God"/>
+                        <outlet property="titleField" destination="Qr9-GT-eC7" id="cqm-ah-wVf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T35-GB-aSz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="Ndg-ac-E19"/>
-                <tapGestureRecognizer cancelsTouchesInView="NO" id="bOR-J5-YHB"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="bOR-J5-YHB">
+                    <connections>
+                        <action selector="onViewTapped:" destination="toQ-0B-uDp" id="LvX-2S-LWo"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="Ndg-ac-E19">
+                    <connections>
+                        <action selector="onSlideUp:" destination="toQ-0B-uDp" id="xWt-0x-J6Z"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="2450.8928571428569"/>
         </scene>
@@ -232,7 +245,7 @@
                     <view key="view" contentMode="scaleToFill" id="TI4-zC-Z3r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2w-gi-bUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
