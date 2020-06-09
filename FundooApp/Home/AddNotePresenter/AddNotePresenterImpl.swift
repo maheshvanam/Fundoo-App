@@ -18,6 +18,6 @@ class AddNotePresenterImpl: AddNoteDelegate {
     
     func insertNote(title:String, note:String) {
         let coreData = CoreDataService()
-                   coreData.insertNote(title: title, note: note)
+        coreData.insertNote(title: title, note: note)
     }
 }

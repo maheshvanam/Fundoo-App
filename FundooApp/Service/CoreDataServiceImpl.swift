@@ -85,22 +85,43 @@ class CoreDataServiceImpl : DataService {
     
     func insertNote(title: String ,note: String) {
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        let  newNote = Note(context: context)
-        newNote.title = title
-        newNote.note = note
-        do{
-            newNote.owner = try getUser(email: email!)
-        }
-        catch CoreDataError.UserNotFound{
-            fatalError("User not Found")
-        }
-        catch{
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
+        let predicate = NSPredicate(format: "email = %@", email!)
+              fetchRequest.predicate = predicate
+              do{
+                  let result = try context.fetch(fetchRequest) as NSArray
+                  let userEntity = result.firstObject as! User
+                let noteModel = Note(context: context)
+                noteModel.note = note
+                noteModel.title = title
+                userEntity.addToNotes(noteModel)
+                 try context.save()
+                
+              }
+              catch{
+                  let nserror = error as NSError
+                  fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+              }
         
-        appDelegate.saveContext()
-    }
+        
+        
+//
+//        do{
+//            let currentUser = try getUser(email: email!)
+//            let noteModel = Note()
+//            noteModel.note = note
+//            noteModel.title = title
+//            noteModel.owner = currentUser
+//            currentUser.addToNotes(noteModel)
+//            try context.save()
+//        }
+//        catch CoreDataError.UserNotFound{
+//            fatalError("User not Found")
+//        }
+//        catch{
+//            let nserror = error as NSError
+//            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//        }
+}
     
     func getAllNotes() -> NSArray? {
         let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
