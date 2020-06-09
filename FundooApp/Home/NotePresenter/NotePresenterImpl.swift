@@ -22,7 +22,7 @@ class NotePresenterImpl: NoteDelegate {
         do{
             let user = try coreData.getUser(email: email!)
             let notes = user.notes
-            let allNotes = notes!.allObjects
+            let allNotes = notes!.allObjects.reversed()
             var data: [NoteModel] = []
             for note in allNotes{
                 data.append(NoteModel(noteModel:  note as! Note ))
@@ -33,6 +33,6 @@ class NotePresenterImpl: NoteDelegate {
         catch{
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }     
+        }
     }
 }
