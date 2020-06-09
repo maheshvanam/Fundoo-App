@@ -93,6 +93,7 @@ class CoreDataServiceImpl : DataService {
                 let noteModel = Note(context: context)
                 noteModel.note = note
                 noteModel.title = title
+                noteModel.creationTime = Helper.getCurrentTime()
                 userEntity.addToNotes(noteModel)
                  try context.save()
                 
