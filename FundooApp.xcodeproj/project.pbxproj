@@ -31,6 +31,7 @@
 		8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */; };
 		841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */; };
 		841BBAE7248042360080C591 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE6248042360080C591 /* Helper.swift */; };
+		841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CEB9D248F705A004E76D4 /* CoreDataError.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
 		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
 		8425CEE724880309004133C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8425CEE624880309004133C1 /* Assets.xcassets */; };
@@ -69,7 +70,6 @@
 		84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */; };
 		84B49C57247EE94400D3C940 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C56247EE94400D3C940 /* Result.swift */; };
 		84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */; };
-		84C4B58E248A0CB100AC9CB4 /* FundooException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4B58D248A0CB100AC9CB4 /* FundooException.swift */; };
 		84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C7CF248655CA002AB435 /* ContainerViewController.swift */; };
 		84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +113,7 @@
 		8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewContoller.swift; sourceTree = "<group>"; };
 		841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		841BBAE6248042360080C591 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		841CEB9D248F705A004E76D4 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		8425CEE624880309004133C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/AppIcons (1)/Assets.xcassets"; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+BackgroundColor.swift"; sourceTree = "<group>"; };
 		84B49C56247EE94400D3C940 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenter.swift; sourceTree = "<group>"; };
-		84C4B58D248A0CB100AC9CB4 /* FundooException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundooException.swift; sourceTree = "<group>"; };
 		84D0C7CF248655CA002AB435 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -464,7 +464,7 @@
 				84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */,
 				841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */,
 				840752502488F05A0075EF51 /* Constants.swift */,
-				84C4B58D248A0CB100AC9CB4 /* FundooException.swift */,
+				841CEB9D248F705A004E76D4 /* CoreDataError.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -631,6 +631,7 @@
 				84126ECF248952CB00F0FFBB /* NoteDelegate.swift in Sources */,
 				8428FE94248A625000E9BA44 /* AddNotePresenterImpl.swift in Sources */,
 				84435F3624876D3B0066586E /* AddNoteViewController.swift in Sources */,
+				841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */,
 				84126EC724894CDF00F0FFBB /* ProfileDelegate.swift in Sources */,
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
@@ -639,7 +640,6 @@
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
 				8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */,
 				8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */,
-				84C4B58E248A0CB100AC9CB4 /* FundooException.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
 				8428FE8C248A611800E9BA44 /* AddNoteDelegate.swift in Sources */,
 				8425CEEE24883D9D004133C1 /* Note.swift in Sources */,

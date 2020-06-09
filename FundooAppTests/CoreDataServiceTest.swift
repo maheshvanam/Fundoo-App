@@ -40,13 +40,12 @@ class CoreDataServiceTest: XCTestCase {
         XCTAssertEqual(Result.SUCCESS, result)
     }
     
-    func test_ableToStoreNote() {
-//        let notes = dataService.getAllNotes()
-//        XCTAssertEqual(notes!.count,2 )
-//        dataService.insertNote(title: "Dummy", note: "test")
-//        let updatedNotes = dataService.getAllNotes()
-//        XCTAssertEqual(updatedNotes!.count,3)
-        dataService.deleteNote(title: "Dummy")
+    func test_ableToStoreNote() throws {
+        let numberOfNotes = dataService.getAllNotes()?.count
+        dataService.insertNote(title: "Sample", note: "asdfsdfa")
+        XCTAssertEqual(numberOfNotes!+1, dataService.getAllNotes()?.count)
+        dataService.deleteNote(title: "Sample")
     }
+    
     
 }

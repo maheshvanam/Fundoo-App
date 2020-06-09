@@ -100,28 +100,8 @@ class CoreDataServiceImpl : DataService {
               catch{
                   let nserror = error as NSError
                   fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-              }
-        
-        
-        
-//
-//        do{
-//            let currentUser = try getUser(email: email!)
-//            let noteModel = Note()
-//            noteModel.note = note
-//            noteModel.title = title
-//            noteModel.owner = currentUser
-//            currentUser.addToNotes(noteModel)
-//            try context.save()
-//        }
-//        catch CoreDataError.UserNotFound{
-//            fatalError("User not Found")
-//        }
-//        catch{
-//            let nserror = error as NSError
-//            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//        }
-}
+            }
+    }
     
     func getAllNotes() -> NSArray? {
         let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
@@ -140,13 +120,17 @@ class CoreDataServiceImpl : DataService {
     }
     
     func deleteNote(title: String) {
-        let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
-        fetchRequest.predicate = NSPredicate(format: "title = %@", title)
+        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         do{
-            let result = try context.fetch(fetchRequest) as NSArray
-            let noteEntity = result.firstObject as! Note
-            context.delete(noteEntity)
-            try context.save()
+            let user = try getUser(email: email!)
+           let notes = user.notes
+            for note in notes! {
+                if (note as! Note).title == title {
+                    user.removeFromNotes(note as! Note)
+                    try context.save()
+                    break
+                }
+            }
         }
         catch{
             let nserror = error as NSError
