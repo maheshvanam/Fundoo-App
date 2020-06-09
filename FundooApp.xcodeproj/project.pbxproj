@@ -345,6 +345,13 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		8432FDD0248F83A4006D7EF5 /* EditView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EditView;
+			sourceTree = "<group>";
+		};
 		843591352484321E00E58862 /* ContainerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +450,7 @@
 		84634EBA248268990098D004 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8432FDD0248F83A4006D7EF5 /* EditView */,
 				84126ECB2489521500F0FFBB /* NoteView */,
 				84126ECC2489529B00F0FFBB /* NotePresenter */,
 				8428FE86248A5DF700E9BA44 /* AddNoteView */,

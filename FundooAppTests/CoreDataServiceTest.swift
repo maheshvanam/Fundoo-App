@@ -22,21 +22,18 @@ class CoreDataServiceTest: XCTestCase {
         dataService.deleteUser(email: "fundoo@gmail.com")
     }
     
-    func test_coreDataService_whenGivenAUnRegisteredEmail_ShouldReturn_InvalidEmail() throws {
+    func test_coreDataService_whenGivenAUnRegisteredEmail_ShouldReturn_InvalidEmail() throws  {
         let result =  dataService.checkValidUserOrNot(email: "Fun", password: "Fundoo@122")
         XCTAssertEqual(Result.INVALID_EMAIL, result)
     }
     
     func testCoreDataService_whenGivenAInvalidPassword_ShouldReturn_InvalidPassword() throws {
-        //let dataService = CoreDataService()
-        
         let result =  dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@122")
         XCTAssertEqual(Result.INVALID_PASSWORD, result)
     }
     
     func testCoreDataService_whenGivenAValidDetails_ShouldReturn_Success() throws {
-        //let dataService = CoreDataService()
-        let result = dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
+       let result = dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
         XCTAssertEqual(Result.SUCCESS, result)
     }
     
@@ -46,6 +43,4 @@ class CoreDataServiceTest: XCTestCase {
         XCTAssertEqual(numberOfNotes!+1, dataService.getAllNotes()?.count)
         dataService.deleteNote(title: "Sample")
     }
-    
-    
 }
