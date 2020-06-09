@@ -19,7 +19,6 @@ class NotePresenterImpl: NoteDelegate {
     func updateTableData() {
         let coreData = CoreDataService()
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-       // var result: NSArray?
         do{
             let user = try coreData.getUser(email: email!)
             let notes = user.notes
@@ -34,15 +33,6 @@ class NotePresenterImpl: NoteDelegate {
         catch{
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-//        if let notes = coreData.getAllNotes() {
-//            let allNotes = notes as! [Note]
-//            var data: [NoteModel] = []
-//            for note in allNotes{
-//                data.append(NoteModel(noteModel: note))
-//            }
-//            self.noteView.setTableData(data:data)
-//            self.noteView.updateView()
-        
+        }     
     }
 }
