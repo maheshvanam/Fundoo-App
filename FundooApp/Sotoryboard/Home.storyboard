@@ -150,7 +150,7 @@
         <!--Edit Note-->
         <scene sceneID="NFt-KI-68R">
             <objects>
-                <viewController title="Edit Note" modalPresentationStyle="overFullScreen" id="toQ-0B-uDp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditNoteVC" title="Edit Note" modalPresentationStyle="overFullScreen" id="toQ-0B-uDp" customClass="EditNoteVC" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="ay0-eQ-7dI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
