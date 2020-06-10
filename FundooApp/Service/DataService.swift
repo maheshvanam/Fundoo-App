@@ -15,4 +15,5 @@ protocol DataService {
     func deleteUser(email: String)
     func deleteNote(title: String)
     func UpdateNote(note: Note)
+    func createNote() -> Note
 }

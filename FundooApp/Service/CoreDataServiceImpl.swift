@@ -152,4 +152,8 @@ class CoreDataServiceImpl : DataService {
         }
     }
     
+    func createNote() -> Note {
+       return Note(context: context)
+    }
+    
 }

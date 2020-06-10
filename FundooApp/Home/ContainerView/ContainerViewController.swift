@@ -71,7 +71,7 @@ class ContainerViewController: UIViewController {
     @objc func switchToAddNote() {
         let board = UIStoryboard(name: "Home", bundle: nil)
         
-        guard let childVC = board.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController  else {
+        guard let childVC = board.instantiateViewController(withIdentifier: "EditNoteVC") as? EditNoteVC  else {
           return
         }
         childVC.modalPresentationStyle = .formSheet

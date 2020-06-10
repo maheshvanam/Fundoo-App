@@ -21,12 +21,14 @@ class EditNoteVC: UIViewController {
     override func viewDidLoad() {
         discriptionField.layer.borderWidth = 1
         discriptionField.layer.borderColor = #colorLiteral(red: 0.9175666571, green: 0.9176985621, blue: 0.9175377488, alpha: 1)
-        titleField.text = note.title
-        discriptionField.text = note.note
-        if let color = note.color {
-            view.backgroundColor = colors[color]
-            titleField.backgroundColor = colors[color]
-            discriptionField.backgroundColor = colors[color]
+        if note != nil {
+            titleField.text = note.title
+            discriptionField.text = note.note
+            if let color = note.color {
+                view.backgroundColor = colors[color]
+                titleField.backgroundColor = colors[color]
+                discriptionField.backgroundColor = colors[color]
+            }
         }
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
     }
@@ -52,13 +54,26 @@ class EditNoteVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        if let title = titleField.text , let discription = discriptionField.text {
-            note.title = title
-            note.note = discription
+        let coreData = CoreDataService()
+        if let title = titleField.text, !title.isEmpty ,!discriptionField.text.isEmpty {
+            
+            if note == nil {
+                note = coreData.createNote()
+                note.creationTime = Date()
+                note.title = titleField.text
+                note.note = discriptionField.text
+                coreData.UpdateNote(note: note)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.RELOAD_CELLS), object: nil)
+                return
+            }
+            note.title = titleField.text
+            note.note = discriptionField.text
+        }
+        else{
+            return
         }
         note.editTime = Date()
         note.color = currentColor
-        let coreData = CoreDataService()
         coreData.UpdateNote(note: note)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.RELOAD_CELLS), object: nil)
     }

@@ -42,96 +42,6 @@
             </objects>
             <point key="canvasLocation" x="-129" y="1738"/>
         </scene>
-        <!--Add Note-->
-        <scene sceneID="KIo-jG-gi1">
-            <objects>
-                <viewController storyboardIdentifier="AddNoteViewController" title="Add Note" id="roB-ZR-0k7" customClass="AddNoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleAspectFill" id="czE-0h-gUB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="euR-HW-eZf">
-                                <rect key="frame" x="16" y="60" width="382" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="NJ3-ov-V1j"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-hi-aTU">
-                                <rect key="frame" x="16" y="118" width="382" height="693"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <gestureRecognizers/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdt-HJ-tjc">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <gestureRecognizers/>
-                                <items>
-                                    <barButtonItem title="Item" image="plus.square" catalog="system" id="6Pa-Ee-Phx">
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apJ-N7-26g">
-                                <rect key="frame" x="0.0" y="813" width="414" height="0.0"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" id="iIR-0p-miH"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="SJc-qB-qbx" kind="embed" id="gbG-Oi-3Lf"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="euR-HW-eZf" firstAttribute="leading" secondItem="617-je-dLA" secondAttribute="leading" constant="16" id="12Q-hx-MFD"/>
-                            <constraint firstItem="617-je-dLA" firstAttribute="trailing" secondItem="L0F-hi-aTU" secondAttribute="trailing" constant="16" id="3Az-Rn-Ern"/>
-                            <constraint firstItem="euR-HW-eZf" firstAttribute="top" secondItem="617-je-dLA" secondAttribute="top" constant="16" id="3dq-OU-Bfd"/>
-                            <constraint firstItem="L0F-hi-aTU" firstAttribute="top" secondItem="euR-HW-eZf" secondAttribute="bottom" constant="8" id="4iD-lz-0gm"/>
-                            <constraint firstItem="rdt-HJ-tjc" firstAttribute="top" secondItem="apJ-N7-26g" secondAttribute="bottom" id="773-Ka-Nn2"/>
-                            <constraint firstItem="rdt-HJ-tjc" firstAttribute="leading" secondItem="czE-0h-gUB" secondAttribute="leading" id="B3l-Le-nwd"/>
-                            <constraint firstItem="L0F-hi-aTU" firstAttribute="leading" secondItem="617-je-dLA" secondAttribute="leading" constant="16" id="M2k-St-wy4"/>
-                            <constraint firstItem="apJ-N7-26g" firstAttribute="leading" secondItem="617-je-dLA" secondAttribute="leading" id="T52-2Z-Ja9"/>
-                            <constraint firstAttribute="trailing" secondItem="rdt-HJ-tjc" secondAttribute="trailing" id="YAM-7f-BoM"/>
-                            <constraint firstAttribute="bottom" secondItem="rdt-HJ-tjc" secondAttribute="bottom" constant="34" id="gGv-yR-dSK"/>
-                            <constraint firstItem="rdt-HJ-tjc" firstAttribute="top" secondItem="L0F-hi-aTU" secondAttribute="bottom" constant="2" id="qmY-yY-sm0"/>
-                            <constraint firstItem="apJ-N7-26g" firstAttribute="trailing" secondItem="617-je-dLA" secondAttribute="trailing" id="tBV-ig-6WM"/>
-                            <constraint firstItem="617-je-dLA" firstAttribute="trailing" secondItem="euR-HW-eZf" secondAttribute="trailing" constant="16" id="zzn-X1-XC3"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="617-je-dLA"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="hLv-50-oHg"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="heightAnchor" destination="iIR-0p-miH" id="knB-fQ-6Va"/>
-                        <outlet property="noteField" destination="L0F-hi-aTU" id="AaG-OV-bI4"/>
-                        <outlet property="titleField" destination="euR-HW-eZf" id="3IB-gR-tBt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0MP-P7-q7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2084" y="1711"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="QKK-ZZ-EAp">
-            <objects>
-                <viewController id="SJc-qB-qbx" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tf1-mO-Y7q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jy0-3i-kY6"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgm-t0-obJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2075" y="2109"/>
-        </scene>
         <!--Edit Note-->
         <scene sceneID="NFt-KI-68R">
             <objects>
@@ -243,7 +153,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-LK-gPy" customClass="ColorCollectionView" customModule="FundooApp" customModuleProvider="target">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-LK-gPy" customClass="ColorCollectionView" customModule="FundooApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
@@ -259,11 +169,11 @@
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="Fqp-dt-xKx" customClass="ColorCell" customModule="FundooApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uTa-U8-tfR">
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="uTa-U8-tfR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3bX-LX-DTH">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3bX-LX-DTH">
                                                                         <rect key="frame" x="10" y="10.5" width="30" height="29"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="30" id="BFl-X9-zDM"/>
