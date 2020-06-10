@@ -25,6 +25,10 @@
 		84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126ED52489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift */; };
 		84126ED82489558900F0FFBB /* NotePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126ED72489558900F0FFBB /* NotePresenterDelegate.swift */; };
 		84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126EDA24897ED300F0FFBB /* NoteModel.swift */; };
+		8412B1BD24915AB8004DD694 /* EditNotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1BC24915AB8004DD694 /* EditNotePresenter.swift */; };
+		8412B1BF24915AE6004DD694 /* EditNotePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1BE24915AE6004DD694 /* EditNotePresenterImpl.swift */; };
+		8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1C024915BA1004DD694 /* EditNoteDelegate.swift */; };
+		8412B1C324915C6D004DD694 /* EditNotePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */; };
 		8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D298247A519D00C4F93A /* AppDelegate.swift */; };
 		8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29A247A519D00C4F93A /* SceneDelegate.swift */; };
 		8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29C247A519D00C4F93A /* SignInViewController.swift */; };
@@ -102,6 +106,10 @@
 		84126ED52489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewController+NotePresenterDelegate.swift"; sourceTree = "<group>"; };
 		84126ED72489558900F0FFBB /* NotePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenterDelegate.swift; sourceTree = "<group>"; };
 		84126EDA24897ED300F0FFBB /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		8412B1BC24915AB8004DD694 /* EditNotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenter.swift; sourceTree = "<group>"; };
+		8412B1BE24915AE6004DD694 /* EditNotePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenterImpl.swift; sourceTree = "<group>"; };
+		8412B1C024915BA1004DD694 /* EditNoteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteDelegate.swift; sourceTree = "<group>"; };
+		8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenterDelegate.swift; sourceTree = "<group>"; };
 		8419D295247A519D00C4F93A /* FundooApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundooApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8419D298247A519D00C4F93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8419D29A247A519D00C4F93A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -256,6 +264,17 @@
 				8425CEEA24883D9D004133C1 /* Note.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		8412B1BB24915A71004DD694 /* EditNotePresenter */ = {
+			isa = PBXGroup;
+			children = (
+				8412B1BC24915AB8004DD694 /* EditNotePresenter.swift */,
+				8412B1BE24915AE6004DD694 /* EditNotePresenterImpl.swift */,
+				8412B1C024915BA1004DD694 /* EditNoteDelegate.swift */,
+				8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */,
+			);
+			path = EditNotePresenter;
 			sourceTree = "<group>";
 		};
 		8419D28C247A519D00C4F93A = {
@@ -417,6 +436,7 @@
 		84634EBA248268990098D004 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8412B1BB24915A71004DD694 /* EditNotePresenter */,
 				8432FDD0248F83A4006D7EF5 /* EditNoteView */,
 				84126ECB2489521500F0FFBB /* NoteView */,
 				84126ECC2489529B00F0FFBB /* NotePresenter */,
@@ -568,6 +588,7 @@
 				843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */,
 				84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */,
 				840752512488F05A0075EF51 /* Constants.swift in Sources */,
+				8412B1C324915C6D004DD694 /* EditNotePresenterDelegate.swift in Sources */,
 				84A3C9DB2480E3B1003393EC /* DataService.swift in Sources */,
 				84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */,
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
@@ -579,6 +600,7 @@
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
 				84126ED3248953C000F0FFBB /* NotePresenterImpl.swift in Sources */,
+				8412B1BF24915AE6004DD694 /* EditNotePresenterImpl.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
@@ -589,6 +611,7 @@
 				8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */,
 				84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */,
 				844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */,
+				8412B1BD24915AB8004DD694 /* EditNotePresenter.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
 				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
 				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
@@ -603,6 +626,7 @@
 				84126EC724894CDF00F0FFBB /* ProfileDelegate.swift in Sources */,
 				84078A7F2490198D0000D649 /* ColorCell.swift in Sources */,
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
+				8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
 				8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */,
 				84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */,
