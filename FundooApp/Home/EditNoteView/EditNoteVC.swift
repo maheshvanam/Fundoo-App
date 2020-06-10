@@ -20,7 +20,7 @@ class EditNoteVC: UIViewController {
     }
     
     @IBAction func onSlideUp(_ sender: Any) {
-        heightAnchor.constant = 200
+        heightAnchor.constant = 300
     }
     
     @IBAction func onViewTapped(_ sender: Any) {
@@ -30,3 +30,4 @@ class EditNoteVC: UIViewController {
     @IBAction func onPlusIconPressed(_ sender: Any) {
     }
 }
+

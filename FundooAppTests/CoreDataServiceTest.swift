@@ -22,22 +22,23 @@ class CoreDataServiceTest: XCTestCase {
         dataService.deleteUser(email: "fundoo@gmail.com")
     }
     
-    func test_coreDataService_whenGivenAUnRegisteredEmail_ShouldReturn_InvalidEmail() throws  {
-        let result =  dataService.checkValidUserOrNot(email: "Fun", password: "Fundoo@122")
+    func test_coreDataService_whenGivenAUnRegisteredEmail_ShouldReturn_InvalidEmail()   {
+        
+        let result = dataService.checkValidUserOrNot(email: "Fun", password: "Fundoo@122")
         XCTAssertEqual(Result.INVALID_EMAIL, result)
     }
     
-    func testCoreDataService_whenGivenAInvalidPassword_ShouldReturn_InvalidPassword() throws {
+    func testCoreDataService_whenGivenAInvalidPassword_ShouldReturn_InvalidPassword()  {
         let result =  dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@122")
         XCTAssertEqual(Result.INVALID_PASSWORD, result)
     }
     
-    func testCoreDataService_whenGivenAValidDetails_ShouldReturn_Success() throws {
+    func testCoreDataService_whenGivenAValidDetails_ShouldReturn_Success()  {
        let result = dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
         XCTAssertEqual(Result.SUCCESS, result)
     }
     
-    func test_ableToStoreNote() throws {
+    func test_ableToStoreNote()  {
         let numberOfNotes = dataService.getAllNotes()?.count
         dataService.insertNote(title: "Sample", note: "asdfsdfa")
         XCTAssertEqual(numberOfNotes!+1, dataService.getAllNotes()?.count)
