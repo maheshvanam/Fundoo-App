@@ -9,10 +9,12 @@
 import UIKit
 
 class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollectionViewDelegate {
+   
     
     override func awakeFromNib() {
         self.delegate = self
         self.dataSource = self
+        
     }
     
     var colors = [UIColor.white,UIColor.yellow,UIColor.green,UIColor.black,UIColor.purple,UIColor.red,UIColor.orange,UIColor.lightGray]
@@ -30,8 +32,11 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
         cell.tintColor = colors[indexPath.item]
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        let color : [String:UIColor]
+        color = [ "c" : colors[indexPath.item]]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil,userInfo: color)
     }
 
 }

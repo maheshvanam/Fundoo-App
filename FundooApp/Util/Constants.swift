@@ -6,7 +6,7 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Constants {
     static let TOGGLE_MENU = "TOGGLE_MENU"
@@ -22,5 +22,5 @@ class Constants {
     static let ADD_NOTE = "Add Note"
     static let SIGN_OUT = 5
     static let HOME = 0
-    
+    static let colors = ["white" : UIColor.white,"yellow":UIColor.yellow,"green":UIColor.green,"black":UIColor.black,"purple":UIColor.purple,"red":UIColor.red,"orange":UIColor.orange,"lightGray":UIColor.lightGray]
 }

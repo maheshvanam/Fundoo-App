@@ -29,6 +29,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
              guard let childVC = board.instantiateViewController(withIdentifier: "EditNoteVC") as? EditNoteVC  else {
                return
              }
+        childVC.note = models[indexPath.item]
         navigationController?.pushViewController(childVC, animated: false)
       }
 }

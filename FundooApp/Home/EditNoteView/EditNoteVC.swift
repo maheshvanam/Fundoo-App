@@ -8,15 +8,40 @@
 
 import UIKit
 
-class EditNoteVC: UIViewController {
+class EditNoteVC: UIViewController ,ColorDelegate{
+ 
+    func UpdateColor(color: UIColor) {
+        
+    }
+    
     
     @IBOutlet weak var discriptionField: UITextView!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var heightAnchor: NSLayoutConstraint!
+    
+    var colorDelegate: ColorDelegate!
     var note:Note!
+    let colors = Constants.colors
+    
     override func viewDidLoad() {
+        colorDelegate = self
         discriptionField.layer.borderWidth = 1
         discriptionField.layer.borderColor = #colorLiteral(red: 0.9175666571, green: 0.9176985621, blue: 0.9175377488, alpha: 1)
+        titleField.text = note.title
+        discriptionField.text = note.note
+        if let color = note.color {
+            view.backgroundColor = colors[color]
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
+    @objc func updateView(_ notification: NSNotification){
+        if let color = notification.userInfo?["c"]  as? UIColor {
+            view.backgroundColor = color
+            titleField.backgroundColor = color
+            discriptionField.backgroundColor = color
+            note.color = colors.someKey(forValue: color)
+        }
     }
     
     @IBAction func onSlideUp(_ sender: Any) {
@@ -31,3 +56,8 @@ class EditNoteVC: UIViewController {
     }
 }
 
+extension Dictionary where Value: Equatable {
+    func someKey(forValue val: Value) -> Key? {
+        return first(where: { $1 == val })?.key
+    }
+}
