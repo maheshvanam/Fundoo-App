@@ -17,10 +17,8 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
         
     }
     
-    var colors = [UIColor.white,UIColor.yellow,UIColor.green,UIColor.black,UIColor.purple,UIColor.red,UIColor.orange,UIColor.lightGray]
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors.count
+        return Constants.myColors.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -29,14 +27,13 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath) as! ColorCell
-        cell.tintColor = colors[indexPath.item]
+        cell.tintColor = Constants.myColors[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let color : [String:UIColor]
-        color = [ "c" : colors[indexPath.item]]
+        color = [ "c" : Constants.myColors[indexPath.item]]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil,userInfo: color)
     }
-
 }
