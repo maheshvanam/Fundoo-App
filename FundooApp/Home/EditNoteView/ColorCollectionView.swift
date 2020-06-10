@@ -36,7 +36,7 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let color : [String:UIColor]
         color = [ "c" : colors[indexPath.item]]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil,userInfo: color)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil,userInfo: color)
     }
 
 }

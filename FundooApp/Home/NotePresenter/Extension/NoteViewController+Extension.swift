@@ -21,11 +21,9 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.titleLabel?.text = noteModel.title
         cell.discriptionLabel?.text = noteModel.note
-        
         if let color = noteModel.color {
             cell.backgroundColor = Constants.colors[color]
         }
-        
         return cell
     }
     

@@ -34,7 +34,7 @@ class EditNoteVC: UIViewController ,ColorDelegate{
             titleField.backgroundColor = colors[color]
             discriptionField.backgroundColor = colors[color]
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
     }
     
     @objc func updateView(_ notification: NSNotification){
@@ -64,5 +64,6 @@ class EditNoteVC: UIViewController ,ColorDelegate{
         }
         let coreData = CoreDataService()
         coreData.UpdateNote(note: note)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.RELOAD_CELLS), object: nil)
     }
 }

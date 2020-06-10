@@ -18,8 +18,10 @@ class Constants {
     static let NAVIGATE_TO_NOTE = "HOME"
     static let NAVIGATE_TO_REMINDER = "REMINDER"
     static let TOGGLE_GRID = "TOGGLE_GRID"
-    static let REMINDER = 1
     static let ADD_NOTE = "Add Note"
+    static let RELOAD_CELLS = "Reload cells"
+    static let UPDATE_COLOR = "update color"
+    static let REMINDER = 1
     static let SIGN_OUT = 5
     static let HOME = 0
     static let colors = ["white" : UIColor.white,"yellow":UIColor.yellow,"green":UIColor.green,"black":UIColor.black,"purple":UIColor.purple,"red":UIColor.red,"orange":UIColor.orange,"lightGray":UIColor.lightGray]

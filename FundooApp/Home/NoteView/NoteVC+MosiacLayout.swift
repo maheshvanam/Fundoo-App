@@ -14,9 +14,9 @@ extension NoteViewController : MosaicLayoutDelegate {
     {
         
         let discription = models[indexPath.item].note!
-        let titleHeight: CGFloat = 10
-        let height = getContentHeight(for: discription, with: UIFont.systemFont(ofSize: 15), width: 190) + titleHeight
-        return height
+        let titleHeight:CGFloat = 10
+        let discriptionHeight = getContentHeight(for: discription, with: UIFont.systemFont(ofSize: 15), width: 190)
+        return discriptionHeight + titleHeight
     }
     
     func getContentHeight(for text: String, with font: UIFont, width: CGFloat) -> CGFloat

@@ -21,9 +21,11 @@ class NoteViewController: UIViewController {
         layout = collectionView?.collectionViewLayout as? MosaicLayout
         layout.delegate = self
         collectionView.clipsToBounds = false
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         notePresenter = NotePresenter(delegate: self)
         title = "Notes"
         NotificationCenter.default.addObserver(self, selector: #selector(toggleView), name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCells), name: Notification.Name(Constants.RELOAD_CELLS), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,5 +43,9 @@ class NoteViewController: UIViewController {
             self.notePresenter!.updateTableData()
             isGrid = true
         }
+    }
+    
+    @objc func reloadCells(){
+        self.notePresenter!.updateTableData()
     }
 }
