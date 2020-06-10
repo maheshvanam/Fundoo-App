@@ -10,8 +10,7 @@ import UIKit
 
 extension NoteViewController : MosaicLayoutDelegate {
     
-    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
-    {
+    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
         
         let discription = models[indexPath.item].note!
         let titleHeight:CGFloat = 10
@@ -19,8 +18,7 @@ extension NoteViewController : MosaicLayoutDelegate {
         return discriptionHeight + titleHeight
     }
     
-    func getContentHeight(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
-    {
+    func getContentHeight(for text: String, with font: UIFont, width: CGFloat) -> CGFloat {
         let nsstring = NSString(string: text)
         let maxHeight = CGFloat(350.0)
         let textAttributes = [NSAttributedString.Key.font : font]

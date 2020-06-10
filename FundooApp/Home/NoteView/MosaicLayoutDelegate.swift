@@ -7,7 +7,6 @@
 //
 import UIKit
 
-protocol MosaicLayoutDelegate: class
-{
+protocol MosaicLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath:IndexPath, with width: CGFloat) -> CGFloat
 }

@@ -22,6 +22,7 @@ class EditNoteVC: UIViewController ,ColorDelegate{
     var colorDelegate: ColorDelegate!
     var note:Note!
     let colors = Constants.colors
+    var currentColor:String!
     
     override func viewDidLoad() {
         colorDelegate = self
@@ -39,10 +40,10 @@ class EditNoteVC: UIViewController ,ColorDelegate{
     
     @objc func updateView(_ notification: NSNotification){
         if let color = notification.userInfo?["c"]  as? UIColor {
+            currentColor = colors.getKey(forValue: color)
             view.backgroundColor = color
             titleField.backgroundColor = color
             discriptionField.backgroundColor = color
-            note.color = colors.getKey(forValue: color)
         }
     }
     
@@ -62,6 +63,8 @@ class EditNoteVC: UIViewController ,ColorDelegate{
             note.title = title
             note.note = discription
         }
+        note.editTime = Date()
+        note.color = currentColor
         let coreData = CoreDataService()
         coreData.UpdateNote(note: note)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.RELOAD_CELLS), object: nil)

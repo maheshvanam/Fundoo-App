@@ -7,8 +7,8 @@
 //
 import UIKit
 
-class MosaicLayoutAttributes: UICollectionViewLayoutAttributes
-{
+class MosaicLayoutAttributes: UICollectionViewLayoutAttributes {
+   
     var contentHeight: CGFloat = 0.0
     
     override func copy(with zone: NSZone? = nil) -> Any {
