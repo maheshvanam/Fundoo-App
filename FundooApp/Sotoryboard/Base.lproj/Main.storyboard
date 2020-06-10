@@ -719,7 +719,7 @@
         <!--Notes-->
         <scene sceneID="dtO-1l-sgH">
             <objects>
-                <viewController storyboardIdentifier="NoteViewController" modalPresentationStyle="fullScreen" id="GGz-HJ-OnA" customClass="NoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteViewController" id="GGz-HJ-OnA" customClass="NoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Np4-QL-CFv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

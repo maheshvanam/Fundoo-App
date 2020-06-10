@@ -45,7 +45,7 @@
         <!--Add Note-->
         <scene sceneID="KIo-jG-gi1">
             <objects>
-                <viewController storyboardIdentifier="AddNoteViewController" title="Add Note" modalPresentationStyle="overFullScreen" id="roB-ZR-0k7" customClass="AddNoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNoteViewController" title="Add Note" id="roB-ZR-0k7" customClass="AddNoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="czE-0h-gUB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,9 +170,9 @@
                                 </connections>
                             </toolbar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUY-Em-eg5">
-                                <rect key="frame" x="0.0" y="513" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="PwZ-r5-5kg"/>
+                                    <constraint firstAttribute="height" id="PwZ-r5-5kg"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="rM7-EE-VPK" kind="embed" id="IOr-a1-nfH"/>
@@ -197,9 +197,6 @@
                             <constraint firstItem="TVN-PW-TEP" firstAttribute="top" secondItem="J9l-ng-sZi" secondAttribute="bottom" constant="2" id="vat-be-IH9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oCu-Yn-HPX"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="uCr-Gt-rbK" appends="YES" id="kd7-QV-7Hi"/>
-                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="8TV-nK-ozW"/>
@@ -216,11 +213,6 @@
                         <action selector="onSlideUp:" destination="toQ-0B-uDp" id="276-ms-KEt"/>
                     </connections>
                 </panGestureRecognizer>
-                <tapGestureRecognizer id="uCr-Gt-rbK">
-                    <connections>
-                        <action selector="onViewTapped:" destination="toQ-0B-uDp" id="6fG-eq-n8b"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="2450.8928571428569"/>
         </scene>
@@ -229,11 +221,11 @@
             <objects>
                 <viewController storyboardIdentifier="SlideUpVC" title="Slide Up Menu" id="rM7-EE-VPK" customClass="SlideUpVC" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TI4-zC-Z3r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfl-Er-N8P">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OptionsCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionsCell" id="WgN-8z-ITP" customClass="OptionsCell" customModule="FundooApp" customModuleProvider="target">

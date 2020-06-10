@@ -74,6 +74,7 @@ class ContainerViewController: UIViewController {
         guard let childVC = board.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController  else {
           return
         }
+        childVC.modalPresentationStyle = .formSheet
         navigationController?.pushViewController(childVC, animated: false)
     }
     
