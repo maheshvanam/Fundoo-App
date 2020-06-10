@@ -138,6 +138,4 @@ class CoreDataServiceImpl : DataService {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
-    
-    
 }

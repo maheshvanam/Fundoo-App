@@ -9,6 +9,6 @@
 import Foundation
 
 protocol NotePresenterDelegate {
-    func setTableData(data: [NoteModel])
+    func setTableData(data: [Note])
     func updateView()
 }

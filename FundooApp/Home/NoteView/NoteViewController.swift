@@ -12,7 +12,7 @@ class NoteViewController: UIViewController {
 
     var notePresenter: NoteDelegate?
     @IBOutlet var collectionView: UICollectionView!
-    var models = [NoteModel]()
+    var models = [Note]()
     var layout: MosaicLayout!
     var isGrid:Bool = true
     

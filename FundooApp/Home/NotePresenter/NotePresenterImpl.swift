@@ -23,9 +23,10 @@ class NotePresenterImpl: NoteDelegate {
             let user = try coreData.getUser(email: email!)
             let notes = user.notes
             let allNotes = notes!.allObjects.reversed()
-            var data: [NoteModel] = []
+         //   let data = notes as! [Note]
+            var data: [Note] = []
             for note in allNotes{
-                data.append(NoteModel(noteModel:  note as! Note ))
+                data.append( note as! Note )
             }
             self.noteView.setTableData(data:data)
             self.noteView.updateView()
