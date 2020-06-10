@@ -24,3 +24,8 @@ class Constants {
     static let HOME = 0
     static let colors = ["white" : UIColor.white,"yellow":UIColor.yellow,"green":UIColor.green,"black":UIColor.black,"purple":UIColor.purple,"red":UIColor.red,"orange":UIColor.orange,"lightGray":UIColor.lightGray]
 }
+extension Dictionary where Value: Equatable {
+    func getKey(forValue val: Value) -> Key? {
+        return first(where: { $1 == val })?.key
+    }
+}

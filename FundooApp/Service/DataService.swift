@@ -14,4 +14,5 @@ protocol DataService {
     func checkValidUserOrNot(email: String,password: String) -> Result
     func deleteUser(email: String)
     func deleteNote(title: String)
+    func UpdateNote(note: Note)
 }

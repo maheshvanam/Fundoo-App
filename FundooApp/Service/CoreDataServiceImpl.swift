@@ -138,4 +138,18 @@ class CoreDataServiceImpl : DataService {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
+    
+    func UpdateNote(note: Note) {
+        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
+        do{
+            let user = try getUser(email: email!)
+            user.addToNotes(note)
+            try context.save()
+        }
+        catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
 }

@@ -31,6 +31,8 @@ class EditNoteVC: UIViewController ,ColorDelegate{
         discriptionField.text = note.note
         if let color = note.color {
             view.backgroundColor = colors[color]
+            titleField.backgroundColor = colors[color]
+            discriptionField.backgroundColor = colors[color]
         }
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
@@ -40,7 +42,7 @@ class EditNoteVC: UIViewController ,ColorDelegate{
             view.backgroundColor = color
             titleField.backgroundColor = color
             discriptionField.backgroundColor = color
-            note.color = colors.someKey(forValue: color)
+            note.color = colors.getKey(forValue: color)
         }
     }
     
@@ -54,10 +56,9 @@ class EditNoteVC: UIViewController ,ColorDelegate{
     
     @IBAction func onPlusIconPressed(_ sender: Any) {
     }
-}
-
-extension Dictionary where Value: Equatable {
-    func someKey(forValue val: Value) -> Key? {
-        return first(where: { $1 == val })?.key
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let coreData = CoreDataService()
+        coreData.UpdateNote(note: note)
     }
 }

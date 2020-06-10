@@ -17,9 +17,15 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NoteCell)
+         let noteModel = models[indexPath.item]
         cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.titleLabel?.text = models[indexPath.item].title
-        cell.discriptionLabel?.text = models[indexPath.item].note
+        cell.titleLabel?.text = noteModel.title
+        cell.discriptionLabel?.text = noteModel.note
+        
+        if let color = noteModel.color {
+            cell.backgroundColor = Constants.colors[color]
+        }
+        
         return cell
     }
     
