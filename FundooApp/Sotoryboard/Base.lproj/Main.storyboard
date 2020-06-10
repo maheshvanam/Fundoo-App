@@ -741,28 +741,28 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="274" height="376"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-j0-rdo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="274" height="40"/>
+                                                            <rect key="frame" x="8" y="0.0" width="258" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="jxL-cq-H9h"/>
+                                                                <constraint firstAttribute="height" constant="30" id="w6o-to-l85"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGv-HI-sgx">
-                                                            <rect key="frame" x="0.0" y="48" width="274" height="328"/>
+                                                            <rect key="frame" x="8" y="38" width="258" height="338"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="top" secondItem="Tbk-gg-dks" secondAttribute="top" id="14e-eA-Xrz"/>
-                                                        <constraint firstAttribute="trailing" secondItem="nxx-j0-rdo" secondAttribute="trailing" id="53S-M6-8Cx"/>
-                                                        <constraint firstAttribute="trailing" secondItem="bGv-HI-sgx" secondAttribute="trailing" id="HZG-AJ-IUx"/>
-                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="d8U-S3-Kp0"/>
-                                                        <constraint firstItem="bGv-HI-sgx" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" id="krN-hV-1B1"/>
-                                                        <constraint firstAttribute="bottom" secondItem="bGv-HI-sgx" secondAttribute="bottom" id="vXA-uJ-ZVL"/>
+                                                        <constraint firstItem="bGv-HI-sgx" firstAttribute="top" secondItem="nxx-j0-rdo" secondAttribute="bottom" constant="8" symbolic="YES" id="5EF-vZ-i6m"/>
+                                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="nxx-j0-rdo" secondAttribute="trailing" constant="8" id="9Pc-Mj-k8v"/>
+                                                        <constraint firstItem="bGv-HI-sgx" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" constant="8" id="ApW-FN-VGs"/>
+                                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="bGv-HI-sgx" secondAttribute="trailing" constant="8" id="PhG-Ec-Fsn"/>
+                                                        <constraint firstItem="nxx-j0-rdo" firstAttribute="leading" secondItem="Tbk-gg-dks" secondAttribute="leading" constant="8" id="b97-gL-s2v"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bGv-HI-sgx" secondAttribute="bottom" id="cjC-Qd-ZGR"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
