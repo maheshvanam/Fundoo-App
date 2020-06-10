@@ -9,11 +9,8 @@
 import Foundation
 protocol DataService {
     func insertUser(registartionUser: UserModel)
-    func insertNote(title: String ,note: String)
-    func getAllNotes() -> NSArray?
     func checkValidUserOrNot(email: String,password: String) -> Result
     func deleteUser(email: String)
-    func deleteNote(title: String)
-    func UpdateNote(note: Note)
+    func insertNote(note: Note)
     func createNote() -> Note
 }

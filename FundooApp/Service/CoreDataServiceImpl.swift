@@ -83,63 +83,7 @@ class CoreDataServiceImpl : DataService {
         }
     }
     
-    func insertNote(title: String ,note: String) {
-        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        let predicate = NSPredicate(format: "email = %@", email!)
-              fetchRequest.predicate = predicate
-              do{
-                  let result = try context.fetch(fetchRequest) as NSArray
-                  let userEntity = result.firstObject as! User
-                let noteModel = Note(context: context)
-                noteModel.note = note
-                noteModel.title = title
-                noteModel.creationTime = Date()
-                userEntity.addToNotes(noteModel)
-                 try context.save()
-                
-              }
-              catch{
-                  let nserror = error as NSError
-                  fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-    }
-    
-    func getAllNotes() -> NSArray? {
-        let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
-        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        var result: NSArray?
-        do{
-            let user = try getUser(email: email!)
-            fetchRequest.predicate = NSPredicate(format: "owner = %@", user)
-            result = try context.fetch(fetchRequest) as NSArray
-        }
-        catch{
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-        return result
-    }
-    
-    func deleteNote(title: String) {
-        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        do{
-            let user = try getUser(email: email!)
-           let notes = user.notes
-            for note in notes! {
-                if (note as! Note).title == title {
-                    user.removeFromNotes(note as! Note)
-                    try context.save()
-                    break
-                }
-            }
-        }
-        catch{
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-    }
-    
-    func UpdateNote(note: Note) {
+    func insertNote(note: Note) {
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         do{
             let user = try getUser(email: email!)

@@ -33,15 +33,8 @@ class CoreDataServiceTest: XCTestCase {
         XCTAssertEqual(Result.INVALID_PASSWORD, result)
     }
     
-    func testCoreDataService_whenGivenAValidDetails_ShouldReturn_Success()  {
-       let result = dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
-        XCTAssertEqual(Result.SUCCESS, result)
-    }
-    
-    func test_ableToStoreNote()  {
-        let numberOfNotes = dataService.getAllNotes()?.count
-        dataService.insertNote(title: "Sample", note: "asdfsdfa")
-        XCTAssertEqual(numberOfNotes!+1, dataService.getAllNotes()?.count)
-        dataService.deleteNote(title: "Sample")
-    }
+//    func testCoreDataService_whenGivenAValidDetails_ShouldReturn_Success()  {
+//       let result = dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
+//        XCTAssertEqual(Result.SUCCESS, result)
+//    }
 }

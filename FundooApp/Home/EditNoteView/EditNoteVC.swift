@@ -62,7 +62,7 @@ class EditNoteVC: UIViewController {
                 note.creationTime = Date()
                 note.title = titleField.text
                 note.note = discriptionField.text
-                coreData.UpdateNote(note: note)
+                coreData.insertNote(note: note)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.RELOAD_CELLS), object: nil)
                 return
             }
@@ -74,7 +74,7 @@ class EditNoteVC: UIViewController {
         }
         note.editTime = Date()
         note.color = currentColor
-        coreData.UpdateNote(note: note)
+        coreData.insertNote(note: note)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.RELOAD_CELLS), object: nil)
     }
 }
