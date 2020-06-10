@@ -12,10 +12,10 @@ import UIKit
 class MosaicLayout: UICollectionViewLayout
 {
     var delegate: MosaicLayoutDelegate?
-    var numberOfColumns: CGFloat = 1
-    var cellPadding: CGFloat = 5.0
+    var numberOfColumns: CGFloat = Constants.FLOAT_1
+    var cellPadding: CGFloat = Constants.FLOAT_5
     
-    private var contentHeight: CGFloat = 0.0
+    private var contentHeight: CGFloat = Constants.FLOAT_ZERO
     private var contentWidth: CGFloat {
         let insets = collectionView!.contentInset
         return (collectionView!.bounds.width - (insets.left + insets.right))
@@ -37,18 +37,18 @@ class MosaicLayout: UICollectionViewLayout
             
             let columnWidth = contentWidth / numberOfColumns
             var xOffsets = [CGFloat]()
-            for column in 0 ..< Int(numberOfColumns) {
+            for column in Constants.INT_0 ..< Int(numberOfColumns) {
                 xOffsets.append(CGFloat(column) * columnWidth)
             }
             
-            var column = 0
-            var yOffsets = [CGFloat](repeating: 0, count: Int(numberOfColumns))
+            var column = Constants.INT_0
+            var yOffsets = [CGFloat](repeating: Constants.FLOAT_ZERO, count: Int(numberOfColumns))
             
-            for item in 0 ..< collectionView!.numberOfItems(inSection: 0) {
-                let indexPath = IndexPath(item: item, section: 0)
-                let width = columnWidth - cellPadding * 2
-                let captionHeight: CGFloat = (delegate?.collectionView(collectionView: collectionView!, heightForCaptionAt: indexPath, with: width))!
-                let height: CGFloat = 60 + captionHeight + cellPadding
+            for item in Constants.INT_0 ..< collectionView!.numberOfItems(inSection: Constants.INT_0) {
+                let indexPath = IndexPath(item: item, section: Constants.INT_0)
+                let width = columnWidth - cellPadding * Constants.FLOAT_2
+                let captionHeight: CGFloat =  (delegate?.collectionView(collectionView: collectionView!, heightForCaptionAt: indexPath, with: width))!
+                let height: CGFloat = Constants.FLOAT_60 + captionHeight + cellPadding
                 let frame = CGRect(x: xOffsets[column], y: yOffsets[column], width: columnWidth, height: height)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 let attributes = MosaicLayoutAttributes(forCellWith: indexPath)
@@ -57,10 +57,10 @@ class MosaicLayout: UICollectionViewLayout
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffsets[column] = yOffsets[column] + height
                 
-                if column >= (Int(numberOfColumns) - 1) {
-                    column = 0
+                if column >= (Int(numberOfColumns) - Constants.INT_1) {
+                    column = Constants.INT_0
                 } else {
-                    column += 1
+                    column += Constants.INT_1
                 }
             }
         }

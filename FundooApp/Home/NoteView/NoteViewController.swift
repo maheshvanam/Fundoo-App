@@ -21,9 +21,9 @@ class NoteViewController: UIViewController {
         layout = collectionView?.collectionViewLayout as? MosaicLayout
         layout.delegate = self
         collectionView.clipsToBounds = false
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.contentInset = UIEdgeInsets(top: Constants.FLOAT_TEN, left: Constants.FLOAT_TEN, bottom: Constants.FLOAT_TEN, right: Constants.FLOAT_TEN)
         notePresenter = NotePresenter(delegate: self)
-        title = "Notes"
+        title = Constants.NOTES_TITLE
         NotificationCenter.default.addObserver(self, selector: #selector(toggleView), name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCells), name: Notification.Name(Constants.RELOAD_CELLS), object: nil)
     }

@@ -20,7 +20,6 @@ class EditNotePresenterImpl: EditNoteDelegate {
         var note = editNoteView.getNote()
         if editNoteView.fieldsAreEmpty() {
             if editNoteView.isNewNote() {
-                print("new")
                 note = coreData.createNote()
                 note!.creationTime = Date()
                 note!.title = editNoteView.getTitleText()
@@ -36,7 +35,6 @@ class EditNotePresenterImpl: EditNoteDelegate {
         else{
             return
         }
-        print("updated")
         note!.editTime = Date()
         coreData.insertNote(note: note!)
         editNoteView.postReloadCellsNotification()

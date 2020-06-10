@@ -23,10 +23,10 @@ class ProfilePresenterImpl: ProfileDelegate {
             self.profileView.updateLabel(user: user)
         }
         catch CoreDataError.UserNotFound {
-            print("user not found")
+            fatalError(Constants.USER_NOT_FOUND)
         }
         catch{
-            print("user not found")
+            fatalError(Constants.FETCH_ERROR)
         }
     }
 }

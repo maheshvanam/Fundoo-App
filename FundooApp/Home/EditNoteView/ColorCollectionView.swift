@@ -9,8 +9,7 @@
 import UIKit
 
 class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollectionViewDelegate {
-   
-    
+
     override func awakeFromNib() {
         self.delegate = self
         self.dataSource = self
@@ -32,9 +31,8 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected")
         let color : [String:UIColor]
-        color = [ "color" : Constants.myColors[indexPath.item]]
+        color = [ Constants.COLOR_KEY : Constants.myColors[indexPath.item]]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil,userInfo: color)
     }
 }

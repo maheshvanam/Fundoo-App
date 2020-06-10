@@ -29,6 +29,7 @@
 		8412B1BF24915AE6004DD694 /* EditNotePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1BE24915AE6004DD694 /* EditNotePresenterImpl.swift */; };
 		8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1C024915BA1004DD694 /* EditNoteDelegate.swift */; };
 		8412B1C324915C6D004DD694 /* EditNotePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */; };
+		8412B1C524917402004DD694 /* EditNoteVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1C424917402004DD694 /* EditNoteVC+Extension.swift */; };
 		8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D298247A519D00C4F93A /* AppDelegate.swift */; };
 		8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29A247A519D00C4F93A /* SceneDelegate.swift */; };
 		8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29C247A519D00C4F93A /* SignInViewController.swift */; };
@@ -110,6 +111,7 @@
 		8412B1BE24915AE6004DD694 /* EditNotePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenterImpl.swift; sourceTree = "<group>"; };
 		8412B1C024915BA1004DD694 /* EditNoteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteDelegate.swift; sourceTree = "<group>"; };
 		8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenterDelegate.swift; sourceTree = "<group>"; };
+		8412B1C424917402004DD694 /* EditNoteVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditNoteVC+Extension.swift"; sourceTree = "<group>"; };
 		8419D295247A519D00C4F93A /* FundooApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundooApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8419D298247A519D00C4F93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8419D29A247A519D00C4F93A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				8412B1BE24915AE6004DD694 /* EditNotePresenterImpl.swift */,
 				8412B1C024915BA1004DD694 /* EditNoteDelegate.swift */,
 				8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */,
+				8412B1C424917402004DD694 /* EditNoteVC+Extension.swift */,
 			);
 			path = EditNotePresenter;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
 				8428981D248173D6009AA1D9 /* UserModel.swift in Sources */,
+				8412B1C524917402004DD694 /* EditNoteVC+Extension.swift in Sources */,
 				84075257248926400075EF51 /* ProfilePresenter.swift in Sources */,
 				84078A8124901E090000D649 /* CollectionViewTabelCell.swift in Sources */,
 				843BBBB3248D86EC00155FC4 /* MosaicLayoutDelegate.swift in Sources */,

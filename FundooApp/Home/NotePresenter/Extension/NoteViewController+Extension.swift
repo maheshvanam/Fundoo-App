@@ -30,8 +30,8 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-         let board = UIStoryboard(name: "Home", bundle: nil)
-             guard let childVC = board.instantiateViewController(withIdentifier: "EditNoteVC") as? EditNoteVC  else {
+        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+        guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
                return
              }
         childVC.note = models[indexPath.item]

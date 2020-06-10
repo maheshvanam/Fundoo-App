@@ -19,8 +19,7 @@ class SlideUpVC: UIViewController {
       }
 }
 
-extension SlideUpVC: UITableViewDelegate,
-UITableViewDataSource {
+extension SlideUpVC: UITableViewDelegate, UITableViewDataSource {
     
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            return 6
@@ -28,11 +27,11 @@ UITableViewDataSource {
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            if(indexPath.row == 5){
-              let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionViewTabelCell", for: indexPath) as! CollectionViewTabelCell
+            let cell = tableView.dequeueReusableCell(withIdentifier:Constants.CollectionView_TabelCell_ID, for: indexPath) as! CollectionViewTabelCell
               return cell
            }
            else{
-               let cell = tableView.dequeueReusableCell(withIdentifier: "OptionsCell", for: indexPath) as! OptionsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.OPTIONS_CELL_ID, for: indexPath) as! OptionsCell
                return cell
            }
        }

@@ -71,7 +71,7 @@ class ContainerViewController: UIViewController {
     @objc func switchToAddNote() {
         let board = UIStoryboard(name: "Home", bundle: nil)
         
-        guard let childVC = board.instantiateViewController(withIdentifier: "EditNoteVC") as? EditNoteVC  else {
+        guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
           return
         }
         childVC.modalPresentationStyle = .formSheet
@@ -79,9 +79,9 @@ class ContainerViewController: UIViewController {
     }
     
     @objc func switchToReminders() {
-        let board = UIStoryboard(name: "Home", bundle: nil)
+        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
         guard let childVC =
-            board.instantiateViewController(withIdentifier: "ReminderViewController") as? ReminderViewController  else {
+            board.instantiateViewController(withIdentifier: Constants.REMINDER_VC) as? ReminderViewController  else {
           return
         }
         navigationController?.pushViewController(childVC, animated: false)
