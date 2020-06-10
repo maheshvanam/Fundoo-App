@@ -8,24 +8,17 @@
 
 import UIKit
 
-class EditNoteVC: UIViewController ,ColorDelegate{
+class EditNoteVC: UIViewController {
  
-    func UpdateColor(color: UIColor) {
-        
-    }
-    
-    
     @IBOutlet weak var discriptionField: UITextView!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var heightAnchor: NSLayoutConstraint!
     
-    var colorDelegate: ColorDelegate!
     var note:Note!
     let colors = Constants.colors
     var currentColor:String!
     
     override func viewDidLoad() {
-        colorDelegate = self
         discriptionField.layer.borderWidth = 1
         discriptionField.layer.borderColor = #colorLiteral(red: 0.9175666571, green: 0.9176985621, blue: 0.9175377488, alpha: 1)
         titleField.text = note.title
