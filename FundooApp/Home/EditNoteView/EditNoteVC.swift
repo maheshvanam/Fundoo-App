@@ -58,6 +58,10 @@ class EditNoteVC: UIViewController ,ColorDelegate{
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        if let title = titleField.text , let discription = discriptionField.text {
+            note.title = title
+            note.note = discription
+        }
         let coreData = CoreDataService()
         coreData.UpdateNote(note: note)
     }
