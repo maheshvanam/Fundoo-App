@@ -37,4 +37,12 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         childVC.note = models[indexPath.item]
         navigationController?.pushViewController(childVC, animated: false)
       }
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let temp = models.remove(at: sourceIndexPath.item)
+        models.insert(temp, at: destinationIndexPath.item)
+    }
+    
 }
