@@ -66,6 +66,7 @@
 		84435F3A24877FC00066586E /* NoteViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84435F3924877FC00066586E /* NoteViewController+Extension.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
 		846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */; };
+		8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472AD422492176F0066CD7A /* Dictionary+Extension.swift */; };
 		849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */; };
 		84A3C9DB2480E3B1003393EC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DA2480E3B1003393EC /* DataService.swift */; };
 		84A3C9DF2480EDE5003393EC /* CoreDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */; };
@@ -152,6 +153,7 @@
 		84435F3924877FC00066586E /* NoteViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewController+Extension.swift"; sourceTree = "<group>"; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
 		846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceImpl.swift; sourceTree = "<group>"; };
+		8472AD422492176F0066CD7A /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+MosiacLayout.swift"; sourceTree = "<group>"; };
 		84A3C9DA2480E3B1003393EC /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTest.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */,
 				840752502488F05A0075EF51 /* Constants.swift */,
 				841CEB9D248F705A004E76D4 /* CoreDataError.swift */,
+				8472AD422492176F0066CD7A /* Dictionary+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */,
 				8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
+				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,
 				8432FDD2248F847D006D7EF5 /* EditNoteVC.swift in Sources */,
 				8425CEEE24883D9D004133C1 /* Note.swift in Sources */,
 				84078A7D249019680000D649 /* OptionsCell.swift in Sources */,
