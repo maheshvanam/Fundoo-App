@@ -8,7 +8,8 @@
 
 import UIKit
 
-class Constants {
+enum Constants {
+    
     static let TOGGLE_MENU = "TOGGLE_MENU"
     static let SET_BACK_BUTTON = "SET_BACK_BUTTON"
     static let UPDATE_NAV = "UPDATE_NAV"
@@ -48,7 +49,7 @@ class Constants {
     static let FLOAT_190: CGFloat = 190
     static let FLOAT_250: CGFloat = 250
     static let FLOAT_350: CGFloat = 350
-    static let LONG_PRESS_MIN_DURATION: Double = 0.3
+    static let LONG_PRESS_MIN_DURATION: Double = 0.5
     static let INT_1 = 1
     static let INT_0 = 0
     static let INT_2 = 2

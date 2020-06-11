@@ -50,16 +50,10 @@ class NoteViewController: UIViewController {
     }
     
     @objc func toggleView(){
-        if isGrid {
-            layout.setColumns(columns: 2)
-            self.notePresenter!.updateCells()
-            isGrid = false
-        }
-        else {
-            layout.setColumns(columns: 1)
-            self.notePresenter!.updateCells()
-            isGrid = true
-        }
+        let col: CGFloat = isGrid ? Constants.FLOAT_2 : Constants.FLOAT_ZERO
+        layout.setColumns(columns: col)
+        isGrid = !isGrid
+        self.notePresenter!.updateCells()
     }
     
     @objc func reloadCells(){

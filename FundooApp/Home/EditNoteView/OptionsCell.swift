@@ -9,9 +9,7 @@
 import UIKit
 
 class OptionsCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var optionImage: UIImageView!
+    @IBOutlet weak var optionLabel: UILabel!
+    
 }

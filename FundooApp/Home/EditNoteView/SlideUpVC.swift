@@ -27,13 +27,14 @@ extension SlideUpVC: UITableViewDelegate, UITableViewDataSource {
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            if(indexPath.row == 5){
-            let cell = tableView.dequeueReusableCell(withIdentifier:Constants.CollectionView_TabelCell_ID, for: indexPath) as! CollectionViewTabelCell
-              return cell
+                let cell = tableView.dequeueReusableCell(withIdentifier:Constants.CollectionView_TabelCell_ID, for: indexPath) as! CollectionViewTabelCell
+                return cell
            }
-           else{
+            let menuOption = SlideUpMenuOption(rawValue: indexPath.row)
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.OPTIONS_CELL_ID, for: indexPath) as! OptionsCell
-               return cell
-           }
+        cell.optionImage.image = menuOption?.image
+        cell.optionLabel.text = menuOption?.description
+            return cell
        }
         
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -144,7 +144,35 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WgN-8z-ITP" id="hWp-Gd-1z1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jpn-bt-Geg">
+                                                    <rect key="frame" x="20" y="11" width="30" height="28"/>
+                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="DFx-ah-bg3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0R-Bk-evg">
+                                                    <rect key="frame" x="58" y="16" width="336" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="W0R-Bk-evg" secondAttribute="trailing" id="6SR-MO-wBL"/>
+                                                <constraint firstItem="W0R-Bk-evg" firstAttribute="leading" secondItem="Jpn-bt-Geg" secondAttribute="trailing" constant="8" id="8pr-RQ-mD2"/>
+                                                <constraint firstItem="W0R-Bk-evg" firstAttribute="top" secondItem="hWp-Gd-1z1" secondAttribute="topMargin" constant="5" id="AS9-FA-NrJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="W0R-Bk-evg" secondAttribute="bottom" constant="5" id="C9Q-hA-NC8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Jpn-bt-Geg" secondAttribute="bottom" id="Ia9-PE-aJO"/>
+                                                <constraint firstItem="Jpn-bt-Geg" firstAttribute="leading" secondItem="hWp-Gd-1z1" secondAttribute="leadingMargin" id="Xky-uv-Xjt"/>
+                                                <constraint firstItem="Jpn-bt-Geg" firstAttribute="top" secondItem="hWp-Gd-1z1" secondAttribute="topMargin" id="bEP-SS-yXI"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="OptionImage" destination="Jpn-bt-Geg" id="p0C-71-tcc"/>
+                                            <outlet property="optionLabel" destination="W0R-Bk-evg" id="4i2-j0-R2n"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CollectionViewTabelCell" rowHeight="50" id="R4g-ls-3hd" customClass="CollectionViewTabelCell" customModule="FundooApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="414" height="50"/>
@@ -153,7 +181,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-LK-gPy" customClass="ColorCollectionView" customModule="FundooApp" customModuleProvider="target">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-LK-gPy" customClass="ColorCollectionView" customModule="FundooApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
@@ -169,11 +197,11 @@
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="Fqp-dt-xKx" customClass="ColorCell" customModule="FundooApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="uTa-U8-tfR">
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uTa-U8-tfR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3bX-LX-DTH">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3bX-LX-DTH">
                                                                         <rect key="frame" x="10" y="10.5" width="30" height="29"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="30" id="BFl-X9-zDM"/>
@@ -210,7 +238,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tfl-Er-N8P" firstAttribute="leading" secondItem="Elb-HS-R2t" secondAttribute="leading" id="Iks-6f-30R"/>
                             <constraint firstItem="tfl-Er-N8P" firstAttribute="top" secondItem="TI4-zC-Z3r" secondAttribute="top" id="QTV-MN-4s9"/>
