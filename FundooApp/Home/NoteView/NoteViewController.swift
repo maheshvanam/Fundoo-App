@@ -15,7 +15,7 @@ class NoteViewController: UIViewController {
     var models = [Note]()
     var layout: MosaicLayout!
     var isGrid:Bool = true
-    fileprivate var longPressGesture: UILongPressGestureRecognizer!
+    var longPressGesture: UILongPressGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +24,9 @@ class NoteViewController: UIViewController {
         layout.delegate = self
         collectionView.clipsToBounds = false
         collectionView.contentInset = UIEdgeInsets(top: Constants.FLOAT_TEN, left: Constants.FLOAT_TEN, bottom: Constants.FLOAT_TEN, right: Constants.FLOAT_TEN)
-        
-        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(gesture:)))
-        longPressGesture.minimumPressDuration = 0.3
-        collectionView.addGestureRecognizer(longPressGesture)
-
         notePresenter = NotePresenter(delegate: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(toggleView), name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadCells), name: Notification.Name(Constants.RELOAD_CELLS), object: nil)
+        addLongPressGesture()
+        addNotificationObservers()
     }
     
     @objc func handleLongPressGesture(gesture: UILongPressGestureRecognizer) {

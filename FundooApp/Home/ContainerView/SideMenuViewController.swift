@@ -37,5 +37,4 @@ class SideMenuViewController: UITableViewController {
     func postNotification(key: String){
         NotificationCenter.default.post(name: Notification.Name(key), object: nil)
     }
-    
 }

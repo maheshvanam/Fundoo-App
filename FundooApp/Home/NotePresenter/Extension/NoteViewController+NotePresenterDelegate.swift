@@ -6,7 +6,7 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension NoteViewController: NotePresenterDelegate {
     
@@ -18,5 +18,16 @@ extension NoteViewController: NotePresenterDelegate {
     func setTableData(data: [Note]) {
         self.models = []
         self.models = data
+    }
+    
+    func addNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleView), name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCells), name: Notification.Name(Constants.RELOAD_CELLS), object: nil)
+    }
+    
+    func addLongPressGesture() {
+         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(gesture:)))
+        longPressGesture.minimumPressDuration = Constants.LONG_PRESS_MIN_DURATION
+         collectionView.addGestureRecognizer(longPressGesture)
     }
 }

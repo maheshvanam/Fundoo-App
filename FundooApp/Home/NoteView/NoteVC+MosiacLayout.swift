@@ -25,5 +25,4 @@ extension NoteViewController : MosaicLayoutDelegate {
         let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
         return ceil(boundingRect.height)
     }
-    
 }
