@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--Sign In-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="SignInViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +121,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QtD-aX-KfT"/>
+                    <navigationItem key="navigationItem" title="Sign In" id="QtD-aX-KfT"/>
                     <connections>
                         <outlet property="emailErrorLabel" destination="lWX-j6-GyE" id="rWT-VZ-MR5"/>
                         <outlet property="emailField" destination="x4L-jw-0ip" id="LTS-of-JbE"/>

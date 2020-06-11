@@ -31,6 +31,8 @@ class Constants {
     static let REMINDER_VC = "ReminderViewController"
     static let USER_NOT_FOUND = "user not found"
     static let FETCH_ERROR = "fetching error"
+    static let SIGN_UP_TITLE = "Sign Up"
+    static let SIGN_IN_TITLE = "Sign In"
     static let REMINDER = 1
     static let FLOAT_TEN: CGFloat = 10
     static let FLOAT_ZERO: CGFloat = 0

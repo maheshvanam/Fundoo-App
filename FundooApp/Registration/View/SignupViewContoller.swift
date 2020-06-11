@@ -37,6 +37,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         signUpViewPresenter = SignUpViewPresenter(delegate: self)
+        title = Constants.SIGN_UP_TITLE
         initializeArrays()
         signUpButton.layer.cornerRadius = 8.0
         signUpButton.isEnabled = false
