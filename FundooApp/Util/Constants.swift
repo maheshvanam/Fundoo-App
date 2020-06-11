@@ -24,6 +24,7 @@ class Constants {
     static let OPTIONS_CELL_ID = "OptionsCell"
     static let CollectionView_TabelCell_ID = "CollectionViewTabelCell"
     static let COLOR_KEY = "color"
+    static let COLOR_CELL_ID = "ColorCell"
     static let NOTES_TITLE = "Notes"
     static let HOME_STORYBOARD = "Home"
     static let MAIN_STORYBOARD = "Main"

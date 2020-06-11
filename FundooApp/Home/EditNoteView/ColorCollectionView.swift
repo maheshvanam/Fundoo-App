@@ -13,7 +13,6 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
     override func awakeFromNib() {
         self.delegate = self
         self.dataSource = self
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -25,8 +24,9 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath) as! ColorCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.COLOR_CELL_ID, for: indexPath) as! ColorCell
         cell.tintColor = Constants.myColors[indexPath.item]
+        collectionView.showsHorizontalScrollIndicator = false
         return cell
     }
     

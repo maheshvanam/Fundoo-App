@@ -25,6 +25,8 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         if noteModel.color != nil {
             cell.backgroundColor = Constants.colors[noteModel.color!]
         }
+        collectionView.showsVerticalScrollIndicator = false
+        
         return cell
     }
     
