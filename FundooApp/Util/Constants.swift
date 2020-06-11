@@ -34,6 +34,8 @@ class Constants {
     static let SIGN_UP_TITLE = "Sign Up"
     static let SIGN_IN_TITLE = "Sign In"
     static let NOTE_COLLECTION_CELL_ID = "cell"
+    static let GRID_IMAGE_2BY2 = "rectangle.grid.2x2.fill"
+    static let GRID_IMAGE_1BY2 = "rectangle.grid.1x2.fill"
     static let REMINDER = 1
     static let FLOAT_TEN: CGFloat = 10
     static let FLOAT_ZERO: CGFloat = 0

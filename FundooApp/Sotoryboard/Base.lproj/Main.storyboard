@@ -404,7 +404,7 @@
                                     <segue destination="0Dt-J2-uFy" kind="presentation" id="hNv-ZA-pgJ"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="rectangle.grid.1x2.fill" catalog="system" id="ozl-CC-RyU">
+                            <barButtonItem title="Item" image="rectangle.grid.2x2.fill" catalog="system" id="ozl-CC-RyU">
                                 <connections>
                                     <action selector="onGridViewTapped:" destination="MDx-9F-lUx" id="i5H-7D-o5o"/>
                                 </connections>
@@ -413,6 +413,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="container" destination="TQp-zb-aaR" id="nRw-R6-IuQ"/>
+                        <outlet property="gridButton" destination="ozl-CC-RyU" id="iSR-eJ-4hQ"/>
                         <outlet property="leadingConstraint" destination="498-kM-rVg" id="vLy-5V-4KE"/>
                         <outlet property="menuItem" destination="Ozf-DD-YDr" id="fzk-KK-HJs"/>
                         <outlet property="profileItem" destination="l4K-iM-8cK" id="09U-9u-bDo"/>
@@ -844,7 +845,7 @@
         <image name="notes" width="18" height="18"/>
         <image name="p_ic" width="100" height="100"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
-        <image name="rectangle.grid.1x2.fill" catalog="system" width="128" height="101"/>
+        <image name="rectangle.grid.2x2.fill" catalog="system" width="128" height="99"/>
         <image name="reminders" width="18" height="18"/>
         <image name="trash" width="18" height="18"/>
     </resources>

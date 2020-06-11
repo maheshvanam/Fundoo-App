@@ -15,7 +15,9 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var menuItem: UIBarButtonItem!
     @IBOutlet weak var container: UIView!
     
+    @IBOutlet weak var gridButton: UIBarButtonItem!
     var isMenuOpen = false
+    var isGrid = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,14 @@ class ContainerViewController: UIViewController {
     
     
     @IBAction func onGridViewTapped(_ sender: Any) {
+        if isGrid {
+            gridButton.image = UIImage(systemName: Constants.GRID_IMAGE_2BY2)
+            isGrid = false
+        }
+        else{
+            gridButton.image = UIImage(systemName: Constants.GRID_IMAGE_1BY2)
+            isGrid = true
+        }
         NotificationCenter.default.post(name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
     }
     
