@@ -9,5 +9,6 @@
 import Foundation
 
 protocol NoteDelegate {
+    func updateCells()
     func updateTableData()
 }

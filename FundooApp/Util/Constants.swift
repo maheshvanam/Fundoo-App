@@ -33,6 +33,7 @@ class Constants {
     static let FETCH_ERROR = "fetching error"
     static let SIGN_UP_TITLE = "Sign Up"
     static let SIGN_IN_TITLE = "Sign In"
+    static let NOTE_COLLECTION_CELL_ID = "cell"
     static let REMINDER = 1
     static let FLOAT_TEN: CGFloat = 10
     static let FLOAT_ZERO: CGFloat = 0
@@ -42,6 +43,7 @@ class Constants {
     static let FLOAT_60: CGFloat = 60
     static let FLOAT_15: CGFloat = 15
     static let FLOAT_190: CGFloat = 190
+    static let FLOAT_250: CGFloat = 250
     static let FLOAT_350: CGFloat = 350
     static let LONG_PRESS_MIN_DURATION: Double = 0.3
     static let INT_1 = 1

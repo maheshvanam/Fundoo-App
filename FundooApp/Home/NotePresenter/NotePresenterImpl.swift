@@ -16,6 +16,10 @@ class NotePresenterImpl: NoteDelegate {
         self.noteView = delegate
     }
     
+    func updateCells() {
+         self.noteView.updateView()
+    }
+    
     func updateTableData() {
         let coreData = CoreDataService()
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)

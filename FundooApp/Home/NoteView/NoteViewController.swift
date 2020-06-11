@@ -52,12 +52,12 @@ class NoteViewController: UIViewController {
     @objc func toggleView(){
         if isGrid {
             layout.setColumns(columns: 2)
-            self.notePresenter!.updateTableData()
+            self.notePresenter!.updateCells()
             isGrid = false
         }
         else {
             layout.setColumns(columns: 1)
-            self.notePresenter!.updateTableData()
+            self.notePresenter!.updateCells()
             isGrid = true
         }
     }

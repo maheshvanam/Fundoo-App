@@ -46,11 +46,11 @@ class ContainerViewController: UIViewController {
     
     @objc func toggleSideMenu() {
         if isMenuOpen {
-            self.leadingConstraint.constant = -250
+            self.leadingConstraint.constant = -Constants.FLOAT_250
             isMenuOpen = false
         }
         else {
-            leadingConstraint.constant = 0
+            leadingConstraint.constant = Constants.FLOAT_ZERO
             isMenuOpen = true
         }
     }
@@ -69,8 +69,7 @@ class ContainerViewController: UIViewController {
     }
     
     @objc func switchToAddNote() {
-        let board = UIStoryboard(name: "Home", bundle: nil)
-        
+        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
         guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
           return
         }
