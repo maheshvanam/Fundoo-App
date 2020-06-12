@@ -8,6 +8,6 @@
 
 import Foundation
 
-class CoreDataService: CoreDataServiceImpl {
+class DatabaseManager: CoreDataServiceImpl {
     
 }

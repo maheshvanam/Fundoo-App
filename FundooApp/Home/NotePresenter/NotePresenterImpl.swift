@@ -21,7 +21,7 @@ class NotePresenterImpl: NoteDelegate {
     }
     
     func updateTableData() {
-        let coreData = CoreDataService()
+        let coreData = DatabaseManager()
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         do{
             let user = try coreData.getUser(email: email!)

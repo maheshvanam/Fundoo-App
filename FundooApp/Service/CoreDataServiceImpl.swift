@@ -100,4 +100,17 @@ class CoreDataServiceImpl : DataService {
        return Note(context: context)
     }
     
+    func deleteNote(note: Note) {
+        do{
+        let user = try getUser(email: UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!)
+            user.removeFromNotes(note)
+        }
+        catch CoreDataError.UserNotFound {
+            fatalError(Constants.USER_NOT_FOUND);
+        }
+        catch {
+            fatalError(Constants.FETCH_ERROR);
+        }
+    }
+    
 }

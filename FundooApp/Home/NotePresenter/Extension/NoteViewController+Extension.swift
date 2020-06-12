@@ -11,6 +11,7 @@ import UIKit
 
 extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
     }
@@ -47,4 +48,5 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         let temp = models.remove(at: sourceIndexPath.item)
         models.insert(temp, at: destinationIndexPath.item)
     }
+   
 }

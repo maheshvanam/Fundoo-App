@@ -16,7 +16,7 @@ class ProfilePresenterImpl: ProfileDelegate {
     }
     
     func fetchUserData() {
-        let data = CoreDataService()
+        let data = DatabaseManager()
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         do {
             let user = try data.getUser(email: email!)

@@ -9,7 +9,7 @@
 import UIKit
 
 class SlideUpVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -32,11 +32,29 @@ extension SlideUpVC: UITableViewDelegate, UITableViewDataSource {
            }
             let menuOption = SlideUpMenuOption(rawValue: indexPath.row)
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.OPTIONS_CELL_ID, for: indexPath) as! OptionsCell
+        
         cell.optionImage.image = menuOption?.image
         cell.optionLabel.text = menuOption?.description
             return cell
        }
         
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       }
+        didSelectOption(indexPath: indexPath)
+        }
+    
+    func didSelectOption(indexPath: IndexPath){
+        let option = SlideUpMenuOption(rawValue: indexPath.row)
+        switch option! {
+            case .Delete:
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.DELETE_NOTE_KEY), object: nil)
+            case .MakeACopy:
+                print("Other")
+            case .Send:
+                print("Other")
+            case .Collaborator:
+                print("Other")
+            case .Labels:
+                print("Other")
+        }
+    }
 }

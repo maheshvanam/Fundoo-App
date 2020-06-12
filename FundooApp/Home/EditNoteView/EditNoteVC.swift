@@ -17,6 +17,7 @@ class EditNoteVC: UIViewController {
     var note:Note!
     let colors = Constants.colors
     var currentColor:String!
+    var slideUpVCpresenter = SlideUpVCPresenter()
     
     override func viewDidLoad() {
         initializeView()
@@ -25,10 +26,20 @@ class EditNoteVC: UIViewController {
         self.view.addGestureRecognizer(swipeGesture)
         editNotePresenter = EditNotePresenter(delegate: self)
         NotificationCenter.default.addObserver(self, selector: #selector(EditNoteVC.updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteNote), name: NSNotification.Name(rawValue: Constants.DELETE_NOTE_KEY), object: nil)
+        
     }
     
     @objc func onSwipDown() {
         heightAnchor.constant = Constants.FLOAT_ZERO
+    }
+    
+    @objc func deleteNote() {
+        heightAnchor.constant = Constants.FLOAT_ZERO
+        slideUpVCpresenter.deleteNote(note: note)
+        note = nil
+        postReloadCellsNotification()
+        navigationController?.popViewController(animated: false)
     }
     
     @IBAction func onSlideUp(_ sender: Any) {
@@ -46,6 +57,8 @@ class EditNoteVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
-        self.editNotePresenter.saveNote()
+        if(note != nil){
+            self.editNotePresenter.saveNote()
+        }
     }
 }

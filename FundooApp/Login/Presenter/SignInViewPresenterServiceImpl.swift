@@ -19,7 +19,7 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
     
     func signInWithEmailAndPassword(email: String,password: String) {
         
-        let coreDataService = CoreDataService()
+        let coreDataService = DatabaseManager()
         self.signInViewDelegate.clearLabels()
         if email.isEmpty && password.isEmpty {
             self.signInViewDelegate.showAlert(title: "Error", message: "Please fill the all fields")

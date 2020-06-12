@@ -16,7 +16,7 @@ class EditNotePresenterImpl: EditNoteDelegate {
     }
           
     func saveNote() {
-        let coreData = CoreDataService()
+        let coreData = DatabaseManager()
         var note = editNoteView.getNote()
         if editNoteView.fieldsAreEmpty() {
             if editNoteView.isNewNote() {

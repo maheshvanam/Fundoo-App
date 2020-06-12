@@ -31,17 +31,28 @@ class NoteViewController: UIViewController {
     
     @objc func handleLongPressGesture(gesture: UILongPressGestureRecognizer) {
          switch(gesture.state) {
-            case .began:
-                guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
+         case UIGestureRecognizerState.began:
+            guard let selectedIndexPath = self.collectionView?.indexPathForItem(at: gesture.location(in: self.collectionView)) else {
                     break
                 }
-                collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
-            case .changed:
-                collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
-            case .ended:
-                collectionView.endInteractiveMovement()
+                collectionView?.beginInteractiveMovementForItem(at: selectedIndexPath)
+         case UIGestureRecognizerState.changed:
+            collectionView?.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
+         case UIGestureRecognizerState.ended:
+                collectionView?.endInteractiveMovement()
             default:
-                collectionView.cancelInteractiveMovement()
+                collectionView?.cancelInteractiveMovement()
+//            case .began:
+//                guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
+//                    break
+//                }
+//                collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+//            case .changed:
+//                collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
+//            case .ended:
+//                collectionView.endInteractiveMovement()
+//            default:
+//                collectionView.cancelInteractiveMovement()
         }
     }
     
