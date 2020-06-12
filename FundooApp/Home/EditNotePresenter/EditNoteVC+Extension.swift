@@ -43,10 +43,7 @@ extension EditNoteVC: EditNotePresenterDelegate {
     }
     
     func isNewNote() -> Bool {
-        if note == nil {
-            return true
-        }
-        return false
+        return (noteIsNew != nil) ? true : false
     }
     
     func getNote() -> Note? {

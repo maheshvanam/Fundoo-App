@@ -22,10 +22,12 @@ class NoteViewController: UIViewController {
         title = Constants.NOTES_TITLE
         layout = collectionView?.collectionViewLayout as? MosaicLayout
         layout.delegate = self
+        collectionView.dragInteractionEnabled = true
+        collectionView.dragDelegate = self
         collectionView.clipsToBounds = false
         collectionView.contentInset = UIEdgeInsets(top: Constants.FLOAT_TEN, left: Constants.FLOAT_TEN, bottom: Constants.FLOAT_TEN, right: Constants.FLOAT_TEN)
         notePresenter = NotePresenter(delegate: self)
-        addLongPressGesture()
+       // addLongPressGesture()
         addNotificationObservers()
     }
     
@@ -61,7 +63,7 @@ class NoteViewController: UIViewController {
     }
     
     @objc func toggleView(){
-        let col: CGFloat = isGrid ? Constants.FLOAT_2 : Constants.FLOAT_ZERO
+        let col: CGFloat = isGrid ? Constants.FLOAT_2 : Constants.FLOAT_1
         layout.setColumns(columns: col)
         isGrid = !isGrid
         self.notePresenter!.updateCells()

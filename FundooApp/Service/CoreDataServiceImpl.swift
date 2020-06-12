@@ -104,6 +104,7 @@ class CoreDataServiceImpl : DataService {
         do{
         let user = try getUser(email: UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!)
             user.removeFromNotes(note)
+            try context.save()
         }
         catch CoreDataError.UserNotFound {
             fatalError(Constants.USER_NOT_FOUND);

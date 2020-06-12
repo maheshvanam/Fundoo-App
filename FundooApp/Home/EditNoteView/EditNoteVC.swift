@@ -18,16 +18,34 @@ class EditNoteVC: UIViewController {
     let colors = Constants.colors
     var currentColor:String!
     var slideUpVCpresenter = SlideUpVCPresenter()
+    var noteIsNew:Bool!
+    private let ediNoteTitle = "Edit Note"
+    private let addNoteTitle = "Edit Note"
+    private let backButtonTitle = "< Notes"
     
     override func viewDidLoad() {
         initializeView()
+        title = (noteIsNew == nil) ?  ediNoteTitle : addNoteTitle
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipDown))
         swipeGesture.direction = [.down]
         self.view.addGestureRecognizer(swipeGesture)
         editNotePresenter = EditNotePresenter(delegate: self)
         NotificationCenter.default.addObserver(self, selector: #selector(EditNoteVC.updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNote), name: NSNotification.Name(rawValue: Constants.DELETE_NOTE_KEY), object: nil)
-        
+        configureBackButton()
+    }
+    
+    func configureBackButton(){
+        let backButton = UIBarButtonItem(title: backButtonTitle, style: .plain, target: self, action: #selector(onBackPressed))
+        navigationItem.leftBarButtonItem = backButton
+        navigationItem.hidesBackButton = true
+    }
+    
+    @objc func onBackPressed(){
+        self.editNotePresenter.saveNote()
+        NotificationCenter.default.removeObserver(self)
+        noteIsNew = nil
+        navigationController?.popViewController(animated: false)
     }
     
     @objc func onSwipDown() {
@@ -37,8 +55,8 @@ class EditNoteVC: UIViewController {
     @objc func deleteNote() {
         heightAnchor.constant = Constants.FLOAT_ZERO
         slideUpVCpresenter.deleteNote(note: note)
-        note = nil
         postReloadCellsNotification()
+        NotificationCenter.default.removeObserver(self)
         navigationController?.popViewController(animated: false)
     }
     
@@ -56,9 +74,5 @@ class EditNoteVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
-        if(note != nil){
-            self.editNotePresenter.saveNote()
-        }
     }
 }

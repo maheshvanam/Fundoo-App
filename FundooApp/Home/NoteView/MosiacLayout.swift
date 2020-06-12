@@ -40,7 +40,6 @@ class MosaicLayout: UICollectionViewLayout
             for column in Constants.INT_0 ..< Int(numberOfColumns) {
                 xOffsets.append(CGFloat(column) * columnWidth)
             }
-            
             var column = Constants.INT_0
             var yOffsets = [CGFloat](repeating: Constants.FLOAT_ZERO, count: Int(numberOfColumns))
             

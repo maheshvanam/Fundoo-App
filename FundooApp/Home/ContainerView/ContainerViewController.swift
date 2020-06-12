@@ -83,6 +83,7 @@ class ContainerViewController: UIViewController {
         guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
           return
         }
+        childVC.noteIsNew = true
         childVC.modalPresentationStyle = .formSheet
         navigationController?.pushViewController(childVC, animated: false)
     }

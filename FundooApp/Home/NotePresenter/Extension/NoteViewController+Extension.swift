@@ -44,9 +44,22 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         return true
     }
     
-    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let temp = models.remove(at: sourceIndexPath.item)
-        models.insert(temp, at: destinationIndexPath.item)
-    }
+//    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        let temp = models.remove(at: sourceIndexPath.item)
+//        models.insert(temp, at: destinationIndexPath.item)
+//    }
    
+}
+
+extension NoteViewController: UICollectionViewDragDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let item = models[indexPath.item]
+        let itemProvider = NSItemProvider(object: item as NSItemProviderWriting )
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        return [dragItem]
+    }
+    
+    
 }

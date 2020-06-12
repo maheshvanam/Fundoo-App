@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 public class Note: NSManagedObject {
-    
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Note> {
         return NSFetchRequest<Note>(entityName: "Note")
     }
@@ -23,3 +23,4 @@ public class Note: NSManagedObject {
     @NSManaged public var title: String?
     @NSManaged public var owner: User?
 }
+
