@@ -15,7 +15,6 @@ class NoteViewController: UIViewController {
     var models = [Note]()
     var layout: MosaicLayout!
     var isGrid:Bool = true
-    var longPressGesture: UILongPressGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,35 +27,7 @@ class NoteViewController: UIViewController {
         collectionView.clipsToBounds = false
         collectionView.contentInset = UIEdgeInsets(top: Constants.FLOAT_TEN, left: Constants.FLOAT_TEN, bottom: Constants.FLOAT_TEN, right: Constants.FLOAT_TEN)
         notePresenter = NotePresenter(delegate: self)
-       // addLongPressGesture()
         addNotificationObservers()
-    }
-    
-    @objc func handleLongPressGesture(gesture: UILongPressGestureRecognizer) {
-         switch(gesture.state) {
-         case UIGestureRecognizerState.began:
-            guard let selectedIndexPath = self.collectionView?.indexPathForItem(at: gesture.location(in: self.collectionView)) else {
-                    break
-                }
-                collectionView?.beginInteractiveMovementForItem(at: selectedIndexPath)
-         case UIGestureRecognizerState.changed:
-            collectionView?.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
-         case UIGestureRecognizerState.ended:
-                collectionView?.endInteractiveMovement()
-            default:
-                collectionView?.cancelInteractiveMovement()
-//            case .began:
-//                guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
-//                    break
-//                }
-//                collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
-//            case .changed:
-//                collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
-//            case .ended:
-//                collectionView.endInteractiveMovement()
-//            default:
-//                collectionView.cancelInteractiveMovement()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

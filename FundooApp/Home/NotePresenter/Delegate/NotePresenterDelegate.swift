@@ -12,5 +12,4 @@ protocol NotePresenterDelegate {
     func setTableData(data: [Note])
     func updateView()
     func addNotificationObservers()
-    func addLongPressGesture()
 }
