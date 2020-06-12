@@ -24,6 +24,7 @@ class NoteViewController: UIViewController {
         layout.delegate = self
         collectionView.dragInteractionEnabled = true
         collectionView.dragDelegate = self
+        collectionView.dropDelegate = self
         collectionView.clipsToBounds = false
         collectionView.contentInset = UIEdgeInsets(top: Constants.FLOAT_TEN, left: Constants.FLOAT_TEN, bottom: Constants.FLOAT_TEN, right: Constants.FLOAT_TEN)
         notePresenter = NotePresenter(delegate: self)

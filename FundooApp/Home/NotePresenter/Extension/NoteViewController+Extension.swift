@@ -11,7 +11,6 @@ import UIKit
 
 extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
     }
@@ -48,18 +47,4 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
 //        let temp = models.remove(at: sourceIndexPath.item)
 //        models.insert(temp, at: destinationIndexPath.item)
 //    }
-   
-}
-
-extension NoteViewController: UICollectionViewDragDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let item = models[indexPath.item]
-        let itemProvider = NSItemProvider(object: item as NSItemProviderWriting )
-        let dragItem = UIDragItem(itemProvider: itemProvider)
-        dragItem.localObject = item
-        return [dragItem]
-    }
-    
-    
 }

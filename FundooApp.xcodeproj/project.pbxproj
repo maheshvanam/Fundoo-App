@@ -45,6 +45,8 @@
 		8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */; };
 		841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */; };
 		841BBAE7248042360080C591 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBAE6248042360080C591 /* Helper.swift */; };
+		841CC90924940DF4001C8B9D /* NoteVC+DragDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */; };
+		841CC90B24940E16001C8B9D /* NoteVC+DropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */; };
 		841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CEB9D248F705A004E76D4 /* CoreDataError.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
 		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
@@ -137,6 +139,8 @@
 		8419D2BD247AD6AC00C4F93A /* SignupViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewContoller.swift; sourceTree = "<group>"; };
 		841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		841BBAE6248042360080C591 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+DragDelegate.swift"; sourceTree = "<group>"; };
+		841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+DropDelegate.swift"; sourceTree = "<group>"; };
 		841CEB9D248F705A004E76D4 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 			children = (
 				84435F3924877FC00066586E /* NoteViewController+Extension.swift */,
 				84126ED52489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift */,
+				841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */,
+				841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */,
 				84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */,
 				840752512488F05A0075EF51 /* Constants.swift in Sources */,
+				841CC90924940DF4001C8B9D /* NoteVC+DragDelegate.swift in Sources */,
 				8412B1C324915C6D004DD694 /* EditNotePresenterDelegate.swift in Sources */,
 				84113FEB2493966E00AEDCBD /* SlideUpVCDelegate.swift in Sources */,
 				84A3C9DB2480E3B1003393EC /* DataService.swift in Sources */,
@@ -671,6 +678,7 @@
 				846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */,
 				84423A52248B86A100D212DC /* NoteCell.swift in Sources */,
 				84078A7B249019040000D649 /* ColorCollectionView.swift in Sources */,
+				841CC90B24940E16001C8B9D /* NoteVC+DropDelegate.swift in Sources */,
 				843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */,
 				84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */,
 				84A3C9E12480F04C003393EC /* DatabaseManager.swift in Sources */,
