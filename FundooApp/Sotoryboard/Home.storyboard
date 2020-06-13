@@ -60,7 +60,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J9l-ng-sZi">
-                                <rect key="frame" x="16" y="118" width="382" height="693"/>
+                                <rect key="frame" x="16" y="118" width="382" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -104,7 +104,7 @@
                             <constraint firstItem="J9l-ng-sZi" firstAttribute="leading" secondItem="oCu-Yn-HPX" secondAttribute="leading" constant="16" id="pSh-zi-Zg4"/>
                             <constraint firstItem="oCu-Yn-HPX" firstAttribute="trailing" secondItem="J9l-ng-sZi" secondAttribute="trailing" constant="16" id="rLa-ub-lUb"/>
                             <constraint firstItem="TVN-PW-TEP" firstAttribute="top" secondItem="IUY-Em-eg5" secondAttribute="bottom" id="uhX-lv-FxT"/>
-                            <constraint firstItem="TVN-PW-TEP" firstAttribute="top" secondItem="J9l-ng-sZi" secondAttribute="bottom" constant="2" id="vat-be-IH9"/>
+                            <constraint firstItem="TVN-PW-TEP" firstAttribute="top" secondItem="J9l-ng-sZi" secondAttribute="bottom" id="vat-be-IH9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oCu-Yn-HPX"/>
                     </view>

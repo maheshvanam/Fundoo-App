@@ -10,6 +10,9 @@ import UIKit
 
 class ContainerViewController: UIViewController {
     
+    private let sideMenuHidingConstant:CGFloat = 0
+    private let sideMenuShowingConstant:CGFloat = -250
+    
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileItem: UIBarButtonItem!
     @IBOutlet weak var menuItem: UIBarButtonItem!
@@ -29,11 +32,11 @@ class ContainerViewController: UIViewController {
     
     @IBAction func onGridViewTapped(_ sender: Any) {
         if isGrid {
-            gridButton.image = UIImage(systemName: Constants.GRID_IMAGE_2BY2)
+            gridButton.image = UIImage(systemName: Constants.gridImage)
             isGrid = false
         }
         else{
-            gridButton.image = UIImage(systemName: Constants.GRID_IMAGE_1BY2)
+            gridButton.image = UIImage(systemName: Constants.singleColumnImage)
             isGrid = true
         }
         NotificationCenter.default.post(name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
@@ -56,11 +59,11 @@ class ContainerViewController: UIViewController {
     
     @objc func toggleSideMenu() {
         if isMenuOpen {
-            self.leadingConstraint.constant = -Constants.FLOAT_250
+            self.leadingConstraint.constant = sideMenuShowingConstant
             isMenuOpen = false
         }
         else {
-            leadingConstraint.constant = Constants.FLOAT_ZERO
+            leadingConstraint.constant = sideMenuHidingConstant
             isMenuOpen = true
         }
     }

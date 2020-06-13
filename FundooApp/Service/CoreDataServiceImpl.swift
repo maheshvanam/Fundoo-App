@@ -114,4 +114,31 @@ class CoreDataServiceImpl : DataService {
         }
     }
     
+    func getCurrentUser() -> User {
+        var user:User!
+        do{
+         user = try getUser(email: UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!)
+        }
+        catch CoreDataError.UserNotFound {
+            fatalError(Constants.USER_NOT_FOUND);
+        }
+        catch {
+            fatalError(Constants.FETCH_ERROR);
+        }
+        return user
+    }
+    
+    func reorderNotes(notes: NSSet){
+        /*do
+        {
+            let user = getCurrentUser()
+            user.removeFromNotes(user.notes!)
+            user.addToNotes(notes)
+            try context.save()
+        }
+        catch {
+            fatalError(Constants.FETCH_ERROR);
+        }*/
+    }
+    
 }

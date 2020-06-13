@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+private let reusabalCollectionCellId = "cell"
+
 extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -16,7 +18,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: Constants.NOTE_COLLECTION_CELL_ID, for: indexPath) as! NoteCell)
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: reusabalCollectionCellId, for: indexPath) as! NoteCell)
          let noteModel = models[indexPath.item]
         cell.backgroundColor = .white
         cell.layer.borderColor = UIColor.lightGray.cgColor

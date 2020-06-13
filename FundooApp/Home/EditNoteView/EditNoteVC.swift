@@ -9,6 +9,12 @@
 import UIKit
 
 class EditNoteVC: UIViewController {
+    
+    private let ediNoteTitle = "Edit Note"
+    private let addNoteTitle = "Edit Note"
+    private let backButtonTitle = "< Notes"
+    private let slideUpMenuHidingConstant:CGFloat = 0
+   private let slideUpMenuShowingConstant:CGFloat = 300
  
     @IBOutlet weak var discriptionField: UITextView!
     @IBOutlet weak var titleField: UITextField!
@@ -19,9 +25,7 @@ class EditNoteVC: UIViewController {
     var currentColor:String!
     var slideUpVCpresenter = SlideUpVCPresenter()
     var noteIsNew:Bool!
-    private let ediNoteTitle = "Edit Note"
-    private let addNoteTitle = "Edit Note"
-    private let backButtonTitle = "< Notes"
+    
     
     override func viewDidLoad() {
         initializeView()
@@ -49,11 +53,11 @@ class EditNoteVC: UIViewController {
     }
     
     @objc func onSwipDown() {
-        heightAnchor.constant = Constants.FLOAT_ZERO
+        heightAnchor.constant = slideUpMenuHidingConstant
     }
     
     @objc func deleteNote() {
-        heightAnchor.constant = Constants.FLOAT_ZERO
+        heightAnchor.constant = slideUpMenuHidingConstant
         slideUpVCpresenter.deleteNote(note: note)
         postReloadCellsNotification()
         NotificationCenter.default.removeObserver(self)
@@ -61,7 +65,7 @@ class EditNoteVC: UIViewController {
     }
     
     @IBAction func onSlideUp(_ sender: Any) {
-        heightAnchor.constant = Constants.HEIGHT_ANCHOR_300
+        heightAnchor.constant = slideUpMenuShowingConstant
     }
     
     @objc func updateView(_ notification: NSNotification){

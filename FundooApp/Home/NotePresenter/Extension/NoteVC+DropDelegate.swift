@@ -23,8 +23,8 @@ extension NoteViewController: UICollectionViewDropDelegate {
                desinationIndexPath = indexPath
            }
            else {
-               let row = collectionView.numberOfItems(inSection: Constants.INT_0)
-               desinationIndexPath = IndexPath(item: row - Constants.INT_1 , section: Constants.INT_0)
+               let row = collectionView.numberOfItems(inSection: initialSection)
+               desinationIndexPath = IndexPath(item: row - firstIndexPath , section: initialSection)
            }
            
            if coordinator.proposal.operation == .move {
@@ -41,6 +41,7 @@ extension NoteViewController: UICollectionViewDropDelegate {
                        self.models.insert(item.dragItem.localObject as! Note, at: destinationIndexPath.item)
                        collectionView.deleteItems(at: [sourceIndexPath])
                        collectionView.insertItems(at: [destinationIndexPath])
+                notePresenter?.reorderData(notes: NSSet(object: models))
                }, completion: nil)
             }
     }

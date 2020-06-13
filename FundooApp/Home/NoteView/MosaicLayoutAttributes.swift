@@ -8,8 +8,8 @@
 import UIKit
 
 class MosaicLayoutAttributes: UICollectionViewLayoutAttributes {
-   
-    var contentHeight: CGFloat = Constants.FLOAT_ZERO
+    
+    var contentHeight: CGFloat = 10
     
     override func copy(with zone: NSZone? = nil) -> Any {
         let copy = super.copy(with: zone) as! MosaicLayoutAttributes

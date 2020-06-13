@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reusableCollectionCellId = "ColorCell"
+
 class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollectionViewDelegate {
 
     override func awakeFromNib() {
@@ -24,7 +26,7 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.COLOR_CELL_ID, for: indexPath) as! ColorCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableCollectionCellId, for: indexPath) as! ColorCell
         cell.tintColor = Constants.myColors[indexPath.item]
         collectionView.showsHorizontalScrollIndicator = false
         return cell

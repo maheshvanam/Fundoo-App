@@ -10,6 +10,16 @@ import UIKit
 
 class NoteViewController: UIViewController {
     
+    private let topInset:CGFloat = 10
+    private let bottomInset:CGFloat = 10
+    private let leftInset:CGFloat = 10
+    private let rightInset:CGFloat = 10
+    let titleHeight:CGFloat = 10
+    let initialSection = 0
+    let firstIndexPath = 0
+    let fontSizeOfDiscription:CGFloat = 15
+    let widthOfDiscriptionField:CGFloat = 190
+    let maxContentHeight:CGFloat = 350
     var notePresenter: NoteDelegate?
     @IBOutlet var collectionView: UICollectionView!
     var models = [Note]()
@@ -25,7 +35,7 @@ class NoteViewController: UIViewController {
         collectionView.dragDelegate = self
         collectionView.dropDelegate = self
         collectionView.clipsToBounds = false
-        collectionView.contentInset = UIEdgeInsets(top: Constants.FLOAT_TEN, left: Constants.FLOAT_TEN, bottom: Constants.FLOAT_TEN, right: Constants.FLOAT_TEN)
+        collectionView.contentInset = UIEdgeInsets(top: topInset , left: leftInset, bottom: bottomInset, right: rightInset)
         notePresenter = NotePresenter(delegate: self)
         addNotificationObservers()
     }
@@ -35,7 +45,7 @@ class NoteViewController: UIViewController {
     }
     
     @objc func toggleView(){
-        let col: CGFloat = isGrid ? Constants.FLOAT_2 : Constants.FLOAT_1
+        let col: CGFloat = isGrid ? 2 : 1
         layout.setColumns(columns: col)
         isGrid = !isGrid
         self.notePresenter!.updateCells()

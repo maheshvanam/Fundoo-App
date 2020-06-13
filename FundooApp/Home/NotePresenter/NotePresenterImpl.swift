@@ -35,4 +35,9 @@ class NotePresenterImpl: NoteDelegate {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
+    
+    func reorderData(notes: NSSet){
+        let dbManager = DatabaseManager()
+        dbManager.reorderNotes(notes: notes)
+       }
 }

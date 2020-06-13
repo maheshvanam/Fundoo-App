@@ -26,7 +26,6 @@ enum Constants {
     static let OPTIONS_CELL_ID = "OptionsCell"
     static let CollectionView_TabelCell_ID = "CollectionViewTabelCell"
     static let COLOR_KEY = "color"
-    static let COLOR_CELL_ID = "ColorCell"
     static let NOTES_TITLE = "Notes"
     static let HOME_STORYBOARD = "Home"
     static let MAIN_STORYBOARD = "Main"
@@ -34,32 +33,10 @@ enum Constants {
     static let REMINDER_VC = "ReminderViewController"
     static let USER_NOT_FOUND = "user not found"
     static let FETCH_ERROR = "fetching error"
-    static let SIGN_UP_TITLE = "Sign Up"
-    static let SIGN_IN_TITLE = "Sign In"
-    static let NOTE_COLLECTION_CELL_ID = "cell"
-    static let GRID_IMAGE_2BY2 = "rectangle.grid.2x2.fill"
-    static let GRID_IMAGE_1BY2 = "rectangle.grid.1x2.fill"
-    static let REMINDER = 1
-    static let FLOAT_TEN: CGFloat = 10
-    static let FLOAT_ZERO: CGFloat = 0
-    static let FLOAT_1: CGFloat = 1
-    static let FLOAT_2: CGFloat = 2
-    static let FLOAT_5: CGFloat = 5
-    static let FLOAT_60: CGFloat = 60
-    static let FLOAT_15: CGFloat = 15
-    static let FLOAT_190: CGFloat = 190
-    static let FLOAT_250: CGFloat = 250
-    static let FLOAT_350: CGFloat = 350
-    static let LONG_PRESS_MIN_DURATION: Double = 0.5
-    static let INT_1 = 1
-    static let INT_0 = 0
-    static let INT_2 = 2
-    
-    
-    static let SIGN_OUT = 5
-    static let HOME = 0
-    static let HEIGHT_ANCHOR_300:CGFloat = 300
-    static let HEIGHT_ANCHOR_ZERO:CGFloat = 0
+    static let signUpTitle = "Sign Up"
+    static let signInTitle = "Sign In"
+    static let gridImage = "rectangle.grid.2x2.fill"
+    static let singleColumnImage = "rectangle.grid.1x2.fill"
     
     static let colors = ["white":#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),"darkBlue": #colorLiteral(red: 0.5135223269, green: 0.6951187253, blue: 0.9883810878, alpha: 1),"pink":#colorLiteral(red: 0.9528250098, green: 0.7310573459, blue: 0.8114919066, alpha: 1),"brown":#colorLiteral(red: 0.8455398679, green: 0.8021178842, blue: 0.7904801965, alpha: 1),"purple":#colorLiteral(red: 0.7030208111, green: 0.5371930599, blue: 0.993486464, alpha: 1),"green":#colorLiteral(red: 0.6462398171, green: 0.9788334966, blue: 0.9230322838, alpha: 1),"blue":#colorLiteral(red: 0.504642725, green: 0.846619904, blue: 0.9870195985, alpha: 1),"red":#colorLiteral(red: 0.9337931275, green: 0.5302402377, blue: 0.4974403977, alpha: 1),"darkBrown":#colorLiteral(red: 0.9025362134, green: 0.7874186635, blue: 0.6585261226, alpha: 1),"yellow":#colorLiteral(red: 1, green: 0.9568683505, blue: 0.461269021, alpha: 1),"lightGreen":#colorLiteral(red: 0.7825431228, green: 0.965685308, blue: 0.5431290865, alpha: 1),"orange":#colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
         ]

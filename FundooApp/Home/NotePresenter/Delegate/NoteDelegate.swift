@@ -10,5 +10,6 @@ import Foundation
 
 protocol NoteDelegate {
     func updateCells()
+    func reorderData(notes: NSSet)
     func updateTableData()
 }

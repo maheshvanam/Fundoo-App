@@ -14,4 +14,5 @@ protocol DataService {
     func insertNote(note: Note)
     func createNote() -> Note
     func deleteNote(note: Note)
+    func getCurrentUser() -> User
 }
