@@ -21,6 +21,7 @@ public class Note: NSManagedObject {
     @NSManaged public var editTime: Date?
     @NSManaged public var note: String?
     @NSManaged public var title: String?
+    @NSManaged public var position: Int64
     @NSManaged public var owner: User?
 }
 
