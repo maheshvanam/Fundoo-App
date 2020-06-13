@@ -26,7 +26,8 @@ class NotePresenterImpl: NoteDelegate {
         do{
             let user = try coreData.getUser(email: email!)
             let notes = user.notes
-            let allNotes = (notes!.allObjects as! [Note]).sorted(by: { $0.creationTime! > $1.creationTime!})
+            //let allNotes = (notes!.allObjects as! [Note]).sorted(by: { $0.position > $1.position})
+            let allNotes = notes?.allObjects as! [Note]
             self.noteView.setTableData(data:allNotes)
             self.noteView.updateView()
         }
