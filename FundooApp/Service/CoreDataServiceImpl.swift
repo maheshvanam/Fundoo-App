@@ -87,9 +87,6 @@ class CoreDataServiceImpl : DataService {
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         do{
             let user = try getUser(email: email!)
-            
-            let count = (user.notes  == nil) ? 0 : user.notes?.count
-            note.position =  Int64(count! + 1)
             user.addToNotes(note)
             try context.save()
         }

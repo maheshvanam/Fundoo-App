@@ -40,8 +40,4 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         childVC.note = models[indexPath.item]
         navigationController?.pushViewController(childVC, animated: false)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
 }

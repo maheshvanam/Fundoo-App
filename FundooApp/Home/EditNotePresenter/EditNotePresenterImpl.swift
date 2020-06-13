@@ -26,6 +26,9 @@ class EditNotePresenterImpl: EditNoteDelegate {
                 note!.title = editNoteView.getTitleText()
                 note!.color = editNoteView.getCurrentColor()
                 note!.note = editNoteView.getDiscriptionText()
+                let user = coreData.getCurrentUser()
+                let count = (user.notes  == nil) ? 0 : user.notes?.count
+                note!.position =  Int64(count! + 1)
                 coreData.insertNote(note: note!)
                 editNoteView.postReloadCellsNotification()
                     return

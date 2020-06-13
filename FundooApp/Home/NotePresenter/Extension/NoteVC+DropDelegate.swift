@@ -37,11 +37,14 @@ extension NoteViewController: UICollectionViewDropDelegate {
            if let item = coordinator.items.first, let sourceIndexPath = item.sourceIndexPath {
                collectionView.performBatchUpdates(
                {
-                       self.models.remove(at: sourceIndexPath.item)
-                       self.models.insert(item.dragItem.localObject as! Note, at: destinationIndexPath.item)
+                let source = models[sourceIndexPath.item]
+                let destination = models[destinationIndexPath.item]
+                self.models.remove(at: sourceIndexPath.item)
+                self.models.insert(item.dragItem.localObject as! Note, at: destinationIndexPath.item)
                        collectionView.deleteItems(at: [sourceIndexPath])
                        collectionView.insertItems(at: [destinationIndexPath])
-                notePresenter?.reorderData(notes: NSSet(object: models))
+                notePresenter?.updateReorderData(sourceNote: source, destinationNote: destination)
+                 self.reloadCells()
                }, completion: nil)
             }
     }
