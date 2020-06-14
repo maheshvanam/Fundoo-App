@@ -19,6 +19,6 @@ class SearchVC:UIViewController {
     @IBOutlet weak var resutTable: UITableView!
     
     override func viewDidLoad() {
-        
+        searchController = UISearchController(searchResultsController: nil)
     }
 }
