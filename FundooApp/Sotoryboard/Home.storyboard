@@ -45,7 +45,7 @@
         <!--Edit Note-->
         <scene sceneID="NFt-KI-68R">
             <objects>
-                <viewController storyboardIdentifier="EditNoteVC" title="Edit Note" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="toQ-0B-uDp" customClass="EditNoteVC" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditNoteVC" title="Edit Note" modalPresentationStyle="overFullScreen" id="toQ-0B-uDp" customClass="EditNoteVC" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="ay0-eQ-7dI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,9 +80,9 @@
                                 </connections>
                             </toolbar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUY-Em-eg5">
-                                <rect key="frame" x="0.0" y="813" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="513" width="414" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" id="PwZ-r5-5kg"/>
+                                    <constraint firstAttribute="height" constant="300" id="PwZ-r5-5kg"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="rM7-EE-VPK" kind="embed" id="IOr-a1-nfH"/>
@@ -95,11 +95,11 @@
                             <constraint firstItem="Qr9-GT-eC7" firstAttribute="top" secondItem="oCu-Yn-HPX" secondAttribute="top" constant="16" id="1rf-Z4-giD"/>
                             <constraint firstItem="IUY-Em-eg5" firstAttribute="leading" secondItem="oCu-Yn-HPX" secondAttribute="leading" id="H60-i6-QLn"/>
                             <constraint firstItem="J9l-ng-sZi" firstAttribute="top" secondItem="Qr9-GT-eC7" secondAttribute="bottom" constant="8" id="Khs-5X-m98"/>
-                            <constraint firstItem="TVN-PW-TEP" firstAttribute="leading" secondItem="ay0-eQ-7dI" secondAttribute="leading" id="Npq-to-eFG"/>
+                            <constraint firstItem="TVN-PW-TEP" firstAttribute="leading" secondItem="oCu-Yn-HPX" secondAttribute="leading" id="Npq-to-eFG"/>
                             <constraint firstItem="oCu-Yn-HPX" firstAttribute="trailing" secondItem="Qr9-GT-eC7" secondAttribute="trailing" constant="16" id="Sif-Kw-Bhh"/>
                             <constraint firstItem="Qr9-GT-eC7" firstAttribute="leading" secondItem="oCu-Yn-HPX" secondAttribute="leading" constant="16" id="UBN-4y-iDJ"/>
-                            <constraint firstAttribute="bottom" secondItem="TVN-PW-TEP" secondAttribute="bottom" constant="34" id="UJe-w8-Vjz"/>
-                            <constraint firstAttribute="trailing" secondItem="TVN-PW-TEP" secondAttribute="trailing" id="Ylu-PE-sBO"/>
+                            <constraint firstItem="oCu-Yn-HPX" firstAttribute="bottom" secondItem="TVN-PW-TEP" secondAttribute="bottom" id="UJe-w8-Vjz"/>
+                            <constraint firstItem="oCu-Yn-HPX" firstAttribute="trailing" secondItem="TVN-PW-TEP" secondAttribute="trailing" id="Ylu-PE-sBO"/>
                             <constraint firstItem="IUY-Em-eg5" firstAttribute="trailing" secondItem="oCu-Yn-HPX" secondAttribute="trailing" id="cKI-ix-GBF"/>
                             <constraint firstItem="J9l-ng-sZi" firstAttribute="leading" secondItem="oCu-Yn-HPX" secondAttribute="leading" constant="16" id="pSh-zi-Zg4"/>
                             <constraint firstItem="oCu-Yn-HPX" firstAttribute="trailing" secondItem="J9l-ng-sZi" secondAttribute="trailing" constant="16" id="rLa-ub-lUb"/>
@@ -110,7 +110,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Edit Note" id="8TV-nK-ozW"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="discriptionField" destination="J9l-ng-sZi" id="ab8-1D-9Dy"/>
                         <outlet property="heightAnchor" destination="PwZ-r5-5kg" id="pvz-Hx-God"/>
@@ -131,11 +130,11 @@
             <objects>
                 <viewController storyboardIdentifier="SlideUpVC" title="Slide Up Menu" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="rM7-EE-VPK" customClass="SlideUpVC" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TI4-zC-Z3r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfl-Er-N8P">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OptionsCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionsCell" id="WgN-8z-ITP" customClass="OptionsCell" customModule="FundooApp" customModuleProvider="target">
@@ -145,14 +144,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jpn-bt-Geg">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jpn-bt-Geg">
                                                     <rect key="frame" x="20" y="11" width="30" height="28"/>
                                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="DFx-ah-bg3"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0R-Bk-evg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0R-Bk-evg">
                                                     <rect key="frame" x="58" y="16" width="336" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,7 +180,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-LK-gPy" customClass="ColorCollectionView" customModule="FundooApp" customModuleProvider="target">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-LK-gPy" customClass="ColorCollectionView" customModule="FundooApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
@@ -197,11 +196,11 @@
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="Fqp-dt-xKx" customClass="ColorCell" customModule="FundooApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="uTa-U8-tfR">
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uTa-U8-tfR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3bX-LX-DTH">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3bX-LX-DTH">
                                                                         <rect key="frame" x="10" y="10.5" width="30" height="29"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="30" id="BFl-X9-zDM"/>
