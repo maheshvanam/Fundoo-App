@@ -22,6 +22,7 @@
 		8408F9B024969661009155ED /* SearchVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9AF24969661009155ED /* SearchVCPresenter.swift */; };
 		8408F9B22496967F009155ED /* SearchVCPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9B12496967F009155ED /* SearchVCPresenterImpl.swift */; };
 		8408F9B4249696F0009155ED /* SearchVCPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9B3249696F0009155ED /* SearchVCPresenterDelegate.swift */; };
+		8408F9B62496A612009155ED /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9B52496A612009155ED /* SearchCell.swift */; };
 		84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FE62493961300AEDCBD /* SlideUpVCPresenter.swift */; };
 		84113FE92493964500AEDCBD /* SlideUpVCPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FE82493964500AEDCBD /* SlideUpVCPresenterImpl.swift */; };
 		84113FEB2493966E00AEDCBD /* SlideUpVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */; };
@@ -117,6 +118,7 @@
 		8408F9AF24969661009155ED /* SearchVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCPresenter.swift; sourceTree = "<group>"; };
 		8408F9B12496967F009155ED /* SearchVCPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCPresenterImpl.swift; sourceTree = "<group>"; };
 		8408F9B3249696F0009155ED /* SearchVCPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCPresenterDelegate.swift; sourceTree = "<group>"; };
+		8408F9B52496A612009155ED /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		84113FE62493961300AEDCBD /* SlideUpVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCPresenter.swift; sourceTree = "<group>"; };
 		84113FE82493964500AEDCBD /* SlideUpVCPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCPresenterImpl.swift; sourceTree = "<group>"; };
 		84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				8408F9AF24969661009155ED /* SearchVCPresenter.swift */,
 				8408F9B12496967F009155ED /* SearchVCPresenterImpl.swift */,
 				8408F9B3249696F0009155ED /* SearchVCPresenterDelegate.swift */,
+				8408F9B52496A612009155ED /* SearchCell.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
 				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,
+				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,
 				8432FDD2248F847D006D7EF5 /* EditNoteVC.swift in Sources */,
 				8425CEEE24883D9D004133C1 /* Note.swift in Sources */,
 				84078A7D249019680000D649 /* OptionsCell.swift in Sources */,

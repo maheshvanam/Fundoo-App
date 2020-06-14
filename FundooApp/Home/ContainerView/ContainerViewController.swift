@@ -30,7 +30,12 @@ class ContainerViewController: UIViewController {
     }
     
     @IBAction func onSerchTapped(_ sender: Any) {
-        
+        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+        guard let childVC =
+            board.instantiateViewController(withIdentifier: "SearchVC") as? SearchVC  else {
+          return
+        }
+        navigationController?.pushViewController(childVC, animated: false)
     }
     
     @IBAction func onGridViewTapped(_ sender: Any) {
