@@ -123,7 +123,44 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="698.55072463768124" y="2450.8928571428569"/>
+            <point key="canvasLocation" x="-130" y="2446"/>
+        </scene>
+        <!--Search View-->
+        <scene sceneID="QsQ-du-rK8">
+            <objects>
+                <viewController title="Search View" id="ISM-CJ-40d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JF1-XD-WJs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztc-YU-MVX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="w3h-9c-QDn"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a6L-ZU-0qg">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="a6L-ZU-0qg" firstAttribute="leading" secondItem="8H2-KD-prs" secondAttribute="leading" id="4ZJ-0k-xVl"/>
+                            <constraint firstItem="a6L-ZU-0qg" firstAttribute="top" secondItem="ztc-YU-MVX" secondAttribute="bottom" id="D4x-Jh-AeU"/>
+                            <constraint firstItem="ztc-YU-MVX" firstAttribute="leading" secondItem="8H2-KD-prs" secondAttribute="leading" id="FyB-D9-tYl"/>
+                            <constraint firstItem="ztc-YU-MVX" firstAttribute="top" secondItem="8H2-KD-prs" secondAttribute="top" id="MUo-J3-bLQ"/>
+                            <constraint firstItem="a6L-ZU-0qg" firstAttribute="trailing" secondItem="8H2-KD-prs" secondAttribute="trailing" id="OCT-Gr-wUf"/>
+                            <constraint firstItem="ztc-YU-MVX" firstAttribute="trailing" secondItem="8H2-KD-prs" secondAttribute="trailing" id="dwB-6H-u1b"/>
+                            <constraint firstItem="a6L-ZU-0qg" firstAttribute="bottom" secondItem="8H2-KD-prs" secondAttribute="bottom" id="unh-KU-7VB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8H2-KD-prs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ii2-hn-hIF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698.55072463768124" y="2445.5357142857142"/>
         </scene>
         <!--Slide Up Menu-->
         <scene sceneID="6Od-aw-HZK">
@@ -252,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2w-gi-bUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695.6521739130435" y="3331.4732142857142"/>
+            <point key="canvasLocation" x="-132" y="2922"/>
         </scene>
     </scenes>
     <resources>

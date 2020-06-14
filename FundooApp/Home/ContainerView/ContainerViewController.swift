@@ -29,6 +29,9 @@ class ContainerViewController: UIViewController {
         profileItem.backgroundImage(for: .application, style: .plain, barMetrics:  .compact)
     }
     
+    @IBAction func onSerchTapped(_ sender: Any) {
+        
+    }
     
     @IBAction func onGridViewTapped(_ sender: Any) {
         if isGrid {
@@ -56,6 +59,8 @@ class ContainerViewController: UIViewController {
     @IBAction func onMenuTapped(_ sender: Any) {
         toggleSideMenu()
     }
+    
+    
     
     @objc func toggleSideMenu() {
         if isMenuOpen {

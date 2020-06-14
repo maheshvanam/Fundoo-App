@@ -409,7 +409,11 @@
                                     <action selector="onGridViewTapped:" destination="MDx-9F-lUx" id="i5H-7D-o5o"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="magnifyingglass.circle.fill" catalog="system" id="jbi-l9-AIu"/>
+                            <barButtonItem title="Item" image="magnifyingglass.circle.fill" catalog="system" id="jbi-l9-AIu">
+                                <connections>
+                                    <action selector="onSerchTapped:" destination="MDx-9F-lUx" id="mph-n6-x8L"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
