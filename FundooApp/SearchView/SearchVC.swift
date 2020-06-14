@@ -22,13 +22,18 @@ class SearchVC:UIViewController {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchContainerView.addSubview(searchController.searchBar)
+        searchController.searchBar.delegate = self
     }
 }
 
-extension SearchVC:UISearchResultsUpdating {
+extension SearchVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
     }
+}
+
+extension SearchVC: UISearchBarDelegate {
     
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    }
 }
