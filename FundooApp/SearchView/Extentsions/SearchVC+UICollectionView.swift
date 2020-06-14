@@ -18,29 +18,41 @@ let maxContentHeight:CGFloat = 350
 extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentDataSource.count
+        if collectionView == reslutCollectinView {
+            return currentDataSource.count
+        }
+        return colorData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = reslutCollectinView.dequeueReusableCell(withReuseIdentifier: cellReusableId ,for : indexPath) as! SearchCell
-        cell.titleLabel.text = currentDataSource[indexPath.row].title
-        cell.discriptionLabel.text = currentDataSource[indexPath.row].note
+        if collectionView == reslutCollectinView {
+            let cell = reslutCollectinView.dequeueReusableCell(withReuseIdentifier: cellReusableId ,for : indexPath) as! SearchCell
+            cell.titleLabel.text = currentDataSource[indexPath.item].title
+            cell.discriptionLabel.text = currentDataSource[indexPath.item].note
+            return cell
+        }
+        
+        let cell = colorCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchColorCell" ,for : indexPath) as! SearchColorCell
+        cell.colorImage.tintColor = Constants.colors[ colorData[indexPath.item] ]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let discription = currentDataSource[indexPath.item].note!
-        
-        let discriptionHeight = Constants.getContentHeight(for: discription, with: UIFont.systemFont(ofSize: fontSizeOfDiscription), width: widthOfDiscriptionField)
-        return CGSize(width: self.view.frame.width - 20, height: discriptionHeight + titleHeight)
+        if collectionView == reslutCollectinView {
+            let discription = currentDataSource[indexPath.item].note!
+
+            let discriptionHeight = Constants.getContentHeight(for: discription, with: UIFont.systemFont(ofSize: fontSizeOfDiscription), width: widthOfDiscriptionField)
+            return CGSize(width: self.view.frame.width - 20, height: discriptionHeight + titleHeight)
+        }
+        return CGSize(width: 80, height: 80)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-        guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
-               return
-             }
-        childVC.note = currentDataSource[indexPath.item]
-        navigationController?.pushViewController(childVC, animated: false)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+//        guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
+//               return
+//             }
+//        childVC.note = currentDataSource[indexPath.item]
+//        navigationController?.pushViewController(childVC, animated: false)
+//    }
 }

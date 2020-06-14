@@ -28,6 +28,7 @@
 		8408F9BD2496ABFC009155ED /* SearchVC+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9BC2496ABFC009155ED /* SearchVC+UICollectionView.swift */; };
 		8408F9C22496B69C009155ED /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9C12496B69C009155ED /* SearchResultVC.swift */; };
 		8408F9C42496B85A009155ED /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9C32496B85A009155ED /* SearchResultCell.swift */; };
+		8408F9C62496C418009155ED /* SearchColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9C52496C418009155ED /* SearchColorCell.swift */; };
 		84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FE62493961300AEDCBD /* SlideUpVCPresenter.swift */; };
 		84113FE92493964500AEDCBD /* SlideUpVCPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FE82493964500AEDCBD /* SlideUpVCPresenterImpl.swift */; };
 		84113FEB2493966E00AEDCBD /* SlideUpVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */; };
@@ -129,6 +130,7 @@
 		8408F9BC2496ABFC009155ED /* SearchVC+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+UICollectionView.swift"; sourceTree = "<group>"; };
 		8408F9C12496B69C009155ED /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		8408F9C32496B85A009155ED /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		8408F9C52496C418009155ED /* SearchColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchColorCell.swift; sourceTree = "<group>"; };
 		84113FE62493961300AEDCBD /* SlideUpVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCPresenter.swift; sourceTree = "<group>"; };
 		84113FE82493964500AEDCBD /* SlideUpVCPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCPresenterImpl.swift; sourceTree = "<group>"; };
 		84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				8408F9B12496967F009155ED /* SearchVCPresenterImpl.swift */,
 				8408F9B3249696F0009155ED /* SearchVCPresenterDelegate.swift */,
 				8408F9B52496A612009155ED /* SearchCell.swift */,
+				8408F9C52496C418009155ED /* SearchColorCell.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
 				84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */,
 				84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */,
+				8408F9C62496C418009155ED /* SearchColorCell.swift in Sources */,
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
 				841BBAE7248042360080C591 /* Helper.swift in Sources */,

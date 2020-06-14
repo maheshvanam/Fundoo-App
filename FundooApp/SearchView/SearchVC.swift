@@ -10,9 +10,11 @@ import UIKit
 
 class SearchVC:UIViewController {
     
+    @IBOutlet weak var colorCollectionView: UICollectionView!
     var searchController:UISearchController!
     var originalDataSource: [Note] = []
     var currentDataSource: [Note] = []
+    var colorData: [String] = []
     var serachPresenter:SearchVCPresenter!
     
     @IBOutlet weak var searchContainerView: UIView!
@@ -28,7 +30,10 @@ class SearchVC:UIViewController {
         reslutCollectinView.dataSource = self
         reslutCollectinView.delegate = self
         reslutCollectinView.showsVerticalScrollIndicator = false
+        colorCollectionView.delegate = self
+        colorCollectionView.dataSource = self
         originalDataSource = serachPresenter.getData()
+        getColorData()
     }
     
     func filterCurrentDataSource(searchTerm: String) {
@@ -40,5 +45,15 @@ class SearchVC:UIViewController {
             currentDataSource = filteredResults
             reslutCollectinView.reloadData()
         }
+    }
+    
+    func getColorData() {
+//        var myArray: [String] = []
+//        for note in originalDataSource {
+//            let color = (note.color == nil) ? "white" : note.color
+//            myArray.append(color!)
+//        }
+        //colorData = Array(Set(myArray))
+        colorData = ["green","red","blue"]
     }
 }
