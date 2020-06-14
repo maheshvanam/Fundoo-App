@@ -656,11 +656,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ge8-TQ-t2s">
                                 <rect key="frame" x="32" y="74" width="350" height="389"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_ic" translatesAutoresizingMaskIntoConstraints="NO" id="rM9-Om-O5w">
-                                        <rect key="frame" x="55" y="50" width="240" height="118"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBT-qu-CPi">
-                                        <rect key="frame" x="16" y="184" width="318" height="40"/>
+                                        <rect key="frame" x="16" y="124" width="318" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="P0s-IO-86E"/>
                                         </constraints>
@@ -669,7 +666,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBb-xB-6Ti">
-                                        <rect key="frame" x="16" y="232" width="318" height="40"/>
+                                        <rect key="frame" x="16" y="172" width="318" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gyI-fu-exI"/>
                                         </constraints>
@@ -677,19 +674,21 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_ic" translatesAutoresizingMaskIntoConstraints="NO" id="rM9-Om-O5w">
+                                        <rect key="frame" x="8" y="8" width="334" height="100"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="uBb-xB-6Ti" secondAttribute="bottom" constant="117" id="1Cs-Pa-sDe"/>
-                                    <constraint firstItem="rM9-Om-O5w" firstAttribute="top" secondItem="Ge8-TQ-t2s" secondAttribute="top" constant="50" id="3kM-Nl-zVi"/>
-                                    <constraint firstAttribute="trailing" secondItem="rM9-Om-O5w" secondAttribute="trailing" constant="55" id="5AN-Wa-ucF"/>
+                                    <constraint firstItem="rM9-Om-O5w" firstAttribute="leading" secondItem="Ge8-TQ-t2s" secondAttribute="leading" constant="8" id="7ED-F8-zb7"/>
                                     <constraint firstItem="uBb-xB-6Ti" firstAttribute="top" secondItem="iBT-qu-CPi" secondAttribute="bottom" constant="8" id="8YV-Gt-mG0"/>
+                                    <constraint firstAttribute="trailing" secondItem="rM9-Om-O5w" secondAttribute="trailing" constant="8" id="9l0-Cd-4g7"/>
+                                    <constraint firstItem="rM9-Om-O5w" firstAttribute="top" secondItem="Ge8-TQ-t2s" secondAttribute="top" constant="8" id="GR8-L5-B1A"/>
+                                    <constraint firstItem="iBT-qu-CPi" firstAttribute="top" secondItem="rM9-Om-O5w" secondAttribute="bottom" constant="16" id="Gz0-kP-K79"/>
                                     <constraint firstItem="uBb-xB-6Ti" firstAttribute="leading" secondItem="Ge8-TQ-t2s" secondAttribute="leading" constant="16" id="NSE-bC-a0z"/>
                                     <constraint firstItem="iBT-qu-CPi" firstAttribute="leading" secondItem="Ge8-TQ-t2s" secondAttribute="leading" constant="16" id="RjT-BU-9ik"/>
                                     <constraint firstAttribute="trailing" secondItem="iBT-qu-CPi" secondAttribute="trailing" constant="16" id="SFa-I8-xC9"/>
-                                    <constraint firstItem="rM9-Om-O5w" firstAttribute="leading" secondItem="Ge8-TQ-t2s" secondAttribute="leading" constant="55" id="d6R-UM-9gz"/>
                                     <constraint firstAttribute="trailing" secondItem="uBb-xB-6Ti" secondAttribute="trailing" constant="16" id="jB4-FV-UzB"/>
-                                    <constraint firstItem="iBT-qu-CPi" firstAttribute="top" secondItem="rM9-Om-O5w" secondAttribute="bottom" constant="16" id="xak-Kr-eMq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -716,7 +715,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqN-Xy-oLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="871"/>
+            <point key="canvasLocation" x="2042.0289855072465" y="870.6521739130435"/>
         </scene>
         <!--Notes-->
         <scene sceneID="dtO-1l-sgH">
