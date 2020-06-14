@@ -11,18 +11,20 @@ import UIKit
 class SearchVC:UIViewController {
     
     var searchController:UISearchController!
-    
     var originalDataSource: [Note] = []
     var currentDataSource: [Note] = []
+    var serachPresenter:SearchVCPresenter!
     
     @IBOutlet weak var searchContainerView: UIView!
     @IBOutlet weak var resutTable: UITableView!
     
     override func viewDidLoad() {
+        serachPresenter = SearchVCPresenter()
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchContainerView.addSubview(searchController.searchBar)
         searchController.searchBar.delegate = self
+        originalDataSource = serachPresenter.getData()
     }
 }
 
@@ -35,5 +37,9 @@ extension SearchVC: UISearchResultsUpdating {
 extension SearchVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
     }
 }
