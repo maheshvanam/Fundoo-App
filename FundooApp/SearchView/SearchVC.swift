@@ -20,5 +20,14 @@ class SearchVC:UIViewController {
     
     override func viewDidLoad() {
         searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
     }
+}
+
+extension SearchVC:UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+    }
+    
+    
 }
