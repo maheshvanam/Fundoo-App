@@ -24,6 +24,10 @@ class SearchVC:UIViewController {
         searchController.searchResultsUpdater = self
         searchContainerView.addSubview(searchController.searchBar)
         searchController.searchBar.delegate = self
+        
+        resutTable.dataSource = self
+        resutTable.delegate = self
+        
         originalDataSource = serachPresenter.getData()
     }
     
@@ -53,5 +57,18 @@ extension SearchVC: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
+    }
+}
+
+extension SearchVC : UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return currentDataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = resutTable.dequeueReusableCell(withIdentifier: "SearchCell" ,for : indexPath)
+        cell.textLabel?.text = currentDataSource[indexPath.row].title
+        return cell
     }
 }
