@@ -26,6 +26,18 @@ class SearchVC:UIViewController {
         searchController.searchBar.delegate = self
         originalDataSource = serachPresenter.getData()
     }
+    
+    func filterCurrentDataSource(searchTerm: String) {
+        if searchTerm.count > 0 {
+            currentDataSource = originalDataSource
+            let filteredResults = currentDataSource.filter {
+                ($0.title?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))!
+            }
+            currentDataSource = filteredResults
+            resutTable.reloadData()
+        }
+    }
+    
 }
 
 extension SearchVC: UISearchResultsUpdating {
