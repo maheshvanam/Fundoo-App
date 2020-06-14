@@ -10,6 +10,14 @@ import UIKit
 
 class SearchVC:UIViewController {
     
+    var searchController:UISearchController!
+    
+    var originalDataSource: [Note] = []
+    var currentDataSource: [Note] = []
+    
+    @IBOutlet weak var searchContainerView: UIView!
+    @IBOutlet weak var resutTable: UITableView!
+    
     override func viewDidLoad() {
         
     }
