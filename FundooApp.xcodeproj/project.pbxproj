@@ -26,7 +26,8 @@
 		8408F9B92496AB77009155ED /* SearchVC+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9B82496AB77009155ED /* SearchVC+UISearchResultsUpdating.swift */; };
 		8408F9BB2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9BA2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift */; };
 		8408F9BD2496ABFC009155ED /* SearchVC+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9BC2496ABFC009155ED /* SearchVC+UICollectionView.swift */; };
-		8408F9BF2496AC32009155ED /* SearchVC+MosaicLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9BE2496AC32009155ED /* SearchVC+MosaicLayoutDelegate.swift */; };
+		8408F9C22496B69C009155ED /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9C12496B69C009155ED /* SearchResultVC.swift */; };
+		8408F9C42496B85A009155ED /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F9C32496B85A009155ED /* SearchResultCell.swift */; };
 		84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FE62493961300AEDCBD /* SlideUpVCPresenter.swift */; };
 		84113FE92493964500AEDCBD /* SlideUpVCPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FE82493964500AEDCBD /* SlideUpVCPresenterImpl.swift */; };
 		84113FEB2493966E00AEDCBD /* SlideUpVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */; };
@@ -126,7 +127,8 @@
 		8408F9B82496AB77009155ED /* SearchVC+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
 		8408F9BA2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		8408F9BC2496ABFC009155ED /* SearchVC+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+UICollectionView.swift"; sourceTree = "<group>"; };
-		8408F9BE2496AC32009155ED /* SearchVC+MosaicLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+MosaicLayoutDelegate.swift"; sourceTree = "<group>"; };
+		8408F9C12496B69C009155ED /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
+		8408F9C32496B85A009155ED /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		84113FE62493961300AEDCBD /* SlideUpVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCPresenter.swift; sourceTree = "<group>"; };
 		84113FE82493964500AEDCBD /* SlideUpVCPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCPresenterImpl.swift; sourceTree = "<group>"; };
 		84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVCDelegate.swift; sourceTree = "<group>"; };
@@ -248,9 +250,17 @@
 				8408F9B82496AB77009155ED /* SearchVC+UISearchResultsUpdating.swift */,
 				8408F9BA2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift */,
 				8408F9BC2496ABFC009155ED /* SearchVC+UICollectionView.swift */,
-				8408F9BE2496AC32009155ED /* SearchVC+MosaicLayoutDelegate.swift */,
 			);
 			path = Extentsions;
+			sourceTree = "<group>";
+		};
+		8408F9C02496B647009155ED /* SearchResultVC */ = {
+			isa = PBXGroup;
+			children = (
+				8408F9C12496B69C009155ED /* SearchResultVC.swift */,
+				8408F9C32496B85A009155ED /* SearchResultCell.swift */,
+			);
+			path = SearchResultVC;
 			sourceTree = "<group>";
 		};
 		84126EC82489506F00F0FFBB /* delegate */ = {
@@ -364,6 +374,7 @@
 		8419D297247A519D00C4F93A /* FundooApp */ = {
 			isa = PBXGroup;
 			children = (
+				8408F9C02496B647009155ED /* SearchResultVC */,
 				8408F9AC24968FBA009155ED /* SearchView */,
 				84634EBA248268990098D004 /* Home */,
 				84634EB62482659F0098D004 /* Login */,
@@ -679,7 +690,6 @@
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
 				84126ED3248953C000F0FFBB /* NotePresenterImpl.swift in Sources */,
 				8412B1BF24915AE6004DD694 /* EditNotePresenterImpl.swift in Sources */,
-				8408F9BF2496AC32009155ED /* SearchVC+MosaicLayoutDelegate.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
@@ -688,6 +698,7 @@
 				8412B1C524917402004DD694 /* EditNoteVC+Extension.swift in Sources */,
 				84075257248926400075EF51 /* ProfilePresenter.swift in Sources */,
 				84078A8124901E090000D649 /* CollectionViewTabelCell.swift in Sources */,
+				8408F9C22496B69C009155ED /* SearchResultVC.swift in Sources */,
 				843BBBB3248D86EC00155FC4 /* MosaicLayoutDelegate.swift in Sources */,
 				8408F9B024969661009155ED /* SearchVCPresenter.swift in Sources */,
 				8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */,
@@ -719,6 +730,7 @@
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
 				84113FE92493964500AEDCBD /* SlideUpVCPresenterImpl.swift in Sources */,
 				8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */,
+				8408F9C42496B85A009155ED /* SearchResultCell.swift in Sources */,
 				8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
 				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,

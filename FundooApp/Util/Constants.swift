@@ -44,4 +44,11 @@ enum Constants {
     static let myColors = [
                             #colorLiteral(red: 0.5135223269, green: 0.6951187253, blue: 0.9883810878, alpha: 1),#colorLiteral(red: 0.9528250098, green: 0.7310573459, blue: 0.8114919066, alpha: 1),#colorLiteral(red: 0.8455398679, green: 0.8021178842, blue: 0.7904801965, alpha: 1),#colorLiteral(red: 0.7030208111, green: 0.5371930599, blue: 0.993486464, alpha: 1),#colorLiteral(red: 0.6462398171, green: 0.9788334966, blue: 0.9230322838, alpha: 1),#colorLiteral(red: 0.504642725, green: 0.846619904, blue: 0.9870195985, alpha: 1),#colorLiteral(red: 0.9337931275, green: 0.5302402377, blue: 0.4974403977, alpha: 1),#colorLiteral(red: 0.9025362134, green: 0.7874186635, blue: 0.6585261226, alpha: 1),#colorLiteral(red: 1, green: 0.9568683505, blue: 0.461269021, alpha: 1),#colorLiteral(red: 0.7825431228, green: 0.965685308, blue: 0.5431290865, alpha: 1),#colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
                         ]
+    
+    static func getContentHeight(for text: String, with font: UIFont, width: CGFloat) -> CGFloat {
+        let nsstring = NSString(string: text)
+        let textAttributes = [NSAttributedString.Key.font : font]
+        let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxContentHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
+        return ceil(boundingRect.height)
+    }
 }

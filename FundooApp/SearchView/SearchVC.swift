@@ -14,7 +14,6 @@ class SearchVC:UIViewController {
     var originalDataSource: [Note] = []
     var currentDataSource: [Note] = []
     var serachPresenter:SearchVCPresenter!
-    var layoyt:MosaicLayout!
     
     @IBOutlet weak var searchContainerView: UIView!
     @IBOutlet weak var reslutCollectinView: UICollectionView!
@@ -28,8 +27,7 @@ class SearchVC:UIViewController {
         searchController.obscuresBackgroundDuringPresentation = true
         reslutCollectinView.dataSource = self
         reslutCollectinView.delegate = self
-        layoyt = reslutCollectinView?.collectionViewLayout as? MosaicLayout
-        layoyt.delegate = self
+        reslutCollectinView.showsVerticalScrollIndicator = false
         originalDataSource = serachPresenter.getData()
     }
     
@@ -37,7 +35,7 @@ class SearchVC:UIViewController {
         if searchTerm.count > 0 {
             currentDataSource = originalDataSource
             let filteredResults = currentDataSource.filter {
-                ($0.title?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))!
+                ($0.title?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))! || ($0.note?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))!
             }
             currentDataSource = filteredResults
             reslutCollectinView.reloadData()
