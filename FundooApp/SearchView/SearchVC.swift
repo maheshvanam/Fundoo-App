@@ -21,6 +21,7 @@ class SearchVC:UIViewController {
     override func viewDidLoad() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
+        searchContainerView.addSubview(searchController.searchBar)
     }
 }
 
