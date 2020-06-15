@@ -275,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ii2-hn-hIF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608.6956521739132" y="2445.5357142857142"/>
+            <point key="canvasLocation" x="732" y="2446"/>
         </scene>
         <!--Search Result-->
         <scene sceneID="V2z-Kg-pjn">
@@ -288,12 +288,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LDq-Hz-ft3">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cOx-dc-Vd5">
-                                    <size key="itemSize" width="344" height="495"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="muN-t2-4cI" customClass="MosaicLayout" customModule="FundooApp" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchResultCell" id="mqT-hw-dfl" customClass="SearchResultCell" customModule="FundooApp" customModuleProvider="target">
                                         <rect key="frame" x="35" y="0.0" width="344" height="495"/>
@@ -363,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaG-WY-Zk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2372.463768115942" y="2445.5357142857142"/>
+            <point key="canvasLocation" x="1732" y="2446"/>
         </scene>
         <!--Slide Up Menu-->
         <scene sceneID="6Od-aw-HZK">

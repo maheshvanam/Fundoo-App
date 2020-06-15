@@ -59,6 +59,9 @@ extension EditNoteVC: EditNotePresenterDelegate {
     }
     
     func getCurrentColor()-> String? {
+        if currentColor == nil {
+            currentColor = "white"
+        }
        return currentColor
     }
     
