@@ -9,6 +9,6 @@
 import UIKit
 
 class SearchColorCell: UICollectionViewCell {
-    @IBOutlet weak var colorImage: UIImageView!
+    @IBOutlet weak var colorView: UIView!
     
 }

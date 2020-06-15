@@ -16,15 +16,15 @@ class SearchVC:UIViewController {
     var currentDataSource: [Note] = []
     var colorData: [String] = []
     var serachPresenter:SearchVCPresenter!
-    
-    @IBOutlet weak var searchContainerView: UIView!
     @IBOutlet weak var reslutCollectinView: UICollectionView!
     
     override func viewDidLoad() {
         serachPresenter = SearchVCPresenter()
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        searchContainerView.addSubview(searchController.searchBar)
+       self.navigationItem.titleView = searchController.searchBar
+        self.definesPresentationContext = true
+        searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = true
         reslutCollectinView.dataSource = self
@@ -48,12 +48,11 @@ class SearchVC:UIViewController {
     }
     
     func getColorData() {
-//        var myArray: [String] = []
-//        for note in originalDataSource {
-//            let color = (note.color == nil) ? "white" : note.color
-//            myArray.append(color!)
-//        }
-        //colorData = Array(Set(myArray))
-        colorData = ["green","red","blue"]
+        var myArray: [String] = []
+        for note in originalDataSource {
+            let color = (note.color == nil) ? "white" : note.color
+            myArray.append(color!)
+        }
+        colorData = Array(Set(myArray))
     }
 }

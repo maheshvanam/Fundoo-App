@@ -33,7 +33,11 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         }
         
         let cell = colorCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchColorCell" ,for : indexPath) as! SearchColorCell
-        cell.colorImage.tintColor = Constants.colors[ colorData[indexPath.item] ]
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.cornerRadius = 30
+        cell.colorView.layer.cornerRadius = 10
+        cell.colorView.backgroundColor = Constants.colors[ colorData[indexPath.item] ]
         return cell
     }
     
@@ -44,15 +48,27 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             let discriptionHeight = Constants.getContentHeight(for: discription, with: UIFont.systemFont(ofSize: fontSizeOfDiscription), width: widthOfDiscriptionField)
             return CGSize(width: self.view.frame.width - 20, height: discriptionHeight + titleHeight)
         }
-        return CGSize(width: 80, height: 80)
+        return CGSize(width: 60, height: 60)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-//        guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
-//               return
-//             }
-//        childVC.note = currentDataSource[indexPath.item]
-//        navigationController?.pushViewController(childVC, animated: false)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == reslutCollectinView {
+            let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+            guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
+                   return
+                 }
+            childVC.note = currentDataSource[indexPath.item]
+            navigationController?.pushViewController(childVC, animated: false)
+        }
+        else{
+        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+        guard let childVC = board.instantiateViewController(withIdentifier: "SearchResultVC") as? SearchResultVC  else {
+               return
+             }
+        childVC.dataSource = currentDataSource.filter {
+            $0.color == nil
+        }
+        navigationController?.pushViewController(childVC, animated: false)
+        }
+    }
 }
