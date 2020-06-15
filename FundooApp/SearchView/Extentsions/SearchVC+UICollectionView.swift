@@ -9,7 +9,7 @@
 import UIKit
 
 let cellReusableId = "SearchCell"
-
+let coloreCellRadius:CGFloat = 30
 let titleHeight:CGFloat = 40
 let fontSizeOfDiscription:CGFloat = 15
 let widthOfDiscriptionField:CGFloat = 190
@@ -35,8 +35,7 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         let cell = colorCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchColorCell" ,for : indexPath) as! SearchColorCell
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.cornerRadius = 30
-        cell.colorView.layer.cornerRadius = 10
+        cell.layer.cornerRadius = coloreCellRadius
         cell.colorView.backgroundColor = Constants.colors[ colorData[indexPath.item] ]
         return cell
     }
