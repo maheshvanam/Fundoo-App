@@ -271,6 +271,7 @@
                     <connections>
                         <outlet property="collectionViewHeader" destination="qi1-aL-LVY" id="kqe-Xg-uRD"/>
                         <outlet property="colorCollectionView" destination="FX4-WE-ayP" id="SPZ-ID-bVj"/>
+                        <outlet property="colorCollectionViewHeightAnchor" destination="I6J-z1-Vnf" id="2eB-yT-nBL"/>
                         <outlet property="reslutCollectionView" destination="G78-vj-d4n" id="gcx-MG-jO8"/>
                     </connections>
                 </viewController>

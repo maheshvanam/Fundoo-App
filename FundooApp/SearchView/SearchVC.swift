@@ -13,7 +13,7 @@ class SearchVC:UIViewController {
     @IBOutlet weak var colorCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeader: UILabel!
      @IBOutlet weak var reslutCollectionView: UICollectionView!
-    
+    @IBOutlet weak var colorCollectionViewHeightAnchor: NSLayoutConstraint!
     var searchController:UISearchController!
     var originalDataSource: [Note] = []
     var currentDataSource: [Note] = []

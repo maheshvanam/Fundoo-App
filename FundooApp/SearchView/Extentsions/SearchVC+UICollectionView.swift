@@ -19,6 +19,8 @@ let maxContentHeight:CGFloat = 350
 let colorCellWidth = 60
 let colorCellHeight = 60
 let cellPadding:CGFloat = 20
+let collectionViewHeight:CGFloat = 80
+let collectionViewHidingHeight:CGFloat = 0
 
 extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
@@ -27,9 +29,11 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             if currentDataSource.count == 0 {
                 collectionViewHeader.isHidden = false
                 colorCollectionView.isHidden = false
+                colorCollectionViewHeightAnchor.constant = collectionViewHeight
             }else {
                 collectionViewHeader.isHidden = true
                 colorCollectionView.isHidden = true
+                colorCollectionViewHeightAnchor.constant = collectionViewHidingHeight
             }
             return currentDataSource.count
         }
@@ -47,7 +51,7 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         }
         
         let cell = colorCollectionView.dequeueReusableCell(withReuseIdentifier: colorCellReusableId ,for : indexPath) as! SearchColorCell
-        cell.layer.borderWidth = 1
+        cell.layer.borderWidth = cellBorderWidth
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.cornerRadius = colorCellRadius
         cell.colorView.backgroundColor = Constants.colors[ colorData[indexPath.item] ]
