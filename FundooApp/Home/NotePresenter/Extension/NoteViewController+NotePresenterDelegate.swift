@@ -17,7 +17,8 @@ extension NoteViewController: NotePresenterDelegate {
     
     func setTableData(data: [Note]) {
         self.models = []
-        self.models = data
+        self.models = DatabaseManager().getNotesFromDB(1)
+        //self.models = data
     }
     
     func addNotificationObservers() {

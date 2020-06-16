@@ -27,9 +27,9 @@ class CoreDataServiceImpl : DataService {
     
     func checkValidUserOrNot(email: String,password: String)  -> Result {
         let predicate = NSPredicate(format: "email = %@", email)
-        fetchRequest.predicate = predicate
+        self.fetchRequest.predicate = predicate
         do {
-            let result = try context.fetch(fetchRequest) as NSArray
+            let result = try context.fetch(self.fetchRequest) as NSArray
             if result.count > 0 {
                 let userEntity = result.firstObject as! User
                 if(userEntity.email == email && userEntity.password == password) {
@@ -51,9 +51,9 @@ class CoreDataServiceImpl : DataService {
 
     func getUser(email: String) throws ->  User {
         var user:User!
-        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
+        fetchRequest.predicate = NSPredicate(format: "email = %@", email )
         do{
-            let result = try context.fetch(fetchRequest) as NSArray
+            let result = try context.fetch( fetchRequest ) as NSArray
             if result.count > 0 {
                 user = (result.firstObject as! User)
             }
@@ -117,7 +117,9 @@ class CoreDataServiceImpl : DataService {
     func getCurrentUser() -> User {
         var user:User!
         do{
-         user = try getUser(email: UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!)
+         let email =   UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!
+            print(email)
+         user = try getUser(email:email)
         }
         catch CoreDataError.UserNotFound {
             fatalError(Constants.USER_NOT_FOUND);
@@ -135,5 +137,25 @@ class CoreDataServiceImpl : DataService {
         catch {
             fatalError(Constants.FETCH_ERROR);
         }
+    }
+    
+    func getNotesFromDB(_ fetchOffSet: Int) -> [Note] {
+        var record = [Note]()
+        let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
+        let predicate = NSPredicate(format: "owner = %@", getCurrentUser())
+        fetchRequest.predicate = predicate
+        fetchRequest.fetchOffset = fetchOffSet
+        fetchRequest.fetchLimit = 5
+        do {
+         let fetchedOjects: [Any]? = try self.context.fetch(fetchRequest)
+        for i in 0 ..< fetchedOjects!.count {
+            let note: Note? = fetchedOjects![i] as? Note
+            record.append(note!)
+            }
+        }
+        catch {
+            fatalError(Constants.FETCH_ERROR);
+        }
+        return record
     }
 }
