@@ -36,32 +36,36 @@ class NotePresenterImpl: NoteDelegate {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
-    
-    func updateReorderData(sourceNote:Note,destinationNote:Note){
-            let temp = sourceNote.position
-            sourceNote.position = destinationNote.position
-            destinationNote.position = temp
-            let dbManager = DatabaseManager()
-            dbManager.insertNote(note: sourceNote)
-            dbManager.insertNote(note: destinationNote)
-       }
-    
+
     func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {
         var models: [Note] = []
-       print(sourceIndexPath.item," ",destinationIndexPath.item)
-        for i in sourceIndexPath.item ... destinationIndexPath.item {
-            models.append(model[i])
-            print("&&&&&& ",model[i].position)
+        if sourceIndexPath.item <
+            destinationIndexPath.item {
+            for index in sourceIndexPath.item ... destinationIndexPath.item {
+                models.append(model[index])
+            }
+            var pos = models[0].position
+            for index in 1 ..< models.count {
+                let t = models[index].position
+                models[index].position = pos
+                pos = t
+            }
+            models[0].position = pos
         }
-    
-        var pos = models[0].position
-        for i in 1 ..< models.count {
-            let t = models[i].position
-            models[i].position = pos
-            pos = t
-             print(models[i].position,"<-",models[i-1].position)
+        else
+        {
+            for index in destinationIndexPath.item ... sourceIndexPath.item {
+                models.append(model[index])
+                print(model[index].position)
+            }
+            var pos = models[models.count-1].position
+            for index in (0 ..< models.count).reversed() {
+                let t = models[index].position
+                models[index].position = pos
+                pos = t
+            }
+            models[models.count-1].position = pos
         }
-        models[0].position = pos
         let dbManager = DatabaseManager()
         let user = dbManager.getCurrentUser()
         user.notes?.addingObjects(from: models)

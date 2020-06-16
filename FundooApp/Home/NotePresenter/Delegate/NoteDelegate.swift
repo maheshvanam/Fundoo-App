@@ -10,7 +10,6 @@ import Foundation
 
 protocol NoteDelegate {
     func updateCells()
-    func updateReorderData(sourceNote: Note,destinationNote: Note)
     func updateTableData()
     func reorderCell(model:[Note],sourceIndexPath: IndexPath,destinationIndexPath: IndexPath)
 }
