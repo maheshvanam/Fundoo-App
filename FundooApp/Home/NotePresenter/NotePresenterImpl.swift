@@ -47,20 +47,21 @@ class NotePresenterImpl: NoteDelegate {
        }
     
     func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {
-        var models = model
-        let sourcePosition = models[sourceIndexPath.item].position
-        let destinationPosition = models[destinationIndexPath.item].position
-        if sourcePosition < destinationPosition {
-            let firstNote = models[ sourceIndexPath.item ]
-            for index in sourceIndexPath.item ..< destinationIndexPath.item {
-                let note = models[index+1]
-                note.position = note.position + 1
-                models.insert(note, at: index)
-            }
-            firstNote.position = models[destinationIndexPath.item].position
-            models.insert(firstNote, at: destinationIndexPath.item)
+        var models: [Note] = []
+       print(sourceIndexPath.item," ",destinationIndexPath.item)
+        for i in sourceIndexPath.item ... destinationIndexPath.item {
+            models.append(model[i])
+            print("&&&&&& ",model[i].position)
         }
-        
+    
+        var pos = models[0].position
+        for i in 1 ..< models.count {
+            let t = models[i].position
+            models[i].position = pos
+            pos = t
+             print(models[i].position,"<-",models[i-1].position)
+        }
+        models[0].position = pos
         let dbManager = DatabaseManager()
         let user = dbManager.getCurrentUser()
         user.notes?.addingObjects(from: models)

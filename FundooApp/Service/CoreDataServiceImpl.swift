@@ -145,7 +145,6 @@ class CoreDataServiceImpl : DataService {
         let predicate = NSPredicate(format: "owner = %@", getCurrentUser())
         fetchRequest.predicate = predicate
         fetchRequest.fetchOffset = fetchOffSet
-        fetchRequest.fetchLimit = 5
         do {
          let fetchedOjects: [Any]? = try self.context.fetch(fetchRequest)
         for i in 0 ..< fetchedOjects!.count {
