@@ -128,17 +128,12 @@ class CoreDataServiceImpl : DataService {
         return user
     }
     
-    func reorderNotes(notes: NSSet){
-        /*do
-        {
-            let user = getCurrentUser()
-            user.removeFromNotes(user.notes!)
-            user.addToNotes(notes)
-            try context.save()
+    func saveUser(user: User) {
+        do {
+        try context.save()
         }
         catch {
             fatalError(Constants.FETCH_ERROR);
-        }*/
+        }
     }
-    
 }

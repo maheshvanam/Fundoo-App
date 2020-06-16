@@ -24,6 +24,13 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == reslutCollectinView {
+            if currentDataSource.count == 0 {
+                collectionViewHeader.isHidden = false
+                colorCollectionView.isHidden = false
+            }else {
+                collectionViewHeader.isHidden = true
+                colorCollectionView.isHidden = true
+            }
             return currentDataSource.count
         }
         return colorData.count
@@ -33,15 +40,8 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         if collectionView == reslutCollectinView {
             let cell = reslutCollectinView.dequeueReusableCell(withReuseIdentifier: cellReusableId ,for : indexPath) as! SearchCell
             cell.titleLabel.text = currentDataSource[indexPath.item].title
-            
-            var color:String!
-            if let _ = currentDataSource[indexPath.item].color {
-                color = currentDataSource[indexPath.item].color
-            }
-            else {
-                color = "white"
-            }
-            cell.backgroundColor = Constants.colors[color]
+            let color = currentDataSource[indexPath.item].color
+            cell.backgroundColor = Constants.colors[color!]
             cell.discriptionLabel.text = currentDataSource[indexPath.item].note
             return cell
         }

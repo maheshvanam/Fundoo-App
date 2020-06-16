@@ -11,7 +11,6 @@ import UIKit
 extension SearchVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        colorCollectionView.isHidden = true
         searchController.isActive = false
         if let searchText = searchBar.text {
             filterCurrentDataSource(searchTerm: searchText)

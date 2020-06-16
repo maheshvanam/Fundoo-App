@@ -45,4 +45,25 @@ class NotePresenterImpl: NoteDelegate {
             dbManager.insertNote(note: sourceNote)
             dbManager.insertNote(note: destinationNote)
        }
+    
+    func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {
+        var models = model
+        let sourcePosition = models[sourceIndexPath.item].position
+        let destinationPosition = models[destinationIndexPath.item].position
+        if sourcePosition < destinationPosition {
+            let firstNote = models[ sourceIndexPath.item ]
+            for index in sourceIndexPath.item ..< destinationIndexPath.item {
+                let note = models[index+1]
+                note.position = note.position + 1
+                models.insert(note, at: index)
+            }
+            firstNote.position = models[destinationIndexPath.item].position
+            models.insert(firstNote, at: destinationIndexPath.item)
+        }
+        
+        let dbManager = DatabaseManager()
+        let user = dbManager.getCurrentUser()
+        user.notes?.addingObjects(from: models)
+        dbManager.saveUser(user: user)
+    }
 }

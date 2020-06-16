@@ -11,12 +11,15 @@ import UIKit
 class SearchVC:UIViewController {
     
     @IBOutlet weak var colorCollectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHeader: UILabel!
+     @IBOutlet weak var reslutCollectinView: UICollectionView!
+    
     var searchController:UISearchController!
     var originalDataSource: [Note] = []
     var currentDataSource: [Note] = []
     var colorData: [String] = []
     var serachPresenter:SearchVCPresenter!
-    @IBOutlet weak var reslutCollectinView: UICollectionView!
+
     
     override func viewDidLoad() {
         serachPresenter = SearchVCPresenter()
@@ -55,3 +58,4 @@ class SearchVC:UIViewController {
         colorData = Array(Set(myArray))
     }
 }
+    
