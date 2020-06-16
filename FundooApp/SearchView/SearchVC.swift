@@ -12,7 +12,7 @@ class SearchVC:UIViewController {
     
     @IBOutlet weak var colorCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeader: UILabel!
-     @IBOutlet weak var reslutCollectinView: UICollectionView!
+     @IBOutlet weak var reslutCollectionView: UICollectionView!
     
     var searchController:UISearchController!
     var originalDataSource: [Note] = []
@@ -22,21 +22,29 @@ class SearchVC:UIViewController {
 
     
     override func viewDidLoad() {
-        serachPresenter = SearchVCPresenter()
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-       self.navigationItem.titleView = searchController.searchBar
-        self.definesPresentationContext = true
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = true
-        reslutCollectinView.dataSource = self
-        reslutCollectinView.delegate = self
-        reslutCollectinView.showsVerticalScrollIndicator = false
+        self.serachPresenter = SearchVCPresenter()
+        self.cofigureSearchController()
+        self.configureCollectionViews()
+        originalDataSource = self.serachPresenter.getData()
+        self.getColorData()
+    }
+    
+    func configureCollectionViews() {
+        reslutCollectionView.dataSource = self
+        reslutCollectionView.delegate = self
+        reslutCollectionView.showsVerticalScrollIndicator = false
         colorCollectionView.delegate = self
         colorCollectionView.dataSource = self
-        originalDataSource = serachPresenter.getData()
-        getColorData()
+    }
+    
+    func cofigureSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+         searchController.searchResultsUpdater = self
+        self.navigationItem.titleView = searchController.searchBar
+         self.definesPresentationContext = true
+         searchController.hidesNavigationBarDuringPresentation = false
+         searchController.searchBar.delegate = self
+         searchController.obscuresBackgroundDuringPresentation = true
     }
     
     func filterCurrentDataSource(searchTerm: String) {
@@ -46,7 +54,7 @@ class SearchVC:UIViewController {
                 ($0.title?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))! || ($0.note?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))!
             }
             currentDataSource = filteredResults
-            reslutCollectinView.reloadData()
+            reslutCollectionView.reloadData()
         }
     }
     

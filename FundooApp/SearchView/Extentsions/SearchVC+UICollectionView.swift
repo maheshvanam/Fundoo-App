@@ -23,7 +23,7 @@ let cellPadding:CGFloat = 20
 extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == reslutCollectinView {
+        if collectionView == reslutCollectionView {
             if currentDataSource.count == 0 {
                 collectionViewHeader.isHidden = false
                 colorCollectionView.isHidden = false
@@ -37,8 +37,8 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == reslutCollectinView {
-            let cell = reslutCollectinView.dequeueReusableCell(withReuseIdentifier: cellReusableId ,for : indexPath) as! SearchCell
+        if collectionView == reslutCollectionView {
+            let cell = reslutCollectionView.dequeueReusableCell(withReuseIdentifier: cellReusableId ,for : indexPath) as! SearchCell
             cell.titleLabel.text = currentDataSource[indexPath.item].title
             let color = currentDataSource[indexPath.item].color
             cell.backgroundColor = Constants.colors[color!]
@@ -55,7 +55,7 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == reslutCollectinView {
+        if collectionView == reslutCollectionView {
             let discription = currentDataSource[indexPath.item].note!
 
             let discriptionHeight = Constants.getContentHeight(for: discription, with: UIFont.systemFont(ofSize: fontSizeOfDiscription), width: widthOfDiscriptionField)
@@ -65,7 +65,7 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == reslutCollectinView {
+        if collectionView == reslutCollectionView {
             let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
             guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
                    return
