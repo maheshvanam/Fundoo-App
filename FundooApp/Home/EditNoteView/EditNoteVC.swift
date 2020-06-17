@@ -48,7 +48,7 @@ class EditNoteVC: UIViewController {
     
     @objc func addLabel() {
         let board = UIStoryboard(name: Constants.FEATURES_STORYBOARD, bundle: nil)
-        guard let childVC = board.instantiateViewController(withIdentifier: Constants.ADD_LABEL_VC) as? LabelViewController  else {
+        guard let childVC = board.instantiateViewController(withIdentifier: Constants.ADD_LABEL_VC) as? AddLabelViewController  else {
                return
              }
         navigationController?.pushViewController(childVC, animated: false)

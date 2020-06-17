@@ -64,7 +64,8 @@
 		842460AA249A7F6300B38CBA /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842460A8249A7F6200B38CBA /* Features.storyboard */; };
 		842460AE249A913A00B38CBA /* CheckMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460AC249A913A00B38CBA /* CheckMarkCell.swift */; };
 		842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842460AD249A913A00B38CBA /* CheckMarkCell.xib */; };
-		842460B1249A956200B38CBA /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460B0249A956200B38CBA /* LabelViewController.swift */; };
+		842460B1249A956200B38CBA /* AddLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460B0249A956200B38CBA /* AddLabelViewController.swift */; };
+		842460B3249AA16B00B38CBA /* AddLabelViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */; };
 		8425CEE724880309004133C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8425CEE624880309004133C1 /* Assets.xcassets */; };
 		8425CEEE24883D9D004133C1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEA24883D9D004133C1 /* Note.swift */; };
 		8425CEF024883D9D004133C1 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEC24883D9D004133C1 /* User+CoreDataClass.swift */; };
@@ -174,7 +175,8 @@
 		842460A9249A7F6300B38CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Features.storyboard; sourceTree = "<group>"; };
 		842460AC249A913A00B38CBA /* CheckMarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkCell.swift; sourceTree = "<group>"; };
 		842460AD249A913A00B38CBA /* CheckMarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckMarkCell.xib; sourceTree = "<group>"; };
-		842460B0249A956200B38CBA /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
+		842460B0249A956200B38CBA /* AddLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelViewController.swift; sourceTree = "<group>"; };
+		842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLabelViewController+TableView.swift"; sourceTree = "<group>"; };
 		8425CEE624880309004133C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/AppIcons (1)/Assets.xcassets"; sourceTree = "<group>"; };
 		8425CEEA24883D9D004133C1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8425CEEC24883D9D004133C1 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -421,7 +423,8 @@
 			children = (
 				842460AC249A913A00B38CBA /* CheckMarkCell.swift */,
 				842460AD249A913A00B38CBA /* CheckMarkCell.xib */,
-				842460B0249A956200B38CBA /* LabelViewController.swift */,
+				842460B0249A956200B38CBA /* AddLabelViewController.swift */,
+				842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -705,7 +708,7 @@
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
 				84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */,
 				84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */,
-				842460B1249A956200B38CBA /* LabelViewController.swift in Sources */,
+				842460B1249A956200B38CBA /* AddLabelViewController.swift in Sources */,
 				8408F9C62496C418009155ED /* SearchColorCell.swift in Sources */,
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
@@ -718,6 +721,7 @@
 				842460AE249A913A00B38CBA /* CheckMarkCell.swift in Sources */,
 				84126ED3248953C000F0FFBB /* NotePresenterImpl.swift in Sources */,
 				8412B1BF24915AE6004DD694 /* EditNotePresenterImpl.swift in Sources */,
+				842460B3249AA16B00B38CBA /* AddLabelViewController+TableView.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
