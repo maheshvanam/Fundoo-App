@@ -15,4 +15,5 @@ protocol DataService {
     func createNote() -> Note
     func deleteNote(note: Note)
     func getCurrentUser() -> User
+    func getNotesFromDB(fetchLimit:Int, fetchOffSet:Int) -> [Note]
 }

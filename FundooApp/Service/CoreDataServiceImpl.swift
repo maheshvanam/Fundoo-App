@@ -138,13 +138,13 @@ class CoreDataServiceImpl : DataService {
         }
     }
     
-    func getNotesFromDB( fetchOffSet: Int) -> [Note] {
+    func getNotesFromDB(fetchLimit:Int, fetchOffSet:Int) -> [Note] {
         var record = [Note]()
         let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
         let predicate = NSPredicate(format: "owner = %@", getCurrentUser())
         fetchRequest.predicate = predicate
         fetchRequest.fetchOffset = fetchOffSet
-        fetchRequest.fetchLimit = 5
+        fetchRequest.fetchLimit = fetchLimit
         do {
          let fetchedOjects: [Any]? = try self.context.fetch(fetchRequest)
         for i in 0 ..< fetchedOjects!.count {

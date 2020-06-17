@@ -41,10 +41,9 @@ class CoreDataServiceTest: XCTestCase {
     func test_getDataUsingOffcet(){
         let dbManager = DatabaseManager()
         var notes: [Note] = []
-        notes.append(contentsOf: dbManager.getNotesFromDB(fetchOffSet:0))
-        XCTAssertEqual(notes.count, 5)
-        notes.append( contentsOf: dbManager.getNotesFromDB(fetchOffSet: 5))
+        notes.append(contentsOf: dbManager.getNotesFromDB(fetchLimit:10,fetchOffSet:0))
         XCTAssertEqual(notes.count, 8)
-        
+        notes.append( contentsOf: dbManager.getNotesFromDB(fetchLimit:10,fetchOffSet: 10))
+        XCTAssertEqual(notes.count, 8)
     }
 }

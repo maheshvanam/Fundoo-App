@@ -61,6 +61,10 @@
 		841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CEB9D248F705A004E76D4 /* CoreDataError.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
 		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
+		842460AA249A7F6300B38CBA /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842460A8249A7F6200B38CBA /* Features.storyboard */; };
+		842460AE249A913A00B38CBA /* CheckMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460AC249A913A00B38CBA /* CheckMarkCell.swift */; };
+		842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842460AD249A913A00B38CBA /* CheckMarkCell.xib */; };
+		842460B1249A956200B38CBA /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460B0249A956200B38CBA /* LabelViewController.swift */; };
 		8425CEE724880309004133C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8425CEE624880309004133C1 /* Assets.xcassets */; };
 		8425CEEE24883D9D004133C1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEA24883D9D004133C1 /* Note.swift */; };
 		8425CEF024883D9D004133C1 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEC24883D9D004133C1 /* User+CoreDataClass.swift */; };
@@ -167,6 +171,10 @@
 		841CEB9D248F705A004E76D4 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		842460A9249A7F6300B38CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Features.storyboard; sourceTree = "<group>"; };
+		842460AC249A913A00B38CBA /* CheckMarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkCell.swift; sourceTree = "<group>"; };
+		842460AD249A913A00B38CBA /* CheckMarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckMarkCell.xib; sourceTree = "<group>"; };
+		842460B0249A956200B38CBA /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		8425CEE624880309004133C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/AppIcons (1)/Assets.xcassets"; sourceTree = "<group>"; };
 		8425CEEA24883D9D004133C1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8425CEEC24883D9D004133C1 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -377,6 +385,8 @@
 		8419D297247A519D00C4F93A /* FundooApp */ = {
 			isa = PBXGroup;
 			children = (
+				842460AB249A90EB00B38CBA /* Label */,
+				8412B1BB24915A71004DD694 /* EditNotePresenter */,
 				8408F9C02496B647009155ED /* SearchResultVC */,
 				8408F9AC24968FBA009155ED /* SearchView */,
 				84634EBA248268990098D004 /* Home */,
@@ -404,6 +414,16 @@
 				8419D2B4247A519E00C4F93A /* Info.plist */,
 			);
 			path = FundooAppTests;
+			sourceTree = "<group>";
+		};
+		842460AB249A90EB00B38CBA /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				842460AC249A913A00B38CBA /* CheckMarkCell.swift */,
+				842460AD249A913A00B38CBA /* CheckMarkCell.xib */,
+				842460B0249A956200B38CBA /* LabelViewController.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 		8432FDD0248F83A4006D7EF5 /* EditNoteView */ = {
@@ -522,7 +542,6 @@
 		84634EBA248268990098D004 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8412B1BB24915A71004DD694 /* EditNotePresenter */,
 				8432FDD0248F83A4006D7EF5 /* EditNoteView */,
 				84126ECB2489521500F0FFBB /* NoteView */,
 				84126ECC2489529B00F0FFBB /* NotePresenter */,
@@ -555,6 +574,7 @@
 				8419D29E247A519D00C4F93A /* Main.storyboard */,
 				8419D2A6247A519E00C4F93A /* LaunchScreen.storyboard */,
 				8428FE84248A593800E9BA44 /* Home.storyboard */,
+				842460A8249A7F6200B38CBA /* Features.storyboard */,
 			);
 			path = Sotoryboard;
 			sourceTree = "<group>";
@@ -654,7 +674,9 @@
 				8428FE85248A593800E9BA44 /* Home.storyboard in Resources */,
 				8419D2A5247A519E00C4F93A /* Assets.xcassets in Resources */,
 				8425CEE724880309004133C1 /* Assets.xcassets in Resources */,
+				842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */,
 				8419D2A0247A519D00C4F93A /* Main.storyboard in Resources */,
+				842460AA249A7F6300B38CBA /* Features.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +705,7 @@
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
 				84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */,
 				84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */,
+				842460B1249A956200B38CBA /* LabelViewController.swift in Sources */,
 				8408F9C62496C418009155ED /* SearchColorCell.swift in Sources */,
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
@@ -692,6 +715,7 @@
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
+				842460AE249A913A00B38CBA /* CheckMarkCell.swift in Sources */,
 				84126ED3248953C000F0FFBB /* NotePresenterImpl.swift in Sources */,
 				8412B1BF24915AE6004DD694 /* EditNotePresenterImpl.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
@@ -791,6 +815,14 @@
 				8419D2A7247A519E00C4F93A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		842460A8249A7F6200B38CBA /* Features.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842460A9249A7F6300B38CBA /* Base */,
+			);
+			name = Features.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

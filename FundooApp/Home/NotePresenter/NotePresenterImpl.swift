@@ -20,21 +20,11 @@ class NotePresenterImpl: NoteDelegate {
          self.noteView.updateView()
     }
     
-    func updateDataSource() {
-        let coreData = DatabaseManager()
-        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        do{
-            let user = try coreData.getUser(email: email!)
-            let notes = user.notes
-            let allNotes = (notes!.allObjects as! [Note]).sorted(by: { $0.position > $1.position})
-            //let allNotes = notes?.allObjects as! [Note]
-            self.noteView.setTableData(data:allNotes)
-            self.noteView.updateView()
-        }
-        catch{
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
+    func updateDataSource(fetchLimit fecthLimit:Int,fetchOffcet:Int) {
+        let dbManger = DatabaseManager()
+        let allNotes = dbManger.getNotesFromDB(fetchLimit: fecthLimit, fetchOffSet: fetchOffcet)
+        self.noteView.setTableData(data:allNotes)
+        self.noteView.updateView()
     }
 
     func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {
