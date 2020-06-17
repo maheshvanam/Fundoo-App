@@ -20,7 +20,7 @@ class NotePresenterImpl: NoteDelegate {
          self.noteView.updateView()
     }
     
-    func updateTableData() {
+    func updateDataSource() {
         let coreData = DatabaseManager()
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         do{
@@ -56,7 +56,6 @@ class NotePresenterImpl: NoteDelegate {
         {
             for index in destinationIndexPath.item ... sourceIndexPath.item {
                 models.append(model[index])
-                print(model[index].position)
             }
             var pos = models[models.count-1].position
             for index in (0 ..< models.count).reversed() {

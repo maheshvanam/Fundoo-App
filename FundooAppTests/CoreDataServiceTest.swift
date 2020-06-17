@@ -37,4 +37,14 @@ class CoreDataServiceTest: XCTestCase {
        let result = dataService.checkValidUserOrNot(email: "fundoo@gmail.com", password: "Fundoo@123")
         XCTAssertEqual(Result.SUCCESS, result)
     }
+    
+    func test_getDataUsingOffcet(){
+        let dbManager = DatabaseManager()
+        var notes: [Note] = []
+        notes.append(contentsOf: dbManager.getNotesFromDB(fetchOffSet:0))
+        XCTAssertEqual(notes.count, 5)
+        notes.append( contentsOf: dbManager.getNotesFromDB(fetchOffSet: 5))
+        XCTAssertEqual(notes.count, 8)
+        
+    }
 }

@@ -118,7 +118,6 @@ class CoreDataServiceImpl : DataService {
         var user:User!
         do{
          let email =   UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!
-            print(email)
          user = try getUser(email:email)
         }
         catch CoreDataError.UserNotFound {
@@ -139,12 +138,13 @@ class CoreDataServiceImpl : DataService {
         }
     }
     
-    func getNotesFromDB(_ fetchOffSet: Int) -> [Note] {
+    func getNotesFromDB( fetchOffSet: Int) -> [Note] {
         var record = [Note]()
         let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
         let predicate = NSPredicate(format: "owner = %@", getCurrentUser())
         fetchRequest.predicate = predicate
         fetchRequest.fetchOffset = fetchOffSet
+        fetchRequest.fetchLimit = 5
         do {
          let fetchedOjects: [Any]? = try self.context.fetch(fetchRequest)
         for i in 0 ..< fetchedOjects!.count {
@@ -158,3 +158,4 @@ class CoreDataServiceImpl : DataService {
         return record
     }
 }
+

@@ -41,7 +41,7 @@ class NoteViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.notePresenter!.updateTableData()
+        self.notePresenter!.updateDataSource()
     }
     
     @objc func toggleView(){
@@ -52,6 +52,6 @@ class NoteViewController: UIViewController {
     }
     
     @objc func reloadCells(){
-        self.notePresenter!.updateTableData()
+        self.notePresenter!.updateDataSource()
     }
 }

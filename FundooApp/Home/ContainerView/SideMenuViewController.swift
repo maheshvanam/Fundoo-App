@@ -12,7 +12,7 @@ class SideMenuViewController: UITableViewController {
    
     override func viewDidLoad() {
         tableView.backgroundColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
-    }
+        }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         postNotification(key: Constants.TOGGLE_MENU)
