@@ -37,6 +37,7 @@
                         </constraints>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button" image="rectangle" catalog="system"/>
+                        <state key="selected" image="checkmark.rectangle.fill" catalog="system"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -59,6 +60,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkmark.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="rectangle" catalog="system" width="128" height="93"/>
         <image name="tag" catalog="system" width="128" height="116"/>
     </resources>

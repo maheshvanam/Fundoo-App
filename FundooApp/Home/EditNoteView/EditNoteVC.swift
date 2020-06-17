@@ -36,6 +36,7 @@ class EditNoteVC: UIViewController {
         editNotePresenter = EditNotePresenter(delegate: self)
         NotificationCenter.default.addObserver(self, selector: #selector(EditNoteVC.updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNote), name: NSNotification.Name(rawValue: Constants.DELETE_NOTE_KEY), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addLabel), name: NSNotification.Name(rawValue: Constants.ADD_LABEL_KEY), object: nil)
         configureBackButton()
     }
     
@@ -43,6 +44,14 @@ class EditNoteVC: UIViewController {
         let backButton = UIBarButtonItem(title: backButtonTitle, style: .plain, target: self, action: #selector(onBackPressed))
         navigationItem.leftBarButtonItem = backButton
         navigationItem.hidesBackButton = true
+    }
+    
+    @objc func addLabel() {
+        let board = UIStoryboard(name: Constants.FEATURES_STORYBOARD, bundle: nil)
+        guard let childVC = board.instantiateViewController(withIdentifier: Constants.ADD_LABEL_VC) as? LabelViewController  else {
+               return
+             }
+        navigationController?.pushViewController(childVC, animated: false)
     }
     
     @objc func onBackPressed(){

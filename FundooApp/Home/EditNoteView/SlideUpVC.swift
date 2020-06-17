@@ -54,7 +54,7 @@ extension SlideUpVC: UITableViewDelegate, UITableViewDataSource {
             case .Collaborator:
                 print("Other")
             case .Labels:
-                print("Other")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.ADD_LABEL_KEY), object: nil)
         }
     }
 }

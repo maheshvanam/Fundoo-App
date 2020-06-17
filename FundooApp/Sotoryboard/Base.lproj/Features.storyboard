@@ -10,7 +10,7 @@
         <!--Label View Controller-->
         <scene sceneID="xtr-bV-nwt">
             <objects>
-                <viewController id="zIu-n1-bHu" customClass="LabelViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddLabelVC" id="zIu-n1-bHu" customClass="LabelViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F9s-Qm-LLp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
