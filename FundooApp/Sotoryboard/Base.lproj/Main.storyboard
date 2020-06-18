@@ -294,7 +294,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="aqJ-mw-pIj" firstAttribute="width" secondItem="ihL-QY-Dgw" secondAttribute="width" id="0IJ-qw-K2w"/>
                             <constraint firstAttribute="bottom" secondItem="mWw-ba-eWT" secondAttribute="bottom" id="4vJ-WW-GkF"/>
+                            <constraint firstItem="mWw-ba-eWT" firstAttribute="width" secondItem="ihL-QY-Dgw" secondAttribute="width" id="LRo-ml-yt2"/>
                             <constraint firstItem="mWw-ba-eWT" firstAttribute="leading" secondItem="ihL-QY-Dgw" secondAttribute="leading" id="Ond-BZ-kCs"/>
                             <constraint firstItem="mWw-ba-eWT" firstAttribute="trailing" secondItem="ihL-QY-Dgw" secondAttribute="trailing" id="m2h-5t-Rd8"/>
                             <constraint firstItem="mWw-ba-eWT" firstAttribute="top" secondItem="ihL-QY-Dgw" secondAttribute="top" id="oVR-g7-bP2"/>

@@ -48,10 +48,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func onSiginInInsteadTapped(_ sender: Any) {
-        self.signUpViewPresenter?.onSiginInInsteadTapped()
-    }
-    
     @IBAction func onSignUpTapped(_ sender: Any) {
         self.signUpViewPresenter?.onSignUpTapped()
     }

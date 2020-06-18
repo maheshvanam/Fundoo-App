@@ -53,7 +53,7 @@ class NotePresenterImpl: NoteDelegate {
             }
             var pos = models[0].position
             for index in 1 ..< models.count {
-                let t = models[index].position
+                let t = models[index].position//
                 models[index].position = pos
                 pos = t
             }
