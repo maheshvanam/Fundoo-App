@@ -11,5 +11,6 @@ import Foundation
 protocol NoteDelegate {
     func updateCells()
     func updateDataSource(fetchLimit: Int,fetchOffcet: Int)
+    func updateTableData() 
     func reorderCell(model:[Note],sourceIndexPath: IndexPath,destinationIndexPath: IndexPath)
 }

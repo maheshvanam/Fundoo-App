@@ -66,7 +66,6 @@
 		842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842460AD249A913A00B38CBA /* CheckMarkCell.xib */; };
 		842460B1249A956200B38CBA /* AddLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460B0249A956200B38CBA /* AddLabelViewController.swift */; };
 		842460B3249AA16B00B38CBA /* AddLabelViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */; };
-		8425CEE724880309004133C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8425CEE624880309004133C1 /* Assets.xcassets */; };
 		8425CEEE24883D9D004133C1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEA24883D9D004133C1 /* Note.swift */; };
 		8425CEF024883D9D004133C1 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEEC24883D9D004133C1 /* User+CoreDataClass.swift */; };
 		8425CEF124883D9D004133C1 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425CEED24883D9D004133C1 /* User+CoreDataProperties.swift */; };
@@ -177,7 +176,6 @@
 		842460AD249A913A00B38CBA /* CheckMarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckMarkCell.xib; sourceTree = "<group>"; };
 		842460B0249A956200B38CBA /* AddLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelViewController.swift; sourceTree = "<group>"; };
 		842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLabelViewController+TableView.swift"; sourceTree = "<group>"; };
-		8425CEE624880309004133C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/AppIcons (1)/Assets.xcassets"; sourceTree = "<group>"; };
 		8425CEEA24883D9D004133C1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8425CEEC24883D9D004133C1 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8425CEED24883D9D004133C1 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -401,7 +399,6 @@
 				8419D298247A519D00C4F93A /* AppDelegate.swift */,
 				8419D29A247A519D00C4F93A /* SceneDelegate.swift */,
 				8419D2A4247A519E00C4F93A /* Assets.xcassets */,
-				8425CEE624880309004133C1 /* Assets.xcassets */,
 				8419D2A9247A519E00C4F93A /* Info.plist */,
 				8419D2A1247A519D00C4F93A /* FundooApp.xcdatamodeld */,
 			);
@@ -676,7 +673,6 @@
 				8419D2A8247A519E00C4F93A /* LaunchScreen.storyboard in Resources */,
 				8428FE85248A593800E9BA44 /* Home.storyboard in Resources */,
 				8419D2A5247A519E00C4F93A /* Assets.xcassets in Resources */,
-				8425CEE724880309004133C1 /* Assets.xcassets in Resources */,
 				842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */,
 				8419D2A0247A519D00C4F93A /* Main.storyboard in Resources */,
 				842460AA249A7F6300B38CBA /* Features.storyboard in Resources */,
