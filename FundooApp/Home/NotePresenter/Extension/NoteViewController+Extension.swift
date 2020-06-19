@@ -27,8 +27,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         if noteModel.color != nil {
             cell.backgroundColor = Constants.colors[noteModel.color!]
         }
-        //collectionView.showsVerticalScrollIndicator = false
-        
+        cell.setShadow()
         return cell
     }
     
@@ -40,6 +39,4 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         childVC.note = models[indexPath.item]
         navigationController?.pushViewController(childVC, animated: false)
     }
-    
-    
 }

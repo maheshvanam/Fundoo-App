@@ -10,9 +10,9 @@ import Foundation
 
 class NotePresenterImpl: NoteDelegate {
     
-    var noteView: NotePresenterDelegate
+    var noteView: NoteViewDelegate
     
-    init(delegate: NotePresenterDelegate) {
+    init(delegate: NoteViewDelegate) {
         self.noteView = delegate
     }
     

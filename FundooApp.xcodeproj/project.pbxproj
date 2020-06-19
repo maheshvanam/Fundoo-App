@@ -38,7 +38,7 @@
 		84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126ED02489535100F0FFBB /* NotePresenter.swift */; };
 		84126ED3248953C000F0FFBB /* NotePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126ED2248953C000F0FFBB /* NotePresenterImpl.swift */; };
 		84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126ED52489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift */; };
-		84126ED82489558900F0FFBB /* NotePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126ED72489558900F0FFBB /* NotePresenterDelegate.swift */; };
+		84126ED82489558900F0FFBB /* NoteViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126ED72489558900F0FFBB /* NoteViewDelegate.swift */; };
 		84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84126EDA24897ED300F0FFBB /* NoteModel.swift */; };
 		8412B1BD24915AB8004DD694 /* EditNotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1BC24915AB8004DD694 /* EditNotePresenter.swift */; };
 		8412B1BF24915AE6004DD694 /* EditNotePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1BE24915AE6004DD694 /* EditNotePresenterImpl.swift */; };
@@ -144,7 +144,7 @@
 		84126ED02489535100F0FFBB /* NotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenter.swift; sourceTree = "<group>"; };
 		84126ED2248953C000F0FFBB /* NotePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenterImpl.swift; sourceTree = "<group>"; };
 		84126ED52489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewController+NotePresenterDelegate.swift"; sourceTree = "<group>"; };
-		84126ED72489558900F0FFBB /* NotePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenterDelegate.swift; sourceTree = "<group>"; };
+		84126ED72489558900F0FFBB /* NoteViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewDelegate.swift; sourceTree = "<group>"; };
 		84126EDA24897ED300F0FFBB /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		8412B1BC24915AB8004DD694 /* EditNotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenter.swift; sourceTree = "<group>"; };
 		8412B1BE24915AE6004DD694 /* EditNotePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenterImpl.swift; sourceTree = "<group>"; };
@@ -327,7 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				84126ECE248952CB00F0FFBB /* NoteDelegate.swift */,
-				84126ED72489558900F0FFBB /* NotePresenterDelegate.swift */,
+				84126ED72489558900F0FFBB /* NoteViewDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -741,7 +741,7 @@
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
 				84A3C9E32480F19B003393EC /* SignInViewPresenterService.swift in Sources */,
-				84126ED82489558900F0FFBB /* NotePresenterDelegate.swift in Sources */,
+				84126ED82489558900F0FFBB /* NoteViewDelegate.swift in Sources */,
 				8425CEF024883D9D004133C1 /* User+CoreDataClass.swift in Sources */,
 				84126ECF248952CB00F0FFBB /* NoteDelegate.swift in Sources */,
 				841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */,

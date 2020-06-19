@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NoteViewController: NotePresenterDelegate {
+extension NoteViewController: NoteViewDelegate {
     
     func updateView(){
         layout.reloadData()

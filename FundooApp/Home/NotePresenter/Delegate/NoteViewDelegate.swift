@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol NotePresenterDelegate {
+protocol NoteViewDelegate {
     func setTableData(data: [Note])
     func updateView()
     func addNotificationObservers()
