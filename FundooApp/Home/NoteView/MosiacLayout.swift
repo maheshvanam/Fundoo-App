@@ -38,8 +38,9 @@ class MosaicLayout: UICollectionViewLayout {
     override func prepare()
     {
         if attributesCache.isEmpty {
-            
+            print(contentWidth)
             let columnWidth = contentWidth / numberOfColumns
+            //print("$$$$$$$ \(columnWidth)")
             var xOffsets = [CGFloat]()
             for column in startingColumnIndex ..< Int(numberOfColumns) {
                 xOffsets.append(CGFloat(column) * columnWidth)

@@ -369,11 +369,11 @@
                             <constraint firstItem="TQp-zb-aaR" firstAttribute="leading" secondItem="P0u-Im-6bj" secondAttribute="trailing" id="EyB-6N-EKb"/>
                             <constraint firstItem="e7j-8D-NZe" firstAttribute="top" secondItem="TQp-zb-aaR" secondAttribute="bottom" id="OxC-fP-Y1W"/>
                             <constraint firstItem="TQp-zb-aaR" firstAttribute="top" secondItem="EJB-xX-3tr" secondAttribute="top" id="RWY-oP-4nc"/>
+                            <constraint firstItem="TQp-zb-aaR" firstAttribute="width" secondItem="4Yd-1e-IZj" secondAttribute="width" id="XDv-i3-0C6"/>
                             <constraint firstItem="e7j-8D-NZe" firstAttribute="leading" secondItem="P0u-Im-6bj" secondAttribute="trailing" id="Ycx-GK-6h7"/>
                             <constraint firstItem="e7j-8D-NZe" firstAttribute="trailing" secondItem="EJB-xX-3tr" secondAttribute="trailing" id="aFN-Xw-fZp"/>
                             <constraint firstItem="P0u-Im-6bj" firstAttribute="bottom" secondItem="EJB-xX-3tr" secondAttribute="bottom" id="e7c-4J-TPw"/>
                             <constraint firstItem="e7j-8D-NZe" firstAttribute="bottom" secondItem="EJB-xX-3tr" secondAttribute="bottom" id="eAb-ji-ZK3"/>
-                            <constraint firstItem="TQp-zb-aaR" firstAttribute="trailing" secondItem="EJB-xX-3tr" secondAttribute="trailing" id="gMn-BT-gtL"/>
                             <constraint firstItem="P0u-Im-6bj" firstAttribute="top" secondItem="EJB-xX-3tr" secondAttribute="top" id="x9b-Hy-8Za"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EJB-xX-3tr"/>
