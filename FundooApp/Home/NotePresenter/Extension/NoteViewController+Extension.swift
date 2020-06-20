@@ -39,4 +39,11 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         childVC.note = models[indexPath.item]
         navigationController?.pushViewController(childVC, animated: false)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item == (models.count - 1) {
+            self.notePresenter!.updateDataSource(fetchLimit: fetchLimit, fetchOffcet: fetchOffcet)
+            fetchOffcet = fetchOffcet + 5
+        }
+    }
 }

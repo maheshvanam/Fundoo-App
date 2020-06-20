@@ -40,8 +40,10 @@ class NotePresenterImpl: NoteDelegate {
     func updateDataSource(fetchLimit fecthLimit:Int,fetchOffcet:Int) {
         let dbManger = DatabaseManager()
         let allNotes = dbManger.getNotesFromDB(fetchLimit: fecthLimit, fetchOffSet: fetchOffcet)
-        self.noteView.setTableData(data:allNotes)
-        self.noteView.updateView()
+        if allNotes.count != 0 {
+            self.noteView.setTableData(data:allNotes.sorted(by: {$0.position > $1.position}))
+            self.noteView.updateView()
+        }
     }
 
     func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {

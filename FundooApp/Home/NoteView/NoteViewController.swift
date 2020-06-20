@@ -7,7 +7,7 @@
 //
 
 import UIKit
-let fetchOffcet:Int = 0
+var fetchOffcet:Int = 0
 let fetchLimit:Int = 10
 class NoteViewController: UIViewController {
     
@@ -41,17 +41,11 @@ class NoteViewController: UIViewController {
         addNotificationObservers()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.notePresenter!.updateTableData()
-        //self.notePresenter!.updateDataSource(fetchLimit: fetchLimit,fetchOffcet: fetchOffcet)
-    }
+   
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-      //  print(scrollView.contentOffset.y," ",targetContentOffset.pointee.y)
-        
-          //  self.notePresenter!.updateDataSource(fetchLimit: fetchLimit, fetchOffcet: fetchOffcet)
-       // fetchOffcet = fetchOffcet + 5
-
+    override func viewWillAppear(_ animated: Bool) {
+        //self.notePresenter!.updateTableData()
+        self.notePresenter!.updateDataSource(fetchLimit: fetchLimit,fetchOffcet: fetchOffcet)
     }
     
     @objc func toggleView(){
@@ -62,7 +56,7 @@ class NoteViewController: UIViewController {
     }
     
     @objc func reloadCells(){
-        self.notePresenter!.updateTableData()
-        //self.notePresenter!.updateDataSource(fetchLimit: fetchLimit, fetchOffcet: fetchOffcet)
+      // self.notePresenter!.updateTableData()
+        self.notePresenter!.updateDataSource(fetchLimit: fetchLimit, fetchOffcet: fetchOffcet)
     }
 }

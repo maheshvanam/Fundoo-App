@@ -20,7 +20,6 @@ class EditNotePresenterImpl: EditNoteDelegate {
         var note = editNoteView.getNote()
         if editNoteView.fieldsAreEmpty() {
             if editNoteView.isNewNote() {
-                print("dsd")
                 note = coreData.createNote()
                 note!.creationTime = Date()
                 note!.title = editNoteView.getTitleText()
