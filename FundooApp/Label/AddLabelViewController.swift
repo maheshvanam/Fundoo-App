@@ -21,6 +21,7 @@ class AddLabelViewController: UIViewController {
     var originalDataSource:[String] = []
     var currentDataSource:[String] = []
     var searchController:UISearchController!
+    var searchTerm:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +48,19 @@ class AddLabelViewController: UIViewController {
          searchController.hidesNavigationBarDuringPresentation = false
          searchController.searchBar.delegate = self
          searchController.obscuresBackgroundDuringPresentation = true
-    
     }
     
-       func filterCurrentDataSource(searchTerm: String) {
-           if searchTerm.count > 0 {
-               currentDataSource   = originalDataSource
-               let filteredResults = currentDataSource.filter {
-                   $0.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())
-               }
-                currentDataSource = filteredResults
-                isNewLabel        = currentDataSource.count == 0 ? true : false
-               labelTableView.reloadData()
-           }
+    func filterCurrentDataSource(searchTerm: String) {
+        if searchTerm.count > 0 {
+            currentDataSource   = originalDataSource
+            let filteredResults = currentDataSource.filter {
+                $0.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())
+            }
+             self.searchTerm   = "Create \"\(searchTerm)\""
+             currentDataSource = filteredResults
+             isNewLabel        = currentDataSource.count == 0 ? true : false
+            labelTableView.reloadData()
+        }
     }
 }
 
@@ -76,5 +77,11 @@ extension AddLabelViewController :UISearchResultsUpdating,UISearchBarDelegate {
         if let searchText = searchBar.text {
             filterCurrentDataSource(searchTerm: searchText)
         }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        currentDataSource = originalDataSource
+        isNewLabel = false
+        labelTableView.reloadData()
     }
 }

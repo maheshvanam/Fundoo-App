@@ -17,13 +17,11 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if isNewLabel {
             let cell = labelTableView.dequeueReusableCell(withIdentifier: createLabelReusableCellId, for: indexPath) as! CreateLabelCell
+            cell.createLabelField.text = self.searchTerm
             return cell
         }
-        
-        
         let cell = labelTableView.dequeueReusableCell(withIdentifier: reusableCellId, for: indexPath) as! CheckMarkCell
         cell.labelTitle.text = currentDataSource[indexPath.row]
         cell.selectionStyle = .none
@@ -39,5 +37,8 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
