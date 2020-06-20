@@ -8,26 +8,35 @@
 
 import UIKit
 
-let ReusableCellId = "CheckMarkCell"
+let reusableCellId = "CheckMarkCell"
 let checkMarkNib = "CheckMarkCell"
+let createLabelNib = "CreateLabelCell"
+let createLabelReusableCellId = "CreateLabel"
 let rowHeight:CGFloat = 50
+var isNewLabel:Bool = false
 
 class AddLabelViewController: UIViewController {
     
     @IBOutlet var labelTableView:UITableView!
-    var dataSource:[String] = []
+    var originalDataSource:[String] = []
+    var currentDataSource:[String] = []
     var searchController:UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: checkMarkNib, bundle: nil)
-        labelTableView.register(nib, forCellReuseIdentifier: ReusableCellId)
+        labelTableView.register(nib, forCellReuseIdentifier: reusableCellId)
+        let createNib = UINib(nibName: createLabelNib, bundle: nil)
+        labelTableView.register(createNib, forCellReuseIdentifier: createLabelReusableCellId)
+        labelTableView.register(nib, forCellReuseIdentifier: reusableCellId)
         cofigureSearchController()
         labelTableView.delegate = self
         labelTableView.dataSource = self
-        dataSource.append("1")
-        dataSource.append("2")
-        dataSource.append("3")
+        labelTableView.separatorStyle = .none
+        originalDataSource.append("1")
+        originalDataSource.append("2")
+        originalDataSource.append("3")
+        currentDataSource = originalDataSource
     }
     
     func cofigureSearchController() {
@@ -38,14 +47,34 @@ class AddLabelViewController: UIViewController {
          searchController.hidesNavigationBarDuringPresentation = false
          searchController.searchBar.delegate = self
          searchController.obscuresBackgroundDuringPresentation = true
+    
     }
     
+       func filterCurrentDataSource(searchTerm: String) {
+           if searchTerm.count > 0 {
+               currentDataSource   = originalDataSource
+               let filteredResults = currentDataSource.filter {
+                   $0.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())
+               }
+                currentDataSource = filteredResults
+                isNewLabel        = currentDataSource.count == 0 ? true : false
+               labelTableView.reloadData()
+           }
+    }
 }
+
 extension AddLabelViewController :UISearchResultsUpdating,UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+        if let searchText = searchController.searchBar.text {
+            filterCurrentDataSource(searchTerm: searchText)
+        }
     }
     
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchController.isActive = false
+        if let searchText = searchBar.text {
+            filterCurrentDataSource(searchTerm: searchText)
+        }
+    }
 }

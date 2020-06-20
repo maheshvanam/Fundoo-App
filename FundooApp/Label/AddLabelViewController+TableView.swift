@@ -10,15 +10,26 @@ import UIKit
 
 extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        if isNewLabel {
+            return 1
+        }
+        return currentDataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = labelTableView.dequeueReusableCell(withIdentifier: ReusableCellId, for: indexPath) as! CheckMarkCell
-        cell.labelTitle.text = dataSource[indexPath.row]
+        
+        if isNewLabel {
+            let cell = labelTableView.dequeueReusableCell(withIdentifier: createLabelReusableCellId, for: indexPath) as! CreateLabelCell
+            return cell
+        }
+        
+        
+        let cell = labelTableView.dequeueReusableCell(withIdentifier: reusableCellId, for: indexPath) as! CheckMarkCell
+        cell.labelTitle.text = currentDataSource[indexPath.row]
         cell.selectionStyle = .none
         cell.checkMarkButton.addTarget(self, action: #selector(onCheckMarkClicked(sender:)), for: .touchUpInside)
-        
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.gray.cgColor
         return cell
     }
     
