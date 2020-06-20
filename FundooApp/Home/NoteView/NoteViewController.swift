@@ -40,7 +40,7 @@ class NoteViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: topInset , left: leftInset, bottom: bottomInset, right: rightInset)
         notePresenter = NotePresenter(delegate: self)
         addNotificationObservers()
-        reloadCells()
+       
     }
     
     @objc func toggleView(){
@@ -50,8 +50,11 @@ class NoteViewController: UIViewController {
         self.notePresenter!.updateCells()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+         reloadCells()
+    }
+    
     @objc func reloadCells(){
-      // self.notePresenter!.updateTableData()
-        self.notePresenter!.updateDataSource(fetchLimit: fetchLimit, fetchOffcet: fetchOffcet)
+       self.notePresenter!.updateTableData()
     }
 }

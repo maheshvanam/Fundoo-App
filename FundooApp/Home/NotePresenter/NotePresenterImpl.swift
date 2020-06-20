@@ -33,15 +33,13 @@ class NotePresenterImpl: NoteDelegate {
         }
         catch{
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror)")
+            fatalError(" \(nserror.description)")
         }
     }
     
     func updateDataSource(fetchLimit fecthLimit:Int,fetchOffcet:Int) {
         let dbManger = DatabaseManager()
         let allNotes = dbManger.getNotesFromDB(fetchLimit: fecthLimit, fetchOffSet: fetchOffcet)
-        
-        print("fetched data ",allNotes.count)
         if allNotes.count != 0 {
             self.noteView.setTableData(data:allNotes)
             //.sorted(by: {$0.position > $1.position}))

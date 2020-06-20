@@ -11,18 +11,12 @@ import UIKit
 extension NoteViewController: NoteViewDelegate {
     
     func updateView(){
-        print("collectionView reloaded with items ", models.count)
-       // layout.reloadData()
-        //collectionView.reloadData()
+        layout.reloadData()
+        collectionView.reloadData()
     }
     
     func setTableData(data: [Note]) {
-        print("elements appended ",data.count)
         self.models.append(contentsOf: data)
-        fetchCell = self.models.count
-        print(models.count)
-        layout.reloadData()
-        collectionView.reloadData()
     }
     
     func addNotificationObservers() {
