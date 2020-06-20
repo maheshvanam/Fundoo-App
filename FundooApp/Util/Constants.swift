@@ -36,6 +36,7 @@ enum Constants {
     static let REMINDER_VC = "ReminderViewController"
     static let USER_NOT_FOUND = "user not found"
     static let FETCH_ERROR = "fetching error"
+    static let DATA_ERROR = "data not found error"
     static let signUpTitle = "Sign Up"
     static let signInTitle = "Sign In"
     static let gridImage = "rectangle.grid.2x2.fill"

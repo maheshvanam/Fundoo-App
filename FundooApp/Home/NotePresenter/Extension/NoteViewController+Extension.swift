@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 private let reusabalCollectionCellId = "cell"
-
 extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,9 +40,10 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == (models.count - 1) {
+        if indexPath.item == (fetchCell - 1) {
+            fetchOffcet = fetchOffcet + 10
+            print("fetchOffcet: \(fetchOffcet)")
             self.notePresenter!.updateDataSource(fetchLimit: fetchLimit, fetchOffcet: fetchOffcet)
-            fetchOffcet = fetchOffcet + 5
         }
     }
 }

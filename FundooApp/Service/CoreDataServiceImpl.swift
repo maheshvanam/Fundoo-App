@@ -10,11 +10,16 @@ import Foundation
 import UIKit
 import CoreData
 
+private let noteEntity     = "Note"
+private let userEntity     = "User"
+private let ownerPredicate = "owner = %@"
+private let emailPredicate = "email = %@"
+
 class CoreDataServiceImpl : DataService {
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
-    private let fetchRequest = NSFetchRequest<User>(entityName: "User")
+    private let fetchRequest = NSFetchRequest<User>(entityName: userEntity)
     
     func insertUser(registartionUser: UserModel) {
         let  user = User(context: context)
@@ -26,7 +31,7 @@ class CoreDataServiceImpl : DataService {
     }
     
     func checkValidUserOrNot(email: String,password: String)  -> Result {
-        let predicate = NSPredicate(format: "email = %@", email)
+        let predicate = NSPredicate(format: emailPredicate, email)
         self.fetchRequest.predicate = predicate
         do {
             let result = try context.fetch(self.fetchRequest) as NSArray
@@ -45,13 +50,13 @@ class CoreDataServiceImpl : DataService {
         }
         catch{
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            fatalError("Unresolved error \(nserror), \(nserror.description)")
         }
     }
 
     func getUser(email: String) throws ->  User {
         var user:User!
-        fetchRequest.predicate = NSPredicate(format: "email = %@", email )
+        fetchRequest.predicate = NSPredicate(format: emailPredicate, email )
         do{
             let result = try context.fetch( fetchRequest ) as NSArray
             if result.count > 0 {
@@ -63,14 +68,14 @@ class CoreDataServiceImpl : DataService {
         }
         catch{
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            fatalError("\(nserror), \(nserror.description)")
         }
         return user
     }
 
     
     func deleteUser(email: String) {
-        let predicate = NSPredicate(format: "email = %@", email)
+        let predicate = NSPredicate(format: emailPredicate, email)
         fetchRequest.predicate = predicate
         do{
             let result = try context.fetch(fetchRequest) as NSArray
@@ -79,7 +84,7 @@ class CoreDataServiceImpl : DataService {
         }
         catch{
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            fatalError("\(nserror), \(nserror.description)")
         }
     }
     
@@ -92,7 +97,7 @@ class CoreDataServiceImpl : DataService {
         }
         catch{
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            fatalError(" \(nserror), \(nserror.description)")
         }
     }
     
@@ -139,23 +144,22 @@ class CoreDataServiceImpl : DataService {
     }
     
     func getNotesFromDB(fetchLimit:Int, fetchOffSet:Int) -> [Note] {
-        var record = [Note]()
-        let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
-        let predicate = NSPredicate(format: "owner = %@", getCurrentUser())
+        var records = [Note]()
+        let fetchRequest = NSFetchRequest<Note>(entityName: noteEntity)
+        let predicate = NSPredicate(format: ownerPredicate, getCurrentUser())
         fetchRequest.predicate = predicate
         fetchRequest.fetchOffset = fetchOffSet
         fetchRequest.fetchLimit = fetchLimit
         do {
-         let fetchedOjects: [Any]? = try self.context.fetch(fetchRequest)
-        for i in 0 ..< fetchedOjects!.count {
-            let note: Note? = fetchedOjects![i] as? Note
-            record.append(note!)
-            }
+        records = try self.context.fetch(fetchRequest)
+        }
+        catch CoreDataError.dataNotFound {
+            fatalError(Constants.DATA_ERROR);
         }
         catch {
             fatalError(Constants.FETCH_ERROR);
         }
-        return record
+        return records
     }
 }
 

@@ -9,6 +9,7 @@
 import UIKit
 var fetchOffcet:Int = 0
 let fetchLimit:Int = 10
+var fetchCell:Int = 0
 class NoteViewController: UIViewController {
     
     private let topInset:CGFloat = 10
@@ -39,13 +40,7 @@ class NoteViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: topInset , left: leftInset, bottom: bottomInset, right: rightInset)
         notePresenter = NotePresenter(delegate: self)
         addNotificationObservers()
-    }
-    
-   
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //self.notePresenter!.updateTableData()
-        self.notePresenter!.updateDataSource(fetchLimit: fetchLimit,fetchOffcet: fetchOffcet)
+        reloadCells()
     }
     
     @objc func toggleView(){
