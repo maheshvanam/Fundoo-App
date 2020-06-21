@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tn3-KO-z08">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +12,7 @@
             <objects>
                 <viewController storyboardIdentifier="ReminderViewController" title="Reminder View Controller" id="9hy-nN-uDR" customClass="ReminderViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XKk-tp-cpb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="aOK-7k-pfZ"/>
@@ -45,13 +44,13 @@
         <!--Edit Note-->
         <scene sceneID="NFt-KI-68R">
             <objects>
-                <viewController storyboardIdentifier="EditNoteVC" title="Edit Note" modalPresentationStyle="overFullScreen" id="toQ-0B-uDp" customClass="EditNoteVC" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditNoteVC" title="Edit Note" modalPresentationStyle="overFullScreen" id="toQ-0B-uDp" customClass="EditNoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="ay0-eQ-7dI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qr9-GT-eC7">
-                                <rect key="frame" x="16" y="60" width="382" height="50"/>
+                                <rect key="frame" x="16" y="16" width="568" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aKi-5t-G36"/>
@@ -60,7 +59,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J9l-ng-sZi">
-                                <rect key="frame" x="16" y="118" width="382" height="695"/>
+                                <rect key="frame" x="16" y="74" width="568" height="482"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -68,7 +67,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVN-PW-TEP">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <gestureRecognizers/>
                                 <items>
                                     <barButtonItem title="Item" image="plus.square" catalog="system" id="X5m-PQ-35Q">
@@ -83,7 +82,7 @@
                                 </connections>
                             </toolbar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUY-Em-eg5">
-                                <rect key="frame" x="0.0" y="813" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="PwZ-r5-5kg"/>
                                 </constraints>
@@ -133,11 +132,11 @@
             <objects>
                 <viewController storyboardIdentifier="SearchVC" title="Search View" id="ISM-CJ-40d" customClass="SearchVC" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JF1-XD-WJs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FX4-WE-ayP">
-                                <rect key="frame" x="0.0" y="74" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="30" width="600" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="I6J-z1-Vnf"/>
@@ -176,7 +175,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qi1-aL-LVY">
-                                <rect key="frame" x="8" y="44" width="406" height="30"/>
+                                <rect key="frame" x="8" y="0.0" width="592" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Sjk-1F-fad"/>
                                 </constraints>
@@ -185,7 +184,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G78-vj-d4n">
-                                <rect key="frame" x="0.0" y="154" width="414" height="708"/>
+                                <rect key="frame" x="0.0" y="110" width="600" height="490"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j0E-bA-gMX">
@@ -196,7 +195,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCell" id="sru-W4-QB9" customClass="SearchCell" customModule="FundooApp" customModuleProvider="target">
-                                        <rect key="frame" x="70" y="0.0" width="274" height="376"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="376"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Qem-1Q-3fx">
                                             <rect key="frame" x="0.0" y="0.0" width="274" height="376"/>
@@ -287,16 +286,16 @@
             <objects>
                 <viewController storyboardIdentifier="SearchResultVC" title="Search Result" id="Xni-HP-GpO" customClass="SearchResultVC" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ft-pS-gRo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LDq-Hz-ft3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="muN-t2-4cI" customClass="MosaicLayout" customModule="FundooApp" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchResultCell" id="mqT-hw-dfl" customClass="SearchResultCell" customModule="FundooApp" customModuleProvider="target">
-                                        <rect key="frame" x="35" y="0.0" width="344" height="495"/>
+                                        <rect key="frame" x="128" y="0.0" width="344" height="495"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="M15-mV-nC1">
                                             <rect key="frame" x="0.0" y="0.0" width="344" height="495"/>

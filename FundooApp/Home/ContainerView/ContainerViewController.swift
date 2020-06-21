@@ -93,7 +93,7 @@ class ContainerViewController: UIViewController {
     
     @objc func switchToAddNote() {
         let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-        guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
+        guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteViewController  else {
           return
         }
         childVC.noteIsNew = true

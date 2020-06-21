@@ -79,7 +79,7 @@
 		8428FE85248A593800E9BA44 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428FE84248A593800E9BA44 /* Home.storyboard */; };
 		842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2486248AA9B400489314 /* ReminderViewController.swift */; };
 		842CBCB02493E9740032CBB6 /* Note+NSItemProviderWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CBCAF2493E9740032CBB6 /* Note+NSItemProviderWriting.swift */; };
-		8432FDD2248F847D006D7EF5 /* EditNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432FDD1248F847D006D7EF5 /* EditNoteVC.swift */; };
+		8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */; };
 		843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBAE248D768D00155FC4 /* MosiacLayout.swift */; };
 		843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBB0248D861C00155FC4 /* MosaicLayoutAttributes.swift */; };
 		843BBBB3248D86EC00155FC4 /* MosaicLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBB2248D86EC00155FC4 /* MosaicLayoutDelegate.swift */; };
@@ -108,6 +108,9 @@
 		84FCC37B249F8FF800FE92CA /* Label+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC375249F8FF800FE92CA /* Label+CoreDataProperties.swift */; };
 		84FCC37C249F8FF800FE92CA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC376249F8FF800FE92CA /* User+CoreDataClass.swift */; };
 		84FCC37D249F8FF800FE92CA /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC377249F8FF800FE92CA /* User+CoreDataProperties.swift */; };
+		84FCC37F249F936500FE92CA /* AddLabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */; };
+		84FCC381249F948100FE92CA /* AddLabelPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */; };
+		84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,7 +200,7 @@
 		8428FE84248A593800E9BA44 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		842C2486248AA9B400489314 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		842CBCAF2493E9740032CBB6 /* Note+NSItemProviderWriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+NSItemProviderWriting.swift"; sourceTree = "<group>"; };
-		8432FDD1248F847D006D7EF5 /* EditNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteVC.swift; sourceTree = "<group>"; };
+		8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 		843BBBAE248D768D00155FC4 /* MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosiacLayout.swift; sourceTree = "<group>"; };
 		843BBBB0248D861C00155FC4 /* MosaicLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutAttributes.swift; sourceTree = "<group>"; };
 		843BBBB2248D86EC00155FC4 /* MosaicLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +229,9 @@
 		84FCC375249F8FF800FE92CA /* Label+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		84FCC376249F8FF800FE92CA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		84FCC377249F8FF800FE92CA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelPresenter.swift; sourceTree = "<group>"; };
+		84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelPresenterDelegate.swift; sourceTree = "<group>"; };
+		84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,10 +445,13 @@
 				842460AD249A913A00B38CBA /* CheckMarkCell.xib */,
 				84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */,
 				84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */,
-				842460B0249A956200B38CBA /* AddLabelViewController.swift */,
 				842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */,
 				841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */,
 				841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */,
+				842460B0249A956200B38CBA /* AddLabelViewController.swift */,
+				84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */,
+				84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */,
+				84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -450,7 +459,7 @@
 		8432FDD0248F83A4006D7EF5 /* EditNoteView */ = {
 			isa = PBXGroup;
 			children = (
-				8432FDD1248F847D006D7EF5 /* EditNoteVC.swift */,
+				8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */,
 				84078A702490040D0000D649 /* SlideUpVC.swift */,
 				84078A7A249019040000D649 /* ColorCollectionView.swift */,
 				84078A7C249019680000D649 /* OptionsCell.swift */,
@@ -776,6 +785,7 @@
 				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
 				84FCC37D249F8FF800FE92CA /* User+CoreDataProperties.swift in Sources */,
 				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
+				84FCC37F249F936500FE92CA /* AddLabelPresenter.swift in Sources */,
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
@@ -789,6 +799,7 @@
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
 				8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
+				84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */,
 				8408F9AE24969026009155ED /* SearchVC.swift in Sources */,
 				8408F9BB2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift in Sources */,
 				842CBCB02493E9740032CBB6 /* Note+NSItemProviderWriting.swift in Sources */,
@@ -797,11 +808,12 @@
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
 				84113FE92493964500AEDCBD /* SlideUpVCPresenterImpl.swift in Sources */,
 				8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */,
+				84FCC381249F948100FE92CA /* AddLabelPresenterDelegate.swift in Sources */,
 				8408F9C42496B85A009155ED /* SearchResultCell.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
 				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,
 				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,
-				8432FDD2248F847D006D7EF5 /* EditNoteVC.swift in Sources */,
+				8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */,
 				84078A7D249019680000D649 /* OptionsCell.swift in Sources */,
 				840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */,
 				842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */,

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol AddLabelPresenterDelegate {
+    func insertLabel(label:Label)
+}

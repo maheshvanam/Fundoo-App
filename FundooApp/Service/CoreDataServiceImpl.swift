@@ -161,5 +161,21 @@ class CoreDataServiceImpl : DataService {
         }
         return records
     }
+    
+    func createLabel() -> Label {
+      return Label(context: context)
+    }
+    
+    func saveData() {
+        do {
+            try context.save()
+        }
+        catch CoreDataError.saveError {
+            fatalError(Constants.DATA_ERROR);
+        }
+        catch {
+            fatalError(Constants.FETCH_ERROR);
+        }
+    }
 }
 

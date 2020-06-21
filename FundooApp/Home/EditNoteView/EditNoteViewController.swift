@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditNoteVC: UIViewController {
+class EditNoteViewController: UIViewController {
     
     private let ediNoteTitle = "Edit Note"
     private let addNoteTitle = "Edit Note"
@@ -21,6 +21,7 @@ class EditNoteVC: UIViewController {
     @IBOutlet weak var heightAnchor: NSLayoutConstraint!
     var editNotePresenter: EditNoteDelegate!
     var note:Note!
+    var labels:[Label]!
     let colors = Constants.colors
     var currentColor:String!
     var slideUpVCpresenter = SlideUpVCPresenter()
@@ -34,7 +35,7 @@ class EditNoteVC: UIViewController {
         swipeGesture.direction = [.down]
         self.view.addGestureRecognizer(swipeGesture)
         editNotePresenter = EditNotePresenter(delegate: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(EditNoteVC.updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(EditNoteViewController.updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onSwipDown), name: NSNotification.Name(rawValue: Constants.CLOSE_SLIDE_UP_MENU), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNote), name: NSNotification.Name(rawValue: Constants.DELETE_NOTE_KEY), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addLabel), name: NSNotification.Name(rawValue: Constants.ADD_LABEL_KEY), object: nil)
@@ -52,6 +53,7 @@ class EditNoteVC: UIViewController {
         guard let childVC = board.instantiateViewController(withIdentifier: Constants.ADD_LABEL_VC) as? AddLabelViewController  else {
                return
              }
+        childVC.addLabelsDelegate = self
         navigationController?.pushViewController(childVC, animated: false)
     }
     
@@ -89,5 +91,12 @@ class EditNoteVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+    }
+}
+
+extension EditNoteViewController: AddLabelsDelegate {
+    
+    func addLabels(items: [SelectableItem]) {
+        print("$$$$$$$$$ ",items.map({$0.title}))
     }
 }

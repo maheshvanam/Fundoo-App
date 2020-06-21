@@ -39,6 +39,7 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isNewLabel {
+            
             originalDataSource.append(self.searchTerm)
             currentDataSource = originalDataSource
             isNewLabel = false

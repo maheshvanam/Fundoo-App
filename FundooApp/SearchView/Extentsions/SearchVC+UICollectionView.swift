@@ -71,7 +71,7 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == reslutCollectionView {
             let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-            guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteVC  else {
+            guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteViewController  else {
                    return
                  }
             childVC.note = currentDataSource[indexPath.item]

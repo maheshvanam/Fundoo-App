@@ -18,13 +18,17 @@ var isNewLabel:Bool = false
 class AddLabelViewController: UIViewController {
     
     @IBOutlet var labelTableView:UITableView!
+    var addLabelPresenter: AddLabelPresenterDelegate!
     var originalDataSource:[String] = []
     var currentDataSource:[String] = []
     var searchController:UISearchController!
     var searchTerm:String = ""
     var items = [SelectableItem]()
+    var addLabelsDelegate:AddLabelsDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addLabelPresenter = AddLabelPresenter(delegate: self)
         let nib = UINib(nibName: checkMarkNib, bundle: nil)
         labelTableView.register(nib, forCellReuseIdentifier: reusableCellId)
         let createNib = UINib(nibName: createLabelNib, bundle: nil)
@@ -65,6 +69,16 @@ class AddLabelViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         let selectedItems = items.filter{ $0.isSelected }
+        addLabelsDelegate!.addLabels(items: items)
         print( selectedItems.map({$0.title}))
     }
 }
+
+extension AddLabelViewController: AddLabelViewDelegate {
+    
+}
+
+protocol AddLabelsDelegate {
+    func addLabels(items: [SelectableItem])
+}
+

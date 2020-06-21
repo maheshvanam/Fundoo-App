@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class AddLabelPresenter: AddLabelPresenterDelegate {
+    
+    var addLabelView: AddLabelViewDelegate
+    
+    init(delegate: AddLabelViewDelegate) {
+        self.addLabelView = delegate
+    }
+    
+    func insertLabel(label: Label) {
+        
+    }
+}

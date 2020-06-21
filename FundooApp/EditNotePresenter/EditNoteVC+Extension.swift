@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension EditNoteVC: EditNotePresenterDelegate {
+extension EditNoteViewController: EditNotePresenterDelegate {
     
     func initializeView(){
         discriptionField.layer.borderWidth = 1

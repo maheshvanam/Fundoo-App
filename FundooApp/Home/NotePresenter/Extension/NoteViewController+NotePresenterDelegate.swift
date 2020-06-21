@@ -16,7 +16,7 @@ extension NoteViewController: NoteViewDelegate {
     }
     
     func setTableData(data: [Note]) {
-        self.models.append(contentsOf: data)
+        self.models = data
     }
     
     func addNotificationObservers() {
