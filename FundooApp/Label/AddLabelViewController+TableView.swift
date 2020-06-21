@@ -19,7 +19,9 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isNewLabel {
             let cell = labelTableView.dequeueReusableCell(withIdentifier: createLabelReusableCellId, for: indexPath) as! CreateLabelCell
-            cell.createLabelField.text = self.searchTerm
+            cell.createLabelField.text = "Create \"\(self.searchTerm)\""
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.gray.cgColor
             return cell
         }
         let cell = labelTableView.dequeueReusableCell(withIdentifier: reusableCellId, for: indexPath) as! CheckMarkCell
@@ -40,5 +42,11 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isNewLabel {
+            originalDataSource.append(self.searchTerm)
+            currentDataSource = originalDataSource
+            isNewLabel = false
+            labelTableView.reloadData()
+        }
     }
 }

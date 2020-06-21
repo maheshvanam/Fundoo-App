@@ -56,9 +56,9 @@ class AddLabelViewController: UIViewController {
             let filteredResults = currentDataSource.filter {
                 $0.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())
             }
-             self.searchTerm   = "Create \"\(searchTerm)\""
+             self.searchTerm   = searchTerm
              currentDataSource = filteredResults
-             isNewLabel        = currentDataSource.count == 0 ? true : false
+            isNewLabel        = ( currentDataSource.count == 0 ) && (searchTerm.trimmingCharacters(in: .whitespaces).count != 0) ? true : false
             labelTableView.reloadData()
         }
     }
