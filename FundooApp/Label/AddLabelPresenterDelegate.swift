@@ -10,4 +10,7 @@ import Foundation
 
 protocol AddLabelPresenterDelegate {
     func insertLabel(label:Label)
+    func getLabels()-> [Label]
+    func createLabel() -> Label
+     func save()
 }

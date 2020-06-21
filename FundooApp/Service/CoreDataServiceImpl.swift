@@ -16,6 +16,8 @@ private let ownerPredicate = "owner = %@"
 private let emailPredicate = "email = %@"
 
 class CoreDataServiceImpl : DataService {
+  
+    
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
@@ -163,7 +165,9 @@ class CoreDataServiceImpl : DataService {
     }
     
     func createLabel() -> Label {
-      return Label(context: context)
+        let label  = Label(context: context)
+        label.user = getCurrentUser()
+      return label
     }
     
     func saveData() {

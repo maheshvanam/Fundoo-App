@@ -19,6 +19,8 @@ class AddLabelViewController: UIViewController {
     
     @IBOutlet var labelTableView:UITableView!
     var addLabelPresenter: AddLabelPresenterDelegate!
+    
+    var origainalLabels: [Label] = []
     var originalDataSource:[String] = []
     var currentDataSource:[String] = []
     var searchController:UISearchController!
@@ -41,7 +43,12 @@ class AddLabelViewController: UIViewController {
         originalDataSource.append("1")
         originalDataSource.append("2")
         originalDataSource.append("3")
+        origainalLabels = self.getLabels()
         currentDataSource = originalDataSource
+    }
+    
+    func getLabels()-> [Label] {
+        return addLabelPresenter.getLabels()
     }
     
     func cofigureSearchController() {

@@ -12,11 +12,26 @@ class AddLabelPresenter: AddLabelPresenterDelegate {
     
     var addLabelView: AddLabelViewDelegate
     
+    let dbManager = DatabaseManager()
+    
     init(delegate: AddLabelViewDelegate) {
         self.addLabelView = delegate
     }
     
     func insertLabel(label: Label) {
         
+    }
+    
+    func getLabels() -> [Label] {
+        let user = dbManager.getCurrentUser()
+        return user.labels!.allObjects as! [Label]
+    }
+    
+    func createLabel() -> Label {
+        return dbManager.createLabel()
+    }
+    
+    func save() {
+        dbManager.saveData()
     }
 }
