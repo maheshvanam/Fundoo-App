@@ -11,6 +11,8 @@
 		8400AC9A249FDE3800B9A936 /* LabelPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */; };
 		8400AC9C249FDE7400B9A936 /* LabelViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */; };
 		8400AC9E249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */; };
+		8400ACA1249FF4D900B9A936 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9F249FF4D900B9A936 /* LabelCell.swift */; };
+		8400ACA2249FF4D900B9A936 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8400ACA0249FF4D900B9A936 /* LabelCell.xib */; };
 		840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840557732492BDD400115EE2 /* SlideUpMenuOption.swift */; };
 		840752512488F05A0075EF51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752502488F05A0075EF51 /* Constants.swift */; };
 		840752532489173E0075EF51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752522489173E0075EF51 /* ProfileViewController.swift */; };
@@ -132,6 +134,8 @@
 		8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPresenterDelegate.swift; sourceTree = "<group>"; };
 		8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewDelegate.swift; sourceTree = "<group>"; };
 		8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		8400AC9F249FF4D900B9A936 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		8400ACA0249FF4D900B9A936 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		840557732492BDD400115EE2 /* SlideUpMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpMenuOption.swift; sourceTree = "<group>"; };
 		840752502488F05A0075EF51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		840752522489173E0075EF51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -625,6 +629,8 @@
 				8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */,
 				8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */,
 				8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */,
+				8400AC9F249FF4D900B9A936 /* LabelCell.swift */,
+				8400ACA0249FF4D900B9A936 /* LabelCell.xib */,
 			);
 			path = CreateLabel;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */,
 				84F7A8EC249E54BE00480ACE /* CreateLabelCell.xib in Resources */,
 				8419D2A0247A519D00C4F93A /* Main.storyboard in Resources */,
+				8400ACA2249FF4D900B9A936 /* LabelCell.xib in Resources */,
 				842460AA249A7F6300B38CBA /* Features.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,6 +832,7 @@
 				8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */,
 				84FCC381249F948100FE92CA /* AddLabelPresenterDelegate.swift in Sources */,
 				8408F9C42496B85A009155ED /* SearchResultCell.swift in Sources */,
+				8400ACA1249FF4D900B9A936 /* LabelCell.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
 				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,
 				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,

@@ -15,10 +15,10 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: labelCellReusableId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! LabelCell
+        cell.labelTitle.text = labels[indexPath.row].title
         cell.layer.borderWidth = cellBorderWidth
         cell.layer.borderColor = UIColor.gray.cgColor
-        cell.textLabel?.text = labels[indexPath.row].title
         return cell
     }
     

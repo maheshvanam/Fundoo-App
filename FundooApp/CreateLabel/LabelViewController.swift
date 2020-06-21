@@ -8,17 +8,19 @@
 
 import UIKit
 
-let labelCellReusableId = "labelCell"
+let labelCellReusableId = "LabelCell"
 
 class LabelViewController: UIViewController {
     
     var labelPresenter: LabelPresenterDelegate!
     var labels:[Label] = []
-    
+    @IBOutlet var tableview:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.labelPresenter = LabelPresenter(delegate: self)
         labels = self.labelPresenter.getLabels()
+        let nib = UINib(nibName: labelCellReusableId, bundle: nil)
+        tableview.register(nib, forCellReuseIdentifier: labelCellReusableId)
     }
 }
 
