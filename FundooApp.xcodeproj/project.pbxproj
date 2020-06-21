@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8400AC98249FDE1500B9A936 /* CreateLabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC97249FDE1500B9A936 /* CreateLabelPresenter.swift */; };
+		8400AC9A249FDE3800B9A936 /* CreateLabelPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC99249FDE3800B9A936 /* CreateLabelPresenterDelegate.swift */; };
+		8400AC9C249FDE7400B9A936 /* CreateLabelViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9B249FDE7400B9A936 /* CreateLabelViewDelegate.swift */; };
 		840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840557732492BDD400115EE2 /* SlideUpMenuOption.swift */; };
 		840752512488F05A0075EF51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752502488F05A0075EF51 /* Constants.swift */; };
 		840752532489173E0075EF51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752522489173E0075EF51 /* ProfileViewController.swift */; };
@@ -124,6 +127,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8400AC97249FDE1500B9A936 /* CreateLabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelPresenter.swift; sourceTree = "<group>"; };
+		8400AC99249FDE3800B9A936 /* CreateLabelPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelPresenterDelegate.swift; sourceTree = "<group>"; };
+		8400AC9B249FDE7400B9A936 /* CreateLabelViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelViewDelegate.swift; sourceTree = "<group>"; };
 		840557732492BDD400115EE2 /* SlideUpMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpMenuOption.swift; sourceTree = "<group>"; };
 		840752502488F05A0075EF51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		840752522489173E0075EF51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -613,6 +619,9 @@
 			isa = PBXGroup;
 			children = (
 				84FCC36F249F8D8300FE92CA /* CreateLabelViewController.swift */,
+				8400AC97249FDE1500B9A936 /* CreateLabelPresenter.swift */,
+				8400AC99249FDE3800B9A936 /* CreateLabelPresenterDelegate.swift */,
+				8400AC9B249FDE7400B9A936 /* CreateLabelViewDelegate.swift */,
 			);
 			path = CreateLabel;
 			sourceTree = "<group>";
@@ -736,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FCC37A249F8FF800FE92CA /* Label+CoreDataClass.swift in Sources */,
+				8400AC98249FDE1500B9A936 /* CreateLabelPresenter.swift in Sources */,
 				843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */,
 				84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */,
 				840752512488F05A0075EF51 /* Constants.swift in Sources */,
@@ -754,6 +764,7 @@
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
 				84FCC370249F8D8300FE92CA /* CreateLabelViewController.swift in Sources */,
+				8400AC9A249FDE3800B9A936 /* CreateLabelPresenterDelegate.swift in Sources */,
 				841BBAE7248042360080C591 /* Helper.swift in Sources */,
 				84435F3A24877FC00066586E /* NoteViewController+Extension.swift in Sources */,
 				8408F9B22496967F009155ED /* SearchVCPresenterImpl.swift in Sources */,
@@ -819,6 +830,7 @@
 				842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */,
 				84078A712490040D0000D649 /* SlideUpVC.swift in Sources */,
 				8408F9BD2496ABFC009155ED /* SearchVC+UICollectionView.swift in Sources */,
+				8400AC9C249FDE7400B9A936 /* CreateLabelViewDelegate.swift in Sources */,
 				840752532489173E0075EF51 /* ProfileViewController.swift in Sources */,
 				846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */,
 				84423A52248B86A100D212DC /* NoteCell.swift in Sources */,

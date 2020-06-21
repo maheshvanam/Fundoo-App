@@ -22,6 +22,7 @@ class SideMenuViewController: UITableViewController {
                 postNotification(key: Constants.NAVIGATE_TO_NOTE)
             case .reminder:
                 postNotification(key: Constants.NAVIGATE_TO_REMINDER)
+            case .newLabel: postNotification(key:       Constants.NAVIGATE_TO_LABELS)
             case .signOut:
                 UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
                 UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)

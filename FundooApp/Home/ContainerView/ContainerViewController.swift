@@ -57,6 +57,7 @@ class ContainerViewController: UIViewController {
     
     func addNotificationCenterObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(switchToNotes), name: Notification.Name(Constants.NAVIGATE_TO_NOTE), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(switchToLabels), name: Notification.Name(Constants.NAVIGATE_TO_LABELS), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchToReminders), name: Notification.Name(Constants.NAVIGATE_TO_REMINDER), object: nil)
        }
@@ -108,6 +109,19 @@ class ContainerViewController: UIViewController {
           return
         }
         navigationController?.pushViewController(childVC, animated: false)
+    }
+    
+    @objc func switchToLabels() {
+        let board = UIStoryboard(name: Constants.FEATURES_STORYBOARD, bundle: nil)
+        guard let childVC =
+            board.instantiateViewController(withIdentifier: Constants.LABELS_VC) as? CreateLabelViewController  else {
+                return
+        }
+        addChild(childVC)
+        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        childVC.view.frame = container.bounds
+        container.addSubview(childVC.view)
+        childVC.didMove(toParent: self)
     }
 }
 

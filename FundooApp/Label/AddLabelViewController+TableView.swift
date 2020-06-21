@@ -9,6 +9,7 @@
 import UIKit
 
 extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isNewLabel {
             return 1

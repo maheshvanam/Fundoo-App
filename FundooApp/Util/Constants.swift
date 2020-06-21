@@ -15,6 +15,7 @@ enum Constants {
     static let UPDATE_NAV = "UPDATE_NAV"
     static let SET_MENU = "SET_MENU"
     static let EMAIL_KEY = "EMAIL"
+    static let NAVIGATE_TO_LABELS = "create labels"
     static let DELETE_NOTE_KEY = "delete note"
     static let CLOSE_SLIDE_UP_MENU = "close slideUp"
     static let ADD_LABEL_KEY = "labelKey"
@@ -26,6 +27,7 @@ enum Constants {
     static let RELOAD_CELLS = "Reload cells"
     static let UPDATE_COLOR = "update color"
     static let OPTIONS_CELL_ID = "OptionsCell"
+    
     static let CollectionView_TabelCell_ID = "CollectionViewTabelCell"
     static let COLOR_KEY = "color"
     static let NOTES_TITLE = "Notes"
@@ -34,6 +36,7 @@ enum Constants {
     static let MAIN_STORYBOARD = "Main"
     static let EDIT_NOTE_VC = "EditNoteVC"
     static let ADD_LABEL_VC = "AddLabelVC"
+    static let LABELS_VC = "labels"
     static let REMINDER_VC = "ReminderViewController"
     static let USER_NOT_FOUND = "user not found"
     static let FETCH_ERROR = "fetching error"
