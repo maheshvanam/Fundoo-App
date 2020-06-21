@@ -59,6 +59,7 @@
 		841CC90924940DF4001C8B9D /* NoteVC+DragDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */; };
 		841CC90B24940E16001C8B9D /* NoteVC+DropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */; };
 		841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CEB9D248F705A004E76D4 /* CoreDataError.swift */; };
+		841E66EC249F4DF1002B5DD2 /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
 		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
 		842460AA249A7F6300B38CBA /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842460A8249A7F6200B38CBA /* Features.storyboard */; };
@@ -171,6 +172,7 @@
 		841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+DragDelegate.swift"; sourceTree = "<group>"; };
 		841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+DropDelegate.swift"; sourceTree = "<group>"; };
 		841CEB9D248F705A004E76D4 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		842460A9249A7F6300B38CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Features.storyboard; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */,
 				84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */,
 				84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */,
+				841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				84423A52248B86A100D212DC /* NoteCell.swift in Sources */,
 				84078A7B249019040000D649 /* ColorCollectionView.swift in Sources */,
 				841CC90B24940E16001C8B9D /* NoteVC+DropDelegate.swift in Sources */,
+				841E66EC249F4DF1002B5DD2 /* SelectableItem.swift in Sources */,
 				843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */,
 				84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */,
 				84A3C9E12480F04C003393EC /* DatabaseManager.swift in Sources */,

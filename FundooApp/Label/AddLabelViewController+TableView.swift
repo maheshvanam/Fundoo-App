@@ -13,7 +13,7 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
         if isNewLabel {
             return 1
         }
-        items = currentDataSource.map { SelectionItem(item: $0) }
+        items = currentDataSource.map { SelectableItem(item: $0) }
         return currentDataSource.count
     }
     
@@ -56,6 +56,4 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
             }
         }
     }
-    
-    
 }

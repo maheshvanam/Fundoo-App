@@ -22,7 +22,7 @@ class AddLabelViewController: UIViewController {
     var currentDataSource:[String] = []
     var searchController:UISearchController!
     var searchTerm:String = ""
-    var items = [SelectionItem]()
+    var items = [SelectableItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: checkMarkNib, bundle: nil)
