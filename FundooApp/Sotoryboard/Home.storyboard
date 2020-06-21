@@ -73,6 +73,9 @@
                                 <items>
                                     <barButtonItem title="Item" image="plus.square" catalog="system" id="X5m-PQ-35Q">
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="onPlusIconPressed:" destination="toQ-0B-uDp" id="gtI-Iq-hx6"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                                 <connections>

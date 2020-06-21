@@ -35,6 +35,7 @@ class EditNoteVC: UIViewController {
         self.view.addGestureRecognizer(swipeGesture)
         editNotePresenter = EditNotePresenter(delegate: self)
         NotificationCenter.default.addObserver(self, selector: #selector(EditNoteVC.updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onSwipDown), name: NSNotification.Name(rawValue: Constants.CLOSE_SLIDE_UP_MENU), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNote), name: NSNotification.Name(rawValue: Constants.DELETE_NOTE_KEY), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addLabel), name: NSNotification.Name(rawValue: Constants.ADD_LABEL_KEY), object: nil)
         configureBackButton()
@@ -84,6 +85,7 @@ class EditNoteVC: UIViewController {
     }
  
     @IBAction func onPlusIconPressed(_ sender: Any) {
+        heightAnchor.constant = slideUpMenuShowingConstant
     }
     
     override func viewWillDisappear(_ animated: Bool) {

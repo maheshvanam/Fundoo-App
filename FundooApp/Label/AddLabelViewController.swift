@@ -66,28 +66,5 @@ class AddLabelViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         let selectedItems = items.filter{ $0.isSelected }
         print( selectedItems.map({$0.title}))
-        
-    }
-}
-
-extension AddLabelViewController :UISearchResultsUpdating,UISearchBarDelegate {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
-            filterCurrentDataSource(searchTerm: searchText)
-        }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchController.isActive = false
-        if let searchText = searchBar.text {
-            filterCurrentDataSource(searchTerm: searchText)
-        }
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        currentDataSource = originalDataSource
-        isNewLabel = false
-        labelTableView.reloadData()
     }
 }

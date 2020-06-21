@@ -16,6 +16,7 @@ enum Constants {
     static let SET_MENU = "SET_MENU"
     static let EMAIL_KEY = "EMAIL"
     static let DELETE_NOTE_KEY = "delete note"
+    static let CLOSE_SLIDE_UP_MENU = "close slideUp"
     static let ADD_LABEL_KEY = "labelKey"
     static let IS_LOGGED_IN_KEY = "IS_LOGGED_IN"
     static let NAVIGATE_TO_NOTE = "HOME"
