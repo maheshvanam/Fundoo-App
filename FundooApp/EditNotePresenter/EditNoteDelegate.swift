@@ -9,4 +9,5 @@
 import Foundation
 protocol EditNoteDelegate {
     func saveNote()
+    func addNoteToLabels(note:Note,labels: [Label])
 }

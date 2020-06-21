@@ -13,8 +13,8 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
         if isNewLabel {
             return 1
         }
-        items = currentDataSource.map { SelectableItem(item: $0) }
-        return currentDataSource.count
+        items = currentLabels.map { SelectableItem(item: $0) }
+        return currentLabels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,7 +26,7 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
             return cell
         }
         let cell = labelTableView.dequeueReusableCell(withIdentifier: reusableCellId, for: indexPath) as! CheckMarkCell
-        cell.labelTitle.text = currentDataSource[indexPath.row]
+        cell.labelTitle.text = currentLabels[indexPath.row].title
         cell.selectionStyle = .blue
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.gray.cgColor
@@ -43,8 +43,7 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
             label.title = self.searchTerm
             addLabelPresenter.save()
             origainalLabels.append(label)
-            originalDataSource.append(self.searchTerm)
-            currentDataSource = originalDataSource
+            currentLabels = origainalLabels
             isNewLabel = false
             labelTableView.reloadData()
         }

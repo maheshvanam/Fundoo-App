@@ -21,8 +21,7 @@ class AddLabelViewController: UIViewController {
     var addLabelPresenter: AddLabelPresenterDelegate!
     
     var origainalLabels: [Label] = []
-    var originalDataSource:[String] = []
-    var currentDataSource:[String] = []
+    var currentLabels:[Label] = []
     var searchController:UISearchController!
     var searchTerm:String = ""
     var items = [SelectableItem]()
@@ -40,11 +39,8 @@ class AddLabelViewController: UIViewController {
         labelTableView.delegate = self
         labelTableView.dataSource = self
         labelTableView.separatorStyle = .none
-        originalDataSource.append("1")
-        originalDataSource.append("2")
-        originalDataSource.append("3")
         origainalLabels = self.getLabels()
-        currentDataSource = originalDataSource
+        currentLabels = origainalLabels
     }
     
     func getLabels()-> [Label] {
@@ -63,21 +59,21 @@ class AddLabelViewController: UIViewController {
     
     func filterCurrentDataSource(searchTerm: String) {
         if searchTerm.count > 0 {
-            currentDataSource   = originalDataSource
-            let filteredResults = currentDataSource.filter {
-                $0.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())
+            currentLabels   = origainalLabels
+            
+            let filteredResults = currentLabels.filter {
+                $0.title!.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())
             }
              self.searchTerm   = searchTerm
-             currentDataSource = filteredResults
-            isNewLabel        = ( currentDataSource.count == 0 ) && (searchTerm.trimmingCharacters(in: .whitespaces).count != 0) ? true : false
+             currentLabels = filteredResults
+            isNewLabel        = ( currentLabels.count == 0 ) && (searchTerm.trimmingCharacters(in: .whitespaces).count != 0) ? true : false
             labelTableView.reloadData()
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         let selectedItems = items.filter{ $0.isSelected }
-        addLabelsDelegate!.addLabels(items: items)
-        print( selectedItems.map({$0.title}))
+        addLabelsDelegate!.addLabels(items: selectedItems)
     }
 }
 

@@ -21,7 +21,7 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var heightAnchor: NSLayoutConstraint!
     var editNotePresenter: EditNoteDelegate!
     var note:Note!
-    var labels:[Label]!
+    var labels:[Label] = []
     let colors = Constants.colors
     var currentColor:String!
     var slideUpVCpresenter = SlideUpVCPresenter()
@@ -48,6 +48,13 @@ class EditNoteViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
     
+    func addLabelsToNote(){
+        if (labels.count != 0) {
+            editNotePresenter.addNoteToLabels(note:note,labels: labels)
+            note.labels?.adding(labels)
+        }
+    }
+    
     @objc func addLabel() {
         let board = UIStoryboard(name: Constants.FEATURES_STORYBOARD, bundle: nil)
         guard let childVC = board.instantiateViewController(withIdentifier: Constants.ADD_LABEL_VC) as? AddLabelViewController  else {
@@ -58,6 +65,7 @@ class EditNoteViewController: UIViewController {
     }
     
     @objc func onBackPressed(){
+        self.addLabelsToNote()
         self.editNotePresenter.saveNote()
         NotificationCenter.default.removeObserver(self)
         noteIsNew = nil
@@ -97,6 +105,6 @@ class EditNoteViewController: UIViewController {
 extension EditNoteViewController: AddLabelsDelegate {
     
     func addLabels(items: [SelectableItem]) {
-        print("$$$$$$$$$ ",items.map({$0.title}))
+        labels = items.map({$0.item})
     }
 }

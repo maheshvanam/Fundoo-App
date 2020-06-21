@@ -10,25 +10,25 @@ import Foundation
 class EditNotePresenterImpl: EditNoteDelegate {
     
     var editNoteView: EditNotePresenterDelegate
+    let dbManager = DatabaseManager()
     
     init(delegate: EditNotePresenterDelegate) {
         self.editNoteView = delegate
     }
           
     func saveNote() {
-        let coreData = DatabaseManager()
         var note = editNoteView.getNote()
         if editNoteView.fieldsAreEmpty() {
             if editNoteView.isNewNote() {
-                note = coreData.createNote()
+                note = dbManager.createNote()
                 note!.creationTime = Date()
                 note!.title = editNoteView.getTitleText()
                 note!.color = editNoteView.getCurrentColor()
                 note!.note = editNoteView.getDiscriptionText()
-                let user = coreData.getCurrentUser()
+                let user = dbManager.getCurrentUser()
                 let count = (user.notes  == nil) ? 0 : user.notes?.count
                 note!.position =  Int64(count! + 1)
-                coreData.insertNote(note: note!)
+                dbManager.insertNote(note: note!)
                 editNoteView.postReloadCellsNotification()
                     return
             }
@@ -39,7 +39,14 @@ class EditNotePresenterImpl: EditNoteDelegate {
             return
         }
         note!.editTime = Date()
-        coreData.insertNote(note: note!)
+        dbManager.insertNote(note: note!)
         editNoteView.postReloadCellsNotification()
+    }
+    
+    func addNoteToLabels(note:Note,labels: [Label]) {
+        for index in 0 ..< labels.count {
+            labels[index].notes?.adding(note)
+            dbManager.saveData()
+        }
     }
 }

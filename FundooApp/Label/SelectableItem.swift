@@ -9,12 +9,12 @@
 import Foundation
 
 class SelectableItem {
-   private var item: String
+   public var item: Label
    var isSelected = false
    var title: String {
-      return item
+    return item.title!
    }
-   init(item: String) {
-      self.item = item
+   init(item: Label) {
+    self.item = item
    }
 }

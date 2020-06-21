@@ -24,7 +24,7 @@ extension AddLabelViewController :UISearchResultsUpdating,UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        currentDataSource = originalDataSource
+        currentLabels = origainalLabels
         isNewLabel = false
         labelTableView.reloadData()
     }
