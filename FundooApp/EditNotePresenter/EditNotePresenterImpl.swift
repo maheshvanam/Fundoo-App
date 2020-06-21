@@ -44,9 +44,11 @@ class EditNotePresenterImpl: EditNoteDelegate {
     }
     
     func addNoteToLabels(note:Note,labels: [Label]) {
+        let user = dbManager.getCurrentUser()
         for index in 0 ..< labels.count {
             labels[index].notes?.adding(note)
-            dbManager.saveData()
+             user.addToLabels(labels[index])
         }
+        dbManager.saveData()
     }
 }

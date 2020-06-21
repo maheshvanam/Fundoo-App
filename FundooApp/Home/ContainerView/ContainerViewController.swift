@@ -114,7 +114,7 @@ class ContainerViewController: UIViewController {
     @objc func switchToLabels() {
         let board = UIStoryboard(name: Constants.FEATURES_STORYBOARD, bundle: nil)
         guard let childVC =
-            board.instantiateViewController(withIdentifier: Constants.LABELS_VC) as? CreateLabelViewController  else {
+            board.instantiateViewController(withIdentifier: Constants.LABELS_VC) as? LabelViewController  else {
                 return
         }
         addChild(childVC)

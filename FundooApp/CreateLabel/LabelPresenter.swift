@@ -8,13 +8,13 @@
 
 import Foundation
 
-class CreateLabelPresenter: CreateLabelPresenterDelegate {
+class LabelPresenter: LabelPresenterDelegate {
     
-    var createLabelView: CreateLabelViewDelegate!
+    var labelView: LabelViewDelegate!
     let dbManager = DatabaseManager()
     
-    init(delegate: CreateLabelViewDelegate) {
-        self.createLabelView = delegate
+    init(delegate: LabelViewDelegate) {
+        self.labelView = delegate
     }
     
     func getLabels() -> [Label] {

@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol  CreateLabelPresenterDelegate {
+protocol  LabelPresenterDelegate {
     func getLabels()-> [Label]
 }
