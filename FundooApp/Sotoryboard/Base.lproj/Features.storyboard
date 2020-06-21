@@ -38,6 +38,21 @@
             </objects>
             <point key="canvasLocation" x="923.1884057971015" y="-96.428571428571431"/>
         </scene>
+        <!--Create Label-->
+        <scene sceneID="L5E-Sh-cam">
+            <objects>
+                <viewController storyboardIdentifier="CreateLabelViewController" title="Create Label" id="O57-nR-hpX" customClass="CreateLabelViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7zC-5G-44j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="48f-06-8BP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mai-Ko-L2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="-96"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="CLw-Ld-tI6">
             <objects>
