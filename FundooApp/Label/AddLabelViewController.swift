@@ -22,7 +22,7 @@ class AddLabelViewController: UIViewController {
     var currentDataSource:[String] = []
     var searchController:UISearchController!
     var searchTerm:String = ""
-    
+    var items = [SelectionItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: checkMarkNib, bundle: nil)
@@ -61,6 +61,12 @@ class AddLabelViewController: UIViewController {
             isNewLabel        = ( currentDataSource.count == 0 ) && (searchTerm.trimmingCharacters(in: .whitespaces).count != 0) ? true : false
             labelTableView.reloadData()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let selectedItems = items.filter{ $0.isSelected }
+        print( selectedItems.map({$0.title}))
+        
     }
 }
 

@@ -13,6 +13,7 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
         if isNewLabel {
             return 1
         }
+        items = currentDataSource.map { SelectionItem(item: $0) }
         return currentDataSource.count
     }
     
@@ -26,15 +27,10 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
         }
         let cell = labelTableView.dequeueReusableCell(withIdentifier: reusableCellId, for: indexPath) as! CheckMarkCell
         cell.labelTitle.text = currentDataSource[indexPath.row]
-        cell.selectionStyle = .none
-        cell.checkMarkButton.addTarget(self, action: #selector(onCheckMarkClicked(sender:)), for: .touchUpInside)
+        cell.selectionStyle = .blue
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.gray.cgColor
         return cell
-    }
-    
-    @objc func onCheckMarkClicked(sender:UIButton) {
-        sender.isSelected = sender.isSelected ? false : true
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -48,5 +44,18 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
             isNewLabel = false
             labelTableView.reloadData()
         }
+        else{
+            let cell = tableView.cellForRow(at: indexPath) as! CheckMarkCell
+            cell.checkMarkButton.isSelected = !cell.checkMarkButton.isSelected
+            if cell.checkMarkButton.isSelected {
+                self.items[indexPath.row].isSelected = true
+            }
+            else
+            {
+                self.items[indexPath.row].isSelected = false
+            }
+        }
     }
+    
+    
 }

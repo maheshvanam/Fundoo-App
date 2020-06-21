@@ -20,3 +20,13 @@ class CheckMarkCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 }
+class SelectionItem {
+   private var item: String
+   var isSelected = false
+   var title: String {
+      return item
+   }
+   init(item: String) {
+      self.item = item
+   }
+}
