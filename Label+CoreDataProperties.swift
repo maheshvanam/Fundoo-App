@@ -1,8 +1,8 @@
 //
-//  User+CoreDataProperties.swift
+//  Label+CoreDataProperties.swift
 //  FundooApp
 //
-//  Created by admin on 04/06/20.
+//  Created by admin on 21/06/20.
 //  Copyright © 2020 admin. All rights reserved.
 //
 //
@@ -11,22 +11,20 @@ import Foundation
 import CoreData
 
 
-extension User {
+extension Label {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<User> {
-        return NSFetchRequest<User>(entityName: "User")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Label> {
+        return NSFetchRequest<Label>(entityName: "Label")
     }
 
-    @NSManaged public var email: String?
-    @NSManaged public var firstName: String?
-    @NSManaged public var lastName: String?
-    @NSManaged public var password: String?
+    @NSManaged public var title: String?
     @NSManaged public var notes: NSSet?
+    @NSManaged public var user: User?
 
 }
 
 // MARK: Generated accessors for notes
-extension User {
+extension Label {
 
     @objc(addNotesObject:)
     @NSManaged public func addToNotes(_ value: Note)
