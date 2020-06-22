@@ -7,14 +7,23 @@
 //
 
 import UIKit
-
+let addLabelCellReusableId = "AddLabelCell"
 extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return labels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: addLabelCellReusableId, for: indexPath) as! AddLabelCell
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: labelCellReusableId, for: indexPath) as! LabelCell
         cell.labelTitle.text = labels[indexPath.row].title
         cell.labelDelete.tag = indexPath.row
@@ -37,7 +46,7 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
     @objc func onDeletePressed(sender:UIButton){
         let index = sender.tag
         let label = labels[index]
-        labelPresenter.deleteNote(label: label)
+        labelPresenter.deleteLabel(label: label)
         reloadDataSource()
         tableview.reloadData()
     }

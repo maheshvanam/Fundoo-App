@@ -121,6 +121,8 @@
 		84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */; };
 		84FD41B424A136BD00ACADC1 /* SideMenuLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD41B224A136BD00ACADC1 /* SideMenuLabelCell.swift */; };
 		84FD41B524A136BD00ACADC1 /* SideMenuLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FD41B324A136BD00ACADC1 /* SideMenuLabelCell.xib */; };
+		84FD41B824A1494A00ACADC1 /* AddLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */; };
+		84FD41B924A1494A00ACADC1 /* AddLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +254,8 @@
 		84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelViewDelegate.swift; sourceTree = "<group>"; };
 		84FD41B224A136BD00ACADC1 /* SideMenuLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuLabelCell.swift; sourceTree = "<group>"; };
 		84FD41B324A136BD00ACADC1 /* SideMenuLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuLabelCell.xib; sourceTree = "<group>"; };
+		84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelCell.swift; sourceTree = "<group>"; };
+		84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLabelCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +430,7 @@
 		8419D297247A519D00C4F93A /* FundooApp */ = {
 			isa = PBXGroup;
 			children = (
+				84FD41BA24A14AB300ACADC1 /* AddLabel */,
 				84FCC371249F8FC600FE92CA /* CoreDataModels */,
 				84FCC36E249F8D3200FE92CA /* CreateLabel */,
 				842460AB249A90EB00B38CBA /* Label */,
@@ -636,6 +641,8 @@
 		84FCC36E249F8D3200FE92CA /* CreateLabel */ = {
 			isa = PBXGroup;
 			children = (
+				84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */,
+				84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */,
 				84FCC36F249F8D8300FE92CA /* LabelViewController.swift */,
 				8400AC97249FDE1500B9A936 /* LabelPresenter.swift */,
 				8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */,
@@ -658,6 +665,13 @@
 				84FCC377249F8FF800FE92CA /* User+CoreDataProperties.swift */,
 			);
 			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		84FD41BA24A14AB300ACADC1 /* AddLabel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -748,6 +762,7 @@
 				8419D2A5247A519E00C4F93A /* Assets.xcassets in Resources */,
 				842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */,
 				84F7A8EC249E54BE00480ACE /* CreateLabelCell.xib in Resources */,
+				84FD41B924A1494A00ACADC1 /* AddLabelCell.xib in Resources */,
 				8419D2A0247A519D00C4F93A /* Main.storyboard in Resources */,
 				8400ACA2249FF4D900B9A936 /* LabelCell.xib in Resources */,
 				842460AA249A7F6300B38CBA /* Features.storyboard in Resources */,
@@ -840,6 +855,7 @@
 				84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */,
 				8408F9AE24969026009155ED /* SearchVC.swift in Sources */,
 				8408F9BB2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift in Sources */,
+				84FD41B824A1494A00ACADC1 /* AddLabelCell.swift in Sources */,
 				842CBCB02493E9740032CBB6 /* Note+NSItemProviderWriting.swift in Sources */,
 				8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */,
 				84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */,

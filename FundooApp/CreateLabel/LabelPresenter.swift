@@ -22,7 +22,7 @@ class LabelPresenter: LabelPresenterDelegate {
         return user.labels!.allObjects as! [Label]
     }
     
-    func deleteNote(label:Label) {
+    func deleteLabel(label:Label) {
         let user = dbManager.getCurrentUser()
         user.removeFromLabels(label)
         dbManager.saveData()

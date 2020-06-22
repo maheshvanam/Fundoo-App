@@ -19,6 +19,8 @@ class LabelViewController: UIViewController {
         super.viewDidLoad()
         self.labelPresenter = LabelPresenter(delegate: self)
         reloadDataSource()
+        let addLabelNib = UINib(nibName: addLabelCellReusableId, bundle: nil)
+        tableview.register(addLabelNib, forCellReuseIdentifier: addLabelCellReusableId)
         let nib = UINib(nibName: labelCellReusableId, bundle: nil)
         tableview.register(nib, forCellReuseIdentifier: labelCellReusableId)
     }

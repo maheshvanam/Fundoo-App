@@ -41,7 +41,7 @@ enum ThirdSectionOption:Int ,CustomStringConvertible,CaseIterable,SideMenuDelega
     
     var description: String {
         switch self {
-            case .newLabel: return "Labels"
+            case .newLabel: return "Create New Label"
             case .archive: return "Archive"
             case .trash: return "Trash"
             case .signOut: return "SignOut"
@@ -51,7 +51,7 @@ enum ThirdSectionOption:Int ,CustomStringConvertible,CaseIterable,SideMenuDelega
     var image: UIImage {
         switch self {
             case .newLabel:
-            return UIImage(systemName: "tag.fill") ?? UIImage()
+            return UIImage(systemName: "plus") ?? UIImage()
             case .archive:
                 return UIImage(systemName: "archivebox.fill") ?? UIImage()
             case .trash:
