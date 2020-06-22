@@ -22,5 +22,10 @@ class Helper {
         }
         return attributedLogo
     }
+    
+    static func setCellBorder(cell: UITableViewCell){
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderWidth = 0.5
+    }
 
 }

@@ -8,23 +8,19 @@
 
 import UIKit
 
-enum SideMenuOption:Int ,CustomStringConvertible {
+protocol SideMenuDelegate {
+    var description:String { get  }
+    var image:UIImage { get  }
+}
+
+enum FirstSectionOption:Int ,CustomStringConvertible,CaseIterable,SideMenuDelegate {
     case notes
     case reminder
-    case newLabel
-    case archive
-    case trash
-    case signOut
-    
     
     var description: String {
         switch self {
                case .notes: return "Notes"
                case .reminder: return "Reminder"
-               case .newLabel: return "Labels"
-               case .archive: return "Archive"
-               case .trash: return "Trash"
-               case .signOut: return "SignOut"
            }
     }
        
@@ -33,15 +29,36 @@ enum SideMenuOption:Int ,CustomStringConvertible {
         case .notes:
             return UIImage(systemName: "doc.fill") ?? UIImage()
         case .reminder:
-            return UIImage(systemName: "bell.fill") ?? UIImage()
-        case .newLabel:
+            return UIImage(systemName: "bell.fill") ?? UIImage()        }
+    }
+}
+
+enum ThirdSectionOption:Int ,CustomStringConvertible,CaseIterable,SideMenuDelegate {
+    case newLabel
+    case archive
+    case trash
+    case signOut
+    
+    var description: String {
+        switch self {
+            case .newLabel: return "Labels"
+            case .archive: return "Archive"
+            case .trash: return "Trash"
+            case .signOut: return "SignOut"
+        }
+    }
+       
+    var image: UIImage {
+        switch self {
+            case .newLabel:
             return UIImage(systemName: "tag.fill") ?? UIImage()
-        case .archive:
-            return UIImage(systemName: "archivebox.fill") ?? UIImage()
-        case .trash:
-            return UIImage(systemName: "trash.fill") ?? UIImage()
-        case .signOut:
-            return UIImage(systemName: "arrow.turn.down.left") ?? UIImage()
+            case .archive:
+                return UIImage(systemName: "archivebox.fill") ?? UIImage()
+            case .trash:
+                return UIImage(systemName: "trash.fill") ?? UIImage()
+            case .signOut:
+                return UIImage(systemName: "arrow.turn.down.left") ?? UIImage()
         }
     }
 }
+
