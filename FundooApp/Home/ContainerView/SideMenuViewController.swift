@@ -8,11 +8,29 @@
 
 import UIKit
 
+let numberOfRowsInSideMenu  = 6
+let sideMenuCellNib         = "SideMenuCell"
+let sideMenuCellReusabaleId = "SideMenuCell"
 class SideMenuViewController: UITableViewController {
    
     override func viewDidLoad() {
         tableView.backgroundColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
+        let nib = UINib(nibName: sideMenuCellNib, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: sideMenuCellReusabaleId)
         }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberOfRowsInSideMenu
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier:sideMenuCellReusabaleId, for: indexPath) as! SideMenuCell
+        let menuOption = SideMenuOption(rawValue: indexPath.row)
+        cell.backgroundColor =  #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
+        cell.menuImage.image = menuOption?.image
+        cell.titleLabel.text = menuOption?.description
+        return cell
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         postNotification(key: Constants.TOGGLE_MENU)
@@ -32,7 +50,7 @@ class SideMenuViewController: UITableViewController {
         }
     }
     
-    func postNotification(key: String){
+    func postNotification(key: String) {
         NotificationCenter.default.post(name: Notification.Name(key), object: nil)
     }
 }

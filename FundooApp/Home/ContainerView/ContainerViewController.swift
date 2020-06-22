@@ -117,11 +117,7 @@ class ContainerViewController: UIViewController {
             board.instantiateViewController(withIdentifier: Constants.LABELS_VC) as? LabelViewController  else {
                 return
         }
-        addChild(childVC)
-        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        childVC.view.frame = container.bounds
-        container.addSubview(childVC.view)
-        childVC.didMove(toParent: self)
+        navigationController?.pushViewController(childVC, animated: false)
     }
 }
 
