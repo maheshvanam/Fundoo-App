@@ -18,9 +18,13 @@ class LabelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.labelPresenter = LabelPresenter(delegate: self)
-        labels = self.labelPresenter.getLabels()
+        reloadDataSource()
         let nib = UINib(nibName: labelCellReusableId, bundle: nil)
         tableview.register(nib, forCellReuseIdentifier: labelCellReusableId)
+    }
+    
+    func reloadDataSource(){
+        labels = self.labelPresenter.getLabels()
     }
 }
 

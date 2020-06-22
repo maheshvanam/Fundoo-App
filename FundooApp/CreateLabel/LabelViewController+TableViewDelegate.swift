@@ -15,8 +15,10 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! LabelCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: labelCellReusableId, for: indexPath) as! LabelCell
         cell.labelTitle.text = labels[indexPath.row].title
+        cell.labelDelete.tag = indexPath.row
+        cell.labelDelete.addTarget(self, action: #selector(onDeletePressed(sender: )), for: .touchUpInside)
         cell.layer.borderWidth = cellBorderWidth
         cell.layer.borderColor = UIColor.gray.cgColor
         return cell
@@ -30,5 +32,13 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
         }
         childVC.dataSource = notes
         navigationController?.pushViewController(childVC, animated: true)
+    }
+    
+    @objc func onDeletePressed(sender:UIButton){
+        let index = sender.tag
+        let label = labels[index]
+        labelPresenter.deleteNote(label: label)
+        reloadDataSource()
+        tableview.reloadData()
     }
 }

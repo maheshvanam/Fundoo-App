@@ -10,4 +10,5 @@ import Foundation
 
 protocol  LabelPresenterDelegate {
     func getLabels()-> [Label]
+    func deleteNote(label:Label)
 }
