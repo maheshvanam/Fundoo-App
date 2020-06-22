@@ -9,8 +9,7 @@
 import UIKit
 
 class AddLabelCell: UITableViewCell {
-    
-    @IBOut var labelTitleField:UITextField!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

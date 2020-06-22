@@ -35,6 +35,7 @@ enum Constants {
     static let FEATURES_STORYBOARD = "Features"
     static let MAIN_STORYBOARD = "Main"
     static let EDIT_NOTE_VC = "EditNoteVC"
+    static let UPDATE_LABEL_VC = "UpdateLabelViewController"
     static let ADD_LABEL_VC = "AddLabelVC"
     static let LABELS_VC = "labels"
     static let REMINDER_VC = "ReminderViewController"

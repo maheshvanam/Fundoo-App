@@ -16,35 +16,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgS-Dg-O9b">
-                        <rect key="frame" x="274" y="10" width="30" height="30"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nD7-su-Ffl">
+                        <rect key="frame" x="16" y="12" width="30" height="26"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="Esm-g3-R89"/>
-                            <constraint firstAttribute="height" constant="30" id="Sh6-DW-Be3"/>
+                            <constraint firstAttribute="width" constant="30" id="7hW-18-Fzz"/>
+                            <constraint firstAttribute="height" constant="30" id="QLV-G0-8rU"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
-                    </button>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter label name to create..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vck-Ql-To1">
-                        <rect key="frame" x="16" y="10" width="242" height="30"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enp-qo-3WD">
+                        <rect key="frame" x="78" y="10" width="242" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="rIY-dw-K6q"/>
+                            <constraint firstAttribute="height" constant="30" id="ByX-C3-bwM"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Vck-Ql-To1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DaN-kr-Po8"/>
-                    <constraint firstAttribute="trailing" secondItem="jgS-Dg-O9b" secondAttribute="trailing" constant="16" id="N80-mo-8uv"/>
-                    <constraint firstItem="Vck-Ql-To1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Sfi-PH-Cii"/>
-                    <constraint firstItem="jgS-Dg-O9b" firstAttribute="leading" secondItem="Vck-Ql-To1" secondAttribute="trailing" constant="16" id="ZcC-uF-XLC"/>
-                    <constraint firstAttribute="bottom" secondItem="jgS-Dg-O9b" secondAttribute="bottom" constant="10" id="mX1-5p-OT2"/>
-                    <constraint firstItem="jgS-Dg-O9b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tqq-tK-kmM"/>
-                    <constraint firstAttribute="bottom" secondItem="Vck-Ql-To1" secondAttribute="bottom" constant="10" id="zHM-aa-kFc"/>
+                    <constraint firstAttribute="trailing" secondItem="enp-qo-3WD" secondAttribute="trailing" id="KLI-oV-TMf"/>
+                    <constraint firstItem="nD7-su-Ffl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ZRL-KT-w7T"/>
+                    <constraint firstAttribute="bottom" secondItem="enp-qo-3WD" secondAttribute="bottom" constant="10" id="b9N-0x-QJ9"/>
+                    <constraint firstItem="nD7-su-Ffl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="iIE-2q-gBZ"/>
+                    <constraint firstItem="enp-qo-3WD" firstAttribute="leading" secondItem="nD7-su-Ffl" secondAttribute="trailing" constant="32" id="puL-nB-x6i"/>
+                    <constraint firstAttribute="bottom" secondItem="nD7-su-Ffl" secondAttribute="bottom" constant="10" id="t1D-nl-Vuo"/>
+                    <constraint firstItem="enp-qo-3WD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ukP-By-8WS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="112" y="101"/>
+            <point key="canvasLocation" x="111.59420289855073" y="100.44642857142857"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

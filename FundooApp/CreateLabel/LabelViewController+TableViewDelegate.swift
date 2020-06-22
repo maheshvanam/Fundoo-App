@@ -34,13 +34,17 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let notes = labels[indexPath.row].notes?.allObjects as! [Note]
-        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-        guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-            return
-        }
-        childVC.dataSource = notes
-        navigationController?.pushViewController(childVC, animated: true)
+        
+            let label = labels[indexPath.row]
+            
+            let board = UIStoryboard(name: Constants.FEATURES_STORYBOARD, bundle: nil)
+            guard let childVC = board.instantiateViewController(withIdentifier: Constants.UPDATE_LABEL_VC ) as? UpdateLabelViewController  else {
+                return
+            }
+            if indexPath.section != 0 {
+                childVC.label = label
+            }
+            navigationController?.pushViewController(childVC, animated: true)
     }
     
     @objc func onDeletePressed(sender:UIButton){
@@ -49,5 +53,9 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
         labelPresenter.deleteLabel(label: label)
         reloadDataSource()
         tableview.reloadData()
+    }
+    
+    @objc func saveLabel(){
+        
     }
 }

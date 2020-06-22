@@ -73,6 +73,66 @@
             </objects>
             <point key="canvasLocation" x="1728.985507246377" y="-96.428571428571431"/>
         </scene>
+        <!--Update Label View Controller-->
+        <scene sceneID="r6V-EF-Q4G">
+            <objects>
+                <viewController storyboardIdentifier="UpdateLabelViewController" id="Ncm-Na-21v" customClass="UpdateLabelViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BGV-9U-And">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Vhj-eW-uCn">
+                                <rect key="frame" x="0.0" y="393" width="414" height="110"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6m-M4-R9l">
+                                        <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="xai-eD-Hwe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcg-b3-PTr">
+                                        <rect key="frame" x="132" y="80" width="150" height="30"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Qgw-fW-IGq"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="S90-87-4fJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onSaveButtonTappedWithSender:" destination="Ncm-Na-21v" eventType="touchUpInside" id="cCM-UZ-kfn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hcg-b3-PTr" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Vhj-eW-uCn" secondAttribute="leading" constant="132" id="2lV-rr-R2r"/>
+                                    <constraint firstAttribute="trailing" secondItem="K6m-M4-R9l" secondAttribute="trailing" constant="16" id="DkL-1l-Ujs"/>
+                                    <constraint firstItem="K6m-M4-R9l" firstAttribute="leading" secondItem="Vhj-eW-uCn" secondAttribute="leading" constant="16" id="PDN-kl-nrU"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="hcg-b3-PTr" secondAttribute="trailing" constant="132" id="hZl-UF-oGn"/>
+                                    <constraint firstItem="K6m-M4-R9l" firstAttribute="top" secondItem="Vhj-eW-uCn" secondAttribute="top" id="qnV-bT-mKF"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Vhj-eW-uCn" firstAttribute="centerX" secondItem="BGV-9U-And" secondAttribute="centerX" id="ANh-1p-hu7"/>
+                            <constraint firstItem="Vhj-eW-uCn" firstAttribute="leading" secondItem="7Ic-wi-ZZv" secondAttribute="leading" id="XNd-AL-iW5"/>
+                            <constraint firstItem="Vhj-eW-uCn" firstAttribute="centerY" secondItem="BGV-9U-And" secondAttribute="centerY" id="ear-0k-gsJ"/>
+                            <constraint firstItem="7Ic-wi-ZZv" firstAttribute="trailing" secondItem="Vhj-eW-uCn" secondAttribute="trailing" id="nbt-ag-IFq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Ic-wi-ZZv"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelTitleField" destination="K6m-M4-R9l" id="Yto-wN-2dV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oyx-IQ-KcQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2543" y="-96"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="CLw-Ld-tI6">
             <objects>
