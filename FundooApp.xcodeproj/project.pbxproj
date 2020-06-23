@@ -89,6 +89,8 @@
 		842CBCB02493E9740032CBB6 /* Note+NSItemProviderWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CBCAF2493E9740032CBB6 /* Note+NSItemProviderWriting.swift */; };
 		8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */; };
 		8435B7FB24A2902A008056C6 /* EditNoteViewController+Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435B7FA24A2902A008056C6 /* EditNoteViewController+Reminder.swift */; };
+		8435B7FD24A2986A008056C6 /* ReminderPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435B7FC24A2986A008056C6 /* ReminderPresenterDelegate.swift */; };
+		8435B7FF24A29889008056C6 /* ReminderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435B7FE24A29889008056C6 /* ReminderPresenter.swift */; };
 		843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBAE248D768D00155FC4 /* MosiacLayout.swift */; };
 		843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBB0248D861C00155FC4 /* MosaicLayoutAttributes.swift */; };
 		843BBBB3248D86EC00155FC4 /* MosaicLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBB2248D86EC00155FC4 /* MosaicLayoutDelegate.swift */; };
@@ -226,6 +228,8 @@
 		842CBCAF2493E9740032CBB6 /* Note+NSItemProviderWriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+NSItemProviderWriting.swift"; sourceTree = "<group>"; };
 		8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 		8435B7FA24A2902A008056C6 /* EditNoteViewController+Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditNoteViewController+Reminder.swift"; sourceTree = "<group>"; };
+		8435B7FC24A2986A008056C6 /* ReminderPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPresenterDelegate.swift; sourceTree = "<group>"; };
+		8435B7FE24A29889008056C6 /* ReminderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPresenter.swift; sourceTree = "<group>"; };
 		843BBBAE248D768D00155FC4 /* MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosiacLayout.swift; sourceTree = "<group>"; };
 		843BBBB0248D861C00155FC4 /* MosaicLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutAttributes.swift; sourceTree = "<group>"; };
 		843BBBB2248D86EC00155FC4 /* MosaicLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 			children = (
 				8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */,
 				842C2486248AA9B400489314 /* ReminderViewController.swift */,
+				8435B7FC24A2986A008056C6 /* ReminderPresenterDelegate.swift */,
+				8435B7FE24A29889008056C6 /* ReminderPresenter.swift */,
 			);
 			path = Reminder;
 			sourceTree = "<group>";
@@ -816,6 +822,7 @@
 				84A3C9DB2480E3B1003393EC /* DataService.swift in Sources */,
 				84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */,
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
+				8435B7FF24A29889008056C6 /* ReminderPresenter.swift in Sources */,
 				84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */,
 				84F7A8EB249E54BE00480ACE /* CreateLabelCell.swift in Sources */,
 				84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */,
@@ -878,6 +885,7 @@
 				84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */,
 				8408F9AE24969026009155ED /* SearchVC.swift in Sources */,
 				8408F9BB2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift in Sources */,
+				8435B7FD24A2986A008056C6 /* ReminderPresenterDelegate.swift in Sources */,
 				84FD41B824A1494A00ACADC1 /* AddLabelCell.swift in Sources */,
 				842CBCB02493E9740032CBB6 /* Note+NSItemProviderWriting.swift in Sources */,
 				8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */,

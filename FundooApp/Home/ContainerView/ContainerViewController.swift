@@ -19,6 +19,7 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var container: UIView!
     
     @IBOutlet weak var gridButton: UIBarButtonItem!
+    var reminderPresenter:ReminderPresenterDelegate!
     var isMenuOpen = false
     var isGrid = false
     
@@ -103,12 +104,14 @@ class ContainerViewController: UIViewController {
     }
     
     @objc func switchToReminders() {
+        reminderPresenter = ReminderPresenter()
         let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-        guard let childVC =
-            board.instantiateViewController(withIdentifier: Constants.REMINDER_VC) as? ReminderViewController  else {
-          return
+        guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
+            return
         }
-        navigationController?.pushViewController(childVC, animated: false)
+        childVC.dataSource = reminderPresenter.getReminderNotes()
+        childVC.title = "Notes"
+        navigationController?.pushViewController(childVC, animated: true)
     }
     
     @objc func switchToLabels() {

@@ -109,11 +109,11 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         postNotification(key: Constants.TOGGLE_MENU)
         switch indexPath.section {
-            case 0:
+            case firstSection:
                 handleFirstSection(option: indexPath.row)
-            case 1:
+            case secondSection:
                 handleSecondSection(option: indexPath.row)
-            case 2:
+            case thirdSection:
                 handleThirdSection(option: indexPath.row)
             default:
                 handleFirstSection(option: indexPath.row)
