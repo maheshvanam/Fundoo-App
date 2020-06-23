@@ -115,27 +115,43 @@ extension EditNoteViewController: AddLabelsDelegate {
 extension EditNoteViewController {
     
     @IBAction func didReminderTapped(_ sender: Any) {
-        let board = UIStoryboard(name: Constants.REMINDER_STORYBOARD, bundle: nil)
-        guard let destinationVC =
-            board.instantiateViewController(withIdentifier: addReminderViewControllerId) as? AddReminderViewController  else {
-                return
-        }
-        configureNotification()
-        navigationController?.pushViewController(destinationVC, animated: true)
+        print("Enter")
+//        let board = UIStoryboard(name: Constants.REMINDER_STORYBOARD, bundle: nil)
+//        guard let destinationVC =
+//            board.instantiateViewController(withIdentifier: addReminderViewControllerId) as? AddReminderViewController  else {
+//                return
+//        }
+        self.configureNotification()
+       // navigationController?.pushViewController(destinationVC, animated: true)
     }
     
     func configureNotification(){
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound], completionHandler: {sucess,error in
-            if sucess {
-                
+        print("configure")
+        let notificationCenter = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        notificationCenter.requestAuthorization(options: options) {
+            (didAllow, error) in
+            if !didAllow {
+                print("User has declined notifications")
             }
-            else if let error = error {
-                print(error)
+            else {
+                self.scheduleReminder()
             }
-        })
+        }
     }
     
     func scheduleReminder(){
-        
+        let content = UNMutableNotificationContent()
+        content.title = note.title!
+        content.sound = .default
+        content.body  = note.note!
+        let targetDate = Date().addingTimeInterval(10)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: targetDate), repeats: false)
+        let request = UNNotificationRequest(identifier: "long_id", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
+            if error != nil {
+                print("error")
+            }
+        })
     }
 }
