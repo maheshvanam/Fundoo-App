@@ -11,12 +11,20 @@ import UIKit
 class AddReminderViewController: UIViewController {
     
     @IBOutlet var datePicker:UIDatePicker!
-    var date:Date!
+    var addReminderDelegate:AddReminderDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        self.date=datePicker.date
+    @IBAction func didSetReminderTapped(_ sender: Any) {
+        let date=datePicker.date
+        addReminderDelegate?.addReminder(date: date)
+        navigationController?.popViewController(animated: true)
     }
+    
+}
+
+
+protocol AddReminderDelegate {
+    func addReminder(date: Date)
 }

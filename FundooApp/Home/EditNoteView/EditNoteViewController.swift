@@ -9,11 +9,11 @@
 import UIKit
 import UserNotifications
 
+let addReminderViewControllerId = "AddReminderViewController"
 class EditNoteViewController: UIViewController {
     
     private let ediNoteTitle = "Edit Note"
     private let addNoteTitle = "Add Note"
-    private let addReminderViewControllerId = "AddReminderViewController"
     private let backButtonTitle = "< Notes"
     private let slideUpMenuHidingConstant:CGFloat = 0
    private let slideUpMenuShowingConstant:CGFloat = 300
@@ -57,7 +57,7 @@ class EditNoteViewController: UIViewController {
             note.labels?.adding(labels)
         }
     }
-    
+
     @objc func addLabel() {
         let board = UIStoryboard(name: Constants.FEATURES_STORYBOARD, bundle: nil)
         guard let childVC = board.instantiateViewController(withIdentifier: Constants.ADD_LABEL_VC) as? AddLabelViewController  else {
@@ -109,49 +109,5 @@ extension EditNoteViewController: AddLabelsDelegate {
     
     func addLabels(items: [SelectableItem]) {
         labels = items.map({$0.item})
-    }
-}
-
-extension EditNoteViewController {
-    
-    @IBAction func didReminderTapped(_ sender: Any) {
-        print("Enter")
-//        let board = UIStoryboard(name: Constants.REMINDER_STORYBOARD, bundle: nil)
-//        guard let destinationVC =
-//            board.instantiateViewController(withIdentifier: addReminderViewControllerId) as? AddReminderViewController  else {
-//                return
-//        }
-        self.configureNotification()
-       // navigationController?.pushViewController(destinationVC, animated: true)
-    }
-    
-    func configureNotification(){
-        print("configure")
-        let notificationCenter = UNUserNotificationCenter.current()
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        notificationCenter.requestAuthorization(options: options) {
-            (didAllow, error) in
-            if !didAllow {
-                print("User has declined notifications")
-            }
-            else {
-                self.scheduleReminder()
-            }
-        }
-    }
-    
-    func scheduleReminder(){
-        let content = UNMutableNotificationContent()
-        content.title = note.title!
-        content.sound = .default
-        content.body  = note.note!
-        let targetDate = Date().addingTimeInterval(10)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: targetDate), repeats: false)
-        let request = UNNotificationRequest(identifier: "long_id", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-            if error != nil {
-                print("error")
-            }
-        })
     }
 }

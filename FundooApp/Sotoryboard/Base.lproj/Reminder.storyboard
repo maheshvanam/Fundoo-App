@@ -18,12 +18,30 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0d3-Ap-E1l">
                                 <rect key="frame" x="16" y="340" width="382" height="216"/>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5n-Dx-M4X">
+                                <rect key="frame" x="132" y="660" width="150" height="30"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="a1F-Hh-giG"/>
+                                </constraints>
+                                <state key="normal" title="Set Reminder">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didSetReminderTapped:" destination="bSQ-kp-eSp" eventType="touchUpInside" id="pS8-hv-Yce"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="10f-Qe-RdH" firstAttribute="trailing" secondItem="A5n-Dx-M4X" secondAttribute="trailing" constant="132" id="6IA-D7-SR9"/>
+                            <constraint firstItem="A5n-Dx-M4X" firstAttribute="leading" relation="lessThanOrEqual" secondItem="10f-Qe-RdH" secondAttribute="leading" constant="132" id="C9h-3m-dia"/>
+                            <constraint firstItem="A5n-Dx-M4X" firstAttribute="top" secondItem="0d3-Ap-E1l" secondAttribute="bottom" constant="104" id="DBa-4I-HHa"/>
                             <constraint firstItem="10f-Qe-RdH" firstAttribute="trailing" secondItem="0d3-Ap-E1l" secondAttribute="trailing" constant="16" id="FDf-SF-get"/>
                             <constraint firstItem="0d3-Ap-E1l" firstAttribute="centerX" secondItem="Uda-ek-yJ1" secondAttribute="centerX" id="G7k-tD-FfE"/>
                             <constraint firstItem="0d3-Ap-E1l" firstAttribute="leading" secondItem="10f-Qe-RdH" secondAttribute="leading" constant="16" id="YVC-Z9-cpy"/>
+                            <constraint firstItem="10f-Qe-RdH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="A5n-Dx-M4X" secondAttribute="bottom" constant="172" id="aW5-i7-QfM"/>
+                            <constraint firstItem="A5n-Dx-M4X" firstAttribute="centerX" secondItem="Uda-ek-yJ1" secondAttribute="centerX" id="atH-LP-XcJ"/>
                             <constraint firstItem="0d3-Ap-E1l" firstAttribute="centerY" secondItem="Uda-ek-yJ1" secondAttribute="centerY" id="y8s-5i-eds"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10f-Qe-RdH"/>

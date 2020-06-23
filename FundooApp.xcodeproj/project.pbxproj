@@ -88,6 +88,7 @@
 		842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2486248AA9B400489314 /* ReminderViewController.swift */; };
 		842CBCB02493E9740032CBB6 /* Note+NSItemProviderWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CBCAF2493E9740032CBB6 /* Note+NSItemProviderWriting.swift */; };
 		8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */; };
+		8435B7FB24A2902A008056C6 /* EditNoteViewController+Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435B7FA24A2902A008056C6 /* EditNoteViewController+Reminder.swift */; };
 		843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBAE248D768D00155FC4 /* MosiacLayout.swift */; };
 		843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBB0248D861C00155FC4 /* MosaicLayoutAttributes.swift */; };
 		843BBBB3248D86EC00155FC4 /* MosaicLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BBBB2248D86EC00155FC4 /* MosaicLayoutDelegate.swift */; };
@@ -224,6 +225,7 @@
 		842C2486248AA9B400489314 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		842CBCAF2493E9740032CBB6 /* Note+NSItemProviderWriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+NSItemProviderWriting.swift"; sourceTree = "<group>"; };
 		8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		8435B7FA24A2902A008056C6 /* EditNoteViewController+Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditNoteViewController+Reminder.swift"; sourceTree = "<group>"; };
 		843BBBAE248D768D00155FC4 /* MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosiacLayout.swift; sourceTree = "<group>"; };
 		843BBBB0248D861C00155FC4 /* MosaicLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutAttributes.swift; sourceTree = "<group>"; };
 		843BBBB2248D86EC00155FC4 /* MosaicLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutDelegate.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				84113FE62493961300AEDCBD /* SlideUpVCPresenter.swift */,
 				84113FE82493964500AEDCBD /* SlideUpVCPresenterImpl.swift */,
 				84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */,
+				8435B7FA24A2902A008056C6 /* EditNoteViewController+Reminder.swift */,
 			);
 			path = EditNoteView;
 			sourceTree = "<group>";
@@ -903,6 +906,7 @@
 				841E66EC249F4DF1002B5DD2 /* SelectableItem.swift in Sources */,
 				843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */,
 				841E66EE249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift in Sources */,
+				8435B7FB24A2902A008056C6 /* EditNoteViewController+Reminder.swift in Sources */,
 				84FCC378249F8FF800FE92CA /* Note+CoreDataClass.swift in Sources */,
 				84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */,
 				84A3C9E12480F04C003393EC /* DatabaseManager.swift in Sources */,

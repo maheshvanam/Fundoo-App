@@ -27,5 +27,10 @@ class Helper {
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.5
     }
-
+    
+    static func alert(title:String,message:String)-> UIAlertController {
+        let alert = UIAlertController(title:title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+        return alert
+    }
 }

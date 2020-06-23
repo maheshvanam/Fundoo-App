@@ -103,6 +103,7 @@
                                             <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </state>
                                         <connections>
+                                            <action selector="didSetReminderTapped:" destination="nFV-II-qU0" eventType="touchUpInside" id="phS-dl-vWT"/>
                                             <action selector="onSaveButtonTappedWithSender:" destination="Ncm-Na-21v" eventType="touchUpInside" id="cCM-UZ-kfn"/>
                                         </connections>
                                     </button>
@@ -130,6 +131,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oyx-IQ-KcQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="nFV-II-qU0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2543" y="-96"/>
         </scene>
