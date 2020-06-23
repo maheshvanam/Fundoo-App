@@ -14,6 +14,7 @@
 		8400ACA1249FF4D900B9A936 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9F249FF4D900B9A936 /* LabelCell.swift */; };
 		8400ACA2249FF4D900B9A936 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8400ACA0249FF4D900B9A936 /* LabelCell.xib */; };
 		8401645B24A1E0A6001C95B0 /* Reminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8401645924A1E0A6001C95B0 /* Reminder.storyboard */; };
+		8401645E24A1E7E2001C95B0 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */; };
 		840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840557732492BDD400115EE2 /* SlideUpMenuOption.swift */; };
 		840752512488F05A0075EF51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752502488F05A0075EF51 /* Constants.swift */; };
 		840752532489173E0075EF51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752522489173E0075EF51 /* ProfileViewController.swift */; };
@@ -145,6 +146,7 @@
 		8400AC9F249FF4D900B9A936 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		8400ACA0249FF4D900B9A936 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		8401645A24A1E0A6001C95B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Reminder.storyboard; sourceTree = "<group>"; };
+		8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 		840557732492BDD400115EE2 /* SlideUpMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpMenuOption.swift; sourceTree = "<group>"; };
 		840752502488F05A0075EF51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		840752522489173E0075EF51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8401645C24A1E79E001C95B0 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
 		840752582489266C0075EF51 /* ProfilePresenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +444,7 @@
 		8419D297247A519D00C4F93A /* FundooApp */ = {
 			isa = PBXGroup;
 			children = (
+				8401645C24A1E79E001C95B0 /* Reminder */,
 				84FD41BA24A14AB300ACADC1 /* AddLabel */,
 				84FCC36E249F8D3200FE92CA /* CreateLabel */,
 				842460AB249A90EB00B38CBA /* Label */,
@@ -830,6 +841,7 @@
 				8408F9B4249696F0009155ED /* SearchVCPresenterDelegate.swift in Sources */,
 				8412B1C524917402004DD694 /* EditNoteVC+Extension.swift in Sources */,
 				84C85D7B24A154B3009CDCAF /* UpdateLabelViewController.swift in Sources */,
+				8401645E24A1E7E2001C95B0 /* AddReminderViewController.swift in Sources */,
 				84075257248926400075EF51 /* ProfilePresenter.swift in Sources */,
 				84078A8124901E090000D649 /* CollectionViewTabelCell.swift in Sources */,
 				8408F9C22496B69C009155ED /* SearchResultVC.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sSL-QX-8mU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,17 +10,50 @@
         <!--Add Reminder-->
         <scene sceneID="Bhk-RY-nIQ">
             <objects>
-                <viewController title="Add Reminder" id="bSQ-kp-eSp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddReminderViewController" title="Add Reminder" id="bSQ-kp-eSp" customClass="AddReminderViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uda-ek-yJ1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0d3-Ap-E1l">
+                                <rect key="frame" x="16" y="340" width="382" height="216"/>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="10f-Qe-RdH" firstAttribute="trailing" secondItem="0d3-Ap-E1l" secondAttribute="trailing" constant="16" id="FDf-SF-get"/>
+                            <constraint firstItem="0d3-Ap-E1l" firstAttribute="centerX" secondItem="Uda-ek-yJ1" secondAttribute="centerX" id="G7k-tD-FfE"/>
+                            <constraint firstItem="0d3-Ap-E1l" firstAttribute="leading" secondItem="10f-Qe-RdH" secondAttribute="leading" constant="16" id="YVC-Z9-cpy"/>
+                            <constraint firstItem="0d3-Ap-E1l" firstAttribute="centerY" secondItem="Uda-ek-yJ1" secondAttribute="centerY" id="y8s-5i-eds"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="10f-Qe-RdH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Io1-nY-bhY"/>
+                    <connections>
+                        <outlet property="datePicker" destination="0d3-Ap-E1l" id="EYk-SA-o8P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iW-pP-swD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="-168"/>
+            <point key="canvasLocation" x="250.72463768115944" y="-1272.3214285714284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bP9-S5-E3J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sSL-QX-8mU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FBB-FV-5qv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bSQ-kp-eSp" kind="relationship" relationship="rootViewController" id="JBb-Hu-rCY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3RX-YG-mnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-659.4202898550725" y="-1272.3214285714284"/>
         </scene>
     </scenes>
 </document>

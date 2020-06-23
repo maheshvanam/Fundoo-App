@@ -33,6 +33,7 @@ enum Constants {
     static let NOTES_TITLE = "Notes"
     static let HOME_STORYBOARD = "Home"
     static let FEATURES_STORYBOARD = "Features"
+    static let REMINDER_STORYBOARD = "Reminder"
     static let MAIN_STORYBOARD = "Main"
     static let EDIT_NOTE_VC = "EditNoteVC"
     static let NOTE_VC  = "NoteViewController"

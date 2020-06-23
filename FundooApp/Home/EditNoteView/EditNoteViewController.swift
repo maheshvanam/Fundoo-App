@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import UserNotifications
 
 class EditNoteViewController: UIViewController {
     
     private let ediNoteTitle = "Edit Note"
-    private let addNoteTitle = "Edit Note"
+    private let addNoteTitle = "Add Note"
+    private let addReminderViewControllerId = "AddReminderViewController"
     private let backButtonTitle = "< Notes"
     private let slideUpMenuHidingConstant:CGFloat = 0
    private let slideUpMenuShowingConstant:CGFloat = 300
@@ -26,7 +28,7 @@ class EditNoteViewController: UIViewController {
     var currentColor:String!
     var slideUpVCpresenter = SlideUpVCPresenter()
     var noteIsNew:Bool!
-    
+    var reminderDate:Date!
     
     override func viewDidLoad() {
         initializeView()
@@ -40,6 +42,16 @@ class EditNoteViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNote), name: NSNotification.Name(rawValue: Constants.DELETE_NOTE_KEY), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addLabel), name: NSNotification.Name(rawValue: Constants.ADD_LABEL_KEY), object: nil)
         configureBackButton()
+    }
+    
+    @IBAction func didReminderTapped(_ sender: Any) {
+        let board = UIStoryboard(name: Constants.REMINDER_STORYBOARD, bundle: nil)
+        guard let destinationVC =
+            board.instantiateViewController(withIdentifier: addReminderViewControllerId) as? AddReminderViewController  else {
+                return
+        }
+        
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
     
     func configureBackButton(){
@@ -108,3 +120,4 @@ extension EditNoteViewController: AddLabelsDelegate {
         labels = items.map({$0.item})
     }
 }
+
