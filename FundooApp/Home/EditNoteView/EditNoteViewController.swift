@@ -43,16 +43,7 @@ class EditNoteViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(addLabel), name: NSNotification.Name(rawValue: Constants.ADD_LABEL_KEY), object: nil)
         configureBackButton()
     }
-    
-    @IBAction func didReminderTapped(_ sender: Any) {
-        let board = UIStoryboard(name: Constants.REMINDER_STORYBOARD, bundle: nil)
-        guard let destinationVC =
-            board.instantiateViewController(withIdentifier: addReminderViewControllerId) as? AddReminderViewController  else {
-                return
-        }
-        
-        navigationController?.pushViewController(destinationVC, animated: true)
-    }
+
     
     func configureBackButton(){
         let backButton = UIBarButtonItem(title: backButtonTitle, style: .plain, target: self, action: #selector(onBackPressed))
@@ -121,3 +112,30 @@ extension EditNoteViewController: AddLabelsDelegate {
     }
 }
 
+extension EditNoteViewController {
+    
+    @IBAction func didReminderTapped(_ sender: Any) {
+        let board = UIStoryboard(name: Constants.REMINDER_STORYBOARD, bundle: nil)
+        guard let destinationVC =
+            board.instantiateViewController(withIdentifier: addReminderViewControllerId) as? AddReminderViewController  else {
+                return
+        }
+        configureNotification()
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
+    func configureNotification(){
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound], completionHandler: {sucess,error in
+            if sucess {
+                
+            }
+            else if let error = error {
+                print(error)
+            }
+        })
+    }
+    
+    func scheduleReminder(){
+        
+    }
+}
