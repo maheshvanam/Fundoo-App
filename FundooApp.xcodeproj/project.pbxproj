@@ -435,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				84FD41BA24A14AB300ACADC1 /* AddLabel */,
-				84FCC371249F8FC600FE92CA /* CoreDataModels */,
 				84FCC36E249F8D3200FE92CA /* CreateLabel */,
 				842460AB249A90EB00B38CBA /* Label */,
 				8412B1BB24915A71004DD694 /* EditNotePresenter */,
@@ -447,6 +446,7 @@
 				84B49C53247EBE1800D3C940 /* Util */,
 				84126ED924897E7B00F0FFBB /* DataModel */,
 				84E26B47247C240C000D8BE5 /* Service */,
+				84FCC371249F8FC600FE92CA /* CoreDataModels */,
 				84E26B44247C23D1000D8BE5 /* Sotoryboard */,
 				8419D298247A519D00C4F93A /* AppDelegate.swift */,
 				8419D29A247A519D00C4F93A /* SceneDelegate.swift */,
