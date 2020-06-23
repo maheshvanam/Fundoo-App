@@ -70,11 +70,11 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-            case 0:
+            case firstSection:
                 menuOption = FirstSectionOption(rawValue: indexPath.row)
-            case 1:
-                print("labels")
-            case 2:
+            case secondSection:
+                menuOption = nil
+            case thirdSection:
             menuOption = ThirdSectionOption(rawValue: indexPath.row)
             default:
                 menuOption = FirstSectionOption(rawValue: indexPath.row)
@@ -95,7 +95,7 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         if section == secondSection && data.count != 0 {
-            label.text = "     LABELS"
+            label.text = Constants.labelsHeaderTitle
             label.sizeToFit()
             return label
         }

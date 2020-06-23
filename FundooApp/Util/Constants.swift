@@ -27,7 +27,7 @@ enum Constants {
     static let RELOAD_CELLS = "Reload cells"
     static let UPDATE_COLOR = "update color"
     static let OPTIONS_CELL_ID = "OptionsCell"
-    
+    static let labelsHeaderTitle     = "     LABELS"
     static let CollectionView_TabelCell_ID = "CollectionViewTabelCell"
     static let COLOR_KEY = "color"
     static let NOTES_TITLE = "Notes"
@@ -35,6 +35,7 @@ enum Constants {
     static let FEATURES_STORYBOARD = "Features"
     static let MAIN_STORYBOARD = "Main"
     static let EDIT_NOTE_VC = "EditNoteVC"
+    static let NOTE_VC  = "NoteViewController"
     static let UPDATE_LABEL_VC = "UpdateLabelViewController"
     static let ADD_LABEL_VC = "AddLabelVC"
     static let LABELS_VC = "labels"

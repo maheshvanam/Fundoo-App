@@ -13,6 +13,7 @@
 		8400AC9E249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */; };
 		8400ACA1249FF4D900B9A936 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9F249FF4D900B9A936 /* LabelCell.swift */; };
 		8400ACA2249FF4D900B9A936 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8400ACA0249FF4D900B9A936 /* LabelCell.xib */; };
+		8401645B24A1E0A6001C95B0 /* Reminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8401645924A1E0A6001C95B0 /* Reminder.storyboard */; };
 		840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840557732492BDD400115EE2 /* SlideUpMenuOption.swift */; };
 		840752512488F05A0075EF51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752502488F05A0075EF51 /* Constants.swift */; };
 		840752532489173E0075EF51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752522489173E0075EF51 /* ProfileViewController.swift */; };
@@ -143,6 +144,7 @@
 		8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		8400AC9F249FF4D900B9A936 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		8400ACA0249FF4D900B9A936 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		8401645A24A1E0A6001C95B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Reminder.storyboard; sourceTree = "<group>"; };
 		840557732492BDD400115EE2 /* SlideUpMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpMenuOption.swift; sourceTree = "<group>"; };
 		840752502488F05A0075EF51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		840752522489173E0075EF51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 				8419D2A6247A519E00C4F93A /* LaunchScreen.storyboard */,
 				8428FE84248A593800E9BA44 /* Home.storyboard */,
 				842460A8249A7F6200B38CBA /* Features.storyboard */,
+				8401645924A1E0A6001C95B0 /* Reminder.storyboard */,
 			);
 			path = Sotoryboard;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */,
 				84F7A8EC249E54BE00480ACE /* CreateLabelCell.xib in Resources */,
 				84FD41B924A1494A00ACADC1 /* AddLabelCell.xib in Resources */,
+				8401645B24A1E0A6001C95B0 /* Reminder.storyboard in Resources */,
 				8419D2A0247A519D00C4F93A /* Main.storyboard in Resources */,
 				8400ACA2249FF4D900B9A936 /* LabelCell.xib in Resources */,
 				842460AA249A7F6300B38CBA /* Features.storyboard in Resources */,
@@ -913,6 +917,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8401645924A1E0A6001C95B0 /* Reminder.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8401645A24A1E0A6001C95B0 /* Base */,
+			);
+			name = Reminder.storyboard;
+			sourceTree = "<group>";
+		};
 		8419D29E247A519D00C4F93A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

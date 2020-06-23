@@ -82,7 +82,7 @@ class ContainerViewController: UIViewController {
     
     
     @objc func switchToNotes(){
-        guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "NoteViewController") as? NoteViewController  else {
+        guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
           return
         }
         addChild(childVC)

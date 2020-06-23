@@ -9,7 +9,7 @@
 import UIKit
 
 private let reusableCollectionCellId = "ColorCell"
-
+private let ColorCollectionViewNumberOfSections = 1
 class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollectionViewDelegate {
 
     override func awakeFromNib() {
@@ -22,7 +22,7 @@ class ColorCollectionView: UICollectionView,UICollectionViewDataSource,UICollect
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return ColorCollectionViewNumberOfSections
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
