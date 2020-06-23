@@ -37,13 +37,16 @@ class EditNoteViewController: UIViewController {
         swipeGesture.direction = [.down]
         self.view.addGestureRecognizer(swipeGesture)
         editNotePresenter = EditNotePresenter(delegate: self)
+        configureNotificationCenters()
+        configureBackButton()
+    }
+    
+    func configureNotificationCenters(){
         NotificationCenter.default.addObserver(self, selector: #selector(EditNoteViewController.updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onSwipDown), name: NSNotification.Name(rawValue: Constants.CLOSE_SLIDE_UP_MENU), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNote), name: NSNotification.Name(rawValue: Constants.DELETE_NOTE_KEY), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addLabel), name: NSNotification.Name(rawValue: Constants.ADD_LABEL_KEY), object: nil)
-        configureBackButton()
     }
-
     
     func configureBackButton(){
         let backButton = UIBarButtonItem(title: backButtonTitle, style: .plain, target: self, action: #selector(onBackPressed))
@@ -68,6 +71,9 @@ class EditNoteViewController: UIViewController {
     }
     
     @objc func onBackPressed(){
+        if reminderDate != nil {
+            self.note.reminder = reminderDate
+        }
         self.addLabelsToNote()
         self.editNotePresenter.saveNote()
         NotificationCenter.default.removeObserver(self)
@@ -100,13 +106,9 @@ class EditNoteViewController: UIViewController {
     @IBAction func onPlusIconPressed(_ sender: Any) {
         heightAnchor.constant = slideUpMenuShowingConstant
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-    }
 }
 
 extension EditNoteViewController: AddLabelsDelegate {
-    
     func addLabels(items: [SelectableItem]) {
         labels = items.map({$0.item})
     }

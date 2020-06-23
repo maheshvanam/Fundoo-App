@@ -23,6 +23,7 @@ extension Note {
     @NSManaged public var note: String?
     @NSManaged public var position: Int64
     @NSManaged public var title: String?
+    @NSManaged public var reminder: Date?
     @NSManaged public var owner: User?
     @NSManaged public var labels: NSSet?
 

@@ -288,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */,
+				842C2486248AA9B400489314 /* ReminderViewController.swift */,
 			);
 			path = Reminder;
 			sourceTree = "<group>";
@@ -450,6 +451,7 @@
 				84FD41BA24A14AB300ACADC1 /* AddLabel */,
 				84FCC36E249F8D3200FE92CA /* CreateLabel */,
 				842460AB249A90EB00B38CBA /* Label */,
+				8432FDD0248F83A4006D7EF5 /* EditNoteView */,
 				8412B1BB24915A71004DD694 /* EditNotePresenter */,
 				8408F9C02496B647009155ED /* SearchResultVC */,
 				8408F9AC24968FBA009155ED /* SearchView */,
@@ -521,7 +523,6 @@
 			children = (
 				84D0C7CF248655CA002AB435 /* ContainerViewController.swift */,
 				84224C322486B5ED0041EBDC /* SideMenuViewController.swift */,
-				842C2486248AA9B400489314 /* ReminderViewController.swift */,
 				84EB20752494B3D600652606 /* SideMenuOption.swift */,
 				84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */,
 				84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */,
@@ -609,7 +610,6 @@
 		84634EBA248268990098D004 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8432FDD0248F83A4006D7EF5 /* EditNoteView */,
 				84126ECB2489521500F0FFBB /* NoteView */,
 				84126ECC2489529B00F0FFBB /* NotePresenter */,
 				84126ECA2489513E00F0FFBB /* ProfileView */,
