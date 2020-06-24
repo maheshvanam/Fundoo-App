@@ -40,6 +40,9 @@ class EditNoteViewController: UIViewController {
         configureNotificationCenters()
         configureBackButton()
     }
+    @IBAction func onArchivePressed(_ sender: Any) {
+        note.archive = !note.archive
+    }
     
     func configureNotificationCenters(){
         NotificationCenter.default.addObserver(self, selector: #selector(EditNoteViewController.updateView), name: NSNotification.Name(rawValue: Constants.UPDATE_COLOR), object: nil)

@@ -28,7 +28,7 @@ class NotePresenterImpl: NoteDelegate {
             let notes = user.notes
             let allNotes = (notes!.allObjects as! [Note]).sorted(by: { $0.position > $1.position})
             //let allNotes = notes?.allObjects as! [Note]
-            self.noteView.setTableData(data:allNotes)
+            self.noteView.setTableData(data:allNotes.filter({$0.archive == false }))
             self.noteView.updateView()
         }
         catch{

@@ -116,6 +116,9 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="archivebox.fill" catalog="system" id="C4I-9z-iED">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="onArchivePressed:" destination="toQ-0B-uDp" id="vhf-V5-qW7"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="bell.fill" catalog="system" id="g8q-Ba-har">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
