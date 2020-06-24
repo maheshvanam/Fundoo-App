@@ -39,8 +39,15 @@ extension SearchResultVC: UICollectionViewDataSource,UICollectionViewDelegate,UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = searchResultCollectionView.dequeueReusableCell(withReuseIdentifier: dequeueReusableCellId, for: indexPath) as! SearchResultCell
-        cell.titleLabel.text = dataSource[indexPath.item].title
-        cell.discriptionLabel.text = dataSource[indexPath.item].note
+        let note = dataSource[indexPath.item]
+        cell.titleLabel.text = note.title
+        cell.discriptionLabel.text = note.note
+        if note.reminder != nil {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, h:mm a"
+            let date = note.reminder
+            cell.reminderLabel.text = dateFormatter.string(from: date!)
+        }
         let cellColor = Constants.colors[dataSource[indexPath.item].color!]
         cell.backgroundColor = cellColor
         cell.layer.cornerRadius = cellRadius

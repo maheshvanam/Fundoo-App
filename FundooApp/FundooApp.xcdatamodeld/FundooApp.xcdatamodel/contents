@@ -6,13 +6,16 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="labels" inverseEntity="User"/>
     </entity>
     <entity name="Note" representedClassName=".Note" syncable="YES">
+        <attribute name="archive" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="creationTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="editTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isPinned" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="position" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="reminder" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="trash" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <relationship name="labels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Label" inverseName="notes" inverseEntity="Label"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="notes" inverseEntity="User"/>
     </entity>
@@ -26,7 +29,7 @@
     </entity>
     <elements>
         <element name="Label" positionX="-36" positionY="72" width="128" height="88"/>
-        <element name="Note" positionX="-63" positionY="9" width="128" height="178"/>
+        <element name="Note" positionX="-63" positionY="9" width="128" height="223"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

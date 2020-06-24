@@ -2,7 +2,7 @@
 //  Note+CoreDataProperties.swift
 //  FundooApp
 //
-//  Created by admin on 21/06/20.
+//  Created by admin on 24/06/20.
 //  Copyright © 2020 admin. All rights reserved.
 //
 //
@@ -22,10 +22,13 @@ extension Note {
     @NSManaged public var editTime: Date?
     @NSManaged public var note: String?
     @NSManaged public var position: Int64
-    @NSManaged public var title: String?
     @NSManaged public var reminder: Date?
-    @NSManaged public var owner: User?
+    @NSManaged public var title: String?
+    @NSManaged public var archive: Bool
+    @NSManaged public var trash: Bool
+    @NSManaged public var isPinned: Bool
     @NSManaged public var labels: NSSet?
+    @NSManaged public var owner: User?
 
 }
 
@@ -43,5 +46,4 @@ extension Note {
 
     @objc(removeLabels:)
     @NSManaged public func removeFromLabels(_ values: NSSet)
-
 }

@@ -154,6 +154,18 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
                     UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
                     UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
                     self.navigationController?.popToRootViewController(animated: false)
+        case archiveOption:
+                let dbManager = DatabaseManager()
+                let user = dbManager.getCurrentUser()
+                let notes = user.notes?.allObjects as! [Note]
+                    
+                    let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+                    guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
+                        return
+                    }
+                childVC.dataSource = notes.filter({$0.archive != false})
+                    childVC.title = "Notes"
+                    navigationController?.pushViewController(childVC, animated: true)
             default:
                     postNotification(key: Constants.NAVIGATE_TO_NOTE)
         }

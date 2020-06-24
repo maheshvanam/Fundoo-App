@@ -89,3 +89,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
+
+extension AppDelegate :UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.badge,.sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let storyboard = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+        if let editVC = storyboard.instantiateViewController(identifier: Constants.EDIT_NOTE_VC) as? EditNoteViewController,
+            let tabBarController = self.window?.rootViewController as? UITabBarController,
+            let navigationController = tabBarController.selectedViewController as? UINavigationController {
+            navigationController.pushViewController(editVC, animated: true)
+        }
+        
+    }
+}

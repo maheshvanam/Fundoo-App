@@ -110,6 +110,7 @@
 		84C85D7B24A154B3009CDCAF /* UpdateLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */; };
 		84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C7CF248655CA002AB435 /* ContainerViewController.swift */; };
 		84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */; };
+		84E9D90B24A3C6010021077C /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D90A24A3C6010021077C /* Note+CoreDataProperties.swift */; };
 		84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB20752494B3D600652606 /* SideMenuOption.swift */; };
 		84F3CE3F24A0C523009EE22D /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */; };
 		84F3CE4024A0C523009EE22D /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */; };
@@ -117,7 +118,6 @@
 		84F7A8EC249E54BE00480ACE /* CreateLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */; };
 		84FCC370249F8D8300FE92CA /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC36F249F8D8300FE92CA /* LabelViewController.swift */; };
 		84FCC378249F8FF800FE92CA /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC372249F8FF800FE92CA /* Note+CoreDataClass.swift */; };
-		84FCC379249F8FF800FE92CA /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC373249F8FF800FE92CA /* Note+CoreDataProperties.swift */; };
 		84FCC37A249F8FF800FE92CA /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC374249F8FF800FE92CA /* Label+CoreDataClass.swift */; };
 		84FCC37B249F8FF800FE92CA /* Label+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC375249F8FF800FE92CA /* Label+CoreDataProperties.swift */; };
 		84FCC37C249F8FF800FE92CA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC376249F8FF800FE92CA /* User+CoreDataClass.swift */; };
@@ -249,6 +249,7 @@
 		84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLabelViewController.swift; sourceTree = "<group>"; };
 		84D0C7CF248655CA002AB435 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
+		84E9D90A24A3C6010021077C /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		84EB20752494B3D600652606 /* SideMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOption.swift; sourceTree = "<group>"; };
 		84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
@@ -256,7 +257,6 @@
 		84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateLabelCell.xib; sourceTree = "<group>"; };
 		84FCC36F249F8D8300FE92CA /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		84FCC372249F8FF800FE92CA /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		84FCC373249F8FF800FE92CA /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		84FCC374249F8FF800FE92CA /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		84FCC375249F8FF800FE92CA /* Label+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		84FCC376249F8FF800FE92CA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -682,8 +682,8 @@
 		84FCC371249F8FC600FE92CA /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				84E9D90A24A3C6010021077C /* Note+CoreDataProperties.swift */,
 				84FCC372249F8FF800FE92CA /* Note+CoreDataClass.swift */,
-				84FCC373249F8FF800FE92CA /* Note+CoreDataProperties.swift */,
 				84FCC374249F8FF800FE92CA /* Label+CoreDataClass.swift */,
 				84FCC375249F8FF800FE92CA /* Label+CoreDataProperties.swift */,
 				84FCC376249F8FF800FE92CA /* User+CoreDataClass.swift */,
@@ -845,7 +845,6 @@
 				842460B3249AA16B00B38CBA /* AddLabelViewController+TableView.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
-				84FCC379249F8FF800FE92CA /* Note+CoreDataProperties.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
 				8428981D248173D6009AA1D9 /* UserModel.swift in Sources */,
 				8408F9B4249696F0009155ED /* SearchVCPresenterDelegate.swift in Sources */,
@@ -900,6 +899,7 @@
 				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,
 				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,
 				8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */,
+				84E9D90B24A3C6010021077C /* Note+CoreDataProperties.swift in Sources */,
 				84078A7D249019680000D649 /* OptionsCell.swift in Sources */,
 				840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */,
 				842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */,
