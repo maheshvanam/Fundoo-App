@@ -105,6 +105,7 @@
 		8477A49424A5184A00DDEAFA /* NoteViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49224A5184A00DDEAFA /* NoteViewCell.xib */; };
 		8477A49724A51D1400DDEAFA /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49524A51D1400DDEAFA /* LabelViewCell.swift */; };
 		8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49624A51D1400DDEAFA /* LabelViewCell.xib */; };
+		8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */; };
 		849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */; };
 		84A3C9DB2480E3B1003393EC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DA2480E3B1003393EC /* DataService.swift */; };
 		84A3C9DF2480EDE5003393EC /* CoreDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */; };
@@ -250,6 +251,7 @@
 		8477A49224A5184A00DDEAFA /* NoteViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewCell.xib; sourceTree = "<group>"; };
 		8477A49524A51D1400DDEAFA /* LabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewCell.swift; sourceTree = "<group>"; };
 		8477A49624A51D1400DDEAFA /* LabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewCell.xib; sourceTree = "<group>"; };
+		8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+MosiacLayout.swift"; sourceTree = "<group>"; };
 		84A3C9DA2480E3B1003393EC /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTest.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 		8419D297247A519D00C4F93A /* FundooApp */ = {
 			isa = PBXGroup;
 			children = (
+				8477A49924A530CC00DDEAFA /* PinterestLayout */,
 				8401645C24A1E79E001C95B0 /* Reminder */,
 				84FD41BA24A14AB300ACADC1 /* AddLabel */,
 				84FCC36E249F8D3200FE92CA /* CreateLabel */,
@@ -642,6 +645,14 @@
 				843591352484321E00E58862 /* ContainerView */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8477A49924A530CC00DDEAFA /* PinterestLayout */ = {
+			isa = PBXGroup;
+			children = (
+				8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */,
+			);
+			path = PinterestLayout;
 			sourceTree = "<group>";
 		};
 		84B49C53247EBE1800D3C940 /* Util */ = {
@@ -845,6 +856,7 @@
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
 				8435B7FF24A29889008056C6 /* ReminderPresenter.swift in Sources */,
 				84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */,
+				8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */,
 				84F7A8EB249E54BE00480ACE /* CreateLabelCell.swift in Sources */,
 				84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */,
 				842460B1249A956200B38CBA /* AddLabelViewController.swift in Sources */,

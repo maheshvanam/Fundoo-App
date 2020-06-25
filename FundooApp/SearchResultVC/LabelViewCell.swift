@@ -11,10 +11,14 @@ import UIKit
 class LabelViewCell: UICollectionViewCell {
 
     @IBOutlet weak var labelField: UILabel!
+    
+    private let cornerRadius:CGFloat = 14
+    private let borderWidth:CGFloat = 0.5
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.borderColor = UIColor.gray.cgColor
-        self.layer.borderWidth = 0.5
-        self.layer.cornerRadius = 14
+        self.layer.borderWidth = self.borderWidth
+        self.layer.cornerRadius = self.cornerRadius
     }
 }
