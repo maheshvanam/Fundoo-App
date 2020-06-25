@@ -42,6 +42,7 @@ class EditNoteViewController: UIViewController {
     }
     @IBAction func onArchivePressed(_ sender: Any) {
         note.archive = !note.archive
+        navigationController?.popViewController(animated: true)
     }
     
     func configureNotificationCenters(){
@@ -115,4 +116,4 @@ extension EditNoteViewController: AddLabelsDelegate {
     func addLabels(items: [SelectableItem]) {
         labels = items.map({$0.item})
     }
-}
+}   

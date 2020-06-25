@@ -27,6 +27,9 @@ class SearchResultVC: UIViewController {
         searchResultCollectionView.dataSource = self
         searchResultCollectionView.delegate = self
         
+        let nib = UINib(nibName: "NoteViewCell", bundle: nil)
+        searchResultCollectionView.register(nib, forCellWithReuseIdentifier: "NoteViewCell")
+        
     }
 
 }
@@ -38,15 +41,20 @@ extension SearchResultVC: UICollectionViewDataSource,UICollectionViewDelegate,UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = searchResultCollectionView.dequeueReusableCell(withReuseIdentifier: dequeueReusableCellId, for: indexPath) as! SearchResultCell
+        let cell = searchResultCollectionView.dequeueReusableCell(withReuseIdentifier: "NoteViewCell", for: indexPath) as! NoteViewCell
         let note = dataSource[indexPath.item]
-        cell.titleLabel.text = note.title
-        cell.discriptionLabel.text = note.note
+        cell.titleField.text = note.title
+        cell.descriptionField.text = note.note
+        //cell.titleLabel.text = note.title
+       // cell.discriptionLabel.text = note.note
+        cell.reminderView.isHidden = true
         if note.reminder != nil {
+            cell.reminderView.isHidden = false
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, h:mm a"
             let date = note.reminder
-            cell.reminderLabel.text = dateFormatter.string(from: date!)
+            cell.reminderField.text = dateFormatter.string(from: date!)
+          //  cell.reminderLabel.text = dateFormatter.string(from: date!)
         }
         let cellColor = Constants.colors[dataSource[indexPath.item].color!]
         cell.backgroundColor = cellColor
@@ -69,7 +77,6 @@ extension SearchResultVC: MosaicLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
        let discription = dataSource[indexPath.item].note!
-        
         let discriptionHeight = Constants.getContentHeight(for: discription, with: UIFont.systemFont(ofSize: fontSizeOfDiscription), width: widthOfDiscriptionField)
         return discriptionHeight + titleHeight
     }

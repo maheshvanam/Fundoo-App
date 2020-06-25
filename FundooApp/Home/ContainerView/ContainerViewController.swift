@@ -28,6 +28,7 @@ class ContainerViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
         addNotificationCenterObservers()
         profileItem.backgroundImage(for: .application, style: .plain, barMetrics:  .compact)
+        switchToNotes()
     }
     
     @IBAction func onSerchTapped(_ sender: Any) {
@@ -42,12 +43,11 @@ class ContainerViewController: UIViewController {
     @IBAction func onGridViewTapped(_ sender: Any) {
         if isGrid {
             gridButton.image = UIImage(systemName: Constants.gridImage)
-            isGrid = false
         }
         else{
             gridButton.image = UIImage(systemName: Constants.singleColumnImage)
-            isGrid = true
         }
+        isGrid = !isGrid
         NotificationCenter.default.post(name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
     }
     
@@ -83,7 +83,7 @@ class ContainerViewController: UIViewController {
     
     
     @objc func switchToNotes(){
-        guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
+        guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
           return
         }
         addChild(childVC)

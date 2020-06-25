@@ -39,6 +39,7 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
     override func viewDidLoad() {
         tableView.backgroundColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
+        tableView.sectionIndexTrackingBackgroundColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
         self.sideMenuPresenter = SideMenuPresenter()
         self.labelPresenter = LabelPresenter(delegate: self)
         let nib = UINib(nibName: sideMenuCellNib, bundle: nil)
@@ -46,6 +47,11 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         let labelNib = UINib(nibName: sideMenuLabelCellNib, bundle: nil)
         tableView.register(labelNib, forCellReuseIdentifier: sideMenuLabelCellId)
         loadDataSource()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadDataSource()
+        tableView.reloadData()
     }
     
     func loadDataSource() {
@@ -68,7 +74,6 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sectionsCount
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
@@ -101,7 +106,8 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
             label.sizeToFit()
             return label
         }
-        return nil
+        label.isHidden = true
+        return label
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -176,4 +182,5 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
             postNotification(key: Constants.NAVIGATE_TO_NOTE)
         }
     }
+    
 }

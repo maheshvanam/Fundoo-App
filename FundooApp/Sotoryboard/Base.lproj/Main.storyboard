@@ -347,9 +347,6 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-zb-aaR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="648"/>
-                                <connections>
-                                    <segue destination="GGz-HJ-OnA" kind="embed" id="TiS-MT-llM"/>
-                                </connections>
                             </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-8D-NZe">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
@@ -532,11 +529,11 @@
             <objects>
                 <viewController storyboardIdentifier="NoteViewController" id="GGz-HJ-OnA" customClass="NoteViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Np4-QL-CFv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="648"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sIm-uX-8Fu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="648"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <collectionViewLayout key="collectionViewLayout" id="9TE-RC-RoY" customClass="MosaicLayout" customModule="FundooApp" customModuleProvider="target"/>

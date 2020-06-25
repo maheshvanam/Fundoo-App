@@ -15,7 +15,7 @@ class NoteCell: UICollectionViewCell {
     
     func setShadow() {
         self.layer.shadowColor   = UIColor.black.cgColor
-        self.layer.shadowOffset  = CGSize(width: 0.0, height: 6.0)
+        self.layer.shadowOffset  = CGSize(width: 0.0, height: 1.0)
         self.layer.shadowRadius  = 8
         self.layer.shadowOpacity = 0.5
         self.clipsToBounds       = true

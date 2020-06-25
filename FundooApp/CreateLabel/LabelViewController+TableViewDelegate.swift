@@ -36,12 +36,13 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let label = labels[indexPath.row]
+            
             let board = UIStoryboard(name: Constants.FEATURES_STORYBOARD, bundle: nil)
             guard let childVC = board.instantiateViewController(withIdentifier: Constants.UPDATE_LABEL_VC ) as? UpdateLabelViewController  else {
                 return
             }
             if indexPath.section != firstSection {
+                let label = labels[indexPath.row]
                 childVC.label = label
             }
             navigationController?.pushViewController(childVC, animated: true)

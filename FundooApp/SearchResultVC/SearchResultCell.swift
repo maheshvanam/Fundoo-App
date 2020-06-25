@@ -13,4 +13,5 @@ class SearchResultCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var discriptionLabel: UILabel!
     @IBOutlet var reminderLabel: UILabel!
+    @IBOutlet weak var reminderLabelView: UIView!
 }

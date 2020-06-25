@@ -11,7 +11,7 @@ import UIKit
 extension EditNoteViewController {
     
     @IBAction func didReminderTapped(_ sender: Any) {
-        self.configureNotification()
+        self.requestAuthorization()
         let board = UIStoryboard(name: Constants.REMINDER_STORYBOARD, bundle: nil)
         guard let destinationVC =
             board.instantiateViewController(withIdentifier: addReminderViewControllerId) as? AddReminderViewController  else {
@@ -21,7 +21,7 @@ extension EditNoteViewController {
         self.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
-    func configureNotification(){
+    func requestAuthorization(){
         let notificationCenter = UNUserNotificationCenter.current()
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         notificationCenter.requestAuthorization(options: options) {

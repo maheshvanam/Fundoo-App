@@ -361,7 +361,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="LCV-6U-drP" secondAttribute="trailing" id="2mm-ig-qRr"/>
                                                         <constraint firstItem="cbl-Ke-ctX" firstAttribute="leading" secondItem="hZP-gC-ENN" secondAttribute="leading" constant="4" id="2r7-gV-5wF"/>
@@ -393,6 +393,7 @@
                                         <connections>
                                             <outlet property="discriptionLabel" destination="Zz8-Yd-BqC" id="7k2-H8-FCJ"/>
                                             <outlet property="reminderLabel" destination="LCV-6U-drP" id="beC-NX-eLU"/>
+                                            <outlet property="reminderLabelView" destination="hZP-gC-ENN" id="Ngv-Xf-SjD"/>
                                             <outlet property="titleLabel" destination="IjR-fE-mpw" id="516-tt-ZpL"/>
                                         </connections>
                                     </collectionViewCell>

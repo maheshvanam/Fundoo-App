@@ -16,9 +16,6 @@ class NotePresenterImpl: NoteDelegate {
         self.noteView = delegate
     }
     
-    func updateCells() {
-         self.noteView.updateView()
-    }
     
     func updateTableData() {
         let coreData = DatabaseManager()

@@ -40,14 +40,13 @@ class NoteViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: topInset , left: leftInset, bottom: bottomInset, right: rightInset)
         notePresenter = NotePresenter(delegate: self)
         addNotificationObservers()
-       
     }
     
     @objc func toggleView(){
         let col: CGFloat = isGrid ? 2 : 1
         layout.setColumns(columns: col)
         isGrid = !isGrid
-        self.notePresenter!.updateCells()
+        reloadCells()
     }
     
     override func viewWillAppear(_ animated: Bool) {
