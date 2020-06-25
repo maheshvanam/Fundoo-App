@@ -35,16 +35,18 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     var data:[Label] = []
     var menuOption:SideMenuDelegate!
     var labelPresenter: LabelPresenterDelegate!
+    var sideMenuPresenter:SideMenuPresenterDelegate!
     
     override func viewDidLoad() {
         tableView.backgroundColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
+        self.sideMenuPresenter = SideMenuPresenter()
         self.labelPresenter = LabelPresenter(delegate: self)
         let nib = UINib(nibName: sideMenuCellNib, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: sideMenuCellReusabaleId)
         let labelNib = UINib(nibName: sideMenuLabelCellNib, bundle: nil)
         tableView.register(labelNib, forCellReuseIdentifier: sideMenuLabelCellId)
         loadDataSource()
-        }
+    }
     
     func loadDataSource() {
         data = self.labelPresenter.getLabels()
@@ -52,14 +54,14 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-            case firstSection:
-                return FirstSectionOption.allCases.count
-            case secondSection:
-                return data.count
-            case thirdSection:
-                return ThirdSectionOption.allCases.count
-            default:
-                return 0
+        case firstSection:
+            return FirstSectionOption.allCases.count
+        case secondSection:
+            return data.count
+        case thirdSection:
+            return ThirdSectionOption.allCases.count
+        default:
+            return 0
         }
     }
     
@@ -70,14 +72,14 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-            case firstSection:
-                menuOption = FirstSectionOption(rawValue: indexPath.row)
-            case secondSection:
-                menuOption = nil
-            case thirdSection:
+        case firstSection:
+            menuOption = FirstSectionOption(rawValue: indexPath.row)
+        case secondSection:
+            menuOption = nil
+        case thirdSection:
             menuOption = ThirdSectionOption(rawValue: indexPath.row)
-            default:
-                menuOption = FirstSectionOption(rawValue: indexPath.row)
+        default:
+            menuOption = FirstSectionOption(rawValue: indexPath.row)
         }
         if indexPath.section != secondSection {
             let cell = tableView.dequeueReusableCell(withIdentifier:sideMenuCellReusabaleId, for: indexPath) as! SideMenuCell
@@ -109,14 +111,14 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         postNotification(key: Constants.TOGGLE_MENU)
         switch indexPath.section {
-            case firstSection:
-                handleFirstSection(option: indexPath.row)
-            case secondSection:
-                handleSecondSection(option: indexPath.row)
-            case thirdSection:
-                handleThirdSection(option: indexPath.row)
-            default:
-                handleFirstSection(option: indexPath.row)
+        case firstSection:
+            handleFirstSection(option: indexPath.row)
+        case secondSection:
+            handleSecondSection(option: indexPath.row)
+        case thirdSection:
+            handleThirdSection(option: indexPath.row)
+        default:
+            handleFirstSection(option: indexPath.row)
         }
     }
     
@@ -126,12 +128,12 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
     func handleFirstSection(option:Int) {
         switch option {
-            case notesOption:
-                postNotification(key: Constants.NAVIGATE_TO_NOTE)
-            case reminderOption:
-                postNotification(key: Constants.NAVIGATE_TO_REMINDER)
-            default:
-                postNotification(key: Constants.NAVIGATE_TO_NOTE)
+        case notesOption:
+            postNotification(key: Constants.NAVIGATE_TO_NOTE)
+        case reminderOption:
+            postNotification(key: Constants.NAVIGATE_TO_REMINDER)
+        default:
+            postNotification(key: Constants.NAVIGATE_TO_NOTE)
         }
     }
     
@@ -148,26 +150,30 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
     func handleThirdSection(option:Int) {
         switch option {
-            case labelsOption:
-                    postNotification(key:       Constants.NAVIGATE_TO_LABELS)
-            case signOutOption:
-                    UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
-                    UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
-                    self.navigationController?.popToRootViewController(animated: false)
+        case labelsOption:
+            postNotification(key:       Constants.NAVIGATE_TO_LABELS)
+        case signOutOption:
+            UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
+            UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
+            self.navigationController?.popToRootViewController(animated: false)
+        case trashOption:
+            let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+            guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
+                return
+            }
+            childVC.dataSource = sideMenuPresenter.getTrashNotes()
+            childVC.title = "Notes"
+            navigationController?.pushViewController(childVC, animated: true)
         case archiveOption:
-                let dbManager = DatabaseManager()
-                let user = dbManager.getCurrentUser()
-                let notes = user.notes?.allObjects as! [Note]
-                    
-                    let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-                    guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-                        return
-                    }
-                childVC.dataSource = notes.filter({$0.archive != false})
-                    childVC.title = "Notes"
-                    navigationController?.pushViewController(childVC, animated: true)
-            default:
-                    postNotification(key: Constants.NAVIGATE_TO_NOTE)
+            let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+            guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
+                return
+            }
+            childVC.dataSource = sideMenuPresenter.getArchiveNotes()
+            childVC.title = "Notes"
+            navigationController?.pushViewController(childVC, animated: true)
+        default:
+            postNotification(key: Constants.NAVIGATE_TO_NOTE)
         }
     }
 }

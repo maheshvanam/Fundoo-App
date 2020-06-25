@@ -11,7 +11,6 @@ import Foundation
 class SlideUpVCPresenterImpl: SlideUpVCDelegate {
     
     func deleteNote(note: Note) {
-        let dbManager = DatabaseManager()
-        dbManager.deleteNote(note: note)
+        note.trash = !note.trash
     }
 }
