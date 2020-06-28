@@ -23,4 +23,6 @@ extension NoteViewController: NoteViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(toggleView), name: Notification.Name(Constants.TOGGLE_GRID), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCells), name: Notification.Name(Constants.RELOAD_CELLS), object: nil)
     }
+    
+    
 }

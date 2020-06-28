@@ -11,13 +11,14 @@ import Foundation
 class NotePresenterImpl: NoteDelegate {
     
     var noteView: NoteViewDelegate
+    let dbManager = DatabaseManager()
     
     init(delegate: NoteViewDelegate) {
         self.noteView = delegate
     }
     
     
-    func updateTableData() {
+    func updateDataSource() {
         let coreData = DatabaseManager()
         let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
         do{
@@ -75,9 +76,14 @@ class NotePresenterImpl: NoteDelegate {
             }
             models[models.count-1].position = pos
         }
-        let dbManager = DatabaseManager()
         let user = dbManager.getCurrentUser()
         user.notes?.addingObjects(from: models)
         dbManager.saveUser(user: user)
+    }
+    
+    func getReminderNotes()-> [Note] {
+        let user = dbManager.getCurrentUser()
+        let notes = user.notes?.allObjects as! [Note]
+        return notes.filter({$0.reminder != nil})
     }
 }

@@ -24,10 +24,12 @@ class NoteViewController: UIViewController {
     let maxContentHeight:CGFloat = 350
     var notePresenter: NoteDelegate?
     @IBOutlet var collectionView: UICollectionView!
+    var reminderView:Bool = false
     var models = [Note]()
     var layout: MosaicLayout!
     var isGrid:Bool = true
     private let cellId = "NoteViewCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constants.NOTES_TITLE
@@ -40,7 +42,6 @@ class NoteViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: topInset , left: leftInset, bottom: bottomInset, right: rightInset)
         notePresenter = NotePresenter(delegate: self)
         addNotificationObservers()
-        
         collectionView.register(UINib(nibName:cellId        , bundle: nil), forCellWithReuseIdentifier: cellId)
     }
     
@@ -56,6 +57,13 @@ class NoteViewController: UIViewController {
     }
     
     @objc func reloadCells(){
-       self.notePresenter!.updateTableData()
+        if reminderView == true {
+            self.models = (self.notePresenter?.getReminderNotes())!
+            layout.reloadData()
+            collectionView.reloadData()
+        }
+        else {
+              self.notePresenter!.updateDataSource()
+        }
     }
 }

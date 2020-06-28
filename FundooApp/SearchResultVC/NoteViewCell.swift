@@ -58,5 +58,14 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.layer.borderColor = UIColor.black.cgColor
     }
     
+    func setShadow() {
+        self.layer.shadowColor   = UIColor.gray .cgColor
+        self.layer.shadowOffset  = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowRadius  = 8
+        self.layer.shadowOpacity = 0.5
+        self.clipsToBounds       = true
+        self.layer.masksToBounds = false
+    }
+    
 }
 

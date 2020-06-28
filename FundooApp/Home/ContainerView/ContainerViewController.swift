@@ -105,14 +105,23 @@ class ContainerViewController: UIViewController {
     }
     
     @objc func switchToReminders() {
-        reminderPresenter = ReminderPresenter()
-        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-        guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-            return
-        }
-        childVC.dataSource = reminderPresenter.getReminderNotes()
-        childVC.title = "Notes"
-        navigationController?.pushViewController(childVC, animated: true)
+        guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
+                 return
+               }
+               addChild(childVC)
+        childVC.reminderView = true
+               childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+               childVC.view.frame = container.bounds
+               container.addSubview(childVC.view)
+//               childVC.didMove(toParent: self)
+//        reminderPresenter = ReminderPresenter()
+//        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+//        guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
+//            return
+//        }
+//        childVC.dataSource = reminderPresenter.getReminderNotes()
+//        childVC.title = "Notes"
+//        navigationController?.pushViewController(childVC, animated: true)
     }
     
     @objc func switchToLabels() {
