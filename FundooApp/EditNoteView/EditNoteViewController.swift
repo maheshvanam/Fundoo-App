@@ -75,9 +75,7 @@ class EditNoteViewController: UIViewController {
     }
     
     @objc func onBackPressed(){
-        if reminderDate != nil {
-            self.note.reminder = reminderDate
-        }
+        self.note.reminder = reminderDate
         self.addLabelsToNote()
         self.editNotePresenter.saveNote()
         NotificationCenter.default.removeObserver(self)
@@ -88,13 +86,14 @@ class EditNoteViewController: UIViewController {
     @objc func onSwipDown() {
         heightAnchor.constant = slideUpMenuHidingConstant
     }
-    
+   
     @objc func deleteNote() {
         heightAnchor.constant = slideUpMenuHidingConstant
         slideUpVCpresenter.deleteNote(note: note)
         postReloadCellsNotification()
         NotificationCenter.default.removeObserver(self)
         navigationController?.popViewController(animated: false)
+        
     }
     
     @IBAction func onSlideUp(_ sender: Any) {

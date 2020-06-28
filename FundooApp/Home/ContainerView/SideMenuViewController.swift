@@ -164,13 +164,6 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
             self.navigationController?.popToRootViewController(animated: false)
         case trashOption:
             postNotification(key:       Constants.NAVIGATE_TO_TRASH)
-//            let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-//            guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-//                return
-//            }
-//            childVC.dataSource = sideMenuPresenter.getTrashNotes()
-//            childVC.title = "Notes"
-//            navigationController?.pushViewController(childVC, animated: true)
         case archiveOption:
             postNotification(key:       Constants.NAVIGATE_TO_ARCHIVE)
         default:

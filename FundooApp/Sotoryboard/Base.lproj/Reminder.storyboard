@@ -10,45 +10,71 @@
         <!--Add Reminder-->
         <scene sceneID="Bhk-RY-nIQ">
             <objects>
-                <viewController storyboardIdentifier="AddReminderViewController" title="Add Reminder" id="bSQ-kp-eSp" customClass="AddReminderViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddReminderViewController" title="Add Reminder" modalPresentationStyle="currentContext" id="bSQ-kp-eSp" customClass="AddReminderViewController" customModule="FundooApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uda-ek-yJ1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0d3-Ap-E1l">
-                                <rect key="frame" x="16" y="340" width="382" height="216"/>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5n-Dx-M4X">
-                                <rect key="frame" x="132" y="660" width="150" height="30"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PfF-vk-SHU">
+                                <rect key="frame" x="47" y="306" width="320" height="284"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0d3-Ap-E1l">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5n-Dx-M4X">
+                                        <rect key="frame" x="85" y="220" width="150" height="30"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="a1F-Hh-giG"/>
+                                        </constraints>
+                                        <state key="normal" title="Set Reminder">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didSetReminderTapped:" destination="bSQ-kp-eSp" eventType="touchUpInside" id="pS8-hv-Yce"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVH-Yg-dNs">
+                                        <rect key="frame" x="85" y="254" width="150" height="30"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="zbG-Vg-N8m"/>
+                                        </constraints>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onDeleteReminderTapped:" destination="bSQ-kp-eSp" eventType="touchUpInside" id="AxC-zn-O5q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="a1F-Hh-giG"/>
+                                    <constraint firstItem="AVH-Yg-dNs" firstAttribute="top" secondItem="A5n-Dx-M4X" secondAttribute="bottom" constant="4" id="1cA-Xn-10D"/>
+                                    <constraint firstItem="A5n-Dx-M4X" firstAttribute="top" secondItem="0d3-Ap-E1l" secondAttribute="bottom" constant="4" id="CJ4-Wg-WBH"/>
+                                    <constraint firstItem="A5n-Dx-M4X" firstAttribute="top" secondItem="0d3-Ap-E1l" secondAttribute="bottom" constant="4" id="Fj0-Wl-YD2"/>
+                                    <constraint firstAttribute="trailing" secondItem="0d3-Ap-E1l" secondAttribute="trailing" id="OYh-CD-Uyh"/>
+                                    <constraint firstItem="0d3-Ap-E1l" firstAttribute="top" secondItem="PfF-vk-SHU" secondAttribute="top" id="ShS-MX-uJd"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="AVH-Yg-dNs" secondAttribute="trailing" constant="85" id="Tkn-1c-7DK"/>
+                                    <constraint firstItem="AVH-Yg-dNs" firstAttribute="leading" relation="lessThanOrEqual" secondItem="PfF-vk-SHU" secondAttribute="leading" constant="85" id="dXT-R7-UUy"/>
+                                    <constraint firstItem="A5n-Dx-M4X" firstAttribute="top" secondItem="0d3-Ap-E1l" secondAttribute="bottom" constant="4" id="ddP-zU-cWY"/>
+                                    <constraint firstAttribute="trailing" secondItem="A5n-Dx-M4X" secondAttribute="trailing" constant="85" id="eDg-Vv-0W3"/>
+                                    <constraint firstItem="A5n-Dx-M4X" firstAttribute="leading" secondItem="PfF-vk-SHU" secondAttribute="leading" constant="85" id="gHM-7j-lAx"/>
+                                    <constraint firstItem="0d3-Ap-E1l" firstAttribute="leading" secondItem="PfF-vk-SHU" secondAttribute="leading" id="jPm-YV-Tmx"/>
+                                    <constraint firstItem="AVH-Yg-dNs" firstAttribute="top" secondItem="A5n-Dx-M4X" secondAttribute="bottom" constant="4" id="q1f-3Y-RjB"/>
                                 </constraints>
-                                <state key="normal" title="Set Reminder">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didSetReminderTapped:" destination="bSQ-kp-eSp" eventType="touchUpInside" id="pS8-hv-Yce"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="10f-Qe-RdH" firstAttribute="trailing" secondItem="A5n-Dx-M4X" secondAttribute="trailing" constant="132" id="6IA-D7-SR9"/>
-                            <constraint firstItem="A5n-Dx-M4X" firstAttribute="leading" relation="lessThanOrEqual" secondItem="10f-Qe-RdH" secondAttribute="leading" constant="132" id="C9h-3m-dia"/>
-                            <constraint firstItem="A5n-Dx-M4X" firstAttribute="top" secondItem="0d3-Ap-E1l" secondAttribute="bottom" constant="104" id="DBa-4I-HHa"/>
-                            <constraint firstItem="10f-Qe-RdH" firstAttribute="trailing" secondItem="0d3-Ap-E1l" secondAttribute="trailing" constant="16" id="FDf-SF-get"/>
-                            <constraint firstItem="0d3-Ap-E1l" firstAttribute="centerX" secondItem="Uda-ek-yJ1" secondAttribute="centerX" id="G7k-tD-FfE"/>
-                            <constraint firstItem="0d3-Ap-E1l" firstAttribute="leading" secondItem="10f-Qe-RdH" secondAttribute="leading" constant="16" id="YVC-Z9-cpy"/>
-                            <constraint firstItem="10f-Qe-RdH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="A5n-Dx-M4X" secondAttribute="bottom" constant="172" id="aW5-i7-QfM"/>
-                            <constraint firstItem="A5n-Dx-M4X" firstAttribute="centerX" secondItem="Uda-ek-yJ1" secondAttribute="centerX" id="atH-LP-XcJ"/>
-                            <constraint firstItem="0d3-Ap-E1l" firstAttribute="centerY" secondItem="Uda-ek-yJ1" secondAttribute="centerY" id="y8s-5i-eds"/>
+                            <constraint firstItem="PfF-vk-SHU" firstAttribute="centerY" secondItem="Uda-ek-yJ1" secondAttribute="centerY" id="Lqo-mZ-P83"/>
+                            <constraint firstItem="PfF-vk-SHU" firstAttribute="centerX" secondItem="Uda-ek-yJ1" secondAttribute="centerX" id="WhG-7I-IKe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10f-Qe-RdH"/>
                     </view>
                     <navigationItem key="navigationItem" id="Io1-nY-bhY"/>
                     <connections>
                         <outlet property="datePicker" destination="0d3-Ap-E1l" id="EYk-SA-o8P"/>
+                        <outlet property="deleteButton" destination="AVH-Yg-dNs" id="Mhr-go-Al6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iW-pP-swD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

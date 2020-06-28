@@ -21,6 +21,10 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
          let noteModel = models[indexPath.item]
         cell.updateView(note:noteModel)
         cell.updateCellBackground(color: Constants.colors[noteModel.color!]!)
+        
+        let gesture = MyTapGesture(target: self, action:  #selector (onViewTouched(_:)))
+        gesture.index = indexPath.item
+        cell.reminderView.addGestureRecognizer(gesture)
         cell.setShadow()
         return cell
     }
@@ -33,4 +37,11 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         childVC.note = models[indexPath.item]
         navigationController?.pushViewController(childVC, animated: false)
     }
+    
+    @objc func onViewTouched(_ sender:MyTapGesture){
+    }
+}
+
+class MyTapGesture: UITapGestureRecognizer {
+    var index = Int()
 }

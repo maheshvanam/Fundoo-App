@@ -22,7 +22,7 @@ class ContainerViewController: UIViewController {
     var reminderPresenter:ReminderPresenterDelegate!
     var isMenuOpen = false
     var isGrid = false
-    
+    var noteViewController:NoteViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
@@ -86,17 +86,25 @@ class ContainerViewController: UIViewController {
     
     
     @objc func switchToNotes(){
-        guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
-          return
-        }
-        addChild(childVC)
-        childVC.viewOption = isNoteView
-        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        childVC.view.frame = container.bounds
-        container.addSubview(childVC.view)
-        childVC.didMove(toParent: self)
-       
+        switchToNoteView(viewOption: isNoteView)
+        
     }
+    
+    @objc func switchToArchive() {
+           switchToNoteView(viewOption: isArchiveView)
+        self.title = "Archive Notes"
+    }
+       
+    @objc func switchToTrash() {
+        switchToNoteView(viewOption: isTrashView)
+        self.title = "Trash Notes"
+    }
+    
+    @objc func switchToReminders() {
+        switchToNoteView(viewOption: isReminderView)
+        self.title = "Reminder Notes"
+    }
+    
     
     @objc func switchToAddNote() {
         let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
@@ -106,17 +114,6 @@ class ContainerViewController: UIViewController {
         childVC.noteIsNew = true
         childVC.modalPresentationStyle = .formSheet
         navigationController?.pushViewController(childVC, animated: false)
-    }
-    
-    @objc func switchToReminders() {
-        guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
-                 return
-               }
-               addChild(childVC)
-        childVC.viewOption = isReminderView
-               childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-               childVC.view.frame = container.bounds
-               container.addSubview(childVC.view)
     }
     
     @objc func switchToLabels() {
@@ -141,27 +138,14 @@ class ContainerViewController: UIViewController {
                container.addSubview(childVC.view)
     }
     
-    @objc func switchToArchive() {
-        guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
-                 return
-               }
-               addChild(childVC)
-        childVC.viewOption = isArchiveView
-               childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-               childVC.view.frame = container.bounds
-               container.addSubview(childVC.view)
-    }
-    
-    @objc func switchToTrash() {
+    func switchToNoteView(viewOption:Int) {
         guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
             return
         }
         addChild(childVC)
-        childVC.viewOption = isTrashView
+        childVC.viewOption = viewOption
         childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         childVC.view.frame = container.bounds
         container.addSubview(childVC.view)
     }
 }
-
-
