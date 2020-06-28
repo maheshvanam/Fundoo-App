@@ -91,6 +91,7 @@ class ContainerViewController: UIViewController {
         childVC.view.frame = container.bounds
         container.addSubview(childVC.view)
         childVC.didMove(toParent: self)
+       
     }
     
     @objc func switchToAddNote() {

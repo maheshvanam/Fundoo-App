@@ -111,6 +111,10 @@
 		84A3C9DF2480EDE5003393EC /* CoreDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */; };
 		84A3C9E12480F04C003393EC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9E02480F04C003393EC /* DatabaseManager.swift */; };
 		84A3C9E32480F19B003393EC /* SignInViewPresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9E22480F19B003393EC /* SignInViewPresenterService.swift */; };
+		84AA3B3324A8F4D4009562E1 /* CustomWidthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3224A8F4D4009562E1 /* CustomWidthLayout.swift */; };
+		84AA3B3524A8F541009562E1 /* SearchResultVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3424A8F541009562E1 /* SearchResultVC+CollectionView.swift */; };
+		84AA3B3724A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3624A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift */; };
+		84AA3B3924A8F851009562E1 /* SearchResultVC+MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */; };
 		84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */; };
 		84B49C57247EE94400D3C940 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C56247EE94400D3C940 /* Result.swift */; };
 		84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */; };
@@ -257,6 +261,10 @@
 		84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTest.swift; sourceTree = "<group>"; };
 		84A3C9E02480F04C003393EC /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		84A3C9E22480F19B003393EC /* SignInViewPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenterService.swift; sourceTree = "<group>"; };
+		84AA3B3224A8F4D4009562E1 /* CustomWidthLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWidthLayout.swift; sourceTree = "<group>"; };
+		84AA3B3424A8F541009562E1 /* SearchResultVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultVC+CollectionView.swift"; sourceTree = "<group>"; };
+		84AA3B3624A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewCell+LabelCollectionView.swift"; sourceTree = "<group>"; };
+		84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultVC+MosiacLayout.swift"; sourceTree = "<group>"; };
 		84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+BackgroundColor.swift"; sourceTree = "<group>"; };
 		84B49C56247EE94400D3C940 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenter.swift; sourceTree = "<group>"; };
@@ -357,6 +365,10 @@
 				8477A49224A5184A00DDEAFA /* NoteViewCell.xib */,
 				8477A49524A51D1400DDEAFA /* LabelViewCell.swift */,
 				8477A49624A51D1400DDEAFA /* LabelViewCell.xib */,
+				84AA3B3224A8F4D4009562E1 /* CustomWidthLayout.swift */,
+				84AA3B3424A8F541009562E1 /* SearchResultVC+CollectionView.swift */,
+				84AA3B3624A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift */,
+				84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */,
 			);
 			path = SearchResultVC;
 			sourceTree = "<group>";
@@ -865,6 +877,7 @@
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
 				84FCC370249F8D8300FE92CA /* LabelViewController.swift in Sources */,
 				8400AC9A249FDE3800B9A936 /* LabelPresenterDelegate.swift in Sources */,
+				84AA3B3724A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift in Sources */,
 				841BBAE7248042360080C591 /* Helper.swift in Sources */,
 				84435F3A24877FC00066586E /* NoteViewController+Extension.swift in Sources */,
 				8408F9B22496967F009155ED /* SearchVCPresenterImpl.swift in Sources */,
@@ -897,9 +910,11 @@
 				8412B1BD24915AB8004DD694 /* EditNotePresenter.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
 				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
+				84AA3B3524A8F541009562E1 /* SearchResultVC+CollectionView.swift in Sources */,
 				84FD41B424A136BD00ACADC1 /* SideMenuLabelCell.swift in Sources */,
 				84FCC37D249F8FF800FE92CA /* User+CoreDataProperties.swift in Sources */,
 				8477A49724A51D1400DDEAFA /* LabelViewCell.swift in Sources */,
+				84AA3B3924A8F851009562E1 /* SearchResultVC+MosiacLayout.swift in Sources */,
 				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
 				84FCC37F249F936500FE92CA /* AddLabelPresenter.swift in Sources */,
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
@@ -936,6 +951,7 @@
 				8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */,
 				84E9D90B24A3C6010021077C /* Note+CoreDataProperties.swift in Sources */,
 				84078A7D249019680000D649 /* OptionsCell.swift in Sources */,
+				84AA3B3324A8F4D4009562E1 /* CustomWidthLayout.swift in Sources */,
 				840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */,
 				842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */,
 				84078A712490040D0000D649 /* SlideUpVC.swift in Sources */,

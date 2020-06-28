@@ -12,7 +12,7 @@ class LabelViewCell: UICollectionViewCell {
 
     @IBOutlet weak var labelField: UILabel!
     
-    private let cornerRadius:CGFloat = 14
+    private let cornerRadius:CGFloat = 8
     private let borderWidth:CGFloat = 0.5
     
     override func awakeFromNib() {

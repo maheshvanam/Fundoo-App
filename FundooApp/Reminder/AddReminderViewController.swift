@@ -24,7 +24,6 @@ class AddReminderViewController: UIViewController {
     
 }
 
-
 protocol AddReminderDelegate {
     func addReminder(date: Date)
 }

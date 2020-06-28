@@ -62,4 +62,10 @@ enum Constants {
         let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxContentHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
         return ceil(boundingRect.height)
     }
+    static func getContentWidth(for text: String, with font: UIFont, width: CGFloat) -> CGFloat {
+        let nsstring = NSString(string: text)
+        let textAttributes = [NSAttributedString.Key.font : font]
+        let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxContentHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
+        return ceil(boundingRect.width)
+    }
 }

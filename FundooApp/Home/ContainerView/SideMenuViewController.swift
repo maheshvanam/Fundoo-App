@@ -47,11 +47,16 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         let labelNib = UINib(nibName: sideMenuLabelCellNib, bundle: nil)
         tableView.register(labelNib, forCellReuseIdentifier: sideMenuLabelCellId)
         loadDataSource()
+       
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadDataSource()
         tableView.reloadData()
+        let indexPath = IndexPath.init(row: 0, section: 0)
+               tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+         //handleFirstSection(option: notesOption)
     }
     
     func loadDataSource() {
@@ -134,8 +139,9 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
     func handleFirstSection(option:Int) {
         switch option {
+            
         case notesOption:
-            postNotification(key: Constants.NAVIGATE_TO_NOTE)
+                postNotification(key: Constants.NAVIGATE_TO_NOTE)
         case reminderOption:
             postNotification(key: Constants.NAVIGATE_TO_REMINDER)
         default:

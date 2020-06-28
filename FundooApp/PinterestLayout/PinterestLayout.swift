@@ -55,8 +55,8 @@ class PinterestLayout:UICollectionViewLayout {
         
         let photoHeight = delegate?.collectionView(
           collectionView,
-          heightForPhotoAtIndexPath: indexPath) ?? 180
-        let height = cellPadding * 2 + photoHeight
+          heightForPhotoAtIndexPath: indexPath) ?? 30
+        let height = cellPadding * 1 + photoHeight
         let frame = CGRect(x: xOffset[column],
                            y: yOffset[column],
                            width: columnWidth,

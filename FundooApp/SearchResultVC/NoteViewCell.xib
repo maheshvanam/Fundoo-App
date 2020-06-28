@@ -66,7 +66,7 @@
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="blG-ZL-cQl">
                         <rect key="frame" x="51.5" y="257" width="222.5" height="28"/>
                         <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="0.040427011986301373" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewLayout key="collectionViewLayout" id="wq9-Wu-8Hp" customClass="PinterestLayout" customModule="FundooApp" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="wq9-Wu-8Hp" customClass="CustomWidthLayout" customModule="FundooApp" customModuleProvider="target"/>
                     </collectionView>
                 </subviews>
             </view>

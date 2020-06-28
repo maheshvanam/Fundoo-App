@@ -25,6 +25,11 @@ class LabelPresenter: LabelPresenterDelegate {
     func deleteLabel(label:Label) {
         let user = dbManager.getCurrentUser()
         user.removeFromLabels(label)
+        let notes = label.notes?.allObjects as! [Note]
+        for note in notes {
+            note.removeFromLabels(label)
+            dbManager.saveData()
+        }
         dbManager.saveData()
     }
 }

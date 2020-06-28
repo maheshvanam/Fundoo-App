@@ -7,7 +7,9 @@
 //
 
 import UIKit
-private let labelViewCellId = "LabelViewCell"
+
+let labelViewCellId = "LabelViewCell"
+
 class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     
     @IBOutlet weak var titleField: UILabel!
@@ -20,6 +22,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     private let borderWidth:CGFloat = 0.5
     var addLabelPresenter:AddLabelPresenterDelegate!
     var dataSource:[Label] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,37 +32,31 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         addLabelPresenter = AddLabelPresenter(delegate: self)
         labelCollectionView.dataSource = self
         labelCollectionView.delegate = self
-        dataSource = addLabelPresenter.getLabels()
         self.reminderView.layer.cornerRadius = cornerRadius
         self.reminderView.layer.borderColor = UIColor.gray.cgColor
         self.reminderView.layer.borderWidth = borderWidth
     }
     
+    func updateView(note:Note){
+        self.titleField.text = note.title
+        self.descriptionField.text = note.note
+        self.reminderView.isHidden = true
+        if note.reminder != nil {
+            self.reminderView.isHidden = false
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, h:mm a"
+            let date = note.reminder
+            self.reminderField.text = dateFormatter.string(from: date!)
+        }
+        self.dataSource = note.labels?.allObjects as! [Label]
+    }
+    
+    func updateCellBackground(color:UIColor){
+        self.backgroundColor = color
+        self.layer.cornerRadius = cellRadius
+        self.layer.borderWidth = cellBorderWidth
+        self.layer.borderColor = UIColor.black.cgColor
+    }
+    
 }
 
-extension NoteViewCell :UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = labelCollectionView.dequeueReusableCell(withReuseIdentifier: labelViewCellId, for: indexPath) as! LabelViewCell
-        cell.labelField.text = dataSource[indexPath.item].title
-        return cell
-    }
-}
-
-extension NoteViewCell: PinterestLayoutDelegate {
-    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-                let title = dataSource[indexPath.item].title
-                let titleHeight = Constants.getContentHeight(for: title!, with: UIFont.systemFont(ofSize: 8), width: widthOfDiscriptionField)
-                return titleHeight
-    }
-    
-//    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
-//        let title = dataSource[indexPath.item].title
-//        let titleHeight = Constants.getContentHeight(for: title!, with: UIFont.systemFont(ofSize: 8), width: widthOfDiscriptionField)
-//        return titleHeight
-//    }
-}
