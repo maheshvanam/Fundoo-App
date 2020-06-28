@@ -152,13 +152,6 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     func handleSecondSection(option:Int) {
         let notes = data[option].notes?.allObjects as! [Note]
         NotificationCenter.default.post(name: Notification.Name(Constants.LABELS), object: notes)
-//        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-//        guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-//            return
-//        }
-//        childVC.dataSource = notes
-//        childVC.title = "Notes"
-//        navigationController?.pushViewController(childVC, animated: true)
     }
     
     func handleThirdSection(option:Int) {
@@ -170,21 +163,16 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
             UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
             self.navigationController?.popToRootViewController(animated: false)
         case trashOption:
-            let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-            guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-                return
-            }
-            childVC.dataSource = sideMenuPresenter.getTrashNotes()
-            childVC.title = "Notes"
-            navigationController?.pushViewController(childVC, animated: true)
+            postNotification(key:       Constants.NAVIGATE_TO_TRASH)
+//            let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+//            guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
+//                return
+//            }
+//            childVC.dataSource = sideMenuPresenter.getTrashNotes()
+//            childVC.title = "Notes"
+//            navigationController?.pushViewController(childVC, animated: true)
         case archiveOption:
-            let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-            guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-                return
-            }
-            childVC.dataSource = sideMenuPresenter.getArchiveNotes()
-            childVC.title = "Notes"
-            navigationController?.pushViewController(childVC, animated: true)
+            postNotification(key:       Constants.NAVIGATE_TO_ARCHIVE)
         default:
             postNotification(key: Constants.NAVIGATE_TO_NOTE)
         }

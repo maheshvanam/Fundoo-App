@@ -13,4 +13,6 @@ protocol NoteDelegate {
     func updateDataSource() 
     func reorderCell(model:[Note],sourceIndexPath: IndexPath,destinationIndexPath: IndexPath)
     func getReminderNotes()-> [Note]
+    func getArchiveNotes() -> [Note]
+    func getTrashNotes() -> [Note]
 }

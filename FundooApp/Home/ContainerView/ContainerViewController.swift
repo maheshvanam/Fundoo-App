@@ -58,10 +58,12 @@ class ContainerViewController: UIViewController {
     
     func addNotificationCenterObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(switchToNotes), name: Notification.Name(Constants.NAVIGATE_TO_NOTE), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(switchToTrash), name: Notification.Name(Constants.NAVIGATE_TO_TRASH), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(swithToLabelNotes), name: Notification.Name(Constants.LABELS), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchToLabels), name: Notification.Name(Constants.NAVIGATE_TO_LABELS), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchToReminders), name: Notification.Name(Constants.NAVIGATE_TO_REMINDER), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(switchToArchive), name: Notification.Name(Constants.NAVIGATE_TO_ARCHIVE), object: nil)
        }
 
     @IBAction func onMenuTapped(_ sender: Any) {
@@ -137,7 +139,28 @@ class ContainerViewController: UIViewController {
                childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
                childVC.view.frame = container.bounds
                container.addSubview(childVC.view)
-        
+    }
+    
+    @objc func switchToArchive() {
+        guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
+                 return
+               }
+               addChild(childVC)
+        childVC.viewOption = isArchiveView
+               childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+               childVC.view.frame = container.bounds
+               container.addSubview(childVC.view)
+    }
+    
+    @objc func switchToTrash() {
+        guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
+            return
+        }
+        addChild(childVC)
+        childVC.viewOption = isTrashView
+        childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        childVC.view.frame = container.bounds
+        container.addSubview(childVC.view)
     }
 }
 

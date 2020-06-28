@@ -86,4 +86,16 @@ class NotePresenterImpl: NoteDelegate {
         let notes = user.notes?.allObjects as! [Note]
         return notes.filter({$0.reminder != nil})
     }
+    
+    func getArchiveNotes() -> [Note] {
+        let user = dbManager.getCurrentUser()
+        let notes = user.notes?.allObjects as! [Note]
+        return notes.filter({ $0.archive == true })
+    }
+    
+    func getTrashNotes() -> [Note] {
+           let user = dbManager.getCurrentUser()
+           let notes = user.notes?.allObjects as! [Note]
+           return notes.filter({ $0.trash == true })
+       }
 }

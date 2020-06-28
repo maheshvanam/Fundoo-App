@@ -69,6 +69,10 @@ class NoteViewController: UIViewController {
             self.models = (self.notePresenter?.getReminderNotes())!
         case isLabelView:
             collectionView.reloadData()
+        case isArchiveView:
+            self.models = (self.notePresenter?.getArchiveNotes())!
+        case isTrashView:
+            self.models = (self.notePresenter?.getTrashNotes())!
         default:
             self.notePresenter!.updateDataSource()
         }
