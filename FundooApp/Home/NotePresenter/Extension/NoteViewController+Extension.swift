@@ -21,27 +21,39 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
          let noteModel = models[indexPath.item]
         cell.updateView(note:noteModel)
         cell.updateCellBackground(color: Constants.colors[noteModel.color!]!)
-        
-        let gesture = MyTapGesture(target: self, action:  #selector (onViewTouched(_:)))
-        gesture.index = indexPath.item
-        cell.reminderView.addGestureRecognizer(gesture)
         cell.setShadow()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if viewOption == isTrashView {
+            showAlert(note: models[indexPath.item])
+            self.reloadCells()
+        }
+        else {
+        
         let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-        guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteViewController  else {
-               return
-             }
-        childVC.note = models[indexPath.item]
-        navigationController?.pushViewController(childVC, animated: false)
+            guard let childVC = board.instantiateViewController(withIdentifier: Constants.EDIT_NOTE_VC) as? EditNoteViewController  else {
+                return
+            }
+            childVC.note = models[indexPath.item]
+            navigationController?.pushViewController(childVC, animated: false)
+        }
     }
     
-    @objc func onViewTouched(_ sender:MyTapGesture){
+    func showAlert(note :Note){
+        let alertController = UIAlertController(title: "Trash", message: "you can't edit the trashed notes", preferredStyle: .alert)
+        
+        let OKAction = UIAlertAction(title: "Restore", style: .default) { (action:UIAlertAction!) in
+            note.trash = false
+            self.notePresenter?.saveNote()
+        }
+        alertController.addAction(OKAction)
+        let cancelAction = UIAlertAction(title: "Delete", style: .cancel) { (action:UIAlertAction!) in
+            self.notePresenter?.deleteNote(note: note)
+            
+        }
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion:nil)
     }
-}
-
-class MyTapGesture: UITapGestureRecognizer {
-    var index = Int()
 }

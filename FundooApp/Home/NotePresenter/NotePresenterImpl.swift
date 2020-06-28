@@ -98,4 +98,17 @@ class NotePresenterImpl: NoteDelegate {
            let notes = user.notes?.allObjects as! [Note]
            return notes.filter({ $0.trash == true })
        }
+    func saveNote() {
+        dbManager.saveData()
+    }
+    func deleteNote(note:Note){
+        let user = dbManager.getCurrentUser()
+        user.removeFromNotes(note)
+        let labels = user.labels?.allObjects as! [Label]
+        for label in labels {
+            label.removeFromNotes(note)
+        }
+        dbManager.saveData()
+    }
+    
 }

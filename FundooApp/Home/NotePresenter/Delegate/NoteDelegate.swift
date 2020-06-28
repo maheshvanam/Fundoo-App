@@ -15,4 +15,6 @@ protocol NoteDelegate {
     func getReminderNotes()-> [Note]
     func getArchiveNotes() -> [Note]
     func getTrashNotes() -> [Note]
+    func saveNote()
+    func deleteNote(note:Note)
 }
