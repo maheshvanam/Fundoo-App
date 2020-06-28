@@ -8,10 +8,11 @@
 
 import UIKit
 
-let dequeueReusableCellId = "SearchResultCell"
+let dequeueReusableCellId   = "SearchResultCell"
+let noteViewCell            = "NoteViewCell"
 let numberOfColumns:CGFloat = 2
 let cellBorderWidth:CGFloat = 1
-let cellRadius:CGFloat = 6
+let cellRadius:CGFloat      = 6
 
 class SearchResultVC: UIViewController {
 
@@ -27,9 +28,7 @@ class SearchResultVC: UIViewController {
         searchResultCollectionView.dataSource = self
         searchResultCollectionView.delegate = self
         
-        let nib = UINib(nibName: "NoteViewCell", bundle: nil)
-        searchResultCollectionView.register(nib, forCellWithReuseIdentifier: "NoteViewCell")
-        
+        let nib = UINib(nibName:noteViewCell, bundle: nil)
+        searchResultCollectionView.register(nib, forCellWithReuseIdentifier: noteViewCell)
     }
-
 }

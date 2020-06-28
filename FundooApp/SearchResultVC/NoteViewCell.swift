@@ -9,7 +9,6 @@
 import UIKit
 
 let labelViewCellId = "LabelViewCell"
-
 class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     
     @IBOutlet weak var titleField: UILabel!
@@ -18,10 +17,11 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     @IBOutlet weak var reminderField: UILabel!
     @IBOutlet weak var labelCollectionView: UICollectionView!
     var layout:PinterestLayout!
-    private let cornerRadius:CGFloat = 15
-    private let borderWidth:CGFloat = 0.5
     var addLabelPresenter:AddLabelPresenterDelegate!
     var dataSource:[Label] = []
+    private let cornerRadius:CGFloat = 15
+    private let borderWidth:CGFloat = 0.5
+    private let dateFormat      = "MMM d, h:mm a"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,7 +44,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         if note.reminder != nil {
             self.reminderView.isHidden = false
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM d, h:mm a"
+            dateFormatter.dateFormat = dateFormat
             let date = note.reminder
             self.reminderField.text = dateFormatter.string(from: date!)
         }
