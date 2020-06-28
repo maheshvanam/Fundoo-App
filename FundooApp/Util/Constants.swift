@@ -40,6 +40,8 @@ enum Constants {
     static let UPDATE_LABEL_VC = "UpdateLabelViewController"
     static let ADD_LABEL_VC = "AddLabelVC"
     static let LABELS_VC = "labels"
+    static let LABELS = "labels_View"
+    
     static let REMINDER_VC = "ReminderViewController"
     static let USER_NOT_FOUND = "user not found"
     static let FETCH_ERROR = "fetching error"

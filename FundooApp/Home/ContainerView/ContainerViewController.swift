@@ -58,6 +58,7 @@ class ContainerViewController: UIViewController {
     
     func addNotificationCenterObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(switchToNotes), name: Notification.Name(Constants.NAVIGATE_TO_NOTE), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(swithToLabelNotes), name: Notification.Name(Constants.LABELS), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchToLabels), name: Notification.Name(Constants.NAVIGATE_TO_LABELS), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: Notification.Name(Constants.TOGGLE_MENU), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchToReminders), name: Notification.Name(Constants.NAVIGATE_TO_REMINDER), object: nil)
@@ -87,6 +88,7 @@ class ContainerViewController: UIViewController {
           return
         }
         addChild(childVC)
+        childVC.viewOption = isNoteView
         childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         childVC.view.frame = container.bounds
         container.addSubview(childVC.view)
@@ -109,19 +111,10 @@ class ContainerViewController: UIViewController {
                  return
                }
                addChild(childVC)
-        childVC.reminderView = true
+        childVC.viewOption = isReminderView
                childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
                childVC.view.frame = container.bounds
                container.addSubview(childVC.view)
-//               childVC.didMove(toParent: self)
-//        reminderPresenter = ReminderPresenter()
-//        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-//        guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-//            return
-//        }
-//        childVC.dataSource = reminderPresenter.getReminderNotes()
-//        childVC.title = "Notes"
-//        navigationController?.pushViewController(childVC, animated: true)
     }
     
     @objc func switchToLabels() {
@@ -131,6 +124,20 @@ class ContainerViewController: UIViewController {
                 return
         }
         navigationController?.pushViewController(childVC, animated: false)
+    }
+    
+    @objc func swithToLabelNotes(notification:NSNotification){
+        guard let notes = notification.object as? [Note] else {return}
+        guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
+                 return
+               }
+               addChild(childVC)
+        childVC.models = notes
+        childVC.viewOption = isLabelView
+               childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+               childVC.view.frame = container.bounds
+               container.addSubview(childVC.view)
+        
     }
 }
 

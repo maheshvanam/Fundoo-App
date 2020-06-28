@@ -151,13 +151,14 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
     func handleSecondSection(option:Int) {
         let notes = data[option].notes?.allObjects as! [Note]
-        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
-        guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
-            return
-        }
-        childVC.dataSource = notes
-        childVC.title = "Notes"
-        navigationController?.pushViewController(childVC, animated: true)
+        NotificationCenter.default.post(name: Notification.Name(Constants.LABELS), object: notes)
+//        let board = UIStoryboard(name: Constants.HOME_STORYBOARD, bundle: nil)
+//        guard let childVC = board.instantiateViewController(withIdentifier: resultViewControllerId ) as? SearchResultVC  else {
+//            return
+//        }
+//        childVC.dataSource = notes
+//        childVC.title = "Notes"
+//        navigationController?.pushViewController(childVC, animated: true)
     }
     
     func handleThirdSection(option:Int) {

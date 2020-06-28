@@ -10,6 +10,11 @@ import UIKit
 var fetchOffcet:Int = 0
 let fetchLimit:Int = 10
 var fetchCell:Int = 0
+let isNoteView     = 0
+let isReminderView = 1
+let isLabelView    = 2
+let isArchiveView  = 3
+let isTrashView    = 4
 class NoteViewController: UIViewController {
     
     private let topInset:CGFloat = 10
@@ -24,10 +29,10 @@ class NoteViewController: UIViewController {
     let maxContentHeight:CGFloat = 350
     var notePresenter: NoteDelegate?
     @IBOutlet var collectionView: UICollectionView!
-    var reminderView:Bool = false
     var models = [Note]()
     var layout: MosaicLayout!
     var isGrid:Bool = true
+    var viewOption:Int!
     private let cellId = "NoteViewCell"
     
     override func viewDidLoad() {
@@ -57,13 +62,17 @@ class NoteViewController: UIViewController {
     }
     
     @objc func reloadCells(){
-        if reminderView == true {
+        switch viewOption {
+        case isNoteView:
+            self.notePresenter!.updateDataSource()
+        case isReminderView:
             self.models = (self.notePresenter?.getReminderNotes())!
-            layout.reloadData()
+        case isLabelView:
             collectionView.reloadData()
+        default:
+            self.notePresenter!.updateDataSource()
         }
-        else {
-              self.notePresenter!.updateDataSource()
-        }
+        layout.reloadData()
+        collectionView.reloadData()
     }
 }
