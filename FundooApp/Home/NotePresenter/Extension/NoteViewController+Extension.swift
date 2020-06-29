@@ -42,16 +42,20 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func showAlert(note :Note){
-        let alertController = UIAlertController(title: "Trash", message: "you can't edit the trashed notes", preferredStyle: .alert)
+        let message             = "you can't edit the trashed notes"
+        let title               = "Trash"
+        let restoreButtonTitle  = "Restore"
+        let deleteButtonTitle   = "Delete"
         
-        let OKAction = UIAlertAction(title: "Restore", style: .default) { (action:UIAlertAction!) in
+        let alertController = UIAlertController(title: title, message: message , preferredStyle: .alert)
+        
+        let OKAction = UIAlertAction(title: restoreButtonTitle, style: .default) { (action:UIAlertAction!) in
             note.trash = false
             self.notePresenter?.saveNote()
         }
         alertController.addAction(OKAction)
-        let cancelAction = UIAlertAction(title: "Delete", style: .cancel) { (action:UIAlertAction!) in
+        let cancelAction = UIAlertAction(title: deleteButtonTitle, style: .cancel) { (action:UIAlertAction!) in
             self.notePresenter?.deleteNote(note: note)
-            
         }
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:nil)
