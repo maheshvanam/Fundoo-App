@@ -77,6 +77,12 @@
 		842460AF249A913A00B38CBA /* CheckMarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842460AD249A913A00B38CBA /* CheckMarkCell.xib */; };
 		842460B1249A956200B38CBA /* AddLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460B0249A956200B38CBA /* AddLabelViewController.swift */; };
 		842460B3249AA16B00B38CBA /* AddLabelViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */; };
+		842584BF24A9B4F6000738B8 /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842584B924A9B4F6000738B8 /* Label+CoreDataClass.swift */; };
+		842584C024A9B4F6000738B8 /* Label+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842584BA24A9B4F6000738B8 /* Label+CoreDataProperties.swift */; };
+		842584C124A9B4F6000738B8 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842584BB24A9B4F6000738B8 /* User+CoreDataClass.swift */; };
+		842584C224A9B4F6000738B8 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842584BC24A9B4F6000738B8 /* User+CoreDataProperties.swift */; };
+		842584C324A9B4F6000738B8 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842584BD24A9B4F6000738B8 /* Note+CoreDataClass.swift */; };
+		842584C424A9B4F6000738B8 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842584BE24A9B4F6000738B8 /* Note+CoreDataProperties.swift */; };
 		8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981224816447009AA1D9 /* SignUpViewPresenter.swift */; };
 		84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84289814248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift */; };
 		8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */; };
@@ -120,18 +126,12 @@
 		84C85D7B24A154B3009CDCAF /* UpdateLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */; };
 		84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C7CF248655CA002AB435 /* ContainerViewController.swift */; };
 		84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */; };
-		84E9D90B24A3C6010021077C /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D90A24A3C6010021077C /* Note+CoreDataProperties.swift */; };
 		84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB20752494B3D600652606 /* SideMenuOption.swift */; };
 		84F3CE3F24A0C523009EE22D /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */; };
 		84F3CE4024A0C523009EE22D /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */; };
 		84F7A8EB249E54BE00480ACE /* CreateLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */; };
 		84F7A8EC249E54BE00480ACE /* CreateLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */; };
 		84FCC370249F8D8300FE92CA /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC36F249F8D8300FE92CA /* LabelViewController.swift */; };
-		84FCC378249F8FF800FE92CA /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC372249F8FF800FE92CA /* Note+CoreDataClass.swift */; };
-		84FCC37A249F8FF800FE92CA /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC374249F8FF800FE92CA /* Label+CoreDataClass.swift */; };
-		84FCC37B249F8FF800FE92CA /* Label+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC375249F8FF800FE92CA /* Label+CoreDataProperties.swift */; };
-		84FCC37C249F8FF800FE92CA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC376249F8FF800FE92CA /* User+CoreDataClass.swift */; };
-		84FCC37D249F8FF800FE92CA /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC377249F8FF800FE92CA /* User+CoreDataProperties.swift */; };
 		84FCC37F249F936500FE92CA /* AddLabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */; };
 		84FCC381249F948100FE92CA /* AddLabelPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */; };
 		84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */; };
@@ -226,6 +226,12 @@
 		842460AD249A913A00B38CBA /* CheckMarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckMarkCell.xib; sourceTree = "<group>"; };
 		842460B0249A956200B38CBA /* AddLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelViewController.swift; sourceTree = "<group>"; };
 		842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLabelViewController+TableView.swift"; sourceTree = "<group>"; };
+		842584B924A9B4F6000738B8 /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		842584BA24A9B4F6000738B8 /* Label+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		842584BB24A9B4F6000738B8 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		842584BC24A9B4F6000738B8 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		842584BD24A9B4F6000738B8 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		842584BE24A9B4F6000738B8 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		8428981224816447009AA1D9 /* SignUpViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenter.swift; sourceTree = "<group>"; };
 		84289814248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterDelegate.swift; sourceTree = "<group>"; };
 		8428981624816551009AA1D9 /* SignUpViewPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewPresenterService.swift; sourceTree = "<group>"; };
@@ -269,18 +275,12 @@
 		84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLabelViewController.swift; sourceTree = "<group>"; };
 		84D0C7CF248655CA002AB435 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
-		84E9D90A24A3C6010021077C /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		84EB20752494B3D600652606 /* SideMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOption.swift; sourceTree = "<group>"; };
 		84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelCell.swift; sourceTree = "<group>"; };
 		84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateLabelCell.xib; sourceTree = "<group>"; };
 		84FCC36F249F8D8300FE92CA /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
-		84FCC372249F8FF800FE92CA /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		84FCC374249F8FF800FE92CA /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		84FCC375249F8FF800FE92CA /* Label+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		84FCC376249F8FF800FE92CA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		84FCC377249F8FF800FE92CA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelPresenter.swift; sourceTree = "<group>"; };
 		84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelPresenterDelegate.swift; sourceTree = "<group>"; };
 		84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelViewDelegate.swift; sourceTree = "<group>"; };
@@ -442,6 +442,12 @@
 		84126ED924897E7B00F0FFBB /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				842584B924A9B4F6000738B8 /* Label+CoreDataClass.swift */,
+				842584BA24A9B4F6000738B8 /* Label+CoreDataProperties.swift */,
+				842584BB24A9B4F6000738B8 /* User+CoreDataClass.swift */,
+				842584BC24A9B4F6000738B8 /* User+CoreDataProperties.swift */,
+				842584BD24A9B4F6000738B8 /* Note+CoreDataClass.swift */,
+				842584BE24A9B4F6000738B8 /* Note+CoreDataProperties.swift */,
 				842CBCAF2493E9740032CBB6 /* Note+NSItemProviderWriting.swift */,
 			);
 			path = DataModel;
@@ -495,7 +501,6 @@
 				84B49C53247EBE1800D3C940 /* Util */,
 				84126ED924897E7B00F0FFBB /* DataModel */,
 				84E26B47247C240C000D8BE5 /* Service */,
-				84FCC371249F8FC600FE92CA /* CoreDataModels */,
 				84E26B44247C23D1000D8BE5 /* Sotoryboard */,
 				8419D298247A519D00C4F93A /* AppDelegate.swift */,
 				8419D29A247A519D00C4F93A /* SceneDelegate.swift */,
@@ -717,19 +722,6 @@
 			path = CreateLabel;
 			sourceTree = "<group>";
 		};
-		84FCC371249F8FC600FE92CA /* CoreDataModels */ = {
-			isa = PBXGroup;
-			children = (
-				84E9D90A24A3C6010021077C /* Note+CoreDataProperties.swift */,
-				84FCC372249F8FF800FE92CA /* Note+CoreDataClass.swift */,
-				84FCC374249F8FF800FE92CA /* Label+CoreDataClass.swift */,
-				84FCC375249F8FF800FE92CA /* Label+CoreDataProperties.swift */,
-				84FCC376249F8FF800FE92CA /* User+CoreDataClass.swift */,
-				84FCC377249F8FF800FE92CA /* User+CoreDataProperties.swift */,
-			);
-			path = CoreDataModels;
-			sourceTree = "<group>";
-		};
 		84FD41BA24A14AB300ACADC1 /* AddLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,7 +842,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84FCC37A249F8FF800FE92CA /* Label+CoreDataClass.swift in Sources */,
 				8400AC98249FDE1500B9A936 /* LabelPresenter.swift in Sources */,
 				843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */,
 				84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */,
@@ -859,18 +850,20 @@
 				8412B1C324915C6D004DD694 /* EditNotePresenterDelegate.swift in Sources */,
 				84113FEB2493966E00AEDCBD /* SlideUpVCDelegate.swift in Sources */,
 				8408AAF024A46C6D003F04E4 /* SideMenuPresenterDelegate.swift in Sources */,
-				84FCC37B249F8FF800FE92CA /* Label+CoreDataProperties.swift in Sources */,
 				84A3C9DB2480E3B1003393EC /* DataService.swift in Sources */,
 				84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */,
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
+				842584C124A9B4F6000738B8 /* User+CoreDataClass.swift in Sources */,
 				8435B7FF24A29889008056C6 /* ReminderPresenter.swift in Sources */,
 				84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */,
 				8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */,
 				84F7A8EB249E54BE00480ACE /* CreateLabelCell.swift in Sources */,
 				84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */,
+				842584BF24A9B4F6000738B8 /* Label+CoreDataClass.swift in Sources */,
 				842460B1249A956200B38CBA /* AddLabelViewController.swift in Sources */,
 				8408F9C62496C418009155ED /* SearchColorCell.swift in Sources */,
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
+				842584C024A9B4F6000738B8 /* Label+CoreDataProperties.swift in Sources */,
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
 				84FCC370249F8D8300FE92CA /* LabelViewController.swift in Sources */,
 				8400AC9A249FDE3800B9A936 /* LabelPresenterDelegate.swift in Sources */,
@@ -882,6 +875,7 @@
 				84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
 				8400AC9E249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift in Sources */,
+				842584C424A9B4F6000738B8 /* Note+CoreDataProperties.swift in Sources */,
 				842460AE249A913A00B38CBA /* CheckMarkCell.swift in Sources */,
 				84126ED3248953C000F0FFBB /* NotePresenterImpl.swift in Sources */,
 				8412B1BF24915AE6004DD694 /* EditNotePresenterImpl.swift in Sources */,
@@ -906,10 +900,10 @@
 				8408F9B92496AB77009155ED /* SearchVC+UISearchResultsUpdating.swift in Sources */,
 				8412B1BD24915AB8004DD694 /* EditNotePresenter.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
+				842584C324A9B4F6000738B8 /* Note+CoreDataClass.swift in Sources */,
 				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
 				84AA3B3524A8F541009562E1 /* SearchResultVC+CollectionView.swift in Sources */,
 				84FD41B424A136BD00ACADC1 /* SideMenuLabelCell.swift in Sources */,
-				84FCC37D249F8FF800FE92CA /* User+CoreDataProperties.swift in Sources */,
 				8477A49724A51D1400DDEAFA /* LabelViewCell.swift in Sources */,
 				84AA3B3924A8F851009562E1 /* SearchResultVC+MosiacLayout.swift in Sources */,
 				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
@@ -917,7 +911,6 @@
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
-				84FCC37C249F8FF800FE92CA /* User+CoreDataClass.swift in Sources */,
 				84A3C9E32480F19B003393EC /* SignInViewPresenterService.swift in Sources */,
 				84126ED82489558900F0FFBB /* NoteViewDelegate.swift in Sources */,
 				84126ECF248952CB00F0FFBB /* NoteDelegate.swift in Sources */,
@@ -937,6 +930,7 @@
 				84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */,
 				8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */,
 				84113FE92493964500AEDCBD /* SlideUpVCPresenterImpl.swift in Sources */,
+				842584C224A9B4F6000738B8 /* User+CoreDataProperties.swift in Sources */,
 				8407525C248927440075EF51 /* ProfilePresenterImpl.swift in Sources */,
 				84FCC381249F948100FE92CA /* AddLabelPresenterDelegate.swift in Sources */,
 				8477A49324A5184A00DDEAFA /* NoteViewCell.swift in Sources */,
@@ -945,7 +939,6 @@
 				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,
 				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,
 				8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */,
-				84E9D90B24A3C6010021077C /* Note+CoreDataProperties.swift in Sources */,
 				84078A7D249019680000D649 /* OptionsCell.swift in Sources */,
 				84AA3B3324A8F4D4009562E1 /* CustomWidthLayout.swift in Sources */,
 				840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */,
@@ -963,7 +956,6 @@
 				843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */,
 				841E66EE249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift in Sources */,
 				8435B7FB24A2902A008056C6 /* EditNoteViewController+Reminder.swift in Sources */,
-				84FCC378249F8FF800FE92CA /* Note+CoreDataClass.swift in Sources */,
 				84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */,
 				84A3C9E12480F04C003393EC /* DatabaseManager.swift in Sources */,
 			);
