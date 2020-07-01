@@ -45,8 +45,4 @@ class FirebaseDatabaseManager:DataService {
     {
         auth.signIn(withEmail: email, password: password)
     }
-    
-    func insertNote(note:NoteDataModel) {
-  
-    }
 }

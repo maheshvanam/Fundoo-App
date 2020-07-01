@@ -15,8 +15,8 @@ class SearchVC:UIViewController {
      @IBOutlet weak var reslutCollectionView: UICollectionView!
     @IBOutlet weak var colorCollectionViewHeightAnchor: NSLayoutConstraint!
     var searchController:UISearchController!
-    var originalDataSource: [Note] = []
-    var currentDataSource: [Note] = []
+    var originalDataSource: [NoteModel] = []
+    var currentDataSource: [NoteModel] = []
     var colorData: [String] = []
     var serachPresenter:SearchVCPresenter!
 
@@ -51,7 +51,7 @@ class SearchVC:UIViewController {
         if searchTerm.count > 0 {
             currentDataSource = originalDataSource
             let filteredResults = currentDataSource.filter {
-                ($0.title?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))! || ($0.note?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))!
+                ($0.title?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))! || ($0.description?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))!
             }
             currentDataSource = filteredResults
             reslutCollectionView.reloadData()

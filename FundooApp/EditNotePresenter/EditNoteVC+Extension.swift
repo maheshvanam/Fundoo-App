@@ -9,13 +9,12 @@
 import UIKit
 
 extension EditNoteViewController: EditNotePresenterDelegate {
-    
     func initializeView(){
         discriptionField.layer.borderWidth = 1
         discriptionField.layer.borderColor = #colorLiteral(red: 0.9175666571, green: 0.9176985621, blue: 0.9175377488, alpha: 1)
         if note != nil {
             titleField.text = note.title
-            discriptionField.text = note.note
+            discriptionField.text = note.description
             if let color = note.color {
                 view.backgroundColor = colors[color]
                 titleField.backgroundColor = colors[color]
@@ -46,7 +45,7 @@ extension EditNoteViewController: EditNotePresenterDelegate {
         return (noteIsNew != nil) ? true : false
     }
     
-    func getNote() -> Note? {
+    func getNote() -> NoteModel? {
         return note
     }
     

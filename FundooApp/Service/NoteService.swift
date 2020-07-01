@@ -11,4 +11,5 @@ import Foundation
 protocol NoteService {
     
     func insertUserNote(note:NoteDataModel)
+    func insertUserNote(note:NoteModel)
 }

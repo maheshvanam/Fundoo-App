@@ -29,7 +29,7 @@ class NoteViewController: UIViewController {
     let maxContentHeight:CGFloat = 350
     var notePresenter: NoteDelegate?
     @IBOutlet var collectionView: UICollectionView!
-    var models = [Note]()
+    var models = [NoteModel]()
     var layout: MosaicLayout!
     var isGrid:Bool = true
     var viewOption:Int!
@@ -41,7 +41,7 @@ class NoteViewController: UIViewController {
         layout = collectionView?.collectionViewLayout as? MosaicLayout
         layout.delegate = self
         collectionView.dragInteractionEnabled = true
-        collectionView.dragDelegate = self
+       // collectionView.dragDelegate = self
         collectionView.dropDelegate = self
         collectionView.clipsToBounds = false
         collectionView.contentInset = UIEdgeInsets(top: topInset , left: leftInset, bottom: bottomInset, right: rightInset)
@@ -79,7 +79,8 @@ class NoteViewController: UIViewController {
 //        default:
 //            self.notePresenter!.updateDataSource()
 //        }
-//        layout.reloadData()
-//        collectionView.reloadData()
+        self.notePresenter!.updateDataSource()
+        layout.reloadData()
+        collectionView.reloadData()
     }
 }

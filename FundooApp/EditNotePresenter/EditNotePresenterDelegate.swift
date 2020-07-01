@@ -12,7 +12,7 @@ protocol EditNotePresenterDelegate {
     func initializeView()
     func updateViews(color: UIColor)
     func fieldsAreEmpty()-> Bool
-    func getNote()-> Note?
+    func getNote()-> NoteModel?
     func isNewNote()-> Bool
     func getTitleText()-> String
     func getDiscriptionText()-> String

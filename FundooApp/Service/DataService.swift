@@ -8,6 +8,7 @@
 
 import Foundation
 protocol DataService {
+    
     func insertUser(registartionUser: UserModel)
     func isLoggedIn()-> Bool
     func signOutUser()

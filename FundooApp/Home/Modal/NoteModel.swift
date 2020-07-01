@@ -8,13 +8,75 @@
 
 import Foundation
 
-class NoteModel {
+public class NoteModel: Codable {
     
     var title:String?
-    var note:String?
-       
-    init(noteModel: Note) {
-       self.title = noteModel.title
-       self.note = noteModel.note
+    var description:String?
+    var isArchive: Bool?
+    var color: String?
+    var creationTime: Date?
+    var editTime: Date?
+    var isPinned: Bool?
+    var position: Int64?
+    var reminder: Date?
+    var isTrash: Bool?
+    var id:String?
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case description
+        case isArchive
+        case color
+        case creationTime
+        case editTime
+        case isPinned
+        case position
+        case reminder
+        case isTrash
+        case id
+    }
+    
+     func setTitle(title:String){
+        self.title = title
+    }
+    
+     func setDescription(description:String){
+        self.description = description
+    }
+    
+     func setIsArchive(isArchive:Bool){
+        self.isArchive = isArchive
+    }
+    
+     func setColor(color:String){
+        self.color = color
+    }
+    
+     func creationTime(time:Date){
+        self.creationTime = time
+    }
+    
+    func setEditTime(time:Date){
+        self.editTime = time
+    }
+    
+     func setIsTrash(isTrash:Bool){
+        self.isTrash = isTrash
+    }
+    
+     func setIsPinned(isPinned:Bool){
+        self.isPinned = isPinned
+    }
+    
+     func setPosition(position:Int64){
+        self.position = position
+    }
+    
+     func setId(id:String){
+        self.id = id
+    }
+    
+     func setReminder(reminder:Date){
+        self.reminder = reminder
     }
 }
