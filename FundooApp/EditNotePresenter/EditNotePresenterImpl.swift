@@ -21,22 +21,23 @@ class EditNotePresenterImpl: EditNoteDelegate {
             note.title = editNoteView.getTitleText()
             note.creationTime = Date()
             note.description = editNoteView.getDiscriptionText()
-            dbManager.insertUserNote(note:note)
+            
         }
         else {
             return
         }
     }
+    
     func saveNote() {
-        let note = editNoteView.getNote()
+        var note = editNoteView.getNote()
         if !editNoteView.fieldsAreEmpty() {
             if editNoteView.isNewNote() {
-              //  note = dbManager.createNote()
+                note = NoteModel()
                 note!.creationTime = Date()
                 note!.title = editNoteView.getTitleText()
                 note!.color = editNoteView.getCurrentColor()
                 note!.description = editNoteView.getDiscriptionText()
-                
+                dbManager.insertUserNote(note:note!)
 //                dbManager.insertNote(note: note!)
  //               editNoteView.postReloadCellsNotification()
                     return

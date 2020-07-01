@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ProfilePresenterDelegate {
-    func updateLabel(user: User)
+    func updateLabel(name: String,email:String)
 }

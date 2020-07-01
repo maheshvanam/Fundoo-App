@@ -8,6 +8,6 @@
 
 import Foundation
 protocol EditNoteDelegate {
-    func saveNote(note:NoteModel)
+    func saveNote()
     func addNoteToLabels(note:Note,labels: [Label])
 }

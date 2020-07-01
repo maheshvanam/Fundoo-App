@@ -19,34 +19,11 @@ class NotePresenterImpl: NoteDelegate {
     
     
     func updateDataSource() {
-//        let coreData = DatabaseManager()
-//        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-//        do{
-//            let user = coreData.getCurrentUser()
-//                //try coreData.getUser(email: email!)
-//            let notes = user.notes
-//            let allNotes = (notes!.allObjects as! [Note]).sorted(by: { $0.position > $1.position})
-//            //let allNotes = notes?.allObjects as! [Note]
-//            self.noteView.setTableData(data:allNotes.filter({$0.archive == false && $0.trash == false }))
-//            self.noteView.updateView()
-//        }
-//        catch{
-//            let nserror = error as NSError
-//            fatalError(" \(nserror.description)")
-//        }
-    }
-    
-    func updateDataSource(fetchLimit fecthLimit:Int,fetchOffcet:Int) {
-//        let dbManger = DatabaseManager()
-//        let allNotes = dbManger.getNotesFromDB(fetchLimit: fecthLimit, fetchOffSet: fetchOffcet)
-//        if allNotes.count != 0 {
-//            self.noteView.setTableData(data:allNotes)
-//            //.sorted(by: {$0.position > $1.position}))
-//        }
-//        else {
-//            fetchCell = 0
-//        }
-        //self.noteView.updateView()
+       let dbManager = NoteDbManager()
+        let notes = dbManager.getAllNotes()
+        self.noteView.setTableData(data: notes)
+        // self.noteView.setTableData(data:allNotes.filter({$0.archive == false && $0.trash == false }))
+        self.noteView.updateView()
     }
 
     func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {

@@ -9,7 +9,6 @@
 import Foundation
 
 protocol NoteDelegate {
-//    func updateDataSource(fetchLimit: Int,fetchOffcet: Int)
     func updateDataSource()
     func reorderCell(model:[Note],sourceIndexPath: IndexPath,destinationIndexPath: IndexPath)
 //    func getReminderNotes()-> [Note]

@@ -9,9 +9,9 @@
 import Foundation
 
 extension ProfileViewController: ProfilePresenterDelegate {
-    
-    func updateLabel(user: User) {
-        self.nameLabel.text = "\(user.firstName ?? "") \(user.lastName ?? "")"
-        self.emailLabel.text = user.email
+ 
+    func updateLabel(name:String,email:String) {
+        self.nameLabel.text = name
+        self.emailLabel.text = email
     }
 }
