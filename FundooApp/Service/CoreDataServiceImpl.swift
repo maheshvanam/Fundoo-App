@@ -15,7 +15,7 @@ private let userEntity     = "User"
 private let ownerPredicate = "owner = %@"
 private let emailPredicate = "email = %@"
 
-class CoreDataServiceImpl : DataService {
+class CoreDataServiceImpl  {
   
     
     
@@ -122,21 +122,21 @@ class CoreDataServiceImpl : DataService {
 //        }
     }
     
-    func getCurrentUser() -> User {
-        var user:User!
-        do{
-         let email =   UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!
-         user = try getUser(email:email)
-        }
-        catch CoreDataError.UserNotFound {
-            fatalError(Constants.USER_NOT_FOUND);
-        }
-        catch {
-            fatalError(Constants.FETCH_ERROR);
-        }
-        return user
-    }
-    
+//    func getCurrentUser() -> User {
+//        var user:User!
+//        do{
+//         let email =   UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!
+//         user = try getUser(email:email)
+//        }
+//        catch CoreDataError.UserNotFound {
+//            fatalError(Constants.USER_NOT_FOUND);
+//        }
+//        catch {
+//            fatalError(Constants.FETCH_ERROR);
+//        }
+//        return user
+//    }
+//
     func saveUser(user: User) {
         do {
         try context.save()
@@ -146,28 +146,28 @@ class CoreDataServiceImpl : DataService {
         }
     }
     
-    func getNotesFromDB(fetchLimit:Int, fetchOffSet:Int) -> [Note] {
-        var records = [Note]()
-        let fetchRequest = NSFetchRequest<Note>(entityName: noteEntity)
-        let predicate = NSPredicate(format: ownerPredicate, getCurrentUser())
-        fetchRequest.predicate = predicate
-        fetchRequest.fetchOffset = fetchOffSet
-        fetchRequest.fetchLimit = fetchLimit
-        do {
-        records = try self.context.fetch(fetchRequest)
-        }
-        catch CoreDataError.dataNotFound {
-            fatalError(Constants.DATA_ERROR);
-        }
-        catch {
-            fatalError(Constants.FETCH_ERROR);
-        }
-        return records
-    }
+//    func getNotesFromDB(fetchLimit:Int, fetchOffSet:Int) -> [Note] {
+//        var records = [Note]()
+//        let fetchRequest = NSFetchRequest<Note>(entityName: noteEntity)
+//        let predicate = NSPredicate(format: ownerPredicate, getCurrentUser())
+//        fetchRequest.predicate = predicate
+//        fetchRequest.fetchOffset = fetchOffSet
+//        fetchRequest.fetchLimit = fetchLimit
+//        do {
+//        records = try self.context.fetch(fetchRequest)
+//        }
+//        catch CoreDataError.dataNotFound {
+//            fatalError(Constants.DATA_ERROR);
+//        }
+//        catch {
+//            fatalError(Constants.FETCH_ERROR);
+//        }
+//        return records
+//    }
     
     func createLabel() -> Label {
         let label  = Label(context: context)
-        label.user = getCurrentUser()
+   //     label.user = getCurrentUser()
       return label
     }
     

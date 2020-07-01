@@ -62,24 +62,24 @@ class NoteViewController: UIViewController {
     }
     
     @objc func reloadCells(){
-        switch viewOption {
-        case isNoteView:
-            self.notePresenter!.updateDataSource()
-        case isReminderView:
-            self.models = (self.notePresenter?.getReminderNotes())!
-            self.title = "Reminder Notes"
-        case isLabelView:
-            collectionView.reloadData()
-        case isArchiveView:
-            self.models = (self.notePresenter?.getArchiveNotes())!
-            self.title = "Archive Notes"
-        case isTrashView:
-            self.models = (self.notePresenter?.getTrashNotes())!
-            
-        default:
-            self.notePresenter!.updateDataSource()
-        }
-        layout.reloadData()
-        collectionView.reloadData()
+//        switch viewOption {
+//        case isNoteView:
+//            self.notePresenter!.updateDataSource()
+//        case isReminderView:
+//            //self.models = (self.notePresenter?.getReminderNotes())!
+//            self.title = "Reminder Notes"
+//        case isLabelView:
+//            collectionView.reloadData()
+//        case isArchiveView:
+//          //  self.models = (self.notePresenter?.getArchiveNotes())!
+//            self.title = "Archive Notes"
+//        case isTrashView:
+//          //  self.models = (self.notePresenter?.getTrashNotes())!
+//
+//        default:
+//            self.notePresenter!.updateDataSource()
+//        }
+//        layout.reloadData()
+//        collectionView.reloadData()
     }
 }

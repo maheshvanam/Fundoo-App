@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SearchVCPresenterDelegate {
-    func getData() -> [Note]
+   //-- func getData() -> [Note]
 }

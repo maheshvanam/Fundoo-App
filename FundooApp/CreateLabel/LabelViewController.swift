@@ -25,8 +25,13 @@ class LabelViewController: UIViewController {
         tableview.register(nib, forCellReuseIdentifier: labelCellReusableId)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reloadDataSource()
+    }
+    
     func reloadDataSource(){
-        labels = self.labelPresenter.getLabels()
+  //      labels = self.labelPresenter.getLabels()
+        tableview.reloadData()
     }
 }
 

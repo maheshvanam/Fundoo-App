@@ -60,7 +60,7 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     }
     
     func loadDataSource() {
-        data = self.labelPresenter.getLabels()
+        //data = self.labelPresenter.getLabels()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -161,13 +161,14 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         case signOutOption:
             UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
             UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
+            sideMenuPresenter.signOutUser()
             self.navigationController?.popToRootViewController(animated: false)
         case trashOption:
-            postNotification(key:       Constants.NAVIGATE_TO_TRASH)
+            postNotification(key:Constants.NAVIGATE_TO_TRASH)
         case archiveOption:
-            postNotification(key:       Constants.NAVIGATE_TO_ARCHIVE)
+            postNotification(key:Constants.NAVIGATE_TO_ARCHIVE)
         default:
-            postNotification(key: Constants.NAVIGATE_TO_NOTE)
+            postNotification(key:Constants.NAVIGATE_TO_NOTE)
         }
     }
     

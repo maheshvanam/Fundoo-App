@@ -39,13 +39,13 @@ class AddLabelViewController: UIViewController {
         labelTableView.delegate = self
         labelTableView.dataSource = self
         labelTableView.separatorStyle = .none
-        origainalLabels = self.getLabels()
+       // origainalLabels = self.getLabels()
         currentLabels = origainalLabels
     }
     
-    func getLabels()-> [Label] {
-        return addLabelPresenter.getLabels()
-    }
+//    func getLabels()-> [Label] {
+//        return addLabelPresenter.getLabels()
+//    }
     
     func cofigureSearchController() {
         searchController = UISearchController(searchResultsController: nil)

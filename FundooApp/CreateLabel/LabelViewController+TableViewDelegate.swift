@@ -51,7 +51,7 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
     @objc func onDeletePressed(sender:UIButton){
         let index = sender.tag
         let label = labels[index]
-        labelPresenter.deleteLabel(label: label)
+  //      labelPresenter.deleteLabel(label: label)
         reloadDataSource()
         tableview.reloadData()
     }

@@ -12,15 +12,7 @@ class SideMenuPresenter:SideMenuPresenterDelegate {
     
     let dbManager = DatabaseManager()
     
-    func getArchiveNotes() -> [Note] {
-        let user = dbManager.getCurrentUser()
-        let notes = user.notes?.allObjects as! [Note]
-        return notes.filter({ $0.archive == true })
-    }
-    
-    func getTrashNotes() -> [Note] {
-        let user = dbManager.getCurrentUser()
-        let notes = user.notes?.allObjects as! [Note]
-        return notes.filter({ $0.trash == true })
+    func signOutUser(){
+        dbManager.signOutUser()
     }
 }

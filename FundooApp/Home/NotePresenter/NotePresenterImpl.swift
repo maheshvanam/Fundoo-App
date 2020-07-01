@@ -19,32 +19,33 @@ class NotePresenterImpl: NoteDelegate {
     
     
     func updateDataSource() {
-        let coreData = DatabaseManager()
-        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
-        do{
-            let user = try coreData.getUser(email: email!)
-            let notes = user.notes
-            let allNotes = (notes!.allObjects as! [Note]).sorted(by: { $0.position > $1.position})
-            //let allNotes = notes?.allObjects as! [Note]
-            self.noteView.setTableData(data:allNotes.filter({$0.archive == false && $0.trash == false }))
-            self.noteView.updateView()
-        }
-        catch{
-            let nserror = error as NSError
-            fatalError(" \(nserror.description)")
-        }
+//        let coreData = DatabaseManager()
+//        let email = UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)
+//        do{
+//            let user = coreData.getCurrentUser()
+//                //try coreData.getUser(email: email!)
+//            let notes = user.notes
+//            let allNotes = (notes!.allObjects as! [Note]).sorted(by: { $0.position > $1.position})
+//            //let allNotes = notes?.allObjects as! [Note]
+//            self.noteView.setTableData(data:allNotes.filter({$0.archive == false && $0.trash == false }))
+//            self.noteView.updateView()
+//        }
+//        catch{
+//            let nserror = error as NSError
+//            fatalError(" \(nserror.description)")
+//        }
     }
     
     func updateDataSource(fetchLimit fecthLimit:Int,fetchOffcet:Int) {
-        let dbManger = DatabaseManager()
-        let allNotes = dbManger.getNotesFromDB(fetchLimit: fecthLimit, fetchOffSet: fetchOffcet)
-        if allNotes.count != 0 {
-            self.noteView.setTableData(data:allNotes)
-            //.sorted(by: {$0.position > $1.position}))
-        }
-        else {
-            fetchCell = 0
-        }
+//        let dbManger = DatabaseManager()
+//        let allNotes = dbManger.getNotesFromDB(fetchLimit: fecthLimit, fetchOffSet: fetchOffcet)
+//        if allNotes.count != 0 {
+//            self.noteView.setTableData(data:allNotes)
+//            //.sorted(by: {$0.position > $1.position}))
+//        }
+//        else {
+//            fetchCell = 0
+//        }
         //self.noteView.updateView()
     }
 
@@ -76,39 +77,39 @@ class NotePresenterImpl: NoteDelegate {
             }
             models[models.count-1].position = pos
         }
-        let user = dbManager.getCurrentUser()
-        user.notes?.addingObjects(from: models)
-        dbManager.saveUser(user: user)
+//        let user = dbManager.getCurrentUser()
+//        user.notes?.addingObjects(from: models)
+//        dbManager.saveUser(user: user)
     }
     
-    func getReminderNotes()-> [Note] {
-        let user = dbManager.getCurrentUser()
-        let notes = user.notes?.allObjects as! [Note]
-        return notes.filter({$0.reminder != nil})
-    }
+//    func getReminderNotes()-> [Note] {
+//        let user = dbManager.getCurrentUser()
+//        let notes = user.notes?.allObjects as! [Note]
+//        return notes.filter({$0.reminder != nil})
+//    }
     
-    func getArchiveNotes() -> [Note] {
-        let user = dbManager.getCurrentUser()
-        let notes = user.notes?.allObjects as! [Note]
-        return notes.filter({ $0.archive == true })
-    }
-    
-    func getTrashNotes() -> [Note] {
-           let user = dbManager.getCurrentUser()
-           let notes = user.notes?.allObjects as! [Note]
-           return notes.filter({ $0.trash == true })
-       }
-    func saveNote() {
-        dbManager.saveData()
-    }
-    func deleteNote(note:Note){
-        let user = dbManager.getCurrentUser()
-        user.removeFromNotes(note)
-        let labels = user.labels?.allObjects as! [Label]
-        for label in labels {
-            label.removeFromNotes(note)
-        }
-        dbManager.saveData()
-    }
-    
+//    func getArchiveNotes() -> [Note] {
+//        let user = dbManager.getCurrentUser()
+//        let notes = user.notes?.allObjects as! [Note]
+//        return notes.filter({ $0.archive == true })
+//    }
+//    
+//    func getTrashNotes() -> [Note] {
+//           let user = dbManager.getCurrentUser()
+//           let notes = user.notes?.allObjects as! [Note]
+//           return notes.filter({ $0.trash == true })
+//       }
+//    func saveNote() {
+//        dbManager.saveData()
+//    }
+//    func deleteNote(note:Note){
+//        let user = dbManager.getCurrentUser()
+//        user.removeFromNotes(note)
+//        let labels = user.labels?.allObjects as! [Label]
+//        for label in labels {
+//            label.removeFromNotes(note)
+//        }
+//        dbManager.saveData()
+//    }
+//    
 }

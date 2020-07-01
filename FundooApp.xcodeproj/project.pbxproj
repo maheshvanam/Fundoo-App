@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BBEC8F21D6BDEEAF4EA749E /* Pods_FundooApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6B8CE9E302CDCBF6F02B2C /* Pods_FundooApp.framework */; };
+		62912DB2E0A962E4DC6AA93E /* Pods_FundooAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DE4E66344FAB166450952 /* Pods_FundooAppTests.framework */; };
 		8400AC98249FDE1500B9A936 /* LabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC97249FDE1500B9A936 /* LabelPresenter.swift */; };
 		8400AC9A249FDE3800B9A936 /* LabelPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */; };
 		8400AC9C249FDE7400B9A936 /* LabelViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */; };
@@ -111,6 +113,8 @@
 		8477A49724A51D1400DDEAFA /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49524A51D1400DDEAFA /* LabelViewCell.swift */; };
 		8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49624A51D1400DDEAFA /* LabelViewCell.xib */; };
 		8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */; };
+		847B213224AAED5900E273C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847B213124AAED5800E273C8 /* GoogleService-Info.plist */; };
+		847B213424AB1DAA00E273C8 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */; };
 		849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */; };
 		84A3C9DB2480E3B1003393EC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DA2480E3B1003393EC /* DataService.swift */; };
 		84A3C9DF2480EDE5003393EC /* CoreDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */; };
@@ -152,6 +156,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		089A905EED6D250AC78609B7 /* Pods-FundooApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FundooApp.debug.xcconfig"; path = "Target Support Files/Pods-FundooApp/Pods-FundooApp.debug.xcconfig"; sourceTree = "<group>"; };
+		0F6B8CE9E302CDCBF6F02B2C /* Pods_FundooApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FundooApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		384DE4E66344FAB166450952 /* Pods_FundooAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FundooAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3DA2AB2EB351BDAD29832D /* Pods-FundooAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FundooAppTests.release.xcconfig"; path = "Target Support Files/Pods-FundooAppTests/Pods-FundooAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		59EED0315A338044B561EACF /* Pods-FundooAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FundooAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FundooAppTests/Pods-FundooAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8400AC97249FDE1500B9A936 /* LabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPresenter.swift; sourceTree = "<group>"; };
 		8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPresenterDelegate.swift; sourceTree = "<group>"; };
 		8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +269,8 @@
 		8477A49524A51D1400DDEAFA /* LabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewCell.swift; sourceTree = "<group>"; };
 		8477A49624A51D1400DDEAFA /* LabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewCell.xib; sourceTree = "<group>"; };
 		8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		847B213124AAED5800E273C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
 		849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+MosiacLayout.swift"; sourceTree = "<group>"; };
 		84A3C9DA2480E3B1003393EC /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTest.swift; sourceTree = "<group>"; };
@@ -288,6 +299,7 @@
 		84FD41B324A136BD00ACADC1 /* SideMenuLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuLabelCell.xib; sourceTree = "<group>"; };
 		84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelCell.swift; sourceTree = "<group>"; };
 		84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLabelCell.xib; sourceTree = "<group>"; };
+		860CDF923160C2C101C85435 /* Pods-FundooApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FundooApp.release.xcconfig"; path = "Target Support Files/Pods-FundooApp/Pods-FundooApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +307,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBEC8F21D6BDEEAF4EA749E /* Pods_FundooApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,12 +315,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62912DB2E0A962E4DC6AA93E /* Pods_FundooAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EA7844D1621F8897AA8965D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				089A905EED6D250AC78609B7 /* Pods-FundooApp.debug.xcconfig */,
+				860CDF923160C2C101C85435 /* Pods-FundooApp.release.xcconfig */,
+				59EED0315A338044B561EACF /* Pods-FundooAppTests.debug.xcconfig */,
+				4F3DA2AB2EB351BDAD29832D /* Pods-FundooAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8401645C24A1E79E001C95B0 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +496,8 @@
 				8419D297247A519D00C4F93A /* FundooApp */,
 				8419D2B1247A519E00C4F93A /* FundooAppTests */,
 				8419D296247A519D00C4F93A /* Products */,
+				3EA7844D1621F8897AA8965D /* Pods */,
+				D7F7EC699934A3278590A14B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -507,6 +534,7 @@
 				8419D2A4247A519E00C4F93A /* Assets.xcassets */,
 				8419D2A9247A519E00C4F93A /* Info.plist */,
 				8419D2A1247A519D00C4F93A /* FundooApp.xcdatamodeld */,
+				847B213124AAED5800E273C8 /* GoogleService-Info.plist */,
 			);
 			path = FundooApp;
 			sourceTree = "<group>";
@@ -702,6 +730,7 @@
 				84A3C9DA2480E3B1003393EC /* DataService.swift */,
 				846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */,
 				84A3C9E02480F04C003393EC /* DatabaseManager.swift */,
+				847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -730,6 +759,15 @@
 			path = AddLabel;
 			sourceTree = "<group>";
 		};
+		D7F7EC699934A3278590A14B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F6B8CE9E302CDCBF6F02B2C /* Pods_FundooApp.framework */,
+				384DE4E66344FAB166450952 /* Pods_FundooAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -737,9 +775,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8419D2B7247A519E00C4F93A /* Build configuration list for PBXNativeTarget "FundooApp" */;
 			buildPhases = (
+				7F9C4E8ED0583F690EFFF933 /* [CP] Check Pods Manifest.lock */,
 				8419D291247A519D00C4F93A /* Sources */,
 				8419D292247A519D00C4F93A /* Frameworks */,
 				8419D293247A519D00C4F93A /* Resources */,
+				157967895B1F209317F640A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -754,6 +794,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8419D2BA247A519E00C4F93A /* Build configuration list for PBXNativeTarget "FundooAppTests" */;
 			buildPhases = (
+				73E756E553B72D1FA3E9DAB8 /* [CP] Check Pods Manifest.lock */,
 				8419D2AA247A519E00C4F93A /* Sources */,
 				8419D2AB247A519E00C4F93A /* Frameworks */,
 				8419D2AC247A519E00C4F93A /* Resources */,
@@ -813,6 +854,7 @@
 			files = (
 				84FD41B524A136BD00ACADC1 /* SideMenuLabelCell.xib in Resources */,
 				8419D2A8247A519E00C4F93A /* LaunchScreen.storyboard in Resources */,
+				847B213224AAED5900E273C8 /* GoogleService-Info.plist in Resources */,
 				8428FE85248A593800E9BA44 /* Home.storyboard in Resources */,
 				8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */,
 				84F3CE4024A0C523009EE22D /* SideMenuCell.xib in Resources */,
@@ -836,6 +878,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		157967895B1F209317F640A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FundooApp/Pods-FundooApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FundooApp/Pods-FundooApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FundooApp/Pods-FundooApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73E756E553B72D1FA3E9DAB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FundooAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F9C4E8ED0583F690EFFF933 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FundooApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8419D291247A519D00C4F93A /* Sources */ = {
@@ -935,6 +1041,7 @@
 				84FCC381249F948100FE92CA /* AddLabelPresenterDelegate.swift in Sources */,
 				8477A49324A5184A00DDEAFA /* NoteViewCell.swift in Sources */,
 				8400ACA1249FF4D900B9A936 /* LabelCell.swift in Sources */,
+				847B213424AB1DAA00E273C8 /* FirebaseDatabaseManager.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
 				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,
 				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,
@@ -1132,6 +1239,7 @@
 		};
 		8419D2B8247A519E00C4F93A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 089A905EED6D250AC78609B7 /* Pods-FundooApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1150,6 +1258,7 @@
 		};
 		8419D2B9247A519E00C4F93A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 860CDF923160C2C101C85435 /* Pods-FundooApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1168,6 +1277,7 @@
 		};
 		8419D2BB247A519E00C4F93A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59EED0315A338044B561EACF /* Pods-FundooAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1189,6 +1299,7 @@
 		};
 		8419D2BC247A519E00C4F93A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F3DA2AB2EB351BDAD29832D /* Pods-FundooAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

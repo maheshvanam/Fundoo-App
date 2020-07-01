@@ -21,7 +21,7 @@ class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
         let user = self.signUpViewDelegate.getUser()
         let fieldsAreValid = self.signUpViewDelegate.validateFields(user:user)
         if fieldsAreValid {
-            let coreDataService = CoreDataServiceImpl()
+            let coreDataService = DatabaseManager()
             coreDataService.insertUser(registartionUser: user)
             self.signUpViewDelegate.showAlert(title: "", message: "Successfully Registered.")
             self.signUpViewDelegate.clearTextFields()

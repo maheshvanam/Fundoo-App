@@ -25,7 +25,7 @@ class SearchVC:UIViewController {
         self.serachPresenter = SearchVCPresenter()
         self.cofigureSearchController()
         self.configureCollectionViews()
-        originalDataSource = self.serachPresenter.getData()
+        //originalDataSource = self.serachPresenter.getData()
         self.getColorData()
     }
     

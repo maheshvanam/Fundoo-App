@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ReminderPresenterDelegate {
-    func getReminderNotes()-> [Note]
+  //  func getReminderNotes()-> [Note]
 }
