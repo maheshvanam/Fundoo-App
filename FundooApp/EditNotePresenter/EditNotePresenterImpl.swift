@@ -10,14 +10,24 @@ import Foundation
 class EditNotePresenterImpl: EditNoteDelegate {
     
     var editNoteView: EditNotePresenterDelegate
-    let dbManager = DatabaseManager()
+    let dbManager = NoteDbManager()
     
     init(delegate: EditNotePresenterDelegate) {
         self.editNoteView = delegate
     }
-          
+     
+    func saveNote(note:NoteDataModel) {
+        if !editNoteView.fieldsAreEmpty() {
+            note.title = editNoteView.getTitleText()
+            note.description = editNoteView.getDiscriptionText()
+            dbManager.insertUserNote(note:note)
+        }
+        else {
+            return
+        }
+    }
     func saveNote() {
-//        var note = editNoteView.getNote()
+//       var note = editNoteView.getNote()
 //        if editNoteView.fieldsAreEmpty() {
 //            if editNoteView.isNewNote() {
 //                note = dbManager.createNote()

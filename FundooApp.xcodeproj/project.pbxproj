@@ -124,6 +124,10 @@
 		84AA3B3524A8F541009562E1 /* SearchResultVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3424A8F541009562E1 /* SearchResultVC+CollectionView.swift */; };
 		84AA3B3724A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3624A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift */; };
 		84AA3B3924A8F851009562E1 /* SearchResultVC+MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */; };
+		84B1138824AC572900092E9D /* NoteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138724AC572900092E9D /* NoteDataModel.swift */; };
+		84B1138A24AC71BD00092E9D /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138924AC71BD00092E9D /* NoteService.swift */; };
+		84B1138C24AC737600092E9D /* NoteServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138B24AC737600092E9D /* NoteServiceImpl.swift */; };
+		84B1138E24AC74F700092E9D /* NoteDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138D24AC74F700092E9D /* NoteDbManager.swift */; };
 		84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */; };
 		84B49C57247EE94400D3C940 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C56247EE94400D3C940 /* Result.swift */; };
 		84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */; };
@@ -280,6 +284,10 @@
 		84AA3B3424A8F541009562E1 /* SearchResultVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultVC+CollectionView.swift"; sourceTree = "<group>"; };
 		84AA3B3624A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewCell+LabelCollectionView.swift"; sourceTree = "<group>"; };
 		84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultVC+MosiacLayout.swift"; sourceTree = "<group>"; };
+		84B1138724AC572900092E9D /* NoteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataModel.swift; sourceTree = "<group>"; };
+		84B1138924AC71BD00092E9D /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
+		84B1138B24AC737600092E9D /* NoteServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteServiceImpl.swift; sourceTree = "<group>"; };
+		84B1138D24AC74F700092E9D /* NoteDbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDbManager.swift; sourceTree = "<group>"; };
 		84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+BackgroundColor.swift"; sourceTree = "<group>"; };
 		84B49C56247EE94400D3C940 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenter.swift; sourceTree = "<group>"; };
@@ -731,6 +739,10 @@
 				846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */,
 				84A3C9E02480F04C003393EC /* DatabaseManager.swift */,
 				847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */,
+				84B1138724AC572900092E9D /* NoteDataModel.swift */,
+				84B1138924AC71BD00092E9D /* NoteService.swift */,
+				84B1138B24AC737600092E9D /* NoteServiceImpl.swift */,
+				84B1138D24AC74F700092E9D /* NoteDbManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -949,6 +961,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8400AC98249FDE1500B9A936 /* LabelPresenter.swift in Sources */,
+				84B1138E24AC74F700092E9D /* NoteDbManager.swift in Sources */,
 				843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */,
 				84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */,
 				840752512488F05A0075EF51 /* Constants.swift in Sources */,
@@ -979,7 +992,9 @@
 				8408F9B22496967F009155ED /* SearchVCPresenterImpl.swift in Sources */,
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */,
+				84B1138824AC572900092E9D /* NoteDataModel.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
+				84B1138C24AC737600092E9D /* NoteServiceImpl.swift in Sources */,
 				8400AC9E249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift in Sources */,
 				842584C424A9B4F6000738B8 /* Note+CoreDataProperties.swift in Sources */,
 				842460AE249A913A00B38CBA /* CheckMarkCell.swift in Sources */,
@@ -1059,6 +1074,7 @@
 				84423A52248B86A100D212DC /* NoteCell.swift in Sources */,
 				84078A7B249019040000D649 /* ColorCollectionView.swift in Sources */,
 				841CC90B24940E16001C8B9D /* NoteVC+DropDelegate.swift in Sources */,
+				84B1138A24AC71BD00092E9D /* NoteService.swift in Sources */,
 				841E66EC249F4DF1002B5DD2 /* SelectableItem.swift in Sources */,
 				843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */,
 				841E66EE249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift in Sources */,

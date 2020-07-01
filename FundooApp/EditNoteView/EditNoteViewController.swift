@@ -75,11 +75,12 @@ class EditNoteViewController: UIViewController {
     }
     
     @objc func onBackPressed(){
-        self.note.reminder = reminderDate
-        self.addLabelsToNote()
-        self.editNotePresenter.saveNote()
-        NotificationCenter.default.removeObserver(self)
-        noteIsNew = nil
+//        self.note.reminder = reminderDate
+//        self.addLabelsToNote()
+        let note = NoteDataModel()
+        self.editNotePresenter.saveNote(note:note)
+//        NotificationCenter.default.removeObserver(self)
+//        noteIsNew = nil
         navigationController?.popViewController(animated: false)
     }
     

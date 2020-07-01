@@ -11,8 +11,8 @@ import FirebaseAuth
 import Firebase
 
 class FirebaseDatabaseManager:DataService {
+    
     private let auth = Auth.auth()
-    let dbManager = CoreDataServiceImpl()
     
     func insertUser(registartionUser: UserModel) {
         auth.createUser(withEmail: registartionUser.email!, password: registartionUser.password!, completion: {
@@ -22,12 +22,11 @@ class FirebaseDatabaseManager:DataService {
             }
             else {
                 let db = Firestore.firestore()
-                
-                db.collection("users").addDocument(data: ["firstName":registartionUser.firstName! ,"lastName":registartionUser.lastName!,"email":registartionUser.email!,"id":result!.user.uid])
+                let dbRef = db.collection("users").document((result?.user.uid)!)
+                dbRef.setData(["firstName":registartionUser.firstName!
+                    ,"lastName":registartionUser.lastName!,"email":registartionUser.email!,"id":result!.user.uid])
             }
-            
-        }
-        )
+        })
     }
     
     func isLoggedIn()->Bool {
@@ -47,4 +46,7 @@ class FirebaseDatabaseManager:DataService {
         auth.signIn(withEmail: email, password: password)
     }
     
+    func insertNote(note:NoteDataModel) {
+  
+    }
 }

@@ -37,9 +37,9 @@ extension EditNoteViewController: EditNotePresenterDelegate {
     
     func fieldsAreEmpty() -> Bool {
         if let title = titleField.text, !title.isEmpty ,!discriptionField.text.isEmpty {
-            return true
+            return false
         }
-        return false
+        return true
     }
     
     func isNewNote() -> Bool {
