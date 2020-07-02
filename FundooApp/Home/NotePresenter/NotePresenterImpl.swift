@@ -19,10 +19,13 @@ class NotePresenterImpl: NoteDelegate {
     
     
     func updateDataSource() {
-        let dbManager = NoteDbManager()
-        let notes = dbManager.getAllNotes()
-        self.noteView.setTableData(data: notes)
-        self.noteView.updateView()
+       let dbManager = NoteDbManager()
+        
+        dbManager.getAllNotes { (noteModels) in
+            self.noteView.setTableData(data: noteModels)
+            self.noteView.updateView()
+        }
+        
     }
 
     func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {

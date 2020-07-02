@@ -23,7 +23,7 @@ class EditNotePresenterImpl: EditNoteDelegate {
                 note = NoteModel()
                 note!.creationTime = Date()
                 note!.title = editNoteView.getTitleText()
-                note!.color = editNoteView.getCurrentColor()
+                note!.color = editNoteView.getCurrentColor()!
                 note!.description = editNoteView.getDiscriptionText()
                 dbManager.insertUserNote(note:note!)
                 editNoteView.postReloadCellsNotification()

@@ -30,7 +30,9 @@ class NoteServiceImpl:NoteService {
         }
     }
     
-    func getAllNotes() -> [NoteModel] {
+    
+    
+    func getAllNotes(  callback: @escaping([NoteModel])-> Void) {
         self.notes = []
         let userRef = database.collection(userCollectionName).document(Auth.auth().currentUser!.uid)
         let noteRef = userRef.collection(notesCollectionName)
@@ -41,18 +43,15 @@ class NoteServiceImpl:NoteService {
                 for document in querySnapshot!.documents {
                     do {
                         let note = try document.data(as: NoteModel.self)! as NoteModel
-                        print(note.title as Any)
                         self.notes.append(note)
                     }
                     catch {
                         fatalError(error.localizedDescription)
                     }
                 }
-                print("After for .... ",self.notes.count)
+                callback(self.notes)
             }
         }
-        print("At return ",self.notes.count)
-        return self.notes
     }
     
     func updateNote(note:NoteModel) {

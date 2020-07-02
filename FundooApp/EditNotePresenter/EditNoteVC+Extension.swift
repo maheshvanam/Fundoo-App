@@ -15,11 +15,10 @@ extension EditNoteViewController: EditNotePresenterDelegate {
         if note != nil {
             titleField.text = note.title
             discriptionField.text = note.description
-            if let color = note.color {
+            let color = note.color
                 view.backgroundColor = colors[color]
                 titleField.backgroundColor = colors[color]
                 discriptionField.backgroundColor = colors[color]
-            }
         }
     }
     

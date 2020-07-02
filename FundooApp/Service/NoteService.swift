@@ -11,7 +11,7 @@ import Foundation
 protocol NoteService {
     
     func insertUserNote(note:NoteModel)
-    func getAllNotes() -> [NoteModel]
+    func getAllNotes(  callback: @escaping([NoteModel])-> Void)
     func updateNote(note:NoteModel)
     func deleteNote(note:NoteModel)
 }
