@@ -16,47 +16,46 @@ private let notesCollectionName = "notes"
 class NoteServiceImpl:NoteService {
     
     var notes:[NoteModel] = []
-
+    let database = Firestore.firestore()
+    
     func insertUserNote(note: NoteModel) {
-        let database = Firestore.firestore()
         let userRef = database.collection(userCollectionName).document(Auth.auth().currentUser!.uid)
         let noteRef = userRef.collection(notesCollectionName).document()
-        note.setId(id: noteRef.documentID)
+        note.id = noteRef.documentID
         do {
             try noteRef.setData(from: note)
         }
         catch {
             fatalError(error.localizedDescription)
-            }
+        }
     }
     
     func getAllNotes() -> [NoteModel] {
         self.notes = []
-        let database = Firestore.firestore()
         let userRef = database.collection(userCollectionName).document(Auth.auth().currentUser!.uid)
         let noteRef = userRef.collection(notesCollectionName)
         noteRef.getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
+            if let error = err {
+                print("Error getting documents: \(error.localizedDescription)")
             } else {
                 for document in querySnapshot!.documents {
                     do {
                         let note = try document.data(as: NoteModel.self)! as NoteModel
+                        print(note.title as Any)
                         self.notes.append(note)
                     }
                     catch {
                         fatalError(error.localizedDescription)
                     }
                 }
-                print(self.notes)
+                print("After for .... ",self.notes.count)
             }
         }
-        print(self.notes.count)
+        print("At return ",self.notes.count)
         return self.notes
     }
     
     func updateNote(note:NoteModel) {
-        let database = Firestore.firestore()
         let userRef = database.collection(userCollectionName).document(Auth.auth().currentUser!.uid)
         let noteRef = userRef.collection(notesCollectionName).document(note.id!)
         
@@ -68,4 +67,9 @@ class NoteServiceImpl:NoteService {
         }
     }
     
+    func deleteNote(note: NoteModel) {
+        let userRef = database.collection(userCollectionName).document(Auth.auth().currentUser!.uid)
+        let noteRef = userRef.collection(notesCollectionName).document(note.id!)
+        noteRef.delete()
+    }
 }

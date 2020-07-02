@@ -41,7 +41,7 @@ extension EditNoteViewController {
         content.sound = .default
         content.body  = note.description!
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: targetDate), repeats: false)
-        let request = UNNotificationRequest(identifier: "\(note!.id)", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "\(note!.id ?? "asa")", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }

@@ -27,14 +27,14 @@ class UpdateLabelViewController: UIViewController, AddLabelViewDelegate {
     }
     
     @IBAction func onSaveButtonTapped(sender: UIButton) {
-        if let title = labelTitleField.text {
+        //if let title = labelTitleField.text {
 //            if label == nil {
 //                self.label = self.addLabelPresenter.createLabel()
 //            }
 //            self.label!.title = title
 //            self.addLabelPresenter.save()
 //            labelTitleField.text = ""
-        }
+      //  }
         navigationController?.popViewController(animated: true)
     }
 }
