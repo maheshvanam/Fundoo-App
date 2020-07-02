@@ -19,10 +19,9 @@ class NotePresenterImpl: NoteDelegate {
     
     
     func updateDataSource() {
-       let dbManager = NoteDbManager()
+        let dbManager = NoteDbManager()
         let notes = dbManager.getAllNotes()
         self.noteView.setTableData(data: notes)
-        // self.noteView.setTableData(data:allNotes.filter({$0.archive == false && $0.trash == false }))
         self.noteView.updateView()
     }
 

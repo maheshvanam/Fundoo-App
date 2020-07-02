@@ -113,6 +113,7 @@
 		8477A49724A51D1400DDEAFA /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49524A51D1400DDEAFA /* LabelViewCell.swift */; };
 		8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49624A51D1400DDEAFA /* LabelViewCell.xib */; };
 		8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */; };
+		8478692B24ADAEA200962ACD /* FirebaseDatbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */; };
 		847B213224AAED5900E273C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847B213124AAED5800E273C8 /* GoogleService-Info.plist */; };
 		847B213424AB1DAA00E273C8 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */; };
 		849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */; };
@@ -273,6 +274,7 @@
 		8477A49524A51D1400DDEAFA /* LabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewCell.swift; sourceTree = "<group>"; };
 		8477A49624A51D1400DDEAFA /* LabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewCell.xib; sourceTree = "<group>"; };
 		8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatbaseError.swift; sourceTree = "<group>"; };
 		847B213124AAED5800E273C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
 		849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+MosiacLayout.swift"; sourceTree = "<group>"; };
@@ -743,6 +745,7 @@
 				84B1138924AC71BD00092E9D /* NoteService.swift */,
 				84B1138B24AC737600092E9D /* NoteServiceImpl.swift */,
 				84B1138D24AC74F700092E9D /* NoteDbManager.swift */,
+				8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -984,6 +987,7 @@
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
 				842584C024A9B4F6000738B8 /* Label+CoreDataProperties.swift in Sources */,
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
+				8478692B24ADAEA200962ACD /* FirebaseDatbaseError.swift in Sources */,
 				84FCC370249F8D8300FE92CA /* LabelViewController.swift in Sources */,
 				8400AC9A249FDE3800B9A936 /* LabelPresenterDelegate.swift in Sources */,
 				84AA3B3724A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift in Sources */,

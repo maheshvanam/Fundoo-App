@@ -16,18 +16,6 @@ class EditNotePresenterImpl: EditNoteDelegate {
         self.editNoteView = delegate
     }
      
-    func saveNote(note:NoteModel) {
-        if !editNoteView.fieldsAreEmpty() {
-            note.title = editNoteView.getTitleText()
-            note.creationTime = Date()
-            note.description = editNoteView.getDiscriptionText()
-            
-        }
-        else {
-            return
-        }
-    }
-    
     func saveNote() {
         var note = editNoteView.getNote()
         if !editNoteView.fieldsAreEmpty() {
@@ -38,8 +26,7 @@ class EditNotePresenterImpl: EditNoteDelegate {
                 note!.color = editNoteView.getCurrentColor()
                 note!.description = editNoteView.getDiscriptionText()
                 dbManager.insertUserNote(note:note!)
-//                dbManager.insertNote(note: note!)
- //               editNoteView.postReloadCellsNotification()
+                editNoteView.postReloadCellsNotification()
                     return
             }
             note!.title = editNoteView.getTitleText()
@@ -50,6 +37,7 @@ class EditNotePresenterImpl: EditNoteDelegate {
             return
         }
         note!.editTime = Date()
+        dbManager.updateNote(note:note!)
        // dbManager.insertNote(note: note!)
         editNoteView.postReloadCellsNotification()
     }
