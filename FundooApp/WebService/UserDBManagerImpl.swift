@@ -29,20 +29,55 @@ class UserDBManagerImpl: UserDBService {
             
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200  else {
-                     DispatchQueue.main.async {
-                    completion(.failure(.responseProblem))
+                    DispatchQueue.main.async {
+                        completion(.failure(.responseProblem))
                     }
                     return
                 }
-                 DispatchQueue.main.async {
-                completion(.success(httpResponse.statusCode))
+                DispatchQueue.main.async {
+                    completion(.success(httpResponse.statusCode))
                 }
             }
             dataTask.resume()
         }
         catch {
-             DispatchQueue.main.async {
-            completion(.failure(.encodingProblem))
+            DispatchQueue.main.async {
+                completion(.failure(.encodingProblem))
+            }
+        }
+    }
+    
+    func signInUser(user:FundooUser, completion: @escaping (Result<FundooUser,APIError>)->Void ) {
+        do {
+            var urlRequest = URLRequest(url: resourceURL)
+            urlRequest.httpMethod = "POST"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try JSONEncoder().encode(user)
+            
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+                guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200,let jsonData = data else {
+                    DispatchQueue.main.async {
+                        completion(.failure(.responseProblem))
+                    }
+                    return
+                }
+                do {
+                    let userData = try JSONDecoder().decode(FundooUser.self, from: jsonData)
+                    DispatchQueue.main.async {
+                        completion(.success(userData))
+                    }
+                }
+                catch {
+                    DispatchQueue.main.async {
+                        completion(.failure(.decodingProblem))
+                    }
+                }
+            }
+            dataTask.resume()
+        }
+        catch {
+            DispatchQueue.main.async {
+                completion(.failure(.encodingProblem))
             }
         }
     }

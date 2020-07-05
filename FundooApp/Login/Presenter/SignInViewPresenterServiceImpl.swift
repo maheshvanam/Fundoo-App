@@ -19,25 +19,28 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
     
     func signInWithEmailAndPassword(email: String,password: String) {
         
-        let dbManager = DatabaseManager()
+        let dbManager = UserDBManager(endpoint: "user/login")
         self.signInViewDelegate.clearLabels()
         if email.isEmpty && password.isEmpty {
             self.signInViewDelegate.showAlert(title: "Error", message: "Please fill the all fields")
             return
         }
-        dbManager.signInwithEmailAndPassword(email: email, password: password)
-        let authenticationResult = dbManager.isLoggedIn()
-        
-            
-        if  authenticationResult == true {
-            UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
-            self.signInViewDelegate.clearFields()
-            self.signInViewDelegate.clearLabels()
-            self.signInViewDelegate.navigateToUserHomeView()
-        }
-        else{
-            self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
-            self.signInViewDelegate.updatePasswordLabel()
+        let user = FundooUser(email: email, password: password)
+        dbManager.signInUser(user: user) { (result) in
+            switch result {
+            case .success(let currentUser):
+                UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
+                self.signInViewDelegate.clearFields()
+                self.signInViewDelegate.clearLabels()
+                self.signInViewDelegate.navigateToUserHomeView()
+            case .failure(.decodingProblem):
+                fatalError("decoding user data error")
+            case .failure(.encodingProblem) :
+                fatalError("encoding user data error")
+            case .failure(.responseProblem):
+                self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
+                self.signInViewDelegate.updatePasswordLabel()
+            }
         }
     }
 
