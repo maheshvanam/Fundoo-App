@@ -44,6 +44,7 @@ extension EditNoteViewController: EditNotePresenterDelegate {
         return (noteIsNew != nil) ? true : false
     }
     
+    
     func getNote() -> NoteModel? {
         return note
     }

@@ -21,10 +21,17 @@ class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
         let user = self.signUpViewDelegate.getUser()
         let fieldsAreValid = self.signUpViewDelegate.validateFields(user:user)
         if fieldsAreValid {
-            let coreDataService = DatabaseManager()
-            coreDataService.insertUser(registartionUser: user)
-            self.signUpViewDelegate.showAlert(title: "", message: "Successfully Registered.")
-            self.signUpViewDelegate.clearTextFields()
+            let newUser = FundooUser(firstName: user.firstName!, lastName: user.lastName!, email: user.email!, password: user.password!)
+            let dbManager = UserDBManager(endpoint: "user/userSignup")
+            dbManager.saveUser(user: newUser) { (result) in
+                switch result {
+                case .success( _ ) :
+                    self.signUpViewDelegate.showAlert(title: "Success", message: "Successfully Registered.")
+                    self.signUpViewDelegate.clearTextFields()
+                case .failure( _ ):
+                    self.signUpViewDelegate.showAlert(title: "Error", message: "signUp failed...")
+                }
+            }
         }
     }
     func onSiginInInsteadTapped() {

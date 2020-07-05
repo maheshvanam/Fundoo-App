@@ -32,7 +32,7 @@ class CoreDataServiceImpl  {
         appDelegate.saveContext()
     }
     
-    func checkValidUserOrNot(email: String,password: String)  -> Result {
+    func checkValidUserOrNot(email: String,password: String)  -> ResultType {
         let predicate = NSPredicate(format: emailPredicate, email)
         self.fetchRequest.predicate = predicate
         do {
@@ -40,14 +40,14 @@ class CoreDataServiceImpl  {
             if result.count > 0 {
                 let userEntity = result.firstObject as! User
                 if(userEntity.email == email && userEntity.password == password) {
-                    return Result.SUCCESS
+                    return ResultType.SUCCESS
                 }
                 else {
-                    return Result.INVALID_PASSWORD
+                    return ResultType.INVALID_PASSWORD
                 }
             }
             else{
-                return Result.INVALID_EMAIL
+                return ResultType.INVALID_EMAIL
             }
         }
         catch{
