@@ -18,7 +18,7 @@ class SearchResultVC: UIViewController {
 
     @IBOutlet weak var searchResultCollectionView: UICollectionView!
     var layout:MosaicLayout!
-    var dataSource: [Note]!
+    var dataSource: [NoteModel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()

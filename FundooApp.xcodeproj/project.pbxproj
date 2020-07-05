@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BBEC8F21D6BDEEAF4EA749E /* Pods_FundooApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6B8CE9E302CDCBF6F02B2C /* Pods_FundooApp.framework */; };
+		62912DB2E0A962E4DC6AA93E /* Pods_FundooAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DE4E66344FAB166450952 /* Pods_FundooAppTests.framework */; };
 		8400AC98249FDE1500B9A936 /* LabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC97249FDE1500B9A936 /* LabelPresenter.swift */; };
 		8400AC9A249FDE3800B9A936 /* LabelPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */; };
 		8400AC9C249FDE7400B9A936 /* LabelViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */; };
@@ -68,6 +70,8 @@
 		841CC90924940DF4001C8B9D /* NoteVC+DragDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */; };
 		841CC90B24940E16001C8B9D /* NoteVC+DropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */; };
 		841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CEB9D248F705A004E76D4 /* CoreDataError.swift */; };
+		841E61B824B1DA0F002DB0CE /* FundooUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E61B724B1DA0F002DB0CE /* FundooUser.swift */; };
+		841E61BA24B1DA6C002DB0CE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E61B924B1DA6C002DB0CE /* APIError.swift */; };
 		841E66EC249F4DF1002B5DD2 /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */; };
 		841E66EE249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
@@ -111,6 +115,13 @@
 		8477A49724A51D1400DDEAFA /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49524A51D1400DDEAFA /* LabelViewCell.swift */; };
 		8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49624A51D1400DDEAFA /* LabelViewCell.xib */; };
 		8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */; };
+		8478692B24ADAEA200962ACD /* FirebaseDatbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */; };
+		8478A7C524B04CD400930B66 /* UserDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C424B04CD400930B66 /* UserDBManager.swift */; };
+		8478A7C724B04D1700930B66 /* UserDBManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */; };
+		8478A7C924B04D4E00930B66 /* UserDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C824B04D4E00930B66 /* UserDBService.swift */; };
+		8478A7CB24B0532700930B66 /* RestApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7CA24B0532700930B66 /* RestApiTests.swift */; };
+		847B213224AAED5900E273C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847B213124AAED5800E273C8 /* GoogleService-Info.plist */; };
+		847B213424AB1DAA00E273C8 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */; };
 		849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */; };
 		84A3C9DB2480E3B1003393EC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DA2480E3B1003393EC /* DataService.swift */; };
 		84A3C9DF2480EDE5003393EC /* CoreDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */; };
@@ -120,8 +131,12 @@
 		84AA3B3524A8F541009562E1 /* SearchResultVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3424A8F541009562E1 /* SearchResultVC+CollectionView.swift */; };
 		84AA3B3724A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3624A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift */; };
 		84AA3B3924A8F851009562E1 /* SearchResultVC+MosiacLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */; };
+		84B1138824AC572900092E9D /* NoteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138724AC572900092E9D /* NoteDataModel.swift */; };
+		84B1138A24AC71BD00092E9D /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138924AC71BD00092E9D /* NoteService.swift */; };
+		84B1138C24AC737600092E9D /* NoteServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138B24AC737600092E9D /* NoteServiceImpl.swift */; };
+		84B1138E24AC74F700092E9D /* NoteDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138D24AC74F700092E9D /* NoteDbManager.swift */; };
 		84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */; };
-		84B49C57247EE94400D3C940 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C56247EE94400D3C940 /* Result.swift */; };
+		84B49C57247EE94400D3C940 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C56247EE94400D3C940 /* ResultType.swift */; };
 		84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */; };
 		84C85D7B24A154B3009CDCAF /* UpdateLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */; };
 		84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C7CF248655CA002AB435 /* ContainerViewController.swift */; };
@@ -152,6 +167,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		089A905EED6D250AC78609B7 /* Pods-FundooApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FundooApp.debug.xcconfig"; path = "Target Support Files/Pods-FundooApp/Pods-FundooApp.debug.xcconfig"; sourceTree = "<group>"; };
+		0F6B8CE9E302CDCBF6F02B2C /* Pods_FundooApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FundooApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		384DE4E66344FAB166450952 /* Pods_FundooAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FundooAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3DA2AB2EB351BDAD29832D /* Pods-FundooAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FundooAppTests.release.xcconfig"; path = "Target Support Files/Pods-FundooAppTests/Pods-FundooAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		59EED0315A338044B561EACF /* Pods-FundooAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FundooAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FundooAppTests/Pods-FundooAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8400AC97249FDE1500B9A936 /* LabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPresenter.swift; sourceTree = "<group>"; };
 		8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPresenterDelegate.swift; sourceTree = "<group>"; };
 		8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +237,8 @@
 		841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+DragDelegate.swift"; sourceTree = "<group>"; };
 		841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+DropDelegate.swift"; sourceTree = "<group>"; };
 		841CEB9D248F705A004E76D4 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		841E61B724B1DA0F002DB0CE /* FundooUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundooUser.swift; sourceTree = "<group>"; };
+		841E61B924B1DA6C002DB0CE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLabelViewController+SearchController.swift"; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +282,13 @@
 		8477A49524A51D1400DDEAFA /* LabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewCell.swift; sourceTree = "<group>"; };
 		8477A49624A51D1400DDEAFA /* LabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewCell.xib; sourceTree = "<group>"; };
 		8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatbaseError.swift; sourceTree = "<group>"; };
+		8478A7C424B04CD400930B66 /* UserDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBManager.swift; sourceTree = "<group>"; };
+		8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBManagerImpl.swift; sourceTree = "<group>"; };
+		8478A7C824B04D4E00930B66 /* UserDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBService.swift; sourceTree = "<group>"; };
+		8478A7CA24B0532700930B66 /* RestApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiTests.swift; sourceTree = "<group>"; };
+		847B213124AAED5800E273C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
 		849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+MosiacLayout.swift"; sourceTree = "<group>"; };
 		84A3C9DA2480E3B1003393EC /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTest.swift; sourceTree = "<group>"; };
@@ -269,8 +298,12 @@
 		84AA3B3424A8F541009562E1 /* SearchResultVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultVC+CollectionView.swift"; sourceTree = "<group>"; };
 		84AA3B3624A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewCell+LabelCollectionView.swift"; sourceTree = "<group>"; };
 		84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultVC+MosiacLayout.swift"; sourceTree = "<group>"; };
+		84B1138724AC572900092E9D /* NoteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataModel.swift; sourceTree = "<group>"; };
+		84B1138924AC71BD00092E9D /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
+		84B1138B24AC737600092E9D /* NoteServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteServiceImpl.swift; sourceTree = "<group>"; };
+		84B1138D24AC74F700092E9D /* NoteDbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDbManager.swift; sourceTree = "<group>"; };
 		84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+BackgroundColor.swift"; sourceTree = "<group>"; };
-		84B49C56247EE94400D3C940 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		84B49C56247EE94400D3C940 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenter.swift; sourceTree = "<group>"; };
 		84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLabelViewController.swift; sourceTree = "<group>"; };
 		84D0C7CF248655CA002AB435 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +321,7 @@
 		84FD41B324A136BD00ACADC1 /* SideMenuLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuLabelCell.xib; sourceTree = "<group>"; };
 		84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelCell.swift; sourceTree = "<group>"; };
 		84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLabelCell.xib; sourceTree = "<group>"; };
+		860CDF923160C2C101C85435 /* Pods-FundooApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FundooApp.release.xcconfig"; path = "Target Support Files/Pods-FundooApp/Pods-FundooApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +329,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBEC8F21D6BDEEAF4EA749E /* Pods_FundooApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,12 +337,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62912DB2E0A962E4DC6AA93E /* Pods_FundooAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EA7844D1621F8897AA8965D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				089A905EED6D250AC78609B7 /* Pods-FundooApp.debug.xcconfig */,
+				860CDF923160C2C101C85435 /* Pods-FundooApp.release.xcconfig */,
+				59EED0315A338044B561EACF /* Pods-FundooAppTests.debug.xcconfig */,
+				4F3DA2AB2EB351BDAD29832D /* Pods-FundooAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8401645C24A1E79E001C95B0 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +518,8 @@
 				8419D297247A519D00C4F93A /* FundooApp */,
 				8419D2B1247A519E00C4F93A /* FundooAppTests */,
 				8419D296247A519D00C4F93A /* Products */,
+				3EA7844D1621F8897AA8965D /* Pods */,
+				D7F7EC699934A3278590A14B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -486,6 +535,7 @@
 		8419D297247A519D00C4F93A /* FundooApp */ = {
 			isa = PBXGroup;
 			children = (
+				8478A7C324B04C3E00930B66 /* WebService */,
 				8477A49924A530CC00DDEAFA /* PinterestLayout */,
 				8401645C24A1E79E001C95B0 /* Reminder */,
 				84FD41BA24A14AB300ACADC1 /* AddLabel */,
@@ -507,6 +557,7 @@
 				8419D2A4247A519E00C4F93A /* Assets.xcassets */,
 				8419D2A9247A519E00C4F93A /* Info.plist */,
 				8419D2A1247A519D00C4F93A /* FundooApp.xcdatamodeld */,
+				847B213124AAED5800E273C8 /* GoogleService-Info.plist */,
 			);
 			path = FundooApp;
 			sourceTree = "<group>";
@@ -517,8 +568,18 @@
 				8419D2B2247A519E00C4F93A /* FundooAppTests.swift */,
 				84A3C9DE2480EDE5003393EC /* CoreDataServiceTest.swift */,
 				8419D2B4247A519E00C4F93A /* Info.plist */,
+				8478A7CA24B0532700930B66 /* RestApiTests.swift */,
 			);
 			path = FundooAppTests;
+			sourceTree = "<group>";
+		};
+		841E61B424B1D905002DB0CE /* RestModels */ = {
+			isa = PBXGroup;
+			children = (
+				841E61B724B1DA0F002DB0CE /* FundooUser.swift */,
+				841E61B924B1DA6C002DB0CE /* APIError.swift */,
+			);
+			path = RestModels;
 			sourceTree = "<group>";
 		};
 		842460AB249A90EB00B38CBA /* Label */ = {
@@ -669,11 +730,22 @@
 			path = PinterestLayout;
 			sourceTree = "<group>";
 		};
+		8478A7C324B04C3E00930B66 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				841E61B424B1D905002DB0CE /* RestModels */,
+				8478A7C424B04CD400930B66 /* UserDBManager.swift */,
+				8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */,
+				8478A7C824B04D4E00930B66 /* UserDBService.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
 		84B49C53247EBE1800D3C940 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */,
-				84B49C56247EE94400D3C940 /* Result.swift */,
+				84B49C56247EE94400D3C940 /* ResultType.swift */,
 				841BBAE6248042360080C591 /* Helper.swift */,
 				84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */,
 				841BBAE424802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift */,
@@ -702,6 +774,12 @@
 				84A3C9DA2480E3B1003393EC /* DataService.swift */,
 				846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */,
 				84A3C9E02480F04C003393EC /* DatabaseManager.swift */,
+				847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */,
+				84B1138724AC572900092E9D /* NoteDataModel.swift */,
+				84B1138924AC71BD00092E9D /* NoteService.swift */,
+				84B1138B24AC737600092E9D /* NoteServiceImpl.swift */,
+				84B1138D24AC74F700092E9D /* NoteDbManager.swift */,
+				8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -730,6 +808,15 @@
 			path = AddLabel;
 			sourceTree = "<group>";
 		};
+		D7F7EC699934A3278590A14B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F6B8CE9E302CDCBF6F02B2C /* Pods_FundooApp.framework */,
+				384DE4E66344FAB166450952 /* Pods_FundooAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -737,9 +824,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8419D2B7247A519E00C4F93A /* Build configuration list for PBXNativeTarget "FundooApp" */;
 			buildPhases = (
+				7F9C4E8ED0583F690EFFF933 /* [CP] Check Pods Manifest.lock */,
 				8419D291247A519D00C4F93A /* Sources */,
 				8419D292247A519D00C4F93A /* Frameworks */,
 				8419D293247A519D00C4F93A /* Resources */,
+				157967895B1F209317F640A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -754,6 +843,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8419D2BA247A519E00C4F93A /* Build configuration list for PBXNativeTarget "FundooAppTests" */;
 			buildPhases = (
+				73E756E553B72D1FA3E9DAB8 /* [CP] Check Pods Manifest.lock */,
 				8419D2AA247A519E00C4F93A /* Sources */,
 				8419D2AB247A519E00C4F93A /* Frameworks */,
 				8419D2AC247A519E00C4F93A /* Resources */,
@@ -813,6 +903,7 @@
 			files = (
 				84FD41B524A136BD00ACADC1 /* SideMenuLabelCell.xib in Resources */,
 				8419D2A8247A519E00C4F93A /* LaunchScreen.storyboard in Resources */,
+				847B213224AAED5900E273C8 /* GoogleService-Info.plist in Resources */,
 				8428FE85248A593800E9BA44 /* Home.storyboard in Resources */,
 				8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */,
 				84F3CE4024A0C523009EE22D /* SideMenuCell.xib in Resources */,
@@ -837,12 +928,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		157967895B1F209317F640A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FundooApp/Pods-FundooApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FundooApp/Pods-FundooApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FundooApp/Pods-FundooApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73E756E553B72D1FA3E9DAB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FundooAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F9C4E8ED0583F690EFFF933 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FundooApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8419D291247A519D00C4F93A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8400AC98249FDE1500B9A936 /* LabelPresenter.swift in Sources */,
+				84B1138E24AC74F700092E9D /* NoteDbManager.swift in Sources */,
 				843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */,
 				84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */,
 				840752512488F05A0075EF51 /* Constants.swift in Sources */,
@@ -865,6 +1021,7 @@
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
 				842584C024A9B4F6000738B8 /* Label+CoreDataProperties.swift in Sources */,
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
+				8478692B24ADAEA200962ACD /* FirebaseDatbaseError.swift in Sources */,
 				84FCC370249F8D8300FE92CA /* LabelViewController.swift in Sources */,
 				8400AC9A249FDE3800B9A936 /* LabelPresenterDelegate.swift in Sources */,
 				84AA3B3724A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift in Sources */,
@@ -873,7 +1030,9 @@
 				8408F9B22496967F009155ED /* SearchVCPresenterImpl.swift in Sources */,
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */,
+				84B1138824AC572900092E9D /* NoteDataModel.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
+				84B1138C24AC737600092E9D /* NoteServiceImpl.swift in Sources */,
 				8400AC9E249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift in Sources */,
 				842584C424A9B4F6000738B8 /* Note+CoreDataProperties.swift in Sources */,
 				842460AE249A913A00B38CBA /* CheckMarkCell.swift in Sources */,
@@ -882,11 +1041,13 @@
 				842460B3249AA16B00B38CBA /* AddLabelViewController+TableView.swift in Sources */,
 				84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */,
 				84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */,
+				841E61BA24B1DA6C002DB0CE /* APIError.swift in Sources */,
 				84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */,
 				8428981D248173D6009AA1D9 /* UserModel.swift in Sources */,
 				8408F9B4249696F0009155ED /* SearchVCPresenterDelegate.swift in Sources */,
 				8412B1C524917402004DD694 /* EditNoteVC+Extension.swift in Sources */,
 				84C85D7B24A154B3009CDCAF /* UpdateLabelViewController.swift in Sources */,
+				8478A7C924B04D4E00930B66 /* UserDBService.swift in Sources */,
 				8401645E24A1E7E2001C95B0 /* AddReminderViewController.swift in Sources */,
 				84075257248926400075EF51 /* ProfilePresenter.swift in Sources */,
 				84078A8124901E090000D649 /* CollectionViewTabelCell.swift in Sources */,
@@ -901,7 +1062,7 @@
 				8412B1BD24915AB8004DD694 /* EditNotePresenter.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
 				842584C324A9B4F6000738B8 /* Note+CoreDataClass.swift in Sources */,
-				84B49C57247EE94400D3C940 /* Result.swift in Sources */,
+				84B49C57247EE94400D3C940 /* ResultType.swift in Sources */,
 				84AA3B3524A8F541009562E1 /* SearchResultVC+CollectionView.swift in Sources */,
 				84FD41B424A136BD00ACADC1 /* SideMenuLabelCell.swift in Sources */,
 				8477A49724A51D1400DDEAFA /* LabelViewCell.swift in Sources */,
@@ -910,6 +1071,7 @@
 				84FCC37F249F936500FE92CA /* AddLabelPresenter.swift in Sources */,
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
+				8478A7C724B04D1700930B66 /* UserDBManagerImpl.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
 				84A3C9E32480F19B003393EC /* SignInViewPresenterService.swift in Sources */,
 				84126ED82489558900F0FFBB /* NoteViewDelegate.swift in Sources */,
@@ -920,10 +1082,12 @@
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
 				8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
+				8478A7C524B04CD400930B66 /* UserDBManager.swift in Sources */,
 				84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */,
 				8408F9AE24969026009155ED /* SearchVC.swift in Sources */,
 				8408F9BB2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift in Sources */,
 				8435B7FD24A2986A008056C6 /* ReminderPresenterDelegate.swift in Sources */,
+				841E61B824B1DA0F002DB0CE /* FundooUser.swift in Sources */,
 				84FD41B824A1494A00ACADC1 /* AddLabelCell.swift in Sources */,
 				842CBCB02493E9740032CBB6 /* Note+NSItemProviderWriting.swift in Sources */,
 				8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */,
@@ -935,6 +1099,7 @@
 				84FCC381249F948100FE92CA /* AddLabelPresenterDelegate.swift in Sources */,
 				8477A49324A5184A00DDEAFA /* NoteViewCell.swift in Sources */,
 				8400ACA1249FF4D900B9A936 /* LabelCell.swift in Sources */,
+				847B213424AB1DAA00E273C8 /* FirebaseDatabaseManager.swift in Sources */,
 				84126ED62489554C00F0FFBB /* NoteViewController+NotePresenterDelegate.swift in Sources */,
 				8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */,
 				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,
@@ -952,6 +1117,7 @@
 				84423A52248B86A100D212DC /* NoteCell.swift in Sources */,
 				84078A7B249019040000D649 /* ColorCollectionView.swift in Sources */,
 				841CC90B24940E16001C8B9D /* NoteVC+DropDelegate.swift in Sources */,
+				84B1138A24AC71BD00092E9D /* NoteService.swift in Sources */,
 				841E66EC249F4DF1002B5DD2 /* SelectableItem.swift in Sources */,
 				843BBBAF248D768D00155FC4 /* MosiacLayout.swift in Sources */,
 				841E66EE249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift in Sources */,
@@ -966,6 +1132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A3C9DF2480EDE5003393EC /* CoreDataServiceTest.swift in Sources */,
+				8478A7CB24B0532700930B66 /* RestApiTests.swift in Sources */,
 				8419D2B3247A519E00C4F93A /* FundooAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1132,6 +1299,7 @@
 		};
 		8419D2B8247A519E00C4F93A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 089A905EED6D250AC78609B7 /* Pods-FundooApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1150,6 +1318,7 @@
 		};
 		8419D2B9247A519E00C4F93A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 860CDF923160C2C101C85435 /* Pods-FundooApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1168,6 +1337,7 @@
 		};
 		8419D2BB247A519E00C4F93A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59EED0315A338044B561EACF /* Pods-FundooAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1189,6 +1359,7 @@
 		};
 		8419D2BC247A519E00C4F93A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F3DA2AB2EB351BDAD29832D /* Pods-FundooAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

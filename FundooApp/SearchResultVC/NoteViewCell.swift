@@ -37,9 +37,9 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.reminderView.layer.borderWidth = borderWidth
     }
     
-    func updateView(note:Note){
+    func updateView(note:NoteModel){
         self.titleField.text = note.title
-        self.descriptionField.text = note.note
+        self.descriptionField.text = note.description
         self.reminderView.isHidden = true
         if note.reminder != nil {
             self.reminderView.isHidden = false
@@ -48,7 +48,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
             let date = note.reminder
             self.reminderField.text = dateFormatter.string(from: date!)
         }
-        self.dataSource = note.labels?.allObjects as! [Label]
+       // self.dataSource = note.labels?.allObjects as! [Label]
     }
     
     func updateCellBackground(color:UIColor){

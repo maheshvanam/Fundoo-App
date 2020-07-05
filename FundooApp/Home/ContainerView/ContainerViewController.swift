@@ -126,7 +126,7 @@ class ContainerViewController: UIViewController {
     }
     
     @objc func swithToLabelNotes(notification:NSNotification){
-        guard let notes = notification.object as? [Note] else {return}
+        guard let notes = notification.object as? [NoteModel] else {return}
         guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
                  return
                }

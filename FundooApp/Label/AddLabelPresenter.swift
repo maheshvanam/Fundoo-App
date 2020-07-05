@@ -18,16 +18,16 @@ class AddLabelPresenter: AddLabelPresenterDelegate {
         self.addLabelView = delegate
     }
     
-    func getLabels() -> [Label] {
-        let user = dbManager.getCurrentUser()
-        return user.labels!.allObjects as! [Label]
-    }
+//    func getLabels() -> [Label] {
+//        let user = dbManager.getCurrentUser()
+//        return user.labels!.allObjects as! [Label]
+  //  }
     
-    func createLabel() -> Label {
-        return dbManager.createLabel()
-    }
+//    func createLabel() -> Label {
+//        return dbManager.createLabel()
+//    }
     
-    func save() {
-        dbManager.saveData()
-    }
+//    func save() {
+//        dbManager.saveData()
+//    }
 }

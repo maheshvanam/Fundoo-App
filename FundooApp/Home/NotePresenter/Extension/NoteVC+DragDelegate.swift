@@ -8,13 +8,13 @@
 
 import UIKit
 
-extension NoteViewController: UICollectionViewDragDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let item = models[indexPath.item]
-        let itemProvider = NSItemProvider(object: item as NSItemProviderWriting )
-        let dragItem = UIDragItem(itemProvider: itemProvider)
-        dragItem.localObject = item
-        return [dragItem]
-    }
-}
+//extension NoteViewController: UICollectionViewDragDelegate {
+//
+//    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+//        let item = models[indexPath.item]
+//        let itemProvider = NSItemProvider(object: item as NSItemProviderWriting )
+//        let dragItem = UIDragItem(itemProvider: itemProvider)
+//        dragItem.localObject = item
+//        return [dragItem]
+//    }
+//}

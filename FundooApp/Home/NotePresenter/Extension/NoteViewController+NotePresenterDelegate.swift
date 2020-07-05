@@ -15,7 +15,7 @@ extension NoteViewController: NoteViewDelegate {
         collectionView.reloadData()
     }
     
-    func setTableData(data: [Note]) {
+    func setTableData(data: [NoteModel]) {
         self.models = data
     }
     

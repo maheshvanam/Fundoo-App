@@ -12,7 +12,7 @@ extension NoteViewController : MosaicLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
         
-        let discription = models[indexPath.item].note!
+        let discription = models[indexPath.item].description!
         
         let discriptionHeight = Constants.getContentHeight(for: discription, with: UIFont.systemFont(ofSize: fontSizeOfDiscription), width: widthOfDiscriptionField)
         return discriptionHeight + titleHeight

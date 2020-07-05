@@ -8,13 +8,31 @@
 
 import Foundation
 
-class NoteModel {
+public class NoteModel: Codable {
     
     var title:String?
-    var note:String?
-       
-    init(noteModel: Note) {
-       self.title = noteModel.title
-       self.note = noteModel.note
+    var description:String?
+    var isArchive: Bool = false
+    var color: String = "white"
+    var creationTime: Date?
+    var editTime: Date?
+    var isPinned: Bool = false
+    var position: Int64?
+    var reminder: Date?
+    var isTrash: Bool = false
+    var id:String?
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case description
+        case isArchive
+        case color
+        case creationTime
+        case editTime
+        case isPinned
+        case position
+        case reminder
+        case isTrash
+        case id 
     }
 }

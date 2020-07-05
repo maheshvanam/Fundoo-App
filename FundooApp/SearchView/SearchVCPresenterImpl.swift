@@ -10,9 +10,9 @@ import Foundation
 
 class SearchVCPresenterImpl: SearchVCPresenterDelegate {
     
-    func getData() -> [Note] {
-        let dbManager = DatabaseManager()
-        let user = dbManager.getCurrentUser()
-        return  user.notes!.allObjects as! [Note]
-    }
+//    func getData() -> [Note] {
+//        let dbManager = DatabaseManager()
+//        let user = dbManager.getCurrentUser()
+//        return  user.notes!.allObjects as! [Note]
+//    }
 }

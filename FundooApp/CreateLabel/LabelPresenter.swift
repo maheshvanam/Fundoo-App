@@ -17,19 +17,19 @@ class LabelPresenter: LabelPresenterDelegate {
         self.labelView = delegate
     }
     
-    func getLabels() -> [Label] {
-        let user = dbManager.getCurrentUser()
-        return user.labels!.allObjects as! [Label]
-    }
-    
-    func deleteLabel(label:Label) {
-        let user = dbManager.getCurrentUser()
-        user.removeFromLabels(label)
-        let notes = label.notes?.allObjects as! [Note]
-        for note in notes {
-            note.removeFromLabels(label)
-            dbManager.saveData()
-        }
-        dbManager.saveData()
-    }
+//    func getLabels() -> [Label] {
+//        let user = dbManager.getCurrentUser()
+//        return user.labels!.allObjects as! [Label]
+//    }
+//
+//    func deleteLabel(label:Label) {
+//        let user = dbManager.getCurrentUser()
+//        user.removeFromLabels(label)
+//        let notes = label.notes?.allObjects as! [Note]
+//        for note in notes {
+//            note.removeFromLabels(label)
+//            dbManager.saveData()
+//        }
+//        dbManager.saveData()
+//    }
 }

@@ -45,8 +45,8 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             let cell = reslutCollectionView.dequeueReusableCell(withReuseIdentifier: cellReusableId ,for : indexPath) as! SearchCell
             cell.titleLabel.text = currentDataSource[indexPath.item].title
             let color = currentDataSource[indexPath.item].color
-            cell.backgroundColor = Constants.colors[color!]
-            cell.discriptionLabel.text = currentDataSource[indexPath.item].note
+            cell.backgroundColor = Constants.colors[color]
+            cell.discriptionLabel.text = currentDataSource[indexPath.item].description
             return cell
         }
         
@@ -60,7 +60,7 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == reslutCollectionView {
-            let discription = currentDataSource[indexPath.item].note!
+            let discription = currentDataSource[indexPath.item].description!
 
             let discriptionHeight = Constants.getContentHeight(for: discription, with: UIFont.systemFont(ofSize: fontSizeOfDiscription), width: widthOfDiscriptionField)
             return CGSize(width: self.view.frame.width - cellPadding , height: discriptionHeight + titleHeight)

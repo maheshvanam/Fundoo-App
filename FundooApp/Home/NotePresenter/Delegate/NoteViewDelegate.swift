@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NoteViewDelegate {
-    func setTableData(data: [Note])
+    func setTableData(data: [NoteModel])
     func updateView()
     func addNotificationObservers()
 }

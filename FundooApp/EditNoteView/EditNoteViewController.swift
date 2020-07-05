@@ -22,7 +22,8 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var heightAnchor: NSLayoutConstraint!
     var editNotePresenter: EditNoteDelegate!
-    var note:Note!
+   // var note:Note!
+    var note:NoteModel!
     var labels:[Label] = []
     let colors = Constants.colors
     var currentColor:String!
@@ -41,7 +42,7 @@ class EditNoteViewController: UIViewController {
         configureBackButton()
     }
     @IBAction func onArchivePressed(_ sender: Any) {
-        note.archive = !note.archive
+        note.isArchive = !note.isArchive
         navigationController?.popViewController(animated: true)
     }
     
@@ -59,10 +60,10 @@ class EditNoteViewController: UIViewController {
     }
     
     func addLabelsToNote(){
-        if (labels.count != 0) {
-            editNotePresenter.addNoteToLabels(note:note,labels: labels)
-            note.labels?.adding(labels)
-        }
+//        if (labels.count != 0) {
+//            editNotePresenter.addNoteToLabels(note:note,labels: labels)
+//            note.labels?.adding(labels)
+//        }
     }
 
     @objc func addLabel() {
@@ -75,8 +76,10 @@ class EditNoteViewController: UIViewController {
     }
     
     @objc func onBackPressed(){
-        self.note.reminder = reminderDate
-        self.addLabelsToNote()
+        if reminderDate != nil {
+                self.note.reminder = reminderDate
+        }
+//        self.addLabelsToNote()
         self.editNotePresenter.saveNote()
         NotificationCenter.default.removeObserver(self)
         noteIsNew = nil
@@ -89,7 +92,7 @@ class EditNoteViewController: UIViewController {
    
     @objc func deleteNote() {
         heightAnchor.constant = slideUpMenuHidingConstant
-        slideUpVCpresenter.deleteNote(note: note)
+      //  slideUpVCpresenter.deleteNote(note: note)
         postReloadCellsNotification()
         NotificationCenter.default.removeObserver(self)
         navigationController?.popViewController(animated: false)

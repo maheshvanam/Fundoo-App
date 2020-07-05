@@ -8,6 +8,6 @@
 
 import Foundation
 
-class DatabaseManager: CoreDataServiceImpl {
+class DatabaseManager: FirebaseDatabaseManager {
     
 }

@@ -8,14 +8,9 @@
 
 import Foundation
 protocol DataService {
+    
     func insertUser(registartionUser: UserModel)
-    func checkValidUserOrNot(email: String,password: String) -> Result
-    func deleteUser(email: String)
-    func insertNote(note: Note)
-    func createNote() -> Note
-    func deleteNote(note: Note)
-    func getCurrentUser() -> User
-    func getNotesFromDB(fetchLimit:Int, fetchOffSet:Int) -> [Note]
-    func createLabel() -> Label
-    func saveData()
+    func isLoggedIn()-> Bool
+    func signOutUser()
+    func signInwithEmailAndPassword(email: String,password: String)
 }

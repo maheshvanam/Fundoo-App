@@ -9,18 +9,16 @@
 import UIKit
 
 extension EditNoteViewController: EditNotePresenterDelegate {
-    
     func initializeView(){
         discriptionField.layer.borderWidth = 1
         discriptionField.layer.borderColor = #colorLiteral(red: 0.9175666571, green: 0.9176985621, blue: 0.9175377488, alpha: 1)
         if note != nil {
             titleField.text = note.title
-            discriptionField.text = note.note
-            if let color = note.color {
+            discriptionField.text = note.description
+            let color = note.color
                 view.backgroundColor = colors[color]
                 titleField.backgroundColor = colors[color]
                 discriptionField.backgroundColor = colors[color]
-            }
         }
     }
     
@@ -37,16 +35,17 @@ extension EditNoteViewController: EditNotePresenterDelegate {
     
     func fieldsAreEmpty() -> Bool {
         if let title = titleField.text, !title.isEmpty ,!discriptionField.text.isEmpty {
-            return true
+            return false
         }
-        return false
+        return true
     }
     
     func isNewNote() -> Bool {
         return (noteIsNew != nil) ? true : false
     }
     
-    func getNote() -> Note? {
+    
+    func getNote() -> NoteModel? {
         return note
     }
     

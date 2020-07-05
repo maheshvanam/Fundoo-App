@@ -9,6 +9,5 @@
 import Foundation
 
 protocol SideMenuPresenterDelegate {
-    func getArchiveNotes()-> [Note]
-    func getTrashNotes()-> [Note]
+    func signOutUser()
 }

@@ -10,9 +10,9 @@ import Foundation
 
 class ReminderPresenter:ReminderPresenterDelegate {
     let dbManager = DatabaseManager()
-    func getReminderNotes()-> [Note] {
-        let user = dbManager.getCurrentUser()
-        let notes = user.notes?.allObjects as! [Note]
-        return notes.filter({$0.reminder != nil})
-    }
+//    func getReminderNotes()-> [Note] {
+//        let user = dbManager.getCurrentUser()
+//        let notes = user.notes?.allObjects as! [Note]
+//        return notes.filter({$0.reminder != nil})
+//    }
 }

@@ -20,7 +20,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "NoteViewCell", for: indexPath) as! NoteViewCell)
          let noteModel = models[indexPath.item]
         cell.updateView(note:noteModel)
-        cell.updateCellBackground(color: Constants.colors[noteModel.color!]!)
+        cell.updateCellBackground(color: Constants.colors[noteModel.color]!)
         cell.setShadow()
         return cell
     }
@@ -41,7 +41,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
-    func showAlert(note :Note){
+    func showAlert(note :NoteModel){
         let message             = "you can't edit the trashed notes"
         let title               = "Trash"
         let restoreButtonTitle  = "Restore"
@@ -50,12 +50,12 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         let alertController = UIAlertController(title: title, message: message , preferredStyle: .alert)
         
         let OKAction = UIAlertAction(title: restoreButtonTitle, style: .default) { (action:UIAlertAction!) in
-            note.trash = false
-            self.notePresenter?.saveNote()
+            note.isTrash = false
+         //   self.notePresenter?.saveNote()
         }
         alertController.addAction(OKAction)
         let cancelAction = UIAlertAction(title: deleteButtonTitle, style: .cancel) { (action:UIAlertAction!) in
-            self.notePresenter?.deleteNote(note: note)
+          //  self.notePresenter?.deleteNote(note: note)
         }
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:nil)
