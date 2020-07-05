@@ -16,7 +16,7 @@ class FundooUser: Codable {
     var password    :   String?
     var service     :   String?
     var id          :   String?
-    var ttl         :   String?
+    var ttl         :   Int?
     var created     :   String?
     var userId      :   String?
     var role        :   String?

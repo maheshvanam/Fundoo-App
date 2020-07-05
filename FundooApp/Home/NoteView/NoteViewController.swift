@@ -79,8 +79,8 @@ class NoteViewController: UIViewController {
 //        default:
 //            self.notePresenter!.updateDataSource()
 //        }
-        self.notePresenter!.updateDataSource()
-        layout.reloadData()
-        collectionView.reloadData()
+//        self.notePresenter!.updateDataSource()
+//        layout.reloadData()
+//        collectionView.reloadData()
     }
 }

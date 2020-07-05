@@ -9,5 +9,6 @@
 import Foundation
 
 protocol UserDBService {
-    
+    func signInUser(user:FundooUser, completion: @escaping (Result<FundooUser,APIError>)->Void )
+    func saveUser(user:FundooUser, completion: @escaping (Result<Int,APIError>)->Void )
 }
