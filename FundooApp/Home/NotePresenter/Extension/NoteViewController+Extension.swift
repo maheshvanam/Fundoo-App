@@ -41,7 +41,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
-    func showAlert(note :NoteModel){
+    func showAlert(note :FundooNote){
         let message             = "you can't edit the trashed notes"
         let title               = "Trash"
         let restoreButtonTitle  = "Restore"
@@ -50,7 +50,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         let alertController = UIAlertController(title: title, message: message , preferredStyle: .alert)
         
         let OKAction = UIAlertAction(title: restoreButtonTitle, style: .default) { (action:UIAlertAction!) in
-            note.isTrash = false
+            note.isDeleted = false
          //   self.notePresenter?.saveNote()
         }
         alertController.addAction(OKAction)

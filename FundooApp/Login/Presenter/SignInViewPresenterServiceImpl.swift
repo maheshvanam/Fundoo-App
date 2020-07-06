@@ -30,6 +30,7 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             switch result {
             case .success(let currentUser):
                 UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
+                print(currentUser.firstName!)
                 self.signInViewDelegate.clearFields()
                 self.signInViewDelegate.clearLabels()
                 self.signInViewDelegate.navigateToUserHomeView()

@@ -23,7 +23,7 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var heightAnchor: NSLayoutConstraint!
     var editNotePresenter: EditNoteDelegate!
    // var note:Note!
-    var note:NoteModel!
+    var note:FundooNote!
     var labels:[Label] = []
     let colors = Constants.colors
     var currentColor:String!
@@ -42,7 +42,7 @@ class EditNoteViewController: UIViewController {
         configureBackButton()
     }
     @IBAction func onArchivePressed(_ sender: Any) {
-        note.isArchive = !note.isArchive
+        note.isArchived = !note.isArchived
         navigationController?.popViewController(animated: true)
     }
     
@@ -77,7 +77,7 @@ class EditNoteViewController: UIViewController {
     
     @objc func onBackPressed(){
         if reminderDate != nil {
-                self.note.reminder = reminderDate
+            self.note.reminder?.append(reminderDate.toString())
         }
 //        self.addLabelsToNote()
         self.editNotePresenter.saveNote()
@@ -118,4 +118,13 @@ extension EditNoteViewController: AddLabelsDelegate {
     func addLabels(items: [SelectableItem]) {
         labels = items.map({$0.item})
     }
-}   
+}
+
+extension Date {
+    func toString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: self)
+        return myString
+    }
+}

@@ -10,7 +10,7 @@ import Foundation
 class EditNotePresenterImpl: EditNoteDelegate {
     
     var editNoteView: EditNotePresenterDelegate
-    let dbManager = NoteDbManager()
+    let dbManager = RestNoteDBManager()
     
     init(delegate: EditNotePresenterDelegate) {
         self.editNoteView = delegate
@@ -20,8 +20,8 @@ class EditNotePresenterImpl: EditNoteDelegate {
         var note = editNoteView.getNote()
         if !editNoteView.fieldsAreEmpty() {
             if editNoteView.isNewNote() {
-                note = NoteModel()
-                note!.creationTime = Date()
+                note = FundooNote()
+                note!.createdDate = Date().toString()
                 note!.title = editNoteView.getTitleText()
                 note!.color = editNoteView.getCurrentColor()!
                 note!.description = editNoteView.getDiscriptionText()
@@ -36,8 +36,8 @@ class EditNotePresenterImpl: EditNoteDelegate {
         else{
             return
         }
-        note!.editTime = Date()
-        dbManager.updateNote(note:note!)
+        note!.modifiedDate = Date().toString()
+       // dbManager.updateNote(note:note!)
        // dbManager.insertNote(note: note!)
         editNoteView.postReloadCellsNotification()
     }

@@ -37,7 +37,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.reminderView.layer.borderWidth = borderWidth
     }
     
-    func updateView(note:NoteModel){
+    func updateView(note:FundooNote){
         self.titleField.text = note.title
         self.descriptionField.text = note.description
         self.reminderView.isHidden = true
@@ -46,7 +46,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = dateFormat
             let date = note.reminder
-            self.reminderField.text = dateFormatter.string(from: date!)
+            self.reminderField.text = dateFormatter.string(from: date![0].toDate())
         }
        // self.dataSource = note.labels?.allObjects as! [Label]
     }
@@ -69,3 +69,13 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     
 }
 
+extension String {
+    
+    func toDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from:self)!
+        return date
+    }
+}

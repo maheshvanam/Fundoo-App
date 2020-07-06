@@ -11,7 +11,7 @@ import Foundation
 class NotePresenterImpl: NoteDelegate {
     
     var noteView: NoteViewDelegate
-    let dbManager = DatabaseManager()
+    let dbManager = RestNoteDBManager()
     
     init(delegate: NoteViewDelegate) {
         self.noteView = delegate
@@ -19,13 +19,11 @@ class NotePresenterImpl: NoteDelegate {
     
     
     func updateDataSource() {
-       let dbManager = NoteDbManager()
-        
         dbManager.getAllNotes { (noteModels) in
             self.noteView.setTableData(data: noteModels)
             self.noteView.updateView()
         }
-        
+
     }
 
     func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {
@@ -61,26 +59,24 @@ class NotePresenterImpl: NoteDelegate {
 //        dbManager.saveUser(user: user)
     }
     
-//    func getReminderNotes()-> [Note] {
-//        let user = dbManager.getCurrentUser()
-//        let notes = user.notes?.allObjects as! [Note]
-//        return notes.filter({$0.reminder != nil})
-//    }
+    func getReminderNotes()-> [FundooNote] {
+        self.updateDataSource()
+        let notes = self.noteView.getNotes()
+        return notes.filter({$0.reminder != nil && ($0.reminder?.count)! > 0 })
+    }
     
-//    func getArchiveNotes() -> [Note] {
-//        let user = dbManager.getCurrentUser()
-//        let notes = user.notes?.allObjects as! [Note]
-//        return notes.filter({ $0.archive == true })
-//    }
-//    
-//    func getTrashNotes() -> [Note] {
-//           let user = dbManager.getCurrentUser()
-//           let notes = user.notes?.allObjects as! [Note]
-//           return notes.filter({ $0.trash == true })
-//       }
-//    func saveNote() {
-//        dbManager.saveData()
-//    }
+    func getArchiveNotes() -> [FundooNote] {
+        self.updateDataSource()
+        let notes = self.noteView.getNotes()
+        return notes.filter({ $0.isArchived == true })
+    }
+    
+    func getTrashNotes() -> [FundooNote] {
+        self.updateDataSource()
+        let notes = self.noteView.getNotes()
+        return notes.filter({ $0.isDeleted == true })
+    }
+
 //    func deleteNote(note:Note){
 //        let user = dbManager.getCurrentUser()
 //        user.removeFromNotes(note)

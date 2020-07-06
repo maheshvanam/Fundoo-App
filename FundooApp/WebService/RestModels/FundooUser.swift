@@ -9,7 +9,6 @@
 import Foundation
 
 class FundooUser: Codable {
-    
     var firstName   :   String?
     var lastName    :   String?
     var email       :   String?

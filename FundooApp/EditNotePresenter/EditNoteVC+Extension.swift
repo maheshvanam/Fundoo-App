@@ -45,7 +45,7 @@ extension EditNoteViewController: EditNotePresenterDelegate {
     }
     
     
-    func getNote() -> NoteModel? {
+    func getNote() -> FundooNote? {
         return note
     }
     

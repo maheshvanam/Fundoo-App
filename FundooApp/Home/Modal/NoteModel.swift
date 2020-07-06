@@ -21,18 +21,4 @@ public class NoteModel: Codable {
     var reminder: Date?
     var isTrash: Bool = false
     var id:String?
-    
-    enum CodingKeys: String, CodingKey {
-        case title
-        case description
-        case isArchive
-        case color
-        case creationTime
-        case editTime
-        case isPinned
-        case position
-        case reminder
-        case isTrash
-        case id 
-    }
 }

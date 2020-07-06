@@ -29,7 +29,7 @@ class NoteViewController: UIViewController {
     let maxContentHeight:CGFloat = 350
     var notePresenter: NoteDelegate?
     @IBOutlet var collectionView: UICollectionView!
-    var models = [NoteModel]()
+    var models = [FundooNote]()
     var layout: MosaicLayout!
     var isGrid:Bool = true
     var viewOption:Int!
@@ -62,25 +62,26 @@ class NoteViewController: UIViewController {
     }
     
     @objc func reloadCells(){
-//        switch viewOption {
-//        case isNoteView:
-//            self.notePresenter!.updateDataSource()
-//        case isReminderView:
-//            //self.models = (self.notePresenter?.getReminderNotes())!
-//            self.title = "Reminder Notes"
+        switch viewOption {
+        case isNoteView:
+            self.notePresenter!.updateDataSource()
+            self.title = "Notes"
+        case isReminderView:
+            self.models = self.notePresenter!.getReminderNotes()
+            self.title = "Reminder Notes"
 //        case isLabelView:
 //            collectionView.reloadData()
-//        case isArchiveView:
-//          //  self.models = (self.notePresenter?.getArchiveNotes())!
-//            self.title = "Archive Notes"
+        case isArchiveView:
+            self.models = (self.notePresenter?.getArchiveNotes())!
+            self.title = "Archive Notes"
 //        case isTrashView:
 //          //  self.models = (self.notePresenter?.getTrashNotes())!
 //
-//        default:
-//            self.notePresenter!.updateDataSource()
-//        }
-//        self.notePresenter!.updateDataSource()
-//        layout.reloadData()
-//        collectionView.reloadData()
+        default:
+            self.notePresenter!.updateDataSource()
+        }
+        self.notePresenter!.updateDataSource()
+        layout.reloadData()
+        collectionView.reloadData()
     }
 }

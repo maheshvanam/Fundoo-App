@@ -108,6 +108,7 @@
 		84423A52248B86A100D212DC /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84423A51248B86A100D212DC /* NoteCell.swift */; };
 		84435F3A24877FC00066586E /* NoteViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84435F3924877FC00066586E /* NoteViewController+Extension.swift */; };
 		844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */; };
+		8452B2CC24B38CA200582EA3 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452B2CB24B38CA200582EA3 /* Database.swift */; };
 		846DAAC9247BACCE004F3DA0 /* CoreDataServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */; };
 		8472AD432492176F0066CD7A /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472AD422492176F0066CD7A /* Dictionary+Extension.swift */; };
 		8477A49324A5184A00DDEAFA /* NoteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49124A5184A00DDEAFA /* NoteViewCell.swift */; };
@@ -143,6 +144,8 @@
 		84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */; };
 		84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB20752494B3D600652606 /* SideMenuOption.swift */; };
 		84EEAB7C24B23DDE0011A099 /* FundooNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7B24B23DDE0011A099 /* FundooNote.swift */; };
+		84EEAB7E24B24D580011A099 /* RestNoteDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7D24B24D580011A099 /* RestNoteDBManager.swift */; };
+		84EEAB8024B24DA10011A099 /* RestNoteDBManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7F24B24DA10011A099 /* RestNoteDBManagerImpl.swift */; };
 		84F3CE3F24A0C523009EE22D /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */; };
 		84F3CE4024A0C523009EE22D /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */; };
 		84F7A8EB249E54BE00480ACE /* CreateLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */; };
@@ -276,6 +279,7 @@
 		84423A51248B86A100D212DC /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		84435F3924877FC00066586E /* NoteViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewController+Extension.swift"; sourceTree = "<group>"; };
 		844B0E20248111A6009560AD /* SignInViewController+PresenterSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+PresenterSignInView.swift"; sourceTree = "<group>"; };
+		8452B2CB24B38CA200582EA3 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceImpl.swift; sourceTree = "<group>"; };
 		8472AD422492176F0066CD7A /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		8477A49124A5184A00DDEAFA /* NoteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewCell.swift; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 		84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		84EB20752494B3D600652606 /* SideMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOption.swift; sourceTree = "<group>"; };
 		84EEAB7B24B23DDE0011A099 /* FundooNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundooNote.swift; sourceTree = "<group>"; };
+		84EEAB7D24B24D580011A099 /* RestNoteDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestNoteDBManager.swift; sourceTree = "<group>"; };
+		84EEAB7F24B24DA10011A099 /* RestNoteDBManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestNoteDBManagerImpl.swift; sourceTree = "<group>"; };
 		84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelCell.swift; sourceTree = "<group>"; };
@@ -581,6 +587,7 @@
 				841E61B724B1DA0F002DB0CE /* FundooUser.swift */,
 				841E61B924B1DA6C002DB0CE /* APIError.swift */,
 				84EEAB7B24B23DDE0011A099 /* FundooNote.swift */,
+				8452B2CB24B38CA200582EA3 /* Database.swift */,
 			);
 			path = RestModels;
 			sourceTree = "<group>";
@@ -740,6 +747,8 @@
 				8478A7C424B04CD400930B66 /* UserDBManager.swift */,
 				8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */,
 				8478A7C824B04D4E00930B66 /* UserDBService.swift */,
+				84EEAB7D24B24D580011A099 /* RestNoteDBManager.swift */,
+				84EEAB7F24B24DA10011A099 /* RestNoteDBManagerImpl.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -1033,6 +1042,7 @@
 				8408F9B22496967F009155ED /* SearchVCPresenterImpl.swift in Sources */,
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */,
+				84EEAB8024B24DA10011A099 /* RestNoteDBManagerImpl.swift in Sources */,
 				84B1138824AC572900092E9D /* NoteDataModel.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
 				84B1138C24AC737600092E9D /* NoteServiceImpl.swift in Sources */,
@@ -1073,6 +1083,7 @@
 				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
 				84FCC37F249F936500FE92CA /* AddLabelPresenter.swift in Sources */,
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
+				8452B2CC24B38CA200582EA3 /* Database.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
 				8478A7C724B04D1700930B66 /* UserDBManagerImpl.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
@@ -1128,6 +1139,7 @@
 				8435B7FB24A2902A008056C6 /* EditNoteViewController+Reminder.swift in Sources */,
 				84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */,
 				84A3C9E12480F04C003393EC /* DatabaseManager.swift in Sources */,
+				84EEAB7E24B24D580011A099 /* RestNoteDBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
