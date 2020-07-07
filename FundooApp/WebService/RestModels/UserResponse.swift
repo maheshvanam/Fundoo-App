@@ -8,7 +8,8 @@
 
 import Foundation
 
-class FundooUser: Codable {
+class UserResponse: Codable {
+    
     var firstName   :   String?
     var lastName    :   String?
     var email       :   String?
@@ -33,4 +34,5 @@ class FundooUser: Codable {
         self.password    = password
         self.service     = "basic"
     }
+    
 }

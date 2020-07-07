@@ -9,6 +9,7 @@
 import Foundation
 
 class FundooNote:Codable {
+    
     var title:String?
     var description:String?
     var isPinned:Bool = false

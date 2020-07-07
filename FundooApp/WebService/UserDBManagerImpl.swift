@@ -20,7 +20,7 @@ class UserDBManagerImpl: UserDBService {
         self.resourceURL = resourceURL
     }
     
-    func saveUser(user:FundooUser, completion: @escaping (Result<Int,APIError>)->Void ) {
+    func saveUser(user:UserResponse, completion: @escaping (Result<Int,APIError>)->Void ) {
         do {
             var urlRequest = URLRequest(url: resourceURL)
             urlRequest.httpMethod = "POST"
@@ -30,7 +30,7 @@ class UserDBManagerImpl: UserDBService {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200  else {
                     DispatchQueue.main.async {
-                        completion(.failure(.responseProblem))
+                        completion(.failure(.responseError))
                     }
                     return
                 }
@@ -42,12 +42,12 @@ class UserDBManagerImpl: UserDBService {
         }
         catch {
             DispatchQueue.main.async {
-                completion(.failure(.encodingProblem))
+                completion(.failure(.encodingError))
             }
         }
     }
     
-    func signInUser(user:FundooUser, completion: @escaping (Result<FundooUser,APIError>)->Void ) {
+    func signInUser(user:UserResponse, completion: @escaping (Result<UserResponse,APIError>)->Void ) {
         do {
             var urlRequest = URLRequest(url: resourceURL)
             urlRequest.httpMethod = "POST"
@@ -57,19 +57,19 @@ class UserDBManagerImpl: UserDBService {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200,let jsonData = data else {
                     DispatchQueue.main.async {
-                        completion(.failure(.responseProblem))
+                        completion(.failure(.responseError))
                     }
                     return
                 }
                 do {
-                    let userData = try JSONDecoder().decode(FundooUser.self, from: jsonData)
+                    let userData = try JSONDecoder().decode(UserResponse.self, from: jsonData)
                     DispatchQueue.main.async {
                         completion(.success(userData))
                     }
                 }
                 catch {
                     DispatchQueue.main.async {
-                        completion(.failure(.decodingProblem))
+                        completion(.failure(.decodingError))
                     }
                 }
             }
@@ -77,7 +77,7 @@ class UserDBManagerImpl: UserDBService {
         }
         catch {
             DispatchQueue.main.async {
-                completion(.failure(.encodingProblem))
+                completion(.failure(.encodingError))
             }
         }
     }

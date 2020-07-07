@@ -7,9 +7,10 @@
 //
 
 import Foundation
-class Database {
+class RunTimeDB {
     var notes:[FundooNote]!
-    static let shared = Database()
+    var user:UserResponse!
+    static let shared = RunTimeDB()
     init() {
         notes = []
         notes.append(FundooNote(title:"1",description:"1 description"))
@@ -22,4 +23,7 @@ class Database {
         notes.append(FundooNote(title:"8",description:"8 description"))
     }
     
+    func setUser(user:UserResponse) {
+        self.user = user
+    }
 }

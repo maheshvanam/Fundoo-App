@@ -25,20 +25,21 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             self.signInViewDelegate.showAlert(title: "Error", message: "Please fill the all fields")
             return
         }
-        let user = FundooUser(email: email, password: password)
+        let user = UserResponse(email: email, password: password)
         dbManager.signInUser(user: user) { (result) in
             switch result {
             case .success(let currentUser):
                 UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
+                RunTimeDB.shared.setUser(user:currentUser)
                 print(currentUser.firstName!)
                 self.signInViewDelegate.clearFields()
                 self.signInViewDelegate.clearLabels()
                 self.signInViewDelegate.navigateToUserHomeView()
-            case .failure(.decodingProblem):
+            case .failure(.decodingError):
                 fatalError("decoding user data error")
-            case .failure(.encodingProblem) :
+            case .failure(.encodingError) :
                 fatalError("encoding user data error")
-            case .failure(.responseProblem):
+            case .failure(.responseError):
                 self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
                 self.signInViewDelegate.updatePasswordLabel()
             }

@@ -21,7 +21,7 @@ class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
         let user = self.signUpViewDelegate.getUser()
         let fieldsAreValid = self.signUpViewDelegate.validateFields(user:user)
         if fieldsAreValid {
-            let newUser = FundooUser(firstName: user.firstName!, lastName: user.lastName!, email: user.email!, password: user.password!)
+            let newUser = UserResponse(firstName: user.firstName!, lastName: user.lastName!, email: user.email!, password: user.password!)
             let dbManager = UserDBManager(endpoint: "user/userSignup")
             dbManager.saveUser(user: newUser) { (result) in
                 switch result {
