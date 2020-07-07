@@ -8,19 +8,19 @@
 
 import Foundation
 class RunTimeDB {
-    var notes:[FundooNote]!
+    var notes:[NoteResponse]!
     var user:UserResponse!
     static let shared = RunTimeDB()
     init() {
         notes = []
-        notes.append(FundooNote(title:"1",description:"1 description"))
-        notes.append(FundooNote(title:"2",description:"2 description"))
-        notes.append(FundooNote(title:"3",description:"3 description"))
-        notes.append(FundooNote(title:"4",description:"4 description"))
-        notes.append(FundooNote(title:"5",description:"5 description"))
-        notes.append(FundooNote(title:"6",description:"6 description"))
-        notes.append(FundooNote(title:"7",description:"7 description"))
-        notes.append(FundooNote(title:"8",description:"8 description"))
+        notes.append(NoteResponse(title:"1",description:"1 description"))
+        notes.append(NoteResponse(title:"2",description:"2 description"))
+        notes.append(NoteResponse(title:"3",description:"3 description"))
+        notes.append(NoteResponse(title:"4",description:"4 description"))
+        notes.append(NoteResponse(title:"5",description:"5 description"))
+        notes.append(NoteResponse(title:"6",description:"6 description"))
+        notes.append(NoteResponse(title:"7",description:"7 description"))
+        notes.append(NoteResponse(title:"8",description:"8 description"))
     }
     
     func setUser(user:UserResponse) {

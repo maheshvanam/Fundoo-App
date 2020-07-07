@@ -117,8 +117,7 @@
 		8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49624A51D1400DDEAFA /* LabelViewCell.xib */; };
 		8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */; };
 		8478692B24ADAEA200962ACD /* FirebaseDatbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */; };
-		8478A7C524B04CD400930B66 /* UserDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C424B04CD400930B66 /* UserDBManager.swift */; };
-		8478A7C724B04D1700930B66 /* UserDBManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */; };
+		8478A7C524B04CD400930B66 /* UserServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C424B04CD400930B66 /* UserServiceManager.swift */; };
 		8478A7C924B04D4E00930B66 /* UserDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C824B04D4E00930B66 /* UserDBService.swift */; };
 		8478A7CB24B0532700930B66 /* RestApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7CA24B0532700930B66 /* RestApiTests.swift */; };
 		847B213224AAED5900E273C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847B213124AAED5800E273C8 /* GoogleService-Info.plist */; };
@@ -143,9 +142,8 @@
 		84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C7CF248655CA002AB435 /* ContainerViewController.swift */; };
 		84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */; };
 		84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB20752494B3D600652606 /* SideMenuOption.swift */; };
-		84EEAB7C24B23DDE0011A099 /* FundooNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7B24B23DDE0011A099 /* FundooNote.swift */; };
+		84EEAB7C24B23DDE0011A099 /* NoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7B24B23DDE0011A099 /* NoteResponse.swift */; };
 		84EEAB7E24B24D580011A099 /* RestNoteDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7D24B24D580011A099 /* RestNoteDBManager.swift */; };
-		84EEAB8024B24DA10011A099 /* RestNoteDBManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7F24B24DA10011A099 /* RestNoteDBManagerImpl.swift */; };
 		84F3CE3F24A0C523009EE22D /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */; };
 		84F3CE4024A0C523009EE22D /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */; };
 		84F7A8EB249E54BE00480ACE /* CreateLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */; };
@@ -288,8 +286,7 @@
 		8477A49624A51D1400DDEAFA /* LabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewCell.xib; sourceTree = "<group>"; };
 		8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatbaseError.swift; sourceTree = "<group>"; };
-		8478A7C424B04CD400930B66 /* UserDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBManager.swift; sourceTree = "<group>"; };
-		8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBManagerImpl.swift; sourceTree = "<group>"; };
+		8478A7C424B04CD400930B66 /* UserServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceManager.swift; sourceTree = "<group>"; };
 		8478A7C824B04D4E00930B66 /* UserDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBService.swift; sourceTree = "<group>"; };
 		8478A7CA24B0532700930B66 /* RestApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiTests.swift; sourceTree = "<group>"; };
 		847B213124AAED5800E273C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -314,9 +311,8 @@
 		84D0C7CF248655CA002AB435 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		84EB20752494B3D600652606 /* SideMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOption.swift; sourceTree = "<group>"; };
-		84EEAB7B24B23DDE0011A099 /* FundooNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundooNote.swift; sourceTree = "<group>"; };
+		84EEAB7B24B23DDE0011A099 /* NoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteResponse.swift; sourceTree = "<group>"; };
 		84EEAB7D24B24D580011A099 /* RestNoteDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestNoteDBManager.swift; sourceTree = "<group>"; };
-		84EEAB7F24B24DA10011A099 /* RestNoteDBManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestNoteDBManagerImpl.swift; sourceTree = "<group>"; };
 		84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelCell.swift; sourceTree = "<group>"; };
@@ -586,7 +582,7 @@
 			children = (
 				841E61B724B1DA0F002DB0CE /* UserResponse.swift */,
 				841E61B924B1DA6C002DB0CE /* APIError.swift */,
-				84EEAB7B24B23DDE0011A099 /* FundooNote.swift */,
+				84EEAB7B24B23DDE0011A099 /* NoteResponse.swift */,
 				8452B2CB24B38CA200582EA3 /* RunTimeDB.swift */,
 			);
 			path = RestModels;
@@ -744,11 +740,9 @@
 			isa = PBXGroup;
 			children = (
 				841E61B424B1D905002DB0CE /* RestModels */,
-				8478A7C424B04CD400930B66 /* UserDBManager.swift */,
-				8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */,
+				8478A7C424B04CD400930B66 /* UserServiceManager.swift */,
 				8478A7C824B04D4E00930B66 /* UserDBService.swift */,
 				84EEAB7D24B24D580011A099 /* RestNoteDBManager.swift */,
-				84EEAB7F24B24DA10011A099 /* RestNoteDBManagerImpl.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -1042,7 +1036,6 @@
 				8408F9B22496967F009155ED /* SearchVCPresenterImpl.swift in Sources */,
 				8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */,
 				84113FE72493961300AEDCBD /* SlideUpVCPresenter.swift in Sources */,
-				84EEAB8024B24DA10011A099 /* RestNoteDBManagerImpl.swift in Sources */,
 				84B1138824AC572900092E9D /* NoteDataModel.swift in Sources */,
 				8428981324816447009AA1D9 /* SignUpViewPresenter.swift in Sources */,
 				84B1138C24AC737600092E9D /* NoteServiceImpl.swift in Sources */,
@@ -1085,7 +1078,6 @@
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
 				8452B2CC24B38CA200582EA3 /* RunTimeDB.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
-				8478A7C724B04D1700930B66 /* UserDBManagerImpl.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
 				84A3C9E32480F19B003393EC /* SignInViewPresenterService.swift in Sources */,
 				84126ED82489558900F0FFBB /* NoteViewDelegate.swift in Sources */,
@@ -1096,7 +1088,7 @@
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
 				8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
-				8478A7C524B04CD400930B66 /* UserDBManager.swift in Sources */,
+				8478A7C524B04CD400930B66 /* UserServiceManager.swift in Sources */,
 				84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */,
 				8408F9AE24969026009155ED /* SearchVC.swift in Sources */,
 				8408F9BB2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift in Sources */,
@@ -1119,7 +1111,7 @@
 				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,
 				8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */,
 				84078A7D249019680000D649 /* OptionsCell.swift in Sources */,
-				84EEAB7C24B23DDE0011A099 /* FundooNote.swift in Sources */,
+				84EEAB7C24B23DDE0011A099 /* NoteResponse.swift in Sources */,
 				84AA3B3324A8F4D4009562E1 /* CustomWidthLayout.swift in Sources */,
 				840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */,
 				842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */,

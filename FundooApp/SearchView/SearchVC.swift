@@ -15,8 +15,8 @@ class SearchVC:UIViewController {
      @IBOutlet weak var reslutCollectionView: UICollectionView!
     @IBOutlet weak var colorCollectionViewHeightAnchor: NSLayoutConstraint!
     var searchController:UISearchController!
-    var originalDataSource: [FundooNote] = []
-    var currentDataSource: [FundooNote] = []
+    var originalDataSource: [NoteResponse] = []
+    var currentDataSource: [NoteResponse] = []
     var colorData: [String] = []
     var serachPresenter:SearchVCPresenter!
 

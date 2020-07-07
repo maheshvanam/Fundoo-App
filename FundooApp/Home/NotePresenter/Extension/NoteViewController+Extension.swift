@@ -41,7 +41,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
-    func showAlert(note :FundooNote){
+    func showAlert(note :NoteResponse){
         let message             = "you can't edit the trashed notes"
         let title               = "Trash"
         let restoreButtonTitle  = "Restore"

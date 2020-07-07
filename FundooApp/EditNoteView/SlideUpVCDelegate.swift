@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SlideUpVCDelegate {
-    func deleteNote(note: FundooNote)
+    func deleteNote(note: NoteResponse)
 }

@@ -15,7 +15,7 @@ extension NoteViewController: NoteViewDelegate {
         collectionView.reloadData()
     }
     
-    func setTableData(data: [FundooNote]) {
+    func setTableData(data: [NoteResponse]) {
         self.models = data
     }
     
@@ -24,7 +24,7 @@ extension NoteViewController: NoteViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCells), name: Notification.Name(Constants.RELOAD_CELLS), object: nil)
     }
     
-    func getNotes() ->[FundooNote]{
+    func getNotes() ->[NoteResponse]{
         return models
     }
 }

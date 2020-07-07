@@ -29,7 +29,7 @@ class NoteViewController: UIViewController {
     let maxContentHeight:CGFloat = 350
     var notePresenter: NoteDelegate?
     @IBOutlet var collectionView: UICollectionView!
-    var models = [FundooNote]()
+    var models = [NoteResponse]()
     var layout: MosaicLayout!
     var isGrid:Bool = true
     var viewOption:Int!

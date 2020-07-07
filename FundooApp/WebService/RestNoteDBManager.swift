@@ -19,11 +19,11 @@ class RestNoteDBManager {
     }
     
     
-    func getAllNotes(  callback: @escaping([FundooNote])-> Void)  {
+    func getAllNotes(  callback: @escaping([NoteResponse])-> Void)  {
         callback( RunTimeDB.shared.notes)
     }
     
-    func insertUserNote(note:FundooNote) {
+    func insertUserNote(note:NoteResponse) {
        /* do {
             var urlRequest = URLRequest(url: resourceURL)
             urlRequest.httpMethod = "POST"
@@ -42,7 +42,7 @@ class RestNoteDBManager {
         
          RunTimeDB.shared.notes.append(note)
     }
-    func updateNote(note:FundooNote){
+    func updateNote(note:NoteResponse){
         RunTimeDB.shared.notes.append(note)
     }
 }

@@ -20,7 +20,7 @@ class EditNotePresenterImpl: EditNoteDelegate {
         var note = editNoteView.getNote()
         if !editNoteView.fieldsAreEmpty() {
             if editNoteView.isNewNote() {
-                note = FundooNote()
+                note = NoteResponse()
                 note!.createdDate = Date().toString()
                 note!.title = editNoteView.getTitleText()
                 note!.color = editNoteView.getCurrentColor()!

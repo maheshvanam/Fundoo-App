@@ -23,7 +23,7 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var heightAnchor: NSLayoutConstraint!
     var editNotePresenter: EditNoteDelegate!
    // var note:Note!
-    var note:FundooNote!
+    var note:NoteResponse!
     var labels:[Label] = []
     let colors = Constants.colors
     var currentColor:String!

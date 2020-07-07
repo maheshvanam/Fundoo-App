@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FundooNote:Codable {
+class NoteResponse:Codable {
     
     var title:String?
     var description:String?

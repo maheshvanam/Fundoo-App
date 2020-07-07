@@ -11,8 +11,8 @@ import Foundation
 protocol NoteDelegate {
     func updateDataSource()
     func reorderCell(model:[Note],sourceIndexPath: IndexPath,destinationIndexPath: IndexPath)
-    func getReminderNotes()-> [FundooNote]
-    func getArchiveNotes() -> [FundooNote] 
-    func getTrashNotes() -> [FundooNote] 
+    func getReminderNotes()-> [NoteResponse]
+    func getArchiveNotes() -> [NoteResponse] 
+    func getTrashNotes() -> [NoteResponse] 
 //    func deleteNote(note:Note)
 }

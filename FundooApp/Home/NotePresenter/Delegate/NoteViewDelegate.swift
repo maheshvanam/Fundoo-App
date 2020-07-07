@@ -9,8 +9,8 @@
 import Foundation
 
 protocol NoteViewDelegate {
-    func setTableData(data: [FundooNote])
+    func setTableData(data: [NoteResponse])
     func updateView()
     func addNotificationObservers()
-    func getNotes() ->[FundooNote]
+    func getNotes() ->[NoteResponse]
 }

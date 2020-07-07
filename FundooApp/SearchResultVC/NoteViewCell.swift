@@ -37,7 +37,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.reminderView.layer.borderWidth = borderWidth
     }
     
-    func updateView(note:FundooNote){
+    func updateView(note:NoteResponse){
         self.titleField.text = note.title
         self.descriptionField.text = note.description
         self.reminderView.isHidden = true

@@ -1,5 +1,5 @@
 //
-//  UserDBManagerImpl.swift
+//  UserDBManager.swift
 //  FundooApp
 //
 //  Created by admin on 04/07/20.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-class UserDBManagerImpl: UserDBService {
-    
+class UserServiceManager: UserDBService {
     
     let resourceURL:URL
     
@@ -81,4 +80,5 @@ class UserDBManagerImpl: UserDBService {
             }
         }
     }
+
 }

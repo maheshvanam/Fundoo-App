@@ -59,19 +59,19 @@ class NotePresenterImpl: NoteDelegate {
 //        dbManager.saveUser(user: user)
     }
     
-    func getReminderNotes()-> [FundooNote] {
+    func getReminderNotes()-> [NoteResponse] {
         self.updateDataSource()
         let notes = self.noteView.getNotes()
         return notes.filter({$0.reminder != nil && ($0.reminder?.count)! > 0 })
     }
     
-    func getArchiveNotes() -> [FundooNote] {
+    func getArchiveNotes() -> [NoteResponse] {
         self.updateDataSource()
         let notes = self.noteView.getNotes()
         return notes.filter({ $0.isArchived == true })
     }
     
-    func getTrashNotes() -> [FundooNote] {
+    func getTrashNotes() -> [NoteResponse] {
         self.updateDataSource()
         let notes = self.noteView.getNotes()
         return notes.filter({ $0.isDeleted == true })
