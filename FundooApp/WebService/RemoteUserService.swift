@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol UserDBService {
+protocol RemoteUserService {
     func signInUser(user:UserResponse, completion: @escaping (Result<UserResponse,APIError>)->Void )
     func saveUser(user:UserResponse, completion: @escaping (Result<Int,APIError>)->Void )
 }

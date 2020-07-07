@@ -30,8 +30,7 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             switch result {
             case .success(let currentUser):
                 UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
-                RunTimeDB.shared.setUser(user:currentUser)
-                print(currentUser.firstName!)
+                UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId.rawValue)
                 self.signInViewDelegate.clearFields()
                 self.signInViewDelegate.clearLabels()
                 self.signInViewDelegate.navigateToUserHomeView()

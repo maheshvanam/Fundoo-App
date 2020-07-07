@@ -10,7 +10,7 @@ import Foundation
 class EditNotePresenterImpl: EditNoteDelegate {
     
     var editNoteView: EditNotePresenterDelegate
-    let dbManager = RestNoteDBManager()
+    let dbManager = RemoteNoteManager()
     
     init(delegate: EditNotePresenterDelegate) {
         self.editNoteView = delegate
