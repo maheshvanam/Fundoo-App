@@ -19,33 +19,34 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
     
     func signInWithEmailAndPassword(email: String,password: String) {
         
-        let dbManager = RemoteUserManager(endpoint: "user/login")
+        let dbManager = RemoteUserManager()
         self.signInViewDelegate.clearLabels()
         if email.isEmpty && password.isEmpty {
             self.signInViewDelegate.showAlert(title: "Error", message: "Please fill the all fields")
             return
         }
         let user = UserResponse(email: email, password: password)
-        dbManager.signInUser(user: user) { (result) in
-            switch result {
-            case .success(let currentUser):
-                UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
-                UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId.rawValue)
-                self.signInViewDelegate.clearFields()
-                self.signInViewDelegate.clearLabels()
-                self.signInViewDelegate.navigateToUserHomeView()
-            case .failure(.decodingError):
-                fatalError("decoding user data error")
-            case .failure(.encodingError) :
-                fatalError("encoding user data error")
-            case .failure(.responseError):
-                self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
-                self.signInViewDelegate.updatePasswordLabel()
+        DispatchQueue.main.async {
+            dbManager.signInUser(user: user) { (result) in
+                switch result {
+                case .success(let currentUser):
+                    UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
+                    UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId)
+                    self.signInViewDelegate.clearFields()
+                    self.signInViewDelegate.clearLabels()
+                    self.signInViewDelegate.navigateToUserHomeView()
+                case .failure(.decodingError):
+                    fatalError(APIErrorMessage.decodingError)
+                case .failure(.encodingError) :
+                    fatalError(APIErrorMessage.encodingError)
+                case .failure(.responseError):
+                    self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
+                    self.signInViewDelegate.updatePasswordLabel()
+                }
             }
         }
     }
 
-    
     func onCreateAcoountTapped()  {
         self.signInViewDelegate.navigateToSignUpView()
     }

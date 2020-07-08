@@ -8,14 +8,19 @@
 
 import Foundation
 
-enum RestUrl : String {
-    case addNotes = "http://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes"
-    case getNotesList = "http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList"
-    case updateNotes = "http://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes"
+struct RestUrl  {
+    static let baseUrl = "http://fundoonotes.incubation.bridgelabz.com/api/"
+    static let addNotesUrl      = baseUrl+"notes/addNotes"
+    static let getNotesListUrl  = baseUrl+"notes/getNotesList"
+    static let updateNotesUrl   = baseUrl+"notes/updateNotes"
+    static let userSignupUrl    = baseUrl+"user/userSignup"
+    static let loginUrl         = baseUrl+"user/login"
 }
 
-enum RestConstants:String {
-    case authId = "AuthenticatID"
-    case jsonParsingError = "Error while parsing json"
-    case post = "POST"
+struct RestConstants {
+    static let authId           = "AuthenticatID"
+    static let jsonParsingError = "Error while parsing json"
+    static let post             = "POST"
+    static let contentTypeKey   = "Content-Type"
+    static let contentTypeValue = "application/json"
 }

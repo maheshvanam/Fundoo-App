@@ -22,14 +22,16 @@ class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
         let fieldsAreValid = self.signUpViewDelegate.validateFields(user:user)
         if fieldsAreValid {
             let newUser = UserResponse(firstName: user.firstName!, lastName: user.lastName!, email: user.email!, password: user.password!)
-            let dbManager = RemoteUserManager(endpoint: "user/userSignup")
-            dbManager.saveUser(user: newUser) { (result) in
-                switch result {
-                case .success( _ ) :
-                    self.signUpViewDelegate.showAlert(title: "Success", message: "Successfully Registered.")
-                    self.signUpViewDelegate.clearTextFields()
-                case .failure( _ ):
-                    self.signUpViewDelegate.showAlert(title: "Error", message: "signUp failed...")
+            let dbManager = RemoteUserManager()
+            DispatchQueue.main.async {
+                dbManager.saveUser(user: newUser) { (result) in
+                    switch result {
+                    case .success( _ ) :
+                        self.signUpViewDelegate.showAlert(title: "Success", message: "Successfully Registered.")
+                        self.signUpViewDelegate.clearTextFields()
+                    case .failure( _ ):
+                        self.signUpViewDelegate.showAlert(title: "Error", message: "signUp failed...")
+                    }
                 }
             }
         }

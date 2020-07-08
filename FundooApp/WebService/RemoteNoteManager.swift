@@ -16,8 +16,8 @@ class RemoteNoteManager: RemoteNoteService {
     private var notes:[NoteResponse] = []
 
     func getAllNotes(  callback: @escaping([NoteResponse])-> Void)  {
-        let url = RestUrl.getNotesList.rawValue
-        let authId = UserDefaults.standard.string(forKey: RestConstants.authId.rawValue)
+        let url = RestUrl.getNotesListUrl
+        let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         let request = AF.request(url, method: .get, parameters:[accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
        request.responseDecodable(of: ResultData.self) { response in
         let data = response.value?.data
@@ -27,8 +27,8 @@ class RemoteNoteManager: RemoteNoteService {
     }
     
     func insertUserNote(note:NoteResponse) {
-        let url = RestUrl.addNotes.rawValue
-        let authId = UserDefaults.standard.string(forKey: RestConstants.authId.rawValue)
+        let url = RestUrl.addNotesUrl
+        let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         var header = HTTPHeaders()
         header.add(name: authKey, value: authId!)
         let param = ["title":note.title!,"description":note.description!]
@@ -44,29 +44,21 @@ class RemoteNoteManager: RemoteNoteService {
     }
     
     func updateNote(note:NoteResponse){
-        let url = RestUrl.updateNotes.rawValue
-        let authId = UserDefaults.standard.string(forKey: RestConstants.authId.rawValue)
+        let url = RestUrl.updateNotesUrl
+        let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         var header = HTTPHeaders()
         header.add(name: authKey, value: authId!)
-        let param = ["noteID":note.id!,"    title":note.title!,"description":note.description!]
+        let param:Parameters = ["noteId":note.id!,
+                                "title":note.title!,
+                                "description":note.description!]
         let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
         request.responseData { (data) in
             switch data.result {
             case .success(let result):
-                print(String.init(data: result, encoding: .utf8))
+                print(result.description)
             case .failure(let err):
                 print(err.localizedDescription)
             }
         }
     }
-}
-
-struct ResultData:Codable {
-    var data:DataResponse?
-}
-
-struct DataResponse:Codable {
-    var sucess:Bool!
-    var message:String!
-    var data:[NoteResponse]!
 }

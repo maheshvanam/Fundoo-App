@@ -10,74 +10,54 @@ import Foundation
 
 class RemoteUserManager: RemoteUserService {
     
-    let resourceURL:URL
-    
-    init(endpoint: String) {
-        let resourceString = "http://fundoonotes.incubation.bridgelabz.com/api/\(endpoint)"
-        guard let resourceURL = URL(string: resourceString) else
-        { fatalError() }
-        self.resourceURL = resourceURL
-    }
     
     func saveUser(user:UserResponse, completion: @escaping (Result<Int,APIError>)->Void ) {
         do {
+            guard let resourceURL = URL(string: RestUrl.userSignupUrl) else {return}
             var urlRequest = URLRequest(url: resourceURL)
-            urlRequest.httpMethod = RestConstants.post.rawValue
-            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpMethod = RestConstants.post
+            urlRequest.addValue(RestConstants.contentTypeValue, forHTTPHeaderField: RestConstants.contentTypeKey)
             urlRequest.httpBody = try JSONEncoder().encode(user)
             
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200  else {
-                    DispatchQueue.main.async {
                         completion(.failure(.responseError))
-                    }
                     return
                 }
-                DispatchQueue.main.async {
                     completion(.success(httpResponse.statusCode))
-                }
             }
             dataTask.resume()
         }
         catch {
-            DispatchQueue.main.async {
                 completion(.failure(.encodingError))
-            }
         }
     }
     
     func signInUser(user:UserResponse, completion: @escaping (Result<UserResponse,APIError>)->Void ) {
         do {
+            guard let resourceURL = URL(string: RestUrl.loginUrl) else {return}
             var urlRequest = URLRequest(url: resourceURL)
-            urlRequest.httpMethod = "POST"
-            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpMethod = RestConstants.post
+            urlRequest.addValue(RestConstants.contentTypeValue, forHTTPHeaderField: RestConstants.contentTypeKey)
             urlRequest.httpBody = try JSONEncoder().encode(user)
             
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200,let jsonData = data else {
-                    DispatchQueue.main.async {
                         completion(.failure(.responseError))
-                    }
                     return
                 }
                 do {
                     let userData = try JSONDecoder().decode(UserResponse.self, from: jsonData)
-                    DispatchQueue.main.async {
-                        completion(.success(userData))
-                    }
+                    completion(.success(userData))
                 }
                 catch {
-                    DispatchQueue.main.async {
-                        completion(.failure(.decodingError))
-                    }
+                    completion(.failure(.decodingError))
                 }
             }
             dataTask.resume()
         }
         catch {
-            DispatchQueue.main.async {
-                completion(.failure(.encodingError))
-            }
+            completion(.failure(.encodingError))
         }
     }
 

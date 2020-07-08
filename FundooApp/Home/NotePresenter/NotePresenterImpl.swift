@@ -78,7 +78,7 @@ class NotePresenterImpl: NoteDelegate {
         return notes.filter({ $0.isDeleted == true })
     }
 
-//    func deleteNote(note:Note){
+    func deleteNote(note:NoteResponse){
 //        let user = dbManager.getCurrentUser()
 //        user.removeFromNotes(note)
 //        let labels = user.labels?.allObjects as! [Label]
@@ -86,6 +86,6 @@ class NotePresenterImpl: NoteDelegate {
 //            label.removeFromNotes(note)
 //        }
 //        dbManager.saveData()
-//    }
-//    
+    }
+    
 }
