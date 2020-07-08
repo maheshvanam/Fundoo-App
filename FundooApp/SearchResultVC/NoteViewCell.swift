@@ -42,11 +42,11 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.descriptionField.text = note.description
         self.reminderView.isHidden = true
         if note.reminder != nil {
-            self.reminderView.isHidden = false
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = dateFormat
             if let date = note.reminder,!date.isEmpty {
-            
+            self.reminderView.isHidden = false
             self.reminderField.text = dateFormatter.string(from: date[0].toDate())
             }
         }
@@ -55,9 +55,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     
     func updateCellBackground(color:UIColor){
         self.backgroundColor = color
-        self.layer.cornerRadius = cellRadius
-        self.layer.borderWidth = cellBorderWidth
-        self.layer.borderColor = UIColor.black.cgColor
+        
     }
     
     func setShadow() {
@@ -67,6 +65,9 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.layer.shadowOpacity = 0.5
         self.clipsToBounds       = true
         self.layer.masksToBounds = false
+        self.layer.cornerRadius = cellRadius
+        self.layer.borderWidth = cellBorderWidth
+        self.layer.borderColor = UIColor.black.cgColor
     }
     
 }

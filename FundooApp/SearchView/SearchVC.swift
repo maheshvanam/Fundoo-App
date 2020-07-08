@@ -61,7 +61,7 @@ class SearchVC:UIViewController {
     func getColorData() {
         var myArray: [String] = []
         for note in originalDataSource {
-            myArray.append(note.color!)
+            myArray.append(note.color)
         }
         colorData = Array(Set(myArray))
     }

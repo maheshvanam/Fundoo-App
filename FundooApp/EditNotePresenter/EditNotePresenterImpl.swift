@@ -37,8 +37,7 @@ class EditNotePresenterImpl: EditNoteDelegate {
             return
         }
         note!.modifiedDate = Date().toString()
-       // dbManager.updateNote(note:note!)
-       // dbManager.insertNote(note: note!)
+        dbManager.updateNote(note:note!)
         editNoteView.postReloadCellsNotification()
     }
     

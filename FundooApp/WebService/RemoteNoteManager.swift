@@ -31,44 +31,40 @@ class RemoteNoteManager: RemoteNoteService {
         let authId = UserDefaults.standard.string(forKey: RestConstants.authId.rawValue)
         var header = HTTPHeaders()
         header.add(name: authKey, value: authId!)
-      //  header.add(name:"Content-Type", value: "application/j")
-        do {
-        // let data = try JSONEncoder().encode(note)
-            //print(data," &&&&&&&&&&&&&&&&")
-        // let param = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
-        //    print(param!)
-            let param = ["title":note.title!,"description":note.description!]
-           let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
-            request.responseData { (data) in
-                switch data.result {
-                case .success(let result):
-                    print(String.init(data: result, encoding: .utf8))
-                case .failure(let err):
-                    print(err.localizedDescription)
-                    
-                }
+        let param = ["title":note.title!,"description":note.description!]
+        let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
+        request.responseData { (data) in
+            switch data.result {
+            case .success(_):
+                print("suceess")
+            case .failure(let err):
+                print(err.localizedDescription)
             }
-//            .responseJSON(completionHandler: { (response) in
-//                    switch response.result {
-//                    case .success(let result):
-//                        print(result)
-//                    case .failure(let error):
-//                        print(error.localizedDescription)
-//                    }
-//            })
         }
-        catch {
-            fatalError(RestConstants.jsonParsingError.rawValue)
-        }
-        // RunTimeDB.shared.notes.append(note)
     }
+    
     func updateNote(note:NoteResponse){
-        RunTimeDB.shared.notes.append(note)
+        let url = RestUrl.updateNotes.rawValue
+        let authId = UserDefaults.standard.string(forKey: RestConstants.authId.rawValue)
+        var header = HTTPHeaders()
+        header.add(name: authKey, value: authId!)
+        let param = ["noteID":note.id!,"    title":note.title!,"description":note.description!]
+        let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
+        request.responseData { (data) in
+            switch data.result {
+            case .success(let result):
+                print(String.init(data: result, encoding: .utf8))
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }
+
 struct ResultData:Codable {
     var data:DataResponse?
 }
+
 struct DataResponse:Codable {
     var sucess:Bool!
     var message:String!

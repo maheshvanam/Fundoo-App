@@ -7,14 +7,15 @@
 //
 
 import Foundation
+
 enum RestUrl : String {
     case addNotes = "http://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes"
     case getNotesList = "http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList"
+    case updateNotes = "http://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes"
 }
 
 enum RestConstants:String {
     case authId = "AuthenticatID"
     case jsonParsingError = "Error while parsing json"
     case post = "POST"
-    
 }

@@ -20,8 +20,12 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "NoteViewCell", for: indexPath) as! NoteViewCell)
          let noteModel = models[indexPath.item]
         cell.updateView(note:noteModel)
-        if let color = noteModel.color,!color.isEmpty {
-        cell.updateCellBackground(color: Constants.colors[color]!)
+        let color = noteModel.color
+        if !color.isEmpty {
+            cell.updateCellBackground(color: Constants.colors[color]!)
+        }
+        else {
+            cell.updateCellBackground(color: Constants.colors["white"]!)
         }
         cell.setShadow()
         return cell

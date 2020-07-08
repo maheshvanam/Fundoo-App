@@ -11,6 +11,6 @@ import Foundation
 class SlideUpVCPresenterImpl: SlideUpVCDelegate {
     
     func deleteNote(note: NoteResponse) {
-        note.isDeleted = !note.isDeleted!
+        note.isDeleted = !note.isDeleted
     }
 }
