@@ -23,4 +23,6 @@ struct RestConstants {
     static let post             = "POST"
     static let contentTypeKey   = "Content-Type"
     static let contentTypeValue = "application/json"
+    static let authKey          = "Authorization"
+    static let accessTokenKey   = "access_token"
 }

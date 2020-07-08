@@ -8,6 +8,10 @@
 
 import Foundation
 
+private let successMessage = "you have successfully registered!."
+private let failureMessage = "unable to register please try again!."
+private let successAlertTitle = "Success"
+private let failureAlertTitle = "Failed"
 class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
     
     var signUpViewDelegate : SignUpViewPresenterDelegate
@@ -27,15 +31,16 @@ class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
                 dbManager.saveUser(user: newUser) { (result) in
                     switch result {
                     case .success( _ ) :
-                        self.signUpViewDelegate.showAlert(title: "Success", message: "Successfully Registered.")
+                        self.signUpViewDelegate.showAlert(title: successAlertTitle, message: successMessage)
                         self.signUpViewDelegate.clearTextFields()
                     case .failure( _ ):
-                        self.signUpViewDelegate.showAlert(title: "Error", message: "signUp failed...")
+                        self.signUpViewDelegate.showAlert(title: failureAlertTitle , message: failureMessage)
                     }
                 }
             }
         }
     }
+    
     func onSiginInInsteadTapped() {
         self.signUpViewDelegate.navigateToLoginView()
     }
