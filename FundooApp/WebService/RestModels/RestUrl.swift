@@ -15,5 +15,6 @@ enum RestUrl : String {
 enum RestConstants:String {
     case authId = "AuthenticatID"
     case jsonParsingError = "Error while parsing json"
+    case post = "POST"
     
 }

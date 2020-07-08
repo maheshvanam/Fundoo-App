@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserServiceManager: RemoteUserService {
+class RemoteUserManager: RemoteUserService {
     
     let resourceURL:URL
     
@@ -22,7 +22,7 @@ class UserServiceManager: RemoteUserService {
     func saveUser(user:UserResponse, completion: @escaping (Result<Int,APIError>)->Void ) {
         do {
             var urlRequest = URLRequest(url: resourceURL)
-            urlRequest.httpMethod = "POST"
+            urlRequest.httpMethod = RestConstants.post.rawValue
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.httpBody = try JSONEncoder().encode(user)
             

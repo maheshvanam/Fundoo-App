@@ -12,18 +12,19 @@ class NoteResponse:Codable {
     
     var title:String?
     var description:String?
-    var isPinned:Bool = false
-    var isArchived:Bool = false
-    var isDeleted:Bool = false
+    var isPined:Bool?
+    var isArchived:Bool?
+    var isDeleted:Bool?
     var reminder: [String]?
     var createdDate: String?
     var modifiedDate: String?
-    var color: String = "white"
+    var color: String?
     var label:[String]?
     var typeOfNotes:String?
     var imageUrl:String?
     var linkUrl:String?
     var id:String?
+    var user: UserResponse?
     var userId:String?
     
     init() {

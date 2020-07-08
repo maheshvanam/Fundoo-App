@@ -16,9 +16,9 @@ extension EditNoteViewController: EditNotePresenterDelegate {
             titleField.text = note.title
             discriptionField.text = note.description
             let color = note.color
-                view.backgroundColor = colors[color]
-                titleField.backgroundColor = colors[color]
-                discriptionField.backgroundColor = colors[color]
+            view.backgroundColor = colors[color!]
+            titleField.backgroundColor = colors[color!]
+            discriptionField.backgroundColor = colors[color!]
         }
     }
     

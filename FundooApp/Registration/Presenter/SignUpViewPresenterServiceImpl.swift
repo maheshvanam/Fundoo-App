@@ -22,7 +22,7 @@ class SignUpViewPresenterServiceImpl: SignUpViewPresenterService {
         let fieldsAreValid = self.signUpViewDelegate.validateFields(user:user)
         if fieldsAreValid {
             let newUser = UserResponse(firstName: user.firstName!, lastName: user.lastName!, email: user.email!, password: user.password!)
-            let dbManager = UserServiceManager(endpoint: "user/userSignup")
+            let dbManager = RemoteUserManager(endpoint: "user/userSignup")
             dbManager.saveUser(user: newUser) { (result) in
                 switch result {
                 case .success( _ ) :

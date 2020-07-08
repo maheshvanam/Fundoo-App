@@ -18,7 +18,7 @@ extension SearchResultVC: UICollectionViewDataSource,UICollectionViewDelegate,UI
         let cell = searchResultCollectionView.dequeueReusableCell(withReuseIdentifier: "NoteViewCell", for: indexPath) as! NoteViewCell
         let note = dataSource[indexPath.item]
         cell.updateView(note:note)
-        let cellColor = Constants.colors[dataSource[indexPath.item].color]
+        let cellColor = Constants.colors[dataSource[indexPath.item].color!]
         cell.updateCellBackground(color:cellColor!)
         return cell
     }

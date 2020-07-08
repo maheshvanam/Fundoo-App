@@ -45,7 +45,7 @@ extension SearchVC : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             let cell = reslutCollectionView.dequeueReusableCell(withReuseIdentifier: cellReusableId ,for : indexPath) as! SearchCell
             cell.titleLabel.text = currentDataSource[indexPath.item].title
             let color = currentDataSource[indexPath.item].color
-            cell.backgroundColor = Constants.colors[color]
+            cell.backgroundColor = Constants.colors[color!]
             cell.discriptionLabel.text = currentDataSource[indexPath.item].description
             return cell
         }

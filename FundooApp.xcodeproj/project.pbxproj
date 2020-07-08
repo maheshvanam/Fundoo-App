@@ -75,6 +75,7 @@
 		841E61BA24B1DA6C002DB0CE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E61B924B1DA6C002DB0CE /* APIError.swift */; };
 		841E66EC249F4DF1002B5DD2 /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */; };
 		841E66EE249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */; };
+		8420520924B58DE2006E7C56 /* RemoteNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420520824B58DE2006E7C56 /* RemoteNoteService.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
 		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
 		842460AA249A7F6300B38CBA /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842460A8249A7F6200B38CBA /* Features.storyboard */; };
@@ -118,7 +119,7 @@
 		8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49624A51D1400DDEAFA /* LabelViewCell.xib */; };
 		8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */; };
 		8478692B24ADAEA200962ACD /* FirebaseDatbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */; };
-		8478A7C524B04CD400930B66 /* UserServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C424B04CD400930B66 /* UserServiceManager.swift */; };
+		8478A7C524B04CD400930B66 /* RemoteUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C424B04CD400930B66 /* RemoteUserManager.swift */; };
 		8478A7C924B04D4E00930B66 /* RemoteUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C824B04D4E00930B66 /* RemoteUserService.swift */; };
 		8478A7CB24B0532700930B66 /* RestApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7CA24B0532700930B66 /* RestApiTests.swift */; };
 		847B213224AAED5900E273C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847B213124AAED5800E273C8 /* GoogleService-Info.plist */; };
@@ -245,6 +246,7 @@
 		841E61B924B1DA6C002DB0CE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLabelViewController+SearchController.swift"; sourceTree = "<group>"; };
+		8420520824B58DE2006E7C56 /* RemoteNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNoteService.swift; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		842460A9249A7F6300B38CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Features.storyboard; sourceTree = "<group>"; };
@@ -288,7 +290,7 @@
 		8477A49624A51D1400DDEAFA /* LabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewCell.xib; sourceTree = "<group>"; };
 		8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatbaseError.swift; sourceTree = "<group>"; };
-		8478A7C424B04CD400930B66 /* UserServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceManager.swift; sourceTree = "<group>"; };
+		8478A7C424B04CD400930B66 /* RemoteUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserManager.swift; sourceTree = "<group>"; };
 		8478A7C824B04D4E00930B66 /* RemoteUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserService.swift; sourceTree = "<group>"; };
 		8478A7CA24B0532700930B66 /* RestApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiTests.swift; sourceTree = "<group>"; };
 		847B213124AAED5800E273C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -743,9 +745,10 @@
 			isa = PBXGroup;
 			children = (
 				841E61B424B1D905002DB0CE /* RestModels */,
-				8478A7C424B04CD400930B66 /* UserServiceManager.swift */,
+				8478A7C424B04CD400930B66 /* RemoteUserManager.swift */,
 				8478A7C824B04D4E00930B66 /* RemoteUserService.swift */,
 				84EEAB7D24B24D580011A099 /* RemoteNoteManager.swift */,
+				8420520824B58DE2006E7C56 /* RemoteNoteService.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -1080,6 +1083,7 @@
 				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
 				84FCC37F249F936500FE92CA /* AddLabelPresenter.swift in Sources */,
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
+				8420520924B58DE2006E7C56 /* RemoteNoteService.swift in Sources */,
 				8452B2CC24B38CA200582EA3 /* RunTimeDB.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
@@ -1092,7 +1096,7 @@
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
 				8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
-				8478A7C524B04CD400930B66 /* UserServiceManager.swift in Sources */,
+				8478A7C524B04CD400930B66 /* RemoteUserManager.swift in Sources */,
 				84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */,
 				8408F9AE24969026009155ED /* SearchVC.swift in Sources */,
 				8408F9BB2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift in Sources */,
