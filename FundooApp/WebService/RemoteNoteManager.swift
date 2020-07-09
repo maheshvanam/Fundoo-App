@@ -13,13 +13,13 @@ class RemoteNoteManager: RemoteNoteService {
     
     public static let shared = RemoteNoteManager()
     private var notes:[NoteResponse] = []
+    let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
     
     private init(){ }
     
-    func getAllNotes(  callback: @escaping([NoteResponse])-> Void)  {
-        let url = RestUrl.getNotesListUrl
-        let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
-        let request = AF.request(url, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
+    func getAllNotes(urlPath:String,callback: @escaping([NoteResponse])-> Void)  {
+        //let url = RestUrl.getNotesListUrl
+        let request = AF.request(urlPath, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
         request.responseDecodable(of: ResultData.self) { response in
             guard let data = response.value?.data else {
                 let err = response.error
@@ -104,39 +104,39 @@ class RemoteNoteManager: RemoteNoteService {
         }
     }
     
-    func getArchiveNotes(callback: @escaping([NoteResponse])-> Void) {
-        let url = RestUrl.GET_ARCHIVE_NOTES_PATH
-        let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
-        let request = AF.request(url, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
-        request.responseDecodable(of: ResultData.self) { response in
-            guard let data = response.value?.data else {
-                if let err = response.error {
-                print(err.localizedDescription as String)
-                }
-                print(response)
-                return
-            }
-            let notes =  data.data
-            callback(notes!)
-        }
-    }
+//    func getArchiveNotes(callback: @escaping([NoteResponse])-> Void) {
+//        let url = RestUrl.GET_ARCHIVE_NOTES_PATH
+//
+//        let request = AF.request(url, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
+//        request.responseDecodable(of: ResultData.self) { response in
+//            guard let data = response.value?.data else {
+//                if let err = response.error {
+//                print(err.localizedDescription as String)
+//                }
+//                print(response)
+//                return
+//            }
+//            let notes =  data.data
+//            callback(notes!)
+//        }
+//    }
     
-    func getTrashNotes(callback: @escaping([NoteResponse])-> Void) {
-        let url = RestUrl.GET_TRASH_NOTES_PATH
-           let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
-           let request = AF.request(url, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
-           request.responseDecodable(of: ResultData.self) { response in
-               guard let data = response.value?.data else {
-                   if let err = response.error {
-                   print(err.localizedDescription as String)
-                   }
-                   return
-               }
-               let notes =  data.data
-               callback(notes!)
-           }
-       }
-    func deleteNoteForever(note: NoteResponse){
+//    func getTrashNotes(callback: @escaping([NoteResponse])-> Void) {
+//        let url = RestUrl.GET_TRASH_NOTES_PATH
+//           let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+//           let request = AF.request(url, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
+//           request.responseDecodable(of: ResultData.self) { response in
+//               guard let data = response.value?.data else {
+//                   if let err = response.error {
+//                   print(err.localizedDescription as String)
+//                   }
+//                   return
+//               }
+//               let notes =  data.data
+//               callback(notes!)
+//           }
+//       }
+   func deleteNoteForever(note: NoteResponse){
         let url = RestUrl.DELETE_NOTE_PATH
         let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         var header = HTTPHeaders()

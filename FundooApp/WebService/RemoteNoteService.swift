@@ -9,11 +9,11 @@
 import Foundation
 
 protocol RemoteNoteService {
-    func getAllNotes(  callback: @escaping([NoteResponse])-> Void)
+    func getAllNotes( urlPath:String,callback: @escaping([NoteResponse])-> Void)
     func insertUserNote(note:NoteResponse)
     func updateNote(note:NoteResponse)
     func addToArchive(note: NoteResponse)
     func addToTrash(note: NoteResponse)
-    func getArchiveNotes(callback: @escaping([NoteResponse])-> Void)
-    func getTrashNotes(callback: @escaping([NoteResponse])-> Void)
+    //func getArchiveNotes(callback: @escaping([NoteResponse])-> Void)
+    //func getTrashNotes(callback: @escaping([NoteResponse])-> Void)
 }

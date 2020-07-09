@@ -19,7 +19,7 @@ class NotePresenterImpl: NoteDelegate {
     
     func updateDataSource() {
         DispatchQueue.main.async {
-            self.dbManager.getAllNotes { (noteModels) in
+            self.dbManager.getAllNotes(urlPath:RestUrl.getNotesListUrl) { (noteModels) in
                 print(noteModels.count  )
                 let notes = noteModels.filter({ ($0.isArchived == false) && ($0.isDeleted == false) })
                 self.noteView.setTableData(data: notes)
@@ -69,7 +69,7 @@ class NotePresenterImpl: NoteDelegate {
     
     func getArchiveNotes() {
         DispatchQueue.main.async {
-            self.dbManager.getArchiveNotes { (noteModels) in
+            self.dbManager.getAllNotes(urlPath: RestUrl.GET_ARCHIVE_NOTES_PATH) { (noteModels) in
                 self.noteView.setTableData(data: noteModels)
                 self.noteView.updateView()
             }
@@ -78,7 +78,7 @@ class NotePresenterImpl: NoteDelegate {
     
     func getTrashNotes()  {
         DispatchQueue.main.async {
-            self.dbManager.getTrashNotes { (noteModels) in
+            self.dbManager.getAllNotes(urlPath: RestUrl.GET_TRASH_NOTES_PATH) { (noteModels) in
                 self.noteView.setTableData(data: noteModels)
                 self.noteView.updateView()
             }
@@ -94,5 +94,4 @@ class NotePresenterImpl: NoteDelegate {
         dbManager.deleteNoteForever(note: note)
         getTrashNotes()
     }
-    
 }
