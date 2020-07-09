@@ -41,14 +41,13 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.titleField.text = note.title
         self.descriptionField.text = note.description
         self.reminderView.isHidden = true
-        if note.reminder.count != 0 {
-            
+        if note.reminder.count != 0 && !note.reminder[0].isEmpty {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = dateFormat
-            let date = note.reminder
-            if date.isEmpty {
+            let date = note.reminder[0]
+            if !date.isEmpty {
             self.reminderView.isHidden = false
-            self.reminderField.text = date[0]//dateFormatter.string(from: date[0].toDate())
+                self.reminderField.text = date
             }
         }
        // self.dataSource = note.labels?.allObjects as! [Label]
@@ -70,11 +69,9 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.layer.borderWidth = cellBorderWidth
         self.layer.borderColor = UIColor.black.cgColor
     }
-    
 }
 
 extension String {
-    
     func toDate() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")

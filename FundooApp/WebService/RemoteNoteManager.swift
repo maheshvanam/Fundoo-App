@@ -33,11 +33,17 @@ class RemoteNoteManager: RemoteNoteService {
     }
     
     func insertUserNote(note: NoteResponse) {
+        print(note.color)
         let params = ["title":note.title,"description":note.description,"isArchived":false,"color":note.color] as [String:Any]
         self.postRequest(params: params, urlPath: RestUrl.ADD_NOTE_URL_PATH )
     }
     
     func updateNote(note: NoteResponse) {
+        let reminder = note.reminder
+        if (reminder.count > 0 && !reminder[0].isEmpty) {
+            let params = ["reminder":reminder,"noteIdList": [note.id]] as [String:Any]
+            self.postRequest(params: params, urlPath: RestUrl.ADD_REMINDER_PATH )
+        }
         let params:Parameters = ["noteId":note.id,
                                  "title":note.title,
                                  "description":note.description,"color":note.color]

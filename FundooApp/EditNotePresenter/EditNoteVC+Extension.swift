@@ -62,7 +62,7 @@ extension EditNoteViewController: EditNotePresenterDelegate {
     
     func getCurrentColor()-> String? {
         if currentColor == nil {
-            currentColor = "white"
+            currentColor = "#FFFFFF"
         }
        return currentColor
     }
