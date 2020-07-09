@@ -52,4 +52,14 @@ class EditNotePresenterImpl: EditNoteDelegate {
 //            dbManager.saveData()
 //        }
     }
+    
+    func addReminder(note:NoteResponse) {
+        let reminder = note.reminder
+        let params = ["reminder":reminder,"noteIdList": [note.id]] as [String:Any]
+        dbManager.postRequest(params: params, urlPath: RestUrl.ADD_REMINDER_PATH)
+    }
+    
+    func deleteReminder(note:NoteResponse) {
+        dbManager.postRequest(params: ["noteIdList": [note.id]], urlPath: RestUrl.DELETE_REMINDER_PATH)
+    }
 }

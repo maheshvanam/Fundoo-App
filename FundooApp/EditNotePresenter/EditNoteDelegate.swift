@@ -11,4 +11,6 @@ protocol EditNoteDelegate {
     func saveNote()
     func addNoteToLabels(note:Note,labels: [Label])
     func addToArchive(note:NoteResponse)
+    func addReminder(note:NoteResponse)
+    func deleteReminder(note:NoteResponse)
 }

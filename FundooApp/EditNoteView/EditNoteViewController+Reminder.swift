@@ -18,7 +18,7 @@ extension EditNoteViewController {
                 return
         }
         if note.reminder.count != 0 {
-            destinationVC.hideButton = true
+            destinationVC.hideButton = false
         }
         destinationVC.addReminderDelegate = self
         self.navigationController?.pushViewController(destinationVC, animated: true)
@@ -49,10 +49,13 @@ extension EditNoteViewController {
 extension EditNoteViewController: AddReminderDelegate {
     func addReminder(date: Date) {
         self.reminderDate = date
+        note.reminder.append(date.toString())
         self.scheduleReminder(targetDate: reminderDate)
+        self.editNotePresenter.addReminder(note:note)
     }
     
     func removeReminder() {
         self.reminderDate = nil
+        self.editNotePresenter.deleteReminder(note:note)
     }
 }
