@@ -90,14 +90,7 @@ class NotePresenterImpl: NoteDelegate {
     }
 
     func deleteNote(note:NoteResponse){
-        print("Delete")
-//        let user = dbManager.getCurrentUser()
-//        user.removeFromNotes(note)
-//        let labels = user.labels?.allObjects as! [Label]
-//        for label in labels {
-//            label.removeFromNotes(note)
-//        }
-//        dbManager.saveData()
+        
     }
     
 }

@@ -11,14 +11,15 @@ import Foundation
 enum RestUrl  {
     private static let baseUrl = "http://fundoonotes.incubation.bridgelabz.com/api/"
     static let ADD_NOTE_URL_PATH      = baseUrl+"notes/addNotes"
-    static let getNotesListUrl  = baseUrl+"notes/getNotesList"
-    static let updateNotesUrl   = baseUrl+"notes/updateNotes"
+    static let getNotesListUrl        = baseUrl+"notes/getNotesList"
+    static let updateNotesUrl         = baseUrl+"notes/updateNotes"
     static let userSignupUrl    = baseUrl+"user/userSignup"
     static let loginUrl         = baseUrl+"user/login"
     static let ARCHIVE_NOTES_PATH = baseUrl+"notes/archiveNotes"
     static let GET_ARCHIVE_NOTES_PATH = baseUrl+"notes/getArchiveNotesList"
     static let TRASH_NOTES    = baseUrl+"notes/trashNotes"
     static let GET_TRASH_NOTES_PATH = baseUrl+"notes/getTrashNotesList"
+    static let DELETE_NOTE_PATH = baseUrl+"notes/deleteForeverNotes"
 }
 
 enum RestConstants {
