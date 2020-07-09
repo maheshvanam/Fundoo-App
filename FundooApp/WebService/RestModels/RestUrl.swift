@@ -18,6 +18,7 @@ enum RestUrl  {
     static let ARCHIVE_NOTES_PATH = baseUrl+"notes/archiveNotes"
     static let GET_ARCHIVE_NOTES_PATH = baseUrl+"notes/getArchiveNotesList"
     static let TRASH_NOTES    = baseUrl+"notes/trashNotes"
+    static let GET_TRASH_NOTES_PATH = baseUrl+"notes/getTrashNotesList"
 }
 
 enum RestConstants {
