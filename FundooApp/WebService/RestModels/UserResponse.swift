@@ -34,5 +34,4 @@ class UserResponse: Codable {
         self.password    = password
         self.service     = "basic"
     }
-    
 }

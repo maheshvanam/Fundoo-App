@@ -47,7 +47,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
             dateFormatter.dateFormat = dateFormat
             if let date = note.reminder,!date.isEmpty {
             self.reminderView.isHidden = false
-            self.reminderField.text = dateFormatter.string(from: date[0].toDate())
+            self.reminderField.text = date[0]//dateFormatter.string(from: date[0].toDate())
             }
         }
        // self.dataSource = note.labels?.allObjects as! [Label]
@@ -77,7 +77,7 @@ extension String {
     func toDate() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormatter.date(from:self)!
         return date
     }

@@ -17,7 +17,6 @@ class NotePresenterImpl: NoteDelegate {
         self.noteView = delegate
     }
     
-    
     func updateDataSource() {
         DispatchQueue.main.async {
             self.dbManager.getAllNotes { (noteModels) in

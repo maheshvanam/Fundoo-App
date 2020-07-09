@@ -25,7 +25,7 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.updateCellBackground(color: Constants.colors[color]!)
         }
         else {
-            cell.updateCellBackground(color: Constants.colors["white"]!)
+            cell.updateCellBackground(color: Constants.colors["#FFFFFF"]!)
         }
         cell.setShadow()
         return cell

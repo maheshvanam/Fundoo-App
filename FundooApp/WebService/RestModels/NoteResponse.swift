@@ -28,7 +28,7 @@ class NoteResponse:Codable {
     var userId:String?
     
     init() {
-        
+       //default
     }
     
     init(title:String,description:String) {

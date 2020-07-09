@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct RestUrl  {
-    static let baseUrl = "http://fundoonotes.incubation.bridgelabz.com/api/"
-    static let addNotesUrl      = baseUrl+"notes/addNotes"
+enum RestUrl  {
+    private static let baseUrl = "http://fundoonotes.incubation.bridgelabz.com/api/"
+    static let ADD_NOTE_URL_PATH      = baseUrl+"notes/addNotes"
     static let getNotesListUrl  = baseUrl+"notes/getNotesList"
     static let updateNotesUrl   = baseUrl+"notes/updateNotes"
     static let userSignupUrl    = baseUrl+"user/userSignup"
     static let loginUrl         = baseUrl+"user/login"
 }
 
-struct RestConstants {
+enum RestConstants {
     static let authId           = "AuthenticatID"
     static let jsonParsingError = "Error while parsing json"
     static let post             = "POST"

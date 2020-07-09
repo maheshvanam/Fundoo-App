@@ -31,7 +31,6 @@ class EditNotePresenterImpl: EditNoteDelegate {
             }
             note!.title = editNoteView.getTitleText()
             note!.description = editNoteView.getDiscriptionText()
-                
             }
         else{
             return

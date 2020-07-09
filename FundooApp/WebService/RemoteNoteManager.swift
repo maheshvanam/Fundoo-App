@@ -24,25 +24,26 @@ class RemoteNoteManager: RemoteNoteService {
             let data = response.value?.data
             let notes =  data?.data
             callback(notes!)
-            
         }
     }
     
     func insertUserNote(note: NoteResponse) {
-        let url = RestUrl.addNotesUrl
-                   let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
-                   var header = HTTPHeaders()
-                   header.add(name: RestConstants.authKey, value: authId!)
-                   let param = ["title":note.title!,"description":note.description!]
-                   let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
-                   request.responseData { (data) in
-                       switch data.result {
-                       case .success(_):
-                           print(data.result)
-                       case .failure(let err):
-                           print(err.localizedDescription)
-                       }
-                   }
+        let url = RestUrl.ADD_NOTE_URL_PATH
+        let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+        var header = HTTPHeaders()
+        header.add(name: RestConstants.authKey, value: authId!)
+        note.color = "#000000"
+        //note.asDictionary
+        let param = ["title":note.title!,"description":note.description!,"isArchived":false,"color":"#000000","reminder":Date().toString()] as [String:Any]
+        let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
+        request.responseData { (data) in
+            switch data.result {
+            case .success(let result):
+                print(result)
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
     
     func updateNote(note: NoteResponse) {
