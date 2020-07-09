@@ -61,10 +61,13 @@ class NotePresenterImpl: NoteDelegate {
 //        dbManager.saveUser(user: user)
     }
     
-    func getReminderNotes()-> [NoteResponse] {
-        self.updateDataSource()
-        let notes = self.noteView.getNotes()
-        return notes.filter({($0.reminder.count) > 0 })
+    func getReminderNotes(){
+       DispatchQueue.main.async {
+            self.dbManager.getAllNotes(urlPath: RestUrl.GET_REMINDER_NOTES_PATH) { (noteModels) in
+                self.noteView.setTableData(data: noteModels)
+                self.noteView.updateView()
+            }
+        }
     }
     
     func getArchiveNotes() {
