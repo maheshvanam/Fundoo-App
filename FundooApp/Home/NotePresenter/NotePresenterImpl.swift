@@ -11,7 +11,7 @@ import Foundation
 class NotePresenterImpl: NoteDelegate {
     
     var noteView: NoteViewDelegate
-    let dbManager = RemoteNoteManager()
+    let dbManager = RemoteNoteManager.shared
     
     init(delegate: NoteViewDelegate) {
         self.noteView = delegate

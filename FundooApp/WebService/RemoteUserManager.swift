@@ -10,7 +10,6 @@ import Foundation
 
 class RemoteUserManager: RemoteUserService {
     
-    
     func saveUser(user:UserResponse, completion: @escaping (Result<Int,APIError>)->Void ) {
         do {
             guard let resourceURL = URL(string: RestUrl.userSignupUrl) else {return}

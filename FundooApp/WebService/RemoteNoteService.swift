@@ -11,4 +11,5 @@ import Foundation
 protocol RemoteNoteService {
     func getAllNotes(  callback: @escaping([NoteResponse])-> Void)
     func insertUserNote(note:NoteResponse)
+    func updateNote(note:NoteResponse)
 }
