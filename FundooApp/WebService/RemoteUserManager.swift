@@ -12,7 +12,7 @@ class RemoteUserManager: RemoteUserService {
     
     func saveUser(user:UserResponse, completion: @escaping (Result<Int,APIError>)->Void ) {
         do {
-            guard let resourceURL = URL(string: RestUrl.userSignupUrl) else {return}
+            guard let resourceURL = URL(string: RestUrl.SIGN_UP_URL_PATH) else {return}
             var urlRequest = URLRequest(url: resourceURL)
             urlRequest.httpMethod = RestConstants.post
             urlRequest.addValue(RestConstants.contentTypeValue, forHTTPHeaderField: RestConstants.contentTypeKey)
@@ -39,7 +39,7 @@ class RemoteUserManager: RemoteUserService {
     
     func signInUser(user:UserResponse, completion: @escaping (Result<UserResponse,APIError>)->Void ) {
         do {
-            guard let resourceURL = URL(string: RestUrl.loginUrl) else {return}
+            guard let resourceURL = URL(string: RestUrl.LOGIN_URL_PATH) else {return}
             var urlRequest = URLRequest(url: resourceURL)
             urlRequest.httpMethod = RestConstants.post
             urlRequest.addValue(RestConstants.contentTypeValue, forHTTPHeaderField: RestConstants.contentTypeKey)

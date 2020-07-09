@@ -9,20 +9,20 @@
 import Foundation
 
 enum RestUrl  {
-    private static let baseUrl = "http://fundoonotes.incubation.bridgelabz.com/api/"
-    static let ADD_NOTE_URL_PATH      = baseUrl+"notes/addNotes"
-    static let getNotesListUrl        = baseUrl+"notes/getNotesList"
-    static let updateNotesUrl         = baseUrl+"notes/updateNotes"
-    static let userSignupUrl    = baseUrl+"user/userSignup"
-    static let loginUrl         = baseUrl+"user/login"
-    static let ARCHIVE_NOTES_PATH = baseUrl+"notes/archiveNotes"
-    static let GET_ARCHIVE_NOTES_PATH = baseUrl+"notes/getArchiveNotesList"
-    static let TRASH_NOTES    = baseUrl+"notes/trashNotes"
-    static let GET_TRASH_NOTES_PATH = baseUrl+"notes/getTrashNotesList"
-    static let DELETE_NOTE_PATH = baseUrl+"notes/deleteForeverNotes"
-    static let GET_REMINDER_NOTES_PATH = baseUrl+"notes/getReminderNotesList"
-    static let ADD_REMINDER_PATH = baseUrl+"notes/addUpdateReminderNotes"
-    static let DELETE_REMINDER_PATH = baseUrl+"notes/removeReminderNotes"
+    private static let BASE_URL_PATH = "http://fundoonotes.incubation.bridgelabz.com/api/"
+    static let ADD_NOTE_URL_PATH       = BASE_URL_PATH+"notes/addNotes"
+    static let GET_ALL_NOTES_PATH      = BASE_URL_PATH+"notes/getNotesList"
+    static let UPDATE_NOTES_PATH       = BASE_URL_PATH+"notes/updateNotes"
+    static let SIGN_UP_URL_PATH        = BASE_URL_PATH+"user/userSignup"
+    static let LOGIN_URL_PATH          = BASE_URL_PATH+"user/login"
+    static let ARCHIVE_NOTES_PATH      = BASE_URL_PATH+"notes/archiveNotes"
+    static let GET_ARCHIVE_NOTES_PATH = BASE_URL_PATH+"notes/getArchiveNotesList"
+    static let TRASH_NOTES_URL_PATH    = BASE_URL_PATH+"notes/trashNotes"
+    static let GET_TRASH_NOTES_PATH    = BASE_URL_PATH+"notes/getTrashNotesList"
+    static let DELETE_NOTE_PATH        = BASE_URL_PATH+"notes/deleteForeverNotes"
+    static let GET_REMINDER_NOTES_PATH = BASE_URL_PATH+"notes/getReminderNotesList"
+    static let ADD_REMINDER_PATH       = BASE_URL_PATH+"notes/addUpdateReminderNotes"
+    static let DELETE_REMINDER_PATH    = BASE_URL_PATH+"notes/removeReminderNotes"
 }
 
 enum RestConstants {

@@ -42,7 +42,7 @@ class RemoteNoteManager: RemoteNoteService {
         let params:Parameters = ["noteId":note.id,
                                 "title":note.title,
                                  "description":note.description,"color":note.color]
-        self.postRequest(params: params, urlPath: RestUrl.updateNotesUrl)
+        self.postRequest(params: params, urlPath: RestUrl.UPDATE_NOTES_PATH)
     }
     
     func addToArchive(note: NoteResponse) {
@@ -52,7 +52,7 @@ class RemoteNoteManager: RemoteNoteService {
     
     func addToTrash(note: NoteResponse) {
         let params:Parameters = ["isDeleted": !note.isDeleted, "noteIdList": [note.id] ]
-        self.postRequest(params: params, urlPath: RestUrl.TRASH_NOTES)
+        self.postRequest(params: params, urlPath: RestUrl.TRASH_NOTES_URL_PATH)
     }
     
     func deleteNoteForever(note: NoteResponse){

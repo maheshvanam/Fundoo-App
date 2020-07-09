@@ -19,7 +19,7 @@ class NotePresenterImpl: NoteDelegate {
     
     func updateDataSource() {
         DispatchQueue.main.async {
-            self.dbManager.getAllNotes(urlPath:RestUrl.getNotesListUrl) { (noteModels) in
+            self.dbManager.getAllNotes(urlPath:RestUrl.GET_ALL_NOTES_PATH) { (noteModels) in
                 print(noteModels.count  )
                 let notes = noteModels.filter({ ($0.isArchived == false) && ($0.isDeleted == false) })
                 self.noteView.setTableData(data: notes)
@@ -27,7 +27,7 @@ class NotePresenterImpl: NoteDelegate {
             }
         }
     }
-
+    
     func reorderCell(model: [Note], sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {
         var models: [Note] = []
         if sourceIndexPath.item <
@@ -56,13 +56,13 @@ class NotePresenterImpl: NoteDelegate {
             }
             models[models.count-1].position = pos
         }
-//        let user = dbManager.getCurrentUser()
-//        user.notes?.addingObjects(from: models)
-//        dbManager.saveUser(user: user)
+        //        let user = dbManager.getCurrentUser()
+        //        user.notes?.addingObjects(from: models)
+        //        dbManager.saveUser(user: user)
     }
     
     func getReminderNotes(){
-       DispatchQueue.main.async {
+        DispatchQueue.main.async {
             self.dbManager.getAllNotes(urlPath: RestUrl.GET_REMINDER_NOTES_PATH) { (noteModels) in
                 self.noteView.setTableData(data: noteModels)
                 self.noteView.updateView()
@@ -92,7 +92,7 @@ class NotePresenterImpl: NoteDelegate {
         dbManager.addToTrash(note: note)
         getTrashNotes()
     }
-
+    
     func deleteNote(note:NoteResponse){
         dbManager.deleteNoteForever(note: note)
         getTrashNotes()
