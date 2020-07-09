@@ -15,6 +15,8 @@ enum RestUrl  {
     static let updateNotesUrl   = baseUrl+"notes/updateNotes"
     static let userSignupUrl    = baseUrl+"user/userSignup"
     static let loginUrl         = baseUrl+"user/login"
+    static let ARCHIVE_NOTES_PATH = baseUrl+"notes/archiveNotes"
+    static let GET_ARCHIVE_NOTES_PATH = baseUrl+"notes/getArchiveNotesList"
 }
 
 enum RestConstants {

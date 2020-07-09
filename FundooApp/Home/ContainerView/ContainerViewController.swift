@@ -86,23 +86,24 @@ class ContainerViewController: UIViewController {
     
     
     @objc func switchToNotes(){
+        self.title = "Notes"
         switchToNoteView(viewOption: isNoteView)
         
     }
     
     @objc func switchToArchive() {
-           switchToNoteView(viewOption: isArchiveView)
         self.title = "Archive Notes"
+        switchToNoteView(viewOption: isArchiveView)
     }
        
     @objc func switchToTrash() {
-        switchToNoteView(viewOption: isTrashView)
         self.title = "Trash Notes"
+        switchToNoteView(viewOption: isTrashView)
     }
     
     @objc func switchToReminders() {
-        switchToNoteView(viewOption: isReminderView)
         self.title = "Reminder Notes"
+        switchToNoteView(viewOption: isReminderView)
     }
     
     

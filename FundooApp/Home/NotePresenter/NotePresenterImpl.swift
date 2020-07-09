@@ -20,7 +20,8 @@ class NotePresenterImpl: NoteDelegate {
     func updateDataSource() {
         DispatchQueue.main.async {
             self.dbManager.getAllNotes { (noteModels) in
-                self.noteView.setTableData(data: noteModels)
+                let notes = noteModels.filter({ $0.isArchived == false })
+                self.noteView.setTableData(data: notes)
                 self.noteView.updateView()
             }
         }
@@ -65,10 +66,13 @@ class NotePresenterImpl: NoteDelegate {
         return notes.filter({($0.reminder.count) > 0 })
     }
     
-    func getArchiveNotes() -> [NoteResponse] {
-        self.updateDataSource()
-        let notes = self.noteView.getNotes()
-        return notes.filter({ $0.isArchived == true })
+    func getArchiveNotes() {
+        DispatchQueue.main.async {
+            self.dbManager.getArchiveNotes { (noteModels) in
+                self.noteView.setTableData(data: noteModels)
+                self.noteView.updateView()
+            }
+        }
     }
     
     func getTrashNotes() -> [NoteResponse] {

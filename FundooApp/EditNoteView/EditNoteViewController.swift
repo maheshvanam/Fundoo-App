@@ -42,7 +42,9 @@ class EditNoteViewController: UIViewController {
         configureBackButton()
     }
     @IBAction func onArchivePressed(_ sender: Any) {
-        note.isArchived = !note.isArchived
+        //note.isArchived = !note.isArchived
+        guard let noteModel = note else { return }
+        editNotePresenter.addToArchive(note:noteModel)
         navigationController?.popViewController(animated: true)
     }
     

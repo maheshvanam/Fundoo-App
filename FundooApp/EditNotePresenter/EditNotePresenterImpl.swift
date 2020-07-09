@@ -40,6 +40,10 @@ class EditNotePresenterImpl: EditNoteDelegate {
         editNoteView.postReloadCellsNotification()
     }
     
+    func addToArchive(note:NoteResponse) {
+        dbManager.addToArchive(note: note)
+    }
+    
     func addNoteToLabels(note:Note,labels: [Label]) {
 //        let user = dbManager.getCurrentUser()
 //        for label in labels {
