@@ -68,7 +68,7 @@ class RemoteNoteManager: RemoteNoteService {
         }
     }
     
-    func addToArchive(note: NoteResponse){
+    func addToArchive(note: NoteResponse) {
         let url = RestUrl.ARCHIVE_NOTES_PATH
         let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         var header = HTTPHeaders()
@@ -86,14 +86,28 @@ class RemoteNoteManager: RemoteNoteService {
         }
     }
     
-    func getArchiveNotes(callback: @escaping([NoteResponse])-> Void){
+    func addToTrash(note: NoteResponse) {
+        let url = RestUrl.TRASH_NOTES
+        let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+        var header = HTTPHeaders()
+        header.add(name: RestConstants.authKey, value: authId!)
+        let param:Parameters = ["isTrash": true, "noteIdList": [note.id] ]
+        let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
+        request.responseData { (data) in
+            switch data.result {
+            case .success(let result):
+                let response = String.init(data: result, encoding: .utf8)
+                print(response! as String)
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func getArchiveNotes(callback: @escaping([NoteResponse])-> Void) {
         let url = RestUrl.GET_ARCHIVE_NOTES_PATH
         let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         let request = AF.request(url, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
-//        request.response{
-//            (response) in
-//            print(String.init(data: response.value!!, encoding: .utf8))
-//        }
         request.responseDecodable(of: ResultData.self) { response in
             guard let data = response.value?.data else {
                 if let err = response.error {
