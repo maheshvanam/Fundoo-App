@@ -41,11 +41,12 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.titleField.text = note.title
         self.descriptionField.text = note.description
         self.reminderView.isHidden = true
-        if note.reminder != nil {
+        if note.reminder.count != 0 {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = dateFormat
-            if let date = note.reminder,!date.isEmpty {
+            let date = note.reminder
+            if date.isEmpty {
             self.reminderView.isHidden = false
             self.reminderField.text = date[0]//dateFormatter.string(from: date[0].toDate())
             }

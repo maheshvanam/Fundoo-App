@@ -21,8 +21,12 @@ class RemoteNoteManager: RemoteNoteService {
         let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         let request = AF.request(url, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
         request.responseDecodable(of: ResultData.self) { response in
-            let data = response.value?.data
-            let notes =  data?.data
+            guard let data = response.value?.data else {
+                let err = response.error
+                print(err!.localizedDescription as String)
+                return
+            }
+            let notes =  data.data
             callback(notes!)
         }
     }
@@ -32,9 +36,7 @@ class RemoteNoteManager: RemoteNoteService {
         let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         var header = HTTPHeaders()
         header.add(name: RestConstants.authKey, value: authId!)
-        note.color = "#000000"
-        //note.asDictionary
-        let param = ["title":note.title!,"description":note.description!,"isArchived":false,"color":"#000000","reminder":Date().toString()] as [String:Any]
+        let param = ["title":note.title,"description":note.description,"isArchived":false,"color":note.color] as [String:Any]
         let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
         request.responseData { (data) in
             switch data.result {
@@ -51,14 +53,15 @@ class RemoteNoteManager: RemoteNoteService {
         let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         var header = HTTPHeaders()
         header.add(name: RestConstants.authKey, value: authId!)
-        let param:Parameters = ["noteId":note.id!,
-                                "title":note.title!,
-                                "description":note.description!]
+        let param:Parameters = ["noteId":note.id,
+                                "title":note.title,
+                                "description":note.description,"color":note.color]
         let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
         request.responseData { (data) in
             switch data.result {
             case .success(let result):
-                print(result.description)
+                let response = String.init(data: result, encoding: .utf8)
+                print(response! as String)
             case .failure(let err):
                 print(err.localizedDescription)
             }

@@ -17,7 +17,7 @@ extension EditNoteViewController: EditNotePresenterDelegate {
             discriptionField.text = note.description
             var color = note.color
             if color.isEmpty {
-                color = "white"
+                color = "#FFFFFF"
             }
             view.backgroundColor = colors[color]
             titleField.backgroundColor = colors[color]

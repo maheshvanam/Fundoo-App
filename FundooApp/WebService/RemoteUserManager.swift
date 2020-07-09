@@ -19,15 +19,21 @@ class RemoteUserManager: RemoteUserService {
             urlRequest.httpBody = try JSONEncoder().encode(user)
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200  else {
-                    completion(.failure(.responseError))
+                    DispatchQueue.main.async {
+                        completion(.failure(.responseError))
+                    }
                     return
                 }
-                completion(.success(httpResponse.statusCode))
+                DispatchQueue.main.async {
+                    completion(.success(httpResponse.statusCode))
+                }
             }
             dataTask.resume()
         }
         catch {
-            completion(.failure(.encodingError))
+            DispatchQueue.main.async {
+                completion(.failure(.encodingError))
+            }
         }
     }
     
@@ -41,21 +47,29 @@ class RemoteUserManager: RemoteUserService {
             
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200,let jsonData = data else {
-                    completion(.failure(.responseError))
+                    DispatchQueue.main.async {
+                        completion(.failure(.responseError))
+                    }
                     return
                 }
                 do {
                     let userData = try JSONDecoder().decode(UserResponse.self, from: jsonData)
-                    completion(.success(userData))
+                    DispatchQueue.main.async {
+                        completion(.success(userData))
+                    }
                 }
                 catch {
-                    completion(.failure(.decodingError))
+                    DispatchQueue.main.async {
+                        completion(.failure(.decodingError))
+                    }
                 }
             }
             dataTask.resume()
         }
         catch {
-            completion(.failure(.encodingError))
+            DispatchQueue.main.async {
+                completion(.failure(.encodingError))
+            }
         }
     }
     

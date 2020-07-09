@@ -77,7 +77,7 @@ class EditNoteViewController: UIViewController {
     
     @objc func onBackPressed(){
         if reminderDate != nil {
-            self.note.reminder?.append(reminderDate.toString())
+            self.note.reminder.append(reminderDate.toString())
         }
 //        self.addLabelsToNote()
         self.editNotePresenter.saveNote()

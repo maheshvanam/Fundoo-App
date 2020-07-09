@@ -10,20 +10,20 @@ import Foundation
 
 class NoteResponse:Codable {
     
-    var title:String?
-    var description:String?
+    var title:String = ""
+    var description:String = ""
     var isPined:Bool = false
     var isArchived:Bool = false
     var isDeleted:Bool = false
-    var reminder: [String]?
-    var createdDate: String?
-    var modifiedDate: String?
-    var color: String = "white"
+    var reminder: [String] = []
+    var createdDate: String = Date().toString()
+    var modifiedDate: String = Date().toString()
+    var color: String = "#FFFFFF"
     var label:[String]?
     var typeOfNotes:String?
     var imageUrl:String?
     var linkUrl:String?
-    var id:String?
+    var id:String = ""
     var user: UserResponse?
     var userId:String?
     

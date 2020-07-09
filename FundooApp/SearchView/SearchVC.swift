@@ -51,7 +51,7 @@ class SearchVC:UIViewController {
         if searchTerm.count > 0 {
             currentDataSource = originalDataSource
             let filteredResults = currentDataSource.filter {
-                ($0.title?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))! || ($0.description?.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))!
+                ($0.title.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())) || ($0.description.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased()))
             }
             currentDataSource = filteredResults
             reslutCollectionView.reloadData()

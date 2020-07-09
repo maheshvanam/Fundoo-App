@@ -17,7 +17,7 @@ extension EditNoteViewController {
             board.instantiateViewController(withIdentifier: addReminderViewControllerId) as? AddReminderViewController  else {
                 return
         }
-        if note.reminder == nil {
+        if note.reminder.count != 0 {
             destinationVC.hideButton = true
         }
         destinationVC.addReminderDelegate = self
@@ -37,11 +37,11 @@ extension EditNoteViewController {
     
     func scheduleReminder(targetDate: Date){
         let content = UNMutableNotificationContent()
-        content.title = note.title!
+        content.title = note.title
         content.sound = .default
-        content.body  = note.description!
+        content.body  = note.description
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: targetDate), repeats: false)
-        let request = UNNotificationRequest(identifier: "\(note!.id ?? "asa")", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "\(note.id)", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }

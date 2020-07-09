@@ -15,7 +15,7 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
     init(delegate: PresenterSignInViewDelegate) {
         self.signInViewDelegate = delegate
     }
-
+    
     
     func signInWithEmailAndPassword(email: String,password: String) {
         
@@ -26,29 +26,28 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             return
         }
         let user = UserResponse(email: email, password: password)
-        DispatchQueue.main.async {
-            dbManager.signInUser(user: user) { (result) in
-                switch result {
-                case .success(let currentUser):
-                    UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
-                    UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId)
-                    self.signInViewDelegate.clearFields()
-                    self.signInViewDelegate.clearLabels()
-                    self.signInViewDelegate.navigateToUserHomeView()
-                case .failure(.decodingError):
-                    fatalError(APIErrorMessage.decodingError)
-                case .failure(.encodingError) :
-                    fatalError(APIErrorMessage.encodingError)
-                case .failure(.responseError):
-                    self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
-                    self.signInViewDelegate.updatePasswordLabel()
-                }
+        dbManager.signInUser(user: user) { (result) in
+        switch result {
+            case .success(let currentUser):
+                UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
+                UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId)
+                self.signInViewDelegate.clearFields()
+                self.signInViewDelegate.clearLabels()
+                self.signInViewDelegate.navigateToUserHomeView()
+            case .failure(.decodingError):
+                fatalError(APIErrorMessage.decodingError)
+            case .failure(.encodingError) :
+                fatalError(APIErrorMessage.encodingError)
+            case .failure(.responseError):
+                self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
+                self.signInViewDelegate.updatePasswordLabel()
             }
+            
         }
     }
-
+    
     func onCreateAcoountTapped()  {
         self.signInViewDelegate.navigateToSignUpView()
     }
-
+    
 }

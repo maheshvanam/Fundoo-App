@@ -27,11 +27,14 @@ class UserResponse: Codable {
         self.password    = password
     }
     
+    init() {
+    }
+    
     init(firstName: String, lastName: String, email: String ,password: String) {
         self.firstName   = firstName
         self.lastName    = lastName
         self.email       = email
         self.password    = password
-        self.service     = "basic"
+        self.service     = "advance"
     }
 }

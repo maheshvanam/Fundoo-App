@@ -62,7 +62,7 @@ class NotePresenterImpl: NoteDelegate {
     func getReminderNotes()-> [NoteResponse] {
         self.updateDataSource()
         let notes = self.noteView.getNotes()
-        return notes.filter({$0.reminder != nil && ($0.reminder?.count)! > 0 })
+        return notes.filter({($0.reminder.count) > 0 })
     }
     
     func getArchiveNotes() -> [NoteResponse] {
