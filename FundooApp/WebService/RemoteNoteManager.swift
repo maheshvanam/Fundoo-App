@@ -91,7 +91,7 @@ class RemoteNoteManager: RemoteNoteService {
         let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
         var header = HTTPHeaders()
         header.add(name: RestConstants.authKey, value: authId!)
-        let param:Parameters = ["isTrash": true, "noteIdList": [note.id] ]
+        let param:Parameters = ["isDeleted": !note.isDeleted, "noteIdList": [note.id] ]
         let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
         request.responseData { (data) in
             switch data.result {
@@ -121,4 +121,19 @@ class RemoteNoteManager: RemoteNoteService {
         }
     }
     
+    func getTrashNotes(callback: @escaping([NoteResponse])-> Void) {
+        let url = RestUrl.GET_TRASH_NOTES_PATH
+           let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+           let request = AF.request(url, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
+           request.responseDecodable(of: ResultData.self) { response in
+               guard let data = response.value?.data else {
+                   if let err = response.error {
+                   print(err.localizedDescription as String)
+                   }
+                   return
+               }
+               let notes =  data.data
+               callback(notes!)
+           }
+       }
 }

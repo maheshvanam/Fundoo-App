@@ -76,13 +76,17 @@ class NotePresenterImpl: NoteDelegate {
         }
     }
     
-    func getTrashNotes() -> [NoteResponse] {
-        self.updateDataSource()
-        let notes = self.noteView.getNotes()
-        return notes.filter({ $0.isDeleted == true })
+    func getTrashNotes()  {
+        DispatchQueue.main.async {
+            self.dbManager.getTrashNotes { (noteModels) in
+                self.noteView.setTableData(data: noteModels)
+                self.noteView.updateView()
+            }
+        }
     }
 
     func deleteNote(note:NoteResponse){
+        print("Delete")
 //        let user = dbManager.getCurrentUser()
 //        user.removeFromNotes(note)
 //        let labels = user.labels?.allObjects as! [Label]

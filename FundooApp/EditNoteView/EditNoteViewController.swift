@@ -94,7 +94,7 @@ class EditNoteViewController: UIViewController {
    
     @objc func deleteNote() {
         heightAnchor.constant = slideUpMenuHidingConstant
-      //  slideUpVCpresenter.deleteNote(note: note)
+        slideUpVCpresenter.deleteNote(note: note)
         postReloadCellsNotification()
         NotificationCenter.default.removeObserver(self)
         navigationController?.popViewController(animated: false)

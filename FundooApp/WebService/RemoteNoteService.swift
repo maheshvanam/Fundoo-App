@@ -15,4 +15,5 @@ protocol RemoteNoteService {
     func addToArchive(note: NoteResponse)
     func addToTrash(note: NoteResponse)
     func getArchiveNotes(callback: @escaping([NoteResponse])-> Void)
+    func getTrashNotes(callback: @escaping([NoteResponse])-> Void)
 }

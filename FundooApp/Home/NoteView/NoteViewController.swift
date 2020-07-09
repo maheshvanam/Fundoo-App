@@ -72,8 +72,8 @@ class NoteViewController: UIViewController {
         case isArchiveView:
             self.notePresenter?.getArchiveNotes()
             
-//        case isTrashView:
-//          //  self.models = (self.notePresenter?.getTrashNotes())!
+        case isTrashView:
+            self.notePresenter?.getTrashNotes()
         default:
             self.notePresenter!.updateDataSource()
         }
