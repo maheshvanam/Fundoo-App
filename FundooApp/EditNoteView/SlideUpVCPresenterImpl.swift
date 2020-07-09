@@ -9,8 +9,8 @@
 import Foundation
 
 class SlideUpVCPresenterImpl: SlideUpVCDelegate {
-    
+    let dbManager = RemoteNoteManager.shared
     func deleteNote(note: NoteResponse) {
-        note.isDeleted = !note.isDeleted
+        dbManager.addToTrash(note: note)
     }
 }
