@@ -84,6 +84,10 @@ class NotePresenterImpl: NoteDelegate {
             }
         }
     }
+    
+    func restoreFromTrash(note:NoteResponse) {
+        dbManager.addToTrash(note: note)
+    }
 
     func deleteNote(note:NoteResponse){
         print("Delete")

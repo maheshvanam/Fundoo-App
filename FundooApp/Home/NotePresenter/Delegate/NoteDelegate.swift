@@ -14,5 +14,6 @@ protocol NoteDelegate {
     func getReminderNotes()-> [NoteResponse]
     func getArchiveNotes()
     func getTrashNotes()
-//    func deleteNote(note:Note)
+    func restoreFromTrash(note:NoteResponse)
+    func deleteNote(note:NoteResponse)
 }
