@@ -136,4 +136,21 @@ class RemoteNoteManager: RemoteNoteService {
                callback(notes!)
            }
        }
+    func deleteNoteForever(note: NoteResponse){
+        let url = RestUrl.DELETE_NOTE_PATH
+        let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+        var header = HTTPHeaders()
+        header.add(name: RestConstants.authKey, value: authId!)
+        let param:Parameters = [ "noteIdList": [note.id] ]
+        let request = AF.request(url, method: .post, parameters: param,encoding: URLEncoding.default, headers: header)
+        request.responseData { (data) in
+            switch data.result {
+            case .success(let result):
+                let response = String.init(data: result, encoding: .utf8)
+                print(response! as String)
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }

@@ -87,10 +87,12 @@ class NotePresenterImpl: NoteDelegate {
     
     func restoreFromTrash(note:NoteResponse) {
         dbManager.addToTrash(note: note)
+        getTrashNotes()
     }
 
     func deleteNote(note:NoteResponse){
-        
+        dbManager.deleteNoteForever(note: note)
+        getTrashNotes()
     }
     
 }
