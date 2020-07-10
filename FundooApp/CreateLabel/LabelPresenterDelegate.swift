@@ -10,5 +10,5 @@ import Foundation
 
 protocol  LabelPresenterDelegate {
     func getLabels()
-//    func deleteLabel(label:Label)
+    func deleteLabel(label:LabelResponse)
 }

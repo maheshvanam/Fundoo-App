@@ -60,9 +60,9 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     func loadDataSource() {
         self.sideMenuPresenter.getLabels() {
             [weak self]labels in
-    DispatchQueue.main.async {
-            self?.data = labels
-            self?.tableView.reloadData()
+            DispatchQueue.main.async {
+                self?.data = labels
+                self?.tableView.reloadData()
             }
         }
     }

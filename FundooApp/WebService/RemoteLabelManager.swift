@@ -48,4 +48,20 @@ class RemoteLabelManager:RemoteLabelService {
             }
         }
     }
+    
+    func deleteLabel(label:LabelResponse){
+        let urlPath = RestUrl.LABELS_URL_PATH+label.id+RestUrl.DELETE_LABEL_PATH
+        header.add(name: RestConstants.authKey, value: label.userId)
+        let request = AF.request(urlPath, method: .delete, parameters: nil,encoding: URLEncoding.default, headers: header)
+        request.responseData { (data) in
+            switch data.result {
+            case .success(let result):
+                let response = String.init(data: result, encoding: .utf8)
+                print(response! as String)
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
 }

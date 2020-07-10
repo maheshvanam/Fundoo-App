@@ -20,7 +20,6 @@ class NotePresenterImpl: NoteDelegate {
     func updateDataSource() {
         DispatchQueue.main.async {
             self.dbManager.getAllNotes(urlPath:RestUrl.GET_ALL_NOTES_PATH) { (noteModels) in
-                print(noteModels.count  )
                 let notes = noteModels.filter({ ($0.isArchived == false) && ($0.isDeleted == false) })
                 self.noteView.setTableData(data: notes)
                 self.noteView.updateView()

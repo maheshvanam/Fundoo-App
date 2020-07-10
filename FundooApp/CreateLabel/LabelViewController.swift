@@ -32,13 +32,12 @@ class LabelViewController: UIViewController {
     func reloadDataSource(){
     self.labelPresenter.getLabels()
         tableview.reloadData()
-      print( "$$$$", labels.count)
     }
 }
 
 extension LabelViewController: LabelViewDelegate {
     func updateLabelsDataSource(label:[LabelResponse]) {
         self.labels = label
-        
+        tableview.reloadData()
     }
 }
