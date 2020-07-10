@@ -11,6 +11,7 @@ import UIKit
 extension SearchResultVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("Data ",dataSource.count)
         return dataSource.count
     }
     

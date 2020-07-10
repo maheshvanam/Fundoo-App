@@ -48,5 +48,9 @@ extension NoteViewCell :UICollectionViewDelegate,UICollectionViewDataSource,UICo
     @objc func removeLabel(sender:UIButton) {
         let index = sender.tag
         let label = dataSource[index]
+        self.noteCellPresenter.removeLabelFromNote(label:label,note:self.note)
+        self.labelCollectionView.reloadData()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.RELOAD_CELLS), object: nil)
     }
 }
+

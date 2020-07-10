@@ -31,6 +31,7 @@ enum RestUrl  {
     static let UPDATE_LABEL_PATH = "/updateNoteLabel"
     static let ADD_LABEL_TO_NOTE = "/addLabelToNotes/"
     static let ADD_PATH = "/add"
+    static let REMOVE_PATH = "/remove"
     static let GET_NOTES_BY_LABEL_PATH = BASE_URL_PATH+"notes/getNotesListByLabel/"
 }
 

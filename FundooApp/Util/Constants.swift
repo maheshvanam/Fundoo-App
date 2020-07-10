@@ -27,6 +27,7 @@ enum Constants {
     static let TOGGLE_GRID = "TOGGLE_GRID"
     static let ADD_NOTE = "Add Note"
     static let RELOAD_CELLS = "Reload cells"
+    static let RELOAD_LABEL_CELLS = "Reload Label cells"
     static let UPDATE_COLOR = "update color"
     static let OPTIONS_CELL_ID = "OptionsCell"
     static let labelsHeaderTitle     = "     LABELS"

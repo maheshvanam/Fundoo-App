@@ -16,17 +16,18 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     @IBOutlet weak var reminderView: UIView!
     @IBOutlet weak var reminderField: UILabel!
     @IBOutlet weak var labelCollectionView: UICollectionView!
-    var layout:PinterestLayout!
+    
     var addLabelPresenter:AddLabelPresenterDelegate!
+    var noteCellPresenter:NoteCellDelegate!
     var dataSource:[LabelResponse] = []
     private let cornerRadius:CGFloat = 15
     private let borderWidth:CGFloat = 0.5
     private let dateFormat      = "MMM d, h:mm a"
+    var note:NoteResponse!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        layout = labelCollectionView?.collectionViewLayout as? PinterestLayout
         let nib = UINib(nibName: labelViewCellId, bundle: nil)
         labelCollectionView.register(nib, forCellWithReuseIdentifier: labelViewCellId)
         addLabelPresenter = AddLabelPresenter(delegate: self)
@@ -35,9 +36,16 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
         self.reminderView.layer.cornerRadius = cornerRadius
         self.reminderView.layer.borderColor = UIColor.gray.cgColor
         self.reminderView.layer.borderWidth = borderWidth
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadDataCells), name: Notification.Name(Constants.RELOAD_LABEL_CELLS), object: nil)
+        noteCellPresenter = NoteCellPresenter()
+    }
+    
+    @objc func reloadDataCells() {
+        labelCollectionView.reloadData()
     }
     
     func updateView(note:NoteResponse){
+        self.note = note
         self.titleField.text = note.title
         self.descriptionField.text = note.description
         self.reminderView.isHidden = true
@@ -51,12 +59,10 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
             }
         }
         self.dataSource = note.noteLabels
-            //note.labels?.allObjects as! [Label]
     }
     
     func updateCellBackground(color:UIColor){
         self.backgroundColor = color
-        
     }
     
     func setShadow() {

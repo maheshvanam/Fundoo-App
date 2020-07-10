@@ -39,16 +39,20 @@ class NoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constants.NOTES_TITLE
+        configureCollectionView()
+        notePresenter = NotePresenter(delegate: self)
+        addNotificationObservers()
+    }
+    
+    func configureCollectionView() {
         layout = collectionView?.collectionViewLayout as? MosaicLayout
         layout.delegate = self
         collectionView.dragInteractionEnabled = true
-       // collectionView.dragDelegate = self
+        // collectionView.dragDelegate = self
         collectionView.dropDelegate = self
         collectionView.clipsToBounds = false
         collectionView.contentInset = UIEdgeInsets(top: topInset , left: leftInset, bottom: bottomInset, right: rightInset)
-        notePresenter = NotePresenter(delegate: self)
-        addNotificationObservers()
-        collectionView.register(UINib(nibName:cellId        , bundle: nil), forCellWithReuseIdentifier: cellId)
+        collectionView.register(UINib(nibName:cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
     }
     
     @objc func toggleView(){
@@ -72,13 +76,14 @@ class NoteViewController: UIViewController {
             self.notePresenter!.getLabelNotes(label:label)
         case isArchiveView:
             self.notePresenter?.getArchiveNotes()
-            
         case isTrashView:
             self.notePresenter?.getTrashNotes()
         default:
             self.notePresenter!.updateDataSource()
         }
+        
         layout.reloadData()
         collectionView.reloadData()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.RELOAD_LABEL_CELLS), object: nil)
     }
 }
