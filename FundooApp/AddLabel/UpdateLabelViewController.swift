@@ -33,8 +33,11 @@ class UpdateLabelViewController: UIViewController, AddLabelViewDelegate {
                 label = LabelResponse(label: title, isDeleted: false, userId: uId!)
                 self.addLabelPresenter.createLabel(label:label!)
             }
-            
-            //self.addLabelPresenter.save()
+            else {
+                label?.label = title
+                self.addLabelPresenter.updateLabel(label:label!)
+            }
+           // self.addLabelPresenter.save()
             labelTitleField.text = ""
         }
         navigationController?.popViewController(animated: true)

@@ -26,6 +26,10 @@ class AddLabelPresenter: AddLabelPresenterDelegate {
         return dbManager.createLabel(label: label)
     }
     
+    func updateLabel(label:LabelResponse) {
+        dbManager.updateLabel(label: label)
+    }
+    
 //    func save() {
 //        dbManager.saveData()
 //    }
