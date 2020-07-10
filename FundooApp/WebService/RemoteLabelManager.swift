@@ -35,19 +35,17 @@ class RemoteLabelManager:RemoteLabelService {
     
     func getLabels(urlPath:String,callback: @escaping([LabelResponse])-> Void)  {
         let request = AF.request(urlPath, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
-        request.response { (response) in
-            if let data = response.value {
-                print(String.init(data: data!, encoding: .utf8))
+        request.responseDecodable(of: LabelDataResponse.self) { response in
+            guard let data = response.value else {
+                let err = response.error
+                print(err!.localizedDescription as String)
+                return
+            }
+            if  let labels =  data.data?.details {
+            DispatchQueue.main.async{
+                    callback(labels)
+                }
             }
         }
-//        request.responseDecodable(of: ResultData.self) { response in
-//            guard let data = response.value?.data else {
-//                let err = response.error
-//                print(err!.localizedDescription as String)
-//                return
-//            }
-//            let notes =  data.data
-//            callback(notes!)
-//        }
     }
 }

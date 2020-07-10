@@ -10,9 +10,12 @@ import Foundation
 
 class SideMenuPresenter:SideMenuPresenterDelegate {
     
-    let dbManager = DatabaseManager()
-    
-    func signOutUser(){
-        dbManager.signOutUser()
+    let dbManager = RemoteLabelManager.shared
+    func getLabels(callback:@escaping([LabelResponse])->Void) {
+        dbManager.getLabels(urlPath: RestUrl.GET_LABEL_LIST_URL_PATH) { (labels) in
+            DispatchQueue.main.async {
+                callback(labels)
+            }
+        }
     }
 }

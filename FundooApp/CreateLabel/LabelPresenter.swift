@@ -18,9 +18,10 @@ class LabelPresenter: LabelPresenterDelegate {
     }
     
     func getLabels() {
-        let user = dbManager.getLabels(urlPath: RestUrl.GET_LABEL_LIST_URL_PATH) { (labels) in
-            print(labels)
-            self.labelView.updateLabelsDataSource(label: labels)
+        DispatchQueue.main.async {
+            self.dbManager.getLabels(urlPath: RestUrl.GET_LABEL_LIST_URL_PATH) { [weak self] (labels) in
+                self?.labelView.updateLabelsDataSource(label: labels)
+            }
         }
     }
 //

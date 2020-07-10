@@ -13,7 +13,7 @@ let sideMenuCellNib         = "SideMenuCell"
 let sideMenuCellReusabaleId = "SideMenuCell"
 let sideMenuLabelCellNib    = "SideMenuLabelCell"
 let sideMenuLabelCellId     = "SideMenuLabelCell"
-
+let unExpectedOption        = "invalid option"
 let firstSection            = 0
 let secondSection           = 1
 let thirdSection            = 2
@@ -31,13 +31,8 @@ let signOutOption           = 3
 
 
 class SideMenuViewController: UITableViewController, LabelViewDelegate {
-    
-    func updateLabelsDataSource(label: [LabelResponse]) {
-    
-    }
-    
-    
-    var data:[Label] = []
+
+    var data:[LabelResponse] = []
     var menuOption:SideMenuDelegate!
     var labelPresenter: LabelPresenterDelegate!
     var sideMenuPresenter:SideMenuPresenterDelegate!
@@ -52,8 +47,6 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         let labelNib = UINib(nibName: sideMenuLabelCellNib, bundle: nil)
         tableView.register(labelNib, forCellReuseIdentifier: sideMenuLabelCellId)
         loadDataSource()
-       
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +58,13 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     }
     
     func loadDataSource() {
-        //data = self.labelPresenter.getLabels()
+        self.sideMenuPresenter.getLabels() {
+            [weak self]labels in
+    DispatchQueue.main.async {
+            self?.data = labels
+            self?.tableView.reloadData()
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,7 +76,7 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         case thirdSection:
             return ThirdSectionOption.allCases.count
         default:
-            return 0
+            fatalError(unExpectedOption)
         }
     }
     
@@ -94,7 +93,7 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         case thirdSection:
             menuOption = ThirdSectionOption(rawValue: indexPath.row)
         default:
-            menuOption = FirstSectionOption(rawValue: indexPath.row)
+            fatalError(unExpectedOption)
         }
         if indexPath.section != secondSection {
             let cell = tableView.dequeueReusableCell(withIdentifier:sideMenuCellReusabaleId, for: indexPath) as! SideMenuCell
@@ -105,7 +104,7 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier:sideMenuLabelCellId, for: indexPath) as! SideMenuLabelCell
         cell.backgroundColor =  #colorLiteral(red: 0.9395396113, green: 0.7086771131, blue: 0.1930754483, alpha: 1)
-        cell.titleLabel.text = data[indexPath.row].title
+        cell.titleLabel.text = data[indexPath.row].label
         return cell
     }
     
@@ -134,7 +133,7 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         case thirdSection:
             handleThirdSection(option: indexPath.row)
         default:
-            handleFirstSection(option: indexPath.row)
+            fatalError(unExpectedOption)
         }
     }
     
@@ -150,31 +149,35 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         case reminderOption:
             postNotification(key: Constants.NAVIGATE_TO_REMINDER)
         default:
-            postNotification(key: Constants.NAVIGATE_TO_NOTE)
+            fatalError(unExpectedOption)
         }
     }
     
     func handleSecondSection(option:Int) {
-        let notes = data[option].notes?.allObjects as! [Note]
+       // let notes = data[option].notes?.allObjects as! [Note]
+        let notes:[Note] = []
         NotificationCenter.default.post(name: Notification.Name(Constants.LABELS), object: notes)
     }
     
     func handleThirdSection(option:Int) {
         switch option {
         case labelsOption:
-            postNotification(key:       Constants.NAVIGATE_TO_LABELS)
+            postNotification(key:Constants.NAVIGATE_TO_LABELS)
         case signOutOption:
             UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
             UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
-           // sideMenuPresenter.signOutUser()
+          // sideMenuPresenter.signOutUser()
             self.navigationController?.popToRootViewController(animated: false)
         case trashOption:
             postNotification(key:Constants.NAVIGATE_TO_TRASH)
         case archiveOption:
             postNotification(key:Constants.NAVIGATE_TO_ARCHIVE)
         default:
-            postNotification(key:Constants.NAVIGATE_TO_NOTE)
+            fatalError(unExpectedOption)
         }
     }
     
+    func updateLabelsDataSource(label: [LabelResponse]) {
+           self.data = label
+       }
 }

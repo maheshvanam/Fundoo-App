@@ -8,8 +8,11 @@
 
 import Foundation
 
-struct LabelDataResponse {
-    var data = ""
+struct LabelDataResponse:Codable {
+    var data:LabelData?
+}
+struct LabelData:Codable {
+    var success = true
     var message = ""
     var details:[LabelResponse] = []
 }

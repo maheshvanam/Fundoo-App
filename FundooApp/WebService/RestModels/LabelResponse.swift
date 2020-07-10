@@ -12,6 +12,7 @@ class LabelResponse:Codable {
     var label:String = ""
     var isDeleted:Bool = false
     var userId:String = ""
+    var id:String = ""
     
     init(label:String,isDeleted:Bool,userId:String) {
         self.label = label
