@@ -22,8 +22,9 @@ class RemoteNoteManager: RemoteNoteService {
         let request = AF.request(urlPath, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
         request.responseDecodable(of: ResultData.self) { response in
             guard let data = response.value?.data else {
-                let err = response.error
-                print(err!.localizedDescription as String)
+                if let err = response.error {
+                    print(err.localizedDescription as String)
+                }
                 return
             }
             let notes =  data.data
@@ -31,6 +32,20 @@ class RemoteNoteManager: RemoteNoteService {
         }
     }
     
+    func getLabelNotes(urlPath:String,callback: @escaping([NoteResponse])-> Void)  {
+        let request = AF.request(urlPath, method: .post, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
+        request.responseDecodable(of: ResultData.self) { response in
+            guard let data = response.value?.data else {
+                if let err = response.error {
+                    print(err.localizedDescription as String)
+                }
+                return
+            }
+            let notes =  data.data
+            callback(notes!)
+        }
+    }
+
     func insertUserNote(note: NoteResponse) {
         
         let params = ["title":note.title,"description":note.description,"isArchived":false,"color":note.color] as [String:Any]

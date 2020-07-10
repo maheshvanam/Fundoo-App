@@ -127,12 +127,12 @@ class ContainerViewController: UIViewController {
     }
     
     @objc func swithToLabelNotes(notification:NSNotification){
-        guard let notes = notification.object as? [NoteResponse] else {return}
+        guard let label = notification.object as? LabelResponse else {return}
         guard let   childVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.NOTE_VC) as? NoteViewController  else {
                  return
                }
                addChild(childVC)
-        childVC.models = notes
+        childVC.label = label
         childVC.viewOption = isLabelView
                childVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
                childVC.view.frame = container.bounds

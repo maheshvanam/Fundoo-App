@@ -69,6 +69,15 @@ class NotePresenterImpl: NoteDelegate {
         }
     }
     
+    func getLabelNotes(label:LabelResponse) {
+        DispatchQueue.main.async {
+            self.dbManager.getLabelNotes(urlPath: RestUrl.GET_NOTES_BY_LABEL_PATH+label.label) { (noteModels) in
+                self.noteView.setTableData(data: noteModels)
+                self.noteView.updateView()
+            }
+        }
+    }
+    
     func getArchiveNotes() {
         DispatchQueue.main.async {
             self.dbManager.getAllNotes(urlPath: RestUrl.GET_ARCHIVE_NOTES_PATH) { (noteModels) in

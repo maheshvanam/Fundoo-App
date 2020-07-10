@@ -154,9 +154,8 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
     }
     
     func handleSecondSection(option:Int) {
-       // let notes = data[option].notes?.allObjects as! [Note]
-        let notes:[Note] = []
-        NotificationCenter.default.post(name: Notification.Name(Constants.LABELS), object: notes)
+        let label = data[option]
+        NotificationCenter.default.post(name: Notification.Name(Constants.LABELS), object: label)
     }
     
     func handleThirdSection(option:Int) {

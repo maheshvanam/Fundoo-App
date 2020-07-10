@@ -33,6 +33,7 @@ class NoteViewController: UIViewController {
     var layout: MosaicLayout!
     var isGrid:Bool = true
     var viewOption:Int!
+    var label:LabelResponse!
     private let cellId = "NoteViewCell"
     
     override func viewDidLoad() {
@@ -67,8 +68,8 @@ class NoteViewController: UIViewController {
             self.notePresenter!.updateDataSource()
         case isReminderView:
             self.notePresenter!.getReminderNotes()
-//        case isLabelView:
-//            collectionView.reloadData()
+        case isLabelView:
+            self.notePresenter!.getLabelNotes(label:label)
         case isArchiveView:
             self.notePresenter?.getArchiveNotes()
             

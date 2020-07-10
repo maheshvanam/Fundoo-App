@@ -16,4 +16,5 @@ protocol NoteDelegate {
     func getTrashNotes()
     func restoreFromTrash(note:NoteResponse)
     func deleteNote(note:NoteResponse)
+    func getLabelNotes(label:LabelResponse)
 }
