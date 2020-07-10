@@ -27,7 +27,7 @@ extension LabelViewController: UITableViewDataSource,UITableViewDelegate {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: labelCellReusableId, for: indexPath) as! LabelCell
-        cell.labelTitle.text = labels[indexPath.row].title
+        cell.labelTitle.text = labels[indexPath.row].label
         cell.labelDelete.tag = indexPath.row
         cell.labelDelete.addTarget(self, action: #selector(onDeletePressed(sender: )), for: .touchUpInside)
         cell.layer.borderWidth = cellBorderWidth

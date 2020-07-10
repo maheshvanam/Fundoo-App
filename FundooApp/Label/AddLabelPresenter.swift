@@ -12,8 +12,7 @@ class AddLabelPresenter: AddLabelPresenterDelegate {
     
     var addLabelView: AddLabelViewDelegate
     
-    let dbManager = DatabaseManager()
-    
+    let dbManager = RemoteLabelManager.shared
     init(delegate: AddLabelViewDelegate) {
         self.addLabelView = delegate
     }
@@ -23,9 +22,9 @@ class AddLabelPresenter: AddLabelPresenterDelegate {
 //        return user.labels!.allObjects as! [Label]
   //  }
     
-//    func createLabel() -> Label {
-//        return dbManager.createLabel()
-//    }
+    func createLabel(label:LabelResponse) {
+        return dbManager.createLabel(label: label)
+    }
     
 //    func save() {
 //        dbManager.saveData()

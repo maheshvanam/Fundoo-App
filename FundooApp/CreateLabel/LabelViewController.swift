@@ -13,7 +13,7 @@ let labelCellReusableId = "LabelCell"
 class LabelViewController: UIViewController {
     
     var labelPresenter: LabelPresenterDelegate!
-    var labels:[Label] = []
+    var labels:[LabelResponse] = []
     @IBOutlet var tableview:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

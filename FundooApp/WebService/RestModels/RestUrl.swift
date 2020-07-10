@@ -23,10 +23,12 @@ enum RestUrl  {
     static let GET_REMINDER_NOTES_PATH = BASE_URL_PATH+"notes/getReminderNotesList"
     static let ADD_REMINDER_PATH       = BASE_URL_PATH+"notes/addUpdateReminderNotes"
     static let DELETE_REMINDER_PATH    = BASE_URL_PATH+"notes/removeReminderNotes"
+    static let CREATE_LABEL_URL_PATH = BASE_URL_PATH+"noteLabels"
 }
 
 enum RestConstants {
     static let authId           = "AuthenticatID"
+    static let uId              = "userID"
     static let jsonParsingError = "Error while parsing json"
     static let post             = "POST"
     static let contentTypeKey   = "Content-Type"

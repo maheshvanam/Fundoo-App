@@ -12,7 +12,7 @@ class UpdateLabelViewController: UIViewController, AddLabelViewDelegate {
     @IBOutlet weak var labelTitleField: UITextField!
 
     var addLabelPresenter: AddLabelPresenterDelegate!
-    var label:Label?
+    var label:LabelResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +22,21 @@ class UpdateLabelViewController: UIViewController, AddLabelViewDelegate {
     
     func updateTextField(){
         if let label = self.label {
-            labelTitleField.text = label.title
+            labelTitleField.text = label.label
         }
     }
     
     @IBAction func onSaveButtonTapped(sender: UIButton) {
-        //if let title = labelTitleField.text {
-//            if label == nil {
-//                self.label = self.addLabelPresenter.createLabel()
-//            }
-//            self.label!.title = title
-//            self.addLabelPresenter.save()
-//            labelTitleField.text = ""
-      //  }
+        if let title = labelTitleField.text {
+            if label == nil {
+                let uId = UserDefaults.standard.string(forKey: RestConstants.uId)
+                label = LabelResponse(label: title, isDeleted: false, userId: uId!)
+                self.addLabelPresenter.createLabel(label:label!)
+            }
+            
+            //self.addLabelPresenter.save()
+            labelTitleField.text = ""
+        }
         navigationController?.popViewController(animated: true)
     }
 }
