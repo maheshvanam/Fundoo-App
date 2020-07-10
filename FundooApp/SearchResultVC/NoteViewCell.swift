@@ -18,7 +18,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     @IBOutlet weak var labelCollectionView: UICollectionView!
     var layout:PinterestLayout!
     var addLabelPresenter:AddLabelPresenterDelegate!
-    var dataSource:[Label] = []
+    var dataSource:[LabelResponse] = []
     private let cornerRadius:CGFloat = 15
     private let borderWidth:CGFloat = 0.5
     private let dateFormat      = "MMM d, h:mm a"
@@ -50,7 +50,8 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
                 self.reminderField.text = date
             }
         }
-       // self.dataSource = note.labels?.allObjects as! [Label]
+        self.dataSource = note.noteLabels
+            //note.labels?.allObjects as! [Label]
     }
     
     func updateCellBackground(color:UIColor){

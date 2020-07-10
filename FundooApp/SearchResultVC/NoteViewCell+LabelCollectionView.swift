@@ -23,14 +23,14 @@ extension NoteViewCell :UICollectionViewDelegate,UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = labelCollectionView.dequeueReusableCell(withReuseIdentifier: labelViewCellId, for: indexPath) as! LabelViewCell
-        cell.labelField.text = dataSource[indexPath.item].title
+        cell.labelField.text = dataSource[indexPath.item].label
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let tag = dataSource[indexPath.row]
         let font = UIFont(name: fontName, size: fontSize)!
-        let size = tag.title!.size(withAttributes: [NSAttributedString.Key.font: font])
+        let size = tag.label.size(withAttributes: [NSAttributedString.Key.font: font])
         let dynamicCellWidth = size.width
         return CGSize(width: dynamicCellWidth + padding , height: cellHeight)
     }

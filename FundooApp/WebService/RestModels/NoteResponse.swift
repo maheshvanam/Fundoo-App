@@ -24,6 +24,7 @@ class NoteResponse:Codable {
     var imageUrl:String?
     var linkUrl:String?
     var id:String = ""
+    var noteLabels:[LabelResponse] = []
     var user: UserResponse?
     var userId:String?
     
