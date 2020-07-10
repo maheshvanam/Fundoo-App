@@ -24,6 +24,8 @@ extension NoteViewCell :UICollectionViewDelegate,UICollectionViewDataSource,UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = labelCollectionView.dequeueReusableCell(withReuseIdentifier: labelViewCellId, for: indexPath) as! LabelViewCell
         cell.labelField.text = dataSource[indexPath.item].label
+        cell.removeButton.tag = indexPath.item
+              cell.removeButton.addTarget(self, action: #selector(removeLabel(sender:)), for: .touchUpInside)
         return cell
     }
     
@@ -31,7 +33,7 @@ extension NoteViewCell :UICollectionViewDelegate,UICollectionViewDataSource,UICo
         let tag = dataSource[indexPath.row]
         let font = UIFont(name: fontName, size: fontSize)!
         let size = tag.label.size(withAttributes: [NSAttributedString.Key.font: font])
-        let dynamicCellWidth = size.width
+        let dynamicCellWidth = size.width + 30
         return CGSize(width: dynamicCellWidth + padding , height: cellHeight)
     }
     
@@ -41,5 +43,10 @@ extension NoteViewCell :UICollectionViewDelegate,UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return cellSpacing
+    }
+    
+    @objc func removeLabel(sender:UIButton) {
+        let index = sender.tag
+        let label = dataSource[index]
     }
 }

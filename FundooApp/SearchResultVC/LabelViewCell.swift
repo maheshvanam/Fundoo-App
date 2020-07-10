@@ -11,6 +11,7 @@ import UIKit
 class LabelViewCell: UICollectionViewCell {
 
     @IBOutlet weak var labelField: UILabel!
+    @IBOutlet weak var removeButton: UIButton!
     
     private let cornerRadius:CGFloat = 8
     private let borderWidth:CGFloat = 0.5
