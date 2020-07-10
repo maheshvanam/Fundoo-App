@@ -24,7 +24,7 @@ class EditNoteViewController: UIViewController {
     var editNotePresenter: EditNoteDelegate!
    // var note:Note!
     var note:NoteResponse!
-    var labels:[Label] = []
+    var labels:[LabelResponse] = []
     let colors = Constants.colors
     var currentColor:String!
     var slideUpVCpresenter = SlideUpVCPresenter()
@@ -62,10 +62,8 @@ class EditNoteViewController: UIViewController {
     }
     
     func addLabelsToNote(){
-//        if (labels.count != 0) {
-//            editNotePresenter.addNoteToLabels(note:note,labels: labels)
-//            note.labels?.adding(labels)
-//        }
+        if (labels.count != 0) {            editNotePresenter.addNoteToLabels(note:note,labels: labels)
+        }
     }
 
     @objc func addLabel() {
@@ -79,7 +77,7 @@ class EditNoteViewController: UIViewController {
     
     @objc func onBackPressed(){
       //  self.note.reminder[0] = reminderDate != nil ? reminderDate.toString() : ""
-//        self.addLabelsToNote()
+        self.addLabelsToNote()
         self.editNotePresenter.saveNote()
         NotificationCenter.default.removeObserver(self)
         noteIsNew = nil

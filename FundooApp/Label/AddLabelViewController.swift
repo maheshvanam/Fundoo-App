@@ -20,8 +20,8 @@ class AddLabelViewController: UIViewController {
     @IBOutlet var labelTableView:UITableView!
     var addLabelPresenter: AddLabelPresenterDelegate!
     
-    var origainalLabels: [Label] = []
-    var currentLabels:[Label] = []
+    var origainalLabels: [LabelResponse] = []
+    var currentLabels:[LabelResponse] = []
     var searchController:UISearchController!
     var searchTerm:String = ""
     var items = [SelectableItem]()
@@ -39,13 +39,18 @@ class AddLabelViewController: UIViewController {
         labelTableView.delegate = self
         labelTableView.dataSource = self
         labelTableView.separatorStyle = .none
-       // origainalLabels = self.getLabels()
-        currentLabels = origainalLabels
+        self.loadLabels()
     }
     
-//    func getLabels()-> [Label] {
-//        return addLabelPresenter.getLabels()
-//    }
+    func loadLabels() {
+        self.addLabelPresenter.getLabels { [weak self](labels) in
+            DispatchQueue.main.async {
+                self?.origainalLabels = labels
+                self?.currentLabels = self!.origainalLabels as [LabelResponse]
+                self?.labelTableView.reloadData()
+            }
+        }
+    }
     
     func cofigureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
@@ -62,7 +67,7 @@ class AddLabelViewController: UIViewController {
             currentLabels   = origainalLabels
             
             let filteredResults = currentLabels.filter {
-                $0.title!.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())
+                $0.label.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())
             }
              self.searchTerm   = searchTerm
              currentLabels = filteredResults

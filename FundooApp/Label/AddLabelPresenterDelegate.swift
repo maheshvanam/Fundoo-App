@@ -9,7 +9,7 @@
 import Foundation
 
 protocol AddLabelPresenterDelegate {
-//    func getLabels()-> [Label]
+    func getLabels(callback:@escaping([LabelResponse])->Void)
     func createLabel(label:LabelResponse)
     func updateLabel(label:LabelResponse)
 //    func save()

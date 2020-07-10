@@ -11,6 +11,7 @@ class EditNotePresenterImpl: EditNoteDelegate {
     
     var editNoteView: EditNotePresenterDelegate
     let dbManager = RemoteNoteManager.shared
+    let labelManager = RemoteLabelManager.shared
     
     init(delegate: EditNotePresenterDelegate) {
         self.editNoteView = delegate
@@ -44,13 +45,10 @@ class EditNotePresenterImpl: EditNoteDelegate {
         dbManager.addToArchive(note: note)
     }
     
-    func addNoteToLabels(note:Note,labels: [Label]) {
-//        let user = dbManager.getCurrentUser()
-//        for label in labels {
-//            label.addToNotes(note)
-//            user.addToLabels(label)
-//            dbManager.saveData()
-//        }
+    func addNoteToLabels(note:NoteResponse,labels: [LabelResponse]) {
+        for label in labels {
+            labelManager.addLabelToNote(note: note, label: label)
+        }
     }
     
     func addReminder(note:NoteResponse) {

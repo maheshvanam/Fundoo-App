@@ -9,7 +9,7 @@
 import Foundation
 protocol EditNoteDelegate {
     func saveNote()
-    func addNoteToLabels(note:Note,labels: [Label])
+    func addNoteToLabels(note:NoteResponse,labels: [LabelResponse])
     func addToArchive(note:NoteResponse)
     func addReminder(note:NoteResponse)
     func deleteReminder(note:NoteResponse)

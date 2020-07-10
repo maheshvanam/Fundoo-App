@@ -27,7 +27,7 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
             return cell
         }
         let cell = labelTableView.dequeueReusableCell(withIdentifier: reusableCellId, for: indexPath) as! CheckMarkCell
-        cell.labelTitle.text = currentLabels[indexPath.row].title
+        cell.labelTitle.text = currentLabels[indexPath.row].label
         cell.selectionStyle = .blue
         Helper.setCellBorder(cell: cell)
         return cell

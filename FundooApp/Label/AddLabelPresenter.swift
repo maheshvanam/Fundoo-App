@@ -17,10 +17,11 @@ class AddLabelPresenter: AddLabelPresenterDelegate {
         self.addLabelView = delegate
     }
     
-//    func getLabels() -> [Label] {
-//        let user = dbManager.getCurrentUser()
-//        return user.labels!.allObjects as! [Label]
-  //  }
+    func getLabels(callback:@escaping([LabelResponse])->Void) {
+        dbManager.getLabels(urlPath: RestUrl.GET_LABEL_LIST_URL_PATH) { (labels) in
+                callback(labels)
+        }
+    }
     
     func createLabel(label:LabelResponse) {
         return dbManager.createLabel(label: label)
