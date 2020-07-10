@@ -24,6 +24,7 @@ enum RestUrl  {
     static let ADD_REMINDER_PATH       = BASE_URL_PATH+"notes/addUpdateReminderNotes"
     static let DELETE_REMINDER_PATH    = BASE_URL_PATH+"notes/removeReminderNotes"
     static let CREATE_LABEL_URL_PATH = BASE_URL_PATH+"noteLabels"
+    static let GET_LABEL_LIST_URL_PATH = BASE_URL_PATH+"noteLabels/getNoteLabelList"
 }
 
 enum RestConstants {

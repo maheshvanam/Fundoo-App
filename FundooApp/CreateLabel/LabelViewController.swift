@@ -30,11 +30,13 @@ class LabelViewController: UIViewController {
     }
     
     func reloadDataSource(){
-  //      labels = self.labelPresenter.getLabels()
+    self.labelPresenter.getLabels()
         tableview.reloadData()
     }
 }
 
 extension LabelViewController: LabelViewDelegate {
-    
+    func updateLabelsDataSource(label:[LabelResponse]) {
+        self.labels = label
+    }
 }

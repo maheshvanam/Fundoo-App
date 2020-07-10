@@ -9,5 +9,5 @@
 import Foundation
 
 protocol LabelViewDelegate {
-    
+    func updateLabelsDataSource(label:[LabelResponse])
 }

@@ -14,7 +14,6 @@ class RemoteNoteManager: RemoteNoteService {
     public static let shared = RemoteNoteManager()
     private var notes:[NoteResponse] = []
     var header = HTTPHeaders()
-    
     let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
     
     private init(){ }
@@ -33,7 +32,7 @@ class RemoteNoteManager: RemoteNoteService {
     }
     
     func insertUserNote(note: NoteResponse) {
-        print(note.color)
+        
         let params = ["title":note.title,"description":note.description,"isArchived":false,"color":note.color] as [String:Any]
         self.postRequest(params: params, urlPath: RestUrl.ADD_NOTE_URL_PATH )
     }

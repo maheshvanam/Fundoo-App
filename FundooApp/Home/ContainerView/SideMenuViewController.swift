@@ -32,6 +32,11 @@ let signOutOption           = 3
 
 class SideMenuViewController: UITableViewController, LabelViewDelegate {
     
+    func updateLabelsDataSource(label: [LabelResponse]) {
+    
+    }
+    
+    
     var data:[Label] = []
     var menuOption:SideMenuDelegate!
     var labelPresenter: LabelPresenterDelegate!
