@@ -39,13 +39,11 @@ extension AddLabelViewController: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isNewLabel {
-//            let label = addLabelPresenter.createLabel()
-//            label.title = self.searchTerm
-//            addLabelPresenter.save()
-//            origainalLabels.append(label)
-//            currentLabels = origainalLabels
-//            isNewLabel = false
-//            labelTableView.reloadData()
+            let uid = UserDefaults.standard.string(forKey: RestConstants.uId)
+            let label = LabelResponse(label: self.searchTerm, isDeleted: false, userId: uid! )
+            self.addLabelPresenter.createLabel(label: label)
+            isNewLabel = false
+            self.loadLabels()
         }
         else{
             let cell = tableView.cellForRow(at: indexPath) as! CheckMarkCell
