@@ -20,9 +20,19 @@ class RemoteNoteManager: RemoteNoteService {
     
     func getAllNotes(urlPath:String,callback: @escaping([NoteResponse])-> Void)  {
         let request = AF.request(urlPath, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
-        request.responseDecodable(of: ResultData.self) { response in
+        request.responseDecodable(of: ResultData.self) { [weak self] response in
             guard let data = response.value?.data else {
                 if let err = response.error {
+                    if urlPath == RestUrl.GET_ALL_NOTES_PATH {
+                        let localDb = CoreDataServiceImpl.shared
+                        let localUser = localDb.getCurrentUser()
+                        let localNotes = localUser.notes!.allObjects as! [Note]
+                        self?.notes = []
+                        for note in localNotes {
+                            self?.notes.append(NoteResponse(localNote:note))
+                        }
+                        callback(self!.notes)
+                    }
                     print(err.localizedDescription as String)
                 }
                 return
@@ -58,6 +68,7 @@ class RemoteNoteManager: RemoteNoteService {
                 let localNote = localDb.createNote()
                 localNote.title = note.title
                 localNote.note = note.description
+                localNote.color = note.color
                 localNote.owner = localUser
                 localDb.saveData()
             case .failure(let err):

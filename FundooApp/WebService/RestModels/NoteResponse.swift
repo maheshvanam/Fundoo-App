@@ -36,4 +36,10 @@ class NoteResponse:Codable {
         self.title = title
         self.description = description
     }
+    
+    init(localNote:Note) {
+        self.title = localNote.title!
+        self.description = localNote.note!
+        self.color = localNote.color!
+    }
 }
