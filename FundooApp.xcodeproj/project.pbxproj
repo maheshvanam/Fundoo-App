@@ -17,6 +17,7 @@
 		8400ACA2249FF4D900B9A936 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8400ACA0249FF4D900B9A936 /* LabelCell.xib */; };
 		8401645B24A1E0A6001C95B0 /* Reminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8401645924A1E0A6001C95B0 /* Reminder.storyboard */; };
 		8401645E24A1E7E2001C95B0 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */; };
+		8403D9A124B4E465001899E3 /* RestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403D9A024B4E465001899E3 /* RestUrl.swift */; };
 		840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840557732492BDD400115EE2 /* SlideUpMenuOption.swift */; };
 		840752512488F05A0075EF51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752502488F05A0075EF51 /* Constants.swift */; };
 		840752532489173E0075EF51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840752522489173E0075EF51 /* ProfileViewController.swift */; };
@@ -56,6 +57,7 @@
 		8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1C024915BA1004DD694 /* EditNoteDelegate.swift */; };
 		8412B1C324915C6D004DD694 /* EditNotePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */; };
 		8412B1C524917402004DD694 /* EditNoteVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412B1C424917402004DD694 /* EditNoteVC+Extension.swift */; };
+		8416233024B90B6200C67EA7 /* NoteCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416232F24B90B6200C67EA7 /* NoteCellPresenter.swift */; };
 		8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D298247A519D00C4F93A /* AppDelegate.swift */; };
 		8419D29B247A519D00C4F93A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29A247A519D00C4F93A /* SceneDelegate.swift */; };
 		8419D29D247A519D00C4F93A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419D29C247A519D00C4F93A /* SignInViewController.swift */; };
@@ -70,10 +72,11 @@
 		841CC90924940DF4001C8B9D /* NoteVC+DragDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */; };
 		841CC90B24940E16001C8B9D /* NoteVC+DropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */; };
 		841CEB9E248F705A004E76D4 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CEB9D248F705A004E76D4 /* CoreDataError.swift */; };
-		841E61B824B1DA0F002DB0CE /* FundooUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E61B724B1DA0F002DB0CE /* FundooUser.swift */; };
+		841E61B824B1DA0F002DB0CE /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E61B724B1DA0F002DB0CE /* UserResponse.swift */; };
 		841E61BA24B1DA6C002DB0CE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E61B924B1DA6C002DB0CE /* APIError.swift */; };
 		841E66EC249F4DF1002B5DD2 /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */; };
 		841E66EE249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */; };
+		8420520924B58DE2006E7C56 /* RemoteNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420520824B58DE2006E7C56 /* RemoteNoteService.swift */; };
 		84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C322486B5ED0041EBDC /* SideMenuViewController.swift */; };
 		84224C352486BAA60041EBDC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84224C342486BAA60041EBDC /* NoteViewController.swift */; };
 		842460AA249A7F6300B38CBA /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842460A8249A7F6200B38CBA /* Features.storyboard */; };
@@ -114,11 +117,9 @@
 		8477A49424A5184A00DDEAFA /* NoteViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49224A5184A00DDEAFA /* NoteViewCell.xib */; };
 		8477A49724A51D1400DDEAFA /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49524A51D1400DDEAFA /* LabelViewCell.swift */; };
 		8477A49824A51D1400DDEAFA /* LabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8477A49624A51D1400DDEAFA /* LabelViewCell.xib */; };
-		8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */; };
 		8478692B24ADAEA200962ACD /* FirebaseDatbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */; };
-		8478A7C524B04CD400930B66 /* UserDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C424B04CD400930B66 /* UserDBManager.swift */; };
-		8478A7C724B04D1700930B66 /* UserDBManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */; };
-		8478A7C924B04D4E00930B66 /* UserDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C824B04D4E00930B66 /* UserDBService.swift */; };
+		8478A7C524B04CD400930B66 /* RemoteUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C424B04CD400930B66 /* RemoteUserManager.swift */; };
+		8478A7C924B04D4E00930B66 /* RemoteUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7C824B04D4E00930B66 /* RemoteUserService.swift */; };
 		8478A7CB24B0532700930B66 /* RestApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478A7CA24B0532700930B66 /* RestApiTests.swift */; };
 		847B213224AAED5900E273C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847B213124AAED5800E273C8 /* GoogleService-Info.plist */; };
 		847B213424AB1DAA00E273C8 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */; };
@@ -137,11 +138,18 @@
 		84B1138E24AC74F700092E9D /* NoteDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1138D24AC74F700092E9D /* NoteDbManager.swift */; };
 		84B49C55247EBE5B00D3C940 /* UITextField+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */; };
 		84B49C57247EE94400D3C940 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49C56247EE94400D3C940 /* ResultType.swift */; };
+		84B553D424B61CB00021DFFA /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B553D324B61CB00021DFFA /* ResultData.swift */; };
 		84C119C4247F9FD6006421AE /* SignInViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */; };
+		84C6941624B832BA00B25BD0 /* LabelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6941524B832BA00B25BD0 /* LabelResponse.swift */; };
+		84C6941824B8370E00B25BD0 /* RemoteLabelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6941724B8370E00B25BD0 /* RemoteLabelManager.swift */; };
+		84C6941A24B83B5500B25BD0 /* RemoteLabelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6941924B83B5500B25BD0 /* RemoteLabelService.swift */; };
+		84C6941C24B84A8D00B25BD0 /* LabelDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6941B24B84A8D00B25BD0 /* LabelDataResponse.swift */; };
 		84C85D7B24A154B3009CDCAF /* UpdateLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */; };
 		84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C7CF248655CA002AB435 /* ContainerViewController.swift */; };
 		84D5C039247AFC73007EBF8A /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */; };
 		84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB20752494B3D600652606 /* SideMenuOption.swift */; };
+		84EEAB7C24B23DDE0011A099 /* NoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7B24B23DDE0011A099 /* NoteResponse.swift */; };
+		84EEAB7E24B24D580011A099 /* RemoteNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAB7D24B24D580011A099 /* RemoteNoteManager.swift */; };
 		84F3CE3F24A0C523009EE22D /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */; };
 		84F3CE4024A0C523009EE22D /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */; };
 		84F7A8EB249E54BE00480ACE /* CreateLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */; };
@@ -180,6 +188,7 @@
 		8400ACA0249FF4D900B9A936 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		8401645A24A1E0A6001C95B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Reminder.storyboard; sourceTree = "<group>"; };
 		8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
+		8403D9A024B4E465001899E3 /* RestUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestUrl.swift; sourceTree = "<group>"; };
 		840557732492BDD400115EE2 /* SlideUpMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpMenuOption.swift; sourceTree = "<group>"; };
 		840752502488F05A0075EF51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		840752522489173E0075EF51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +228,7 @@
 		8412B1C024915BA1004DD694 /* EditNoteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteDelegate.swift; sourceTree = "<group>"; };
 		8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenterDelegate.swift; sourceTree = "<group>"; };
 		8412B1C424917402004DD694 /* EditNoteVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditNoteVC+Extension.swift"; sourceTree = "<group>"; };
+		8416232F24B90B6200C67EA7 /* NoteCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellPresenter.swift; sourceTree = "<group>"; };
 		8419D295247A519D00C4F93A /* FundooApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundooApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8419D298247A519D00C4F93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8419D29A247A519D00C4F93A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,10 +247,11 @@
 		841CC90824940DF4001C8B9D /* NoteVC+DragDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+DragDelegate.swift"; sourceTree = "<group>"; };
 		841CC90A24940E16001C8B9D /* NoteVC+DropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC+DropDelegate.swift"; sourceTree = "<group>"; };
 		841CEB9D248F705A004E76D4 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
-		841E61B724B1DA0F002DB0CE /* FundooUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundooUser.swift; sourceTree = "<group>"; };
+		841E61B724B1DA0F002DB0CE /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		841E61B924B1DA6C002DB0CE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLabelViewController+SearchController.swift"; sourceTree = "<group>"; };
+		8420520824B58DE2006E7C56 /* RemoteNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNoteService.swift; sourceTree = "<group>"; };
 		84224C322486B5ED0041EBDC /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84224C342486BAA60041EBDC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		842460A9249A7F6300B38CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Features.storyboard; sourceTree = "<group>"; };
@@ -281,11 +292,9 @@
 		8477A49224A5184A00DDEAFA /* NoteViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewCell.xib; sourceTree = "<group>"; };
 		8477A49524A51D1400DDEAFA /* LabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewCell.swift; sourceTree = "<group>"; };
 		8477A49624A51D1400DDEAFA /* LabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewCell.xib; sourceTree = "<group>"; };
-		8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatbaseError.swift; sourceTree = "<group>"; };
-		8478A7C424B04CD400930B66 /* UserDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBManager.swift; sourceTree = "<group>"; };
-		8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBManagerImpl.swift; sourceTree = "<group>"; };
-		8478A7C824B04D4E00930B66 /* UserDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBService.swift; sourceTree = "<group>"; };
+		8478A7C424B04CD400930B66 /* RemoteUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserManager.swift; sourceTree = "<group>"; };
+		8478A7C824B04D4E00930B66 /* RemoteUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserService.swift; sourceTree = "<group>"; };
 		8478A7CA24B0532700930B66 /* RestApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiTests.swift; sourceTree = "<group>"; };
 		847B213124AAED5800E273C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
@@ -304,11 +313,18 @@
 		84B1138D24AC74F700092E9D /* NoteDbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDbManager.swift; sourceTree = "<group>"; };
 		84B49C54247EBE5B00D3C940 /* UITextField+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+BackgroundColor.swift"; sourceTree = "<group>"; };
 		84B49C56247EE94400D3C940 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		84B553D324B61CB00021DFFA /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		84C119C3247F9FD6006421AE /* SignInViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewPresenter.swift; sourceTree = "<group>"; };
+		84C6941524B832BA00B25BD0 /* LabelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelResponse.swift; sourceTree = "<group>"; };
+		84C6941724B8370E00B25BD0 /* RemoteLabelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLabelManager.swift; sourceTree = "<group>"; };
+		84C6941924B83B5500B25BD0 /* RemoteLabelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLabelService.swift; sourceTree = "<group>"; };
+		84C6941B24B84A8D00B25BD0 /* LabelDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDataResponse.swift; sourceTree = "<group>"; };
 		84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLabelViewController.swift; sourceTree = "<group>"; };
 		84D0C7CF248655CA002AB435 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84D5C038247AFC73007EBF8A /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		84EB20752494B3D600652606 /* SideMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOption.swift; sourceTree = "<group>"; };
+		84EEAB7B24B23DDE0011A099 /* NoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteResponse.swift; sourceTree = "<group>"; };
+		84EEAB7D24B24D580011A099 /* RemoteNoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNoteManager.swift; sourceTree = "<group>"; };
 		84F3CE3D24A0C523009EE22D /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelCell.swift; sourceTree = "<group>"; };
@@ -358,15 +374,13 @@
 		8401645C24A1E79E001C95B0 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */,
-				842C2486248AA9B400489314 /* ReminderViewController.swift */,
-				8435B7FC24A2986A008056C6 /* ReminderPresenterDelegate.swift */,
-				8435B7FE24A29889008056C6 /* ReminderPresenter.swift */,
+				84B9C7CC24BB86C6006FB504 /* presenter */,
+				84B9C7CB24BB86AC006FB504 /* View */,
 			);
 			path = Reminder;
 			sourceTree = "<group>";
 		};
-		840752582489266C0075EF51 /* ProfilePresenter */ = {
+		840752582489266C0075EF51 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				84126EC9248950A800F0FFBB /* Extension */,
@@ -374,21 +388,16 @@
 				84075256248926400075EF51 /* ProfilePresenter.swift */,
 				8407525B248927440075EF51 /* ProfilePresenterImpl.swift */,
 			);
-			path = ProfilePresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
-		8408F9AC24968FBA009155ED /* SearchView */ = {
+		8408F9AC24968FBA009155ED /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				8408F9B72496AB34009155ED /* Extentsions */,
-				8408F9AD24969026009155ED /* SearchVC.swift */,
-				8408F9AF24969661009155ED /* SearchVCPresenter.swift */,
-				8408F9B12496967F009155ED /* SearchVCPresenterImpl.swift */,
-				8408F9B3249696F0009155ED /* SearchVCPresenterDelegate.swift */,
-				8408F9B52496A612009155ED /* SearchCell.swift */,
-				8408F9C52496C418009155ED /* SearchColorCell.swift */,
+				84B9C7CE24BB8788006FB504 /* Presenter */,
+				84B9C7CD24BB874D006FB504 /* View */,
 			);
-			path = SearchView;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		8408F9B72496AB34009155ED /* Extentsions */ = {
@@ -401,7 +410,7 @@
 			path = Extentsions;
 			sourceTree = "<group>";
 		};
-		8408F9C02496B647009155ED /* SearchResultVC */ = {
+		8408F9C02496B647009155ED /* SearchResult */ = {
 			isa = PBXGroup;
 			children = (
 				8408F9C12496B69C009155ED /* SearchResultVC.swift */,
@@ -413,8 +422,9 @@
 				84AA3B3424A8F541009562E1 /* SearchResultVC+CollectionView.swift */,
 				84AA3B3624A8F75B009562E1 /* NoteViewCell+LabelCollectionView.swift */,
 				84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */,
+				8416232F24B90B6200C67EA7 /* NoteCellPresenter.swift */,
 			);
-			path = SearchResultVC;
+			path = SearchResult;
 			sourceTree = "<group>";
 		};
 		84126EC82489506F00F0FFBB /* delegate */ = {
@@ -434,15 +444,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		84126ECA2489513E00F0FFBB /* ProfileView */ = {
+		84126ECA2489513E00F0FFBB /* View */ = {
 			isa = PBXGroup;
 			children = (
 				840752522489173E0075EF51 /* ProfileViewController.swift */,
 			);
-			path = ProfileView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		84126ECB2489521500F0FFBB /* NoteView */ = {
+		84126ECB2489521500F0FFBB /* View */ = {
 			isa = PBXGroup;
 			children = (
 				84224C342486BAA60041EBDC /* NoteViewController.swift */,
@@ -452,10 +462,10 @@
 				843BBBB2248D86EC00155FC4 /* MosaicLayoutDelegate.swift */,
 				849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */,
 			);
-			path = NoteView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		84126ECC2489529B00F0FFBB /* NotePresenter */ = {
+		84126ECC2489529B00F0FFBB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				84126ED42489551B00F0FFBB /* Extension */,
@@ -463,7 +473,7 @@
 				84126ED02489535100F0FFBB /* NotePresenter.swift */,
 				84126ED2248953C000F0FFBB /* NotePresenterImpl.swift */,
 			);
-			path = NotePresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		84126ECD248952AF00F0FFBB /* Delegate */ = {
@@ -500,7 +510,7 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
-		8412B1BB24915A71004DD694 /* EditNotePresenter */ = {
+		8412B1BB24915A71004DD694 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				8412B1BC24915AB8004DD694 /* EditNotePresenter.swift */,
@@ -509,7 +519,7 @@
 				8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */,
 				8412B1C424917402004DD694 /* EditNoteVC+Extension.swift */,
 			);
-			path = EditNotePresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		8419D28C247A519D00C4F93A = {
@@ -536,18 +546,16 @@
 			isa = PBXGroup;
 			children = (
 				8478A7C324B04C3E00930B66 /* WebService */,
-				8477A49924A530CC00DDEAFA /* PinterestLayout */,
+				84B9C7C224BB83A6006FB504 /* EditNote */,
+				84B9C7C124BB8325006FB504 /* Profile */,
 				8401645C24A1E79E001C95B0 /* Reminder */,
-				84FD41BA24A14AB300ACADC1 /* AddLabel */,
-				84FCC36E249F8D3200FE92CA /* CreateLabel */,
 				842460AB249A90EB00B38CBA /* Label */,
-				8432FDD0248F83A4006D7EF5 /* EditNoteView */,
-				8412B1BB24915A71004DD694 /* EditNotePresenter */,
-				8408F9C02496B647009155ED /* SearchResultVC */,
-				8408F9AC24968FBA009155ED /* SearchView */,
-				84634EBA248268990098D004 /* Home */,
-				84634EB62482659F0098D004 /* Login */,
-				84634EB2248264470098D004 /* Registration */,
+				8408F9C02496B647009155ED /* SearchResult */,
+				8408F9AC24968FBA009155ED /* Search */,
+				84B9C7C324BB8438006FB504 /* Notes */,
+				84634EBA248268990098D004 /* Dashboard */,
+				84634EB62482659F0098D004 /* SignIn */,
+				84634EB2248264470098D004 /* SignUp */,
 				84B49C53247EBE1800D3C940 /* Util */,
 				84126ED924897E7B00F0FFBB /* DataModel */,
 				84E26B47247C240C000D8BE5 /* Service */,
@@ -576,8 +584,13 @@
 		841E61B424B1D905002DB0CE /* RestModels */ = {
 			isa = PBXGroup;
 			children = (
-				841E61B724B1DA0F002DB0CE /* FundooUser.swift */,
+				841E61B724B1DA0F002DB0CE /* UserResponse.swift */,
 				841E61B924B1DA6C002DB0CE /* APIError.swift */,
+				84EEAB7B24B23DDE0011A099 /* NoteResponse.swift */,
+				8403D9A024B4E465001899E3 /* RestUrl.swift */,
+				84B553D324B61CB00021DFFA /* ResultData.swift */,
+				84C6941524B832BA00B25BD0 /* LabelResponse.swift */,
+				84C6941B24B84A8D00B25BD0 /* LabelDataResponse.swift */,
 			);
 			path = RestModels;
 			sourceTree = "<group>";
@@ -585,22 +598,15 @@
 		842460AB249A90EB00B38CBA /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				842460AC249A913A00B38CBA /* CheckMarkCell.swift */,
-				842460AD249A913A00B38CBA /* CheckMarkCell.xib */,
-				84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */,
-				84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */,
-				842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */,
-				841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */,
-				841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */,
-				842460B0249A956200B38CBA /* AddLabelViewController.swift */,
-				84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */,
-				84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */,
-				84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */,
+				84B9C7CA24BB8630006FB504 /* Model */,
+				84B9C7C524BB84F1006FB504 /* View */,
+				84FCC36E249F8D3200FE92CA /* CreateLabel */,
+				84B9C7C624BB8528006FB504 /* Presenter */,
 			);
 			path = Label;
 			sourceTree = "<group>";
 		};
-		8432FDD0248F83A4006D7EF5 /* EditNoteView */ = {
+		8432FDD0248F83A4006D7EF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */,
@@ -615,10 +621,10 @@
 				84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */,
 				8435B7FA24A2902A008056C6 /* EditNoteViewController+Reminder.swift */,
 			);
-			path = EditNoteView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		843591352484321E00E58862 /* ContainerView */ = {
+		843591352484321E00E58862 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				84D0C7CF248655CA002AB435 /* ContainerViewController.swift */,
@@ -628,10 +634,8 @@
 				84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */,
 				84FD41B224A136BD00ACADC1 /* SideMenuLabelCell.swift */,
 				84FD41B324A136BD00ACADC1 /* SideMenuLabelCell.xib */,
-				8408AAEF24A46C6D003F04E4 /* SideMenuPresenterDelegate.swift */,
-				8408AAF124A46C98003F04E4 /* SideMenuPresenter.swift */,
 			);
-			path = ContainerView;
+			path = View;
 			sourceTree = "<group>";
 		};
 		843591382484491E00E58862 /* Modal */ = {
@@ -642,14 +646,14 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
-		84634EB2248264470098D004 /* Registration */ = {
+		84634EB2248264470098D004 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				84634EB52482653D0098D004 /* Modal */,
 				84634EB4248264FF0098D004 /* View */,
 				84634EB32482647A0098D004 /* Presenter */,
 			);
-			path = Registration;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		84634EB32482647A0098D004 /* Presenter */ = {
@@ -680,13 +684,13 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
-		84634EB62482659F0098D004 /* Login */ = {
+		84634EB62482659F0098D004 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
 				84634EB9248265C60098D004 /* Presenter */,
 				84634EB8248265BC0098D004 /* View */,
 			);
-			path = Login;
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		84634EB8248265BC0098D004 /* View */ = {
@@ -709,34 +713,25 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		84634EBA248268990098D004 /* Home */ = {
+		84634EBA248268990098D004 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				84126ECB2489521500F0FFBB /* NoteView */,
-				84126ECC2489529B00F0FFBB /* NotePresenter */,
-				84126ECA2489513E00F0FFBB /* ProfileView */,
-				840752582489266C0075EF51 /* ProfilePresenter */,
-				843591382484491E00E58862 /* Modal */,
-				843591352484321E00E58862 /* ContainerView */,
+				84B9C7C424BB8499006FB504 /* Presenter */,
+				843591352484321E00E58862 /* View */,
 			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		8477A49924A530CC00DDEAFA /* PinterestLayout */ = {
-			isa = PBXGroup;
-			children = (
-				8477A49A24A5313B00DDEAFA /* PinterestLayout.swift */,
-			);
-			path = PinterestLayout;
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		8478A7C324B04C3E00930B66 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
 				841E61B424B1D905002DB0CE /* RestModels */,
-				8478A7C424B04CD400930B66 /* UserDBManager.swift */,
-				8478A7C624B04D1700930B66 /* UserDBManagerImpl.swift */,
-				8478A7C824B04D4E00930B66 /* UserDBService.swift */,
+				8478A7C424B04CD400930B66 /* RemoteUserManager.swift */,
+				8478A7C824B04D4E00930B66 /* RemoteUserService.swift */,
+				84EEAB7D24B24D580011A099 /* RemoteNoteManager.swift */,
+				8420520824B58DE2006E7C56 /* RemoteNoteService.swift */,
+				84C6941724B8370E00B25BD0 /* RemoteLabelManager.swift */,
+				84C6941924B83B5500B25BD0 /* RemoteLabelService.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -754,6 +749,146 @@
 				8472AD422492176F0066CD7A /* Dictionary+Extension.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		84B9C7C124BB8325006FB504 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				84126ECA2489513E00F0FFBB /* View */,
+				840752582489266C0075EF51 /* Presenter */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		84B9C7C224BB83A6006FB504 /* EditNote */ = {
+			isa = PBXGroup;
+			children = (
+				8412B1BB24915A71004DD694 /* Presenter */,
+				8432FDD0248F83A4006D7EF5 /* View */,
+			);
+			path = EditNote;
+			sourceTree = "<group>";
+		};
+		84B9C7C324BB8438006FB504 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				843591382484491E00E58862 /* Modal */,
+				84126ECC2489529B00F0FFBB /* Presenter */,
+				84126ECB2489521500F0FFBB /* View */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		84B9C7C424BB8499006FB504 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8408AAEF24A46C6D003F04E4 /* SideMenuPresenterDelegate.swift */,
+				8408AAF124A46C98003F04E4 /* SideMenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84B9C7C524BB84F1006FB504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */,
+				84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */,
+				841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */,
+				842460B0249A956200B38CBA /* AddLabelViewController.swift */,
+				84B9C7C724BB8544006FB504 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B9C7C624BB8528006FB504 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */,
+				84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84B9C7C724BB8544006FB504 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */,
+				84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */,
+				842460AD249A913A00B38CBA /* CheckMarkCell.xib */,
+				842460AC249A913A00B38CBA /* CheckMarkCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84B9C7C824BB85C1006FB504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8400ACA0249FF4D900B9A936 /* LabelCell.xib */,
+				8400AC9F249FF4D900B9A936 /* LabelCell.swift */,
+				84FCC36F249F8D8300FE92CA /* LabelViewController.swift */,
+				84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */,
+				8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */,
+				84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */,
+				8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */,
+				84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B9C7C924BB85E4006FB504 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8400AC97249FDE1500B9A936 /* LabelPresenter.swift */,
+				8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84B9C7CA24BB8630006FB504 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84B9C7CB24BB86AC006FB504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */,
+				842C2486248AA9B400489314 /* ReminderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B9C7CC24BB86C6006FB504 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8435B7FC24A2986A008056C6 /* ReminderPresenterDelegate.swift */,
+				8435B7FE24A29889008056C6 /* ReminderPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		84B9C7CD24BB874D006FB504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8408F9C52496C418009155ED /* SearchColorCell.swift */,
+				8408F9B52496A612009155ED /* SearchCell.swift */,
+				8408F9AD24969026009155ED /* SearchVC.swift */,
+				8408F9B72496AB34009155ED /* Extentsions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B9C7CE24BB8788006FB504 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8408F9AF24969661009155ED /* SearchVCPresenter.swift */,
+				8408F9B3249696F0009155ED /* SearchVCPresenterDelegate.swift */,
+				8408F9B12496967F009155ED /* SearchVCPresenterImpl.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		84E26B44247C23D1000D8BE5 /* Sotoryboard */ = {
@@ -787,25 +922,10 @@
 		84FCC36E249F8D3200FE92CA /* CreateLabel */ = {
 			isa = PBXGroup;
 			children = (
-				84FCC36F249F8D8300FE92CA /* LabelViewController.swift */,
-				84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */,
-				84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */,
-				8400AC97249FDE1500B9A936 /* LabelPresenter.swift */,
-				8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */,
-				8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */,
-				8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */,
-				8400AC9F249FF4D900B9A936 /* LabelCell.swift */,
-				8400ACA0249FF4D900B9A936 /* LabelCell.xib */,
+				84B9C7C924BB85E4006FB504 /* Presenter */,
+				84B9C7C824BB85C1006FB504 /* View */,
 			);
 			path = CreateLabel;
-			sourceTree = "<group>";
-		};
-		84FD41BA24A14AB300ACADC1 /* AddLabel */ = {
-			isa = PBXGroup;
-			children = (
-				84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */,
-			);
-			path = AddLabel;
 			sourceTree = "<group>";
 		};
 		D7F7EC699934A3278590A14B /* Frameworks */ = {
@@ -1001,6 +1121,7 @@
 				84B1138E24AC74F700092E9D /* NoteDbManager.swift in Sources */,
 				843BBBB1248D861C00155FC4 /* MosaicLayoutAttributes.swift in Sources */,
 				84289819248165CD009AA1D9 /* SignUpViewPresenterServiceImpl.swift in Sources */,
+				84C6941A24B83B5500B25BD0 /* RemoteLabelService.swift in Sources */,
 				840752512488F05A0075EF51 /* Constants.swift in Sources */,
 				841CC90924940DF4001C8B9D /* NoteVC+DragDelegate.swift in Sources */,
 				8412B1C324915C6D004DD694 /* EditNotePresenterDelegate.swift in Sources */,
@@ -1010,17 +1131,19 @@
 				84D0C7D0248655CA002AB435 /* ContainerViewController.swift in Sources */,
 				8419D2BE247AD6AC00C4F93A /* SignupViewContoller.swift in Sources */,
 				842584C124A9B4F6000738B8 /* User+CoreDataClass.swift in Sources */,
+				8403D9A124B4E465001899E3 /* RestUrl.swift in Sources */,
 				8435B7FF24A29889008056C6 /* ReminderPresenter.swift in Sources */,
 				84126EDB24897ED300F0FFBB /* NoteModel.swift in Sources */,
-				8477A49B24A5313B00DDEAFA /* PinterestLayout.swift in Sources */,
 				84F7A8EB249E54BE00480ACE /* CreateLabelCell.swift in Sources */,
 				84EB20762494B3D600652606 /* SideMenuOption.swift in Sources */,
 				842584BF24A9B4F6000738B8 /* Label+CoreDataClass.swift in Sources */,
 				842460B1249A956200B38CBA /* AddLabelViewController.swift in Sources */,
 				8408F9C62496C418009155ED /* SearchColorCell.swift in Sources */,
 				841BBAE524802E6F0080C591 /* SignUpViewController+UITextFieldDelegate.swift in Sources */,
+				8416233024B90B6200C67EA7 /* NoteCellPresenter.swift in Sources */,
 				842584C024A9B4F6000738B8 /* Label+CoreDataProperties.swift in Sources */,
 				849FE94E248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift in Sources */,
+				84C6941C24B84A8D00B25BD0 /* LabelDataResponse.swift in Sources */,
 				8478692B24ADAEA200962ACD /* FirebaseDatbaseError.swift in Sources */,
 				84FCC370249F8D8300FE92CA /* LabelViewController.swift in Sources */,
 				8400AC9A249FDE3800B9A936 /* LabelPresenterDelegate.swift in Sources */,
@@ -1047,7 +1170,7 @@
 				8408F9B4249696F0009155ED /* SearchVCPresenterDelegate.swift in Sources */,
 				8412B1C524917402004DD694 /* EditNoteVC+Extension.swift in Sources */,
 				84C85D7B24A154B3009CDCAF /* UpdateLabelViewController.swift in Sources */,
-				8478A7C924B04D4E00930B66 /* UserDBService.swift in Sources */,
+				8478A7C924B04D4E00930B66 /* RemoteUserService.swift in Sources */,
 				8401645E24A1E7E2001C95B0 /* AddReminderViewController.swift in Sources */,
 				84075257248926400075EF51 /* ProfilePresenter.swift in Sources */,
 				84078A8124901E090000D649 /* CollectionViewTabelCell.swift in Sources */,
@@ -1058,6 +1181,7 @@
 				8428981B248168AF009AA1D9 /* SignUpViewController+SignUpViewPresenterDelegate.swift in Sources */,
 				84289815248164D8009AA1D9 /* SignUpViewPresenterDelegate.swift in Sources */,
 				844B0E21248111A6009560AD /* SignInViewController+PresenterSignInView.swift in Sources */,
+				84C6941824B8370E00B25BD0 /* RemoteLabelManager.swift in Sources */,
 				8408F9B92496AB77009155ED /* SearchVC+UISearchResultsUpdating.swift in Sources */,
 				8412B1BD24915AB8004DD694 /* EditNotePresenter.swift in Sources */,
 				8419D299247A519D00C4F93A /* AppDelegate.swift in Sources */,
@@ -1070,8 +1194,8 @@
 				8407525A248926E10075EF51 /* ProfilePresenterDelegate.swift in Sources */,
 				84FCC37F249F936500FE92CA /* AddLabelPresenter.swift in Sources */,
 				84126EC524894B2F00F0FFBB /* ProfileViewController+ProfilePresenterDelegate.swift in Sources */,
+				8420520924B58DE2006E7C56 /* RemoteNoteService.swift in Sources */,
 				842898252481893D009AA1D9 /* PresenterSignInViewDelegate.swift in Sources */,
-				8478A7C724B04D1700930B66 /* UserDBManagerImpl.swift in Sources */,
 				8419D2A3247A519D00C4F93A /* FundooApp.xcdatamodeld in Sources */,
 				84A3C9E32480F19B003393EC /* SignInViewPresenterService.swift in Sources */,
 				84126ED82489558900F0FFBB /* NoteViewDelegate.swift in Sources */,
@@ -1082,12 +1206,12 @@
 				84289821248188BC009AA1D9 /* SignInViewPresenterServiceImpl.swift in Sources */,
 				8412B1C124915BA1004DD694 /* EditNoteDelegate.swift in Sources */,
 				84224C332486B5ED0041EBDC /* SideMenuViewController.swift in Sources */,
-				8478A7C524B04CD400930B66 /* UserDBManager.swift in Sources */,
+				8478A7C524B04CD400930B66 /* RemoteUserManager.swift in Sources */,
 				84FCC383249F94A900FE92CA /* AddLabelViewDelegate.swift in Sources */,
 				8408F9AE24969026009155ED /* SearchVC.swift in Sources */,
 				8408F9BB2496ABAE009155ED /* SearchVC+UISearchBarDelegate.swift in Sources */,
 				8435B7FD24A2986A008056C6 /* ReminderPresenterDelegate.swift in Sources */,
-				841E61B824B1DA0F002DB0CE /* FundooUser.swift in Sources */,
+				841E61B824B1DA0F002DB0CE /* UserResponse.swift in Sources */,
 				84FD41B824A1494A00ACADC1 /* AddLabelCell.swift in Sources */,
 				842CBCB02493E9740032CBB6 /* Note+NSItemProviderWriting.swift in Sources */,
 				8428981724816551009AA1D9 /* SignUpViewPresenterService.swift in Sources */,
@@ -1105,11 +1229,14 @@
 				8408F9B62496A612009155ED /* SearchCell.swift in Sources */,
 				8432FDD2248F847D006D7EF5 /* EditNoteViewController.swift in Sources */,
 				84078A7D249019680000D649 /* OptionsCell.swift in Sources */,
+				84EEAB7C24B23DDE0011A099 /* NoteResponse.swift in Sources */,
 				84AA3B3324A8F4D4009562E1 /* CustomWidthLayout.swift in Sources */,
 				840557742492BDD400115EE2 /* SlideUpMenuOption.swift in Sources */,
 				842C2487248AA9B400489314 /* ReminderViewController.swift in Sources */,
+				84C6941624B832BA00B25BD0 /* LabelResponse.swift in Sources */,
 				84078A712490040D0000D649 /* SlideUpVC.swift in Sources */,
 				8408F9BD2496ABFC009155ED /* SearchVC+UICollectionView.swift in Sources */,
+				84B553D424B61CB00021DFFA /* ResultData.swift in Sources */,
 				8408AAF224A46C98003F04E4 /* SideMenuPresenter.swift in Sources */,
 				8400AC9C249FDE7400B9A936 /* LabelViewDelegate.swift in Sources */,
 				840752532489173E0075EF51 /* ProfileViewController.swift in Sources */,
@@ -1124,6 +1251,7 @@
 				8435B7FB24A2902A008056C6 /* EditNoteViewController+Reminder.swift in Sources */,
 				84126ED12489535100F0FFBB /* NotePresenter.swift in Sources */,
 				84A3C9E12480F04C003393EC /* DatabaseManager.swift in Sources */,
+				84EEAB7E24B24D580011A099 /* RemoteNoteManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

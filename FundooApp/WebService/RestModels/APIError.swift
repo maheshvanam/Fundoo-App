@@ -8,8 +8,13 @@
 
 import Foundation
 
-enum APIError: Error {
-    case responseProblem
-    case decodingProblem
-    case encodingProblem
+enum APIError: String,Error {
+    case responseError
+    case decodingError
+    case encodingError
+}
+struct APIErrorMessage {
+    static let responseError = "response Error.."
+    static let decodingError = "error occured while decoding.."
+    static let encodingError = "error occured while encoding.."
 }
