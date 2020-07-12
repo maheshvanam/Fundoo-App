@@ -122,21 +122,21 @@ class CoreDataServiceImpl  {
 //        }
     }
     
-//    func getCurrentUser() -> User {
-//        var user:User!
-//        do{
-//         let email =   UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!
-//         user = try getUser(email:email)
-//        }
-//        catch CoreDataError.UserNotFound {
-//            fatalError(Constants.USER_NOT_FOUND);
-//        }
-//        catch {
-//            fatalError(Constants.FETCH_ERROR);
-//        }
-//        return user
-//    }
-//
+    func getCurrentUser() -> User {
+        var user:User!
+        do{
+         let email =   UserDefaults.standard.string(forKey: Constants.EMAIL_KEY)!
+         user = try getUser(email:email)
+        }
+        catch CoreDataError.UserNotFound {
+            fatalError(Constants.USER_NOT_FOUND);
+        }
+        catch {
+            fatalError(Constants.FETCH_ERROR);
+        }
+        return user
+    }
+
     func saveUser(user: User) {
         do {
         try context.save()

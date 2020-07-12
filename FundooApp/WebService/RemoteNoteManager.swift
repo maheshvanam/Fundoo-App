@@ -54,10 +54,12 @@ class RemoteNoteManager: RemoteNoteService {
             switch data.result {
             case .success(_):
                 let localDb = CoreDataServiceImpl.shared
-//                let localNote = localDb.createNote()
-//                localNote.title = note.title
-//                localNote.note = note.description
-//                localDb.saveData()
+                let localUser = localDb.getCurrentUser()
+                let localNote = localDb.createNote()
+                localNote.title = note.title
+                localNote.note = note.description
+                localNote.owner = localUser
+                localDb.saveData()
             case .failure(let err):
                 print(err.localizedDescription)
             }
