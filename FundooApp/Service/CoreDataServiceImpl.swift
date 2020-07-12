@@ -17,7 +17,7 @@ private let emailPredicate = "email = %@"
 
 class CoreDataServiceImpl  {
   
-    
+    static let shared = CoreDataServiceImpl()
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext

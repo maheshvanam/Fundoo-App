@@ -30,4 +30,11 @@ class UserModel {
         self.email = userModel.email
         self.password = userModel.password
     }
+    
+    init(user:UserResponse) {
+        self.firstName = user.firstName
+        self.lastName = user.lastName
+        self.email = user.email
+        self.password = user.password
+    }
 }

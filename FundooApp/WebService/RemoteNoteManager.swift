@@ -47,9 +47,21 @@ class RemoteNoteManager: RemoteNoteService {
     }
 
     func insertUserNote(note: NoteResponse) {
-        
         let params = ["title":note.title,"description":note.description,"isArchived":false,"color":note.color] as [String:Any]
-        self.postRequest(params: params, urlPath: RestUrl.ADD_NOTE_URL_PATH )
+        header.add(name: RestConstants.authKey, value: authId!)
+        let request = AF.request(RestUrl.ADD_NOTE_URL_PATH, method: .post, parameters: params,encoding: URLEncoding.default, headers: header)
+        request.responseData { (data) in
+            switch data.result {
+            case .success(_):
+                let localDb = CoreDataServiceImpl.shared
+//                let localNote = localDb.createNote()
+//                localNote.title = note.title
+//                localNote.note = note.description
+//                localDb.saveData()
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
     
     func updateNote(note: NoteResponse) {

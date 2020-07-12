@@ -906,17 +906,25 @@
 		84E26B47247C240C000D8BE5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				84A3C9DA2480E3B1003393EC /* DataService.swift */,
+				84FC367824BB8CFA00552E84 /* Firebase */,
 				846DAAC8247BACCE004F3DA0 /* CoreDataServiceImpl.swift */,
 				84A3C9E02480F04C003393EC /* DatabaseManager.swift */,
-				847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */,
-				84B1138724AC572900092E9D /* NoteDataModel.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		84FC367824BB8CFA00552E84 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
 				84B1138924AC71BD00092E9D /* NoteService.swift */,
+				84A3C9DA2480E3B1003393EC /* DataService.swift */,
+				84B1138724AC572900092E9D /* NoteDataModel.swift */,
+				847B213324AB1DAA00E273C8 /* FirebaseDatabaseManager.swift */,
 				84B1138B24AC737600092E9D /* NoteServiceImpl.swift */,
 				84B1138D24AC74F700092E9D /* NoteDbManager.swift */,
 				8478692A24ADAEA200962ACD /* FirebaseDatbaseError.swift */,
 			);
-			path = Service;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		84FCC36E249F8D3200FE92CA /* CreateLabel */ = {

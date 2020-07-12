@@ -24,6 +24,9 @@ class RemoteUserManager: RemoteUserService {
                     }
                     return
                 }
+                let localDb = CoreDataServiceImpl.shared
+                let localUser = UserModel(user: user)
+                localDb.insertUser(registartionUser: localUser)
                 DispatchQueue.main.async {
                     completion(.success(httpResponse.statusCode))
                 }
