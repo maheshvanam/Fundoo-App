@@ -16,7 +16,7 @@ class NoteViewCell: UICollectionViewCell, AddLabelViewDelegate {
     @IBOutlet weak var reminderView: UIView!
     @IBOutlet weak var reminderField: UILabel!
     @IBOutlet weak var labelCollectionView: UICollectionView!
-    
+        
     var addLabelPresenter:AddLabelPresenterDelegate!
     var noteCellPresenter:NoteCellDelegate!
     var dataSource:[LabelResponse] = []

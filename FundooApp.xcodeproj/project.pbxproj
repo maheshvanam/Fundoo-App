@@ -374,15 +374,13 @@
 		8401645C24A1E79E001C95B0 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */,
-				842C2486248AA9B400489314 /* ReminderViewController.swift */,
-				8435B7FC24A2986A008056C6 /* ReminderPresenterDelegate.swift */,
-				8435B7FE24A29889008056C6 /* ReminderPresenter.swift */,
+				84B9C7CC24BB86C6006FB504 /* presenter */,
+				84B9C7CB24BB86AC006FB504 /* View */,
 			);
 			path = Reminder;
 			sourceTree = "<group>";
 		};
-		840752582489266C0075EF51 /* ProfilePresenter */ = {
+		840752582489266C0075EF51 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				84126EC9248950A800F0FFBB /* Extension */,
@@ -390,21 +388,16 @@
 				84075256248926400075EF51 /* ProfilePresenter.swift */,
 				8407525B248927440075EF51 /* ProfilePresenterImpl.swift */,
 			);
-			path = ProfilePresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
-		8408F9AC24968FBA009155ED /* SearchView */ = {
+		8408F9AC24968FBA009155ED /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				8408F9B72496AB34009155ED /* Extentsions */,
-				8408F9AD24969026009155ED /* SearchVC.swift */,
-				8408F9AF24969661009155ED /* SearchVCPresenter.swift */,
-				8408F9B12496967F009155ED /* SearchVCPresenterImpl.swift */,
-				8408F9B3249696F0009155ED /* SearchVCPresenterDelegate.swift */,
-				8408F9B52496A612009155ED /* SearchCell.swift */,
-				8408F9C52496C418009155ED /* SearchColorCell.swift */,
+				84B9C7CE24BB8788006FB504 /* Presenter */,
+				84B9C7CD24BB874D006FB504 /* View */,
 			);
-			path = SearchView;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		8408F9B72496AB34009155ED /* Extentsions */ = {
@@ -417,7 +410,7 @@
 			path = Extentsions;
 			sourceTree = "<group>";
 		};
-		8408F9C02496B647009155ED /* SearchResultVC */ = {
+		8408F9C02496B647009155ED /* SearchResult */ = {
 			isa = PBXGroup;
 			children = (
 				8408F9C12496B69C009155ED /* SearchResultVC.swift */,
@@ -431,7 +424,7 @@
 				84AA3B3824A8F851009562E1 /* SearchResultVC+MosiacLayout.swift */,
 				8416232F24B90B6200C67EA7 /* NoteCellPresenter.swift */,
 			);
-			path = SearchResultVC;
+			path = SearchResult;
 			sourceTree = "<group>";
 		};
 		84126EC82489506F00F0FFBB /* delegate */ = {
@@ -451,15 +444,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		84126ECA2489513E00F0FFBB /* ProfileView */ = {
+		84126ECA2489513E00F0FFBB /* View */ = {
 			isa = PBXGroup;
 			children = (
 				840752522489173E0075EF51 /* ProfileViewController.swift */,
 			);
-			path = ProfileView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		84126ECB2489521500F0FFBB /* NoteView */ = {
+		84126ECB2489521500F0FFBB /* View */ = {
 			isa = PBXGroup;
 			children = (
 				84224C342486BAA60041EBDC /* NoteViewController.swift */,
@@ -469,10 +462,10 @@
 				843BBBB2248D86EC00155FC4 /* MosaicLayoutDelegate.swift */,
 				849FE94D248E2FF400EF4DEE /* NoteVC+MosiacLayout.swift */,
 			);
-			path = NoteView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		84126ECC2489529B00F0FFBB /* NotePresenter */ = {
+		84126ECC2489529B00F0FFBB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				84126ED42489551B00F0FFBB /* Extension */,
@@ -480,7 +473,7 @@
 				84126ED02489535100F0FFBB /* NotePresenter.swift */,
 				84126ED2248953C000F0FFBB /* NotePresenterImpl.swift */,
 			);
-			path = NotePresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		84126ECD248952AF00F0FFBB /* Delegate */ = {
@@ -517,7 +510,7 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
-		8412B1BB24915A71004DD694 /* EditNotePresenter */ = {
+		8412B1BB24915A71004DD694 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				8412B1BC24915AB8004DD694 /* EditNotePresenter.swift */,
@@ -526,7 +519,7 @@
 				8412B1C224915C6D004DD694 /* EditNotePresenterDelegate.swift */,
 				8412B1C424917402004DD694 /* EditNoteVC+Extension.swift */,
 			);
-			path = EditNotePresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		8419D28C247A519D00C4F93A = {
@@ -553,17 +546,16 @@
 			isa = PBXGroup;
 			children = (
 				8478A7C324B04C3E00930B66 /* WebService */,
+				84B9C7C224BB83A6006FB504 /* EditNote */,
+				84B9C7C124BB8325006FB504 /* Profile */,
 				8401645C24A1E79E001C95B0 /* Reminder */,
-				84FD41BA24A14AB300ACADC1 /* AddLabel */,
-				84FCC36E249F8D3200FE92CA /* CreateLabel */,
 				842460AB249A90EB00B38CBA /* Label */,
-				8432FDD0248F83A4006D7EF5 /* EditNoteView */,
-				8412B1BB24915A71004DD694 /* EditNotePresenter */,
-				8408F9C02496B647009155ED /* SearchResultVC */,
-				8408F9AC24968FBA009155ED /* SearchView */,
-				84634EBA248268990098D004 /* Home */,
-				84634EB62482659F0098D004 /* Login */,
-				84634EB2248264470098D004 /* Registration */,
+				8408F9C02496B647009155ED /* SearchResult */,
+				8408F9AC24968FBA009155ED /* Search */,
+				84B9C7C324BB8438006FB504 /* Notes */,
+				84634EBA248268990098D004 /* Dashboard */,
+				84634EB62482659F0098D004 /* SignIn */,
+				84634EB2248264470098D004 /* SignUp */,
 				84B49C53247EBE1800D3C940 /* Util */,
 				84126ED924897E7B00F0FFBB /* DataModel */,
 				84E26B47247C240C000D8BE5 /* Service */,
@@ -606,22 +598,15 @@
 		842460AB249A90EB00B38CBA /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				842460AC249A913A00B38CBA /* CheckMarkCell.swift */,
-				842460AD249A913A00B38CBA /* CheckMarkCell.xib */,
-				84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */,
-				84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */,
-				842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */,
-				841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */,
-				841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */,
-				842460B0249A956200B38CBA /* AddLabelViewController.swift */,
-				84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */,
-				84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */,
-				84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */,
+				84B9C7CA24BB8630006FB504 /* Model */,
+				84B9C7C524BB84F1006FB504 /* View */,
+				84FCC36E249F8D3200FE92CA /* CreateLabel */,
+				84B9C7C624BB8528006FB504 /* Presenter */,
 			);
 			path = Label;
 			sourceTree = "<group>";
 		};
-		8432FDD0248F83A4006D7EF5 /* EditNoteView */ = {
+		8432FDD0248F83A4006D7EF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				8432FDD1248F847D006D7EF5 /* EditNoteViewController.swift */,
@@ -636,10 +621,10 @@
 				84113FEA2493966E00AEDCBD /* SlideUpVCDelegate.swift */,
 				8435B7FA24A2902A008056C6 /* EditNoteViewController+Reminder.swift */,
 			);
-			path = EditNoteView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		843591352484321E00E58862 /* ContainerView */ = {
+		843591352484321E00E58862 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				84D0C7CF248655CA002AB435 /* ContainerViewController.swift */,
@@ -649,10 +634,8 @@
 				84F3CE3E24A0C523009EE22D /* SideMenuCell.xib */,
 				84FD41B224A136BD00ACADC1 /* SideMenuLabelCell.swift */,
 				84FD41B324A136BD00ACADC1 /* SideMenuLabelCell.xib */,
-				8408AAEF24A46C6D003F04E4 /* SideMenuPresenterDelegate.swift */,
-				8408AAF124A46C98003F04E4 /* SideMenuPresenter.swift */,
 			);
-			path = ContainerView;
+			path = View;
 			sourceTree = "<group>";
 		};
 		843591382484491E00E58862 /* Modal */ = {
@@ -663,14 +646,14 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
-		84634EB2248264470098D004 /* Registration */ = {
+		84634EB2248264470098D004 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				84634EB52482653D0098D004 /* Modal */,
 				84634EB4248264FF0098D004 /* View */,
 				84634EB32482647A0098D004 /* Presenter */,
 			);
-			path = Registration;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		84634EB32482647A0098D004 /* Presenter */ = {
@@ -701,13 +684,13 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
-		84634EB62482659F0098D004 /* Login */ = {
+		84634EB62482659F0098D004 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
 				84634EB9248265C60098D004 /* Presenter */,
 				84634EB8248265BC0098D004 /* View */,
 			);
-			path = Login;
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		84634EB8248265BC0098D004 /* View */ = {
@@ -730,17 +713,13 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		84634EBA248268990098D004 /* Home */ = {
+		84634EBA248268990098D004 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				84126ECB2489521500F0FFBB /* NoteView */,
-				84126ECC2489529B00F0FFBB /* NotePresenter */,
-				84126ECA2489513E00F0FFBB /* ProfileView */,
-				840752582489266C0075EF51 /* ProfilePresenter */,
-				843591382484491E00E58862 /* Modal */,
-				843591352484321E00E58862 /* ContainerView */,
+				84B9C7C424BB8499006FB504 /* Presenter */,
+				843591352484321E00E58862 /* View */,
 			);
-			path = Home;
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		8478A7C324B04C3E00930B66 /* WebService */ = {
@@ -770,6 +749,146 @@
 				8472AD422492176F0066CD7A /* Dictionary+Extension.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		84B9C7C124BB8325006FB504 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				84126ECA2489513E00F0FFBB /* View */,
+				840752582489266C0075EF51 /* Presenter */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		84B9C7C224BB83A6006FB504 /* EditNote */ = {
+			isa = PBXGroup;
+			children = (
+				8412B1BB24915A71004DD694 /* Presenter */,
+				8432FDD0248F83A4006D7EF5 /* View */,
+			);
+			path = EditNote;
+			sourceTree = "<group>";
+		};
+		84B9C7C324BB8438006FB504 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				843591382484491E00E58862 /* Modal */,
+				84126ECC2489529B00F0FFBB /* Presenter */,
+				84126ECB2489521500F0FFBB /* View */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		84B9C7C424BB8499006FB504 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8408AAEF24A46C6D003F04E4 /* SideMenuPresenterDelegate.swift */,
+				8408AAF124A46C98003F04E4 /* SideMenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84B9C7C524BB84F1006FB504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				842460B2249AA16B00B38CBA /* AddLabelViewController+TableView.swift */,
+				84FCC382249F94A900FE92CA /* AddLabelViewDelegate.swift */,
+				841E66ED249F4E79002B5DD2 /* AddLabelViewController+SearchController.swift */,
+				842460B0249A956200B38CBA /* AddLabelViewController.swift */,
+				84B9C7C724BB8544006FB504 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B9C7C624BB8528006FB504 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84FCC37E249F936500FE92CA /* AddLabelPresenter.swift */,
+				84FCC380249F948100FE92CA /* AddLabelPresenterDelegate.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84B9C7C724BB8544006FB504 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84F7A8EA249E54BE00480ACE /* CreateLabelCell.xib */,
+				84F7A8E9249E54BE00480ACE /* CreateLabelCell.swift */,
+				842460AD249A913A00B38CBA /* CheckMarkCell.xib */,
+				842460AC249A913A00B38CBA /* CheckMarkCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84B9C7C824BB85C1006FB504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8400ACA0249FF4D900B9A936 /* LabelCell.xib */,
+				8400AC9F249FF4D900B9A936 /* LabelCell.swift */,
+				84FCC36F249F8D8300FE92CA /* LabelViewController.swift */,
+				84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */,
+				8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */,
+				84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */,
+				8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */,
+				84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B9C7C924BB85E4006FB504 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8400AC97249FDE1500B9A936 /* LabelPresenter.swift */,
+				8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84B9C7CA24BB8630006FB504 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				841E66EB249F4DF1002B5DD2 /* SelectableItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84B9C7CB24BB86AC006FB504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8401645D24A1E7E2001C95B0 /* AddReminderViewController.swift */,
+				842C2486248AA9B400489314 /* ReminderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B9C7CC24BB86C6006FB504 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8435B7FC24A2986A008056C6 /* ReminderPresenterDelegate.swift */,
+				8435B7FE24A29889008056C6 /* ReminderPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		84B9C7CD24BB874D006FB504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8408F9C52496C418009155ED /* SearchColorCell.swift */,
+				8408F9B52496A612009155ED /* SearchCell.swift */,
+				8408F9AD24969026009155ED /* SearchVC.swift */,
+				8408F9B72496AB34009155ED /* Extentsions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B9C7CE24BB8788006FB504 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8408F9AF24969661009155ED /* SearchVCPresenter.swift */,
+				8408F9B3249696F0009155ED /* SearchVCPresenterDelegate.swift */,
+				8408F9B12496967F009155ED /* SearchVCPresenterImpl.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		84E26B44247C23D1000D8BE5 /* Sotoryboard */ = {
@@ -803,25 +922,10 @@
 		84FCC36E249F8D3200FE92CA /* CreateLabel */ = {
 			isa = PBXGroup;
 			children = (
-				84FCC36F249F8D8300FE92CA /* LabelViewController.swift */,
-				84FD41B624A1494A00ACADC1 /* AddLabelCell.swift */,
-				84FD41B724A1494A00ACADC1 /* AddLabelCell.xib */,
-				8400AC97249FDE1500B9A936 /* LabelPresenter.swift */,
-				8400AC99249FDE3800B9A936 /* LabelPresenterDelegate.swift */,
-				8400AC9B249FDE7400B9A936 /* LabelViewDelegate.swift */,
-				8400AC9D249FE71800B9A936 /* LabelViewController+TableViewDelegate.swift */,
-				8400AC9F249FF4D900B9A936 /* LabelCell.swift */,
-				8400ACA0249FF4D900B9A936 /* LabelCell.xib */,
+				84B9C7C924BB85E4006FB504 /* Presenter */,
+				84B9C7C824BB85C1006FB504 /* View */,
 			);
 			path = CreateLabel;
-			sourceTree = "<group>";
-		};
-		84FD41BA24A14AB300ACADC1 /* AddLabel */ = {
-			isa = PBXGroup;
-			children = (
-				84C85D7A24A154B3009CDCAF /* UpdateLabelViewController.swift */,
-			);
-			path = AddLabel;
 			sourceTree = "<group>";
 		};
 		D7F7EC699934A3278590A14B /* Frameworks */ = {

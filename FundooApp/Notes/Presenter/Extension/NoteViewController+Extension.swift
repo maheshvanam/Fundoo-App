@@ -22,7 +22,9 @@ extension NoteViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.updateView(note:noteModel)
         let color = noteModel.color
         if !color.isEmpty {
-            cell.updateCellBackground(color: Constants.colors[color]!)
+            if let noteColor = Constants.colors[color] {
+            cell.updateCellBackground(color: noteColor)
+            }
         }
         else {
             cell.updateCellBackground(color: Constants.colors["#FFFFFF"]!)

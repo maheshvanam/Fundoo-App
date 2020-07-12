@@ -98,7 +98,6 @@ class RemoteLabelManager:RemoteLabelService {
     
     func removeLabelFromNote(note:NoteResponse,label:LabelResponse){
         let urlPath = RestUrl.NOTES_URL_PATH+note.id+RestUrl.ADD_LABEL_TO_NOTE+label.id+RestUrl.REMOVE_PATH
-        print(urlPath,"  ;;  ",label.userId )
         header.add(name: RestConstants.authKey, value: label.userId)
         let request = AF.request(urlPath, method: .post, parameters: [RestConstants.accessTokenKey:authId!],encoding: URLEncoding.default, headers: header)
         request.responseData { (data) in
