@@ -24,14 +24,7 @@ class RemoteNoteManager: RemoteNoteService {
             guard let data = response.value?.data else {
                 if let err = response.error {
                     if urlPath == RestUrl.GET_ALL_NOTES_PATH {
-                        let localDb = CoreDataServiceImpl.shared
-                        let localUser = localDb.getCurrentUser()
-                        let localNotes = localUser.notes!.allObjects as! [Note]
-                        self?.notes = []
-                        for note in localNotes {
-                            self?.notes.append(NoteResponse(localNote:note))
-                        }
-                        callback(self!.notes)
+                        callback((self?.getOfflineNotes())!)
                     }
                     print(err.localizedDescription as String)
                 }
@@ -60,17 +53,10 @@ class RemoteNoteManager: RemoteNoteService {
         let params = ["title":note.title,"description":note.description,"isArchived":false,"color":note.color] as [String:Any]
         header.add(name: RestConstants.authKey, value: authId!)
         let request = AF.request(RestUrl.ADD_NOTE_URL_PATH, method: .post, parameters: params,encoding: URLEncoding.default, headers: header)
-        request.responseData { (data) in
+        request.responseData { [weak self](data) in
             switch data.result {
             case .success(_):
-                let localDb = CoreDataServiceImpl.shared
-                let localUser = localDb.getCurrentUser()
-                let localNote = localDb.createNote()
-                localNote.title = note.title
-                localNote.note = note.description
-                localNote.color = note.color
-                localNote.owner = localUser
-                localDb.saveData()
+                self?.insertOfflineNote(note: note)
             case .failure(let err):
                 print(err.localizedDescription)
             }
@@ -111,5 +97,27 @@ class RemoteNoteManager: RemoteNoteService {
                 print(err.localizedDescription)
             }
         }
+    }
+    
+    func insertOfflineNote(note : NoteResponse){
+        let localDb = CoreDataServiceImpl.shared
+        let localUser = localDb.getCurrentUser()
+        let localNote = localDb.createNote()
+        localNote.title = note.title
+        localNote.note = note.description
+        localNote.color = note.color
+        localNote.owner = localUser
+        localDb.saveData()
+    }
+    
+    func getOfflineNotes()-> [NoteResponse] {
+        let localDb = CoreDataServiceImpl.shared
+        let localUser = localDb.getCurrentUser()
+        let localNotes = localUser.notes!.allObjects as! [Note]
+        var notes:[NoteResponse] = []
+        for note in localNotes {
+            notes.append(NoteResponse(localNote:note))
+        }
+        return notes
     }
 }

@@ -47,7 +47,6 @@ class RemoteUserManager: RemoteUserService {
             urlRequest.httpMethod = RestConstants.post
             urlRequest.addValue(RestConstants.contentTypeValue, forHTTPHeaderField: RestConstants.contentTypeKey)
             urlRequest.httpBody = try JSONEncoder().encode(user)
-            
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse,httpResponse.statusCode == 200,let jsonData = data else {
                     DispatchQueue.main.async {
