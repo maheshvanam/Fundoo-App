@@ -27,22 +27,28 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
         }
         let user = UserResponse(email: email, password: password)
         dbManager.signInUser(user: user) { (result) in
-        switch result {
+            switch result {
             case .success(let currentUser):
-                UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
-                UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId)
-                UserDefaults.standard.setValue(currentUser.userId, forKey: RestConstants.uId)
-
-                self.signInViewDelegate.clearFields()
-                self.signInViewDelegate.clearLabels()
-                self.signInViewDelegate.navigateToUserHomeView()
+                let thread = DispatchQueue.init(label: "myThread", qos:.background)
+                thread.async {
+                    UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
+                    UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId)
+                    UserDefaults.standard.setValue(currentUser.userId, forKey: RestConstants.uId)
+                }
+                DispatchQueue.main.async {
+                    self.signInViewDelegate.clearFields()
+                    self.signInViewDelegate.clearLabels()
+                    self.signInViewDelegate.navigateToUserHomeView()
+                }
             case .failure(.decodingError):
-                fatalError(APIErrorMessage.decodingError)
-            case .failure(.encodingError) :
-                fatalError(APIErrorMessage.encodingError)
+                fatalError(APIError.decodingErrorMessage)
+            case .failure(.encodingError):
+                fatalError(APIError.encodingErrorMessage)
             case .failure(.responseError):
-                self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
-                self.signInViewDelegate.updatePasswordLabel()
+                DispatchQueue.main.async {
+                    self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
+                    self.signInViewDelegate.updatePasswordLabel()
+                }
             }
             
         }

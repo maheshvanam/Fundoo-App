@@ -50,7 +50,7 @@ class RemoteNoteManager: RemoteNoteService {
     }
 
     func insertUserNote(note: NoteResponse) {
-        let params = ["title":note.title,"description":note.description,"isArchived":false,"color":note.color] as [String:Any]
+        let params = ["title":note.title,"description":note.description,"isArchived":note.isArchived    ,"color":note.color] as [String:Any]
         header.add(name: RestConstants.authKey, value: authId!)
         let request = AF.request(RestUrl.ADD_NOTE_URL_PATH, method: .post, parameters: params,encoding: URLEncoding.default, headers: header)
         request.responseData { [weak self](data) in
