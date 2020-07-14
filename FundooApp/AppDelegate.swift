@@ -20,17 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         checkLoginState()
         return true
     }
-    
-    func checkLoginState() {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard.init(name: "Main", bundle:nil )
-        if UserDefaults.standard.bool(forKey: Constants.IS_LOGGED_IN_KEY) {
-            let desitinationVC =   storyboard.instantiateViewController(withIdentifier: "ContainerViewController") as! ContainerViewController
-            let navigationController = UINavigationController.init(rootViewController: desitinationVC)
-            self.window?.rootViewController = navigationController
-            window?.makeKeyAndVisible()
-        }
-    }
 
     // MARK: UISceneSession Lifecycle
 
@@ -106,5 +95,16 @@ extension AppDelegate :UNUserNotificationCenterDelegate {
             navigationController.pushViewController(editVC, animated: true)
         }
         
+    }
+    
+    func checkLoginState() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard.init(name:Constants.MAIN_STORYBOARD, bundle:nil )
+        if UserDefaults.standard.bool(forKey: Constants.IS_LOGGED_IN_KEY) {
+            let desitinationVC =   storyboard.instantiateViewController(withIdentifier: Constants.CONTAINER_VC) as! ContainerViewController
+            let navigationController = UINavigationController.init(rootViewController: desitinationVC)
+            self.window?.rootViewController = navigationController
+            window?.makeKeyAndVisible()
+        }
     }
 }

@@ -42,6 +42,7 @@ enum Constants {
     static let NOTE_VC  = "NoteViewController"
     static let UPDATE_LABEL_VC = "UpdateLabelViewController"
     static let ADD_LABEL_VC = "AddLabelVC"
+    static let CONTAINER_VC = "ContainerViewController"
     static let LABELS_VC = "labels"
     static let LABELS = "labels_View"
     

@@ -20,4 +20,5 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift'
 pod 'Alamofire', '~> 5.2'
+pod 'SwiftKeychainWrapper'
 end

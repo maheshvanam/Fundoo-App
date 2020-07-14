@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Network
+
 var fetchOffcet:Int = 0
 let fetchLimit:Int = 10
 var fetchCell:Int = 0
