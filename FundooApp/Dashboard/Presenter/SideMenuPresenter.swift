@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
 
 class SideMenuPresenter:SideMenuPresenterDelegate {
     
@@ -18,4 +19,11 @@ class SideMenuPresenter:SideMenuPresenterDelegate {
             }
         }
     }
+    
+    func signOutUser() {
+        UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
+        UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
+        KeychainWrapper.standard.removeAllKeys()
+    }
+    
 }

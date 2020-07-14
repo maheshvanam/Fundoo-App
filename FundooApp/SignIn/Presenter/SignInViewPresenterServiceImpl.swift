@@ -8,10 +8,15 @@
 
 import Foundation
 import UIKit
+import SwiftKeychainWrapper
 
 class SignInViewPresenterServiceImpl: SignInViewPresenterService {
-    
+    private let backgroundQueueName = "backgroung"
+    private let errorAlerttitle = "Error"
+    private let emptyFieldsMessage = "Please fill the all fields"
+    private let passwordErrorMessage = "invalid password"
     var signInViewDelegate : PresenterSignInViewDelegate
+    
     init(delegate: PresenterSignInViewDelegate) {
         self.signInViewDelegate = delegate
     }
@@ -22,23 +27,24 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
         let dbManager = RemoteUserManager()
         self.signInViewDelegate.clearLabels()
         if email.isEmpty && password.isEmpty {
-            self.signInViewDelegate.showAlert(title: "Error", message: "Please fill the all fields")
+            self.signInViewDelegate.showAlert(title: errorAlerttitle, message: emptyFieldsMessage)
             return
         }
         let user = UserResponse(email: email, password: password)
-        dbManager.signInUser(user: user) { (result) in
+        dbManager.signInUser(user: user) { [weak self](result) in
             switch result {
             case .success(let currentUser):
-                let thread = DispatchQueue.init(label: "myThread", qos:.background)
-                thread.async {
+                let queue = DispatchQueue.init(label: self!.backgroundQueueName, qos:.background)
+                queue.async {
                     UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
                     UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId)
                     UserDefaults.standard.setValue(currentUser.userId, forKey: RestConstants.uId)
+                    self?.storeUserInfoInKeyChain(email: currentUser.email!, password: password, accessToken: currentUser.id!)
                 }
                 DispatchQueue.main.async {
-                    self.signInViewDelegate.clearFields()
-                    self.signInViewDelegate.clearLabels()
-                    self.signInViewDelegate.navigateToUserHomeView()
+                    self?.signInViewDelegate.clearFields()
+                    self?.signInViewDelegate.clearLabels()
+                    self?.signInViewDelegate.navigateToUserHomeView()
                 }
             case .failure(.decodingError):
                 fatalError(APIError.decodingErrorMessage)
@@ -46,8 +52,8 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
                 fatalError(APIError.encodingErrorMessage)
             case .failure(.responseError):
                 DispatchQueue.main.async {
-                    self.signInViewDelegate.showAlert(title: "Error", message: "invalid password")
-                    self.signInViewDelegate.updatePasswordLabel()
+                    self?.signInViewDelegate.showAlert(title: self!.errorAlerttitle, message:self!.passwordErrorMessage )
+                    self?.signInViewDelegate.updatePasswordLabel()
                 }
             }
             
@@ -58,4 +64,15 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
         self.signInViewDelegate.navigateToSignUpView()
     }
     
+    func storeUserInfoInKeyChain(email:String,password:String,accessToken:String) {
+        KeychainWrapper.standard.set(email, forKey: "email")
+        KeychainWrapper.standard.set(password, forKey: "password")
+        KeychainWrapper.standard.set(accessToken, forKey: "access_token")
+    }
+    
+    func storeUserInfoInKeychain(email:String,password:String,accessToken:String) {
+        KeychainWrapper.standard.set(email, forKey: UserInfoKey.EMAIL)
+        KeychainWrapper.standard.set(password, forKey: UserInfoKey.PASSWORD)
+        KeychainWrapper.standard.set(accessToken, forKey: UserInfoKey.ACCESS_TOKEN)
+    }
 }

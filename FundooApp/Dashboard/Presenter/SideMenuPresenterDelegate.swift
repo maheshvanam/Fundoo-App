@@ -9,5 +9,7 @@
 import Foundation
 
 protocol SideMenuPresenterDelegate {
+    
     func getLabels(callback:@escaping([LabelResponse])->Void)
+    func signOutUser()
 }

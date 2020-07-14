@@ -163,9 +163,7 @@ class SideMenuViewController: UITableViewController, LabelViewDelegate {
         case labelsOption:
             postNotification(key:Constants.NAVIGATE_TO_LABELS)
         case signOutOption:
-            UserDefaults.standard.set("", forKey: Constants.EMAIL_KEY)
-            UserDefaults.standard.set(false, forKey: Constants.IS_LOGGED_IN_KEY)
-          // sideMenuPresenter.signOutUser()
+            sideMenuPresenter.signOutUser()
             self.navigationController?.popToRootViewController(animated: false)
         case trashOption:
             postNotification(key:Constants.NAVIGATE_TO_TRASH)
