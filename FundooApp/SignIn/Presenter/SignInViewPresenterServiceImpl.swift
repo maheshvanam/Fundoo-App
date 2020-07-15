@@ -36,6 +36,7 @@ class SignInViewPresenterServiceImpl: SignInViewPresenterService {
             case .success(let currentUser):
                 let queue = DispatchQueue.init(label: self!.backgroundQueueName, qos:.background)
                 queue.async {
+                    UserDefaults.standard.set(true,forKey: Constants.IS_LOGGED_IN_KEY)
                     UserDefaults.standard.set(email, forKey:Constants.EMAIL_KEY)
                     UserDefaults.standard.setValue(currentUser.id!, forKey: RestConstants.authId)
                     UserDefaults.standard.setValue(currentUser.userId, forKey: RestConstants.uId)

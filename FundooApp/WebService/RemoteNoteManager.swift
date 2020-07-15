@@ -24,7 +24,8 @@ class RemoteNoteManager: RemoteNoteService {
         let request = AF.request(urlPath, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
         request.responseDecodable(of: ResultData.self) { [weak self] response in
             if let error = response.value?.error {
-                if error.statusCode == self?.UNAUTHORIZED_ERROR_CODE {
+                let isLoggedIn = UserDefaults.standard.bool(forKey: Constants.IS_LOGGED_IN_KEY)
+                if error.statusCode == self?.UNAUTHORIZED_ERROR_CODE && isLoggedIn {
                     self?.autoSignInUser()
                 }
             }
