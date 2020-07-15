@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftKeychainWrapper
 
 class RemoteNoteManager: RemoteNoteService {
     
@@ -15,12 +16,18 @@ class RemoteNoteManager: RemoteNoteService {
     private var notes:[NoteResponse] = []
     var header = HTTPHeaders()
     let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+    private let UNAUTHORIZED_ERROR_CODE = 401
     
     private init(){ }
     
     func getAllNotes(urlPath:String,callback: @escaping([NoteResponse])-> Void)  {
         let request = AF.request(urlPath, method: .get, parameters:[RestConstants.accessTokenKey:authId!] ,encoding: URLEncoding.default, headers: nil)
         request.responseDecodable(of: ResultData.self) { [weak self] response in
+            if let error = response.value?.error {
+                if error.statusCode == self?.UNAUTHORIZED_ERROR_CODE {
+                    self?.autoSignInUser()
+                }
+            }
             guard let data = response.value?.data else {
                 if let err = response.error {
                     if urlPath == RestUrl.GET_ALL_NOTES_PATH {
@@ -33,6 +40,7 @@ class RemoteNoteManager: RemoteNoteService {
             let notes =  data.data
             callback(notes!)
         }
+       
     }
     
     func getLabelNotes(urlPath:String,callback: @escaping([NoteResponse])-> Void)  {
@@ -119,5 +127,23 @@ class RemoteNoteManager: RemoteNoteService {
             notes.append(NoteResponse(localNote:note))
         }
         return notes
+    }
+    
+    func autoSignInUser(){
+        let userService = RemoteUserManager()
+        let keychain = KeychainWrapper.standard
+        let email = keychain.string(forKey: UserInfoKey.EMAIL)
+        let password = keychain.string(forKey: UserInfoKey.PASSWORD)
+        userService.signInUser(user: UserResponse(email: email!, password: password!)) { (result) in
+            switch(result) {
+            case .success(let user):
+                DispatchQueue(label: "KeychainQueue", qos: .background).async {
+                    keychain.set(user.id!, forKey: UserInfoKey.ACCESS_TOKEN)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

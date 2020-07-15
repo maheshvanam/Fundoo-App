@@ -8,7 +8,7 @@
 
 import Foundation
  
-struct UserInfoKey {
+enum UserInfoKey {
    public static let EMAIL = "email"
     public static let PASSWORD = "password"
     public static let ACCESS_TOKEN = "access_token"

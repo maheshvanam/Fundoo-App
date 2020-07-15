@@ -10,10 +10,15 @@ import Foundation
 
 struct ResultData:Codable {
     var data:DataResponse?
+    var error:DataError?
 }
 
 struct DataResponse:Codable {
     var sucess:Bool!
     var message:String!
     var data:[NoteResponse]!
+}
+
+struct DataError:Codable {
+    var statusCode:Int
 }
