@@ -15,7 +15,8 @@ class RemoteNoteManager: RemoteNoteService {
     public static let shared = RemoteNoteManager()
     private var notes:[NoteResponse] = []
     var header = HTTPHeaders()
-    let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+    //let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+    let authId = KeychainWrapper.standard.string(forKey: UserInfoKey.ACCESS_TOKEN)
     private let UNAUTHORIZED_ERROR_CODE = 401
     
     private init(){ }
@@ -26,7 +27,7 @@ class RemoteNoteManager: RemoteNoteService {
             if let error = response.value?.error {
                 let isLoggedIn = UserDefaults.standard.bool(forKey: Constants.IS_LOGGED_IN_KEY)
                 if error.statusCode == self?.UNAUTHORIZED_ERROR_CODE && isLoggedIn {
-                    self?.autoSignInUser()
+                    self?.reTry()
                 }
             }
             guard let data = response.value?.data else {
@@ -41,7 +42,7 @@ class RemoteNoteManager: RemoteNoteService {
             let notes =  data.data
             callback(notes!)
         }
-       
+        
     }
     
     func getLabelNotes(urlPath:String,callback: @escaping([NoteResponse])-> Void)  {
@@ -57,7 +58,7 @@ class RemoteNoteManager: RemoteNoteService {
             callback(notes!)
         }
     }
-
+    
     func insertUserNote(note: NoteResponse) {
         let params = ["title":note.title,"description":note.description,"isArchived":note.isArchived    ,"color":note.color] as [String:Any]
         header.add(name: RestConstants.authKey, value: authId!)
@@ -74,7 +75,7 @@ class RemoteNoteManager: RemoteNoteService {
     
     func updateNote(note: NoteResponse) {
         let params:Parameters = ["noteId":note.id,
-                                "title":note.title,
+                                 "title":note.title,
                                  "description":note.description,"color":note.color]
         self.postRequest(params: params, urlPath: RestUrl.UPDATE_NOTES_PATH)
     }
@@ -111,26 +112,30 @@ class RemoteNoteManager: RemoteNoteService {
     func insertOfflineNote(note : NoteResponse){
         let localDb = CoreDataServiceImpl.shared
         let localUser = localDb.getCurrentUser()
-        let localNote = localDb.createNote()
-        localNote.title = note.title
-        localNote.note = note.description
-        localNote.color = note.color
-        localNote.owner = localUser
-        localDb.saveData()
+        if localUser != nil {
+            let localNote = localDb.createNote()
+            localNote.title = note.title
+            localNote.note = note.description
+            localNote.color = note.color
+            localNote.owner = localUser
+            localDb.saveData()
+        }
     }
     
     func getOfflineNotes()-> [NoteResponse] {
         let localDb = CoreDataServiceImpl.shared
         let localUser = localDb.getCurrentUser()
-        let localNotes = localUser.notes!.allObjects as! [Note]
-        var notes:[NoteResponse] = []
-        for note in localNotes {
-            notes.append(NoteResponse(localNote:note))
+        if localUser != nil {
+            let localNotes = localUser.notes!.allObjects as! [Note]
+            var notes:[NoteResponse] = []
+            for note in localNotes {
+                notes.append(NoteResponse(localNote:note))
+            }
         }
         return notes
     }
     
-    func autoSignInUser(){
+    func reTry(){
         let userService = RemoteUserManager()
         let keychain = KeychainWrapper.standard
         let email = keychain.string(forKey: UserInfoKey.EMAIL)
@@ -141,7 +146,6 @@ class RemoteNoteManager: RemoteNoteService {
                 DispatchQueue(label: "KeychainQueue", qos: .background).async {
                     keychain.set(user.id!, forKey: UserInfoKey.ACCESS_TOKEN)
                 }
-                
             case .failure(let error):
                 print(error.localizedDescription)
             }

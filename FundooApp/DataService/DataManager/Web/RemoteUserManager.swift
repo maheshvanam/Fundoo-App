@@ -30,9 +30,7 @@ class RemoteUserManager: RemoteUserService {
             dataTask.resume()
         }
         catch {
-            //  DispatchQueue.main.async {
             completion(.failure(.encodingError))
-            //    }
         }
     }
     

@@ -8,12 +8,13 @@
 
 import Foundation
 import Alamofire
-
+import SwiftKeychainWrapper
 class RemoteLabelManager:RemoteLabelService {
     
     public static let shared = RemoteLabelManager()
     var header = HTTPHeaders()
-    let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+    //let authId = UserDefaults.standard.string(forKey: RestConstants.authId)
+    let authId = KeychainWrapper.standard.string(forKey: UserInfoKey.ACCESS_TOKEN)
     
     private init() {
         // default private constructor
