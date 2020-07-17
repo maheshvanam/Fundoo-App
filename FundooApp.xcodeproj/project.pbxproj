@@ -650,7 +650,7 @@
 				842460AB249A90EB00B38CBA /* Label */,
 				8406EB6E24C1F355000F7CD3 /* DataService */,
 				84B49C53247EBE1800D3C940 /* Util */,
-				84E26B44247C23D1000D8BE5 /* Sotoryboard */,
+				84E26B44247C23D1000D8BE5 /* Storyboard */,
 				8419D2A4247A519E00C4F93A /* Assets.xcassets */,
 				8419D2A9247A519E00C4F93A /* Info.plist */,
 				8419D2A1247A519D00C4F93A /* FundooApp.xcdatamodeld */,
@@ -968,7 +968,7 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		84E26B44247C23D1000D8BE5 /* Sotoryboard */ = {
+		84E26B44247C23D1000D8BE5 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				8419D29E247A519D00C4F93A /* Main.storyboard */,
@@ -976,7 +976,7 @@
 				842460A8249A7F6200B38CBA /* Features.storyboard */,
 				8401645924A1E0A6001C95B0 /* Reminder.storyboard */,
 			);
-			path = Sotoryboard;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		84FC367824BB8CFA00552E84 /* DataManager */ = {
